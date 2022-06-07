@@ -66,7 +66,7 @@
 
       @-webkit-keyframes glow {
         from {
-          text-shadow: 0 0 10px rgb(250, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 20px #680000, 0 0 40px #680000, 0 0 50px #680000, 0 0 60px #680000, 0 0 70px #e60073;
+          text-shadow: 0 0 10px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 20px #680000, 0 0 40px #680000, 0 0 50px #680000, 0 0 60px #680000, 0 0 70px #e60073;
         }
         
         to {
