@@ -20,3 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['namespace' => 'App\Http\Controllers'], function()
+{  
+    Route::get('/homes', 'PagesController@index')->name('pages.index');
+    Route::get('/about', 'PagesController@about')->name('pages.about');
+});
