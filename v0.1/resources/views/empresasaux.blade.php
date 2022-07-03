@@ -1,5 +1,5 @@
 @extends('layouts.master')
 
 @section('content')
-   This is about page
+   Esta es la página de empresas auxiliares
 @endsection

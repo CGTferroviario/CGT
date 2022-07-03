@@ -25,4 +25,28 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function adif() 
+    {
+        return view('adif');
+    }
+    public function renfe()
+    {
+        return view('renfe');
+    }
+    public function empresasaux()
+    {
+        return view('empresasaux');
+    }
+    public function biblioteca() 
+    {
+        return view('biblioteca');
+    }
+    public function igualdad() 
+    {
+        return view('igualdad');
+    }
+    public function equipo()
+    {
+        return view('equipo');
+    }
 }

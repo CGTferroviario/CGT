@@ -20,6 +20,9 @@ a:hover{
 .red{
   color: rgb(200, 0, 0);
 }
+.blanco{
+  color: white;
+}
 .peq{
   font-size: 90%;
 }

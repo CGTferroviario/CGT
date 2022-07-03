@@ -8,32 +8,29 @@
       <div class="collapse navbar-collapse" id="navbarsExample04">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">ADIF</a>
+            <a class="nav-link" href="#" id="" aria-current="page" aria-expanded="false" data-bs-toggle="dropdown">ADIF</a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
-              <li><a class="dropdown-item" href="#">Salud Laboral</a></li>
+              <li><a  href="{{ route('adif') }}" class="dropdown-item">Salud Laboral</a></li>
               <li><a class="dropdown-item" href="#">Seg. Circulación</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">RENFE</a>
+            <a class="nav-link" href="#" id="" data-bs-toggle="dropdown" aria-expanded="false">RENFE</a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
-              <li><a class="dropdown-item" href="#">Salud Laboral</a></li>
+              <li><a href="{{ route('renfe') }}" class="dropdown-item">Salud Laboral</a></li>
               <li><a class="dropdown-item" href="#">Seg. Circulación</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link">EMPRESAS AUXILIARES</a>
+            <a href="{{ route('empresasaux') }}" class="nav-link">EMPRESAS AUXILIARES</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">IGUALDAD</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">BIBLIOTECA</a>
+            <a href="{{ route('igualdad') }}" class="nav-link">IGUALDAD</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">DOCUMENTACIÓN</a>
+            <a class="nav-link" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">BIBLIOTECA</a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
-              <li><a class="dropdown-item" href="#">Legislación laboral</a></li>
+              <li><a href="{{ route('biblioteca') }}" class="dropdown-item" href="#">Legislación laboral</a></li>
               <li><a class="dropdown-item" href="#">Convenios Colectivos</a></li>
               <li><a class="dropdown-item" href="#">Normativa Laboral</a></li>
               <li><a class="dropdown-item" href="#">Procedimientos</a></li>
@@ -42,20 +39,11 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">SFF-CGT</a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
-              <li><a class="dropdown-item" href="#">Equipo</a></li>
+              <li><a href="{{ route('equipo') }}" class="dropdown-item" href="#">Equipo</a></li>
               <li><a class="dropdown-item" href="#">Contacto</a></li>
               <li><a class="dropdown-item" href="#">Mapa Sindical</a></li>
             </ul>
-          </li>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ route('pages.index') }}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('pages.about') }}">About</a>
-            </li>
-          </ul>
-  
+          </li>  
         </ul>
         {{-- <form>
           <input class="form-control" type="text" placeholder="Search" aria-label="Search">
