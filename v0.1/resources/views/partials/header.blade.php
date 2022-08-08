@@ -36,6 +36,9 @@
               <li><a class="dropdown-item" href="#">Procedimientos</a></li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('prensa') }}" class="nav-link">PRENSA</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">SFF-CGT</a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">

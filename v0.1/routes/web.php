@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/adif', [App\Http\Controllers\HomeController::class, 'adif'])->name('adif');
@@ -27,8 +27,12 @@ Route::get('/renfe', [App\Http\Controllers\HomeController::class, 'renfe'])->nam
 Route::get('/empresasaux', [App\Http\Controllers\HomeController::class, 'empresasaux'])->name('empresasaux');
 Route::get('/igualdad', [App\Http\Controllers\HomeController::class, 'igualdad'])->name('igualdad');
 Route::get('/biblioteca', [App\Http\Controllers\HomeController::class, 'biblioteca'])->name('biblioteca');
+Route::get('/prensa', [App\Http\Controllers\HomeController::class, 'prensa'])->name('prensa');
 Route::get('/equipo', [App\Http\Controllers\HomeController::class, 'equipo'])->name('equipo');
+Route::get('/admin/dashboard', 'Admin\DashboardController@index')->middleware('role:admin');
+Route::get('/seller/dashboard', 'Seller\DashboardController@index')->middleware('role:seller');
 
+Auth::routes();
 
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
