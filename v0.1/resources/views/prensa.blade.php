@@ -1,12 +1,13 @@
-@extends('layouts.master')
+@extends('layouts.prensa')
 
 @section('content')
-<div class="row">
-   <div class="col-md-6">
-      <p class="blanco">Esta es la sección de prensa</p>
-   </div>
-   <div class="col-md-6">
-      <p class="blanco">Esta es la sección de prensa</p>
-   </div>
-</div>
+
+<x-videos-prensa />
+
+<x-logos-prensa />
+
+<x-fotos-prensa />
+
+<x-carteles-prensa/>
+
 @endsection
