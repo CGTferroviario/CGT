@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Mail\WelcomeMail;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +25,9 @@ Route::get('/private',[HomeController::class, 'private']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Route for mailing
+Route::get('/email', function(){
+    Mail::to('informatica@cgtferroviario.es')->send(new WelcomeMail());
+    return new WelcomeMail();
+});
