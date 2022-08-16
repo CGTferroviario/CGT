@@ -1,1 +1,0 @@
-<p class="mt-5 mb-3 text-muted">&copy; <?php echo e(date('Y')); ?></p><?php /**PATH /home/pablo/dev/CGT/Laravel-8-User-Roles-and-Permissions-Step-by-Step-Tutorial-master/resources/views/auth/partials/copy.blade.php ENDPATH**/ ?>
