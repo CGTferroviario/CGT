@@ -1,13 +1,4 @@
-<style>
-  body {
-    font-family: Arial;
-    margin: 0;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
+<style>  
   img {
     vertical-align: middle;
   }
@@ -94,11 +85,13 @@
   .demo:hover {
     opacity: 1;
   }
+
   </style>
   
-  <h2 style="text-align:center">Slideshow Gallery</h2>
+  
   
   <div class="container" id="carteles">
+    <h1>Carteles</h1>
     <div class="mySlides">
       <div class="numbertext">1 / 6</div>
       <img src="img/img_woods_wide.jpg" style="width:100%">
