@@ -51,14 +51,18 @@ h1{
 
 body {
   margin: 0;
+  margin-top: 100px !important;
   font-family: "Lato", sans-serif;
+}
+#carteles{
+  display: none;
 }
 
 .sidebar {
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: #2b0a0a;
+  background-color: #000;
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -103,3 +107,4 @@ div.content {
     float: none;
   }
 }
+
