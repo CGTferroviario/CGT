@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmailsController;
+use App\Http\Controllers\SmsController;
 use App\Http\Controllers\TestsEnrollmentController;
 use App\Mail\WelcomeMail;
 use Illuminate\Support\Facades\Mail;
@@ -24,7 +25,7 @@ Route::get('/', function () {
 });
 Route::get('/private',[HomeController::class, 'private']);
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -37,3 +38,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/email', [EmailsController::class, 'email']);
 
 Route::get('/send-testenrollment', [TestsEnrollmentController::class, 'sendTestNotification']);
+
+Route::get('/send-sms', [TestsEnrollmentController::class, 'sendTestNotification']);
+
+Route::get('/sms', [SmsController::class, 'index']);
