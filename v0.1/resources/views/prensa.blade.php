@@ -2,12 +2,26 @@
 
 @section('content')
 
-<x-videos-prensa />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            <x-side-bar />
+        </div>
+        <div class="col-sm-8">
 
-<x-logos-prensa />
+            <x-videos-prensa />
 
-<x-fotos-prensa />
+            <x-logos-prensa />
 
-<x-carteles-prensa/>
+            <x-fotos-prensa />
+
+            <x-carteles-prensa/>
+        </div>
+    </div>
+
+    
+
+    
+</div>
 
 @endsection

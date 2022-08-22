@@ -12,7 +12,7 @@
 <body>
     
 @include('partials.header')
-    <x-side-bar />
+    
 <main class="container mt-5">
     @yield('content')
 </main>
