@@ -26,7 +26,7 @@ a:hover{
 .peq{
   font-size: 90%;
 }
-.titular{
+.titular, h1{
     font-family: 'Brannboll Connect PERSONAL USE', sans-serif;
     color: white;
     font-size: 2em;
@@ -54,9 +54,7 @@ body {
   margin-top: 100px !important;
   font-family: "Lato", sans-serif;
 }
-#carteles{
-  display: none;
-}
+
 /* switch */
 .form-check-input:checked {
   background-color: blue;

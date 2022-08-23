@@ -1,4 +1,4 @@
-
+<div class="videos">
 <h1>Videos</h1>
   <!-- 
 <options=bold>“ Simplicity is an acquired taste. ”</>
@@ -68,3 +68,4 @@
   </button>
 </div>
 <!-- Carousel wrapper -->
+</div>

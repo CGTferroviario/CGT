@@ -1,21 +1,24 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
 <div class="sidebar">
-  <div class="form-check form-switch form-check-inline">    
+  
+  <div class="form-check form-switch">    
+    
     <label class="form-check-label" for="flexSwitchCheckDefault"><a class="active" href="#videos"><i class="fa-solid fa-video"></i>Videos</a></label>
-    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked>
+    <input type="checkbox" name="colorCheckbox" value="videos" checked> 
+    {{-- <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked></label> --}}
   </div>
   <div class="form-check form-switch">
     <label class="form-check-label" for="flexSwitchCheckChecked"><a href="#logos"><i class="fa-solid fa-train"></i>Logos</a></label>
-    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+    <input type="checkbox" name="colorCheckbox" value="logos" checked>
+    {{-- <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked> --}}
   </div>
   <div class="form-check form-switch">
     <label class="form-check-label" for="flexSwitchCheckDisabled"><a href="#fotos"><i class="fa-solid fa-camera"></i>Fotos</a></label>
-    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" disabled>
+    <input type="checkbox" name="colorCheckbox" value="fotos" checked>
   </div>
   <div class="form-check form-switch">
     <label class="form-check-label" for="flexSwitchCheckCheckedDisabled"><a href="#carteles"><i class="fa-solid fa-image"></i>Carteles</a></label>
-    <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked>
+    <input type="checkbox" name="colorCheckbox" value="carteles" checked>
+    {{-- <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked> --}}
   </div>
 </div>
+

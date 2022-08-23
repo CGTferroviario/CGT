@@ -90,7 +90,7 @@
   
   
   
-  <div class="container" id="carteles">
+  <div class="carteles container" id="carteles">
     <h1>Carteles</h1>
     <div class="mySlides">
       <div class="numbertext">1 / 6</div>
