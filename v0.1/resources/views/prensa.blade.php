@@ -8,7 +8,6 @@
             <x-side-bar />
         </div>
         <div class="col-sm-9">
-            {{-- <x-show-hide /> --}}
 
             <x-videos-prensa />
 

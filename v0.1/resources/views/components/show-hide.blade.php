@@ -1,4 +1,3 @@
-
 <style type="text/css">
     .selectt {
         color: #fff;
@@ -12,7 +11,6 @@
         margin-right: 20px;
     }
 </style>
-
 <center>
     <h1 style="color:green;">GeeksforGeeks</h1>
     <h3>Show and Hide div elements using checkbox</h3>
@@ -38,6 +36,4 @@
     <div class="Java selectt">
         <strong>Java</strong> is a most popular programming language for many years.
     </div>
-    
 </center>
-			
