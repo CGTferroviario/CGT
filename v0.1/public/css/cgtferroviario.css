@@ -4,21 +4,21 @@ html{
 body {
     font-family: 'Roboto', sans-serif;
     height: 100%;
-    background-color: rgb(25, 25, 25);
+    background-color: rgb(82, 82, 82);
 }
 nav{
     /* border-bottom: 1px dotted red !important; */
     /* box-shadow: rgba(255, 0, 0, 0.45) 0px 10px 10px 5px; */
-    color: red;
+    color: rgb(255,30,0);
 }
 a{
   text-decoration: none;
 }
 a:hover{
-  color: red !important;
+  color: rgb(255,30,0)!important;
 }
 .red{
-  color: rgb(200, 0, 0);
+  color: rgb(255,30,0);
 }
 .blanco{
   color: white;
