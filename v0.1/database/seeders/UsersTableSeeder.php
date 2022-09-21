@@ -35,5 +35,11 @@ class UsersTableSeeder extends Seeder
             'role' => 'editor',
             'password' => Hash::make('javicgt'),
         ]);
+        DB::table('users')->insert([
+            'name' => 'usuario',
+            'email' => 'usuario@usuario.com',
+            'role' => 'usuario',
+            'password' => Hash::make('javicgt'),
+        ]);
     }
 }

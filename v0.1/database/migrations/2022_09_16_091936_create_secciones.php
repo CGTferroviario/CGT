@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('secciones', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_seccion');
             $table->string('nombre_seccion');
             $table->string('email')->unique();
             $table->string('direccion');

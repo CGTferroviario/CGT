@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('documentos', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_documento');
             $table->string('tipo_documento');
-            $table->timestamp('fecha_doc');
-            $table->timestamp('fecha_subida');
-            $table->int('id_empresa');
+            $table->date('fecha_doc');
+            $table->date('fecha_subida');
+            $table->unsignedMediumInteger('id_empresa');
             $table->string('titulo');
             $table->string('subtitulo');
             $table->string('descripcion');

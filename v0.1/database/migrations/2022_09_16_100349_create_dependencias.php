@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('dependencias', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_dependencia');
             $table->string('id_dependencia');
             $table->string('cod_dependencia');
             $table->string('nombre_dependencia');
