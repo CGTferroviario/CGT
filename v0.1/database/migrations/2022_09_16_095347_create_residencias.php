@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('residencias', function (Blueprint $table) {
             $table->id('id_residencia');
-            $table->string('id_empresa');
+            $table->unsignedTinyInteger('id_empresa');
             $table->string('cod_residencia');
             $table->string('nombre_residencia');
-            $table->timestamp('fecha_alta');
-            $table->timestamp('fecha_baja');
+            $table->date('fecha_alta');
+            $table->date('fecha_baja');
             $table->timestamps();
         });
     }

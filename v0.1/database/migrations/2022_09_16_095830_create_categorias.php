@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('categorias', function (Blueprint $table) {
             $table->id('id_categoria');
-            $table->string('id_empresa');
+            $table->unsignedTinyInteger('id_empresa');
             $table->string('cod_categoria');
             $table->string('nombre_categoria');
             $table->string('colegio_electoral');

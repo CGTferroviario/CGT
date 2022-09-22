@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('tipo_documento');
             $table->date('fecha_doc');
             $table->date('fecha_subida');
-            $table->unsignedMediumInteger('id_empresa');
+            $table->unsignedTinyInteger('id_empresa');
             $table->string('titulo');
             $table->string('subtitulo');
-            $table->string('descripcion');
+            $table->text('descripcion');
             $table->string('adjunto1');
             $table->string('adjunto2');
             $table->string('adjunto3');

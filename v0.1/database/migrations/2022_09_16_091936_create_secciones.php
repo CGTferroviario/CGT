@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id('id_seccion');
             $table->string('nombre_seccion');
             $table->string('email')->unique();
-            $table->string('direccion');
-            $table->string('descripcion');
+            $table->text('direccion');
+            $table->text('descripcion');
             $table->timestamps();
         });
     }
