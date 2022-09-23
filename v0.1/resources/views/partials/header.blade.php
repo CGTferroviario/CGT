@@ -15,7 +15,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link" href="#" id="" data-bs-toggle="dropdown" aria-expanded="false">RENFE</a>
+            <a class="nav-link" href="{{ route('renfe') }}" id="" data-bs-toggle="dropdown" aria-expanded="false">RENFE</a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
               <li><a href="{{ route('renfe') }}" class="dropdown-item">Salud Laboral</a></li>
               <li><a class="dropdown-item" href="#">Seg. Circulación</a></li>
