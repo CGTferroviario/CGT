@@ -7,19 +7,19 @@
 
       <div class="collapse navbar-collapse" id="navbarsExample04">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="#" id="" aria-current="page" aria-expanded="false" data-bs-toggle="dropdown">ADIF</a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('adif') }}" id="" aria-current="" aria-expanded="" data-bs-toggle="">ADIF</a>
+            {{-- <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
               <li><a  href="{{ route('adif') }}" class="dropdown-item">Salud Laboral</a></li>
               <li><a class="dropdown-item" href="#">Seg. Circulación</a></li>
-            </ul>
+            </ul> --}}
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="{{ route('renfe') }}" id="" data-bs-toggle="dropdown" aria-expanded="false">RENFE</a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('renfe') }}" id="" data-bs-toggle="" aria-expanded="">RENFE</a>
+            {{-- <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
               <li><a href="{{ route('renfe') }}" class="dropdown-item">Salud Laboral</a></li>
               <li><a class="dropdown-item" href="#">Seg. Circulación</a></li>
-            </ul>
+            </ul> --}}
           </li>
           <li class="nav-item">
             <a href="{{ route('empresasaux') }}" class="nav-link">EMPRESAS AUXILIARES</a>
@@ -28,7 +28,7 @@
             <a href="{{ route('igualdad') }}" class="nav-link">IGUALDAD</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">BIBLIOTECA</a>
+            <a class="nav-link" href="{{ route('biblioteca') }}" id="" data-bs-toggle="" aria-expanded="">BIBLIOTECA</a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
               <li><a href="{{ route('biblioteca') }}" class="dropdown-item" href="#">Legislación laboral</a></li>
               <li><a class="dropdown-item" href="#">Convenios Colectivos</a></li>
