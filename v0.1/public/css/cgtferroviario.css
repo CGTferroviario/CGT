@@ -18,6 +18,12 @@ a{
 a:hover{
   color: rgb(255,30,0)!important;
 }
+nav a:hover{
+  border-bottom: solid 2px rgb(255,30,0);
+}
+.active{
+  border-bottom: solid 2px rgb(255,30,0);
+}
 .red{
   color: rgb(255,30,0);
 }
