@@ -2,11 +2,9 @@
 
 @section('content')
 
-
-
 <div class="row">
    <div class="col-md-2">
-      <x-side-bar-biblio />
+      <x-biblio.sidebar />
    </div>
    <div class="col-md-5">
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">

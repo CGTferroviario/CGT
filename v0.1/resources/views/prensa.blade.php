@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3">
-            <x-side-bar />
+            <x-prensa.sidebar />
         </div>
         <div class="col-sm-9">
 

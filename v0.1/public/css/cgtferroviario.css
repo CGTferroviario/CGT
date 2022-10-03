@@ -6,11 +6,19 @@ body {
     height: 100%;
     background-color: rgb(82, 82, 82);
 }
+button a{
+  text-decoration: none;
+}
+
+/* Barra Superior Header.blade.php */
 nav{
-    /* border-bottom: 1px dotted red !important; */
-    /* box-shadow: rgba(255, 0, 0, 0.45) 0px 10px 10px 5px; */
-    color: rgb(255,30,0);
-    font-size: 130%;
+  /* border-bottom: 1px dotted red !important; */
+  /* box-shadow: rgba(255, 0, 0, 0.45) 0px 10px 10px 5px; */
+  color: rgb(255,30,0);
+  font-size: 130%;
+}
+nav a:hover{
+  border-bottom: solid 2px rgb(255,30,0);
 }
 a{
   text-decoration: none;
@@ -18,12 +26,16 @@ a{
 a:hover{
   color: rgb(255,30,0)!important;
 }
-nav a:hover{
-  border-bottom: solid 2px rgb(255,30,0);
+.navbar-brand:hover{
+  border-bottom: none;
 }
 .active{
   border-bottom: solid 2px rgb(255,30,0);
 }
+
+/* Fin Barra Superior */
+
+/* Colores */
 .red{
   color: rgb(255,30,0);
 }
@@ -34,13 +46,11 @@ nav a:hover{
   font-size: 90%;
 }
 .titular{
-    font-family: 'Brannboll Connect PERSONAL USE', sans-serif;
-    color: white;
-    font-size: 2em;
+  font-family: 'Brannboll Connect PERSONAL USE', sans-serif;
+  color: white;
+  font-size: 2em;
 }
-button a{
-    text-decoration: none;
-}
+
 h1{
   color: white;
 }
@@ -207,7 +217,7 @@ ul{
   border: 1pxsolidrgba(0,0,0,.125);
 }
 .btn:hover{
-  color: rgb(254, 71, 85);
+  color: white;
 }
 .encabezadoAcordeon{
   color: white;
