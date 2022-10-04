@@ -48,9 +48,17 @@
             </ul>
           </li>  
         </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-md-0 blanco sociales">
+          <li><a href=""><i class="fa-brands fa-twitter ml-5"></i></a></li>
+          <li><a href=""><i class="fa-brands fa-facebook ml-5"></i></a></li>
+          <li><a href=""><i class="fa-brands fa-youtube ml-5"></i></a></li>
+        </ul>
         {{-- <form>
           <input class="form-control" type="text" placeholder="Search" aria-label="Search">
         </form> --}}
+      </div>
+      <div class="sociales">
+
       </div>
       <div class="dropdown">
         <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">

@@ -9,13 +9,14 @@
         </div>
         <div class="col-sm-9">
 
-            <x-videos-prensa />
+            <x-prensa.videos />
 
-            <x-logos-prensa />
+            <x-prensa.logos />
 
-            <x-fotos-prensa />
+            <x-prensa.fotos />
 
-            <x-carteles-prensa/>
+            <x-prensa.carteles />
+            
         </div>
     </div>
 </div>

@@ -14,10 +14,10 @@ button a{
 nav{
   /* border-bottom: 1px dotted red !important; */
   /* box-shadow: rgba(255, 0, 0, 0.45) 0px 10px 10px 5px; */
-  color: rgb(255,30,0);
+  /* color: white; */
   font-size: 130%;
 }
-nav a:hover{
+.nav-item a:hover{
   border-bottom: solid 2px rgb(255,30,0);
 }
 a{
@@ -29,8 +29,12 @@ a:hover{
 .navbar-brand:hover{
   border-bottom: none;
 }
-.active{
+.activo{
   border-bottom: solid 2px rgb(255,30,0);
+}
+.sociales{
+  font-size: 150%;
+  margin-left: 5px;
 }
 
 /* Fin Barra Superior */
