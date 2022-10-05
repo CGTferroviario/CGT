@@ -19,7 +19,7 @@
    <div class="py-4">
      <div class="container">
        <div class="accordion-flush" id="#accordionDoc">
-         <div class="accordion-item">
+         <div class="accordion-item collapseAfiliacion">
            <h2 class="accordion-header">
              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAfiliacion" aria-expanded="false" aria-controls="collapseAfiliacion">
                <span class="encabezadoAcordeon" id="Afiliacion">Afiliación</span>
@@ -74,7 +74,7 @@
              </div>
            </div>
          </div>
-         <div class="accordion-item">
+         <div class="accordion-item collapseAyudas">
            <h2 class="accordion-header">
              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAyudas" aria-expanded="false" aria-controls="collapseAyudas">
                <span class="encabezadoAcordeon" id="Ayudas">Ayudas y Beneficios Sociales</span>
@@ -228,7 +228,7 @@
              </div>
            </div>
          </div>
-         <div class="accordion-item">
+         <div class="accordion-item collapseIgualdad">
            <h2 class="accordion-header">
              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIgualdad" aria-expanded="false" aria-controls="collapseIgualdad">
                <span class="encabezadoAcordeon" id="Igualdad">Igualdad</span>
@@ -297,7 +297,7 @@
              </div>
            </div>
          </div>
-         <div class="accordion-item">
+         <div class="accordion-item collapseLegislacion">
            <h2 class="accordion-header">
              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLegislacion" aria-expanded="false" aria-controls="collapseLegislacion">
                <span class="encabezadoAcordeon" id="Legislacion">Legislación - Normativa Laboral</span>
@@ -422,7 +422,7 @@
              </div>
            </div>
          </div>
-         <div class="accordion-item">
+         <div class="accordion-item collapseLicencias">
            <h2 class="accordion-header" id="headingLicencias">
              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLicencias" aria-expanded="false" aria-controls="collapseLicencias">
                <span class="encabezadoAcordeon" id="Licencias">Licencias</span>
@@ -533,7 +533,7 @@
              </div>
            </div>
          </div>
-         <div class="accordion-item">
+         <div class="accordion-item collapseMapa">
            <h2 class="accordion-header" id="headingMapa">
              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMapa" aria-expanded="false" aria-controls="collapseMapa">
                <span class="encabezadoAcordeon" id="Mapa_Red">Mapa Estaciones y Red ADIF-RENFE</span>
@@ -574,7 +574,7 @@
              </div>
            </div>
          </div>
-         <div class="accordion-item">
+         <div class="accordion-item collapseMedidas">
            <h2 class="accordion-header" id="headingMedidas">
              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMedidas" aria-expanded="false" aria-controls="collapseMedidas">
                <span class="encabezadoAcordeon" id="Medidas_Conciliacion">Medidas de Conciliación</span>
@@ -601,7 +601,7 @@
              </div>
            </div>
          </div>
-         <div class="accordion-item">
+         <div class="accordion-item collapseModelos">
            <h2 class="accordion-header">
              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseModelos" aria-expanded="false" aria-controls="collapseModelos">
                <span class="encabezadoAcordeon" id="Solicitud_Empresa">Modelos Solicitud Empresa</span>
@@ -822,7 +822,7 @@
              </div> <br>               
            </div>
          </div>
-         <div class="accordion-item">
+         <div class="accordion-item collapseProtocolos">
            <h2 class="accordion-header" id="headingProtocolo">
              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProtocolo" aria-expanded="false" aria-controls="collapseProtocolo">
                <span class="encabezadoAcordeon" id="Protocolos_Acoso">Protocolos Frente a los Acosos</span>
@@ -891,7 +891,7 @@
              </div>
            </div>
          </div>
-         <div class="accordion-item">
+         <div class="accordion-item collapseSalud">
            <h2 class="accordion-header" id="headingSalud">
              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalud" aria-expanded="false" aria-controls="collapseSalud">
                <span class="encabezadoAcordeon" id="Salud_Laboral">Salud Laboral</span>
@@ -1392,7 +1392,7 @@
            </div>
            </div>
          </div>
-         <div class="accordion-item">
+         <div class="accordion-item collapseTeletrabajo">
            <h2 class="accordion-header" id="headingTeletrabajo">
              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTeletrabajo" aria-expanded="false" aria-controls="collapseTeletrabajo">
                <span class="encabezadoAcordeon" id="Teletrabajo">Teletrabajo</span>

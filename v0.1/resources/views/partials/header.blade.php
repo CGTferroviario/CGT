@@ -48,10 +48,10 @@
             </ul>
           </li>  
         </ul>
-        <ul class="navbar-nav me-auto mb-2 mb-md-0 blanco sociales">
-          <li><a href=""><i class="fa-brands fa-twitter ml-5"></i></a></li>
-          <li><a href=""><i class="fa-brands fa-facebook ml-5"></i></a></li>
-          <li><a href=""><i class="fa-brands fa-youtube ml-5"></i></a></li>
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li><a href="https://twitter.com/SFFCGT" title="Twitter SFFCGT"><i class="fa-brands fa-twitter sociales"></i></a></li>
+          <li><a href="https://es-es.facebook.com/cgtferroviario/" title="Facebook SFFCGT"><i class="fa-brands fa-facebook sociales"></i></a></li>
+          <li><a href="https://www.youtube.com/c/CGTSectorFederalFerroviario" title="Youtube SFFCGT"><i class="fa-brands fa-youtube sociales"></i></a></li>
         </ul>
         {{-- <form>
           <input class="form-control" type="text" placeholder="Search" aria-label="Search">

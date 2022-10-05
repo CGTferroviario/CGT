@@ -33,8 +33,12 @@ a:hover{
   border-bottom: solid 2px rgb(255,30,0);
 }
 .sociales{
-  font-size: 150%;
-  margin-left: 5px;
+  font-size: 120%;
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.55);
+}
+.sociales:hover{
+  color:rgb(254, 71, 85);
 }
 
 /* Fin Barra Superior */
