@@ -111,8 +111,8 @@ body {
   padding: 10px;
   font-size: 150%;
 }
-/*fin fontawesome */
 
+/*fin fontawesome */
 
 .sidebar {
   margin: 0;
@@ -208,11 +208,15 @@ ul{
 }
 
 .offcanvas-start {
-  top: 0;
+  top: 106px;
   left: 0;
-  width: 300px;
-  border-right: 1pxsolidrgba(0,0,0,.2);
+  width: 280px;
+  border-right: 1px solid rgba(0,0,0,.2);
   transform: translateX(-100%);
+}
+input[type='checkbox'] {
+  accent-color: rgb(255,30,0);
+
 }
 
 @media (min-width: 768px) {
