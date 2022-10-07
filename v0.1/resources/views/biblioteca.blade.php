@@ -1,14 +1,13 @@
 <style>
-   .diapositivas{
-      margin-left: 100px;
-      margin-right: auto;
-   }   
+   .carousel-inner {
+    text-align: center;
+   }
 </style>
 @extends('layouts.master')
 
 @section('content')
 <x-biblio.sidebar />
-<div class="container">
+<div class="container-fluid">
    <div class="row">
       <div class="col-md-6">
          <h1>Comunicados</h1>

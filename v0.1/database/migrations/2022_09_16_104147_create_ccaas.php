@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('ccaas', function (Blueprint $table) {
             $table->id('id_ccaas');
             $table->string('nombre_ccaa');
-            $table->timestamps();
         });
     }
 

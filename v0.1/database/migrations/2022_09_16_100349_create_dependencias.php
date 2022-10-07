@@ -15,11 +15,10 @@ return new class extends Migration
     {
         Schema::create('dependencias', function (Blueprint $table) {
             $table->id('id_dependencia');
-            $table->string('id_dependencia');
-            $table->string('cod_dependencia');
+            $table->unsignedSmallInteger('cod_dependencia');
             $table->string('nombre_dependencia');
-            $table->timestamp('fecha_alta');
-            $table->timestamp('fecha_baja');
+            $table->date('fecha_alta');
+            $table->date('fecha_baja');
             $table->timestamps();
         });
     }

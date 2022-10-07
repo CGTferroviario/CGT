@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('municipios', function (Blueprint $table) {
             $table->id('id_municipio');
-            $table->string('id_provincia');
+            $table->unsignedTinyInteger('id_provincia');
             $table->string('cod_municipio');
             $table->string('nombre_municipio');
             $table->timestamps();
