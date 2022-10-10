@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('dependencias', function (Blueprint $table) {
             $table->id('id_dependencia');
-            $table->unsignedSmallInteger('cod_dependencia');
+            $table->string('cod_dependencia', 5);
             $table->string('nombre_dependencia');
             $table->date('fecha_alta');
             $table->date('fecha_baja');

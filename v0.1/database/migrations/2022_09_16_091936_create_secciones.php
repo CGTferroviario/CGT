@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('secciones', function (Blueprint $table) {
             $table->id('id_seccion');
             $table->string('nombre_seccion');
-            $table->string('email')->unique();
-            $table->text('direccion');
+            $table->string('email_seccion')->unique();
+            $table->text('direccion_seccion');
             $table->text('descripcion');
             $table->timestamps();
         });

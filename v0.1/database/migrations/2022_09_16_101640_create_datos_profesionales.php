@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('datos_profesionales', function (Blueprint $table) {
             $table->id('id_datos_profesionales');
             $table->unsignedSmallInteger('id_usuario');
-            $table->string('matricula');
-            $table->string('id_empresa');
-            $table->unsignedTinyInteger('cod_categoria');
-            $table->unsignedTinyInteger('cod_residencia');
+            $table->unsignedMediumInteger('matricula');
+            $table->unsignedTinyInteger('id_empresa');
+            $table->string('cod_categoria', 4);
+            $table->unsignedMediumInteger('cod_residencia');
             $table->date('fecha_alta');
             $table->date('fecha_baja');
             $table->timestamps();

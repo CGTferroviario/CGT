@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('residencias', function (Blueprint $table) {
             $table->id('id_residencia');
             $table->unsignedTinyInteger('id_empresa');
-            $table->unsignedTinyInteger('cod_residencia');
+            $table->unsignedMediumInteger('cod_residencia');
             $table->string('nombre_residencia');
             $table->date('fecha_alta');
             $table->date('fecha_baja');
