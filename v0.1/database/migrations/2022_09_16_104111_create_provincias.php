@@ -15,9 +15,8 @@ return new class extends Migration
     {
         Schema::create('provincias', function (Blueprint $table) {
             $table->id('id_provincia');
-            $table->unsignedTinyInteger('id_CCAA');
+            $table->unsignedTinyInteger('id_ccaa');
             $table->string('nombre_provincia');
-            $table->timestamps();
         });
     }
 

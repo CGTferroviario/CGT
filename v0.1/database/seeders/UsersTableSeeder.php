@@ -18,27 +18,27 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->truncate(); //for cleaning earlier data to avoid duplicate entries
         DB::table('users')->insert([
-            'name' => 'pablo',
+            'nombre' => 'pablo',
             'email' => 'pablo@pablo.com',
-            'role' => 'admin',
+            'tipo_perfil' => 'admin',
             'password' => Hash::make('pablocgt'),
         ]);
         DB::table('users')->insert([
-            'name' => 'nacho',
+            'nombre' => 'nacho',
             'email' => 'nacho@nacho.com',
-            'role' => 'finanzas',
+            'tipo_perfil' => 'finanzas',
             'password' => Hash::make('nachocgt'),
         ]);
         DB::table('users')->insert([
-            'name' => 'javi',
+            'nombre' => 'javi',
             'email' => 'javi@javi.com',
-            'role' => 'editor',
+            'tipo_perfil' => 'editor',
             'password' => Hash::make('javicgt'),
         ]);
         DB::table('users')->insert([
-            'name' => 'usuario',
+            'nombre' => 'usuario',
             'email' => 'usuario@usuario.com',
-            'role' => 'usuario',
+            'tipo_perfil' => 'usuario',
             'password' => Hash::make('javicgt'),
         ]);
     }
