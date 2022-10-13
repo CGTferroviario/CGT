@@ -18,7 +18,6 @@ return new class extends Migration
             $table->unsignedTinyInteger('id_provincia');
             $table->string('cod_municipio');
             $table->string('nombre_municipio');
-            $table->timestamps();
         });
     }
 
