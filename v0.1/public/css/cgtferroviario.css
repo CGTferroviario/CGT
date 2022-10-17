@@ -298,3 +298,22 @@ input[type='checkbox'] {
 }
 
 /* Códigos QR Fin */
+
+/* Apartado Igualdad */
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  color: #dc3545;
+  background-color: #2f2f2f;
+  border-color: #dc3545;
+}
+.nav-link {
+  color: #dc3545;
+}
+.nav-tabs .nav-link:hover {
+  border: 1px solid #dc3545;
+  background-color: #2f2f2f;
+  color: #fff;
+}
+.nav-tabs {
+  border-bottom: 1px solid #dc3545;
+}

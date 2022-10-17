@@ -5,3 +5,4 @@ Gris Oscuro: #2F2F2F rgb(47,47,47)
 Gris Claro: #525252 rgb(82,82,82)
 Gris muy Claro: #D6D6D6 rgb(214,214,214)
 Morado para acentuar: #8234F5 rgb(130,52,245)
+Rojo brillante: #dc3545
