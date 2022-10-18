@@ -48,6 +48,13 @@
             </ul>
           </li>  
         </ul>
+        <div class="form-check form-switch me-2">
+          <span class=""><i class="fa-solid fa-moon blanco"></i></span>
+        </div>
+        <div class="form-check form-switch me-auto">
+            <input class="form-check-input mt-3" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault"><i class="fa-solid fa-sun blanco"></i></label>
+        </div>
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li><a href="https://twitter.com/SFFCGT" title="Twitter SFFCGT"><i class="fa-brands fa-twitter sociales"></i></a></li>
           <li><a href="https://es-es.facebook.com/cgtferroviario/" title="Facebook SFFCGT"><i class="fa-brands fa-facebook sociales"></i></a></li>
