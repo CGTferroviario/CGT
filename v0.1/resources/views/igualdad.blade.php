@@ -4,7 +4,6 @@
 <div class="container-fluid">
    <div class="row">
       <h1 class="centrado py-2">Planes de Igualdad por Empresas</h1>
-      <br>
       <!-- Nav tabs -->
       <nav class="nav nav-tabs flex-column flex-sm-row" role="tablist">
          <a class="flex-sm-fill text-sm-center nav-link active" data-bs-toggle="tab" href="#adif">ADIF</a>
@@ -15,7 +14,9 @@
       <!-- Tab panes -->
       <div class="tab-content">
          <div id="adif" class="container tab-pane active"><br>
-            <h3>ADIF</h3>
+            <div class="centrado">
+               <img class="my-3" src="img/logo_adif_blanco.jpg">
+            </div>
             {{-- <div class="card shadow-sm h-100">
                <img src="img/pdf_icon.png">
                <div class="card-body">
@@ -84,7 +85,9 @@
             </div>
          </div>
          <div id="renfe" class="container tab-pane fade"><br>
-            <h3>RENFE</h3>
+            <div class="centrado">
+               <img class="my-3" src="img/logo_renfe.png">
+            </div>
             <div class="row">
                <div class="col-md-6">
                   <div class="card mb-3" style="">
@@ -121,7 +124,9 @@
             </div>
          </div>
          <div id="serveo" class="container tab-pane fade"><br>
-            <h3>SERVEO</h3>
+            <div class="centrado">
+               <img class="my-3" src="img/logo_serveo.png">
+            </div>            
             <div class="row">
                <div class="col-md-6">
                   <div class="card mb-3" style="">
@@ -142,7 +147,9 @@
             </div>
          </div>
          <div id="fgv" class="container tab-pane fade"><br>
-            <h3>FGV</h3>
+            <div class="centrado">
+               <img class="my-3" src="img/logo_FGV.png">
+            </div>
             <div class="row">
                <div class="col-md-6">
                   <div class="card mb-3" style="">
