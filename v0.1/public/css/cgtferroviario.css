@@ -332,3 +332,8 @@ input[type='checkbox'] {
 .tab-content{
   background-color: #2f2f2f;
 }
+.card-footer-horiz {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
