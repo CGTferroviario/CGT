@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar fixed-top" aria-label="Fourth navbar example">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar fixed-top barraSup" id="barraSup" aria-label="Fourth navbar example">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{ url('/') }}"><img src="/images/LogoSFF_sm.png" /> <span class="titular">Ferroviario7</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,23 +29,23 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link" href="{{ route('biblioteca') }}" id="" data-bs-toggle="" aria-expanded="">BIBLIOTECA</a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
+            {{-- <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
               <li><a href="{{ route('biblioteca') }}" class="dropdown-item" href="#">Legislación laboral</a></li>
               <li><a class="dropdown-item" href="#">Convenios Colectivos</a></li>
               <li><a class="dropdown-item" href="#">Normativa Laboral</a></li>
               <li><a class="dropdown-item" href="#">Procedimientos</a></li>
-            </ul>
+            </ul> --}}
           </li>
           <li class="nav-item">
             <a href="{{ route('prensa') }}" class="nav-link">PRENSA</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">SFF-CGT</a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
+            <a class="nav-link" href="{{ route('equipo') }}" id="dropdown04" data-bs-toggle="" aria-expanded="">SFF-CGT</a>
+            {{-- <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
               <li><a href="{{ route('equipo') }}" class="dropdown-item" href="#">Equipo</a></li>
               <li><a class="dropdown-item" href="#">Contacto</a></li>
               <li><a class="dropdown-item" href="#">Mapa Sindical</a></li>
-            </ul>
+            </ul> --}}
           </li>  
         </ul>
         <div class="form-check form-switch me-2">
