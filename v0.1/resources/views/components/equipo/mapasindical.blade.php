@@ -1,6 +1,6 @@
-<h2 class="centrado">Mapa Sindical - Sector Federal Ferroviario CGT</h2>
+<h2 class="blanco centrado">Mapa Sindical - Sector Federal Ferroviario CGT</h2>
 <button class="collapsible">Secciones Sindicales en Andalucía</button>
-<div class="content">
+<div class="content blanco">
   <div class="resp-table">
     <div class="resp-table-caption">
     </div>
@@ -69,7 +69,7 @@
   </div>
 </div>
 <button class="collapsible">Secciones Sindicales en Aragón y La Rioja</button>
-<div class="content">
+<div class="content blanco">
   <div class="resp-table">
     <div class="resp-table-caption">
       
@@ -115,7 +115,7 @@
   </div>
 </div>
 <button class="collapsible">Secciones Sindicales en el Principado de Asturias</button>
-<div class="content">
+<div class="content blanco">
   <div class="resp-table">
     <div class="resp-table-caption"></div>
     <div class="resp-table-header">
@@ -141,7 +141,7 @@
   </div>
 </div>
 <button class="collapsible">Secciones Sindicales en Cantabria</button>
-<div class="content">
+<div class="content blanco">
   <div class="resp-table">
     <div class="resp-table-caption"></div>
     <div class="resp-table-header">
@@ -167,7 +167,7 @@
   </div>
 </div>
 <button class="collapsible">Secciones Sindicales en Castilla La Mancha</button>
-<div class="content">
+<div class="content blanco">
   <div class="resp-table">
     <div class="resp-table-caption"></div>
     <div class="resp-table-header">
@@ -225,7 +225,7 @@
   </div>
 </div>
 <button class="collapsible">Secciones Sindicales en Castilla y León</button>
-<div class="content">
+<div class="content blanco">
   <div class="resp-table">
     <div class="resp-table-caption"></div>
     <div class="resp-table-header">
@@ -315,7 +315,7 @@
   </div>
 </div>
 <button class="collapsible">Secciones Sindicales en Catalunya</button>
-<div class="content">
+<div class="content blanco">
   <div class="resp-table-caption"></div>
   <div class="resp-table">
     <div class="resp-table-header">
@@ -365,7 +365,7 @@
   </div>
 </div>
 <button class="collapsible">Secciones Sindicales en Extremadura</button>
-<div class="content">
+<div class="content blanco">
   <div class="resp-table-caption"></div>
   <div class="resp-table">      
     <div class="resp-table-header">
@@ -399,7 +399,7 @@
   </div>
 </div>
 <button class="collapsible">Secciones Sindicales en Euskadi y Navarra</button>
-<div class="content">
+<div class="content blanco">
   <div class="resp-table-caption"></div>
   <div class="resp-table">
     <div class="resp-table-header">
@@ -449,7 +449,7 @@
   </div>
 </div>
 <button class="collapsible">Secciones Sindicales en Galicia</button>
-<div class="content">
+<div class="content blanco">
   <div class="resp-table-caption"></div>
   <div class="resp-table">
     <div class="resp-table-header">
@@ -499,7 +499,7 @@
   </div>
 </div>
 <button class="collapsible">Secciones Sindicales en Madrid</button>
-<div class="content">
+<div class="content blanco">
   <div class="resp-table-caption"></div>
   <div class="resp-table">
     <div class="resp-table-header">
@@ -525,7 +525,7 @@
   </div>
 </div>
   <button class="collapsible">Secciones Sindicales en País Valenciano y Murcia</button>
-<div class="content">
+<div class="content blanco">
   <div class="resp-table-caption"></div>
   <div class="resp-table">
     <div class="resp-table-header">
@@ -576,7 +576,7 @@
 </div>
 <br>
 <button class="collapsible">Otras Secciones Sindicales de Ferrocarriles Autonómicos</button>
-<div class="content">
+<div class="content blanco">
   <div class="resp-table-caption"></div>
   <div class="resp-table">
     <div class="resp-table-header">
