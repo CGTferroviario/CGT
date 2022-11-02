@@ -9,6 +9,9 @@ body{
   margin-top: 106px !important;
   /* font-family: "Lato", sans-serif; */
 }
+footer{
+  bottom: 0px;
+}
 a{
   text-decoration: none;
 }
@@ -49,7 +52,6 @@ nav{
 .sociales{
   font-size: 120%;
   margin-left: 10px;
-  color: rgba(255, 255, 255, 0.55);
 }
 .sociales:hover{
   color:rgb(254, 71, 85);
@@ -130,7 +132,6 @@ nav{
 }
 .inline{
   display: inline-flex;
-  margin-left: 10px;
 }
 .dcha{
   margin-left: 4em;
@@ -270,9 +271,7 @@ input[type='checkbox'] {
   background-color: rgb(47,47,47);
   border: 1pxsolidrgba(0,0,0,.125);
 }
-.btn:hover{
-  color: rgb(254, 71, 85);
-}
+
 .encabezadoAcordeon{
   color: white;
   font-size: 2.5em;
@@ -403,7 +402,7 @@ input[type='checkbox'] {
   float: right;
   margin-left: 5px;
 }
-.active:after {
+.activo:after {
   content: "\2212";
 }
 .content {
@@ -457,6 +456,9 @@ input[type='checkbox'] {
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
+  width: 33.3%;
+  vertical-align: middle;
+  border-bottom: 1px solid white;
 }
 .resp-table-footer {
   display: table-footer-group;
