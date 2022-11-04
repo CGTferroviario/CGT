@@ -1,15 +1,15 @@
-<footer class="py-5 my-5 text-muted bg-dark ">
+<footer class="py-5 mt-5 text-muted bg-dark ">
   <div class="container-fluid">
     <div class="row centrado">
       <div class="col-md-12">
         <img src="">
-        <a href="https://comoserferroviario.es/" title="Como Ser Ferroviario"><img class="img-fluid me-2" src="img/logo_comoser80.jpg"></a>
-        <a href="https://oficinasferroviarias.es/" title="Oficinas Ferroviarias"><img class="img-fluid me-2" src="img/logo_oficinas.jpg"></a>
-        <a href="https://rojoynegro.info/" title="Rojo y Negro"><img class="img-fluid me-2" src="img/logo_rojoynegro.png"></a>
+        <a href="https://comoserferroviario.es/" title="Como Ser Ferroviario" target="_blank"><img class="img-fluid me-2" src="img/logo_comoser80.jpg"></a>
+        <a href="https://oficinasferroviarias.es/" title="Oficinas Ferroviarias" target="_blank"><img class="img-fluid me-2" src="img/logo_oficinas.jpg"></a>
+        <a href="https://rojoynegro.info/" title="Rojo y Negro" target="_blank"><img class="img-fluid me-2" src="img/logo_rojoynegro.png"></a>
         <br><br>
-        <a href="https://memorialibertaria.org/" title="Memoria Libertaria"><img class="img-fluid me-2" src="img/logo_memoria_libertaria.jpg"></a>
-        <a href="https://www.librepensamiento.org/" title="Libre Pensamiento"><img class="img-fluid me-2" src="img/logo_librepensamiento.jpg"></a>
-        <a href="https://ruesta.com/" title="Ruesta"><img class="img-fluid me-2" src="img/logo_ruesta_transp80.png"></a>
+        <a href="https://memorialibertaria.org/" title="Memoria Libertaria" target="_blank"><img class="img-fluid me-2" src="img/logo_memoria_libertaria.jpg"></a>
+        <a href="https://www.librepensamiento.org/" title="Libre Pensamiento" target="_blank"><img class="img-fluid me-2" src="img/logo_librepensamiento.jpg"></a>
+        <a href="https://ruesta.com/" title="Ruesta" target="_blank"><img class="img-fluid me-2" src="img/logo_ruesta_transp80.png"></a>
         
       </div>
     </div>

@@ -28,7 +28,6 @@ h1{
 ul{
   list-style-type: none;
 }
-
 /* Barra Superior Header.blade.php */
 nav{
   /* border-bottom: 1px dotted red !important; */
@@ -118,6 +117,21 @@ nav{
 }
 
 /* Fin Colores */
+
+/* Sección ADIF */
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #dc3545;
+  border: thin black solid;
+}
+.nav-pills .nav-link {
+  border: thin solid #dc3545;
+}
+.nav-pills .nav-link:hover {
+  background-color: #dc3545;
+  color:#fff;
+  border: thin black solid;
+}
 
 .peq{
   font-size: 90%;
@@ -259,7 +273,6 @@ div.content {
 }
 input[type='checkbox'] {
   accent-color: rgb(255,30,0);
-
 }
 
 @media (min-width: 768px) {
@@ -377,7 +390,6 @@ input[type='checkbox'] {
 .centrado{
   text-align: center;
 }
-
 .collapsible {
   background-color: #7A1715;
   color: white;
