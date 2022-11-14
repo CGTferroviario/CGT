@@ -35,7 +35,12 @@ Route::get('/equipo', [App\Http\Controllers\HomeController::class, 'equipo'])->n
 Route::get('/admin/dashboard', 'Admin\DashboardController@index')->middleware('role:admin');
 Route::get('/seller/dashboard', 'Seller\DashboardController@index')->middleware('role:seller');
 
+Route::get('/contact', [ContactUsFormController::class, 'createForm']);
+Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+
 Auth::routes();
+
+
 
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
