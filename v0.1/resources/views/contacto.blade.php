@@ -50,12 +50,12 @@ label {
             <form action="" method="post" action="{{ route('contact.store') }}">
                 @csrf
                 <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="name" id="name">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control {{ $errors->has('nombre') ? 'error' : '' }}" name="nombre" id="nombre">
                     <!-- Error -->
-                    @if ($errors->has('name'))
+                    @if ($errors->has('nombre'))
                     <div class="error">
-                        {{ $errors->first('name') }}
+                        {{ $errors->first('nombre') }}
                     </div>
                     @endif
                 </div>
@@ -69,31 +69,31 @@ label {
                     @endif
                 </div>
                 <div class="form-group">
-                    <label>Phone</label>
-                    <input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone">
-                    @if ($errors->has('phone'))
+                    <label>Telefono</label>
+                    <input type="text" class="form-control {{ $errors->has('telefono') ? 'error' : '' }}" name="telefono" id="telefono">
+                    @if ($errors->has('telefono'))
                     <div class="error">
-                        {{ $errors->first('phone') }}
+                        {{ $errors->first('telefono') }}
                     </div>
                     @endif
                 </div>
                 <div class="form-group">
-                    <label>Subject</label>
-                    <input type="text" class="form-control {{ $errors->has('subject') ? 'error' : '' }}" name="subject"
-                        id="subject">
-                    @if ($errors->has('subject'))
+                    <label>Asunto</label>
+                    <input type="text" class="form-control {{ $errors->has('asunto') ? 'error' : '' }}" name="asunto"
+                        id="asunto">
+                    @if ($errors->has('asunto'))
                     <div class="error">
-                        {{ $errors->first('subject') }}
+                        {{ $errors->first('asunto') }}
                     </div>
                     @endif
                 </div>
                 <div class="form-group">
-                    <label>Message</label>
-                    <textarea class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="message" id="message"
+                    <label>Mensaje</label>
+                    <textarea class="form-control {{ $errors->has('mensaje') ? 'error' : '' }}" name="mensaje" id="mensaje"
                         rows="4"></textarea>
-                    @if ($errors->has('message'))
+                    @if ($errors->has('mensaje'))
                     <div class="error">
-                        {{ $errors->first('message') }}
+                        {{ $errors->first('mensaje') }}
                     </div>
                     @endif
                 </div>

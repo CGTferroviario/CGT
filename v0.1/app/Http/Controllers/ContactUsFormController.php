@@ -9,31 +9,31 @@ use Illuminate\Support\Facades\Mail;
 class ContactUsFormController extends Controller {
     // Create Contact Form
     public function createForm(Request $request) {
-      return view('contact');
+      return view('contacto');
     }
     // Store Contact Form data
     public function ContactUsForm(Request $request) {
         // Form validation
         $this->validate($request, [
-            'name' => 'required',
+            'nombre' => 'required',
             'email' => 'required|email',
-            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'subject'=>'required',
-            'message' => 'required'
+            'telefono' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:8',
+            'asunto'=>'required',
+            'mensaje' => 'required'
          ]);
         //  Store data in database
         Contacto::create($request->all());
         //  Send mail to admin
         Mail::send('mail', array(
-            'name' => $request->get('name'),
+            'nombre' => $request->get('nombre'),
             'email' => $request->get('email'),
-            'phone' => $request->get('phone'),
-            'subject' => $request->get('subject'),
-            'user_query' => $request->get('message'),
+            'telefono' => $request->get('telefono'),
+            'asunto' => $request->get('asunto'),
+            'mensaje' => $request->get('mensaje'),
         ), function($message) use ($request){
             $message->from($request->email);
-            $message->to('informatica@cgtferroviario.es', 'Admin')->subject($request->get('subject'));
+            $message->to('informatica@cgtferroviario.es', 'Admin')->subject($request->get('asunto'));
         });
-        return back()->with('success', 'We have received your message and would like to thank you for writing to us.');
+        return back()->with('success', 'Hemos recibido su mensaje y nos gustaría agradecerle que nos haya contactado.');
     }
 }

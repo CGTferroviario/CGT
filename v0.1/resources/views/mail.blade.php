@@ -1,9 +1,9 @@
-<h2>Hello</h2> <br><br>
-You have got an email from : {{ $name }} <br><br>
-User details: <br><br>
-Name: {{ $name }} <br>
+<h2>Hola</h2> <br>
+Tienes un email de: {{ $nombre }} <br><br>
+Detalles del Usuario: <br><br>
+Nombre: {{ $nombre }} <br>
 Email: {{ $email }} <br>
-Phone: {{ $phone }} <br>
-Subject: {{ $subject }} <br>
-Message: {{ $user_query }} <br><br>
-Thanks
+Teléfono: {{ $telefono }} <br>
+Asunto: {{ $asunto }} <br>
+Mensaje: {{ $mensaje }} <br><br>
+Gracias

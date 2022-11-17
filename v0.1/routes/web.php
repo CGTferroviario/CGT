@@ -31,12 +31,15 @@ Route::get('/empresasaux', [App\Http\Controllers\HomeController::class, 'empresa
 Route::get('/igualdad', [App\Http\Controllers\HomeController::class, 'igualdad'])->name('igualdad');
 Route::get('/biblioteca', [App\Http\Controllers\HomeController::class, 'biblioteca'])->name('biblioteca');
 Route::get('/prensa', [App\Http\Controllers\HomeController::class, 'prensa'])->name('prensa');
+
 Route::get('/equipo', [App\Http\Controllers\HomeController::class, 'equipo'])->name('equipo');
+Route::post('/equipo', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+
 Route::get('/admin/dashboard', 'Admin\DashboardController@index')->middleware('role:admin');
 Route::get('/seller/dashboard', 'Seller\DashboardController@index')->middleware('role:seller');
 
-Route::get('/contact', [ContactUsFormController::class, 'createForm']);
-Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+Route::get('/contacto', [App\Http\Controllers\ContactUsFormController::class, 'createForm'])->name('contacto');
+
 
 Auth::routes();
 

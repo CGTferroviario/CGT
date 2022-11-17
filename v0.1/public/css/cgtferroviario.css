@@ -295,9 +295,10 @@ input[type='checkbox'] {
   font-size: 2.5em;
   font-weight: 600;
 }
-.encabezadoAcordeon:hover{
-  color: rgb(254, 71, 85);
-}
+/* .encabezadoAcordeon:hover{
+  background: rgb(254, 71, 85);
+  color: black;
+} */
 .fondo{
   background-image: url("/img/fondo2.jpg");
 }
