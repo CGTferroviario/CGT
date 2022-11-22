@@ -302,6 +302,18 @@ input[type='checkbox'] {
 .fondo{
   background-image: url("/img/fondo2.jpg");
 }
+.fondo2{
+  background-image: url("/img/fondoCirc.jpg");
+}
+.fondo3{
+  background-image: url("/img/fondoInfra.jpg");
+}
+.fondo4{
+  background-image: url("/img/fondoOficina.jpg");
+}
+.barra2{
+  position: sticky;
+}
 .accordion-button:not(.collapsed) {
   color: rgb(254, 71, 85) !important;
   background-color: rgba(0,0,0,0.4);
