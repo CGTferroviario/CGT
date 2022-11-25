@@ -86,6 +86,6 @@
           </div>
           @endif
       </div>
-      <input type="submit" name="send" value="Submit" class="btn btn-dark btn-block">
+      <input type="submit" name="send" value="Enviar" class="btn btn-dark btn-block">
   </form>
 </div>
