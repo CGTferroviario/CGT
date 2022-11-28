@@ -1,6 +1,27 @@
+<style>
+  .barra2{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1;
+    background: rgb(47,47,47);
+  }
+
+</style>
 @extends('layouts.master')
 
 @section('content')
+
+<nav class="nav nav-pills flex-column flex-sm-row barra2">
+  <a class="flex-sm-fill text-sm-center nav-link active" id="pills-documentacion-tab" data-bs-toggle="pill" data-bs-target="#pills-documentacion" type="button" role="tab" aria-controls="pills-documentacion" aria-selected="true">Documentación General</a>
+  <a class="flex-sm-fill text-sm-center nav-link" id="pills-conduccion-tab" data-bs-toggle="pill" data-bs-target="#pills-conduccion" type="button" role="tab" aria-controls="pills-conduccion" aria-selected="false">Conducción</a>
+  <a class="flex-sm-fill text-sm-center nav-link" id="pills-talleres-tab" data-bs-toggle="pill" data-bs-target="#pills-talleres" type="button" role="tab" aria-controls="pills-talleres" aria-selected="false">Talleres</a>
+  <a class="flex-sm-fill text-sm-center nav-link" id="pills-intervencion-tab" data-bs-toggle="pill" data-bs-target="#pills-intervencion" type="button" role="tab" aria-controls="pills-intervencion" aria-selected="false">Intervención</a>
+  <a class="flex-sm-fill text-sm-center nav-link" id="pills-comercial-tab" data-bs-toggle="pill" data-bs-target="#pills-comercial" type="button" role="tab" aria-controls="pills-comercial" aria-selected="false">Comercial</a>
+  <a class="flex-sm-fill text-sm-center nav-link" id="pills-oficinas-tab" data-bs-toggle="pill" data-bs-target="#pills-oficinas" type="button" role="tab" aria-controls="pills-oficinas" aria-selected="false">Oficinas</a>
+</nav>
+
 <div class="jumbotron jumbotron-fluid fondo">
    <div class="container">
       <div class="row py-lg-5">

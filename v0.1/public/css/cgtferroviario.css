@@ -11,6 +11,7 @@ body{
 }
 footer{
   bottom: 0px;
+  margin-top: 3em;
 }
 a{
   text-decoration: none;
@@ -118,6 +119,24 @@ nav{
 
 /* Fin Colores */
 
+/* Textos */
+
+.peq{
+  font-size: 90%;
+}
+.titular{
+  font-family: 'Brannboll Connect PERSONAL USE', sans-serif;
+  color: white;
+  font-size: 2em;
+}
+.titulo{
+  color: white;
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+/* Fin textos */
+
 /* Sección ADIF */
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
@@ -133,14 +152,7 @@ nav{
   border: thin black solid;
 }
 
-.peq{
-  font-size: 90%;
-}
-.titular{
-  font-family: 'Brannboll Connect PERSONAL USE', sans-serif;
-  color: white;
-  font-size: 2em;
-}
+
 .formLogin{
     width: 300px;
 }
@@ -290,11 +302,7 @@ input[type='checkbox'] {
   font-size: 2.5em;
   font-weight: 600;
 }
-.titulo{
-  color: white;
-  font-size: 2.5em;
-  font-weight: 600;
-}
+
 /* .encabezadoAcordeon:hover{
   background: rgb(254, 71, 85);
   color: black;
@@ -311,9 +319,7 @@ input[type='checkbox'] {
 .fondo4{
   background-image: url("/img/fondoOficina.jpg");
 }
-.barra2{
-  position: sticky;
-}
+
 .accordion-button:not(.collapsed) {
   color: rgb(254, 71, 85) !important;
   background-color: rgba(0,0,0,0.4);

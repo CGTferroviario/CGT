@@ -38,7 +38,7 @@ Route::post('/equipo', [App\Http\Controllers\ContactUsFormController::class, 'Co
 Route::get('/admin/dashboard', 'Admin\DashboardController@index')->middleware('role:admin');
 Route::get('/seller/dashboard', 'Seller\DashboardController@index')->middleware('role:seller');
 
-Route::get('/contacto', [App\Http\Controllers\ContactUsFormController::class, 'createForm'])->name('contacto');
+// Route::get('/contacto', [App\Http\Controllers\ContactUsFormController::class, 'createForm'])->name('contacto');
 
 
 Auth::routes();
