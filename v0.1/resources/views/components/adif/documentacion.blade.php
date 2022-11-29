@@ -1,3 +1,15 @@
+<x-adif.sidebar />
+<div class="jumbotron jumbotron-fluid fondo">
+    <div class="container">
+        <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto centrado">
+            <a href="http://cgtferroviario.es" target="blank"><img src="img/logo_med.png"></a>
+            <a href="https://cgt.org.es/" target="blank"><img src="img/logoCGT_med.png"></a>
+            <h1 class="titulo">Documentación General ADIF <br> SFFCGT</h1>
+        </div>
+        </div>
+    </div>
+</div>
 <div class="py-4">
   <div class="container">
     <div class="accordion-flush" id="#accordionDoc">
