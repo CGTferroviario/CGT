@@ -23,15 +23,15 @@
                             <p class="card-text">Este documento recoge las reivindicaciones de CGT para el Colectivo de Comercial/Taquillas</p>
                         </div>
                         <div class="card-footer d-flex justify-content-between align-items-center">
-                                <div class="col-md-6 centrado">
-                                    <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="btn" target="blank"><i class="fa fa-eye"></i> Visualizar</a>
-                                </div>
-                                <div class="col-md-6 centrado">
-                                    <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" target="_blank" download="CGT_Afiliacion_Nomina" class="btn"><i class="fa fa-download"></i> Descargar</a>
-                                </div>
+                            <div class="col-md-6 centrado">
+                                <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="btn" target="blank"><i class="fa fa-eye"></i> Visualizar</a>
                             </div>
-                      </div>
-                  </div>
+                            <div class="col-md-6 centrado">
+                                <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" target="_blank" download="CGT_Afiliacion_Nomina" class="btn"><i class="fa fa-download"></i> Descargar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-sm-6">
