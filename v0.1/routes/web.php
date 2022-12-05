@@ -34,6 +34,7 @@ Route::get('/prensa', [App\Http\Controllers\HomeController::class, 'prensa'])->n
 
 Route::get('/equipo', [App\Http\Controllers\HomeController::class, 'equipo'])->name('equipo');
 Route::post('/equipo', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+Route::post('/empresas', [App\Http\Controllers\EmpresaController::class, 'CrearEmpresa'])->name('empresas');
 
 Route::get('/admin/dashboard', 'Admin\DashboardController@index')->middleware('role:admin');
 Route::get('/seller/dashboard', 'Seller\DashboardController@index')->middleware('role:seller');
