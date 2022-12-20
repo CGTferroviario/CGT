@@ -5,8 +5,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="barraSup">
-      <div class="ml-auto">
+    <div class="collapse navbar-collapse row" id="barraSup">
+      <div class="col-md-12 col-lg-8">
         <ul class="navbar-nav mb-2 mb-md-0">
           <li class="nav-item">
             <a class="nav-link" href="{{ route('adif') }}" id="" aria-current="" aria-expanded="" data-bs-toggle="">ADIF</a>
@@ -50,7 +50,7 @@
           </li>  
         </ul>
       </div>
-      <div class="mx-auto">
+      <div class="col-md-12 col-lg-4 mx-auto">
         <div class="modoOscuro inline mx-auto">
           <div class="form-check form-switch">
             <span class=""><i class="fa-solid fa-moon blanco" title="Modo Oscuro"></i></span>
@@ -126,7 +126,10 @@
               <li class="nav-item dropdown-menu-dark p-3">
                   <span class="inline">
                       Bienvenid@, {{ Auth::user()->name }}
-                  </span>
+                  </span><br>
+                  <h6>
+                    Accede a tu <a href="/home">Panel de Afiliado</a>
+                  </h6>
     
                   <div class="inline dcha">
                       <button class="btn btn-outline-danger" href="{{ route('logout') }}"

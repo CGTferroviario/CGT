@@ -6,11 +6,13 @@ body{
   height: 100%;
   background-color: rgb(47, 47, 47);
   /* margin: 0; */
-  margin-top: 106px !important;
+  padding-top: 106px !important;
   /* font-family: "Lato", sans-serif; */
 }
 footer{
+  /* position: fixed; */
   bottom: 0px;
+  width: 100%;
   margin-top: 3em;
 }
 a{
@@ -30,15 +32,15 @@ ul{
   list-style-type: none;
 }
 /* Formulario */
-.container {
+/* .container {
   max-width: 500px;
   margin: 50px auto;
   text-align: left;
   font-family: sans-serif;
-}
+} */
 form {
-  border: 1px solid #1A33FF;
-  background: #ecf5fc;
+  border: 1px solid rgb(254, 71, 85);
+  background: rgba(47, 47, 47, .7);
   padding: 40px 50px 45px;
 }
 .form-control:focus {
@@ -171,6 +173,9 @@ nav{
 }
 .bg-oscuro{
   background: rgb(47,47,47);
+}
+.bordeRojo{
+  border: thin solid rgb(254,71,85);
 }
 
 /* Fin Colores */
