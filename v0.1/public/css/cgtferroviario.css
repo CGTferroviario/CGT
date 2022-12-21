@@ -9,6 +9,11 @@ body{
   padding-top: 106px !important;
   /* font-family: "Lato", sans-serif; */
 }
+main{
+  padding-top: 3em;
+  padding-bottom: 3em;
+  min-height: 100%;
+}
 footer{
   /* position: fixed; */
   bottom: 0px;
