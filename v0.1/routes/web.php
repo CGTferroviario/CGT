@@ -22,10 +22,13 @@ Route::get('/adif', function () {
     return view('adif');
 });
 
+Route::group(['namespace' => 'App\Http\Controllers'], function()
+{  
+    
+});
 
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/adif', [App\Http\Controllers\HomeController::class, 'adif'])->name('adif')->withoutMiddleware([Auth::class]);;
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('panel');
+Route::get('/adif', [App\Http\Controllers\HomeController::class, 'adif'])->name('adif');
 Route::get('/renfe', [App\Http\Controllers\HomeController::class, 'renfe'])->name('renfe');
 Route::get('/empresasaux', [App\Http\Controllers\HomeController::class, 'empresasaux'])->name('empresasaux');
 Route::get('/igualdad', [App\Http\Controllers\HomeController::class, 'igualdad'])->name('igualdad');
@@ -47,7 +50,4 @@ Auth::routes();
 
 
 
-Route::group(['namespace' => 'App\Http\Controllers'], function()
-{  
-    
-});
+
