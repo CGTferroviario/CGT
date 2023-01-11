@@ -1,3 +1,4 @@
+// Esto es lo de los Checkbox
 $(document).ready(function() {
     $('input[type="checkbox"]').click(function() {
         var inputValue = $(this).attr("value");
@@ -22,7 +23,20 @@ for (i = 0; i < coll.length; i++) {
     });
 }
 
-// Esto es la parte de navbar activa
+// Esto es la parte de cambiar la hoja de estilo
+
+// <link id="style1" rel="stylesheet" type="text/css" href="resumecss.css" />
+
+function toggle() {
+    var el = document.getElementById("hojaEstilo");
+    if (el.href.match("cgtferroviario.css")) {
+        el.href = "cgtferroviario_claro.css";    
+    }
+    else {
+        el.href = "cgtferroviario.css";  
+    }
+    alert("<link> href is now: " + el.href)
+}
 
 
 

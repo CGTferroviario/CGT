@@ -56,7 +56,7 @@
             <span class=""><i class="fa-solid fa-moon blanco" title="Modo Oscuro"></i></span>
           </div>
           <div class="form-check form-switch">
-              <input class="form-check-input mt-3" type="checkbox" role="switch" id="flexSwitchCheckDefault" title="Modo Claro//Oscuro">
+              <input class="form-check-input mt-3" type="checkbox" role="switch" id="flexSwitchCheckDefault" title="Modo Claro//Oscuro"  onclick="toggle()">
               <label class="form-check-label" for="flexSwitchCheckDefault"><i class="fa-solid fa-sun grisMedio" title="Modo Claro"></i></label>
           </div>
         </div>
