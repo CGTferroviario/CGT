@@ -5,19 +5,15 @@ use App\Http\Controllers\PostsController;
 use App\Http\Middleware\Role;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Support\Facades\Route;
-
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+--------------------------------------------------------------------------
+ Web Routes
+--------------------------------------------------------------------------
 
-/* 
+ Here is where you can register web routes for your application. These
+ routes are loaded by the RouteServiceProvider within a group which
+ contains the "web" middleware group. Now create something great!
+
     GET - Request a resource
     POST - Create a new resource
     PUT - Update a resource
@@ -26,20 +22,21 @@ use Illuminate\Support\Facades\Route;
     OPTIONS - Ask the serve which verbs are allowed
 */
 
-// // GET
+// GET
 Route::get('/blog', [PostsController::class, 'index']);
-Route::get('/blog/1', [PostsController::class, 'show']);
+Route::get('/article/{id}', [PostsController::class, 'show'])->where('id', '[0-9+]'); //
+Route::get('/article/{name}', [PostsController::class, 'show'])->where('name', '[]');
 
 // POST 
 Route::get('/blog/create', [PostsController::class, 'create']);
 Route::get('/blog', [PostsController::class, 'store']);
 
 // PUT or PATCH
-Route::get('/blog/edit/1', [PostsController::class, 'edit']);
-Route::get('/blog/1', [PostsController::class, 'update']);
+Route::get('/blog/edit/{id}', [PostsController::class, 'edit']);
+Route::get('/blog/{id}', [PostsController::class, 'update']);
 
 // DELETE
-Route::delete('/blog/1', [PostsController::class, 'destroy']);
+Route::delete('/blog/{id}', [PostsController::class, 'destroy']);
 
 // Multiple HTTP verbs
 // Route::match(['GET', 'POST'], '/blog', [PostsController::class, 'index']);
