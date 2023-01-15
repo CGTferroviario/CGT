@@ -24,8 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 // GET
 Route::get('/blog', [PostsController::class, 'index']);
-Route::get('/article/{id}', [PostsController::class, 'show'])->where('id', '[0-9+]'); //
-Route::get('/article/{name}', [PostsController::class, 'show'])->where('name', '[]');
+Route::get('/blog/{id}', [PostsController::class, 'show']);
 
 // POST 
 Route::get('/blog/create', [PostsController::class, 'create']);
