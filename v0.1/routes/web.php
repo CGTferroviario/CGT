@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 });
 Route::get('/adif', function () {
     return view('adif');
@@ -74,8 +74,8 @@ Route::get('/equipo', [App\Http\Controllers\HomeController::class, 'equipo'])->n
 Route::post('/equipo', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 Route::post('/empresas', [App\Http\Controllers\EmpresaController::class, 'CrearEmpresa'])->name('empresas');
 
-Route::get('/admin/dashboard', 'Admin\DashboardController@index')->middleware('role:admin');
-Route::get('/seller/dashboard', 'Seller\DashboardController@index')->middleware('role:seller');
+// Route::get('/admin/dashboard', 'Admin\DashboardController@index')->middleware('role:admin');
+// Route::get('/seller/dashboard', 'Seller\DashboardController@index')->middleware('role:seller');
 
 // Route::get('/contacto', [App\Http\Controllers\ContactUsFormController::class, 'createForm'])->name('contacto');
 
