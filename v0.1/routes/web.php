@@ -8,21 +8,18 @@ use Illuminate\Support\Facades\Auth;
 --------------------------------------------------------------------------
  Web Routes
 --------------------------------------------------------------------------
+    Aquí se registran todas las rutas para nuestra aplicación. Estas rutas se cargan mediante RouteServiceProvider en un grupo que contiene el middleware "web"
 
- Here is where you can register web routes for your application. These
- routes are loaded by the RouteServiceProvider within a group which
- contains the "web" middleware group. Now create something great!
-
-    GET - Request a resource
-    POST - Create a new resource
-    PUT - Update a resource
-    PATCH - Modify a resource
-    DELETE - Delete a resource
-    OPTIONS - Ask the serve which verbs are allowed
+    GET - Solicitar un recurso
+    POST - Crear un nuevo recurso
+    PUT - Actualizar un recurso
+    PATCH - Modificar un recurso
+    DELETE - Eliminar un recurso
+    OPTIONS - Pregunta al servidor que verbos se permiten
     
     Multiple HTTP verbs
-    MATCH - 
-    ANY - 
+    Route::match(['GET', 'POST'], '/blog', [PostsController::class, 'index']);
+    Route::any('/blog', [PostsController::class, 'index']);
 */
 
 Route::get('/', function () {
