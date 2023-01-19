@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
    <div class="row">
-      <h1 class="centrado py-2">Planes de Igualdad por Empresas</h1>
+      <h1 class="centrado py-2 blanco">Planes de Igualdad por Empresas</h1>
       <!-- Nav tabs -->
       <nav class="nav nav-tabs flex-column flex-sm-row" role="tablist">
          <a class="flex-sm-fill text-sm-center nav-link active" data-bs-toggle="tab" href="#adif">ADIF</a>
