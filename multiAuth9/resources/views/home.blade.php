@@ -1,3 +1,4 @@
+// https://www.itsolutionstuff.com/post/laravel-9-multi-auth-create-multiple-authentication-in-laravelexample.html
 @extends('layouts.app')
 
 @section('content')
