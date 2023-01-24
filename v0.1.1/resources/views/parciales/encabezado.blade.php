@@ -1,4 +1,4 @@
-<nav class="navbar bg-light">
+<nav class="navbar bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ url('/') }}">
             <img src="/img/LogoSFF_sm.png" alt="Logo SFF-CGT" width="" height="" class="d-inline-block align-text-top" />
