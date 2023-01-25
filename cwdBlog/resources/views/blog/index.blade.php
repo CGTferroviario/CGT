@@ -1,3 +1,3 @@
 <h1>This is index Blog</h1>
 
-{{ $name }}
+<a href={{ route('blog.index') }}>Blog</a>

@@ -9,6 +9,9 @@ footer{
     bottom: 0px;
     width: 100%;
 }
+a{
+    color: red;
+}
 .textoLogo{
     font-family: 'Brannboll Connect PERSONAL USE', sans-serif;
     color: white;

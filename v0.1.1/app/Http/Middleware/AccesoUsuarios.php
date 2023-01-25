@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class UserAccess
+class AccesoUsuarios
 {
     /**
      * Handle an incoming request.
@@ -17,11 +17,10 @@ class UserAccess
     public function handle(Request $request, Closure $next, $userType)
     {
         if(auth()->user()->type == $userType){
-            dd($userType);
             return $next($request);
         }
-          
-        return response()->json(['You do not have permission to access for this page.']);
+        dd($userType);
+        return response()->json(['No tienes permiso para acceder a esta página.']);
         /* return response()->view('errors.check-permission'); */
     }
 }

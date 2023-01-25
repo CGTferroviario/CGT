@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // GET
-Route::get('/blog', [PostsController::class, 'index']);
+Route::get('/blog', [PostsController::class, 'index'])->name('blog.index');
 Route::get('/blog/{id}', [PostsController::class, 'show']);
 
 // POST 
@@ -40,7 +40,7 @@ Route::delete('/blog/{id}', [PostsController::class, 'destroy']);
 
 
 
-Route::view('/blog', 'blog.index' , ['name' => 'Empezando el blog']);
+// Route::view('/blog', 'blog.index' , ['name' => 'Empezando el blog']);
 
 
 
