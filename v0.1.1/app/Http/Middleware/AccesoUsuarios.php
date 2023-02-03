@@ -17,9 +17,10 @@ class AccesoUsuarios
     public function handle(Request $request, Closure $next, $userType)
     {
         if(auth()->user()->type == $userType){
+            dd($userType);
             return $next($request);
         }
-        dd($userType);
+        
         return response()->json(['No tienes permiso para acceder a esta página.']);
         /* return response()->view('errors.check-permission'); */
     }
