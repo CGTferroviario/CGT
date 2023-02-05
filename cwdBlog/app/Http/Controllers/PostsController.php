@@ -22,7 +22,7 @@ class PostsController extends Controller
         // $posts = DB:: delete('DELETE FROM posts WHERE id = ?', [103]);
         
         $posts = DB::table('posts')
-            ->whereBetween('min_to_read', [2, 6])
+            ->whereNotBetween('min_to_read', [2, 6])
             ->get();
 
         dd($posts);
