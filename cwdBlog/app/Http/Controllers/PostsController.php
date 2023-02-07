@@ -21,13 +21,11 @@ class PostsController extends Controller
         // $posts = DB::update('UPDATE posts SET body = ? WHERE id = ?', ['Body Update example', 103]);
         // $posts = DB:: delete('DELETE FROM posts WHERE id = ?', [103]);
         
-        $posts = DB::table('posts')
-            ->whereNotBetween('min_to_read', [2, 6])
-            ->get();
+        $posts = DB::table('posts')->find(1);
 
-        dd($posts);
+        
 
-        return view('blog.index');
+        return view('blog.index')->with('posts', $posts);
     }
 
     /**

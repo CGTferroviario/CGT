@@ -11,6 +11,15 @@
 
   @include('parciales.estilo')
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PTSDGJ7SBK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PTSDGJ7SBK');
+</script>
 <body>
     
 @include('parciales.encabezado')
