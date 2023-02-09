@@ -13,7 +13,7 @@ class ComunicadosController extends Controller
      */
     public function index()
     {
-        // return view('comunicados');
+        return view('comunicados');
     }
 
     /**
