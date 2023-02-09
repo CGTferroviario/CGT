@@ -7,6 +7,9 @@
 @extends('layouts.master')
 
 @section('content')
+{{-- <x-inicio.slider /> --}}
+<iframe src="https://www.youtube.com/embed/?listType=user_uploads&list=CGTSectorFederalFerroviario" width="480" height="400"></iframe>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
