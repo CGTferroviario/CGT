@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse row" id="barraSup">
       <div class="col-md-12 col-lg-8">
         <ul class="navbar-nav mb-2 mb-md-0">
-          <li class="nav-item bordeR">
+          <li class="nav-item">
             <a class="nav-link" href="{{ route('adif') }}" id="" aria-current="" aria-expanded="" data-bs-toggle="">ADIF</a>
             {{-- <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
               <li><a  href="{{ route('adif') }}" class="dropdown-item">Salud Laboral</a></li>

@@ -19,7 +19,7 @@
     .next {
         cursor: pointer;
         position: absolute;
-        top: 60%;
+        top: 45%;
         width: auto;
         padding: 16px;
         margin-top: -50px;
@@ -76,7 +76,7 @@
     }
     </style>
 
-<div class="container-fluid bg-oscuro" id="inicioSlider">
+<div class="container bg-oscuro" id="inicioSlider">
     <div class="mySlides centrado">
         <div class="numbertext">1 / 6</div>
         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gyFjseUW0NE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -88,23 +88,23 @@
     </div>
 
     <div class="mySlides">
-    <div class="numbertext">3 / 6</div>
-    <img src="img/img_mountains_wide.jpg" style="width:100%">
+        <div class="numbertext">3 / 6</div>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wZQp1V_8Gtg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     
     <div class="mySlides">
-    <div class="numbertext">4 / 6</div>
-    <img src="img/img_lights_wide.jpg" style="width:100%">
+        <div class="numbertext">4 / 6</div>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BIXz_YGtEKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
     <div class="mySlides">
-    <div class="numbertext">5 / 6</div>
-    <img src="img/img_nature_wide.jpg" style="width:100%">
+        <div class="numbertext">5 / 6</div>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/uC0YlBzpmOs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     
     <div class="mySlides">
-    <div class="numbertext">6 / 6</div>
-    <img src="img/img_snow_wide.jpg" style="width:100%">
+        <div class="numbertext">6 / 6</div>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/O48soOSLee0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     
     <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -116,22 +116,22 @@
 
     <div class="row">
         <div class="column">
-            <img class="demo cursor" src="img/img_woods.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+            <img class="demo cursor" src="img/video1.jpg" style="width:100%" onclick="currentSlide(1)" alt="¿Cómo votar por correo?">
         </div>
         <div class="column">
-            <img class="demo cursor" src="img/img_5terre.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+            <img class="demo cursor" src="img/video2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Por un cambio real, elige CGT">
         </div>
         <div class="column">
-            <img class="demo cursor" src="img/img_mountains.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+            <img class="demo cursor" src="img/video3.jpg" style="width:100%" onclick="currentSlide(3)" alt="No más trenes sin interventor@s">
         </div>
         <div class="column">
-            <img class="demo cursor" src="img/img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+            <img class="demo cursor" src="img/video4.jpg" style="width:100%" onclick="currentSlide(4)" alt="El lobo de Pinocho Street">
         </div>
         <div class="column">
-            <img class="demo cursor" src="img/img_nature.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+            <img class="demo cursor" src="img/video5.jpg" style="width:100%" onclick="currentSlide(5)" alt="17D - CGT sale a la calle contra la pérdida de poder adquisitivo">
         </div>    
         <div class="column">
-            <img class="demo cursor" src="img/img_snow.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+            <img class="demo cursor" src="img/video6.jpg" style="width:100%" onclick="currentSlide(6)" alt="CGT en Lucha por el tren y el clima">
         </div>
     </div>
 </div>

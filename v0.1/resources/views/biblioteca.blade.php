@@ -7,7 +7,8 @@
 
 @section('content')
 <x-biblio.sidebar />
-<div class="container-fluid">
+<x-biblio.comunicados />
+{{-- <div class="container-fluid">
    <div class="row">
       <div class="col-md-6">
          <h1>Comunicados</h1>
@@ -39,6 +40,6 @@
          </div>
       </div>
    </div>
-</div>
+</div> --}}
 @endsection
 
