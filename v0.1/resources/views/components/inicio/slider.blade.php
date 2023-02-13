@@ -79,32 +79,32 @@
 <div class="container bg-oscuro" id="inicioSlider">
     <div class="mySlides centrado">
         <div class="numbertext">1 / 6</div>
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gyFjseUW0NE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="100%" height="800px" src="https://www.youtube.com/embed/gyFjseUW0NE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
     <div class="mySlides">
         <div class="numbertext">2 / 6</div>
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/KvpN-zXC-NI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="100%" height="800px" src="https://www.youtube.com/embed/KvpN-zXC-NI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
     <div class="mySlides">
         <div class="numbertext">3 / 6</div>
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wZQp1V_8Gtg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="100%" height="800px" src="https://www.youtube.com/embed/wZQp1V_8Gtg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     
     <div class="mySlides">
         <div class="numbertext">4 / 6</div>
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BIXz_YGtEKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="100%" height="800px" src="https://www.youtube.com/embed/BIXz_YGtEKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
     <div class="mySlides">
         <div class="numbertext">5 / 6</div>
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/uC0YlBzpmOs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="100%" height="800px" src="https://www.youtube.com/embed/uC0YlBzpmOs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     
     <div class="mySlides">
         <div class="numbertext">6 / 6</div>
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/O48soOSLee0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="100%" height="800px" src="https://www.youtube.com/embed/O48soOSLee0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     
     <a class="prev" onclick="plusSlides(-1)">❮</a>
