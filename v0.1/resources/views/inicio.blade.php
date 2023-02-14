@@ -2,16 +2,18 @@
 
 @section('content')
 
+<h1 class="text-center blanco px-1"><i>Si quieres que algo cambie...¡Elige CGT!</i></h1>
+
 <x-inicio.slider />
 
 <br> <br>
 
 <div class="container">
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <div class="dots">
+            <button type="button" class="dot" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" class="dot" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" class="dot" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
@@ -49,26 +51,26 @@
 <br> <br>
 <div class="container">
     <div class="row centrado">
-        <div class="col-md-4">
-            <img src="https://via.placeholder.com/300x200/000000/fff.png" alt="">
+        <div class="col-md-6">
+            <a href="">
+                <img id="comunicados" class="img-fluid" src="img/comunicados.png" alt="">
+            </a>
         </div>
-        <div class="col-md-4">
-            <img src="https://via.placeholder.com/300x200/000000/fff.png" alt="">
-        </div>
-        <div class="col-md-4">
-            <img src="https://via.placeholder.com/300x200/000000/fff.png" alt="">
+        <div class="col-md-6">
+            <a href="">
+                <img class="img-fluid" src="img/ayudas.png" alt="">
+            </a>
         </div>
     </div>
     <br>
     <div class="row centrado">
-        <div class="col-md-4">
-            <img src="https://via.placeholder.com/300x200/000000/fff.png" alt="">
+        <div class="col-md-6">
+            <a href="">
+                <img class="img-fluid" src="img/afiliate.png" alt="">
+            </a>
         </div>
-        <div class="col-md-4">
-            <img src="https://via.placeholder.com/300x200/000000/fff.png" alt="">
-        </div>
-        <div class="col-md-4">
-            <img src="https://via.placeholder.com/300x200/000000/fff.png" alt="">
+        <div class="col-md-6">
+            <img class="img-fluid" src="https://via.placeholder.com/600x300/000000/fff.png" alt="">
         </div>
     </div>
 </div>
