@@ -1,6 +1,38 @@
 @extends('layouts.master')
 
 @section('content')
+<style>
+    .tarjeta{
+        width: 470px;
+        height: 312px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #comunicados{
+        background:url('img/comunicados.png');
+    }
+    #comunicados:hover{
+        background:url('img/comunicados_on.png');
+    }
+    #ayudas{
+        background:url('img/ayudas.png');
+    }
+    #ayudas:hover{
+        background:url('img/ayudas_on.png');
+    }
+    #afiliate{
+        background:url('img/afiliate.png');
+    }
+    #afiliate:hover{
+        background:url('img/afiliate_on.png');
+    }
+    #plataforma{
+        background:url('img/plataforma.png');
+    }
+    #plataforma:hover{
+        background:url('img/plataforma_on.png');
+    }
+</style>
 
 <h1 class="text-center blanco px-1"><i>Si quieres que algo cambie...¡Elige CGT!</i></h1>
 
@@ -17,21 +49,21 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
-                <img src="https://via.placeholder.com/300x100/FFFF00/fff.png" class="d-block w-100" alt="...">
+                <iframe width="100%" height="800px" src="https://www.youtube.com/embed/gyFjseUW0NE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Primera Diapositiva</h5>
                     <p>Aqui vamos a poner unos textitos ricos.</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <img src="https://via.placeholder.com/300x100/FF0000/fff.png" class="d-block w-100" alt="...">
+                <iframe width="100%" height="800px" src="https://www.youtube.com/embed/KvpN-zXC-NI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Segunda Diapositiva</h5>
                     <p>Aqui vamos a poner unos textitos ricos, ricos.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://via.placeholder.com/300x100/00FF00/fff.png" class="d-block w-100" alt="...">
+                <iframe width="100%" height="800px" src="https://www.youtube.com/embed/wZQp1V_8Gtg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Tercera Diapositiva</h5>
                     <p>Aqui vamos a poner unos textitos ricos, riquísimos.</p>
@@ -50,30 +82,31 @@
 </div>
 <br> <br>
 <div class="container">
-    <div class="row centrado">
-        <div class="col-md-6">
-            <a href="">
-                <img id="comunicados" class="img-fluid" src="img/comunicados.png" alt="">
+    <div class="row">
+        <div class="col-md-6 centrado">
+            <a href="" class="centrado">
+                <div class="tarjeta" id="comunicados" class="img-fluid"></div>
             </a>
         </div>
-        <div class="col-md-6">
-            <a href="">
-                <img class="img-fluid" src="img/ayudas.png" alt="">
+        <div class="col-md-6 centrado">
+            <a href="" class="centrado">
+                <div class="tarjeta" id="ayudas" class="img-fluid"></div>
             </a>
         </div>
     </div>
     <br>
-    <div class="row centrado">
-        <div class="col-md-6">
-            <a href="">
-                <img class="img-fluid" src="img/afiliate.png" alt="">
+    <div class="row">
+        <div class="col-md-6 centrado">
+            <a href="" class="centrado">
+                <div class="tarjeta" id="afiliate" class="img-fluid"></div>
             </a>
         </div>
-        <div class="col-md-6">
-            <img class="img-fluid" src="https://via.placeholder.com/600x300/000000/fff.png" alt="">
+        <div class="col-md-6 centrado">
+            <a href="" class="centrado">
+                <div class="tarjeta" id="plataforma" class="img-fluid"></div>
+            </a>
         </div>
     </div>
 </div>
-
 
 @endsection
