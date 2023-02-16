@@ -1,3 +1,4 @@
+/**** Carrousel ****/
 .dots {
   position: absolute;
   bottom: -25px;
@@ -21,7 +22,7 @@
   background: #3f3f3f;
   cursor: default;
 }
-
+/**** Fin del Carrousel ****/
 html{
   height: 100%;
 }
@@ -132,7 +133,7 @@ nav{
     border-radius: 10px;
     border: 2px solid #000000;
   }
-
+/*** Fin del Scroll ***/
 
 /* Colores */
 .rojo{
@@ -155,6 +156,9 @@ nav{
 }
 .morado{
   color: rgb(130,52,245);
+}
+.moradoRenfe{
+  color: rgb(135, 0, 100);
 }
 .negro{
   color: black;
@@ -183,6 +187,9 @@ nav{
 .bg-morado{
   background: rgb(130,52,245);
 }
+.bg-moradoRenfe{
+  background: rgb(135, 0, 100);
+}
 .bg-negro{
   background: black;
 }
@@ -202,6 +209,12 @@ nav{
 
 .peq{
   font-size: 90%;
+}
+.med{
+  font-size: 120%;
+}
+.grande{
+  font-size: 150%;
 }
 .titular{
   font-family: 'Brannboll Connect PERSONAL USE', sans-serif;
@@ -233,6 +246,81 @@ nav{
   color:#fff;
   border: thin black solid;
 }
+
+/* Sección de INICIO */
+
+.tarjeta{
+  width: 100%;
+  max-width: 470px;
+  height: 100%;
+  min-height: 312px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#comunicados{
+  background:url('/img/tarjetas/comunicados.png');
+}
+#comunicados:hover{
+  background:url('/img/tarjetas/comunicados_on.png');
+}
+#ayudas{
+  background:url('/img/tarjetas/ayudas.png');
+}
+#ayudas:hover{
+  background:url('/img/tarjetas/ayudas_on.png');
+}
+#afiliate{
+  background:url('/img/tarjetas/afiliate.png');
+}
+#afiliate:hover{
+  background:url('/img/tarjetas/afiliate_on.png');
+}
+#plataforma{
+  background:url('/img/tarjetas/plataforma.png');
+}
+#plataforma:hover{
+  background:url('/img/tarjetas/plataforma_on.png');
+}
+
+/* Fin Sección de INICIO */
+
+/* Sección de RENFE */
+
+.tarjeta{
+  width: 100%;
+  max-width: 370px;
+  height: 100%;
+  min-height: 246px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#comunicados{
+  background:url('/img/tarjetas/renfe/comunicados.png');
+}
+#comunicados:hover{
+  background:url('/img/tarjetas/renfe/comunicados_on.png');
+}
+#ayudas{
+  background:url('/img/tarjetas/renfe/ayudas.png');
+}
+#ayudas:hover{
+  background:url('/img/tarjetas/renfe/ayudas_on.png');
+}
+#afiliate{
+  background:url('/img/tarjetas/renfe/afiliate.png');
+}
+#afiliate:hover{
+  background:url('/img/tarjetas/renfe/afiliate_on.png');
+}
+#plataforma{
+  background:url('/img/tarjetas/renfe/plataforma.png');
+}
+#plataforma:hover{
+  background:url('/img/tarjetas/renfe/plataforma_on.png');
+}
+
+/* Fin Sección de INICIO */
+
 
 
 .formLogin{

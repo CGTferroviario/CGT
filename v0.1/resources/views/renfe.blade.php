@@ -1,6 +1,44 @@
 @extends('layouts.master')
 
 @section('content')
+<div class="container-fluid p-0">
+  <h1 class="m-0 py-3 centrado blanco grande bg-moradoRenfe">DOCUMENTACIÓN GENERAL RENFE</h1>
+
+  <div class="row py-3 px-5">
+    <div class="col-md-4">
+        <a href="" class="centrado" title="Consulta nuestros comunicados">
+            <div class="tarjeta" id="comunicados" class="img-fluid"></div>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="" class="centrado" title="Toda la información de Ayudas Graciables y Beneficios Sociales">
+            <div class="tarjeta" id="ayudas" class="img-fluid"></div>
+        </a>
+    </div>
+    <div class="col-md-4">
+      <a href="" class="centrado" title="Toda la información de Ayudas Graciables y Beneficios Sociales">
+          <div class="tarjeta" id="ayudas" class="img-fluid"></div>
+      </a>
+    </div>
+  </div>
+  <div class="row py-3 px-5">
+    <div class="col-md-4">
+        <a href="" class="centrado" title="Consulta nuestros comunicados">
+            <div class="tarjeta" id="comunicados" class="img-fluid"></div>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="" class="centrado" title="Toda la información de Ayudas Graciables y Beneficios Sociales">
+            <div class="tarjeta" id="afiliate" class="img-fluid"></div>
+        </a>
+    </div>
+    <div class="col-md-4">
+      <a href="" class="centrado" title="Toda la información de Ayudas Graciables y Beneficios Sociales">
+          <div class="tarjeta" id="plataforma" class="img-fluid"></div>
+      </a>
+    </div>
+  </div>
+</div>
 
 <nav class="nav nav-pills flex-column flex-sm-row barra2">
   <a class="flex-sm-fill text-sm-center nav-link active" id="pills-documentacion-tab" data-bs-toggle="pill" data-bs-target="#pills-documentacion" type="button" role="tab" aria-controls="pills-documentacion" aria-selected="true">Documentación General</a>

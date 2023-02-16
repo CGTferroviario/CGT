@@ -2,43 +2,29 @@
 
 @section('content')
 <style>
-    .tarjeta{
-        width: 470px;
-        height: 312px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #comunicados{
-        background:url('img/comunicados.png');
-    }
-    #comunicados:hover{
-        background:url('img/comunicados_on.png');
-    }
-    #ayudas{
-        background:url('img/ayudas.png');
-    }
-    #ayudas:hover{
-        background:url('img/ayudas_on.png');
-    }
-    #afiliate{
-        background:url('img/afiliate.png');
-    }
-    #afiliate:hover{
-        background:url('img/afiliate_on.png');
-    }
-    #plataforma{
-        background:url('img/plataforma.png');
-    }
-    #plataforma:hover{
-        background:url('img/plataforma_on.png');
-    }
+    
+.carousel-control-prev, .carousel-control-next {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: rgba(0, 0, 0, 0.8);
+    background: rgba(220, 53, 69, 0.8);
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
 </style>
 
 <h1 class="text-center blanco px-1"><i>Si quieres que algo cambie...¡Elige CGT!</i></h1>
 
-<x-inicio.slider />
+{{-- <x-inicio.slider /> --}}
 
-<br> <br>
+<br>
 
 <div class="container">
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -83,26 +69,26 @@
 <br> <br>
 <div class="container">
     <div class="row">
-        <div class="col-md-6 centrado">
-            <a href="" class="centrado">
+        <div class="col-md-6">
+            <a href="" class="centrado" title="Consulta nuestros comunicados">
                 <div class="tarjeta" id="comunicados" class="img-fluid"></div>
             </a>
         </div>
-        <div class="col-md-6 centrado">
-            <a href="" class="centrado">
+        <div class="col-md-6">
+            <a href="" class="centrado" title="Toda la información de Ayudas Graciables y Beneficios Sociales">
                 <div class="tarjeta" id="ayudas" class="img-fluid"></div>
             </a>
         </div>
     </div>
     <br>
     <div class="row">
-        <div class="col-md-6 centrado">
-            <a href="" class="centrado">
+        <div class="col-md-6">
+            <a href="" class="centrado" title="¡Afíliate con nosotros!">
                 <div class="tarjeta" id="afiliate" class="img-fluid"></div>
             </a>
         </div>
-        <div class="col-md-6 centrado">
-            <a href="" class="centrado">
+        <div class="col-md-6">
+            <a href="" class="centrado" title="Accede a nuestra plataforma de Estudio">
                 <div class="tarjeta" id="plataforma" class="img-fluid"></div>
             </a>
         </div>
