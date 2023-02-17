@@ -91,7 +91,8 @@ nav{
   font-size: 130%;
 }
 .nav-item a:hover{
-  border-bottom: solid 2px rgb(255,30,0);
+  /* border-bottom: solid 2px rgb(255,30,0); */
+  background: rgb(220,53,69);
 }
 .navbar-dark .navbar-nav .nav-link {
   color: rgb(214,214,214);
@@ -160,6 +161,9 @@ nav{
 .moradoRenfe{
   color: rgb(135, 0, 100);
 }
+.verdeAdif{
+  color: rgb(0, 99, 56);
+}
 .negro{
   color: black;
 }
@@ -189,6 +193,9 @@ nav{
 }
 .bg-moradoRenfe{
   background: rgb(135, 0, 100);
+}
+.bg-verdeAdif{
+  background: rgb(0, 99, 56);
 }
 .bg-negro{
   background: black;
@@ -286,7 +293,7 @@ nav{
 
 /* Sección de RENFE */
 
-.tarjeta{
+.tarjetaRenfe{
   width: 100%;
   max-width: 370px;
   height: 100%;
@@ -294,32 +301,116 @@ nav{
   margin-left: auto;
   margin-right: auto;
 }
-#comunicados{
-  background:url('/img/tarjetas/renfe/comunicados.png');
+.renfe #doc_afiliacion{
+  background:url('/img/tarjetas/renfe/doc_afiliacion_renfe.png');
 }
-#comunicados:hover{
-  background:url('/img/tarjetas/renfe/comunicados_on.png');
+.adif #doc_afiliacion{
+  background:url('/img/tarjetas/renfe/doc_afiliacion_adif.png');
 }
-#ayudas{
-  background:url('/img/tarjetas/renfe/ayudas.png');
+#doc_afiliacion:hover{
+  background:url('/img/tarjetas/renfe/doc_afiliacion.png');
 }
-#ayudas:hover{
-  background:url('/img/tarjetas/renfe/ayudas_on.png');
+.renfe #doc_ayudas{
+  background:url('/img/tarjetas/renfe/doc_ayudas_renfe.png');
 }
-#afiliate{
-  background:url('/img/tarjetas/renfe/afiliate.png');
+.adif #doc_ayudas{
+  background:url('/img/tarjetas/renfe/doc_ayudas_adif.png');
 }
-#afiliate:hover{
-  background:url('/img/tarjetas/renfe/afiliate_on.png');
+#doc_ayudas:hover{
+  background:url('/img/tarjetas/renfe/doc_ayudas.png');
 }
-#plataforma{
-  background:url('/img/tarjetas/renfe/plataforma.png');
+.renfe #doc_igualdad{
+  background:url('/img/tarjetas/renfe/doc_igualdad_renfe.png');
 }
-#plataforma:hover{
-  background:url('/img/tarjetas/renfe/plataforma_on.png');
+.adif #doc_igualdad{
+  background:url('/img/tarjetas/renfe/doc_igualdad_adif.png');
+}
+#doc_igualdad:hover{
+  background:url('/img/tarjetas/renfe/doc_igualdad.png');
+}
+.renfe #doc_legislacion{
+  background:url('/img/tarjetas/renfe/doc_legislacion_renfe.png');
+}
+.adif #doc_legislacion{
+  background:url('/img/tarjetas/renfe/doc_legislacion_adif.png');
+}
+#doc_legislacion:hover{
+  background:url('/img/tarjetas/renfe/doc_legislacion.png');
+}
+.renfe #doc_licencias{
+  background:url('/img/tarjetas/renfe/doc_licencias_renfe.png');
+}
+.adif #doc_licencias{
+  background:url('/img/tarjetas/renfe/doc_licencias_adif.png');
+}
+#doc_licencias:hover{
+  background:url('/img/tarjetas/renfe/doc_licencias.png');
+}
+.renfe #doc_mapa{
+  background:url('/img/tarjetas/renfe/doc_mapa_renfe.png');
+}
+.adif #doc_mapa{
+  background:url('/img/tarjetas/renfe/doc_mapa_adif.png');
+}
+#doc_mapa:hover{
+  background:url('/img/tarjetas/renfe/doc_mapa.png');
+}
+.renfe #doc_conciliacion{
+  background:url('/img/tarjetas/renfe/doc_conciliacion_renfe.png');
+}
+.adif #doc_conciliacion{
+  background:url('/img/tarjetas/renfe/doc_conciliacion_adif.png');
+}
+#doc_conciliacion:hover{
+  background:url('/img/tarjetas/renfe/doc_conciliacion.png');
+}
+.renfe #doc_modelos{
+  background:url('/img/tarjetas/renfe/doc_modelos_renfe.png');
+}
+.adif #doc_modelos{
+  background:url('/img/tarjetas/renfe/doc_modelos_adif.png');
+}
+#doc_modelos:hover{
+  background:url('/img/tarjetas/renfe/doc_modelos.png');
+}
+.renfe #doc_protocolos{
+  background:url('/img/tarjetas/renfe/doc_protocolos_renfe.png');
+}
+.adif #doc_protocolos{
+  background:url('/img/tarjetas/renfe/doc_protocolos_adif.png');
+}
+#doc_protocolos:hover{
+  background:url('/img/tarjetas/renfe/doc_protocolos.png');
+}
+.renfe #doc_salud{
+  background:url('/img/tarjetas/renfe/doc_salud_renfe.png');
+}
+.adif #doc_salud{
+  background:url('/img/tarjetas/renfe/doc_salud_adif.png');
+}
+#doc_salud:hover{
+  background:url('/img/tarjetas/renfe/doc_salud.png');
+}
+.renfe #doc_teletrabajo{
+  background:url('/img/tarjetas/renfe/doc_teletrabajo_renfe.png');
+}
+.adif #doc_teletrabajo{
+  background:url('/img/tarjetas/renfe/doc_teletrabajo_adif.png');
+}
+#doc_teletrabajo:hover{
+  background:url('/img/tarjetas/renfe/doc_teletrabajo.png');
+}
+.renfe #doc_tablas{
+  background:url('/img/tarjetas/renfe/doc_tablas_renfe.png');
+}
+.adif #doc_tablas{
+  background:url('/img/tarjetas/renfe/doc_tablas_adif.png');
+}
+#doc_tablas:hover{
+  background:url('/img/tarjetas/renfe/doc_tablas.png');
 }
 
-/* Fin Sección de INICIO */
+/* Fin Sección de RENFE */
 
 
 
