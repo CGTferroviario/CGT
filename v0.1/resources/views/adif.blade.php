@@ -15,68 +15,62 @@
   <h1 class="m-0 py-3 centrado blanco grande bg-verdeAdif">DOCUMENTACIÓN GENERAL ADIF</h1>
 
   <div class="row py-3">
-    <div class="col-md-4">
+    <div class="col-xl-4 col-md-6 col-sm-12">
         <a href="" class="centrado" title="Toda la documentación relativa a la Afiliación">
             <div class="tarjetaRenfe" id="doc_afiliacion" class="img-fluid"></div>
         </a>
     </div>
-    <div class="col-md-4">
+    <div class="col-xl-4 col-md-6 col-sm-12">
         <a href="" class="centrado" title="Toda la información de Ayudas Graciables y Beneficios Sociales">
             <div class="tarjetaRenfe" id="doc_ayudas" class="img-fluid"></div>
         </a>
     </div>
-    <div class="col-md-4">
+    <div class="col-xl-4 col-md-6 col-sm-12">
       <a href="" class="centrado" title="Toda la información de Igualdad">
           <div class="tarjetaRenfe" id="doc_igualdad" class="img-fluid"></div>
       </a>
     </div>
-  </div>
-  <div class="row py-3">
-    <div class="col-md-4">
+    <div class="col-xl-4 col-md-6 col-sm-12">
         <a href="" class="centrado" title="Documentación relativa a legislación vigente">
             <div class="tarjetaRenfe" id="doc_legislacion" class="img-fluid"></div>
         </a>
     </div>
-    <div class="col-md-4">
+    <div class="col-xl-4 col-md-6 col-sm-12">
         <a href="" class="centrado" title="Toda la documentación para solicitar licencias">
             <div class="tarjetaRenfe" id="doc_licencias" class="img-fluid"></div>
         </a>
     </div>
-    <div class="col-md-4">
+    <div class="col-xl-4 col-md-6 col-sm-12">
       <a href="" class="centrado" title="Los mapas actualizados de estaciones y trenes">
           <div class="tarjetaRenfe" id="doc_mapa" class="img-fluid"></div>
       </a>
     </div>
-  </div>
-  <div class="row py-3">
-    <div class="col-md-4">
+    <div class="col-xl-4 col-md-6 col-sm-12">
         <a href="" class="centrado" title="Documentación relativa a la conciliación familiar">
             <div class="tarjetaRenfe" id="doc_conciliacion" class="img-fluid"></div>
         </a>
     </div>
-    <div class="col-md-4">
+    <div class="col-xl-4 col-md-6 col-sm-12">
         <a href="" class="centrado" title="Todos los modelos disponibles">
             <div class="tarjetaRenfe" id="doc_modelos" class="img-fluid"></div>
         </a>
     </div>
-    <div class="col-md-4">
+    <div class="col-xl-4 col-md-6 col-sm-12">
       <a href="" class="centrado" title="Los protocolos de acoso sexual y laboral">
           <div class="tarjetaRenfe" id="doc_protocolos" class="img-fluid"></div>
       </a>
     </div>
-  </div>
-  <div class="row py-3">
-    <div class="col-md-4">
+    <div class="col-xl-4 col-md-6 col-sm-12">
         <a href="" class="centrado" title="Documentación relativa a salud laboral">
             <div class="tarjetaRenfe" id="doc_salud" class="img-fluid"></div>
         </a>
     </div>
-    <div class="col-md-4">
+    <div class="col-xl-4 col-md-6 col-sm-12">
         <a href="" class="centrado" title="Toda la documentación relativa al teletrabajo">
             <div class="tarjetaRenfe" id="doc_teletrabajo" class="img-fluid"></div>
         </a>
     </div>
-    <div class="col-md-4">
+    <div class="col-xl-4 col-md-6 col-sm-12">
       <a href="" class="centrado" title="Las últimas tablas salariales actualizadas">
           <div class="tarjetaRenfe" id="doc_tablas" class="img-fluid"></div>
       </a>

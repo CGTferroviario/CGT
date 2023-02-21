@@ -1,14 +1,14 @@
-{{-- <style>
-
-ul li::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: red; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+<style>
+.dropdown-menu-dark {
+    color: white;
+    background-color: rgb(33,37,41);
+    border-color: rgba(0, 0, 0, 0.15);
 }
-</style> --}}
+.dropdown-menu-dark .dropdown-item:hover, .dropdown-menu-dark .dropdown-item:focus {
+    color: #fff;
+    background-color: rgb(220,53,69);
+}
+</style> 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar fixed-top barraSup" id="barraSup" aria-label="Barra de Navegación">
   <div class="container-fluid">
@@ -16,26 +16,31 @@ ul li::before {
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#barraSup" aria-controls="barraSup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse row" id="barraSup">
       <div class="col-md-12 col-lg-8">
         <ul class="navbar-nav mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('adif') }}" id="" aria-current="" aria-expanded="" data-bs-toggle="">ADIF</a>
-            {{-- <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
-              <li><a  href="{{ route('adif') }}" class="dropdown-item">Salud Laboral</a></li>
-              <li><a class="dropdown-item" href="#">Seg. Circulación</a></li>
-            </ul> --}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADIF</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a href="{{ route('adif') }}" class="dropdown-item">DOC. GENERAL</a></li>
+              <li><a href="#" class="dropdown-item">TAQUILLAS</a></li>
+              <li><a href="#" class="dropdown-item">INTERVENCIÓN</a></li>
+              <li><a href="#" class="dropdown-item">CONDUCCIÓN</a></li>
+              <li><a href="#" class="dropdown-item">TALLERES</a></li>
+              <li><a href="#" class="dropdown-item">OFICINAS</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">RENFE</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a href="{{ route('renfe') }}" class="dropdown-item">DOC. GENERAL</a></li>
+              <li><a class="dropdown-item" href="#">INFRAESTRUCTURA</a></li>
+              <li><a class="dropdown-item" href="#">CIRCULACIÓN</a></li>
+              <li><a class="dropdown-item" href="#">OFICINAS</a></li>
+            </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('renfe') }}" id="" data-bs-toggle="" aria-expanded="">RENFE</a>
-            {{-- <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
-              <li><a href="{{ route('renfe') }}" class="dropdown-item">Salud Laboral</a></li>
-              <li><a class="dropdown-item" href="#">Seg. Circulación</a></li>
-            </ul> --}}
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('empresasaux') }}" class="nav-link">EMPRESAS AUXILIARES</a>
+            <a href="{{ route('empresasaux') }}" class="nav-link">EMPRESAS AUX.</a>
           </li>
           <li class="nav-item">
             <a href="{{ route('igualdad') }}" class="nav-link">IGUALDAD</a>
@@ -50,15 +55,15 @@ ul li::before {
             </ul> --}}
           </li>
           <li class="nav-item">
-            <a href="{{ route('prensa') }}" class="nav-link">PRENSA</a>
+            <a href="{{ route('prensa') }}" class="nav-link">RECURSOS</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link" href="{{ route('equipo') }}" id="dropdown04" data-bs-toggle="" aria-expanded="">SFF-CGT</a>
-            {{-- <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
-              <li><a href="{{ route('equipo') }}" class="dropdown-item" href="#">Equipo</a></li>
-              <li><a class="dropdown-item" href="#">Contacto</a></li>
-              <li><a class="dropdown-item" href="#">Mapa Sindical</a></li>
-            </ul> --}}
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">SFF-CGT</a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
+              <li><a href="{{ route('equipo') }}" class="dropdown-item" href="#">EQUIPO</a></li>
+              <li><a href="{{ route('equipo') }}" class="dropdown-item" href="#">MAPA SINDICAL</a></li>
+              <li><a href="{{ route('equipo') }}" class="dropdown-item" href="#">CONTACTO</a></li>
+            </ul>
           </li>  
         </ul>
       </div>

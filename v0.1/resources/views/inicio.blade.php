@@ -6,17 +6,24 @@
 .carousel-control-prev, .carousel-control-next {
     cursor: pointer;
     position: absolute;
-    top: 45%;
+    top: 6.1%;
+    height: 99.3%;
     width: auto;
     padding: 16px;
     margin-top: -50px;
     color: rgba(0, 0, 0, 0.8);
-    background: rgba(220, 53, 69, 0.8);
     font-weight: bold;
     font-size: 20px;
     border-radius: 0 3px 3px 0;
     user-select: none;
     -webkit-user-select: none;
+}
+.carousel-control-prev:hover, .carousel-control-prev:focus, .carousel-control-next:hover, .carousel-control-next:focus {
+    color: #fff;
+    background: rgba(254,71,85, 0.5);
+    text-decoration: none;
+    outline: 0;
+    opacity: 0.9;
 }
 </style>
 
