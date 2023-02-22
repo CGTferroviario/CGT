@@ -32,11 +32,7 @@ body{
   padding-top: 106px !important;
   background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='29' height='50.115' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 18%, 1)'/><path d='M14.498 16.858L0 8.488.002-8.257l14.5-8.374L29-8.26l-.002 16.745zm0 50.06L0 58.548l.002-16.745 14.5-8.373L29 41.8l-.002 16.744zM28.996 41.8l-14.498-8.37.002-16.744L29 8.312l14.498 8.37-.002 16.745zm-29 0l-14.498-8.37.002-16.744L0 8.312l14.498 8.37-.002 16.745z'  stroke-width='1' stroke='hsla(354, 70%, 54%, 0.1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>")
 }
-.bordeR{
-  border-left: 1px thin red;
-}
 main{
-  padding-bottom: 3em;
   min-height: 100%;
 }
 footer{
@@ -54,7 +50,6 @@ a:hover{
 button a{
   text-decoration: none;
 }
-
 ul{
   list-style-type: none;
 }
@@ -115,25 +110,25 @@ nav{
 
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #dc3545 #212529;
-  }
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #dc3545 #212529;
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 10px;
-  }
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
 
-  *::-webkit-scrollbar-track {
-    background: #212529;
-  }
+*::-webkit-scrollbar-track {
+  background: #212529;
+}
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #dc3545;
-    border-radius: 10px;
-    border: 2px solid #000000;
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: #dc3545;
+  border-radius: 10px;
+  border: 2px solid #000000;
+}
 /*** Fin del Scroll ***/
 
 /* Colores */
@@ -296,8 +291,8 @@ nav{
 .tarjetaRenfe{
   width: 100%;
   max-width: 370px;
-  height: 100%;
   min-height: 246px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 }

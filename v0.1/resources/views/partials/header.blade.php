@@ -22,21 +22,22 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADIF</a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a href="{{ route('adif') }}" class="dropdown-item">DOC. GENERAL</a></li>
-              <li><a href="#" class="dropdown-item">TAQUILLAS</a></li>
-              <li><a href="#" class="dropdown-item">INTERVENCIÓN</a></li>
-              <li><a href="#" class="dropdown-item">CONDUCCIÓN</a></li>
-              <li><a href="#" class="dropdown-item">TALLERES</a></li>
-              <li><a href="#" class="dropdown-item">OFICINAS</a></li>
+              <li><a href="{{ route('adif') }}" class="dropdown-item" title="Documentación General de ADIF">DOC. GENERAL</a></li>
+              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Infraestructura">INFRAESTRUCTURA</a></li>
+              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Circulación">CIRCULACIÓN</a></li>
+              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">RENFE</a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a href="{{ route('renfe') }}" class="dropdown-item">DOC. GENERAL</a></li>
-              <li><a class="dropdown-item" href="#">INFRAESTRUCTURA</a></li>
-              <li><a class="dropdown-item" href="#">CIRCULACIÓN</a></li>
-              <li><a class="dropdown-item" href="#">OFICINAS</a></li>
+              <li><a href="{{ route('renfe') }}" class="dropdown-item" title="Documentación General de ADIF">DOC. GENERAL</a></li>
+              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Taquillas">TAQUILLAS</a></li>
+              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Intervención">INTERVENCIÓN</a></li>
+              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Conducción">CONDUCCIÓN</a></li>
+              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Talleres">TALLERES</a></li>
+              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
+              
             </ul>
           </li>
           <li class="nav-item">
@@ -60,9 +61,9 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">SFF-CGT</a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
-              <li><a href="{{ route('equipo') }}" class="dropdown-item" href="#">EQUIPO</a></li>
-              <li><a href="{{ route('equipo') }}" class="dropdown-item" href="#">MAPA SINDICAL</a></li>
-              <li><a href="{{ route('equipo') }}" class="dropdown-item" href="#">CONTACTO</a></li>
+              <li><a href="{{ route('equipo') }}" class="dropdown-item" title="Información del equipo estatal">EQUIPO</a></li>
+              <li><a href="{{ route('equipo') }}" class="dropdown-item" title="Información de Contacto de las Secciones Sindicales en España">MAPA SINDICAL</a></li>
+              <li><a href="{{ route('equipo') }}" class="dropdown-item" title="Formulario de Contacto">CONTACTO</a></li>
             </ul>
           </li>  
         </ul>

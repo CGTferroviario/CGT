@@ -77,26 +77,26 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <a href="" class="centrado" title="Consulta nuestros comunicados">
-                <div class="tarjeta" id="comunicados" class="img-fluid"></div>
+            <a href="" class="centrado">
+                <div class="tarjeta" id="comunicados" class="img-fluid" title="Consulta nuestros comunicados"></div>
             </a>
         </div>
         <div class="col-md-6">
-            <a href="" class="centrado" title="Toda la información de Ayudas Graciables y Beneficios Sociales">
-                <div class="tarjeta" id="ayudas" class="img-fluid"></div>
+            <a href="" class="centrado">
+                <div class="tarjeta" id="ayudas" class="img-fluid" title="Toda la información de Ayudas Graciables y Beneficios Sociales"></div>
             </a>
         </div>
     </div>
     <br>
     <div class="row">
         <div class="col-md-6">
-            <a href="" class="centrado" title="¡Afíliate con nosotros!">
-                <div class="tarjeta" id="afiliate" class="img-fluid"></div>
+            <a href="" class="centrado">
+                <div class="tarjeta" id="afiliate" class="img-fluid" title="¡Afíliate con nosotros!"></div>
             </a>
         </div>
         <div class="col-md-6">
-            <a href="" class="centrado" title="Accede a nuestra plataforma de Estudio">
-                <div class="tarjeta" id="plataforma" class="img-fluid"></div>
+            <a href="" class="centrado">
+                <div class="tarjeta" id="plataforma" class="img-fluid" title="Accede a nuestra plataforma de Estudio"></div>
             </a>
         </div>
     </div>
