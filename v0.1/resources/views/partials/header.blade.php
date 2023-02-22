@@ -23,20 +23,20 @@
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADIF</a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a href="{{ route('adif') }}" class="dropdown-item" title="Documentación General de ADIF">DOC. GENERAL</a></li>
-              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Infraestructura">INFRAESTRUCTURA</a></li>
-              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Circulación">CIRCULACIÓN</a></li>
-              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
+              <li><a href="{{ url('adif/infraestructura') }}" class="dropdown-item" title="Documentación del Colectivo de Infraestructura">INFRAESTRUCTURA</a></li>
+              <li><a href="{{ url('adif/circulacion') }}" class="dropdown-item" title="Documentación del Colectivo de Circulación">CIRCULACIÓN</a></li>
+              <li><a href="{{ url('adif/oficinas') }}" class="dropdown-item" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">RENFE</a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a href="{{ route('renfe') }}" class="dropdown-item" title="Documentación General de ADIF">DOC. GENERAL</a></li>
-              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Taquillas">TAQUILLAS</a></li>
-              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Intervención">INTERVENCIÓN</a></li>
-              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Conducción">CONDUCCIÓN</a></li>
-              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Talleres">TALLERES</a></li>
-              <li><a href="#" class="dropdown-item" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
+              <li><a href="{{ url('renfe/comercial') }}" class="dropdown-item" title="Documentación del Colectivo de Comercial">COMERCIAL</a></li>
+              <li><a href="{{ url('renfe/intervencion') }}" class="dropdown-item" title="Documentación del Colectivo de Intervención">INTERVENCIÓN</a></li>
+              <li><a href="{{ url('renfe/conduccion') }}" class="dropdown-item" title="Documentación del Colectivo de Conducción">CONDUCCIÓN</a></li>
+              <li><a href="{{ url('renfe/talleres') }}" class="dropdown-item" title="Documentación del Colectivo de Talleres">TALLERES</a></li>
+              <li><a href="{{ url('renfe/oficinas') }}" class="dropdown-item" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
               
             </ul>
           </li>
