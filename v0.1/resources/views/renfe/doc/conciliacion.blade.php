@@ -1,5 +1,5 @@
 @extends('layouts.master')
 
 @section('content')
-    <h1>Conciliación</h1>
+<h1 class="m-0 py-3 centrado blanco grande bg-moradoRenfe">MEDIDAS DE CONCILIACIÓN</h1>
 @endsection

@@ -1,5 +1,5 @@
 @extends('layouts.master')
 
 @section('content')
-    <h1>Protocolos de Acoso Laboral</h1>
+<h1 class="m-0 py-3 centrado blanco grande bg-moradoRenfe">PROTOCOLOS DE ACOSO LABORAL</h1>
 @endsection

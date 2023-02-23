@@ -1,2 +1,5 @@
 @extends('layouts.master')
-<h1>Modelos y Solicitudes</h1>
+
+@section('content')
+    <h1 class="m-0 py-3 centrado blanco grande bg-moradoRenfe">MODELOS Y SOLICITUDES</h1>
+@endsection

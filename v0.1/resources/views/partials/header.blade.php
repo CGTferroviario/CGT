@@ -17,7 +17,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse row" id="barraSup">
-      <div class="col">
+      <div class="col-9">
         <ul class="navbar-nav mb-2 mb-md-0">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADIF</a>
@@ -40,14 +40,14 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Empresas Auxiliares">EMPRESAS AUX.</a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Empresas Auxiliares del Sector Ferroviario">EMPRESAS AUX.</a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a href="{{ route('empresasaux') }}" class="dropdown-item" title="Documentación de SERVEO(Anteriormente FERROVIAL)">SERVEO</a></li>
               <li><a href="{{ url('empresasaux/logirail') }}" class="dropdown-item" title="Documentación de LOGIRAIL">LOGIRAIL</a></li>
               <li><a href="{{ url('empresasaux/otras') }}" class="dropdown-item" title="Documentación de otras Empresas Auxiliares">OTRAS</a></li>
             </ul>
           </li>
-          <li class="nav-item">
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Jurídica">JURÍDICA</a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a href="{{ route('juridica') }}" class="dropdown-item">CONVENIOS COLECTIVOS</a></li>
@@ -58,16 +58,24 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link" href="{{ route('biblioteca') }}" id="" data-bs-toggle="" aria-expanded="">BIBLIOTECA</a>
-            {{-- <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
-              <li><a href="{{ route('biblioteca') }}" class="dropdown-item" href="#">Legislación laboral</a></li>
-              <li><a class="dropdown-item" href="#">Convenios Colectivos</a></li>
-              <li><a class="dropdown-item" href="#">Normativa Laboral</a></li>
-              <li><a class="dropdown-item" href="#">Procedimientos</a></li>
-            </ul> --}}
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Recopilación de nuestros comunicados y todo tipo de documentos leacionados con el Ferrocarril">BIBLIOTECA</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a href="{{ route('biblioteca') }}" class="dropdown-item" href="#">COMUNICADOS</a></li>
+              <li><a class="dropdown-item" href="#">SEGURIDAD EN LA CIRCULACIÓN</a></li>
+              <li><a class="dropdown-item" href="#">ARCHIVO HISTÓRICO</a></li>
+              <li><a class="dropdown-item" href="#">DEFENSA DEL FERROCARRIL</a></li>
+              <li><a class="dropdown-item" href="#">VIA LIBERTARIA</a></li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a href="{{ route('prensa') }}" class="nav-link" title="Recursos Audiovisuales para uso Multimedia">RECURSOS</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link" title="Recursos Audiovisuales para uso Multimedia">RECURSOS</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a href="{{ route('prensa') }}" class="dropdown-item">VIDEOS</a></li>
+              <li><a class="dropdown-item" href="#">AUDIOS</a></li>
+              <li><a class="dropdown-item" href="#">CARTELES</a></li>
+              <li><a class="dropdown-item" href="#">FOTOGRAFIAS</a></li>
+              <li><a class="dropdown-item" href="#">LOGOTIPOS</a></li>
+            </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Sector Federal Ferroviario de la CGT">SFF-CGT</a>
@@ -79,7 +87,7 @@
           </li>  
         </ul>
       </div>
-      <div class="col mx-auto">
+      <div class="col-3 mx-auto">
         {{-- <div class="modoOscuro inline mx-auto">
           <div class="form-check form-switch">
             <span class=""><i class="fa-solid fa-moon blanco" title="Modo Oscuro"></i></span>
