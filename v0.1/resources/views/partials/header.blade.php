@@ -17,7 +17,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse row" id="barraSup">
-      <div class="col-md-12 col-lg-8">
+      <div class="col">
         <ul class="navbar-nav mb-2 mb-md-0">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADIF</a>
@@ -37,14 +37,25 @@
               <li><a href="{{ url('renfe/conduccion') }}" class="dropdown-item" title="Documentación del Colectivo de Conducción">CONDUCCIÓN</a></li>
               <li><a href="{{ url('renfe/talleres') }}" class="dropdown-item" title="Documentación del Colectivo de Talleres">TALLERES</a></li>
               <li><a href="{{ url('renfe/oficinas') }}" class="dropdown-item" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
-              
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Empresas Auxiliares">EMPRESAS AUX.</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a href="{{ route('empresasaux') }}" class="dropdown-item" title="Documentación de SERVEO(Anteriormente FERROVIAL)">SERVEO</a></li>
+              <li><a href="{{ url('empresasaux/logirail') }}" class="dropdown-item" title="Documentación de LOGIRAIL">LOGIRAIL</a></li>
+              <li><a href="{{ url('empresasaux/otras') }}" class="dropdown-item" title="Documentación de otras Empresas Auxiliares">OTRAS</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="{{ route('empresasaux') }}" class="nav-link">EMPRESAS AUX.</a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('igualdad') }}" class="nav-link">IGUALDAD</a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Jurídica">JURÍDICA</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a href="{{ route('juridica') }}" class="dropdown-item">CONVENIOS COLECTIVOS</a></li>
+              <li><a href="#" class="dropdown-item">LEGISLACIÓN LABORAL</a></li>
+              <li><a href="#" class="dropdown-item">LEGISLACION FERROVIARIA</a></li>
+              <li><a href="#" class="dropdown-item">FORMULARIOS/MODELOS</a></li>
+              <li><a href="#" class="dropdown-item">LOGROS JURÍDICOS CGT</a></li>
+            </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link" href="{{ route('biblioteca') }}" id="" data-bs-toggle="" aria-expanded="">BIBLIOTECA</a>
@@ -56,10 +67,10 @@
             </ul> --}}
           </li>
           <li class="nav-item">
-            <a href="{{ route('prensa') }}" class="nav-link">RECURSOS</a>
+            <a href="{{ route('prensa') }}" class="nav-link" title="Recursos Audiovisuales para uso Multimedia">RECURSOS</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">SFF-CGT</a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Sector Federal Ferroviario de la CGT">SFF-CGT</a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
               <li><a href="{{ route('equipo') }}" class="dropdown-item" title="Información del equipo estatal">EQUIPO</a></li>
               <li><a href="{{ route('equipo') }}" class="dropdown-item" title="Información de Contacto de las Secciones Sindicales en España">MAPA SINDICAL</a></li>
@@ -68,8 +79,8 @@
           </li>  
         </ul>
       </div>
-      <div class="col-md-12 col-lg-4 mx-auto">
-        <div class="modoOscuro inline mx-auto">
+      <div class="col mx-auto">
+        {{-- <div class="modoOscuro inline mx-auto">
           <div class="form-check form-switch">
             <span class=""><i class="fa-solid fa-moon blanco" title="Modo Oscuro"></i></span>
           </div>
@@ -77,7 +88,7 @@
               <input class="form-check-input mt-3" type="checkbox" role="switch" id="flexSwitchCheckDefault" title="Modo Claro//Oscuro"  onclick="toggle()">
               <label class="form-check-label" for="flexSwitchCheckDefault"><i class="fa-solid fa-sun grisMedio" title="Modo Claro"></i></label>
           </div>
-        </div>
+        </div> --}}
         <div class="grisMedio mx-auto inline fs-3">
           <ul class="inline m-0">
             <li><a href="https://twitter.com/SFFCGT" title="Twitter SFFCGT" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>

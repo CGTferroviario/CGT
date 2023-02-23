@@ -103,11 +103,11 @@ Route::prefix('renfe/doc')->group(function () {
     Route::view('/tablas', 'renfe.doc.tablas');
 });
 
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('panel');
 
 Route::get('/empresasaux', [App\Http\Controllers\HomeController::class, 'empresasaux'])->name('empresasaux');
 Route::get('/igualdad', [App\Http\Controllers\HomeController::class, 'igualdad'])->name('igualdad');
+Route::get('/juridica', [App\Http\Controllers\HomeController::class, 'igualdad'])->name('juridica');
 Route::get('/biblioteca', [App\Http\Controllers\HomeController::class, 'biblioteca'])->name('biblioteca');
 Route::get('/prensa', [App\Http\Controllers\HomeController::class, 'prensa'])->name('prensa');
 
