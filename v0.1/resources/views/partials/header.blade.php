@@ -5,7 +5,7 @@
     border-color: rgba(0, 0, 0, 0.15);
 }
 .dropdown-menu-dark .dropdown-item:hover, .dropdown-menu-dark .dropdown-item:focus {
-    color: #fff;
+    color: black;
     background-color: rgb(220,53,69);
 }
 </style> 

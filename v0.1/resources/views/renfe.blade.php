@@ -1,3 +1,10 @@
+<style>
+  .renfe{
+      background-image: url('/img/fondos/documentacion.png');
+      background-repeat: no-repeat;
+      padding-top: 200px;
+  }
+</style>
 @extends('layouts.master')
 
 @section('content')
