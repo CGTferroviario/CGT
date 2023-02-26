@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,11 +22,27 @@ class PostsController extends Controller
         // $posts = DB::update('UPDATE posts SET body = ? WHERE id = ?', ['Body Update example', 103]);
         // $posts = DB:: delete('DELETE FROM posts WHERE id = ?', [103]);
         
-        $posts = DB::table('posts')->find(1);
+   
+        // $posts = Post::orderBy('id', 'desc')->take(10)->get();
 
-        
+        // $posts = Post::where('min_to_read', 2)->get();
 
-        return view('blog.index')->with('posts', $posts);
+        // dd($posts);
+
+
+        // Post::chunk(25, function ($posts) {
+        //     foreach($posts as $post) {
+        //         echo $post->title. '<br>';
+        //     }
+        // });
+
+        // $posts = Post::get()->count();
+
+        $posts = Post::sum('min_to_read');
+
+        dd($posts);
+
+        return view('blog.index');
     }
 
     /**

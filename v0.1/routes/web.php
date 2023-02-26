@@ -103,16 +103,53 @@ Route::prefix('renfe/doc')->group(function () {
     Route::view('/tablas', 'renfe.doc.tablas');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('panel');
-
 Route::get('/empresasaux', [App\Http\Controllers\HomeController::class, 'empresasaux'])->name('empresasaux');
-Route::get('/igualdad', [App\Http\Controllers\HomeController::class, 'igualdad'])->name('igualdad');
+Route::prefix('empresasaux')->group(function () {
+    Route::view('/serveo', 'empresasaux.serveo');
+    Route::view('/logirail', 'empresasaux.logirail'); 
+    Route::view('/otras', 'empresasaux.otras');
+});
+
 Route::get('/juridica', [App\Http\Controllers\HomeController::class, 'igualdad'])->name('juridica');
+Route::prefix('juridica')->group(function () {
+    Route::view('/convenios', 'juridica.convenios');
+    Route::view('/laboral', 'juridica.laboral'); 
+    Route::view('/ferroviaria', 'juridica.ferroviaria');
+    Route::view('/modelos', 'juridica.modelos');
+    Route::view('/logros', 'juridica.logros');
+});
+
 Route::get('/biblioteca', [App\Http\Controllers\HomeController::class, 'biblioteca'])->name('biblioteca');
-Route::get('/prensa', [App\Http\Controllers\HomeController::class, 'prensa'])->name('prensa');
+Route::prefix('biblioteca')->group(function () {
+    Route::view('/comunicados', 'biblioteca.comunicados');
+    Route::view('/seguridad', 'biblioteca.seguridad'); 
+    Route::view('/defensa', 'biblioteca.defensa');
+    Route::view('/archivo', 'biblioteca.archivo');
+    Route::view('/via', 'biblioteca.via');
+});
+
+Route::get('/recursos', [App\Http\Controllers\HomeController::class, 'recursos'])->name('recursos');
+Route::prefix('recursos')->group(function () {
+    Route::view('/videos', 'recursos.videos');
+    Route::view('/audios', 'recursos.audios'); 
+    Route::view('/carteles', 'recursos.carteles');
+    Route::view('/fotos', 'recursos.fotos');
+    Route::view('/logos', 'recursos.logos');
+});
 
 Route::get('/equipo', [App\Http\Controllers\HomeController::class, 'equipo'])->name('equipo');
 Route::post('/equipo', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+Route::prefix('equipo')->group(function () {
+    Route::view('/sp', 'equipo.sp');
+    Route::view('/mapa', 'equipo.mapa'); 
+    Route::view('/contacto', 'equipo.contacto');
+});
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('panel');
+Route::get('/igualdad', [App\Http\Controllers\HomeController::class, 'igualdad'])->name('igualdad');
+Route::get('/prensa', [App\Http\Controllers\HomeController::class, 'prensa'])->name('prensa');
+
+
 Route::post('/empresas', [App\Http\Controllers\EmpresaController::class, 'CrearEmpresa'])->name('empresas');
 
 // Route::get('/admin/dashboard', 'Admin\DashboardController@index')->middleware('role:admin');

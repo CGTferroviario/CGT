@@ -42,7 +42,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Empresas Auxiliares del Sector Ferroviario">EMPRESAS AUX.</a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a href="{{ route('empresasaux') }}" class="dropdown-item" title="Documentación de SERVEO(Anteriormente FERROVIAL)">SERVEO</a></li>
+              <li><a href="{{ url('empresasaux/serveo') }}" class="dropdown-item" title="Documentación de SERVEO(Anteriormente FERROVIAL)">SERVEO</a></li>
               <li><a href="{{ url('empresasaux/logirail') }}" class="dropdown-item" title="Documentación de LOGIRAIL">LOGIRAIL</a></li>
               <li><a href="{{ url('empresasaux/otras') }}" class="dropdown-item" title="Documentación de otras Empresas Auxiliares">OTRAS</a></li>
             </ul>
@@ -50,39 +50,39 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Jurídica">JURÍDICA</a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a href="{{ route('juridica') }}" class="dropdown-item">CONVENIOS COLECTIVOS</a></li>
-              <li><a href="#" class="dropdown-item">LEGISLACIÓN LABORAL</a></li>
-              <li><a href="#" class="dropdown-item">LEGISLACION FERROVIARIA</a></li>
-              <li><a href="#" class="dropdown-item">FORMULARIOS/MODELOS</a></li>
-              <li><a href="#" class="dropdown-item">LOGROS JURÍDICOS CGT</a></li>
+              <li><a href="{{ url('juridica/convenios') }}" class="dropdown-item">CONVENIOS COLECTIVOS</a></li>
+              <li><a href="{{ url('juridica/laboral') }}" class="dropdown-item">LEGISLACIÓN LABORAL</a></li>
+              <li><a href="{{ url('juridica/ferroviaria') }}" class="dropdown-item">LEGISLACION FERROVIARIA</a></li>
+              <li><a href="{{ url('juridica/modelos') }}" class="dropdown-item">FORMULARIOS/MODELOS</a></li>
+              <li><a href="{{ url('juridica/logros') }}" class="dropdown-item">LOGROS JURÍDICOS CGT</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Recopilación de nuestros comunicados y todo tipo de documentos leacionados con el Ferrocarril">BIBLIOTECA</a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a href="{{ route('biblioteca') }}" class="dropdown-item" href="#">COMUNICADOS</a></li>
-              <li><a class="dropdown-item" href="#">SEGURIDAD EN LA CIRCULACIÓN</a></li>
-              <li><a class="dropdown-item" href="#">ARCHIVO HISTÓRICO</a></li>
-              <li><a class="dropdown-item" href="#">DEFENSA DEL FERROCARRIL</a></li>
-              <li><a class="dropdown-item" href="#">VIA LIBERTARIA</a></li>
+              <li><a href="{{ url('biblioteca/comunicados') }}" class="dropdown-item" href="#">COMUNICADOS</a></li>
+              <li><a href="{{ url('biblioteca/seguridad') }}" class="dropdown-item">SEGURIDAD EN LA CIRCULACIÓN</a></li>
+              <li><a href="{{ url('biblioteca/archivo') }}" class="dropdown-item">ARCHIVO HISTÓRICO</a></li>
+              <li><a href="{{ url('biblioteca/defensa') }}" class="dropdown-item">DEFENSA DEL FERROCARRIL</a></li>
+              <li><a href="{{ url('biblioteca/via') }}" class="dropdown-item">VIA LIBERTARIA</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link" title="Recursos Audiovisuales para uso Multimedia">RECURSOS</a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Recursos Audiovisuales para uso Multimedia">RECURSOS</a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a href="{{ route('prensa') }}" class="dropdown-item">VIDEOS</a></li>
-              <li><a class="dropdown-item" href="#">AUDIOS</a></li>
-              <li><a class="dropdown-item" href="#">CARTELES</a></li>
-              <li><a class="dropdown-item" href="#">FOTOGRAFIAS</a></li>
-              <li><a class="dropdown-item" href="#">LOGOTIPOS</a></li>
+              <li><a href="{{ url('recursos/video') }}" class="dropdown-item">VIDEOS</a></li>
+              <li><a href="{{ url('recursos/audios') }}" class="dropdown-item">AUDIOS</a></li>
+              <li><a href="{{ url('recursos/carteles') }}" class="dropdown-item">CARTELES</a></li>
+              <li><a href="{{ url('recursos/fotos') }}" class="dropdown-item">FOTOGRAFIAS</a></li>
+              <li><a href="{{ url('recursos/logos') }}" class="dropdown-item">LOGOTIPOS</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Sector Federal Ferroviario de la CGT">SFF-CGT</a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
-              <li><a href="{{ route('equipo') }}" class="dropdown-item" title="Información del equipo estatal">EQUIPO</a></li>
-              <li><a href="{{ route('equipo') }}" class="dropdown-item" title="Información de Contacto de las Secciones Sindicales en España">MAPA SINDICAL</a></li>
-              <li><a href="{{ route('equipo') }}" class="dropdown-item" title="Formulario de Contacto">CONTACTO</a></li>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a href="{{ url('equipo/sp') }}" class="dropdown-item" title="Información del equipo estatal">EQUIPO</a></li>
+              <li><a href="{{ url('equipo/mapa') }}" class="dropdown-item" title="Información de Contacto de las Secciones Sindicales en España">MAPA SINDICAL</a></li>
+              <li><a href="{{ url('equipo/contacto') }}" class="dropdown-item" title="Formulario de Contacto">CONTACTO</a></li>
             </ul>
           </li>  
         </ul>

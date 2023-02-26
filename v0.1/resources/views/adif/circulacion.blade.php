@@ -1,6 +1,8 @@
 <style>
     .fondoCirc{
-        background-image: url('/img/fondos/fondo_circulacion.png');
+        background-image: url('/img/fondos/circulacion.png');
+        background-repeat: no-repeat;
+        padding-top: 200px;
         min-height: 600px;
     }
 </style>
