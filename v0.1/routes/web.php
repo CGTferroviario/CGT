@@ -125,6 +125,7 @@ Route::prefix('biblioteca')->group(function () {
     Route::view('/seguridad', 'biblioteca.seguridad'); 
     Route::view('/defensa', 'biblioteca.defensa');
     Route::view('/archivo', 'biblioteca.archivo');
+    Route::view('/colegio', 'biblioteca.colegio');
     Route::view('/via', 'biblioteca.via');
 });
 

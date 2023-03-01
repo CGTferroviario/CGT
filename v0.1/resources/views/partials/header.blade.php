@@ -1,15 +1,3 @@
-<style>
-.dropdown-menu-dark {
-    color: white;
-    background-color: rgb(33,37,41);
-    border-color: rgba(0, 0, 0, 0.15);
-}
-.dropdown-menu-dark .dropdown-item:hover, .dropdown-menu-dark .dropdown-item:focus {
-    color: black;
-    background-color: rgb(220,53,69);
-}
-</style> 
-
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar fixed-top barraSup" id="barraSup" aria-label="Barra de Navegación">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ url('/') }}"><img src="/images/LogoSFF_sm.png" /> <span class="titular">Ferroviario7</span></a>
@@ -17,7 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse row" id="barraSup">
-      <div class="col-9">
+      <div class="col">
         <ul class="navbar-nav mb-2 mb-md-0">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADIF</a>
@@ -60,10 +48,11 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Recopilación de nuestros comunicados y todo tipo de documentos leacionados con el Ferrocarril">BIBLIOTECA</a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a href="{{ url('biblioteca/comunicados') }}" class="dropdown-item" href="#">COMUNICADOS</a></li>
+              <li><a href="{{ url('biblioteca/comunicados') }}" class="dropdown-item">COMUNICADOS</a></li>
               <li><a href="{{ url('biblioteca/seguridad') }}" class="dropdown-item">SEGURIDAD EN LA CIRCULACIÓN</a></li>
               <li><a href="{{ url('biblioteca/archivo') }}" class="dropdown-item">ARCHIVO HISTÓRICO</a></li>
               <li><a href="{{ url('biblioteca/defensa') }}" class="dropdown-item">DEFENSA DEL FERROCARRIL</a></li>
+              <li><a href="{{ url('biblioteca/colegio') }}" class="dropdown-item" title="Colegio de Huérfanos Ferroviarios">COL. HUÉRFANOS</a></li>
               <li><a href="{{ url('biblioteca/via') }}" class="dropdown-item">VIA LIBERTARIA</a></li>
             </ul>
           </li>
@@ -87,7 +76,7 @@
           </li>  
         </ul>
       </div>
-      <div class="col-3 mx-auto">
+      <div class="col centrado">
         {{-- <div class="modoOscuro inline mx-auto">
           <div class="form-check form-switch">
             <span class=""><i class="fa-solid fa-moon blanco" title="Modo Oscuro"></i></span>
@@ -104,6 +93,8 @@
             <li><a href="https://www.youtube.com/c/CGTSectorFederalFerroviario" title="Youtube SFFCGT" target="_blank"><i class="fa-brands fa-youtube ml-2"></i></a></li>
           </ul>
         </div>
+      </div>
+      <div class="col centrado">
         <div class="dropdown mx-auto inline ms-sm-5">
           <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
             AREA Afiliados

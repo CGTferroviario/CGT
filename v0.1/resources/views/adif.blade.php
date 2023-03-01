@@ -6,11 +6,7 @@
   .encabezadoAcordeon:hover{
     color:black;
   }
-  .adif{
-      background-image: url('/img/fondos/documentacion.png');
-      background-repeat: no-repeat;
-      padding-top: 200px;
-  }
+  
 </style>
 @extends('layouts.master')
 
@@ -18,7 +14,7 @@
 
 <h1 class="m-0 py-3 centrado blanco grande bg-verdeAdif">DOCUMENTACIÓN GENERAL ADIF</h1>
 
-<div class="container-fluid adif">
+<div class="container-fluid fondo documentacion adif">
   <div class="row py-3">
     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
         <a href="{{ url('/adif/doc/afiliacion') }}" class="">

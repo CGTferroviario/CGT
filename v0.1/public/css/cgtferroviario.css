@@ -96,10 +96,10 @@ nav{
 .dropdown-toggle::after {
   color: rgb(220,53,69);
 }
-.dropdown-toggle::after:hover{
-  color: white;
+.dropdown-toggle:hover::after, .dropdown-toggle:focus::after {
+  color: white !important;
 }
-
+/* Fin flechita */
 
 .navbar-brand:hover{
   border-bottom: none;
@@ -113,6 +113,14 @@ nav{
 }
 .sociales:hover{
   color:rgb(254, 71, 85);
+}
+.dropdown-menu-dark {
+  background-color: rgb(33,37,41);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.dropdown-menu-dark .dropdown-item:hover, .dropdown-menu-dark .dropdown-item:focus {
+  color: black;
+  background-color: rgb(220,53,69);
 }
 /* Fin Barra Superior */
 
@@ -167,6 +175,12 @@ nav{
 .verdeAdif{
   color: rgb(0, 99, 56);
 }
+.naranjaServeo{
+  color: rgb(255, 78, 0);
+}
+.moradoLogirail{
+  color: rgb(126, 1, 126);
+}
 .negro{
   color: black;
 }
@@ -199,6 +213,12 @@ nav{
 }
 .bg-verdeAdif{
   background: rgb(0, 99, 56);
+}
+.bg-naranjaServeo{
+  background: rgb(255, 78, 0);
+}
+.bg-moradoLogirail{
+  background: rgb(126, 1, 126);
 }
 .bg-negro{
   background: black;
@@ -256,6 +276,99 @@ nav{
   color:#fff;
   border: thin black solid;
 }
+/* Fondos Documentacion */
+.fondo{
+  background-repeat: no-repeat;
+  padding-top: 200px;
+  min-height: 600px;
+}
+.documentacion{
+  background-image: url('/img/fondos/documentacion.png');
+}
+.afiliacion{
+  background-image: url('/img/fondos/doc/afiliacion.png');
+}
+.ayudas{
+  background-image: url('/img/fondos/doc/ayudas.png');
+}
+.conciliacion{
+  background-image: url('/img/fondos/doc/conciliacion.png');
+}
+.igualdad{
+  background-image: url('/img/fondos/doc/igualdad.png');
+}
+.legislacion{
+  background-image: url('/img/fondos/doc/legislacion.png');
+}
+.licencias{
+  background-image: url('/img/fondos/doc/licencias.png');
+}
+.mapa{
+  background-image: url('/img/fondos/doc/mapa.png');
+}
+.modelos{
+  background-image: url('/img/fondos/doc/modelos.png');
+}
+.protocolos{
+  background-image: url('/img/fondos/doc/protocolos.png');
+}
+.salud{
+  background-image: url('/img/fondos/doc/salud.png');
+}
+.tablas{
+  background-image: url('/img/fondos/doc/tablas.png');
+}
+.teletrabajo{
+  background-image: url('/img/fondos/doc/teletrabajo.png');
+}
+
+/* Fondos ADIF */
+
+.infraestructura{
+  background-image: url('/img/fondos/adif/infraestructura.png');
+}
+.circulacion{
+  background-image: url('/img/fondos/adif/circulacion.png');
+}
+.oficinas{
+  background-image: url('/img/fondos/adif/oficinas.png');
+}
+/* Fondos RENFE */
+.comercial{
+  background-image: url('/img/fondos/renfe/comercial.png');
+}
+.intervencion{
+  background-image: url('/img/fondos/renfe/intervencion.png');
+}
+.conduccion{
+  background-image: url('/img/fondos/renfe/conduccion.png');
+}
+.talleres{
+  background-image: url('/img/fondos/renfe/talleres.png');
+}
+.tecnicos{
+  background-image: url('/img/fondos/renfe/tecnicos.png');
+}
+/* Fondos Bibliotecas */
+.comunicados{
+  background-image: url('/img/fondos/biblioteca/comunicados.png');
+}
+.seguridad{
+  background-image: url('/img/fondos/biblioteca/seguridad.png');
+}
+.archivo{
+  background-image: url('/img/fondos/biblioteca/archivo.png');
+}
+.defensa{
+  background-image: url('/img/fondos/biblioteca/defensa.png');
+}
+.colegio{
+  background-image: url('/img/fondos/biblioteca/colegio.png');
+}
+.via{
+  background-image: url('/img/fondos/biblioteca/via.png');
+}
+
 
 /* Sección de INICIO */
 
@@ -577,18 +690,6 @@ input[type='checkbox'] {
   background: rgb(254, 71, 85);
   color: black;
 } */
-.fondo{
-  background-image: url("/img/fondo2.jpg");
-}
-.fondo2{
-  background-image: url("/img/fondoCirc.jpg");
-}
-.fondo3{
-  background-image: url("/img/fondoInfra.jpg");
-}
-.fondo4{
-  background-image: url("/img/fondoOficina.jpg");
-}
 
 .accordion-button:not(.collapsed) {
   color: rgb(254, 71, 85) !important;

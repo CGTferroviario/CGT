@@ -1,4 +1,4 @@
-<h2 class="centrado blanco">Equipo Estatal del SECTOR FEDERAL FERROVIARIO - CGT</h2>
+<br>
 <div class="resp-table blanco">
    <div class="resp-table-caption bg-rojoBrillante"><h3>Secretariado Permanente SECTOR FEDERAL FERROVIARIO</h3></div>
    <div class="resp-table-body">
