@@ -1,3 +1,24 @@
+<style type="text/css">
+  /* .dropdown-menu li {
+    position: relative;
+  } */
+  
+  .dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 99%;
+    top: -1px;
+  }
+  
+  .dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+  }
+  
+  .dropdown-menu>li:hover>.dropdown-submenu {
+    display: block;
+  }
+</style>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar fixed-top barraSup" id="barraSup" aria-label="Barra de Navegación">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ url('/') }}"><img src="/images/LogoSFF_sm.png" /> <span class="titular">Ferroviario7</span></a>
@@ -10,7 +31,22 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADIF</a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a href="{{ route('adif') }}" class="dropdown-item" title="Documentación General de ADIF">DOC. GENERAL</a></li>
+              <li><a href="{{ route('adif') }}" class="dropdown-item dropdown-toggle" title="Documentación General de ADIF">DOC. GENERAL</a>
+                <ul class="dropdown-menu dropdown-menu-dark dropdown-submenu">
+                  <li><a href="{{ url('adif/doc/afiliacion') }}" class="dropdown-item">AFILIACIÓN</a></li>
+                  <li><a href="{{ url('adif/doc/ayudas') }}" class="dropdown-item">AYUDAS Y BENEFICIOS SOCIALES</a></li>
+                  <li><a href="{{ url('adif/doc/igualdad') }}" class="dropdown-item">IGUALDAD</a></li>
+                  <li><a href="{{ url('adif/doc/legislacion') }}" class="dropdown-item">LEGISLACIÓN·NORMATIVA LABORAL</a></li>
+                  <li><a href="{{ url('adif/doc/licencias') }}" class="dropdown-item">LICENCIAS</a></li>
+                  <li><a href="{{ url('adif/doc/mapa') }}" class="dropdown-item">MAPA ESTACIONES·RED ADIF Y RENFE</a></li>
+                  <li><a href="{{ url('adif/doc/conciliacion') }}" class="dropdown-item">MEDIDAS DE CONCILIACIÓN</a></li>
+                  <li><a href="{{ url('adif/doc/modelos') }}" class="dropdown-item">MODELOS DE SOLICITUD DE EMPRESA</a></li>
+                  <li><a href="{{ url('adif/doc/protocolos') }}" class="dropdown-item">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
+                  <li><a href="{{ url('adif/doc/salud') }}" class="dropdown-item">SALUD LABORAL</a></li>
+                  <li><a href="{{ url('adif/doc/teletrabajo') }}" class="dropdown-item">TELETRABAJO</a></li>
+                  <li><a href="{{ url('adif/doc/tablas') }}" class="dropdown-item">TABLAS SALARIALES</a></li>
+                </ul>
+              </li>
               <li><a href="{{ url('adif/infraestructura') }}" class="dropdown-item" title="Documentación del Colectivo de Infraestructura">INFRAESTRUCTURA</a></li>
               <li><a href="{{ url('adif/circulacion') }}" class="dropdown-item" title="Documentación del Colectivo de Circulación">CIRCULACIÓN</a></li>
               <li><a href="{{ url('adif/oficinas') }}" class="dropdown-item" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
@@ -19,7 +55,22 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">RENFE</a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a href="{{ route('renfe') }}" class="dropdown-item" title="Documentación General de ADIF">DOC. GENERAL</a></li>
+              <li><a href="{{ route('renfe') }}" class="dropdown-item dropdown-toggle" title="Documentación General de ADIF">DOC. GENERAL</a>
+                <ul class="dropdown-menu dropdown-menu-dark dropdown-submenu">
+                  <li><a href="{{ url('renfe/doc/afiliacion') }}" class="dropdown-item">AFILIACIÓN</a></li>
+                  <li><a href="{{ url('renfe/doc/ayudas') }}" class="dropdown-item">AYUDAS Y BENEFICIOS SOCIALES</a></li>
+                  <li><a href="{{ url('renfe/doc/igualdad') }}" class="dropdown-item">IGUALDAD</a></li>
+                  <li><a href="{{ url('renfe/doc/legislacion') }}" class="dropdown-item">LEGISLACIÓN·NORMATIVA LABORAL</a></li>
+                  <li><a href="{{ url('renfe/doc/licencias') }}" class="dropdown-item">LICENCIAS</a></li>
+                  <li><a href="{{ url('renfe/doc/mapa') }}" class="dropdown-item">MAPA ESTACIONES·RED ADIF Y RENFE</a></li>
+                  <li><a href="{{ url('renfe/doc/conciliacion') }}" class="dropdown-item">MEDIDAS DE CONCILIACIÓN</a></li>
+                  <li><a href="{{ url('renfe/doc/modelos') }}" class="dropdown-item">MODELOS DE SOLICITUD DE EMPRESA</a></li>
+                  <li><a href="{{ url('renfe/doc/protocolos') }}" class="dropdown-item">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
+                  <li><a href="{{ url('renfe/doc/salud') }}" class="dropdown-item">SALUD LABORAL</a></li>
+                  <li><a href="{{ url('renfe/doc/teletrabajo') }}" class="dropdown-item">TELETRABAJO</a></li>
+                  <li><a href="{{ url('renfe/doc/tablas') }}" class="dropdown-item">TABLAS SALARIALES</a></li>
+                </ul>
+              </li>
               <li><a href="{{ url('renfe/comercial') }}" class="dropdown-item" title="Documentación del Colectivo de Comercial">COMERCIAL</a></li>
               <li><a href="{{ url('renfe/intervencion') }}" class="dropdown-item" title="Documentación del Colectivo de Intervención">INTERVENCIÓN</a></li>
               <li><a href="{{ url('renfe/conduccion') }}" class="dropdown-item" title="Documentación del Colectivo de Conducción">CONDUCCIÓN</a></li>
