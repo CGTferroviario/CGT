@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<h1 class="m-0 py-3 centrado blanco grande bg-rojoBrillante">MAPA SINDICAL - Sector Federal Ferroviario CGT</h1>
+<h1 class="m-0 py-3 centrado negro grande bg-rojoBrillante">MAPA SINDICAL - Sector Federal Ferroviario CGT</h1>
 <br>
 <div class="container">
     <button class="collapsible">Secciones Sindicales en Andalucía</button>

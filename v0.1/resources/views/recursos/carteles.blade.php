@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-<h1 class="m-0 py-3 centrado blanco grande bg-rojoBrillante">CARTELES</h1>
+<h1 class="m-0 py-3 centrado negro grande bg-rojoBrillante">CARTELES</h1>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 fondoOfi">
+        <div class="col-12">
 
         </div>
     </div>

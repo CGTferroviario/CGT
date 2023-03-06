@@ -1,7 +1,7 @@
 <style type="text/css">
-  /* .dropdown-menu li {
+  .dropdown-menu li {
     position: relative;
-  } */
+  }
   
   .dropdown-menu .dropdown-submenu {
     display: none;
@@ -36,9 +36,9 @@
                   <li><a href="{{ url('adif/doc/afiliacion') }}" class="dropdown-item">AFILIACIÓN</a></li>
                   <li><a href="{{ url('adif/doc/ayudas') }}" class="dropdown-item">AYUDAS Y BENEFICIOS SOCIALES</a></li>
                   <li><a href="{{ url('adif/doc/igualdad') }}" class="dropdown-item">IGUALDAD</a></li>
-                  <li><a href="{{ url('adif/doc/legislacion') }}" class="dropdown-item">LEGISLACIÓN·NORMATIVA LABORAL</a></li>
+                  <li><a href="{{ url('adif/doc/legislacion') }}" class="dropdown-item">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
                   <li><a href="{{ url('adif/doc/licencias') }}" class="dropdown-item">LICENCIAS</a></li>
-                  <li><a href="{{ url('adif/doc/mapa') }}" class="dropdown-item">MAPA ESTACIONES·RED ADIF Y RENFE</a></li>
+                  <li><a href="{{ url('adif/doc/mapa') }}" class="dropdown-item">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
                   <li><a href="{{ url('adif/doc/conciliacion') }}" class="dropdown-item">MEDIDAS DE CONCILIACIÓN</a></li>
                   <li><a href="{{ url('adif/doc/modelos') }}" class="dropdown-item">MODELOS DE SOLICITUD DE EMPRESA</a></li>
                   <li><a href="{{ url('adif/doc/protocolos') }}" class="dropdown-item">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
@@ -60,9 +60,9 @@
                   <li><a href="{{ url('renfe/doc/afiliacion') }}" class="dropdown-item">AFILIACIÓN</a></li>
                   <li><a href="{{ url('renfe/doc/ayudas') }}" class="dropdown-item">AYUDAS Y BENEFICIOS SOCIALES</a></li>
                   <li><a href="{{ url('renfe/doc/igualdad') }}" class="dropdown-item">IGUALDAD</a></li>
-                  <li><a href="{{ url('renfe/doc/legislacion') }}" class="dropdown-item">LEGISLACIÓN·NORMATIVA LABORAL</a></li>
+                  <li><a href="{{ url('renfe/doc/legislacion') }}" class="dropdown-item">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
                   <li><a href="{{ url('renfe/doc/licencias') }}" class="dropdown-item">LICENCIAS</a></li>
-                  <li><a href="{{ url('renfe/doc/mapa') }}" class="dropdown-item">MAPA ESTACIONES·RED ADIF Y RENFE</a></li>
+                  <li><a href="{{ url('renfe/doc/mapa') }}" class="dropdown-item">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
                   <li><a href="{{ url('renfe/doc/conciliacion') }}" class="dropdown-item">MEDIDAS DE CONCILIACIÓN</a></li>
                   <li><a href="{{ url('renfe/doc/modelos') }}" class="dropdown-item">MODELOS DE SOLICITUD DE EMPRESA</a></li>
                   <li><a href="{{ url('renfe/doc/protocolos') }}" class="dropdown-item">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
@@ -99,22 +99,22 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Recopilación de nuestros comunicados y todo tipo de documentos leacionados con el Ferrocarril">BIBLIOTECA</a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a href="{{ url('biblioteca/comunicados') }}" class="dropdown-item">COMUNICADOS</a></li>
-              <li><a href="{{ url('biblioteca/seguridad') }}" class="dropdown-item">SEGURIDAD EN LA CIRCULACIÓN</a></li>
-              <li><a href="{{ url('biblioteca/archivo') }}" class="dropdown-item">ARCHIVO HISTÓRICO</a></li>
-              <li><a href="{{ url('biblioteca/defensa') }}" class="dropdown-item">DEFENSA DEL FERROCARRIL</a></li>
+              <li><a href="{{ url('biblioteca/comunicados') }}" class="dropdown-item" title="Comunicados de la CGT">COMUNICADOS</a></li>
+              <li><a href="{{ url('biblioteca/seguridad') }}" class="dropdown-item" title="Información de Seguridad en la Circulación">SEGURIDAD EN LA CIRCULACIÓN</a></li>
+              <li><a href="{{ url('biblioteca/archivo') }}" class="dropdown-item" title="Archivo de información histórica">ARCHIVO HISTÓRICO</a></li>
+              <li><a href="{{ url('biblioteca/defensa') }}" class="dropdown-item" title="Información del equipo estatal">DEFENSA DEL FERROCARRIL</a></li>
               <li><a href="{{ url('biblioteca/colegio') }}" class="dropdown-item" title="Colegio de Huérfanos Ferroviarios">COL. HUÉRFANOS</a></li>
-              <li><a href="{{ url('biblioteca/via') }}" class="dropdown-item">VIA LIBERTARIA</a></li>
+              <li><a href="{{ url('biblioteca/via') }}" class="dropdown-item" title="Magazine Ferroviario">VIA LIBERTARIA</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Recursos Audiovisuales para uso Multimedia">RECURSOS</a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a href="{{ url('recursos/video') }}" class="dropdown-item">VIDEOS</a></li>
-              <li><a href="{{ url('recursos/audios') }}" class="dropdown-item">AUDIOS</a></li>
-              <li><a href="{{ url('recursos/carteles') }}" class="dropdown-item">CARTELES</a></li>
-              <li><a href="{{ url('recursos/fotos') }}" class="dropdown-item">FOTOGRAFIAS</a></li>
-              <li><a href="{{ url('recursos/logos') }}" class="dropdown-item">LOGOTIPOS</a></li>
+              <li><a href="{{ url('recursos/videos') }}" class="dropdown-item" title="Videos del equipo estatal">VIDEOS</a></li>
+              <li><a href="{{ url('recursos/audios') }}" class="dropdown-item" title="Audios del equipo estatal">AUDIOS</a></li>
+              <li><a href="{{ url('recursos/carteles') }}" class="dropdown-item" title="Carteles elaborados por el equipo estatal">CARTELES</a></li>
+              <li><a href="{{ url('recursos/fotos') }}" class="dropdown-item" title="Fotos del equipo estatal">FOTOGRAFIAS</a></li>
+              <li><a href="{{ url('recursos/logos') }}" class="dropdown-item" title="Logotipos para su uso en prensa">LOGOTIPOS</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
