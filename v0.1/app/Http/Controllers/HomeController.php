@@ -41,9 +41,9 @@ class HomeController extends Controller
     {
         return view('prensa');
     }
-    public function igualdad() 
+    public function juridica() 
     {
-        return view('igualdad');
+        return view('juridica');
     }
     public function equipo()
     {

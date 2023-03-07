@@ -110,7 +110,7 @@ Route::prefix('empresasaux')->group(function () {
     Route::view('/otras', 'empresasaux.otras');
 });
 
-Route::get('/juridica', [App\Http\Controllers\HomeController::class, 'igualdad'])->name('juridica');
+Route::get('/juridica', [App\Http\Controllers\HomeController::class, 'juridica'])->name('juridica');
 Route::prefix('juridica')->group(function () {
     Route::view('/convenios', 'juridica.convenios');
     Route::view('/laboral', 'juridica.laboral'); 
@@ -139,7 +139,7 @@ Route::prefix('recursos')->group(function () {
 });
 
 Route::get('/equipo', [App\Http\Controllers\HomeController::class, 'equipo'])->name('equipo');
-Route::post('/equipo', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+Route::post('/equipo/contacto', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 Route::prefix('equipo')->group(function () {
     Route::view('/sp', 'equipo.sp');
     Route::view('/mapa', 'equipo.mapa'); 
