@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 /*
 --------------------------------------------------------------------------
- Web Routes
+Web Routes
 --------------------------------------------------------------------------
     Aquí se registran todas las rutas para nuestra aplicación. Estas rutas se cargan mediante RouteServiceProvider en un grupo que contiene el middleware "web"
 
