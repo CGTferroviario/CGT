@@ -190,7 +190,7 @@ nav{
 .bg-rojo{
   background: rgb(255,30,0);
 }
-.bg-rojoOscuro{
+.bg-circu{
   background: rgb(82,10,0);
 }
 .bg-rojoBrillante{
@@ -198,6 +198,9 @@ nav{
 }
 .bg-grisOscuro{
   background:rgb(47,47,47);
+}
+.bg-grisOscuro-7{
+  background:rgba(47,47,47,.7);
 }
 .bg-grisMedio{
   background: rgb(82,82,82);
@@ -213,6 +216,9 @@ nav{
 }
 .bg-verdeAdif{
   background: rgb(0, 99, 56);
+}
+.bg-infra{
+  background: rgb(230,230,40);
 }
 .bg-naranjaServeo{
   background: rgb(255, 78, 0);
@@ -349,7 +355,9 @@ nav{
 .tecnicos{
   background-image: url('/img/fondos/renfe/tecnicos.png');
 }
-/* Fondos Bibliotecas */
+
+/* Fondos Biblioteca */
+
 .comunicados{
   background-image: url('/img/fondos/biblioteca/comunicados.png');
 }
@@ -367,6 +375,24 @@ nav{
 }
 .via{
   background-image: url('/img/fondos/biblioteca/via.png');
+}
+
+/* Fondos Jurídica */
+
+.convenios{
+  background-image: url('/img/fondos/juridica/convenios.png');
+}
+.laboral{
+  background-image: url('/img/fondos/juridica/laboral.png');
+}
+.ferroviaria{
+  background-image: url('/img/fondos/juridica/ferroviaria.png');
+}
+.modelos{
+  background-image: url('/img/fondos/juridica/modelos.png');
+}
+.logros{
+  background-image: url('/img/fondos/juridica/logros.png');
 }
 
 
@@ -579,7 +605,15 @@ nav{
   font-size: 150%;
 }
 
+.fa, .fas, .fa-solid, .far, .fa-regular, .fal, .fa-light, .fat, .fa-thin, .fad, .fa-duotone, .fab, .fa-brands {
+  font-size: 150% !important;
+}
+
 /*fin fontawesome */
+.btn:hover {
+  background: rgb(254,71,85);
+}
+
 .barra2{
   position: fixed;
   bottom: 0px;
@@ -733,12 +767,6 @@ input[type='checkbox'] {
 }
 .subTitulo:hover{
   color: rgb(254, 71, 85);
-}
-.btn{
-  font-size: .8rem;
-}
-.card-footer {
-  padding: 0.5rem 0.5rem;
 }
 
 /* Códigos QR Fin */

@@ -5,13 +5,20 @@
 <div class="container-fluid fondo afiliacion">
     <div class="row">
         <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
-            <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Dark card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="card bg-grisOscuro-7 mb-3 blanco bordeRojo" style="">
+                <div class="card-header"><h3>Modelo para Afiliarse por Nómina</h3></div>
+                <div class="card-body bordeRojo">
+                    <span class="badge rounded-pill peq bg-verdeAdif">ADIF</span>
+                    <span class="badge rounded-pill peq bg-rojoBrillante">AFILIACIÓN</span>
+                                        
+                    <p class="card-text mt-2">Puedes rellenar este modelo y enviárnoslo o entregárselo a tu superior jerárquico para afiliarte por nómina</p>
                 </div>
-                <div class="card-footer">Footer</div>
+                <div class="card-footer p-1">
+                    <div class="btn-group centrado w-100">
+                        <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="btn rojoBrillante" target="blank"><i class="fa fa-eye"></i>&nbsp;&nbsp;Visualizar</a>
+                        <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="btn rojoBrillante" target="_blank" download="CGT_Afiliacion_Nomina"><i class="fa fa-download"></i>&nbsp;&nbsp;Descargar</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
