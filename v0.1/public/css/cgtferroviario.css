@@ -238,6 +238,12 @@ nav{
 .bordeRojo{
   border: thin solid rgb(254,71,85);
 }
+.bordeTopRojo{
+  border-top: thin solid rgb(254,71,85);
+}
+.bordeBottomRojo{
+  border-bottom: thin solid rgb(254,71,85);
+}
 
 /* Fin Colores */
 
@@ -604,10 +610,15 @@ nav{
   padding: 10px;
   font-size: 150%;
 }
-
-.fa, .fas, .fa-solid, .far, .fa-regular, .fal, .fa-light, .fat, .fa-thin, .fad, .fa-duotone, .fab, .fa-brands {
-  font-size: 150% !important;
+.breadcrumb{
+  position: absolute;
+  margin-top: .8rem;
+  margin-left: .8rem;
 }
+
+/* .fa, .fas, .fa-solid, .far, .fa-regular, .fal, .fa-light, .fat, .fa-thin, .fad, .fa-duotone, .fab, .fa-brands {
+  font-size: 150% !important;
+} */
 
 /*fin fontawesome */
 .btn:hover {
