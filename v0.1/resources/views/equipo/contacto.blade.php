@@ -3,7 +3,7 @@
     MAIL_HOST=ssl0.ovh.net
     MAIL_PORT=465
     MAIL_USERNAME=admin@cgtferroviario.es
-    MAIL_PASSWORD=93nLqHHzPaA9nea
+    MAIL_PASSWORD=
     MAIL_ENCRYPTION=tls */
 </style>
 @extends('layouts.master')
