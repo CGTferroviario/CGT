@@ -146,6 +146,11 @@ Route::prefix('equipo')->group(function () {
     Route::view('/contacto', 'equipo.contacto');
 });
 
+Route::view('/afiliate', 'afiliate');
+Route::post('/afiliate', [App\Http\Controllers\AfiliacionController::class, 'AfiliateForm'])->name('afiliate.store');
+// Route::get('/afiliate', [App\Http\Controllers\AfiliacionController::class, 'AfiliateForm'])->name('afiliate');
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('panel');
 Route::get('/igualdad', [App\Http\Controllers\HomeController::class, 'igualdad'])->name('igualdad');
 Route::get('/prensa', [App\Http\Controllers\HomeController::class, 'prensa'])->name('prensa');

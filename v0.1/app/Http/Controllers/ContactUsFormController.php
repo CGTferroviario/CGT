@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Mail;
 class ContactUsFormController extends Controller {
     // Create Contact Form
     public function createForm(Request $request) {
-      return view('contacto');
+        return view('contacto');
     }
     // Store Contact Form data
     public function ContactUsForm(Request $request) {
@@ -20,7 +20,7 @@ class ContactUsFormController extends Controller {
             'telefono' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:8',
             'asunto'=>'required',
             'mensaje' => 'required'
-         ]);
+        ]);
         //  Store data in database
         Contacto::create($request->all());
         //  Send mail to admin
