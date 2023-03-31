@@ -2,6 +2,16 @@
     label{
         color: white;
     }
+    textarea, select{
+        background-color: rgba(255, 255, 255, .3) !important;
+    }
+    select:after{
+        color: green;
+    }
+    input[type=text] {
+        border: none;
+        background: rgba(255, 255, 255, .3);
+    }
 </style>
 @extends('layouts.master')
 
@@ -91,7 +101,7 @@
             </div>
             <div class="col">
                 <label>Código Postal</label>
-                <input type="text" class="form-control {{ $errors->has('cp') ? 'error' : '' }}" name="cp" id="cp">
+                <input type="number" class="form-control {{ $errors->has('cp') ? 'error' : '' }}" name="cp" id="cp">
                 <!-- Error -->
                 @if ($errors->has('cp'))
                 <div class="error">
@@ -114,7 +124,7 @@
             </div>
             <div class="col">
                 <label>Telefono</label>
-                <input type="text" class="form-control {{ $errors->has('telefono') ? 'error' : '' }}" name="telefono" id="telefono">
+                <input type="tel" class="form-control {{ $errors->has('telefono') ? 'error' : '' }}" name="telefono" id="telefono">
                 @if ($errors->has('telefono'))
                 <div class="error">
                     {{ $errors->first('telefono') }}
@@ -123,7 +133,7 @@
             </div>
             <div class="col">
                 <label>Email</label>
-                <input type="correo" class="form-control {{ $errors->has('correo') ? 'error' : '' }}" name="correo" id="correo">
+                <input type="email" class="form-control {{ $errors->has('correo') ? 'error' : '' }}" name="correo" id="correo">
                 @if ($errors->has('correo'))
                 <div class="error">
                     {{ $errors->first('correo') }}
@@ -131,88 +141,93 @@
                 @endif
             </div>
         </div>
-        
-        
-        <div class="form-group">
-            <label>Lugar</label>
-            <input type="text" class="form-control {{ $errors->has('lugar') ? 'error' : '' }}" name="lugar" id="lugar">
-            @if ($errors->has('lugar'))
-            <div class="error">
-                {{ $errors->first('lugar') }}
+        <div class="row">
+            <div class="col">
+                <label>Matrícula</label>
+                <input type="number" class="form-control {{ $errors->has('matricula') ? 'error' : '' }}" name="matricula" id="matricula">
+                @if ($errors->has('matricula'))
+                <div class="error">
+                    {{ $errors->first('matricula') }}
+                </div>
+                @endif
             </div>
-            @endif
+            <div class="col">
+                <label>Cargo</label>
+                <input type="text" class="form-control {{ $errors->has('cargo') ? 'error' : '' }}" name="cargo" id="cargo">
+                @if ($errors->has('cargo'))
+                <div class="error">
+                    {{ $errors->first('cargo') }}
+                </div>
+                @endif
+            </div>
+            <div class="col">
+                <label>Dependencia</label>
+                <input type="text" class="form-control {{ $errors->has('dependencia') ? 'error' : '' }}" name="dependencia" id="dependencia">
+                @if ($errors->has('dependencia'))
+                <div class="error">
+                    {{ $errors->first('dependencia') }}
+                </div>
+                @endif
+            </div>
+            <div class="col">
+                <label>Residencia</label>
+                <input type="text" class="form-control {{ $errors->has('residencia') ? 'error' : '' }}" name="residencia" id="residencia">
+                @if ($errors->has('residencia'))
+                <div class="error">
+                    {{ $errors->first('residencia') }}
+                </div>
+                @endif
+            </div>
         </div>
-        <div class="form-group">
-            <label>Fecha</label>
-            <input type="text" class="form-control {{ $errors->has('fecha') ? 'error' : '' }}" name="fecha" id="fecha">
-            @if ($errors->has('fecha'))
-            <div class="error">
-                {{ $errors->first('fecha') }}
+        <div class="row">
+            <div class="col">
+                <label>Lugar</label>
+                <input type="text" class="form-control {{ $errors->has('lugar') ? 'error' : '' }}" name="lugar" id="lugar">
+                @if ($errors->has('lugar'))
+                <div class="error">
+                    {{ $errors->first('lugar') }}
+                </div>
+                @endif
             </div>
-            @endif
+            <div class="col">
+                <label>Fecha</label>
+                <input type="date" class="form-control {{ $errors->has('fecha') ? 'error' : '' }}" name="fecha" id="fecha">
+                @if ($errors->has('fecha'))
+                <div class="error">
+                    {{ $errors->first('fecha') }}
+                </div>
+                @endif
+            </div>
+            <div class="col">
+                <label>Firma</label>
+                <input type="text" class="form-control {{ $errors->has('firma') ? 'error' : '' }}" name="firma" id="firma">
+                @if ($errors->has('firma'))
+                <div class="error">
+                    {{ $errors->first('firma') }}
+                </div>
+                @endif
+            </div>
+            
         </div>
-        <div class="form-group">
-            <label>Firma</label>
-            <input type="text" class="form-control {{ $errors->has('firma') ? 'error' : '' }}" name="firma" id="firma">
-            @if ($errors->has('firma'))
-            <div class="error">
-                {{ $errors->first('firma') }}
+        <div class="row">
+            <div class="col">
+                <label>Cabecera Nómina</label>
+                <input type="file" class="form-control {{ $errors->has('cabecera_nomina') ? 'error' : '' }}" name="cabecera_nomina" id="cabecera_nomina">
+                @if ($errors->has('cabecera_nomina'))
+                <div class="error">
+                    {{ $errors->first('cabecera_nomina') }}
+                </div>
+                @endif
             </div>
-            @endif
-        </div>
-        <div class="form-group">
-            <label>Matrícula</label>
-            <input type="text" class="form-control {{ $errors->has('matricula') ? 'error' : '' }}" name="matricula" id="matricula">
-            @if ($errors->has('matricula'))
-            <div class="error">
-                {{ $errors->first('matricula') }}
+            <div class="col">
+                <label>Fotocopia DNI</label>
+                <input type="file" class="form-control {{ $errors->has('fotocopia_dni') ? 'error' : '' }}" name="fotocopia_dni" id="fotocopia_dni">
+                @if ($errors->has('fotocopia_dni'))
+                <div class="error">
+                    {{ $errors->first('fotocopia_dni') }}
+                </div>
+                @endif
             </div>
-            @endif
-        </div>
-        <div class="form-group">
-            <label>Cargo</label>
-            <input type="text" class="form-control {{ $errors->has('cargo') ? 'error' : '' }}" name="cargo" id="cargo">
-            @if ($errors->has('cargo'))
-            <div class="error">
-                {{ $errors->first('cargo') }}
-            </div>
-            @endif
-        </div>
-        <div class="form-group">
-            <label>Dependencia</label>
-            <input type="text" class="form-control {{ $errors->has('dependencia') ? 'error' : '' }}" name="dependencia" id="dependencia">
-            @if ($errors->has('dependencia'))
-            <div class="error">
-                {{ $errors->first('dependencia') }}
-            </div>
-            @endif
-        </div>
-        <div class="form-group">
-            <label>Residencia</label>
-            <input type="text" class="form-control {{ $errors->has('residencia') ? 'error' : '' }}" name="residencia" id="residencia">
-            @if ($errors->has('residencia'))
-            <div class="error">
-                {{ $errors->first('residencia') }}
-            </div>
-            @endif
-        </div>
-        <div class="form-group">
-            <label>Fotocopia DNI</label>
-            <input type="text" class="form-control {{ $errors->has('fotocopia_dni') ? 'error' : '' }}" name="fotocopia_dni" id="fotocopia_dni">
-            @if ($errors->has('fotocopia_dni'))
-            <div class="error">
-                {{ $errors->first('fotocopia_dni') }}
-            </div>
-            @endif
-        </div>
-        <div class="form-group">
-            <label>Cabecera Nómina</label>
-            <input type="text" class="form-control {{ $errors->has('cabecera_nomina') ? 'error' : '' }}" name="cabecera_nomina" id="cabecera_nomina">
-            @if ($errors->has('cabecera_nomina'))
-            <div class="error">
-                {{ $errors->first('cabecera_nomina') }}
-            </div>
-            @endif
         </div>
         <div class="form-group">
             <label>Asunto</label>
@@ -234,7 +249,7 @@
             </div>
             @endif
         </div>
-        <input type="submit" name="send" value="Submit" class="btn btn-outline-danger btn-block mt-3">
+        <input type="submit" name="send" value="Enviar" class="btn btn-outline-danger btn-block mt-3">
     </form>
 </div>
 @endsection
