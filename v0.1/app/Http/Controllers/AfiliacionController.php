@@ -33,9 +33,7 @@ class AfiliacionController extends Controller
             'dependencia' => 'required',
             'residencia' => 'required',
             'fotocopia_dni' => 'required',
-            'cabecera_nomina' => 'required',
-            'asunto'=> 'required',
-            'mensaje' => 'required'
+            'cabecera_nomina' => 'required'
         ]);
         //  Store data in database
         Afiliacion::create($request->all());
@@ -58,9 +56,7 @@ class AfiliacionController extends Controller
             'dependencia' => $request->get('dependecia'),
             'residencia' => $request->get('residencia'),
             'fotocopia_dni' => $request->get('fotocopia_dni'),
-            'cabecera_nomina' => $request->get('cabecera_nomina'),
-            'asunto'=> $request->get('asunto'),
-            'mensaje' => $request->get('mensaje')
+            'cabecera_nomina' => $request->get('cabecera_nomina')
         ), function($message) use ($request){
             $message->from($request->email);
             $message->to('informatica@cgtferroviario.es', 'Admin')->subject($request->get('asunto'));

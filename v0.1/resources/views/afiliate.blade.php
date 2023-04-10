@@ -212,7 +212,7 @@
         <div class="row">
             <div class="col">
                 <label>Cabecera Nómina</label>
-                <input type="file" class="form-control {{ $errors->has('cabecera_nomina') ? 'error' : '' }}" name="cabecera_nomina" id="cabecera_nomina">
+                <input type="text" class="form-control {{ $errors->has('cabecera_nomina') ? 'error' : '' }}" name="cabecera_nomina" id="cabecera_nomina">
                 @if ($errors->has('cabecera_nomina'))
                 <div class="error">
                     {{ $errors->first('cabecera_nomina') }}
@@ -221,33 +221,13 @@
             </div>
             <div class="col">
                 <label>Fotocopia DNI</label>
-                <input type="file" class="form-control {{ $errors->has('fotocopia_dni') ? 'error' : '' }}" name="fotocopia_dni" id="fotocopia_dni">
+                <input type="text" class="form-control {{ $errors->has('fotocopia_dni') ? 'error' : '' }}" name="fotocopia_dni" id="fotocopia_dni">
                 @if ($errors->has('fotocopia_dni'))
                 <div class="error">
                     {{ $errors->first('fotocopia_dni') }}
                 </div>
                 @endif
             </div>
-        </div>
-        <div class="form-group">
-            <label>Asunto</label>
-            <input type="text" class="form-control {{ $errors->has('asunto') ? 'error' : '' }}" name="asunto"
-                id="asunto">
-            @if ($errors->has('asunto'))
-            <div class="error">
-                {{ $errors->first('asunto') }}
-            </div>
-            @endif
-        </div>
-        <div class="form-group">
-            <label>Mensaje</label>
-            <textarea class="form-control {{ $errors->has('mensaje') ? 'error' : '' }}" name="mensaje" id="mensaje"
-                rows="4"></textarea>
-            @if ($errors->has('mensaje'))
-            <div class="error">
-                {{ $errors->first('mensaje') }}
-            </div>
-            @endif
         </div>
         <input type="submit" name="send" value="Enviar" class="btn btn-outline-danger btn-block mt-3">
     </form>
