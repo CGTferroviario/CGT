@@ -146,6 +146,9 @@
         </div>
       </div>
       <div class="col centrado">
+        <a class="btn btn-danger" href="{{ route('afiliate') }}">¡Afíliate!</a>
+      </div>
+      <div class="col centrado">
         <div class="dropdown mx-auto inline ms-sm-5">
           <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
             AREA Afiliados

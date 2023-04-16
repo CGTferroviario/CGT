@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('documentos', function (Blueprint $table) {
-            $table->id('id_documento');
-            $table->string('tipo_documento');
-            $table->date('fecha_doc');
+        Schema::create('comunicados', function (Blueprint $table) {
+            $table->id('id');
+            $table->string('categorias_comunicado');
+            $table->date('fecha_com');
             $table->date('fecha_subida');
             $table->unsignedTinyInteger('id_empresa');
             $table->string('titulo');
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('adjunto3');
             $table->string('imagen');
             $table->timestamps();
-        }); 
+        });
     }
 
     /**
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('documentos');
+        Schema::dropIfExists('comunicados');
     }
 };

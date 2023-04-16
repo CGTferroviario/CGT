@@ -401,6 +401,23 @@ nav{
   background-image: url('/img/fondos/juridica/logros.png');
 }
 
+/* Fondos recursos */
+
+.videos{
+  background-image: url('/img/fondos/recursos/videos.png');
+}
+.audios{
+  background-image: url('/img/fondos/recursos/audios.png');
+}
+.carteles{
+  background-image: url('/img/fondos/recursos/carteleria.png');
+}
+.fotografias{
+  background-image: url('/img/fondos/recursos/fotos.png');
+}
+.logotipos{
+  background-image: url('/img/fondos/recursos/logos.png');
+}
 
 /* Sección de INICIO */
 

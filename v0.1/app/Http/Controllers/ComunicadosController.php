@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comunicado;
 use Illuminate\Http\Request;
 
 class ComunicadosController extends Controller
@@ -13,7 +14,9 @@ class ComunicadosController extends Controller
      */
     public function index()
     {
-        return view('comunicados');
+        return view('comunicados.index', [
+            'comunicados' => Comunicado::orderBy('updated_at', 'desc')->get()
+        ]);
     }
 
     /**
@@ -23,7 +26,7 @@ class ComunicadosController extends Controller
      */
     public function create()
     {
-        //
+        return view('comunicados.crear');
     }
 
     /**
@@ -34,7 +37,18 @@ class ComunicadosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Comunicado::create([
+            'categorias_comunicado' => $request->categorias_comunicado,
+            'fecha_com' => $request->fecha_com,
+            'fecha_subida' => $request->fecha_subida,
+            'id_empresa' => $request->id_empresa,
+            'titulo' => $request->titulo,
+            'subtitulo' => $request->subtitulo,
+            'descripcion' => $request->descripcion,
+            'adjunto1' => $this->storeImage($request)
+        ]);
+
+        return redirect(route('comunicados.index'));
     }
 
     /**
@@ -45,7 +59,9 @@ class ComunicadosController extends Controller
      */
     public function show($id)
     {
-        return $id;
+        return view('comunicados.show', [
+            'comunicado' => Comunicado::findOrFail('$id')
+        ]);
     }
 
     /**
@@ -56,7 +72,9 @@ class ComunicadosController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('comunicado.editar', [
+            'comunicado' => Comunicado::where('id', $id)->first()
+        ]);
     }
 
     /**
@@ -68,7 +86,11 @@ class ComunicadosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Comunicado::where('id', $id)->update($request->except([
+            '_token', '_method'
+        ]));
+        
+        return redirect(route('comunicado.index'));
     }
 
     /**

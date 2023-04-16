@@ -29,20 +29,30 @@ Route::get('/', function () {
 //     return view('adif');
 // });
 
+Route::prefix('/comunicados')->group(function (){
+    Route::get('/crear', [ComunicadosController::class, 'create'])->name('comunicados.create');
+    Route::get('/', [ComunicadosController::class, 'index'])->name('comunicados.index');
+    Route::get('/{id}', [ComunicadosController::class, 'show'])->name('comunicados.show');
+    Route::post('/', [ComunicadosController::class, 'store'])->name('comunicados.store');
+    Route::get('/editar/{id}', [ComunicadosController::class, 'edit'])->name('comunicados.edit');
+    Route::patch('/{id}', [ComunicadosController::class, 'update'])->name('comunicados.update');
+    Route::delete('/{id}', [ComunicadosController::class, 'destroy'])->name('comunicados.destroy');
+});
+
 // GET
-Route::get('/comunicados', [ComunicadosController::class, 'index']);
-Route::get('/articulos/{id}', [ComunicadosController::class, 'show']);
+// Route::get('/comunicados', [ComunicadosController::class, 'index']);
+// Route::get('/articulos/{id}', [ComunicadosController::class, 'show']);
 
 // POST 
-Route::get('/comunicados/crear', [ComunicadosController::class, 'crear']);
-Route::get('/comunicados', [ComunicadosController::class, 'store']);
+// Route::get('/comunicados/crear', [ComunicadosController::class, 'crear']);
+// Route::get('/comunicados', [ComunicadosController::class, 'store']);
 
 // PUT or PATCH
-Route::get('/comunicados/editar/{id}', [ComunicadosController::class, 'editar']);
-Route::get('/comunicados/{id}', [ComunicadosController::class, 'update']);
+// Route::get('/comunicados/editar/{id}', [ComunicadosController::class, 'editar']);
+// Route::get('/comunicados/{id}', [ComunicadosController::class, 'update']);
 
 // DELETE
-Route::delete('/comunicados/{id}', [ComunicadosController::class, 'destroy']);
+// Route::delete('/comunicados/{id}', [ComunicadosController::class, 'destroy']);
 
 // Esto crea todas las rutas CRUD [Create, Read, Update, Delete] 
 // (GET,POST,PUT,PATCH,DELETE)
@@ -146,7 +156,7 @@ Route::prefix('equipo')->group(function () {
     Route::view('/contacto', 'equipo.contacto');
 });
 
-Route::view('/afiliate', 'afiliate');
+Route::view('/afiliate', 'afiliate')->name('afiliate');
 Route::post('/afiliate', [App\Http\Controllers\AfiliacionController::class, 'AfiliateForm'])->name('afiliate.store');
 // Route::get('/afiliate', [App\Http\Controllers\AfiliacionController::class, 'AfiliateForm'])->name('afiliate');
 

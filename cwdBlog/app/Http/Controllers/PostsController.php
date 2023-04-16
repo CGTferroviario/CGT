@@ -6,6 +6,8 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use function GuzzleHttp\Promise\all;
+
 class PostsController extends Controller
 {
     /**
@@ -38,11 +40,15 @@ class PostsController extends Controller
 
         // $posts = Post::get()->count();
 
-        $posts = Post::sum('min_to_read');
+        // $posts = Post::avg('min_to_read');
 
-        dd($posts);
+        // $posts = Post::orderBy('updated_at', 'desc')->get();
 
-        return view('blog.index');
+        // dd($posts);
+
+        return view('blog.index', [
+            'posts' => Post::orderBy('updated_at', 'desc')->get()
+        ]);
     }
 
     /**
@@ -52,7 +58,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('blog.create');
     }
 
     /**
@@ -63,7 +69,35 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Esto es PHP Orientado a Objetos
+        // $post = new Post();
+        // $post->title = $request->title;
+        // $post->excerpt = $request->excerpt;
+        // $post->body = $request->body;
+        // $post->image_path = 'temporary';
+        // $post->is_published = $request->is_published === 'on';
+        // $post->min_to_read = $request->min_to_read;
+        // $post->save();
+
+        $request->validate([
+            'title' => 'required|unique:posts|max:255',
+            'excerpt' => 'required',
+            'body' => 'required',
+            'image' => ['required', 'mimes:jpg,png,jpeg', 'max:5048'],
+            'min_to_read' => 'min:0|max:60'
+        ]);
+
+        // Esto es usando Eloquent
+        Post::create([
+            'title' => $request->title,
+            'excerpt' => $request->excerpt,
+            'body' => $request->body,
+            'image_path' => $this->storeImage($request),
+            'is_published' => $request->is_published === 'on',
+            'min_to_read' => $request->min_to_read
+        ]);
+
+        return redirect(route('blog.index'));
     }
 
     /**
@@ -74,7 +108,10 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        return $id;
+
+        return view('blog.show', [
+            'post' => Post::findOrFail($id)
+        ]);
     }
 
     /**
@@ -85,7 +122,9 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('blog.edit', [
+            'post' => Post::where('id', $id)->first()
+        ]);
     }
 
     /**
@@ -97,7 +136,19 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:255|unique:posts,title,' . $id,
+            'excerpt' => 'required',
+            'body' => 'required',
+            'image' => ['mimes:jpg,png,jpeg', 'max:5048'],
+            'min_to_read' => 'min:0|max:60'
+        ]);
+
+        Post::where('id', $id)->update($request->except([
+            '_token', '_method'
+        ]));
+        
+        return redirect(route('blog.index'));
     }
 
     /**
@@ -108,6 +159,14 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Post::destroy($id);
+
+        return redirect(route('blog.index'))->with('message', 'Post has been deleted');
+    }
+    private function storeImage($request)
+    {
+        $newImageName = uniqid() . '-' . $request->title . '.' . $request->image->extension();
+
+        return $request->image->move(public_path('images'), $newImageName);
     }
 }

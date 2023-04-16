@@ -20,25 +20,25 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'nombre' => 'pablo',
             'email' => 'pablo@pablo.com',
-            'type' => 'admin',
+            'tipo_perfil' => 'admin',
             'password' => Hash::make('pablocgt'),
         ]);
         DB::table('users')->insert([
             'nombre' => 'nacho',
             'email' => 'nacho@nacho.com',
-            'type' => 'finanzas',
+            'tipo_perfil' => 'finanzas',
             'password' => Hash::make('nachocgt'),
         ]);
         DB::table('users')->insert([
             'nombre' => 'javi',
             'email' => 'javi@javi.com',
-            'type' => 'editor',
+            'tipo_perfil' => 'editor',
             'password' => Hash::make('javicgt'),
         ]);
         DB::table('users')->insert([
             'nombre' => 'usuario',
             'email' => 'usuario@usuario.com',
-            'type' => 'usuario',
+            'tipo_perfil' => 'usuario',
             'password' => Hash::make('usuariocgt'),
         ]);
     }
