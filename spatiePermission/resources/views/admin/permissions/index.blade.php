@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-2">
                 <div class="flex justify-end">
-                    <a href="">Create</a>
+                    <a href="{{ route('admin.roles.create') }}" class="px-4 py-2 text-white hover:text-black bg-green-700 hover:bg-green-500 rounded-md">Create Permission</a>
                 </div>
                 <!-- component -->
                 <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">
