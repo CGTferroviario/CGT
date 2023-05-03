@@ -166,7 +166,9 @@ Route::get('/igualdad', [App\Http\Controllers\HomeController::class, 'igualdad']
 Route::get('/prensa', [App\Http\Controllers\HomeController::class, 'prensa'])->name('prensa');
 
 
-Route::post('/empresas', [App\Http\Controllers\EmpresaController::class, 'CrearEmpresa'])->name('empresas');
+// Route::post('/empresas', [App\Http\Controllers\EmpresaController::class, 'CrearEmpresa'])->name('empresas');
+
+Route::resource('empresas', App\Http\Controllers\EmpresaController::class);
 
 // Route::get('/admin/dashboard', 'Admin\DashboardController@index')->middleware('role:admin');
 // Route::get('/seller/dashboard', 'Seller\DashboardController@index')->middleware('role:seller');
