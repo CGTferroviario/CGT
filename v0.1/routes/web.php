@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ComunicadosController;
+use App\Http\Controllers\EtiquetaController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -30,6 +31,8 @@ Route::get('/', function () {
 // });
 
 Route::resource('comunicados', App\Http\Controllers\ComunicadosController::class);
+Route::resource('etiquetas', App\Http\Controllers\EtiquetaController::class);
+Route::resource('empresas', App\Http\Controllers\EmpresaController::class);
 
 
 // Route::prefix('/comunicados')->group(function (){
@@ -171,7 +174,7 @@ Route::get('/prensa', [App\Http\Controllers\HomeController::class, 'prensa'])->n
 
 // Route::post('/empresas', [App\Http\Controllers\EmpresaController::class, 'CrearEmpresa'])->name('empresas');
 
-Route::resource('empresas', App\Http\Controllers\EmpresaController::class);
+
 
 // Route::get('/admin/dashboard', 'Admin\DashboardController@index')->middleware('role:admin');
 // Route::get('/seller/dashboard', 'Seller\DashboardController@index')->middleware('role:seller');
