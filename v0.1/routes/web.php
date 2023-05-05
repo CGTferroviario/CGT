@@ -29,15 +29,18 @@ Route::get('/', function () {
 //     return view('adif');
 // });
 
-Route::prefix('/comunicados')->group(function (){
-    Route::get('/crear', [ComunicadosController::class, 'create'])->name('comunicados.create');
-    Route::get('/', [ComunicadosController::class, 'index'])->name('comunicados.index');
-    Route::get('/{id}', [ComunicadosController::class, 'show'])->name('comunicados.show');
-    Route::post('/', [ComunicadosController::class, 'store'])->name('comunicados.store');
-    Route::get('/editar/{id}', [ComunicadosController::class, 'edit'])->name('comunicados.edit');
-    Route::patch('/{id}', [ComunicadosController::class, 'update'])->name('comunicados.update');
-    Route::delete('/{id}', [ComunicadosController::class, 'destroy'])->name('comunicados.destroy');
-});
+Route::resource('comunicados', App\Http\Controllers\ComunicadosController::class);
+
+
+// Route::prefix('/comunicados')->group(function (){
+//     Route::get('/crear', [ComunicadosController::class, 'create'])->name('comunicados.create');
+//     Route::get('/', [ComunicadosController::class, 'index'])->name('comunicados.index');
+//     Route::get('/{id}', [ComunicadosController::class, 'show'])->name('comunicados.show');
+//     Route::post('/', [ComunicadosController::class, 'store'])->name('comunicados.store');
+//     Route::get('/editar/{id}', [ComunicadosController::class, 'edit'])->name('comunicados.edit');
+//     Route::patch('/{id}', [ComunicadosController::class, 'update'])->name('comunicados.update');
+//     Route::delete('/{id}', [ComunicadosController::class, 'destroy'])->name('comunicados.destroy');
+// });
 
 // GET
 // Route::get('/comunicados', [ComunicadosController::class, 'index']);

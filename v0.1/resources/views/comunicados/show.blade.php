@@ -2,11 +2,10 @@
 
 @section('content')
 
-@dd('TEST')
 
-<div class="w-4/5 mx-auto">
+<div class="container mx-auto">
     <div class="pt-10">
-        <a href="{{ URL::previous() }}" class="text-green-500 italic hover:text-green-400 hover:border-b-2 border-green-400 pb-3 transition-all py-20">
+        <a href="{{ route('comunicados.index') }}" class="btn btn-outline-secondary pb-3 transition-all py-20">
             < Atrás
         </a>
     </div>
@@ -39,5 +38,9 @@
         </p>
     </div>
 </div>
+
+
+
+
 
 @endsection

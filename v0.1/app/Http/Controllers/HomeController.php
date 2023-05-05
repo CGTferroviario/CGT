@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comunicado;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -36,6 +37,12 @@ class HomeController extends Controller
     public function biblioteca() 
     {
         return view('biblioteca');
+    }
+    public function bibliotecaComunicados() 
+    {
+        return view('biblioteca.comunicados', [
+            'comunicados' => Comunicado::get()
+        ]);
     }
     public function prensa() 
     {

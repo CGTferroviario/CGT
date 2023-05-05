@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
+use App\Models\Comunicado;
 use App\Models\Empresa;
 use Illuminate\Http\Request;
 
@@ -15,7 +17,7 @@ class EmpresaController extends Controller
     public function index()
     {
         return view('empresas.index', [
-            'empresa' => Empresa::orderBy('id_empresa', 'desc')->get()
+            'empresas' => Empresa::orderBy('id_empresa', 'asc')->get()
         ]);
     }
 
@@ -26,7 +28,11 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        //
+        return view('empresas.create', [
+            'comunicados' => Comunicado::orderBy('id', 'desc')->get(),
+            'empresas' => Empresa::orderBy('id_empresa', 'asc')->get(),
+            'categorias' => Categoria::orderBy('id_empresa', 'asc')->get()
+        ]);
     }
 
     /**

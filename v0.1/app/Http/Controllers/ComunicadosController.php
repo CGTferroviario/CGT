@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Comunicado;
+use App\Models\Empresa;
 use Illuminate\Http\Request;
 
 class ComunicadosController extends Controller
@@ -17,7 +19,7 @@ class ComunicadosController extends Controller
         return view('comunicados.index', [
             'comunicados' => Comunicado::orderBy('updated_at', 'desc')->get()
         ]);
-    }
+    } 
 
     /**
      * Show the form for creating a new resource.
@@ -26,7 +28,11 @@ class ComunicadosController extends Controller
      */
     public function create()
     {
-        return view('comunicados.crear');
+        return view('comunicados.create', [
+            'comunicados' => Comunicado::orderBy('id', 'desc')->get(),
+            'empresas' => Empresa::orderBy('id_empresa', 'asc')->get(),
+            'categorias' => Categoria::orderBy('id_empresa', 'asc')->get()
+        ]);
     }
 
     /**
@@ -60,7 +66,7 @@ class ComunicadosController extends Controller
     public function show($id)
     {
         return view('comunicados.show', [
-            'comunicado' => Comunicado::findOrFail('$id')
+            'comunicados' => Comunicado::findOrFail($id)
         ]);
     }
 
