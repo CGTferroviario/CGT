@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreComunicadosRequest;
 use App\Models\Categoria;
 use App\Models\Comunicado;
 use App\Models\Empresa;
@@ -41,9 +42,11 @@ class ComunicadosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreComunicadosRequest $request)
     {
-        Comunicado::create([
+        $request->validated();
+
+        $comunicado = Comunicado::create([
             'categorias_comunicado' => $request->categorias_comunicado,
             'fecha_com' => $request->fecha_com,
             'fecha_subida' => $request->fecha_subida,
@@ -108,5 +111,11 @@ class ComunicadosController extends Controller
     public function destroy($id)
     {
         //
+    }
+    private function storeImage($request)
+    {
+        $newImageName = uniqid() . '-' . $request->title . '.' . $request->image->extension();
+
+        return $request->image->move(public_path('images'), $newImageName);
     }
 }
