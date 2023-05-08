@@ -20,8 +20,10 @@
     }
 </style>
 <div class="container">
-    <h2 class="">Empresas</h2>
-    <a href="{{ route('etiquetas.create') }}" class="btn btn-success flex inline"> Añadir etiqueta</a>
+    <h2 class="blanco">Empresas</h2>
+    <button class="btn btn-success">
+      <a href="{{ route('etiquetas.create') }}" class="flex inline"> Añadir etiqueta</a>
+    </button>
 
     <table class="table bg-blanco">        
         <tr>

@@ -27,6 +27,7 @@
                     <h1 class="text-3xl rojoBrillante">Añadir etiqueta</h1>
                 </div>
                 <form class="needs-validation" novalidate="" action="{{ route('etiquetas.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="row g-3">
                         <div class="col-md-4">
                             <label for="country" class="form-label">Etiqueta</label>
