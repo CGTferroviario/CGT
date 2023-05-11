@@ -43,7 +43,12 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
+        $empresa = Empresa::create([
+            'nombre_empresa' => $request->nombre_empresa
+        ]);
+
+        return redirect(route('empresas.index'));
     }
 
     /**

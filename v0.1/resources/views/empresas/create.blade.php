@@ -28,44 +28,20 @@
                         Añadir empresa
                     </h1>
                 </div>
-                <form class="needs-validation" novalidate="" action="{{ route('comunicados.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="needs-validation" novalidate="" action="{{ route('empresas.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="row g-3">
                         <div class="col-md-4">
                             <label for="country" class="form-label">Empresa</label>
-                            <select class="form-select" id="country" required="">
-                                    <option value="Elige empresa">Elige empresa</option>
-                                @foreach ($empresas as $empresa)
-                                    <option value="">{{ $empresa->nombre_empresa }}</option>
-                                @endforeach
-                            </select>
+                            <input type="text" value="">
                             <div class="invalid-feedback">
                                 Please select a valid country.
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="country" class="form-label">Categoría</label>
-                            <select class="form-select" id="country" required="">
-                                <option value="Elige categoria">Elige Categoría</option>
-                                @foreach ($categorias as $categoria)
-                                    <option value="">{{ $categoria->nombre_categoria }}</option>
-                                @endforeach
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select a valid country.
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <label for="email" class="form-label">Logotipo</label>
-                            <input type="file" class="form-control" id="doc_pdf">
-                            <div class="invalid-feedback">
-                                Please enter a valid email address for shipping updates.
                             </div>
                         </div>
                     </div>
-        
-        
+
                     <hr class="my-4">
-        
+
                     <button class="w-100 btn btn-outline-danger btn-lg" type="submit">Añadir empresa</button>
                 </form>
             </div>
