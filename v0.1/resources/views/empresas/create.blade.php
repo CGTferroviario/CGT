@@ -33,7 +33,7 @@
                     <div class="row g-3">
                         <div class="col-md-4">
                             <label for="country" class="form-label">Empresa</label>
-                            <input type="text" value="">
+                            <input type="text" value="" name="nombre_empresa">
                             <div class="invalid-feedback">
                                 Please select a valid country.
                             </div>

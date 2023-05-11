@@ -20,9 +20,9 @@
     }
 </style>
 <div class="container">
-    <h2 class="blanco">Etiquetas</h2> 
+    <h2 class="blanco">Categorias</h2>
     <button class="btn btn-success">
-      <a href="{{ route('etiquetas.create') }}" class="flex inline"> Añadir etiqueta</a>
+      <a href="{{ route('categorias.create') }}" class="flex inline"> Añadir categoria</a>
     </button>
 
     <table class="table bg-blanco">        
@@ -30,10 +30,10 @@
             <th>id</th>
             <th>Nombre</th>
         </tr>
-        @foreach ($etiquetas as $etiqueta)
+        @foreach ($categorias as $categoria)
         <tr>
-            <td>{{ $etiqueta->id }}</td>
-            <td>{{ $etiqueta->nombre }}</td>
+            <td>{{ $categoria->id_categoria }}</td>
+            <td>{{ $categoria->nombre_categoria }}</td>
         </tr>
         @endforeach
     </table>

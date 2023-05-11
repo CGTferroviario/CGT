@@ -9,36 +9,36 @@
         <div class="row px-6">
             <div class="col-md-5 col-lg-4 order-md-last">
                 <div class="text-center pt-20">
-                    <h1 class="text-3xl rojoBrillante">Etiquetas existentes</h1>
+                    <h1 class="text-3xl rojoBrillante">Categorias existentes</h1>
                 </div>
                 <ul class="list-group mb-3">
-                    @foreach ($etiquetas as $etiqueta)
+                    @foreach ($categorias as $categoria)
                     <li class="list-group-item d-flex justify-content-between lh-sm">
                         <div>
-                            <h6 class="my-0">{{ $etiqueta->nombre }}</h6>
+                            <h6 class="my-0">{{ $categoria->nombre_categoria }}</h6>
                         </div>
-                        <span class="text-body-secondary">{{ $etiqueta->id }}</span>
+                        <span class="text-body-secondary">{{ $categoria->id_categoria }}</span>
                     </li>
                     @endforeach
                 </ul>
             </div>
             <div class="col-md-7 col-lg-8">
                 <div class="text-center pt-20">
-                    <h1 class="text-3xl rojoBrillante">Añadir etiqueta</h1>
+                    <h1 class="text-3xl rojoBrillante">Añadir categoria</h1>
                 </div>
-                <form class="needs-validation" novalidate="" action="{{ route('etiquetas.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="needs-validation" novalidate="" action="{{ route('categorias.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row g-3">
                         <div class="col-md-4">
-                            <label for="country" class="form-label">Etiqueta</label>
-                            <input class="form-control" type="text" value="" name="nombre" id="nombre">
+                            <label for="country" class="form-label">Categoria</label>
+                            <input class="form-control" type="text" value="" name="nombre_categoria" id="nombre_categoria">
                         </div>                        
                     </div>
         
         
                     <hr class="my-4">
         
-                    <button class="w-100 btn btn-outline-danger btn-lg" type="submit">Añadir etiqueta</button>
+                    <button class="w-100 btn btn-outline-danger btn-lg" type="submit">Añadir categoria</button>
                 </form>
             </div>
         </div>

@@ -20,9 +20,10 @@
     }
 </style>
 <div class="container">
-    <h2 class="">Empresas</h2>
-    <a href="{{ route('empresas.create') }}" class="btn btn-success flex inline"> Añadir empresa</a>
-
+    <h2 class="blanco">Empresas</h2>
+    <button class="btn btn-success">
+      <a href="{{ route('empresas.create') }}" class="flex inline"> Añadir empresa</a>
+    </button>
     <table class="table bg-blanco">        
         <tr>
             <th>id_empresa</th>

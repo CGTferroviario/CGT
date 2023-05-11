@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEtiquetaRequest;
 use App\Http\Requests\UpdateEtiquetaRequest;
 use App\Models\Etiqueta;
+use Illuminate\Http\Request;
 
 class EtiquetaController extends Controller
 {
@@ -36,11 +37,17 @@ class EtiquetaController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreEtiquetaRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response 
      */
-    public function store(StoreEtiquetaRequest $request)
+    public function store(Request $request)
     {
-        //
+        
+        $etiqueta = new Etiqueta;
+        $etiqueta->nombre = $request->input('nombre');
+        $etiqueta->save();
+
+        return redirect(route('etiquetas.create'));
+
     }
 
     /**

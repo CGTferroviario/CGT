@@ -51,31 +51,43 @@
                 <form class="needs-validation" novalidate="" action="{{ route('comunicados.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row g-3">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <label for="country" class="form-label">Empresa</label>
                             <select class="form-select" id="country" required="">
                                     <option value="Elige empresa">Elige empresa</option>
                                 @foreach ($empresas as $empresa)
-                                    <option value="">{{ $empresa->nombre_empresa }}</option>
+                                    <option value="{{ $empresa->nombre_empresa }}">{{ $empresa->nombre_empresa }}</option>
                                 @endforeach
                             </select>
                             <div class="invalid-feedback">
                                 Please select a valid country.
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
+                            <label for="country" class="form-label">Etiqueta</label>
+                            <select class="form-select" id="country" required="">
+                                <option value="Elige categoria">Elige etiqueta</option>
+                                @foreach ($etiquetas as $etiqueta)
+                                    <option value="{{ $etiqueta->nombre }}">{{ $etiqueta->nombre }}</option>
+                                @endforeach
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid country.
+                            </div>
+                        </div>
+                        <div class="col-md-3">
                             <label for="country" class="form-label">Categoría</label>
                             <select class="form-select" id="country" required="">
                                 <option value="Elige categoria">Elige Categoría</option>
                                 @foreach ($categorias as $categoria)
-                                    <option value="">{{ $categoria->nombre_categoria }}</option>
+                                    <option value="{{ $categoria->nombre_categoria }}">{{ $categoria->nombre_categoria }}</option>
                                 @endforeach
                             </select>
                             <div class="invalid-feedback">
                                 Please select a valid country.
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <label for="fecha_com" class="form-label">Fecha de Comunicado</label>
                             <input type="date" class="form-control rojoBrillante" name="fecha_com" placeholder="<?php echo date("Y/m/d"); ?>">
                         </div>

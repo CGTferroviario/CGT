@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;
-use App\Models\Comunicado;
-use App\Models\Empresa;
 use Illuminate\Http\Request;
 
-class EmpresaController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,8 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        return view('empresas.index', [
-            'empresas' => Empresa::orderBy('id_empresa', 'asc')->get()
+        return view('categorias.index', [
+            'categorias' => Categoria::orderBy('id_categoria', 'asc')->get()
         ]);
     }
 
@@ -28,10 +26,8 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        return view('empresas.create', [
-            'comunicados' => Comunicado::orderBy('id', 'desc')->get(),
-            'empresas' => Empresa::orderBy('id_empresa', 'asc')->get(),
-            'categorias' => Categoria::orderBy('id_empresa', 'asc')->get()
+        return view('categorias.create', [
+            'categorias' => Categoria::orderBy('id_categoria', 'asc')->get()
         ]);
     }
 
@@ -43,15 +39,27 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
-        $empresa = new Empresa;
-        $empresa->nombre_empresa = $request->input('nombre_empresa');
-        $empresa->logo_empresa = "Lalala";
-        $empresa->gestion_vales = "2023-05-04 15:04:55";
-        $empresa->save();
+        $categoria = new Categoria;
+        $categoria->nombre_categoria = $request->input('nombre_categoria');
+        $categoria->cod_categoria = "15";
+        $categoria->id_empresa = "15";
+        $categoria->colegio_electoral = "B";
+        $categoria->fecha_alta = "2023-05-04 15:04:55";
+        $categoria->fecha_baja = "2023-05-04 15:04:55";
+        $categoria->save();
+
+// id_categoria	
+// id_empresa	
+// cod_categoria	
+// nombre_categoria	
+// colegio_electoral	
+// fecha_alta	
+// fecha_baja	
+// created_at	
+// updated_at
 
 
-        return redirect(route('empresas.index'));
-
+        return redirect(route('categorias.index'));
     }
 
     /**

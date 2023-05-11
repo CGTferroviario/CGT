@@ -33,6 +33,7 @@ Route::get('/', function () {
 Route::resource('comunicados', App\Http\Controllers\ComunicadosController::class);
 Route::resource('etiquetas', App\Http\Controllers\EtiquetaController::class);
 Route::resource('empresas', App\Http\Controllers\EmpresaController::class);
+Route::resource('categorias', App\Http\Controllers\CategoriaController::class);
 
 
 // Route::prefix('/comunicados')->group(function (){
@@ -44,11 +45,9 @@ Route::resource('empresas', App\Http\Controllers\EmpresaController::class);
 //     Route::patch('/{id}', [ComunicadosController::class, 'update'])->name('comunicados.update');
 //     Route::delete('/{id}', [ComunicadosController::class, 'destroy'])->name('comunicados.destroy');
 // });
-
 // GET
 // Route::get('/comunicados', [ComunicadosController::class, 'index']);
 // Route::get('/articulos/{id}', [ComunicadosController::class, 'show']);
-
 // POST 
 // Route::get('/comunicados/crear', [ComunicadosController::class, 'crear']);
 // Route::get('/comunicados', [ComunicadosController::class, 'store']);

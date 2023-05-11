@@ -6,6 +6,7 @@ use App\Http\Requests\StoreComunicadosRequest;
 use App\Models\Categoria;
 use App\Models\Comunicado;
 use App\Models\Empresa;
+use App\Models\Etiqueta;
 use Illuminate\Http\Request;
 
 class ComunicadosController extends Controller
@@ -32,7 +33,8 @@ class ComunicadosController extends Controller
         return view('comunicados.create', [
             'comunicados' => Comunicado::orderBy('id', 'desc')->get(),
             'empresas' => Empresa::orderBy('id_empresa', 'asc')->get(),
-            'categorias' => Categoria::orderBy('id_empresa', 'asc')->get()
+            'etiquetas' => Etiqueta::orderBy('id', 'asc')->get(),
+            'categorias' => Categoria::orderBy('id_categoria', 'asc')->get()
         ]);
     }
 
@@ -44,8 +46,8 @@ class ComunicadosController extends Controller
      */
     public function store(StoreComunicadosRequest $request)
     {
-        $request->validated();
-
+        // $request->validated();
+        dd('Hola');
         $comunicado = Comunicado::create([
             'categorias_comunicado' => $request->categorias_comunicado,
             'fecha_com' => $request->fecha_com,

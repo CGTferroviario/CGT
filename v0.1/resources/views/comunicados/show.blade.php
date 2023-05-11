@@ -5,7 +5,7 @@
 
 <div class="container mx-auto">
     <div class="pt-10">
-        <a href="{{ route('comunicados.index') }}" class="btn btn-outline-secondary pb-3 transition-all py-20">
+        <a href="{{ route('comunicados.index') }}" class="btn btn-secondary pb-3 transition-all py-20">
             < Atrás
         </a>
     </div>
