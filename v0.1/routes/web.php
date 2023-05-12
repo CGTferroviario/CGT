@@ -34,6 +34,7 @@ Route::resource('comunicados', App\Http\Controllers\ComunicadosController::class
 Route::resource('etiquetas', App\Http\Controllers\EtiquetaController::class);
 Route::resource('empresas', App\Http\Controllers\EmpresaController::class);
 Route::resource('categorias', App\Http\Controllers\CategoriaController::class);
+Route::resource('documentos', App\Http\Controllers\DocumentoController::class);
 
 
 // Route::prefix('/comunicados')->group(function (){

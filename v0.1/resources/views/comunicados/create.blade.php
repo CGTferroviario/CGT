@@ -51,6 +51,13 @@
                 <form class="needs-validation" novalidate="" action="{{ route('comunicados.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row g-3">
+                        <div class="col-md-1">
+                            <label for="country" class="form-label">Número</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                            <div class="invalid-feedback">
+                                Please select a valid country.
+                            </div>
+                        </div>
                         <div class="col-md-3">
                             <label for="country" class="form-label">Empresa</label>
                             <select class="form-select" id="country" required="">
@@ -87,8 +94,8 @@
                                 Please select a valid country.
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <label for="fecha_com" class="form-label">Fecha de Comunicado</label>
+                        <div class="col-md-2">
+                            <label for="fecha_com" class="form-label">Fecha</label>
                             <input type="date" class="form-control rojoBrillante" name="fecha_com" placeholder="<?php echo date("Y/m/d"); ?>">
                         </div>
                         <div class="col-sm-6">
