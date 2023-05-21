@@ -392,6 +392,7 @@
                     <td><i class="text-3xl fa-solid fa-trash hover:text-red-500 cursor-pointer"></i></td>
                     <td><i class="text-3xl fa-sharp fa-solid fa-pen hover:text-green-500 cursor-pointer"></i></td>
                     <td><i class="text-3xl fa-solid fa-eye hover:text-blue-500 cursor-pointer"></i></td>
+                    <td><i class="text-3xl fa-solid fa-envelope hover:text-blue-500 cursor-pointer" title="Enviar por Correo Electrónico"></i></td>
 
 
                 </tr>
