@@ -16,20 +16,22 @@ class ComunicadosSeeder extends Seeder
      */
     public function run()
     {
-        // DB::table('comunicados')->truncate(); //for cleaning earlier data to avoid duplicate entries
-        // DB::table('comunicados')->insert([
-        //     'categorias_comunicado' => 'pablo',
-        //     'fecha_com' => 'pablo@pablo.com',
-        //     'fecha_subida' => 'admin',
-        //     'titulo' => $this->faker->sentence(),
-        //     'subtitulo' => 'pablocgt',
-        //     'descripcion' => 'pablocgt',
-        //     'adjunto1' => 'pablocgt',
-        //     'adjunto2' => 'pablocgt',
-        //     'adjunto3' => 'pablocgt',
-        //     'imagen' => 'pablocgt',
-        //     'created_at' => 'pablocgt',
-        //     'updated_at' => 'pablocgt',
-        // ]);
+        DB::table('comunicados')->truncate(); //for cleaning earlier data to avoid duplicate entries
+        DB::table('comunicados')->insert([
+            'numero' => '10',
+            'empresa' => 'renfe',
+            'etiqueta' => 'igualdad',
+            'categoria' => 'infraestructura',
+            'fecha' => '2023-05-15',
+            'titulo' => 'pablocgt',
+            'subtitulo' => 'pablocgt',
+            'cuerpo' => 'pablocgt',
+            'adjunto1' => 'pablocgt',
+            'adjunto2' => 'pablocgt',
+            'adjunto3' => 'pablocgt',
+            'imagen' => 'pablocgt',
+            'created_at' => '2023-05-15',
+            'updated_at' => '2023-05-15',
+        ]);
     }
-}		
+}

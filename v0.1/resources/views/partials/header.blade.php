@@ -213,7 +213,7 @@
                     Accede a tu <a href="/home">Panel de Afiliado</a>
                   </h6>
                   <hr>
-                  <span><a href="{{ route('comunicados.index') }}" class="enlace">Comunicados</a></span>
+                  <span><a href="{{ url('comunicados') }}" class="enlace">Comunicados</a></span>
                     <div class="btn-group">
                       <a href="{{ route('comunicados.index') }}" class="btn btn-outline-secondary">Editar</a>
                       <a href="{{ route('comunicados.create') }}" class="btn btn-outline-info">Añadir</a>

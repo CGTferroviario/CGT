@@ -136,8 +136,10 @@ Route::prefix('juridica')->group(function () {
 });
 
 Route::get('/biblioteca', [App\Http\Controllers\HomeController::class, 'biblioteca'])->name('biblioteca');
+Route::get('/biblioteca/comunicados', [App\Http\Controllers\HomeController::class, 'comunicados'])->name('biblioteca.comunicados');
+
+
 Route::prefix('biblioteca')->group(function () {
-    Route::view('/comunicados', 'biblioteca.comunicados');
     Route::view('/seguridad', 'biblioteca.seguridad'); 
     Route::view('/defensa', 'biblioteca.defensa');
     Route::view('/archivo', 'biblioteca.archivo');

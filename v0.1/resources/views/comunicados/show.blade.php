@@ -10,9 +10,9 @@
         </a>
     </div>
 
-    <h4 class="text-left sm:text-center text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 py-10 sm:py-20">
-        {{ $comunicados->titulo }}
-    </h4>
+    <h2 class="text-left sm:text-center text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 py-10 sm:py-20">
+    {{ $comunicados->numero }} .- {{ $comunicados->titulo }}
+    </h2>
 
     <div class="block lg:flex flex-row">
         <div class="basis-9/12 text-center sm:block sm:text-left">
@@ -34,7 +34,7 @@
         </p>
 
         <p class="text-base text-black pt-10">
-            {{ $comunicados->descripcion }}
+            {{ $comunicados->cuerpo }}
         </p>
     </div>
 </div>

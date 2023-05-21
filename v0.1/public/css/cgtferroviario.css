@@ -249,7 +249,9 @@ nav{
 /* Fin Colores */
 
 /* Textos */
-
+.cabecera{
+  margin-top: -2em !important;
+}
 .peq{
   font-size: 90%;
 }

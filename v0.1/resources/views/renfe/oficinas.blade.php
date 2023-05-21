@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<h1 class="m-0 py-3 centrado blanco grande bg-moradoRenfe">COLECTIVO DE OFICINAS</h1>
+<h1 class="m-0 py-3 centrado cabecera blanco grande bg-moradoRenfe">COLECTIVO DE OFICINAS</h1>
 <div class="container-fluid fondo tecnicos">
     <div class="row">
         <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">

@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('comunicados', function (Blueprint $table) {
             $table->id('id');
-            $table->string('categorias_comunicado');
-            $table->date('fecha_com');
-            $table->date('fecha_subida');
-            $table->unsignedTinyInteger('id_empresa');
+            $table->unsignedTinyInteger('numero');
+            $table->string('empresa');
+            $table->string('etiqueta');
+            $table->string('categoria');
+            $table->date('fecha');
             $table->string('titulo');
             $table->string('subtitulo');
-            $table->text('descripcion');
+            $table->text('cuerpo');
             $table->string('adjunto1');
             $table->string('adjunto2');
             $table->string('adjunto3');

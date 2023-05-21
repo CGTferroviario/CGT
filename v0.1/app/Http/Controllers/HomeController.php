@@ -38,10 +38,11 @@ class HomeController extends Controller
     {
         return view('biblioteca');
     }
-    public function bibliotecaComunicados() 
+    public function comunicados() 
     {
         return view('biblioteca.comunicados', [
-            'comunicados' => Comunicado::get()
+            
+            'comunicados' => Comunicado::orderBy('updated_at', 'desc')->get()
         ]);
     }
     public function prensa() 

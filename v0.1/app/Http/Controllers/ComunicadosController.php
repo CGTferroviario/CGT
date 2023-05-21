@@ -21,7 +21,7 @@ class ComunicadosController extends Controller
         return view('comunicados.index', [
             'comunicados' => Comunicado::orderBy('updated_at', 'desc')->get()
         ]);
-    } 
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -34,7 +34,7 @@ class ComunicadosController extends Controller
             'comunicados' => Comunicado::orderBy('id', 'desc')->get(),
             'empresas' => Empresa::orderBy('id_empresa', 'asc')->get(),
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get(),
-            'categorias' => Categoria::orderBy('id_categoria', 'asc')->get()
+            'categorias' => Categoria::orderBy('id', 'asc')->get()
         ]);
     }
 
@@ -44,19 +44,24 @@ class ComunicadosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreComunicadosRequest $request)
+    public function store(Request $request)
     {
         // $request->validated();
-        dd('Hola');
+        // dd($request);
         $comunicado = Comunicado::create([
-            'categorias_comunicado' => $request->categorias_comunicado,
-            'fecha_com' => $request->fecha_com,
-            'fecha_subida' => $request->fecha_subida,
-            'id_empresa' => $request->id_empresa,
+            'numero' => $request->numero,
+            'empresa' => $request->empresa,
+            'etiqueta' => $request->etiqueta,
+            'categoria' => $request->categoria,
+            'fecha' => $request->fecha,
             'titulo' => $request->titulo,
             'subtitulo' => $request->subtitulo,
-            'descripcion' => $request->descripcion,
-            'adjunto1' => $this->storeImage($request)
+            'cuerpo' => $request->cuerpo,
+            'adjunto1' => $request->adjunto1,
+            'adjunto2' => $request->adjunto2,
+            'adjunto3' => $request->adjunto3,
+            'imagen' => $request->imagen,
+            // 'adjunto1' => $this->storeImage($request)
         ]);
 
         return redirect(route('comunicados.index'));

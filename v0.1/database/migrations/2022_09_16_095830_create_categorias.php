@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('categorias', function (Blueprint $table) {
-            $table->id('id_categoria');
+            $table->id('id');
             $table->unsignedTinyInteger('id_empresa');
-            $table->string('cod_categoria', 4);
-            $table->string('nombre_categoria');
+            $table->string('cod_categoria');
+            $table->string('nombre');
             $table->string('colegio_electoral', 1);
             $table->date('fecha_alta');
             $table->date('fecha_baja');

@@ -8,35 +8,32 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('documentos', function (Blueprint $table) {
-            $table->id('id_documento');
-            $table->string('tipo_documento');
-            $table->date('fecha_doc');
-            $table->date('fecha_subida');
-            $table->unsignedTinyInteger('id_empresa');
+        Schema::create('comunicados', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedTinyInteger('numero');
+            $table->string('empresa');
+            $table->string('etiqueta');
+            $table->string('categoria');
+            $table->date('fecha');
             $table->string('titulo');
             $table->string('subtitulo');
-            $table->text('descripcion');
+            $table->text('cuerpo');
             $table->string('adjunto1');
             $table->string('adjunto2');
             $table->string('adjunto3');
             $table->string('imagen');
             $table->timestamps();
-        }); 
+        });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('documentos');
+        Schema::dropIfExists('comunicados');
     }
 };

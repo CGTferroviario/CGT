@@ -13,4 +13,9 @@ class Categoria extends Model
         'id_categoria', 'id_empresa', 'cod_categoria', 'nombre_categoria', 'colegio_electoral', 'fecha_alta', 'fecha_baja'
     ];
 
+    public function comunicados()
+    {
+        return $this->hasMany(Comunicado::class);
+    }
+
 }

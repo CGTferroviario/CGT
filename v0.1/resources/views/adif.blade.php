@@ -12,7 +12,7 @@
 
 @section('content')
 
-<h1 class="m-0 py-3 centrado blanco grande bg-verdeAdif">DOCUMENTACIÓN GENERAL ADIF</h1>
+<h1 class="m-0 py-3 centrado cabecera blanco grande bg-verdeAdif">DOCUMENTACIÓN GENERAL ADIF</h1>
 
 <div class="container-fluid fondo documentacion adif">
   <div class="row py-3">

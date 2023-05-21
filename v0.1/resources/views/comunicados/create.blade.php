@@ -51,16 +51,9 @@
                 <form class="needs-validation" novalidate="" action="{{ route('comunicados.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row g-3">
-                        <div class="col-md-1">
-                            <label for="country" class="form-label">Número</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
-                            <div class="invalid-feedback">
-                                Please select a valid country.
-                            </div>
-                        </div>
                         <div class="col-md-3">
                             <label for="country" class="form-label">Empresa</label>
-                            <select class="form-select" id="country" required="">
+                            <select class="form-select" id="empresa" name="empresa" required="">
                                     <option value="Elige empresa">Elige empresa</option>
                                 @foreach ($empresas as $empresa)
                                     <option value="{{ $empresa->nombre_empresa }}">{{ $empresa->nombre_empresa }}</option>
@@ -72,8 +65,8 @@
                         </div>
                         <div class="col-md-3">
                             <label for="country" class="form-label">Etiqueta</label>
-                            <select class="form-select" id="country" required="">
-                                <option value="Elige categoria">Elige etiqueta</option>
+                            <select class="form-select" id="etiqueta" name="etiqueta" required="">
+                                <option value="Elige etiqueta">Elige etiqueta</option>
                                 @foreach ($etiquetas as $etiqueta)
                                     <option value="{{ $etiqueta->nombre }}">{{ $etiqueta->nombre }}</option>
                                 @endforeach
@@ -83,32 +76,39 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label for="country" class="form-label">Categoría</label>
-                            <select class="form-select" id="country" required="">
+                            <label for="categorias_comunicado" class="form-label">Categoría</label>
+                            <select class="form-select" id="categoria" name="categoria" required="">
                                 <option value="Elige categoria">Elige Categoría</option>
                                 @foreach ($categorias as $categoria)
-                                    <option value="{{ $categoria->nombre_categoria }}">{{ $categoria->nombre_categoria }}</option>
+                                    <option value="{{ $categoria->nombre }}">{{ $categoria->nombre }}</option>
                                 @endforeach
                             </select>
                             <div class="invalid-feedback">
                                 Please select a valid country.
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <label for="fecha_com" class="form-label">Fecha</label>
-                            <input type="date" class="form-control rojoBrillante" name="fecha_com" placeholder="<?php echo date("Y/m/d"); ?>">
+                            <input type="date" class="form-control rojoBrillante" name="fecha" placeholder="<?php echo date("Y/m/d"); ?>">
                         </div>
-                        <div class="col-sm-6">
-                            <label for="firstName" class="form-label">Título</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                        <div class="col-md-2">
+                            <label for="country" class="form-label">Número</label>
+                            <input type="number" class="form-control" id="numero" name="numero" placeholder="" value="" required="">
+                            <div class="invalid-feedback">
+                                Please select a valid country.
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <label for="titulo" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="" value="" required="">
                             <div class="invalid-feedback">
                                 Valid first name is required.
                             </div>
                         </div>
-        
-                        <div class="col-sm-6">
+                        
+                        <div class="col-sm-5">
                             <label for="lastName" class="form-label">Subtitulo</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                            <input type="text" class="form-control" id="subtitulo" name="subtitulo" placeholder="" value="" required="">
                             <div class="invalid-feedback">
                                 Valid last name is required.
                             </div>
@@ -116,12 +116,12 @@
         
                         <div class="col-12">
                             <label for="username" class="form-label">Descripción</label>
-                            <textarea name="Texto" class="form-control" id="" cols="30" rows="10"></textarea>
+                            <textarea name="cuerpo" class="form-control" id="" cols="30" rows="10"></textarea>
                         </div>
         
                         <div class="col-12">
                             <label for="email" class="form-label">Comunicado en PDF</label>
-                            <input type="file" class="form-control" id="doc_pdf">
+                            <input type="text" name="adjunto1" class="form-control" id="doc_pdf">
                             <div class="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
@@ -129,7 +129,7 @@
         
                         <div class="col-12">
                             <label for="address" class="form-label">Adjuntos (anexos)</label>
-                            <input type="file" class="form-control" id="doc_adj">
+                            <input type="text"  name="adjunto2" class="form-control" id="doc_adj">
                             <div class="invalid-feedback">
                                 Please enter your shipping address.
                             </div>
@@ -137,7 +137,12 @@
         
                         <div class="col-12">
                             <label for="address2" class="form-label">Imagen (jpg o png)</label>
-                            <input type="file" class="form-control" id="doc_img">
+                            <input type="text" name="adjunto3" class="form-control" id="doc_img">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="address2" class="form-label">Imagen (jpg o png)</label>
+                            <input type="text" name="imagen" class="form-control" id="doc_img">
                         </div>
                     </div>
         
