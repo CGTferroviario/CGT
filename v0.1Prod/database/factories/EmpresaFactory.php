@@ -17,7 +17,9 @@ class EmpresaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nombre' => $this->faker->word(),
+            'logo' => $this->faker->url(),
+            'gestion_vales' => $this->faker->boolean()
         ];
     }
 }

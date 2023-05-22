@@ -17,7 +17,8 @@ class CategoriaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nombre' => $this->faker->unique()->word(),
+            'id_empresa' => $this->faker->randomDigit()
         ];
     }
 }

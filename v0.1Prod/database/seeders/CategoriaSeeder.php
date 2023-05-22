@@ -13,14 +13,15 @@ class CategoriaSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('categorias')->truncate(); //for cleaning earlier data to avoid duplicate entries
-        DB::table('categorias')->insert([
-            'id_empresa' => 7,
-            'cod_categoria' => '012',
-            'nombre' => 'admin',
-            'colegio_electoral' => 'A',
-            'fecha_alta' => '2023-05-15',
-            'fecha_baja' => '2023-05-16',
-        ]);
+        // DB::table('categorias')->truncate(); //for cleaning earlier data to avoid duplicate entries
+        // DB::table('categorias')->insert([
+        //     'nombre' => 'INFRAESTRUCTURA', 'id_empresa' => 1 ,
+        //     'nombre' => 'CIRCULACIÓN', 'id_empresa' => 1 ,
+        //     'nombre' => 'OFICINAS', 'id_empresa' => 1 ,
+        //     'nombre' => 'COMERCIAL', 'id_empresa' => 2 ,
+        //     'nombre' => 'INTERVENCIÓN', 'id_empresa' => 2 ,
+        //     'nombre' => 'CONDUCCIÓN', 'id_empresa' => 2 ,
+        //     'nombre' => 'TALLERES', 'id_empresa' => 2 ,
+        // ]);
     }
 }

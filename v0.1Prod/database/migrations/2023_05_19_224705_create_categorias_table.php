@@ -13,12 +13,8 @@ return new class extends Migration
     {
         Schema::create('categorias', function (Blueprint $table) {
             $table->id();
-            $table->unsignedTinyInteger('id_empresa')->nullable();
-            $table->string('cod_categoria')->nullable();
-            $table->string('nombre')->nullable();
-            $table->string('colegio_electoral', 1)->nullable();
-            $table->date('fecha_alta')->nullable();
-            $table->date('fecha_baja')->nullable();
+            $table->string('nombre')->unique();
+            $table->unsignedTinyInteger('id_empresa');
             $table->timestamps();
         });
     }
