@@ -18,6 +18,13 @@
                 {{ __("You're logged in!") }}
             </div>
         </div>
+        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="p-6 text-gray-900 dark:text-gray-100">
+                <h1>Comunicados de: {{ Auth::user()->nombre }}</h1>
+                @foreach(Auth::user()->comunicados as $comunicado)
+                    <h2>{{ $comunicado->titulo }}</h2>
+                @endforeach
+        </div>        
     </div>
 </div>
 @endsection

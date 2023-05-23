@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -13,10 +14,12 @@ return new class extends Migration
     {
         Schema::create('comunicados', function (Blueprint $table) {
             $table->id();
+            $table->boolean('publicado');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedTinyInteger('numero');
             $table->string('empresa');
-            $table->string('etiqueta');
-            $table->string('categoria');
+            $table->unsignedTinyInteger('etiqueta')->nullable();
+            $table->unsignedTinyInteger('categoria');
             $table->date('fecha');
             $table->string('titulo');
             $table->string('subtitulo');
@@ -25,6 +28,10 @@ return new class extends Migration
             $table->string('adjunto2');
             $table->string('adjunto3');
             $table->string('imagen');
+            $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('empresa')->references('nombre')->on('empresas')->onDelete('cascade');
+            // $table->foreign('etiqueta_id')->references('id')->on('etiquetas')->onDelete('cascade');
+            // $table->foreign('categoria_id')->references('id')->on('categoria')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Empresa extends Model
 {
     use HasFactory;
+
+    // public function comunicados()
+    // {
+    //     return $this->hasMany(Comunicado::class);
+    // }
 }

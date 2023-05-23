@@ -14,7 +14,7 @@ class ComunicadoController extends Controller
     public function index()
     {
         return view('comunicados.index', [
-            'comunicados' => Comunicado::orderBy('updated_at', 'desc')->get(),
+            'comunicados' => Comunicado::orderBy('updated_at', 'desc')->paginate(10)
         ]);
         
     }

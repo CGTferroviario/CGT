@@ -21,6 +21,9 @@ class ComunicadoFactory extends Factory
     {
         return [
             'numero' => $this->faker->randomDigit(),
+            'publicado' => $this->faker->boolean(),
+            // 'user_id' => $this->faker->boolean(),
+            'user_id' => 1,
             'empresa' => Empresa::factory(),
             'etiqueta' => Etiqueta::factory(),
             'categoria' => Categoria::factory(),

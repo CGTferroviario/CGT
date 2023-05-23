@@ -1,15 +1,6 @@
 @extends('plantillas.principal')
 
 @section('contenido')
-<style>
-    td{
-        max-width: 90px;
-    }
-    tr, td{
-        max-height: 100px;
-        overflow: hidden;
-    }
-</style>
 <!-- component -->
 <section class="container px-4 mx-auto">
     <div class="sm:flex sm:items-center sm:justify-between">
@@ -75,6 +66,10 @@
         </div>
     </div>
 
+    <div class="mx-auto pt-4 pb-2">
+        {{ $comunicados->links() }}
+    </div>
+
     <div class="flex flex-col mt-6">
         <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
@@ -85,6 +80,11 @@
                                 <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                     <button class="flex items-center gap-x-3 focus:outline-none">
                                         <span>Nº</span>
+                                    </button>
+                                </th>
+                                <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                    <button class="flex items-center gap-x-3 focus:outline-none">
+                                        <span>Publicado por:</span>
                                     </button>
                                 </th>
 
@@ -103,48 +103,52 @@
                                 <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">Cuerpo</th>
 
                                 <th scope="col" class="relative py-3.5 px-4">
-                                    <span class="sr-only">Edit</span>
+                                    <span class="sr-only">Editar</span>
                                 </th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                             @foreach ($comunicados as $comunicado)
                             <tr>
-                                <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
+                                <td class="px-2 py-2 text-sm font-medium whitespace-pre-line">
                                     <div>
                                         <h2 class="font-medium text-gray-800 dark:text-white ">{{ $comunicado->numero }}</h2>
                                     </div>
                                 </td>
-                                <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
+                                <td class="px-2 py-2 text-sm font-medium whitespace-pre-line">
+                                    <div>
+                                        <h2 class="font-medium text-gray-800 dark:text-white ">{{ $comunicado->user->nombre }}</h2>
+                                    </div>
+                                </td>
+                                <td class="px-2 py-2 text-sm font-medium whitespace-pre-line">
                                     <div class="inline px-3 py-1 text-sm font-normal gap-x-2 dark:bg-gray-800">
                                         {{ $comunicado->titulo }}
                                     </div>
                                 </td>
-                                <td class="px-4 py-4 text-sm whitespace-nowrap">
+                                <td class="px-2 py-2 text-sm whitespace-pre-line">
                                     <div>
                                         <p class="text-gray-500 dark:text-gray-400">{{ $comunicado->subtitulo }}</p>
                                     </div>
                                 </td>
-                                <td class="px-4 py-4 text-sm whitespace-nowrap">
+                                <td class="px-2 py-2 text-sm text-center">
                                     <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
                                         {{ $comunicado->empresa }}
                                     </div>
                                 </td>
-
-                                <td class="px-4 py-4 text-sm whitespace-nowrap">
+                                <td class="px-2 py-2 text-sm text-center">
                                     <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
                                         {{ $comunicado->categoria }}
                                     </div>
                                 </td>
 
-                                <td class="px-4 py-4 text-sm whitespace-nowrap">
+                                <td class="px-2 py-2 text-sm text-center">
                                     <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
                                         {{ $comunicado->etiqueta }}
                                     </div>
                                 </td>
 
-                                <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                    <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
+                                <td class="px-2 py-2 text-sm whitespace-pre-line w-100">
+                                    <div class="inline px-3 py-1 text-sm font-normal gap-x-2">
                                         {{ $comunicado->cuerpo }}
                                     </div>
                                 </td>
@@ -160,10 +164,12 @@
                             </tr>
                         </tbody>
                     </table>
+                    
                 </div>
             </div>
         </div>
     </div>
+    
 
     <div class="mt-6 sm:flex sm:items-center sm:justify-between ">
         <div class="text-sm text-gray-500 dark:text-gray-400">
@@ -193,74 +199,6 @@
         </div>
     </div>
 </section>
-<div class="container-fluid fondo documentos">
-    <div class="row">
-        <h1 class="m-0 py-3 centrado cabecera negro grande bg-rojoBrillante">COMUNICADOS</h1>
 
-        <div class="">
-            <a href="{{ route('comunicados.create') }}" class="btn btn-success">Añadir comunicado</a>
-        </div>
-        {{-- <div class="col-md-4"></div> --}}
-        <div class="col-md-8">
-            <table class="table bg-blanco">        
-                <tr>
-                    <th>Nº</th>
-                    <th>Titulo</th>
-                    <th>Subtitulo</th>
-                    <th>Empresa</th>
-                    <th>Categoria</th>
-                    <th>Etiqueta</th>
-                    <th>Cuerpo</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                @foreach ($comunicados as $comunicado)
-                <tr>
-                    <td>{{ $comunicado->numero }}</td>
-                    <td>{{ $comunicado->titulo }}</td>
-                    <td>{{ $comunicado->subtitulo }}</td>
-                    <td><span class="badge rounded-pill peq bg-verdeAdif">{{ $comunicado->empresa }}</span></td>
-                    <td><span class="badge rounded-pill peq bg-moradoRenfe">{{ $comunicado->categoria }}</span></td>
-                    <td><span class="badge rounded-pill peq bg-rojoBrillante">{{ $comunicado->etiqueta }}</span></td>
-                    <td>{{ $comunicado->cuerpo }}</td>
-                    <td><i class="text-3xl fa-solid fa-trash hover:text-red-500 cursor-pointer"></i></td>
-                    <td><i class="text-3xl fa-sharp fa-solid fa-pen hover:text-green-500 cursor-pointer"></i></td>
-                    <td><i class="text-3xl fa-solid fa-eye hover:text-blue-500 cursor-pointer"></i></td>
-                    <td><i class="text-3xl fa-solid fa-envelope hover:text-blue-500 cursor-pointer" title="Enviar por Correo Electrónico"></i></td>
-
-
-                </tr>
-                @endforeach
-            </table>
-        </div>
-
-        {{-- @foreach ($comunicados as $comunicado)
-
-        <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
-            <div class="card h-100 bg-grisOscuro-7 mb-3 blanco bordeRojo" style="">
-                <div class="card-header bordeBottomRojo">
-                    <a href="{{ route('comunicados.show', $comunicado->id) }}"><h1>{{ $comunicado->numero }} .- {{ $comunicado->titulo }}</h1></a>
-                    <p class="card-text mt-2">{{ $comunicado->subtitulo }}</p>
-                </div>
-                <div class="card-body">
-                    <span class="badge rounded-pill peq bg-verdeAdif">{{ $comunicado->empresa }}</span>
-                    <span class="badge rounded-pill peq bg-moradoRenfe">{{ $comunicado->categoria }}</span>
-                    <span class="badge rounded-pill peq bg-rojoBrillante">{{ $comunicado->etiqueta }}</span>
-                    
-                    <p class="card-text mt-2 text-justify">{{ $comunicado->cuerpo }}</p>
-                </div>
-                <div class="card-footer bordeTopRojo p-1">
-                    <div class="btn-group centrado w-100">
-                        <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="btn rojoBrillante" target="blank"><i class="fa fa-eye"></i>&nbsp;&nbsp;Visualizar</a>
-                        <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="btn rojoBrillante" target="_blank" download="CGT_Afiliacion_Nomina"><i class="fa fa-download"></i>&nbsp;&nbsp;Descargar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        @endforeach --}}
-    </div>
-</div>
 
 @endsection
