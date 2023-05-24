@@ -9,8 +9,12 @@ class Empresa extends Model
 {
     use HasFactory;
 
-    // public function comunicados()
-    // {
-    //     return $this->hasMany(Comunicado::class);
-    // }
+    public function comunicados()
+    {
+        return $this->hasMany(Comunicado::class);
+    }
+    public function categoria()
+    {
+        return $this->hasMany(Categoria::class);
+    }
 }

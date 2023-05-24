@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('categorias', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre')->unique();
-            $table->unsignedTinyInteger('id_empresa');
+            $table->string('nombre')->default('CGT');
+            $table->unsignedBigInteger('empresa_id');
+            $table->foreign('empresa_id')->references('id')->on('empresas');
             $table->timestamps();
+
         });
     }
 

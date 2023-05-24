@@ -16,10 +16,10 @@ class Comunicado extends Model
     {
         return $this->belongsTo(User::class);
     }
-    // public function empresa()
-    // {
-    //     return $this->belongsTo(Empresa::class);
-    // }
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class);
+    }
 }
 
 // $table->boolean('publicado');

@@ -18,7 +18,7 @@
                     @foreach ($categorias as $categoria)
                     <tr>
                         <td>{{ $categoria->nombre }}</td>
-                        <td>{{ $categoria->id_empresa }}</td>
+                        <td>{{ $categoria->empresa->nombre }}</td>
                     </tr>
                     @endforeach
                 </table>

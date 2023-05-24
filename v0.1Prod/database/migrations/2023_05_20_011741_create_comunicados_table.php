@@ -17,7 +17,7 @@ return new class extends Migration
             $table->boolean('publicado');
             $table->unsignedBigInteger('user_id');
             $table->unsignedTinyInteger('numero');
-            $table->string('empresa');
+            $table->unsignedBigInteger('empresa_id');
             $table->unsignedTinyInteger('etiqueta')->nullable();
             $table->unsignedTinyInteger('categoria');
             $table->date('fecha');
@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('adjunto3');
             $table->string('imagen');
             $table->foreign('user_id')->references('id')->on('users');
-            // $table->foreign('empresa')->references('nombre')->on('empresas')->onDelete('cascade');
+            $table->foreign('empresa_id')->references('id')->on('empresas');
             // $table->foreign('etiqueta_id')->references('id')->on('etiquetas')->onDelete('cascade');
             // $table->foreign('categoria_id')->references('id')->on('categoria')->onDelete('cascade');
             $table->timestamps();

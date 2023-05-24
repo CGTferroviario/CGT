@@ -15,13 +15,13 @@ class CategoriaSeeder extends Seeder
     {
         DB::table('categorias')->truncate(); //for cleaning earlier data to avoid duplicate entries
         DB::table('categorias')->insert([
-            'nombre' => 'INFRAESTRUCTURA', 'id_empresa' => 1 ,
-            'nombre' => 'CIRCULACIÓN', 'id_empresa' => 1 ,
-            'nombre' => 'OFICINAS', 'id_empresa' => 1 ,
-            'nombre' => 'COMERCIAL', 'id_empresa' => 2 ,
-            'nombre' => 'INTERVENCIÓN', 'id_empresa' => 2 ,
-            'nombre' => 'CONDUCCIÓN', 'id_empresa' => 2 ,
-            'nombre' => 'TALLERES', 'id_empresa' => 2 ,
+            ['nombre' => 'INFRAESTRUCTURA', 'empresa_id' => 1 ],
+            ['nombre' => 'CIRCULACIÓN', 'empresa_id' => 1 ],
+            ['nombre' => 'OFICINAS', 'empresa_id' => 1 ],
+            ['nombre' => 'COMERCIAL', 'empresa_id' => 2 ],
+            ['nombre' => 'INTERVENCIÓN', 'empresa_id' => 2 ],
+            ['nombre' => 'CONDUCCIÓN', 'empresa_id' => 2 ],
+            ['nombre' => 'TALLERES', 'empresa_id' => 2 ],
         ]);
     }
 }
