@@ -1,6 +1,7 @@
 @extends('plantillas.principal')
 
 @section('contenido')
+    @dd($request)
     <h1 class="text-3xl">Hola1</h1>
 @endsection
 {{-- <!DOCTYPE html>

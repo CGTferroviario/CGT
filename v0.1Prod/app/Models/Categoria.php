@@ -13,5 +13,9 @@ class Categoria extends Model
     {
         return $this->belongsTo(Empresa::class);
     }
+    public function comunicado()
+    {
+        return $this->belongsTo(Empresa::class);
+    }
 
 }

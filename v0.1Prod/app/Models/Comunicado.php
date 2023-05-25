@@ -14,11 +14,19 @@ class Comunicado extends Model
     // ];
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
     public function empresa()
     {
-        return $this->belongsTo(Empresa::class);
+        return $this->belongsTo(Empresa::class, 'empresa_id');
+    }
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class, 'categoria_id');
+    }
+    public function etiqueta()
+    {
+        return $this->belongsTo(Etiqueta::class, 'etiqueta_id');
     }
 }
 

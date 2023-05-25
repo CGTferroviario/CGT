@@ -20,16 +20,16 @@ class ComunicadoFactory extends Factory
     public function definition(): array
     {
         return [
-            'numero' => $this->faker->randomDigit(),
+            'numero' => $this->faker->numberBetween(1,50),
             'publicado' => $this->faker->boolean(),
             // 'user_id' => $this->faker->boolean(),
-            'user_id' => 1,
-            'empresa_id' => $this->faker->randomDigit(),
-            'etiqueta' => Etiqueta::factory(),
-            'categoria' => $this->faker->randomDigit(),
+            'user_id' => $this->faker->numberBetween(1,4),
+            'empresa_id' => $this->faker->numberBetween(1,9),
+            'categoria_id' => $this->faker->numberBetween(1,7),
+            'etiqueta_id' => Etiqueta::factory(),
             'fecha' => $this->faker->date(),
             'titulo' => $this->faker->sentence(),
-            'subtitulo' => implode($this->faker->paragraphs(1)),
+            'subtitulo' => $this->faker->sentence(),
             'cuerpo' => implode($this->faker->paragraphs(6)),
             'adjunto1' => $this->faker->slug(),
             'adjunto2' => $this->faker->slug(),

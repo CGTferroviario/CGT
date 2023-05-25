@@ -1,13 +1,9 @@
 <style>
-    .linkBarra{
-        
-    }
     .linkBarra:hover{
-        color: black !important;
         background-color: red;
     }
 </style>
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+<nav x-data="{ open: false }" class="bg-dark shadow-md shadow-red-500">
     <!-- Primary Navigation Menu -->
     <div class="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -20,43 +16,43 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="linkBarra">
+                <div class="hidden space-x-8 sm:-my-px linkBarra ml-5 sm:flex">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Panel de Control') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('comunicados.index')" :active="request()->routeIs('comunicados.*')" class="linkBarra">
+                <div class="hidden space-x-8 sm:-my-px linkBarra sm:flex">
+                    <x-nav-link :href="route('comunicados.index')" :active="request()->routeIs('comunicados.*')">
                         {{ __('Comunicados') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('noticias.index')" :active="request()->routeIs('noticias.*')" class="linkBarra">
+                <div class="hidden space-x-8 sm:-my-px linkBarra sm:flex">
+                    <x-nav-link :href="route('noticias.index')" :active="request()->routeIs('noticias.*')">
                         {{ __('Noticias') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('documentos.index')" :active="request()->routeIs('documentos.*')" class="linkBarra">
+                <div class="hidden space-x-8 sm:-my-px linkBarra sm:flex">
+                    <x-nav-link :href="route('documentos.index')" :active="request()->routeIs('documentos.*')">
                         {{ __('Documentos') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('archivos.index')" :active="request()->routeIs('archivos.*')" class="linkBarra">
+                <div class="hidden space-x-8 sm:-my-px linkBarra sm:flex">
+                    <x-nav-link :href="route('archivos.index')" :active="request()->routeIs('archivos.*')">
                         {{ __('Archivos') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('empresas.index')" :active="request()->routeIs('empresas.*')" class="linkBarra">
+                <div class="hidden space-x-8 sm:-my-px linkBarra sm:flex">
+                    <x-nav-link :href="route('empresas.index')" :active="request()->routeIs('empresas.*')">
                         {{ __('Empresas') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias.*')" class="linkBarra">
+                <div class="hidden space-x-8 sm:-my-px linkBarra sm:flex">
+                    <x-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias.*')">
                         {{ __('Categorias') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('etiquetas.index')" :active="request()->routeIs('etiquetas.*')" class="linkBarra">
+                <div class="hidden space-x-8 sm:-my-px linkBarra sm:flex">
+                    <x-nav-link :href="route('etiquetas.index')" :active="request()->routeIs('etiquetas.*')">
                         {{ __('Etiquetas') }}
                     </x-nav-link>
                 </div>
@@ -68,7 +64,8 @@
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
-                            {{-- <div>{{ Auth::user()->name }}</div> --}}
+                            
+                            {{-- <div>{{ Auth::user()->nombre }}</div> --}}
 
                             <div class="ml-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

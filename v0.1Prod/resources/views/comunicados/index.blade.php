@@ -34,12 +34,12 @@
                 <span>Importar</span>
             </button>
 
-            <button class="flex items-center justify-center w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-blue-500 rounded-lg shrink-0 sm:w-auto gap-x-2 hover:bg-blue-600 dark:hover:bg-blue-500 dark:bg-blue-600">
+            <button class="flex items-center justify-center w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-red-500 rounded-lg shrink-0 sm:w-auto gap-x-2 hover:bg-black">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
 
-                <span>Añadir comunicado</span>
+                <a href="{{ route('comunicados.create') }}" class="">Añadir comunicado</a>
             </button>
         </div>
     </div>
@@ -81,12 +81,13 @@
             @foreach ($comunicados as $comunicado)
             <tr>
                 <td>{{ $comunicado->numero }}</td>
-                <td>{{ $comunicado->user->nombre }}</td>
+                <td>{{ $comunicado->user?->nombre }}</td>
                 <td>{{ $comunicado->titulo }}</td>
                 <td>{{ $comunicado->subtitulo }}</td>
-                <td>{{ $comunicado->empresa->nombre }}</td>
-                <td>{{ $comunicado->categoria }}</td>
-                <td>{{ $comunicado->etiqueta }}</td>
+                {{-- @dd($comunicado->empresa->nombre) --}}
+                <td>{{ $comunicado->empresa?->nombre }}</td>
+                <td>{{ $comunicado->categoria?->nombre }}</td>
+                <td>{{ $comunicado->etiqueta?->nombre }}</td>
                 <td>{{ $comunicado->cuerpo }}</td>
             </tr>
             @endforeach
@@ -134,7 +135,7 @@
                 <span>Importar</span>
             </button>
 
-            <button class="flex items-center justify-center w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-blue-500 rounded-lg shrink-0 sm:w-auto gap-x-2 hover:bg-blue-600 dark:hover:bg-blue-500 dark:bg-blue-600">
+            <button class="flex items-center justify-center w-1/2 px-5 py-2 text-sm tracking-wide transition-colors duration-200  rounded-lg shrink-0 sm:w-auto gap-x-2 bg-red-500 text-white hover:bg-black hover:text-grey-500">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -170,9 +171,9 @@
         </div>
     </div>
 
-    <div class="mx-auto pt-10 pb-2">
+    {{-- <div class="mx-auto pt-10 pb-2">
         {{ $comunicados->links() }}
-    </div>
+    </div> --}}
 
     <div class="flex flex-col mt-6">
         <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -221,7 +222,7 @@
                                 </td>
                                 <td class="px-2 py-2 text-sm font-medium whitespace-pre-line">
                                     <div>
-                                        <h2 class="font-medium text-gray-800 dark:text-white ">{{ $comunicado->user->nombre }}</h2>
+                                        <h2 class="font-medium text-gray-800 dark:text-white ">{{ $comunicado->user?->nombre }}</h2>
                                     </div>
                                 </td>
                                 <td class="px-2 py-2 text-sm font-medium whitespace-pre-line">
@@ -236,18 +237,18 @@
                                 </td>
                                 <td class="px-2 py-2 text-sm text-center">
                                     <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
-                                        {{ $comunicado->empresa->nombre }}
+                                        {{ $comunicado->empresa?->nombre }}
                                     </div>
                                 </td>
                                 <td class="px-2 py-2 text-sm text-center">
                                     <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
-                                        {{ $comunicado->categoria }}
+                                        {{ $comunicado->categoria?->nombre }}
                                     </div>
                                 </td>
 
                                 <td class="px-2 py-2 text-sm text-center">
                                     <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
-                                        {{ $comunicado->etiqueta }}
+                                        {{ $comunicado->etiqueta?->nombre }}
                                     </div>
                                 </td>
 

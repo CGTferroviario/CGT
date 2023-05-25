@@ -14,7 +14,7 @@ class EmpresaController extends Controller
     public function index()
     {
         return view('empresas.index', [
-            'empresas' => Empresa::orderBy('updated_at', 'desc')->get()
+            'empresas' => Empresa::orderBy('id', 'asc')->get()
         ]);
     }
 

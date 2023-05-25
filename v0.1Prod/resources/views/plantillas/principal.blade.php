@@ -24,7 +24,7 @@
     
 @include('parciales.encabezado')
 
-<main>
+<main class="">
   @yield('contenido')
 </main>
 

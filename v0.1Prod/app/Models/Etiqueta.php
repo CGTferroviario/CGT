@@ -9,9 +9,9 @@ class Etiqueta extends Model
 {
     use HasFactory;
 
-    // public function comunicados()
-    // {
-    //     return $this->hasMany(Comunicado::class);
-    // }
+    public function comunicados()
+    {
+        return $this->hasMany(Comunicado::class);
+    }
 
 }

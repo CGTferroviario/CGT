@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
             'nombre' => 'olga',
             'email' => 'olga@olga.com',
             'tipo_perfil' => 'editor',
-            'password' => Hash::make('javicgt'),
+            'password' => Hash::make('olgacgt'),
         ]);
         DB::table('users')->insert([
             'nombre' => 'usuario',

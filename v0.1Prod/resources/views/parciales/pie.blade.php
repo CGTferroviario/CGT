@@ -1,7 +1,12 @@
-{{-- <footer class="py-5 text-muted bg-dark ">
+<footer class="py-5 text-muted bg-dark px-1 pt-10 border-t-2 border-red-500">
   <div class="container-fluid">
     <div class="row centrado">
       <div class="col-md-12">
+        <div class="w-full px-4 text-center text-red-500">
+          <span>Avda. Ciudad de Barcelona 10 - Sótano // 28007 Madrid</span><br>
+          <span>Tfnos: 91 506 62 85 // 91 506 62 87 // Fax: 91 506 63 14 // <a href="mailto:sff-cgt@cgt.es" title="Correo Electrónico">sff-cgt@cgt.es</a></span><br>
+          <span>Creado por <a href="/">CGT Ferroviario</a> &middot; &copy; {{ date('Y') }}</span>
+        </div>
         <img src="">
         <a href="https://comoserferroviario.es/" title="Como Ser Ferroviario" target="_blank"><img class="img-fluid me-2" src="img/logo_comoser80.jpg"></a>
         <a href="https://oficinasferroviarias.es/" title="Oficinas Ferroviarias" target="_blank"><img class="img-fluid me-2" src="img/logo_oficinas.jpg"></a>
@@ -15,9 +20,9 @@
     </div>
     
   </div>
-</footer> --}}
+</footer>
 
-<!-- component -->
+{{-- <!-- component -->
 <footer class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
     <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
@@ -55,4 +60,4 @@
       </div>
     </div>
   </div>
-</footer>
+</footer> --}}

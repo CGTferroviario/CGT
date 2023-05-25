@@ -13,7 +13,7 @@ class Empresa extends Model
     {
         return $this->hasMany(Comunicado::class);
     }
-    public function categoria()
+    public function categorias()
     {
         return $this->hasMany(Categoria::class);
     }
