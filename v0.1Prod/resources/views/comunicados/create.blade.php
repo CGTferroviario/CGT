@@ -21,18 +21,6 @@
                         <span class="text-body-secondary">{{ $comunicado->id }}</span>
                     </li>
                     @endforeach
-                    
-                    {{-- <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
-                        <div class="text-success">
-                            <h6 class="my-0">Promo code</h6>
-                            <small>EXAMPLECODE</small>
-                        </div>
-                        <span class="text-success">−$5</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
-                        <span>Total (USD)</span>
-                        <strong>$20</strong>
-                    </li> --}}
                 </ul>
         
                 {{-- <form class="card p-2">
@@ -56,19 +44,7 @@
                             <select class="form-select" id="empresa" name="empresa" required="">
                                     <option value="Elige empresa">Elige empresa</option>
                                 @foreach ($empresas as $empresa)
-                                    <option value="{{ $empresa->nombre_empresa }}">{{ $empresa->nombre_empresa }}</option>
-                                @endforeach
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select a valid country.
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="country" class="form-label">Etiqueta</label>
-                            <select class="form-select" id="etiqueta" name="etiqueta" required="">
-                                <option value="Elige etiqueta">Elige etiqueta</option>
-                                @foreach ($etiquetas as $etiqueta)
-                                    <option value="{{ $etiqueta->nombre }}">{{ $etiqueta->nombre }}</option>
+                                    <option value="{{ $empresa->nombre }}">{{ $empresa->nombre }}</option>
                                 @endforeach
                             </select>
                             <div class="invalid-feedback">
@@ -81,6 +57,18 @@
                                 <option value="Elige categoria">Elige Categoría</option>
                                 @foreach ($categorias as $categoria)
                                     <option value="{{ $categoria->nombre }}">{{ $categoria->nombre }}</option>
+                                @endforeach
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid country.
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="country" class="form-label">Etiqueta</label>
+                            <select class="form-select" id="etiqueta" name="etiqueta" required="">
+                                <option value="Elige etiqueta">Elige etiqueta</option>
+                                @foreach ($etiquetas as $etiqueta)
+                                    <option value="{{ $etiqueta->nombre }}">{{ $etiqueta->nombre }}</option>
                                 @endforeach
                             </select>
                             <div class="invalid-feedback">
