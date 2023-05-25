@@ -15,7 +15,7 @@ class CategoriaController extends Controller
     public function index()
     {
         return view('categorias.index', [
-            'categorias' => Categoria::orderBy('id_categoria', 'asc')->get()
+            'categorias' => Categoria::orderBy('id', 'asc')->get()
         ]);
     }
 
@@ -27,7 +27,7 @@ class CategoriaController extends Controller
     public function create()
     {
         return view('categorias.create', [
-            'categorias' => Categoria::orderBy('id_categoria', 'asc')->get()
+            'categorias' => Categoria::orderBy('id', 'asc')->get()
         ]);
     }
 
