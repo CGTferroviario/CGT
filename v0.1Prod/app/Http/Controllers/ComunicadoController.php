@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreComunicadoRequest;
 use App\Http\Requests\UpdateComunicadoRequest;
+use App\Models\Categoria;
 use App\Models\Comunicado;
+use App\Models\Empresa;
+use App\Models\Etiqueta;
 
 class ComunicadoController extends Controller
 {
@@ -24,7 +27,12 @@ class ComunicadoController extends Controller
      */
     public function create()
     {
-        return view('comunicados.create');
+        return view('comunicados.create', [
+            'comunicados' => Comunicado::orderBy('id', 'desc')->get(),
+            'empresas' => Empresa::orderBy('id', 'asc')->get(),
+            'categorias' => Categoria::orderBy('id', 'asc')->get(),
+            'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
+        ]);
     }
 
     /**

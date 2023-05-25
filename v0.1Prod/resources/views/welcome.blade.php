@@ -1,8 +1,7 @@
 @extends('plantillas.principal')
 
 @section('contenido')
-    @dd($request)
-    <h1 class="text-3xl">Hola1</h1>
+    <h1 class="text-3xl">Hola</h1>
 @endsection
 {{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
