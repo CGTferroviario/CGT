@@ -55,6 +55,7 @@ class ComunicadoController extends Controller
             'adjunto2' => $request->adjunto2,
             'adjunto3' => $request->adjunto3,
             'imagen' => $request->imagen,
+            'publicado' => $request->publicado,
             // 'adjunto1' => $this->storeImage($request)
         ]);
 

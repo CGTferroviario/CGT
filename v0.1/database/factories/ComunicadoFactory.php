@@ -30,8 +30,8 @@ class ComunicadoFactory extends Factory
             'categoria' => Categoria::factory(),
             'fecha' => $this->faker->date(),
             'titulo' => $this->faker->sentence(),
-            'subtitulo' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
-            'cuerpo' => '<p>' . implode('</p><p>', $this->faker->paragraphs(6)) . '</p>',
+            'subtitulo' => implode($this->faker->paragraphs(1)),
+            'cuerpo' => implode($this->faker->paragraphs(6)),
 
             'adjunto1' => $this->faker->slug(),
             'adjunto2' => $this->faker->slug(),

@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(ComunicadosSeeder::class);
         $this->call(ProvinciasSeeder::class);
         $this->call(CcaasSeeder::class);
-        $comunicado = Comunicado::factory(5)->create([
+        $comunicado = Comunicado::factory(25)->create([
             
         ]);
         // $this->call(MunicipiosSeeder::class);

@@ -9,9 +9,9 @@ class Comunicado extends Model
 {
     use HasFactory;
 
-    // protected $fillable = [
-    //     'numero', 'titulo', 'subtitulo', 'cuerpo'
-    // ];
+    protected $fillable = [
+        'numero', 'titulo', 'subtitulo', 'cuerpo'
+    ];
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
