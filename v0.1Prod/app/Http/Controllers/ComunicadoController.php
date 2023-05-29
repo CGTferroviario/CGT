@@ -8,6 +8,7 @@ use App\Models\Categoria;
 use App\Models\Comunicado;
 use App\Models\Empresa;
 use App\Models\Etiqueta;
+use Illuminate\Support\Facades\Auth;
 
 class ComunicadoController extends Controller
 {
@@ -17,7 +18,7 @@ class ComunicadoController extends Controller
     public function index()
     {
         return view('comunicados.index', [
-            'comunicados' => Comunicado::orderBy('updated_at', 'desc')->get()
+            'comunicados' => Comunicado::orderBy('fecha', 'desc')->get()
         ]);
         
     }
@@ -41,7 +42,17 @@ class ComunicadoController extends Controller
     public function store(StoreComunicadoRequest $request)
     {
         // $request->validated();
-        dd($request);
+        // dd($request);
+        $publicado = $request->publicado;
+        if ($request->publicado == 'on') {
+            $publicado = 1;
+        } else {
+            $publicado = 0;
+        };
+        $usuario = Auth::user()->id;
+        // $empresa = $comunicado->empresa->id;
+
+        // dd($request);
         $comunicado = Comunicado::create([
             'numero' => $request->numero,
             'empresa' => $request->empresa,
@@ -55,7 +66,10 @@ class ComunicadoController extends Controller
             'adjunto2' => $request->adjunto2,
             'adjunto3' => $request->adjunto3,
             'imagen' => $request->imagen,
-            'publicado' => $request->publicado,
+            
+            'publicado' => $publicado,
+            'user_id' => $usuario,
+            'empresa_id' => 1 
             // 'adjunto1' => $this->storeImage($request)
         ]);
 
