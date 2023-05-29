@@ -1,4 +1,4 @@
-<footer class="py-5 text-muted bg-dark px-1 pt-10 border-t-2 border-red-500">
+<footer class="py-5 text-muted bg-dark px-1 pt-10">
   <div class="container-fluid">
     <div class="row centrado">
       <div class="col-md-12">

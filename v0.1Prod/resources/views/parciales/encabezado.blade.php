@@ -1,9 +1,10 @@
 <style>
     .linkBarra:hover{
-        background-color: red;
+        background-color: rgb(254, 71, 85);
+        font-size: 200%;
     }
 </style>
-<nav x-data="{ open: false }" class="bg-dark shadow-md shadow-red-500">
+<nav x-data="{ open: false }" class="bg-dark">
     <!-- Primary Navigation Menu -->
     <div class="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">

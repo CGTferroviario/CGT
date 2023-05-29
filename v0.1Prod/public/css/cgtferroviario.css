@@ -1,4 +1,373 @@
+/* HTML */
+body{
+    font-family: 'Playfair Display', serif;
+    height: 100%;
+    /* padding-top: 106px !important; */
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='29' height='50.115' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 18%, 1)'/><path d='M14.498 16.858L0 8.488.002-8.257l14.5-8.374L29-8.26l-.002 16.745zm0 50.06L0 58.548l.002-16.745 14.5-8.373L29 41.8l-.002 16.744zM28.996 41.8l-14.498-8.37.002-16.744L29 8.312l14.498 8.37-.002 16.745zm-29 0l-14.498-8.37.002-16.744L0 8.312l14.498 8.37-.002 16.745z'  stroke-width='1' stroke='hsla(354, 70%, 54%, 0.1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>")
+}
 main{
     padding-top: 3em;
     padding-bottom: 3em;
+}
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #dc3545 #212529;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #212529;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #dc3545;
+    border-radius: 10px;
+    border: 2px solid #000000;
+}
+
+/*** Fin del Scroll ***/
+
+/* Colores */
+.rojo {
+    color: rgb(255, 30, 0);
+}
+
+.rojoOscuro {
+    color: rgb(82, 10, 0);
+}
+
+.rojoBrillante {
+    color: rgb(254, 71, 85);
+}
+
+.grisOscuro {
+    color: rgb(47, 47, 47);
+}
+
+.grisMedio {
+    color: rgb(82, 82, 82);
+}
+
+.grisClaro {
+    color: rgb(214, 214, 214);
+}
+
+.morado {
+    color: rgb(130, 52, 245);
+}
+
+.RENFE {
+    color: rgb(135, 0, 100);
+}
+
+.ADIF {
+    color: rgb(0, 99, 56);
+}
+
+.SERVEO {
+    color: rgb(255, 78, 0);
+}
+
+.LOGIRAIL {
+    color: rgb(126, 1, 126);
+}
+
+.negro {
+    color: black;
+}
+
+.blanco {
+    color: white;
+}
+
+.bg-rojo {
+    background: rgb(255, 30, 0);
+}
+
+.bg-circu {
+    background: rgb(82, 10, 0);
+}
+
+.bg-rojoBrillante {
+    background: rgb(254, 71, 85);
+}
+
+.bg-grisOscuro {
+    background: rgb(47, 47, 47);
+}
+
+.bg-grisOscuro-7 {
+    background: rgba(47, 47, 47, .7);
+}
+
+.bg-grisMedio {
+    background: rgb(82, 82, 82);
+}
+
+.bg-grisClaro {
+    background: rgb(214, 214, 214);
+}
+
+.bg-morado {
+    background: rgb(130, 52, 245);
+}
+
+/* Colores Empresas */
+.bg-RENFE {
+    background: rgb(135, 0, 100);
+    color: white;
+}
+.bg-ADIF {
+    background: rgb(0, 99, 56);
+    color: white;
+}
+.bg-SERVEO {
+    background: rgb(255, 78, 0);
+    color: white;
+}
+.bg-LOGIRAIL {
+    background: rgb(126, 1, 126);
+    color: white;
+}
+
+/* Colores Categorias */
+.bg-INFRAESTRUCTURA {
+    background: rgb(230, 230, 40);
+}
+.bg-OFICINAS {
+    background: rgb(150, 150, 200);
+    color: white;
+}
+.bg-CIRCULACIÓN {
+    background: rgb(231, 95, 85);
+    color: white;
+}
+.bg-TALLERES {
+    background: rgb(145, 218, 11);
+    color: white;
+}
+.bg-CONDUCCIÓN {
+    background: rgb(221, 104, 236);
+    color: white;
+}
+.bg-INTERVENCIÓN {
+    background: rgb(97, 4, 109);
+    color: white;
+}
+.bg-COMERCIAL {
+    background: rgb(189, 24, 211);
+    color: white;
+}
+
+.bg-negro {
+    background: black;
+}
+
+.bg-blanco {
+    background: white;
+}
+
+.bg-oscuro {
+    background: rgb(47, 47, 47);
+}
+.bg-blanco-transp {
+    background: rgba(255, 255, 255, .7);
+
+}
+
+/* Bordes */
+
+.bordeRojo{
+    border: thin solid rgb(254, 71, 85);
+}
+.bordeTopRojo {
+    border-top: thin solid rgb(254, 71, 85);
+}
+.bordeBottomRojo {
+    border-bottom: thin solid rgb(254, 71, 85);
+}
+.bordeNegro{
+    border: thin solid rgb(47, 47, 47);
+}
+
+/* Fondos Documentacion */
+.fondo {
+    background-repeat: no-repeat;
+    min-height: 600px;
+}
+.cabecera{
+    position: absolute;
+    top: 4em;
+    background: rgb(47,47,47);
+    /* background: linear-gradient(180deg, rgba(47,47,47,1) 0%, rgba(47,47,47,1) 25%, rgba(47,47,47,1) 75%, rgba(254,71,85,1) 100%); */
+    z-index: -1;
+    color: white;
+}
+
+.documentacion {
+    background-image: url('/img/fondos/documentacion.png');
+}
+
+.afiliacion {
+    background-image: url('/img/fondos/doc/afiliacion.png');
+}
+
+.ayudas {
+    background-image: url('/img/fondos/doc/ayudas.png');
+}
+
+.conciliacion {
+    background-image: url('/img/fondos/doc/conciliacion.png');
+}
+
+.igualdad {
+    background-image: url('/img/fondos/doc/igualdad.png');
+}
+
+.legislacion {
+    background-image: url('/img/fondos/doc/legislacion.png');
+}
+
+.licencias {
+    background-image: url('/img/fondos/doc/licencias.png');
+}
+
+.mapa {
+    background-image: url('/img/fondos/doc/mapa.png');
+}
+
+.modelos {
+    background-image: url('/img/fondos/doc/modelos.png');
+}
+
+.protocolos {
+    background-image: url('/img/fondos/doc/protocolos.png');
+}
+
+.salud {
+    background-image: url('/img/fondos/doc/salud.png');
+}
+
+.tablas {
+    background-image: url('/img/fondos/doc/tablas.png');
+}
+
+.teletrabajo {
+    background-image: url('/img/fondos/doc/teletrabajo.png');
+}
+
+/* Fondos ADIF */
+
+.infraestructura {
+    background-image: url('/img/fondos/adif/infraestructura.png');
+}
+
+.circulacion {
+    background-image: url('/img/fondos/adif/circulacion.png');
+}
+
+.oficinas {
+    background-image: url('/img/fondos/adif/oficinas.png');
+}
+
+/* Fondos RENFE */
+.comercial {
+    background-image: url('/img/fondos/renfe/comercial.png');
+}
+
+.intervencion {
+    background-image: url('/img/fondos/renfe/intervencion.png');
+}
+
+.conduccion {
+    background-image: url('/img/fondos/renfe/conduccion.png');
+}
+
+.talleres {
+    background-image: url('/img/fondos/renfe/talleres.png');
+}
+
+.tecnicos {
+    background-image: url('/img/fondos/renfe/tecnicos.png');
+}
+
+/* Fondos Biblioteca */
+
+.comunicados {
+    background-image: url('/img/fondos/biblioteca/comunicados.png');
+}
+
+.seguridad {
+    background-image: url('/img/fondos/biblioteca/seguridad.png');
+}
+
+.archivo {
+    background-image: url('/img/fondos/biblioteca/archivo.png');
+}
+
+.defensa {
+    background-image: url('/img/fondos/biblioteca/defensa.png');
+}
+
+.colegio {
+    background-image: url('/img/fondos/biblioteca/colegio.png');
+}
+
+.via {
+    background-image: url('/img/fondos/biblioteca/via.png');
+}
+
+/* Fondos Jurídica */
+
+.convenios {
+    background-image: url('/img/fondos/juridica/convenios.png');
+}
+
+.laboral {
+    background-image: url('/img/fondos/juridica/laboral.png');
+}
+
+.ferroviaria {
+    background-image: url('/img/fondos/juridica/ferroviaria.png');
+}
+
+.modelos {
+    background-image: url('/img/fondos/juridica/modelos.png');
+}
+
+.logros {
+    background-image: url('/img/fondos/juridica/logros.png');
+}
+
+/* Fondos recursos */
+
+.videos {
+    background-image: url('/img/fondos/recursos/videos.png');
+}
+
+.audios {
+    background-image: url('/img/fondos/recursos/audios.png');
+}
+
+.carteles {
+    background-image: url('/img/fondos/recursos/carteleria.png');
+}
+
+.fotografias {
+    background-image: url('/img/fondos/recursos/fotos.png');
+}
+
+.logotipos {
+    background-image: url('/img/fondos/recursos/logos.png');
+}
+
+/* Tablas */
+.dataTables_length select {
+    padding-right: 25px !important;
 }
