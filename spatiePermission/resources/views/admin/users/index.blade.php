@@ -25,10 +25,8 @@
                         <tbody class="divide-y divide-gray-100 border-t border-gray-100">
                             @foreach ($users as $user)
                                 <tr class="hover:bg-gray-50">
-                                    
                                     <td class="px-6 py-4">{{ $user->name }}</td>
                                     <td class="px-6 py-4">{{ $user->email }}</td>
-
                                     <td class="px-6 py-4">
                                         <div class="flex gap-2">
                                             @foreach ($roles as $role)
@@ -39,7 +37,6 @@
                                     <td class="px-6 py-4">
                                         <div class="flex justify-end gap-4">
                                             <a href="{{ route('admin.users.show', $user->id) }}" class="px-4 py-2 bg-blue-400 hover:bg-blue-700 text-white rounded-md"> Roles</a>
-                                            
                                             <form method="POST" action="{{ route('admin.users.destroy', $role->id) }}" onsubmit="return confirm('Estás seguro?');">
                                                 @csrf
                                                 @method('DELETE')

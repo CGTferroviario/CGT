@@ -43,6 +43,7 @@
                     <thead class="">
                         <tr>
                             <th class="text-center">Nº</th>
+                            <th>Fecha:</th>
                             <th>Autor:</th>
                             <th>Título</th>
                             <th>Subtítulo</th>
@@ -50,12 +51,14 @@
                             <th>Categoría</th>
                             <th>Etiqueta</th>
                             <th>Cuerpo</th>
+                            <th>Publicado</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($comunicados as $comunicado)
                         <tr>
                             <td class="text-center">{{ $comunicado->numero }}</td>
+                            <td class="text-center">{{ $comunicado->fecha }}</td>
                             <td>{{ $comunicado->user?->nombre }}</td>
                             <td>{{ $comunicado->titulo }}</td>
                             <td>{{ $comunicado->subtitulo }}</td>
@@ -63,12 +66,18 @@
                             <td><span class="px-3 py-1 text-sm font-bold gap-x-2 rounded-full bg-{{ $comunicado->categoria?->nombre }}">{{ $comunicado->categoria?->nombre }}</span></td>
                             <td>{{ $comunicado->etiqueta?->nombre }}</td>
                             <td>{{ $comunicado->cuerpo }}</td>
+                            <td class="text-center">
+                                <span>
+                                    {{ $comunicado->publicado }}
+                                </span>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
                     <tfoot>
                         <tr>
                             <th class="text-center">Nº</th>
+                            <th>Fecha:</th>
                             <th>Autor:</th>
                             <th>Título</th>
                             <th>Subtítulo</th>
@@ -76,6 +85,7 @@
                             <th>Categoría</th>
                             <th>Etiqueta</th>
                             <th>Cuerpo</th>
+                            <th>Publicado</th>
                         </tr>
                     </tfoot>
                 </table>

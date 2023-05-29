@@ -53,7 +53,7 @@
                             @endforeach
                         @endif
                     </div>
-                    <div>
+                    <div> 
                         <form method="POST" action="{{ route('admin.users.permissions', $user->id) }}">
                             @csrf
                             <div class="sm:col-span-6">

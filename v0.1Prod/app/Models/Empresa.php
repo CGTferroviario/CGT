@@ -15,6 +15,6 @@ class Empresa extends Model
     }
     public function categorias()
     {
-        return $this->hasMany(Categoria::class);
+        return $this->hasMany(Categoria::class); 
     }
 }

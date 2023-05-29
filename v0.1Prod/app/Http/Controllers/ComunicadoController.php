@@ -52,12 +52,12 @@ class ComunicadoController extends Controller
         $usuario = Auth::user()->id;
         // $empresa = $comunicado->empresa->id;
 
-        // dd($request);
+        // dd($request->empresa);
         $comunicado = Comunicado::create([
             'numero' => $request->numero,
-            'empresa' => $request->empresa,
-            'etiqueta' => $request->etiqueta,
-            'categoria' => $request->categoria,
+            'empresa_id' => $request->empresa,
+            'etiqueta_id' => $request->etiqueta,
+            'categoria_id' => $request->categoria,
             'fecha' => $request->fecha,
             'titulo' => $request->titulo,
             'subtitulo' => $request->subtitulo,
@@ -69,7 +69,7 @@ class ComunicadoController extends Controller
             
             'publicado' => $publicado,
             'user_id' => $usuario,
-            'empresa_id' => 1 
+            // 'empresa_id' => 1 
             // 'adjunto1' => $this->storeImage($request)
         ]);
 

@@ -97,7 +97,7 @@ input:checked + .slider:before {
                             <select class="form-select" id="empresa" name="empresa" required="">
                                     <option value="Elige empresa">Elige empresa</option>
                                 @foreach ($empresas as $empresa)
-                                    <option value="{{ $empresa->nombre }}">{{ $empresa->nombre }}</option>
+                                    <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
                                 @endforeach
                             </select>
                             <div class="invalid-feedback">
@@ -109,7 +109,7 @@ input:checked + .slider:before {
                             <select class="form-select" id="categoria" name="categoria" required="">
                                 <option value="Elige categoria">Elige Categoría</option>
                                 @foreach ($categorias as $categoria)
-                                    <option value="{{ $categoria->nombre }}">{{ $categoria->nombre }}</option>
+                                    <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
                                 @endforeach
                             </select>
                             <div class="invalid-feedback">
@@ -121,11 +121,11 @@ input:checked + .slider:before {
                             <select class="form-select" id="etiqueta" name="etiqueta" required="">
                                 <option value="Elige etiqueta">Elige etiqueta</option>
                                 @foreach ($etiquetas as $etiqueta)
-                                    <option value="{{ $etiqueta->nombre }}">{{ $etiqueta->nombre }}</option>
+                                    <option value="{{ $etiqueta->id }}">{{ $etiqueta->nombre }}</option>
                                 @endforeach
                             </select>
                             <div class="invalid-feedback">
-                                Por favor, introduce un etiqueta.
+                                Por favor, introduce una etiqueta.
                             </div>
                         </div>
                         <div class="col-md-3">

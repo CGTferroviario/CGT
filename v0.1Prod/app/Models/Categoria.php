@@ -13,9 +13,9 @@ class Categoria extends Model
     {
         return $this->belongsTo(Empresa::class);
     }
-    public function comunicado()
+    public function comunicados()
     {
-        return $this->belongsTo(Empresa::class);
+        return $this->hasMany(Comunicado::class, 'categoria_id');
     }
 
 }

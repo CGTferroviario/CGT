@@ -30,6 +30,8 @@ class DatabaseSeeder extends Seeder
 		$this->call(UsersTableSeeder::class);
         $this->call(EmpresaSeeder::class);
         $this->call(CategoriaSeeder::class);
+        $this->call(RoleSeeder::class);
+        $this->call(AdminSeeder::class);
 
         $comunicado = Comunicado::factory(25)->create([
             

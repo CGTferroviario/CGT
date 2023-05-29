@@ -11,20 +11,18 @@ main{
 }
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
+
 * {
     scrollbar-width: auto;
     scrollbar-color: #dc3545 #212529;
 }
-
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
     width: 10px;
 }
-
 *::-webkit-scrollbar-track {
     background: #212529;
 }
-
 *::-webkit-scrollbar-thumb {
     background-color: #dc3545;
     border-radius: 10px;
@@ -37,83 +35,63 @@ main{
 .rojo {
     color: rgb(255, 30, 0);
 }
-
 .rojoOscuro {
     color: rgb(82, 10, 0);
 }
-
 .rojoBrillante {
     color: rgb(254, 71, 85);
 }
-
 .grisOscuro {
     color: rgb(47, 47, 47);
 }
-
 .grisMedio {
     color: rgb(82, 82, 82);
 }
-
 .grisClaro {
     color: rgb(214, 214, 214);
 }
-
 .morado {
     color: rgb(130, 52, 245);
 }
-
 .RENFE {
     color: rgb(135, 0, 100);
 }
-
 .ADIF {
     color: rgb(0, 99, 56);
 }
-
 .SERVEO {
     color: rgb(255, 78, 0);
 }
-
 .LOGIRAIL {
     color: rgb(126, 1, 126);
 }
-
 .negro {
     color: black;
 }
-
 .blanco {
     color: white;
 }
-
 .bg-rojo {
     background: rgb(255, 30, 0);
 }
-
 .bg-circu {
     background: rgb(82, 10, 0);
 }
-
 .bg-rojoBrillante {
     background: rgb(254, 71, 85);
 }
-
 .bg-grisOscuro {
     background: rgb(47, 47, 47);
 }
-
 .bg-grisOscuro-7 {
     background: rgba(47, 47, 47, .7);
 }
-
 .bg-grisMedio {
     background: rgb(82, 82, 82);
 }
-
 .bg-grisClaro {
     background: rgb(214, 214, 214);
 }
-
 .bg-morado {
     background: rgb(130, 52, 245);
 }
@@ -135,6 +113,20 @@ main{
     background: rgb(126, 1, 126);
     color: white;
 }
+.bg-ILUNION {
+    background: rgb(255,211,0);
+    background: linear-gradient(180deg, rgba(255,211,0,1) 0%, rgba(0,121,199,1) 100%);
+    color: white;
+}
+.bg-SABA {
+    background: rgb(1, 168, 151);
+    color: white;
+}
+.bg-FGV {
+    background: rgb(255, 178, 15);
+    color: white;
+}
+#FFB20F
 
 /* Colores Categorias */
 .bg-INFRAESTRUCTURA {

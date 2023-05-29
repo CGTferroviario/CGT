@@ -11,7 +11,7 @@ class Etiqueta extends Model
 
     public function comunicados()
     {
-        return $this->hasMany(Comunicado::class);
+        return $this->hasMany(Comunicado::class); 
     }
 
 }
