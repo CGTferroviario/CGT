@@ -26,11 +26,12 @@ class DatabaseSeeder extends Seeder
 
 		//disable foreign key check for this connection before running seeders
 		DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-			
+		
+        $this->call(RoleSeeder::class);
 		$this->call(UsersTableSeeder::class);
         $this->call(EmpresaSeeder::class);
         $this->call(CategoriaSeeder::class);
-        $this->call(RoleSeeder::class);
+        
         $this->call(AdminSeeder::class);
 
         $comunicado = Comunicado::factory(25)->create([
