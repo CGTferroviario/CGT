@@ -20,9 +20,10 @@ class PermissionController extends Controller
     }
     public function store(Request $request)
     {
-        $validated = $request->validate(['name' => ['required', 'min:']]);
+
+        $validated = $request->validate(['name' => ['required', 'min:3']]);
         Permission::create($validated);
 
-        return to_route('admin.permissions.index');
+        return to_route('admin.permissions.index'); 
     }
 }

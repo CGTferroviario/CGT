@@ -21,7 +21,7 @@
             </div>
             <h1 class="">PERMISOS</h1>
             <div class="">
-                <form method="POST" action="{{ 'admin.permissions.store' }}">
+                <form method="POST" action="{{ route('admin.permissions.store') }}">
                     @csrf
                     <div class="sm:col-span-6">
                         <label for="name" class="block">Permisos</label>

@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="">
-                <form method="POST" action="{{ 'admin.roles.store' }}">
+                <form method="POST" action="{{ route('admin.roles.store') }}">
                     @csrf
                     <div class="sm:col-span-6">
                         <label for="name" class="block">Tipo de Perfil</label>
