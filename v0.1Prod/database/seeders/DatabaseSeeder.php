@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CategoriaSeeder::class);
         
         $this->call(AdminSeeder::class);
+        $this->call(PermisoSeeder::class);
 
         $comunicado = Comunicado::factory(25)->create([
             

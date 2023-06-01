@@ -25,7 +25,7 @@ class RoleController extends Controller
         $validated = $request->validate(['name' => ['required', 'min:3']]);
         Role::create($validated);
 
-        return to_route('admin.roles.index')->with('message', 'Perfil Creado Satisfactoriamente');
+        return to_route('admin.roles.create')->with('message', 'Perfil Creado Satisfactoriamente');
     }
     public function edit(Role $role)
     {
@@ -44,5 +44,21 @@ class RoleController extends Controller
         $role->delete();
 
         return back()->with('message', 'Perfil Eliminado.');
+    }
+    public function givePermission(Request $request, Role $role)
+    {
+        if ($role->hasPermissionTo($request->permission)) {
+            return back()->with('message', 'Permission exists.');
+        }
+        $role->givePermissionTo($request->permission);
+        return back()->with('message', 'Permission added.');
+    }
+    public function revokePermission(Role $role, Permission $permission)
+    {
+        if ($role->hasPermissionTo($permission)) {
+            $role->revokePermissionTo($permission);
+            return back()->with('message', 'Permission revoked.');
+        }
+        return back()->with('message', 'Permission does not exist.');
     }
 }
