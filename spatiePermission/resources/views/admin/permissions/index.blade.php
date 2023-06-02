@@ -59,7 +59,7 @@
                                             <form method="POST" action="{{ route('admin.permissions.destroy', $permission->id) }}" onsubmit="return confirm('Are you sure?');">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="hover:bg-red-500 p-1 rounded-md">
+                                                <button type="submit" class="hover:bg-red-500 p-1 rounded-full">
                                                     <a x-data="{ tooltip: 'Delete' }" href="#" title="Eliminar Permiso">
                                                         <svg
                                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6" x-tooltip="tooltip">
@@ -68,7 +68,7 @@
                                                     </a>
                                                 </button>
                                             </form>
-                                            <a x-data="{ tooltip: 'Edite' }" href="{{ route('admin.permissions.edit', $permission->id) }}"  class="hover:bg-green-500 p-1 rounded-md" title="Editar Permiso">
+                                            <a x-data="{ tooltip: 'Edite' }" href="{{ route('admin.permissions.edit', $permission->id) }}"  class="hover:bg-green-500 p-1 rounded-full" title="Editar Permiso">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                     stroke-width="1.5" stroke="currentColor" class="h-6 w-6 hover:red"
                                                     x-tooltip="tooltip">

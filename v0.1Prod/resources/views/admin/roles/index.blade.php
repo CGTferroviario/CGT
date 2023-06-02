@@ -20,6 +20,7 @@
                 <thead class="">
                     <tr>
                         <th>Perfil</th>
+                        <th>Permisos Asignados</th>
                         <th>Número</th>
                         <th>Acciones</th>
                     </tr>
@@ -28,11 +29,12 @@
                     @foreach ($roles as $role)
                     <tr>
                         <td><span class="px-3 py-1 text-sm font-bold gap-x-2 rounded-full bg-blue-300">{{ $role->name }}</span></td>
-                        <td>{{ $role->count() }}</td>
+                        <td>Permisos asignados</td>
+                        <td>{{ $role->count() }}</td>                        
                         <td class="px-3 py-1">
                             <div class="flex justify-end gap-4">
                                 <a x-data="{ tooltip: 'Edite' }" href="{{ route('admin.roles.edit', $role->id) }}"
-                                    class="hover:bg-green-500 p-1 rounded-md" title="Editar Rol">
+                                    class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-full" title="Editar Rol">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="h-6 w-6"
                                         x-tooltip="tooltip">
@@ -43,7 +45,7 @@
                                 <form method="POST" action="{{ route('admin.roles.destroy', $role->id) }}" onsubmit="return confirm('¿Deseas eliminar este tipo de perfil?');">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="hover:bg-red-500 p-1 rounded-md">
+                                    <button type="submit" class="text-red-500 hover:bg-red-500 hover:text-black p-1 rounded-full">
                                         <a x-data="{ tooltip: 'Delete' }" href="#" title="Eliminar Rol">
                                             <svg
                                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6" x-tooltip="tooltip">
@@ -63,6 +65,7 @@
                 <tfoot>
                     <tr>
                         <th>Perfil</th>
+                        <th>Permisos Asignados</th>
                         <th>Número</th>
                         <th>Acciones</th>
                     </tr>

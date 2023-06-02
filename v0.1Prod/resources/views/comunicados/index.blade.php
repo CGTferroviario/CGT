@@ -74,7 +74,7 @@
                             <td class="px-3 py-1">
                                 <div class="flex justify-end gap-4">
                                     <a x-data="{ tooltip: 'Edite' }" href="{{ route('comunicados.edit', $comunicado->id) }}"
-                                        class="hover:bg-green-500 p-1 rounded-md" title="Editar Rol">
+                                        class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-full" title="Editar Rol">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="h-6 w-6"
                                             x-tooltip="tooltip">
@@ -85,7 +85,7 @@
                                     <form method="POST" action="{{ route('comunicados.destroy', $comunicado->id) }}" onsubmit="return confirm('¿Deseas eliminar este comunicado?');">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="hover:bg-red-500 p-1 rounded-md">
+                                        <button type="submit" class="text-red-500 hover:bg-red-500 hover:text-black p-1 rounded-full">
                                             <a x-data="{ tooltip: 'Delete' }" href="#" title="Eliminar Rol">
                                                 <svg
                                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6" x-tooltip="tooltip">
