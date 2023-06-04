@@ -26,9 +26,11 @@
     </script>
     <body>
         @include('parciales.encabezado')
+        @include('parciales.lateral')
+        
         
         <main class="">
-            @yield('contenido')
+            
         </main>
         
         @include('parciales.pie')

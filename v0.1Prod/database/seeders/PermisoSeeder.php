@@ -13,20 +13,20 @@ class PermisoSeeder extends Seeder
      */
     public function run(): void
     {
-        Permission::firstOrcreate(['name' => 'crear-comunicado' ]);
-        Permission::firstOrcreate(['name' => 'editar-comunicado' ]);
-        Permission::firstOrcreate(['name' => 'eliminar-comunicado' ]);
-        Permission::firstOrcreate(['name' => 'crear-empresa' ]);
-        Permission::firstOrcreate(['name' => 'editar-empresa' ]);
-        Permission::firstOrcreate(['name' => 'eliminar-empresa' ]);
-        Permission::firstOrcreate(['name' => 'crear-etiqueta' ]);
-        Permission::firstOrcreate(['name' => 'editar-etiqueta' ]);
-        Permission::firstOrcreate(['name' => 'eliminar-etiqueta' ]);
-        Permission::firstOrcreate(['name' => 'crear-categoria' ]);
-        Permission::firstOrcreate(['name' => 'editar-categoria' ]);
-        Permission::firstOrcreate(['name' => 'eliminar-categoria' ]);
-        Permission::firstOrcreate(['name' => 'crear-noticia' ]);
-        Permission::firstOrcreate(['name' => 'editar-noticia' ]);
-        Permission::firstOrcreate(['name' => 'eliminar-noticia' ]);
+        Permission::firstOrcreate(['name' => 'crear-comunicado', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
+        Permission::firstOrcreate(['name' => 'editar-comunicado', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
+        Permission::firstOrcreate(['name' => 'eliminar-comunicado', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
+        Permission::firstOrcreate(['name' => 'crear-empresa', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
+        Permission::firstOrcreate(['name' => 'editar-empresa', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
+        Permission::firstOrcreate(['name' => 'eliminar-empresa', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
+        Permission::firstOrcreate(['name' => 'crear-etiqueta', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
+        Permission::firstOrcreate(['name' => 'editar-etiqueta', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
+        Permission::firstOrcreate(['name' => 'eliminar-etiqueta', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
+        Permission::firstOrcreate(['name' => 'crear-categoria', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
+        Permission::firstOrcreate(['name' => 'editar-categoria', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
+        Permission::firstOrcreate(['name' => 'eliminar-categoria', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
+        Permission::firstOrcreate(['name' => 'crear-noticia', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
+        Permission::firstOrcreate(['name' => 'editar-noticia', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
+        Permission::firstOrcreate(['name' => 'eliminar-noticia', 'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' ]);
     }
 }

@@ -29,7 +29,7 @@ class ComunicadoController extends Controller
     public function create()
     {
         return view('comunicados.create', [
-            'comunicados' => Comunicado::orderBy('id', 'desc')->get(),
+            'comunicados' => Comunicado::orderBy('id', 'desc')->paginate(15),
             'empresas' => Empresa::orderBy('id', 'asc')->get(),
             'categorias' => Categoria::orderBy('id', 'asc')->get(),
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()

@@ -7,8 +7,12 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function index()
+    public function indexAdmin()
     {
         return view('admin.index');
+    }
+    public function indexEditor()
+    {
+        return view('editor.index');
     }
 }

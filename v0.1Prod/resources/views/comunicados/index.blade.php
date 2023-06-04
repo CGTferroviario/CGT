@@ -3,43 +3,46 @@
 @section('contenido')
 <div class="container-fluid fondo comunicados">
     <div class="row">
-        <h1 class="m-0 py-3 text-center cabecera font-bold">COMUNICADOS</h1>
-        <div class="col-md-4 pl-20 mt-4 sm:flex sm:items-center sm:justify-between">
-            <div class="inline-flex overflow-hidden bg-white border divide-x rounded-lg rtl:flex-row-reverse">
-                <button class="px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 bg-gray-100 sm:text-sm">
-                    Todas
-                </button>
-                <button class="px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-sm hover:bg-gray-100">
-                    Activas
-                </button>
-                <button class="px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-sm hover:bg-gray-100">
-                    Inactivas
-                </button>
-            </div>
-        </div>
-        <div class="col-md-4 mt-4 sm:flex sm:items-center sm:justify-between">
-            <div class="flex items-center gap-x-3">
-                <h2 class="text-lg font-medium text-gray-800">Comunicados</h2>
-                <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $comunicados->count() }}</span>
-                <p class="mt-1 text-sm text-gray-500">Estas son los comunicados que llevamos este año.</p>
-            </div>
-        </div>
-        <div class="col-md-4 pr-20 mt-4 sm:flex sm:items-center sm:justify-end">
-            <div class="flex items-center mt-4 gap-x-3">
-                <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-100 transition-colors duration-200 bg-oscuro border rounded-lg gap-x-2 sm:w-auto hover:bg-rojoBrillante hover:text-red-500">
-                    <i class="fa-solid fa-file-import"></i>
-                    <span>Importar CSV</span>
-                </button>
-                <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bg-rojoBrillante border rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500">
-                    <i class="fa-solid fa-circle-plus"></i>
-                    <a href="{{ route('comunicados.create') }}" class="">Añadir comunicado</a>
-                </button>
-            </div>
-        </div>        
-        <div class="px-20">
-            <div class="col-md-12 p-4 mt-4 bordeRojo bg-blanco-transp rounded-md">
+        <h1 class="m-0 py-3 text-center cabecera font-bold">COMUNICADOS</h1>       
+        <div class="px-20 pt-4">
+            <div class="col-md-12 p-4 mt-2 bordeRojo bg-blanco-transp rounded-md">
+                <div class="row mt-2 mb-3">
+                    <div class="col-md-4 sm:flex sm:items-center sm:justify-between">
+                        <div class="inline-flex overflow-hidden text-white divide-x rounded-lg rtl:flex-row-reverse">
+                            <button class="px-3 py-2 text-xs font-medium text-black transition-colors duration-200 bg-red-500 sm:text-sm">
+                                Todos
+                            </button>
+                            <button class="px-3 py-2 text-xs font-medium bg-oscuro transition-colors duration-200 sm:text-sm hover:bg-red-500 hover:text-gray-900">
+                                Por empresa
+                            </button>
+                            <button class="px-3 py-2 text-xs font-medium bg-oscuro transition-colors duration-200 sm:text-sm hover:bg-red-500 hover:text-black">
+                                Por categoría
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 sm:flex sm:items-center sm:justify-between">
+                        <div class="flex items-center gap-x-3">
+                            <h2 class="text-lg font-bold text-gray-800">Comunicados</h2>
+                            <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $comunicados->count() }}</span>
+                            <p class="mt-1 text-sm text-gray-500">Estos son los comunicados que llevamos este año.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 sm:flex sm:items-center sm:justify-end">
+                        <div class="flex items-center gap-x-3 align-middle">
+                            <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-100 transition-colors duration-200 bg-oscuro border rounded-lg gap-x-2 sm:w-auto hover:bg-green-500 hover:text-gray-100" title="Importar datos desde un archivo .csv">
+                                <i class="fa-solid fa-file-import"></i>
+                                <span>Importar CSV</span>
+                            </button>
+                            <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500" title="Añadir un nuevo comunicado">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <a href="{{ route('comunicados.create') }}" class="">Añadir comunicado</a>
+                            </button>
+                           
+                        </div>
+                    </div>
+                </div>  
                 <table id="example" class="display" style="width:100%">
-                    <thead class="">
+                    <thead class="bg-oscuro text-white">
                         <tr>
                             <th class="text-center">Nº</th>
                             <th>Fecha:</th>
@@ -51,7 +54,7 @@
                             <th>Etiqueta</th>
                             <th>Cuerpo</th>
                             <th>Publicado</th>
-                            <th>Acciones</th>
+                            <th class="text-center">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -72,25 +75,21 @@
                                 </span>
                             </td>
                             <td class="px-3 py-1">
-                                <div class="flex justify-end gap-4">
+                                <div class="flex justify-end gap-2 text-3xl">
+                                    <a x-data="{ tooltip: 'Enviar' }" href="{{ route('comunicados.edit', $comunicado->id) }}"
+                                        class="text-blue-500 hover:bg-blue-900 hover:text-white p-1 rounded-md" title="Enviar por correo">
+                                        <i class="lni lni-envelope"></i>
+                                    </a> 
                                     <a x-data="{ tooltip: 'Edite' }" href="{{ route('comunicados.edit', $comunicado->id) }}"
-                                        class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-full" title="Editar Rol">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="h-6 w-6"
-                                            x-tooltip="tooltip">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
-                                        </svg>
+                                        class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-md" title="Editar Rol">
+                                        <i class="lni lni-pencil"></i>
                                     </a>                                
                                     <form method="POST" action="{{ route('comunicados.destroy', $comunicado->id) }}" onsubmit="return confirm('¿Deseas eliminar este comunicado?');">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="text-red-500 hover:bg-red-500 hover:text-black p-1 rounded-full">
+                                        <button type="submit" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-md">
                                             <a x-data="{ tooltip: 'Delete' }" href="#" title="Eliminar Rol">
-                                                <svg
-                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6" x-tooltip="tooltip">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"/>
-                                                </svg>
+                                                <i class="lni lni-trash-can"></i>
                                             </a>
                                         </button>
                                     </form>                                
@@ -111,7 +110,7 @@
                             <th>Etiqueta</th>
                             <th>Cuerpo</th>
                             <th>Publicado</th>
-                            <td>Acciones</td>
+                            <th class="text-center">Acciones</th>
                         </tr>
                     </tfoot>
                 </table>

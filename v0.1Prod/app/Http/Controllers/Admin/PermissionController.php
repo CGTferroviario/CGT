@@ -21,14 +21,15 @@ class PermissionController extends Controller
     }
     public function store(Request $request)
     {
-        $validated = $request->validate(['name' => ['required', 'min:3']]);
+        $validated = $request->validate(['name' => ['required', 'min:3'], 'descripcion' => 'required']);
         Permission::create($validated);
-        return to_route('admin.permissions.index')->with('message', 'Permiso Creado Satisfactoriamente'); 
+        return to_route('admin.permissions.create')->with('message', 'Permiso Creado Satisfactoriamente'); 
     }
     public function edit(Permission $permission)
     {
         $roles = Role::all();
-        return view('admin.permissions.edit', compact('permission', 'roles'));
+        $permissions = Permission::all();
+        return view('admin.permissions.edit', compact('permissions', 'roles'));
     }
     public function update(Request $request, Permission $permission)
     {
