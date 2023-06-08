@@ -1,13 +1,15 @@
 <!-- component -->
-
 <div class="flex flex-no-wrap h-100">
     <!-- Sidebar starts -->
     <!-- Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] -->
     <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ --->
-    <div class="w-64 absolute sm:relative bg-oscuro shadow md:h-full flex-col justify-between hidden sm:flex">
+    <div class="w-64 absolute sm:relative bg-oscuro shadow md:h-full flex-col justify-between flex">
         <div class="px-8">
-            <div class="h-16 w-full flex items-center">
-                <a class="navbar-brand" href="{{ url('/') }}"><img class="inline" src="/img/logo_sm.png" /> <span class="titular">Ferroviario7</span></a>
+            <div class="w-full flex items-center">
+                <a class="navbar-brand text-center" href="{{ url('/') }}"><img class="inline" src="/img/admin/admin.png" />
+                    {{-- <span class="titular">Ferroviario7</span> --}}
+                    <h1 class="text-white text-center">ADMIN</h1>
+                </a>
             </div>
             <ul class="mt-12">
                 <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center mb-6">
@@ -19,7 +21,7 @@
                 </li>
                 <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
                     <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                        <i class="lni lni-bullhorn"></i><
+                        <i class="lni lni-bullhorn"></i>
                         <span class="text-sm ml-2 justify-self-start">
                             <a href="{{ route('admin.comunicados.index') }}" :active="request()->routeIs('comunicados')" class="justify-self-start">
                                 Comunicados
@@ -316,7 +318,7 @@
                     </a>
                 </li>
             </ul>
-            <div class="flex justify-center mt-48 mb-4 w-full">
+            <div class="flex justify-center mt-20 mb-4 w-full">
                 <div class="relative">
                     <div class="text-gray-300 absolute ml-4 inset-0 m-auto w-4 h-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search"
@@ -328,7 +330,7 @@
                         </svg>
                     </div>
                     <input
-                        class="bg-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-100  rounded w-full text-sm text-gray-300 placeholder-gray-400 bg-gray-100 pl-10 py-2"
+                        class="focus:outline-none focus:ring-1 focus:ring-gray-100  rounded w-full text-sm text-gray-300 placeholder-gray-400 bg-gray-100 pl-10 py-2"
                         type="text" placeholder="Search" />
                 </div>
             </div>
