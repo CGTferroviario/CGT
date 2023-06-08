@@ -6,7 +6,7 @@
     <div class="row">
         <h1 class="m-0 py-3 centrado cabecera negro grande bg-rojoBrillante">NOTICIAS</h1>
         <div class="">
-            <a href="{{ route('noticias.create') }}" class="btn btn-success">Añadir Noticia</a>
+            <a href="{{ route('admin.noticias.create') }}" class="btn btn-success">Añadir Noticia</a>
         </div>
         <div class="col-md-12">
             <table class="table bg-blanco">        

@@ -22,6 +22,13 @@ class ComunicadoController extends Controller
         ]);
         
     }
+    public function comunicados()
+    {
+        return view('comunicados.index', [
+            'comunicados' => Comunicado::orderBy('fecha', 'desc')->get()
+        ]);
+        
+    }
 
     /**
      * Show the form for creating a new resource.

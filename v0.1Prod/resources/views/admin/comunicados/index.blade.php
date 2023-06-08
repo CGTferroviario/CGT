@@ -35,7 +35,7 @@
                             </button>
                             <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500" title="Añadir un nuevo comunicado">
                                 <i class="fa-solid fa-circle-plus"></i>
-                                <a href="{{ route('admin.comunicados.create') }}" class="">Añadir comunicado</a>
+                                <a href="{{ route('comunicados.create') }}" class="">Añadir comunicado</a>
                             </button>
                            
                         </div>
@@ -76,15 +76,15 @@
                             </td>
                             <td class="px-3 py-1">
                                 <div class="flex justify-end gap-2 text-3xl">
-                                    <a x-data="{ tooltip: 'Enviar' }" href="{{ route('admin.comunicados.edit', $comunicado->id) }}"
+                                    <a x-data="{ tooltip: 'Enviar' }" href="{{ route('comunicados.edit', $comunicado->id) }}"
                                         class="text-blue-500 hover:bg-blue-900 hover:text-white p-1 rounded-md" title="Enviar por correo">
                                         <i class="lni lni-envelope"></i>
                                     </a> 
-                                    <a x-data="{ tooltip: 'Edite' }" href="{{ route('admin.comunicados.edit', $comunicado->id) }}"
+                                    <a x-data="{ tooltip: 'Edite' }" href="{{ route('comunicados.edit', $comunicado->id) }}"
                                         class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-md" title="Editar Rol">
                                         <i class="lni lni-pencil"></i>
                                     </a>                                
-                                    <form method="POST" action="{{ route('admin.comunicados.destroy', $comunicado->id) }}" onsubmit="return confirm('¿Deseas eliminar este comunicado?');">
+                                    <form method="POST" action="{{ route('comunicados.destroy', $comunicado->id) }}" onsubmit="return confirm('¿Deseas eliminar este comunicado?');">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-md">

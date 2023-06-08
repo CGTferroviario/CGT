@@ -14,6 +14,12 @@ body{
     padding-bottom: 3em;
 } */
 
+.titular{
+    font-family: 'Brannboll Connect PERSONAL USE', sans-serif;
+    color: white;
+    font-size: 2em;
+  }
+
 /* Sección de RENFE */
 
 .tarjetaRenfe{

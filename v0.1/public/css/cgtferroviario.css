@@ -54,6 +54,7 @@ button a{
 ul{
   list-style-type: none;
 }
+
 /* Formulario */
 
 form {
@@ -577,7 +578,6 @@ nav{
 #doc_tablas:hover{
   background:url('/img/tarjetas/renfe/doc_tablas.png');
 }
-
 /* Fin Sección de RENFE */
 
 

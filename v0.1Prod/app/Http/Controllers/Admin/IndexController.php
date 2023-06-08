@@ -15,4 +15,8 @@ class IndexController extends Controller
     {
         return view('editor.index');
     }
+    public function dashboard()
+    {
+        return view('admin.dashboard');
+    }
 }
