@@ -26,6 +26,8 @@
     </script>
     <body>
         @include('parciales.encabezado')
+        {{-- @include('parciales.header') --}}
+        {{-- @include('parciales.sidebar') --}}
         @include('parciales.lateral')
         
         

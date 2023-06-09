@@ -528,9 +528,9 @@
           </ul>
         </div>
       </div>
-      <div class="col centrado">
+      {{-- <div class="col centrado">
         <a class="btn btn-danger" href="{{ route('afiliate') }}">¡Afíliate!</a>
-      </div>
+      </div> --}}
       <div class="col centrado">
         <div class="dropdown mx-auto inline ms-sm-5">
           <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -588,7 +588,7 @@
                   </div>
               </form>
             @else
-              <li class="nav-item dropdown-menu-dark p-3">
+              {{-- <li class="nav-item dropdown-menu-dark p-3">
                   <span class="inline">
                       Bienvenid@, {{ Auth::user()->name }}
                   </span><br>
@@ -616,7 +616,7 @@
                           @csrf
                       </form>
                   </div>
-              </li>
+              </li> --}}
             @endguest
           </ul>
         </div>
