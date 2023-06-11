@@ -7,8 +7,8 @@
     </x-slot> --}}
 <div class="container-fluid fondo teletrabajo">
     <div class="row">
-        <h1 class="m-0 py-3 text-center cabecera font-bold">PERMISOS</h1>       
-        <div class="px-20 pt-4">
+        <h1 class="text-center font-bold">PERMISOS</h1>       
+        <div class="px-10 pt-4">
             <div class="col-md-12 p-4 mt-4 bordeRojo bg-blanco-transp rounded-md">
                 <div class="mb-4 sm:flex sm:items-center sm:justify-end">
                     <div class="flex items-center mt-2 gap-x-3">

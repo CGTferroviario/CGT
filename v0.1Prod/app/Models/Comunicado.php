@@ -10,7 +10,7 @@ class Comunicado extends Model
     use HasFactory;
 
     protected $fillable = [
-        'numero', 'titulo', 'subtitulo', 'cuerpo', 'publicado', 'user_id', 'empresa_id', 'fecha', 'imagen'
+        'user_id', 'numero', 'empresa_id', 'categoria_id', 'etiqueta_id', 'fecha', 'titulo', 'subtitulo', 'cuerpo', 'adjunto1', 'adjunto2', 'adjunto3', 'imagen', 'publicado',   
     ];
     public function user()
     {
@@ -29,20 +29,3 @@ class Comunicado extends Model
         return $this->belongsTo(Etiqueta::class, 'etiqueta_id');
     }
 }
-
-// $table->boolean('publicado');
-//             $table->unsignedBigInteger('user_id');
-//             $table->unsignedTinyInteger('numero');
-//             $table->string('empresa');
-//             $table->string('etiqueta');
-//             $table->string('categoria');
-//             $table->date('fecha');
-//             $table->string('titulo');
-//             $table->string('subtitulo');
-//             $table->text('cuerpo');
-//             $table->string('adjunto1');
-//             $table->string('adjunto2');
-//             $table->string('adjunto3');
-//             $table->string('imagen');
-//             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-//             $table->timestamps();

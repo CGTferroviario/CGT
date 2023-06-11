@@ -7,8 +7,8 @@
     </x-slot> --}}
 <div class="container-fluid fondo teletrabajo">
     <div class="row">
-        <h1 class="m-0 py-3 text-center cabecera font-bold">PERMISOS</h1>    
-        <div class="px-20 pt-4">
+        <h1 class="m-0 py-3 text-center font-bold">PERMISOS</h1>    
+        <div class="px-10 pt-4">
             <div class="col-md-12 p-4 mt-2 bordeRojo bg-blanco-transp rounded-md">
                 <div class="row">
                     <div class="col-md-8">
@@ -27,7 +27,7 @@
                                     <div class="mt-1">
                                         <input type="text" name="descripcion" id="descripcion">
                                     </div>
-                                    <x-boton>Enviar</x-boton>
+                                    {{-- <x-boton>Enviar</x-boton> --}}
                                 </div>
                                 <div class="col-md-6 pt-2">
                                     <button type="submit" class=" bg-rojoBrillante flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500">Añadir Permisos</button>
@@ -44,10 +44,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="row"> --}}
-                    
-                    
-                {{-- </div> --}}
+
                 <table id="example" class="display" style="width:100%">
                     <thead class="">
                         <tr>
@@ -92,6 +89,7 @@
                         </tr>
                     </tfoot>
                 </table>
+                
             </div>
         </div>
     </div>

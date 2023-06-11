@@ -1,5 +1,11 @@
 @extends('plantillas.principal')
-
+<style>
+    .icono{
+        height: 35px;
+        width: 35px;
+        font-size: 25px;
+    }
+</style>
 @section('contenido')
 <div class="container-fluid fondo comunicados">
     <div class="row">
@@ -68,14 +74,17 @@
                             <td><span class="px-3 py-1 text-sm font-bold gap-x-2 rounded-full bg-{{ $comunicado->empresa?->nombre }}">{{ $comunicado->empresa?->nombre }}</span></td>
                             <td><span class="px-3 py-1 text-sm font-bold gap-x-2 rounded-full bg-{{ $comunicado->categoria?->nombre }}">{{ $comunicado->categoria?->nombre }}</span></td>
                             <td>{{ $comunicado->etiqueta?->nombre }}</td>
-                            <td>{{ $comunicado->cuerpo }}</td>
+                            <td class="max-h-28"> {!! nl2br(e($comunicado->cuerpo))!!} </td>
                             <td class="text-center">
                                 <span>
                                     {{ $comunicado->publicado }}
                                 </span>
                             </td>
                             <td class="px-3 py-1">
-                                <div class="flex justify-end gap-2 text-3xl">
+                                <div class="flex justify-end gap-2">
+                                    <div class="rounded-md p-2 hover:bg-blue-300 hover:text-white icono">
+                                        <a href="" class="text-xl"><i class="lni lni-envelope"></i></a>
+                                    </div>
                                     <a x-data="{ tooltip: 'Enviar' }" href="{{ route('admin.comunicados.edit', $comunicado->id) }}"
                                         class="text-blue-500 hover:bg-blue-900 hover:text-white p-1 rounded-md" title="Enviar por correo">
                                         <i class="lni lni-envelope"></i>

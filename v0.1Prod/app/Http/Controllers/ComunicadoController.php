@@ -8,6 +8,7 @@ use App\Models\Categoria;
 use App\Models\Comunicado;
 use App\Models\Empresa;
 use App\Models\Etiqueta;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class ComunicadoController extends Controller
@@ -80,28 +81,7 @@ class ComunicadoController extends Controller
             // 'adjunto1' => $this->storeImage($request)
         ]);
 
-        // $table->id();
-        //     $table->boolean('publicado');
-        //     $table->unsignedBigInteger('user_id');
-        //     $table->unsignedTinyInteger('numero');
-        //     $table->unsignedBigInteger('empresa_id');
-        //     $table->unsignedBigInteger('categoria_id');
-        //     $table->unsignedBigInteger('etiqueta_id');
-        //     $table->date('fecha');
-        //     $table->string('titulo');
-        //     $table->string('subtitulo');
-        //     $table->text('cuerpo');
-        //     $table->string('adjunto1');
-        //     $table->string('adjunto2');
-        //     $table->string('adjunto3');
-        //     $table->string('imagen');
-        //     $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-        //     $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade');
-        //     $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
-        //     $table->foreign('etiqueta_id')->references('id')->on('etiquetas')->onDelete('cascade');
-        //     $table->timestamps();
-
-        return redirect(route('comunicados.index'));
+        return redirect(route('admin.comunicados.index'));
     }
 
     /**

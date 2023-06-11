@@ -69,7 +69,7 @@ input:checked + .slider:before {
                                 Añadir comunicado
                             </h1>
                         </div>
-                        <form class="needs-validation" novalidate="" action="{{ route('comunicados.store') }}" method="POST" enctype="multipart/form-data">
+                        <form class="needs-validation" novalidate="" action="{{ route('admin.comunicados.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row g-3">
                                 <div class="col-md-3">

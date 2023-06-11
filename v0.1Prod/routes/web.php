@@ -137,7 +137,7 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
     Route::resource('/permissions', PermissionController::class);
 
     Route::get('/dashboard', [IndexController::class, 'dashboard'])->name('dashboard');
-
+    
     Route::resource('/comunicados', ComunicadoController::class)->name('comunicados', '');
     Route::resource('/noticias', NoticiaController::class)->name('noticias', '');
     Route::resource('/documentos', DocumentoController::class)->name('documentos', '');

@@ -21,17 +21,18 @@
                                 <div class="col-md-6">
                                     <label for="name" class="block">Permisos</label>
                                     <div class="mt-1">
-                                        <input type="text" name="name" id="name" value="">
+                                        <input type="text" name="name" id="name" value="{{ $permission->name }}">
                                     </div>
                                     <label for="name" class="block">Descripción</label>
                                     <div class="mt-1">
-                                        <input type="text" name="descripcion" id="descripcion">
+                                        {{-- @dd($permission) --}}
+                                        <input type="text" name="descripcion" id="descripcion" value="{{ $permission->descripcion }}">
                                     </div>
-                                    <x-boton>Enviar</x-boton>
+                                    <x-boton type="submit">Enviar</x-boton>
                                 </div>
-                                <div class="col-md-6 pt-2">
+                                {{-- <div class="col-md-6 pt-2">
                                     <button type="submit" class=" bg-rojoBrillante flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500">Añadir Permisos</button>
-                                </div>
+                                </div> --}}
                             </div>
                         </form>       
                     </div>

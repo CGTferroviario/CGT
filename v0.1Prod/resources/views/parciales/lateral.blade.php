@@ -14,21 +14,23 @@
             <ul class="mt-12">
                 <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center mb-6">
                     <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                        <i class="lni lni-dashboard"></i>
+                        
                         <span class="text-sm ml-2"><a href="{{ route('admin.dashboard') }}">Panel de Control</a></span>
+                        <i class="lni lni-dashboard"></i>
                     </a>
-                    <div class="py-1 px-3 bg-gray-600 rounded text-gray-300 flex items-center justify-center text-xs">5</div>
+                    {{-- <div class="py-1 px-3 bg-gray-600 rounded text-gray-300 flex items-center justify-center text-xs">5</div> --}}
                 </li>
                 <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
                     <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                        <i class="lni lni-bullhorn"></i>
+                        
                         <span class="text-sm ml-2 justify-self-start">
                             <a href="{{ route('admin.comunicados.index') }}" :active="request()->routeIs('comunicados')" class="justify-self-start">
                                 Comunicados
                             </a>
                         </span>
+                        <i class="lni lni-bullhorn"></i>
                     </a>
-                    <div class="py-1 px-3 bg-gray-600 rounded text-gray-300 flex items-center justify-center text-xs">8</div>
+                    {{-- <div class="py-1 px-3 bg-gray-600 rounded text-gray-300 flex items-center justify-center text-xs">8</div> --}}
                 </li>
                 <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
                     <a href="javascript:void(0)"
@@ -36,7 +38,7 @@
                         <i class="lni lni-book"></i>
                         <span class="text-sm ml-2"><a href="{{ route('admin.noticias.index') }}" :active="request()->routeIs('noticias')">Noticias</a></span>
                     </a>
-                    <div class="py-1 px-3 bg-gray-600 rounded text-gray-300 flex items-center justify-center text-xs">25</div>
+                    {{-- <div class="py-1 px-3 bg-gray-600 rounded text-gray-300 flex items-center justify-center text-xs">25</div> --}}
                 </li>
                 <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
                     <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
@@ -54,21 +56,21 @@
                             <a href="{{ route('admin.archivos.index') }}" :active="request()->routeIs('archivos')">Archivos</a>
                         </span>
                     </a>
-                    <div class="py-1 px-3 bg-gray-600 rounded text-gray-300 flex items-center justify-center text-xs">25</div>
+                    {{-- <div class="py-1 px-3 bg-gray-600 rounded text-gray-300 flex items-center justify-center text-xs">25</div> --}}
                 </li>
                 <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
                     <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                         <i class="lni lni-apartment"></i>
                         <span class="text-sm ml-2"><a href="{{ route('admin.empresas.index') }}" :active="request()->routeIs('empresas')">Empresas</span>
                     </a>
-                    <div class="py-1 px-3 bg-gray-600 rounded text-gray-300 flex items-center justify-center text-xs">2</div>
+                    {{-- <div class="py-1 px-3 bg-gray-600 rounded text-gray-300 flex items-center justify-center text-xs">2</div> --}}
                 </li>
                 <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
                     <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                         <i class="lni lni-hammer"></i>
                         <span class="text-sm ml-2"><a href="{{ route('admin.categorias.index') }}" :active="request()->routeIs('categorias')">Categorías</a></span>
                     </a>
-                    <div class="py-1 px-3 bg-gray-600 rounded text-gray-300 flex items-center justify-center text-xs">5</div>
+                    {{-- <div class="py-1 px-3 bg-gray-600 rounded text-gray-300 flex items-center justify-center text-xs">5</div> --}}
                 </li>
                 <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
                     <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">

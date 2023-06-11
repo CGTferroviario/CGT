@@ -16,6 +16,7 @@
                     </a>
                 </div>
                 <!-- Navigation Links -->
+                
                 <div class="hidden space-x-8 sm:-my-px linkBarra ml-5 sm:flex">
                     <x-nav-link href="">
                         {{ __('Panel de Control') }}
