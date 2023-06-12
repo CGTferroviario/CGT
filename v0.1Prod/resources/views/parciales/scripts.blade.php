@@ -1,4 +1,8 @@
 <!-- Scripts -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PTSDGJ7SBK"></script>
+
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
