@@ -1,16 +1,175 @@
-<nav class="bg-dark">
-    <div class="logo inline">
-        <img class="inline" src="/img/logo_sm.png" alt="CGT Ferroviario" />
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar fixed-top barraSup ">  
+    <div class="logo inline-flex">
+        <img class="" src="/img/logo_sm.png" alt="CGT Ferroviario" />
         <span class="titular">Ferroviario7</span>
     </div>
-    <div class="menu inline">
-        <x-nav-link>ADIF</x-nav-link>
-        <x-nav-link>RENFE</x-nav-link>
-        <x-nav-link>EMP.AUX.</x-nav-link>
+    <div class="menu align-middle text-3xl">
+        {{-- <x-nav-link>
+            <x-slot>ADIF</x-slot>
+        </x-nav-link> --}}
+        {{-- <li>
+            <a href="{{ route('adif') }}" class="dropdown-item dropdown-toggle" title="Documentación General de ADIF">DOC. GENERAL</a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-submenu">
+              <li><a href="{{ url('adif/doc/afiliacion') }}" class="dropdown-item">AFILIACIÓN</a></li>
+              <li><a href="{{ url('adif/doc/ayudas') }}" class="dropdown-item">AYUDAS Y BENEFICIOS SOCIALES</a></li>
+              <li><a href="{{ url('adif/doc/igualdad') }}" class="dropdown-item">IGUALDAD</a></li>
+              <li><a href="{{ url('adif/doc/legislacion') }}" class="dropdown-item">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
+              <li><a href="{{ url('adif/doc/licencias') }}" class="dropdown-item">LICENCIAS</a></li>
+              <li><a href="{{ url('adif/doc/mapa') }}" class="dropdown-item">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
+              <li><a href="{{ url('adif/doc/conciliacion') }}" class="dropdown-item">MEDIDAS DE CONCILIACIÓN</a></li>
+              <li><a href="{{ url('adif/doc/modelos') }}" class="dropdown-item">MODELOS DE SOLICITUD DE EMPRESA</a></li>
+              <li><a href="{{ url('adif/doc/protocolos') }}" class="dropdown-item">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
+              <li><a href="{{ url('adif/doc/salud') }}" class="dropdown-item">SALUD LABORAL</a></li>
+              <li><a href="{{ url('adif/doc/teletrabajo') }}" class="dropdown-item">TELETRABAJO</a></li>
+              <li><a href="{{ url('adif/doc/tablas') }}" class="dropdown-item">TABLAS SALARIALES</a></li>
+            </ul>
+        </li> --}}
+        <x-nav-link :href="route('adif')" :active="request()->routeIs('adif')">
+            {{ __('ADIF') }}
+        </x-nav-link>
+        <x-nav-link :href="route('renfe')" :active="request()->routeIs('renfe')">
+            {{ __('RENFE') }}
+        </x-nav-link>
+        <x-nav-link :href="route('empresasaux')" :active="request()->routeIs('empresasaux')">
+            {{ __('EMP.AUX.') }}
+        </x-nav-link>
         <x-nav-link>JURÍDICA</x-nav-link>
         <x-nav-link>BIBLIOTECA</x-nav-link>
         <x-nav-link>RECURSOS</x-nav-link>
         <x-nav-link>SFF-CGT</x-nav-link>
+        
+    </div>
+    <div class="hidden sm:flex sm:items-center sm:ml-6">
+        <x-dropdown align="right" width="48">
+            <x-slot name="trigger">
+                <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                    <div>{{ Auth::user()?->name }}</div>
+
+                    <div class="ml-1">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </button>
+            </x-slot>
+
+            <x-slot name="content">
+                <x-dropdown-link :href="route('profile.edit')">
+                    {{ __('Profile') }}
+                </x-dropdown-link>
+
+                <!-- Authentication -->
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-dropdown-link>
+                </form>
+            </x-slot>
+        </x-dropdown>
+    </div>
+    <div class="col centrado">
+        <div class="dropdown mx-auto inline ms-sm-5">
+            <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenu2"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                AREA Afiliados
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark formLogin dropdown-menu-lg-end" aria-labelledby="dropdownMenu2">
+                @guest
+                <form method="POST" class="dropdown-menu-dark p-4" action="{{ route('login') }}">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="email" class="form-label">{{ __('Email Address') }}</label>
+                        <div class="mb-3">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                                name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">{{ __('Password') }}</label>
+                        <div class="mb-3">
+                            <input id="password" type="password"
+                                class="form-control @error('password') is-invalid @enderror" name="password" required
+                                autocomplete="current-password">
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                                    {{ old('remember') ? 'checked' : '' }}>
+
+                                <label class="form-check-label" for="remember">
+                                    {{ __('Recuérdame') }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-outline-danger">
+                                {{ __('Acceder') }}
+                            </button>
+
+                            @if (Route::has('password.request'))
+                            <a class="inline red peq" href="{{ route('password.request') }}">
+                                {{ __('¿Olvidaste tu contraseña?') }}
+                            </a>
+                            @endif
+                        </div>
+                    </div>
+                </form>
+                @else
+                <li class="nav-item dropdown-menu-dark p-3">
+                    <span class="inline">
+                        Bienvenid@, {{ Auth::user()->name }}
+                    </span><br>
+                    <h6>
+                        Accede a tu <a href="/home">Panel de Afiliado</a>
+                    </h6>
+                    <hr>
+                    <span><a href="{{ route('admin.comunicados.index') }}" class="enlace">Comunicados</a></span>
+                    <div class="btn-group">
+                        <a href="{{ route('admin.comunicados.index') }}" class="btn btn-outline-secondary">Editar</a>
+                        <a href="{{ route('admin.comunicados.create') }}" class="btn btn-outline-info">Añadir</a>
+                    </div>
+                    <span><a href="{{ route('admin.etiquetas.index') }}" class="enlace">Etiquetas</a></span><a
+                        href="{{ route('admin.etiquetas.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
+                        href="{{ route('admin.etiquetas.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
+                    <span><a href="{{ route('admin.categorias.index') }}" class="enlace">Categorias</a></span><a
+                        href="{{ route('admin.categorias.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
+                        href="{{ route('admin.categorias.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
+                    <span><a href="{{ route('admin.empresas.index') }}" class="enlace">Empresas</a></span><a
+                        href="{{ route('admin.empresas.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
+                        href="{{ route('admin.empresas.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
+
+                    <div class="inline dcha">
+                        <button class="btn btn-outline-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </button>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+                @endguest
+            </ul>
+        </div>
     </div>
 </nav>
 {{-- <nav class="bg-gray-800">

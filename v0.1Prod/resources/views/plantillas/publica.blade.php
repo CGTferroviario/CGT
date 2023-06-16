@@ -22,7 +22,7 @@
 </script>
 <body>
     
-@include('parciales.barrasup')
+@include('parciales.barrasup') 
 
 <main class="">
   @yield('contenido')

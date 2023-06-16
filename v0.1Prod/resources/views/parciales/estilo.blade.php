@@ -3,7 +3,7 @@
 
 {{-- Fuentes --}}
 {{-- Hojas de Estilo --}}
-@vite('resources/css/app.css')
+
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
 
@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
 
 
-
+@vite('resources/css/app.css')
 
 <link id="hojaEstilo" href="{{ asset('css/cgtferroviario.css') }}" rel="stylesheet">
 
