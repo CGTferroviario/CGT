@@ -1,0 +1,290 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar fixed-top barraSup ">  
+    <div class="logo inline-flex">
+        <img class="" src="/img/logo_sm.png" alt="CGT Ferroviario" />
+        <span class="titular">Ferroviario7</span>
+    </div>
+    <div class="menu align-middle text-3xl">
+        {{-- <x-nav-link>
+            <x-slot>ADIF</x-slot>
+        </x-nav-link> --}}
+        {{-- <li>
+            <a href="{{ route('adif') }}" class="dropdown-item dropdown-toggle" title="Documentación General de ADIF">DOC. GENERAL</a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-submenu">
+              <li><a href="{{ url('adif/doc/afiliacion') }}" class="dropdown-item">AFILIACIÓN</a></li>
+              <li><a href="{{ url('adif/doc/ayudas') }}" class="dropdown-item">AYUDAS Y BENEFICIOS SOCIALES</a></li>
+              <li><a href="{{ url('adif/doc/igualdad') }}" class="dropdown-item">IGUALDAD</a></li>
+              <li><a href="{{ url('adif/doc/legislacion') }}" class="dropdown-item">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
+              <li><a href="{{ url('adif/doc/licencias') }}" class="dropdown-item">LICENCIAS</a></li>
+              <li><a href="{{ url('adif/doc/mapa') }}" class="dropdown-item">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
+              <li><a href="{{ url('adif/doc/conciliacion') }}" class="dropdown-item">MEDIDAS DE CONCILIACIÓN</a></li>
+              <li><a href="{{ url('adif/doc/modelos') }}" class="dropdown-item">MODELOS DE SOLICITUD DE EMPRESA</a></li>
+              <li><a href="{{ url('adif/doc/protocolos') }}" class="dropdown-item">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
+              <li><a href="{{ url('adif/doc/salud') }}" class="dropdown-item">SALUD LABORAL</a></li>
+              <li><a href="{{ url('adif/doc/teletrabajo') }}" class="dropdown-item">TELETRABAJO</a></li>
+              <li><a href="{{ url('adif/doc/tablas') }}" class="dropdown-item">TABLAS SALARIALES</a></li>
+            </ul>
+        </li> --}}
+        <x-nav-link :href="route('adif')" :active="request()->routeIs('adif')">
+            {{ __('ADIF') }}
+        </x-nav-link>
+        <x-nav-link :href="route('renfe')" :active="request()->routeIs('renfe')">
+            {{ __('RENFE') }}
+        </x-nav-link>
+        <x-nav-link :href="route('empresasaux')" :active="request()->routeIs('empresasaux')">
+            {{ __('EMP.AUX.') }}
+        </x-nav-link>
+        <x-nav-link>JURÍDICA</x-nav-link>
+        <x-nav-link>BIBLIOTECA</x-nav-link>
+        <x-nav-link>RECURSOS</x-nav-link>
+        <x-nav-link>SFF-CGT</x-nav-link>
+        
+    </div>
+    <div class="hidden sm:flex sm:items-center sm:ml-6">
+        <x-dropdown align="right" width="48">
+            <x-slot name="trigger">
+                <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                    <div>{{ Auth::user()?->name }}</div>
+
+                    <div class="ml-1">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </button>
+            </x-slot>
+
+            <x-slot name="content">
+                <x-dropdown-link :href="route('profile.edit')">
+                    {{ __('Profile') }}
+                </x-dropdown-link>
+
+                <!-- Authentication -->
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-dropdown-link>
+                </form>
+            </x-slot>
+        </x-dropdown>
+    </div>
+    <div class="col centrado">
+        <div class="dropdown mx-auto inline ms-sm-5">
+            <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenu2"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                AREA Afiliados
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark formLogin dropdown-menu-lg-end" aria-labelledby="dropdownMenu2">
+                @guest
+                <form method="POST" class="dropdown-menu-dark p-4" action="{{ route('login') }}">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="email" class="form-label">{{ __('Email Address') }}</label>
+                        <div class="mb-3">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                                name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">{{ __('Password') }}</label>
+                        <div class="mb-3">
+                            <input id="password" type="password"
+                                class="form-control @error('password') is-invalid @enderror" name="password" required
+                                autocomplete="current-password">
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                                    {{ old('remember') ? 'checked' : '' }}>
+
+                                <label class="form-check-label" for="remember">
+                                    {{ __('Recuérdame') }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-outline-danger">
+                                {{ __('Acceder') }}
+                            </button>
+
+                            @if (Route::has('password.request'))
+                            <a class="inline red peq" href="{{ route('password.request') }}">
+                                {{ __('¿Olvidaste tu contraseña?') }}
+                            </a>
+                            @endif
+                        </div>
+                    </div>
+                </form>
+                @else
+                <li class="nav-item dropdown-menu-dark p-3">
+                    <span class="inline">
+                        Bienvenid@, {{ Auth::user()->name }}
+                    </span><br>
+                    <h6>
+                        Accede a tu <a href="/home">Panel de Afiliado</a>
+                    </h6>
+                    <hr>
+                    <span><a href="{{ route('admin.comunicados.index') }}" class="enlace">Comunicados</a></span>
+                    <div class="btn-group">
+                        <a href="{{ route('admin.comunicados.index') }}" class="btn btn-outline-secondary">Editar</a>
+                        <a href="{{ route('admin.comunicados.create') }}" class="btn btn-outline-info">Añadir</a>
+                    </div>
+                    <span><a href="{{ route('admin.etiquetas.index') }}" class="enlace">Etiquetas</a></span><a
+                        href="{{ route('admin.etiquetas.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
+                        href="{{ route('admin.etiquetas.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
+                    <span><a href="{{ route('admin.categorias.index') }}" class="enlace">Categorias</a></span><a
+                        href="{{ route('admin.categorias.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
+                        href="{{ route('admin.categorias.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
+                    <span><a href="{{ route('admin.empresas.index') }}" class="enlace">Empresas</a></span><a
+                        href="{{ route('admin.empresas.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
+                        href="{{ route('admin.empresas.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
+
+                    <div class="inline dcha">
+                        <button class="btn btn-outline-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </button>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+                @endguest
+            </ul>
+        </div>
+    </div>
+</nav>
+{{-- <nav class="bg-gray-800">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                <!-- Mobile menu button-->
+                <button type="button"
+                    class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                    aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <!--
+                        Icon when menu is closed.
+                        Menu open: "hidden", Menu closed: "block"
+                    -->
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <!--
+                    Icon when menu is open.
+                    Menu open: "block", Menu closed: "hidden"
+                    -->
+                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <div class="flex flex-shrink-0 items-center">
+                    <a class="" href="{{ url('/') }}">
+                        <img class="inline block h-8 w-auto lg:hidden"
+                        src="/img/LogoSFF_sm.png" alt="CGT Ferroviario" />
+                        <img class="inline hidden h-8 w-auto lg:block"
+                        src="/img/LogoSFF_sm.png" alt="CGT Ferroviario" />
+                        <span class="titular">Ferroviario7</span>
+                    </a>
+                </div>
+                <div class="hidden sm:ml-6 sm:block">
+                    <div class="flex space-x-4">
+                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                        <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                            aria-current="page">Dashboard</a>
+                        <a href="#"
+                            class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
+                        <a href="#"
+                            class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
+                        <a href="#"
+                            class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <button type="button"
+                    class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <span class="sr-only">View notifications</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                    </svg>
+                </button>
+
+                <!-- Profile dropdown -->
+                <div class="relative ml-3">
+                    <div>
+                        <button type="button"
+                            class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                            id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                            <span class="sr-only">Open user menu</span>
+                            <img class="h-8 w-8 rounded-full"
+                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                alt="">
+                        </button>
+                    </div>
+
+                    <!--
+                        Dropdown menu, show/hide based on menu state.
+            
+                        Entering: "transition ease-out duration-100"
+                            From: "transform opacity-0 scale-95"
+                            To: "transform opacity-100 scale-100"
+                        Leaving: "transition ease-in duration-75"
+                            From: "transform opacity-100 scale-100"
+                            To: "transform opacity-0 scale-95"
+                    -->
+                    <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                        role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100", Not Active: "" -->
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                            id="user-menu-item-0">Your Profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                            id="user-menu-item-1">Settings</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                            id="user-menu-item-2">Sign out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="sm:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+                aria-current="page">Dashboard</a>
+            <a href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
+            <a href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
+            <a href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+        </div>
+    </div>
+</nav> --}}

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Comunicado;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -21,8 +22,13 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call(UsersTableSeeder::class);
+        // $this->call(ComunicadosSeeder::class);
         $this->call(ProvinciasSeeder::class);
         $this->call(CcaasSeeder::class);
-        $this->call(MunicipiosSeeder::class);
+        $comunicado = Comunicado::factory(25)->create([
+            
+        ]);
+        // $this->call(MunicipiosSeeder::class);
+        
     }
 }

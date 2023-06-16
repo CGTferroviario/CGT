@@ -34,11 +34,12 @@ body{
 }
 main{
   min-height: 100%;
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 footer{
   bottom: 0px;
   width: 100%;
-  margin-top: 3em;
 }
 a{
   text-decoration: none;
@@ -53,6 +54,7 @@ button a{
 ul{
   list-style-type: none;
 }
+
 /* Formulario */
 
 form {
@@ -96,10 +98,10 @@ nav{
 .dropdown-toggle::after {
   color: rgb(220,53,69);
 }
-.dropdown-toggle::after:hover{
-  color: white;
+.dropdown-toggle:hover::after, .dropdown-toggle:focus::after {
+  color: white !important;
 }
-
+/* Fin flechita */
 
 .navbar-brand:hover{
   border-bottom: none;
@@ -113,6 +115,14 @@ nav{
 }
 .sociales:hover{
   color:rgb(254, 71, 85);
+}
+.dropdown-menu-dark {
+  background-color: rgb(33,37,41);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.dropdown-menu-dark .dropdown-item:hover, .dropdown-menu-dark .dropdown-item:focus {
+  color: black;
+  background-color: rgb(220,53,69);
 }
 /* Fin Barra Superior */
 
@@ -167,6 +177,12 @@ nav{
 .verdeAdif{
   color: rgb(0, 99, 56);
 }
+.naranjaServeo{
+  color: rgb(255, 78, 0);
+}
+.moradoLogirail{
+  color: rgb(126, 1, 126);
+}
 .negro{
   color: black;
 }
@@ -176,7 +192,7 @@ nav{
 .bg-rojo{
   background: rgb(255,30,0);
 }
-.bg-rojoOscuro{
+.bg-circu{
   background: rgb(82,10,0);
 }
 .bg-rojoBrillante{
@@ -184,6 +200,9 @@ nav{
 }
 .bg-grisOscuro{
   background:rgb(47,47,47);
+}
+.bg-grisOscuro-7{
+  background:rgba(47,47,47,.7);
 }
 .bg-grisMedio{
   background: rgb(82,82,82);
@@ -200,6 +219,15 @@ nav{
 .bg-verdeAdif{
   background: rgb(0, 99, 56);
 }
+.bg-infra{
+  background: rgb(230,230,40);
+}
+.bg-naranjaServeo{
+  background: rgb(255, 78, 0);
+}
+.bg-moradoLogirail{
+  background: rgb(126, 1, 126);
+}
 .bg-negro{
   background: black;
 }
@@ -212,11 +240,19 @@ nav{
 .bordeRojo{
   border: thin solid rgb(254,71,85);
 }
+.bordeTopRojo{
+  border-top: thin solid rgb(254,71,85);
+}
+.bordeBottomRojo{
+  border-bottom: thin solid rgb(254,71,85);
+}
 
 /* Fin Colores */
 
 /* Textos */
-
+.cabecera{
+  margin-top: -2em !important;
+}
 .peq{
   font-size: 90%;
 }
@@ -255,6 +291,136 @@ nav{
   background-color: #dc3545;
   color:#fff;
   border: thin black solid;
+}
+/* Fondos Documentacion */
+.fondo{
+  background-repeat: no-repeat;
+  padding-top: 200px;
+  min-height: 600px;
+}
+.documentacion{
+  background-image: url('/img/fondos/documentacion.png');
+}
+.afiliacion{
+  background-image: url('/img/fondos/doc/afiliacion.png');
+}
+.ayudas{
+  background-image: url('/img/fondos/doc/ayudas.png');
+}
+.conciliacion{
+  background-image: url('/img/fondos/doc/conciliacion.png');
+}
+.igualdad{
+  background-image: url('/img/fondos/doc/igualdad.png');
+}
+.legislacion{
+  background-image: url('/img/fondos/doc/legislacion.png');
+}
+.licencias{
+  background-image: url('/img/fondos/doc/licencias.png');
+}
+.mapa{
+  background-image: url('/img/fondos/doc/mapa.png');
+}
+.modelos{
+  background-image: url('/img/fondos/doc/modelos.png');
+}
+.protocolos{
+  background-image: url('/img/fondos/doc/protocolos.png');
+}
+.salud{
+  background-image: url('/img/fondos/doc/salud.png');
+}
+.tablas{
+  background-image: url('/img/fondos/doc/tablas.png');
+}
+.teletrabajo{
+  background-image: url('/img/fondos/doc/teletrabajo.png');
+}
+
+/* Fondos ADIF */
+
+.infraestructura{
+  background-image: url('/img/fondos/adif/infraestructura.png');
+}
+.circulacion{
+  background-image: url('/img/fondos/adif/circulacion.png');
+}
+.oficinas{
+  background-image: url('/img/fondos/adif/oficinas.png');
+}
+/* Fondos RENFE */
+.comercial{
+  background-image: url('/img/fondos/renfe/comercial.png');
+}
+.intervencion{
+  background-image: url('/img/fondos/renfe/intervencion.png');
+}
+.conduccion{
+  background-image: url('/img/fondos/renfe/conduccion.png');
+}
+.talleres{
+  background-image: url('/img/fondos/renfe/talleres.png');
+}
+.tecnicos{
+  background-image: url('/img/fondos/renfe/tecnicos.png');
+}
+
+/* Fondos Biblioteca */
+
+.comunicados{
+  background-image: url('/img/fondos/biblioteca/comunicados.png');
+}
+.seguridad{
+  background-image: url('/img/fondos/biblioteca/seguridad.png');
+}
+.archivo{
+  background-image: url('/img/fondos/biblioteca/archivo.png');
+}
+.defensa{
+  background-image: url('/img/fondos/biblioteca/defensa.png');
+}
+.colegio{
+  background-image: url('/img/fondos/biblioteca/colegio.png');
+}
+.via{
+  background-image: url('/img/fondos/biblioteca/via.png');
+}
+
+/* Fondos Jurídica */
+
+.convenios{
+  background-image: url('/img/fondos/juridica/convenios.png');
+}
+.laboral{
+  background-image: url('/img/fondos/juridica/laboral.png');
+}
+.ferroviaria{
+  background-image: url('/img/fondos/juridica/ferroviaria.png');
+}
+.modelos{
+  background-image: url('/img/fondos/juridica/modelos.png');
+}
+.logros{
+  background-image: url('/img/fondos/juridica/logros.png');
+}
+
+/* Fondos recursos */
+
+.videos{
+  background-image: url('/img/fondos/recursos/videos.png');
+}
+.audios{
+  background-image: url('/img/fondos/recursos/audios.png');
+}
+.carteles{
+  background-image: url('/img/fondos/recursos/carteleria.png');
+}
+.fotografias{
+  background-image: url('/img/fondos/recursos/fotos.png');
+}
+.logotipos{
+  background-image: url('/img/fondos/recursos/logos.png');
 }
 
 /* Sección de INICIO */
@@ -412,7 +578,6 @@ nav{
 #doc_tablas:hover{
   background:url('/img/tarjetas/renfe/doc_tablas.png');
 }
-
 /* Fin Sección de RENFE */
 
 
@@ -465,8 +630,21 @@ nav{
   padding: 10px;
   font-size: 150%;
 }
+.breadcrumb{
+  position: absolute;
+  margin-top: .8rem;
+  margin-left: .8rem;
+}
+
+/* .fa, .fas, .fa-solid, .far, .fa-regular, .fal, .fa-light, .fat, .fa-thin, .fad, .fa-duotone, .fab, .fa-brands {
+  font-size: 150% !important;
+} */
 
 /*fin fontawesome */
+.btn:hover {
+  background: rgb(254,71,85);
+}
+
 .barra2{
   position: fixed;
   bottom: 0px;
@@ -577,18 +755,6 @@ input[type='checkbox'] {
   background: rgb(254, 71, 85);
   color: black;
 } */
-.fondo{
-  background-image: url("/img/fondo2.jpg");
-}
-.fondo2{
-  background-image: url("/img/fondoCirc.jpg");
-}
-.fondo3{
-  background-image: url("/img/fondoInfra.jpg");
-}
-.fondo4{
-  background-image: url("/img/fondoOficina.jpg");
-}
 
 .accordion-button:not(.collapsed) {
   color: rgb(254, 71, 85) !important;
@@ -632,12 +798,6 @@ input[type='checkbox'] {
 }
 .subTitulo:hover{
   color: rgb(254, 71, 85);
-}
-.btn{
-  font-size: .8rem;
-}
-.card-footer {
-  padding: 0.5rem 0.5rem;
 }
 
 /* Códigos QR Fin */

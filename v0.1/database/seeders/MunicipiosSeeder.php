@@ -8131,7 +8131,7 @@ class MunicipiosSeeder extends Seeder
             ['id_municipio' => '8113', 'id_provincia' => '25', 'cod_municipio' => '913', 'nombre_municipio' => 'Riu de Cerdanya', ],
             ['id_municipio' => '8114', 'id_provincia' => '48', 'cod_municipio' => '913', 'nombre_municipio' => 'Zierbena', ],
             ['id_municipio' => '8115', 'id_provincia' => '48', 'cod_municipio' => '914', 'nombre_municipio' => 'Arratzu', ],
-            ['id_municipio' => '8116', 'id_provincia' => '48', 'cod_municipio' => '915', 'nombre_municipio' => 'Ziortza-Bolibar', ],
+            ['id_municipio' => '8116', 'id_provincia' => '48', 'cod_municipio' => '915', 'nombre_municipio' => 'Ziortza-Bolibar', ]
         ]);
     }
 }

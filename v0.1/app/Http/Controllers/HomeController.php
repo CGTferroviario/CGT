@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comunicado;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -37,13 +38,20 @@ class HomeController extends Controller
     {
         return view('biblioteca');
     }
+    public function comunicados() 
+    {
+        return view('biblioteca.comunicados', [
+            
+            'comunicados' => Comunicado::orderBy('updated_at', 'desc')->get()
+        ]);
+    }
     public function prensa() 
     {
         return view('prensa');
     }
-    public function igualdad() 
+    public function juridica() 
     {
-        return view('igualdad');
+        return view('juridica');
     }
     public function equipo()
     {

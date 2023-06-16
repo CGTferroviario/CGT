@@ -1,12 +1,13 @@
 <?php
 
 use App\Http\Controllers\ComunicadosController;
+use App\Http\Controllers\EtiquetaController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 /*
 --------------------------------------------------------------------------
- Web Routes
+Web Routes
 --------------------------------------------------------------------------
     Aquí se registran todas las rutas para nuestra aplicación. Estas rutas se cargan mediante RouteServiceProvider en un grupo que contiene el middleware "web"
 
@@ -29,20 +30,35 @@ Route::get('/', function () {
 //     return view('adif');
 // });
 
-// GET
-Route::get('/comunicados', [ComunicadosController::class, 'index']);
-Route::get('/articulos/{id}', [ComunicadosController::class, 'show']);
+Route::resource('comunicados', App\Http\Controllers\ComunicadosController::class);
+Route::resource('etiquetas', App\Http\Controllers\EtiquetaController::class);
+Route::resource('empresas', App\Http\Controllers\EmpresaController::class);
+Route::resource('categorias', App\Http\Controllers\CategoriaController::class);
+Route::resource('documentos', App\Http\Controllers\DocumentoController::class);
 
+
+// Route::prefix('/comunicados')->group(function (){
+//     Route::get('/crear', [ComunicadosController::class, 'create'])->name('comunicados.create');
+//     Route::get('/', [ComunicadosController::class, 'index'])->name('comunicados.index');
+//     Route::get('/{id}', [ComunicadosController::class, 'show'])->name('comunicados.show');
+//     Route::post('/', [ComunicadosController::class, 'store'])->name('comunicados.store');
+//     Route::get('/editar/{id}', [ComunicadosController::class, 'edit'])->name('comunicados.edit');
+//     Route::patch('/{id}', [ComunicadosController::class, 'update'])->name('comunicados.update');
+//     Route::delete('/{id}', [ComunicadosController::class, 'destroy'])->name('comunicados.destroy');
+// });
+// GET
+// Route::get('/comunicados', [ComunicadosController::class, 'index']);
+// Route::get('/articulos/{id}', [ComunicadosController::class, 'show']);
 // POST 
-Route::get('/comunicados/crear', [ComunicadosController::class, 'crear']);
-Route::get('/comunicados', [ComunicadosController::class, 'store']);
+// Route::get('/comunicados/crear', [ComunicadosController::class, 'crear']);
+// Route::get('/comunicados', [ComunicadosController::class, 'store']);
 
 // PUT or PATCH
-Route::get('/comunicados/editar/{id}', [ComunicadosController::class, 'editar']);
-Route::get('/comunicados/{id}', [ComunicadosController::class, 'update']);
+// Route::get('/comunicados/editar/{id}', [ComunicadosController::class, 'editar']);
+// Route::get('/comunicados/{id}', [ComunicadosController::class, 'update']);
 
 // DELETE
-Route::delete('/comunicados/{id}', [ComunicadosController::class, 'destroy']);
+// Route::delete('/comunicados/{id}', [ComunicadosController::class, 'destroy']);
 
 // Esto crea todas las rutas CRUD [Create, Read, Update, Delete] 
 // (GET,POST,PUT,PATCH,DELETE)
@@ -103,17 +119,64 @@ Route::prefix('renfe/doc')->group(function () {
     Route::view('/tablas', 'renfe.doc.tablas');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('panel');
-
 Route::get('/empresasaux', [App\Http\Controllers\HomeController::class, 'empresasaux'])->name('empresasaux');
-Route::get('/igualdad', [App\Http\Controllers\HomeController::class, 'igualdad'])->name('igualdad');
-Route::get('/juridica', [App\Http\Controllers\HomeController::class, 'igualdad'])->name('juridica');
+Route::prefix('empresasaux')->group(function () {
+    Route::view('/serveo', 'empresasaux.serveo');
+    Route::view('/logirail', 'empresasaux.logirail'); 
+    Route::view('/otras', 'empresasaux.otras');
+});
+
+Route::get('/juridica', [App\Http\Controllers\HomeController::class, 'juridica'])->name('juridica');
+Route::prefix('juridica')->group(function () {
+    Route::view('/convenios', 'juridica.convenios');
+    Route::view('/laboral', 'juridica.laboral'); 
+    Route::view('/ferroviaria', 'juridica.ferroviaria');
+    Route::view('/modelos', 'juridica.modelos');
+    Route::view('/logros', 'juridica.logros');
+});
+
 Route::get('/biblioteca', [App\Http\Controllers\HomeController::class, 'biblioteca'])->name('biblioteca');
-Route::get('/prensa', [App\Http\Controllers\HomeController::class, 'prensa'])->name('prensa');
+Route::get('/biblioteca/comunicados', [App\Http\Controllers\HomeController::class, 'comunicados'])->name('biblioteca.comunicados');
+
+
+Route::prefix('biblioteca')->group(function () {
+    Route::view('/seguridad', 'biblioteca.seguridad'); 
+    Route::view('/defensa', 'biblioteca.defensa');
+    Route::view('/archivo', 'biblioteca.archivo');
+    Route::view('/colegio', 'biblioteca.colegio');
+    Route::view('/via', 'biblioteca.via');
+});
+
+Route::get('/recursos', [App\Http\Controllers\HomeController::class, 'recursos'])->name('recursos');
+Route::prefix('recursos')->group(function () {
+    Route::view('/videos', 'recursos.videos');
+    Route::view('/audios', 'recursos.audios'); 
+    Route::view('/carteles', 'recursos.carteles');
+    Route::view('/fotos', 'recursos.fotos');
+    Route::view('/logos', 'recursos.logos');
+});
 
 Route::get('/equipo', [App\Http\Controllers\HomeController::class, 'equipo'])->name('equipo');
-Route::post('/equipo', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
-Route::post('/empresas', [App\Http\Controllers\EmpresaController::class, 'CrearEmpresa'])->name('empresas');
+Route::post('/equipo/contacto', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+Route::prefix('equipo')->group(function () {
+    Route::view('/sp', 'equipo.sp');
+    Route::view('/mapa', 'equipo.mapa'); 
+    Route::view('/contacto', 'equipo.contacto');
+});
+
+Route::view('/afiliate', 'afiliate')->name('afiliate');
+Route::post('/afiliate', [App\Http\Controllers\AfiliacionController::class, 'AfiliateForm'])->name('afiliate.store');
+// Route::get('/afiliate', [App\Http\Controllers\AfiliacionController::class, 'AfiliateForm'])->name('afiliate');
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('panel');
+Route::get('/igualdad', [App\Http\Controllers\HomeController::class, 'igualdad'])->name('igualdad');
+Route::get('/prensa', [App\Http\Controllers\HomeController::class, 'prensa'])->name('prensa');
+
+
+// Route::post('/empresas', [App\Http\Controllers\EmpresaController::class, 'CrearEmpresa'])->name('empresas');
+
+
 
 // Route::get('/admin/dashboard', 'Admin\DashboardController@index')->middleware('role:admin');
 // Route::get('/seller/dashboard', 'Seller\DashboardController@index')->middleware('role:seller');

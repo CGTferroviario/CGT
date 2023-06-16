@@ -77,7 +77,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <a href="" class="centrado">
+            <a href="{{ url('/comunicados') }}" class="centrado">
                 <div class="tarjeta" id="comunicados" class="img-fluid" title="Consulta nuestros comunicados"></div>
             </a>
         </div>
