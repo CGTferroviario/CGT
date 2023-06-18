@@ -1,5 +1,5 @@
 @extends('plantillas.publica')
 
 @section('contenido')
-   Esta es la página de empresas auxiliares
+   <h1 class="m-0 py-3 text-center blanco grande bg-SERVEO">EMPRESAS AUXILIARES</h1>
 @endsection

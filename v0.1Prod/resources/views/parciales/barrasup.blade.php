@@ -1,46 +1,189 @@
+<style type="text/css">
+/* Barra Superior Header.blade.php */
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+  background: rgb(220,53,69);
+  color: black;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: rgb(214,214,214);
+}
+/* La flechita que expande el desplegable */
+.dropdown-toggle::after {
+  color: rgb(220,53,69);
+}
+.dropdown-toggle:hover::after, .dropdown-toggle:focus::after {
+  color: white !important;
+}
+/* Fin flechita */
+
+.navbar-brand:hover{
+  border-bottom: none;
+}
+/* .activo{
+  border-bottom: solid 2px rgb(255,30,0);
+} */
+.sociales{
+  font-size: 120%;
+  margin-left: 10px;
+}
+.sociales:hover{
+  color:rgb(254, 71, 85);
+}
+.dropdown-menu-dark {
+  background-color: rgb(33,37,41);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.dropdown-menu-dark .dropdown-item:hover, .dropdown-menu-dark .dropdown-item:focus {
+  color: black;
+  background-color: rgb(220,53,69);
+}
+.dropdown-menu li {
+    position: relative;
+}
+
+.dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 99%;
+    top: -1px;
+}
+
+.dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+}
+
+.dropdown-menu>li:hover>.dropdown-submenu {
+    display: block;
+}
+/* Fin Barra Superior */
+</style>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar fixed-top barraSup ">  
-    <div class="logo inline-flex">
-        <img class="" src="/img/logo_sm.png" alt="CGT Ferroviario" />
-        <span class="titular">Ferroviario7</span>
+    <div class="logo">
+        <a href="{{ route('inicio') }}" class="inline-flex">
+            <img class="ml-1" src="/img/logo_sm.png" alt="CGT Ferroviario" />
+            <span class="mx-2 titular">Ferroviario7</span>
+        </a>
     </div>
-    <div class="menu align-middle text-3xl">
-        {{-- <x-nav-link>
-            <x-slot>ADIF</x-slot>
-        </x-nav-link> --}}
-        {{-- <li>
-            <a href="{{ route('adif') }}" class="dropdown-item dropdown-toggle" title="Documentación General de ADIF">DOC. GENERAL</a>
-            <ul class="dropdown-menu dropdown-menu-dark dropdown-submenu">
-              <li><a href="{{ url('adif/doc/afiliacion') }}" class="dropdown-item">AFILIACIÓN</a></li>
-              <li><a href="{{ url('adif/doc/ayudas') }}" class="dropdown-item">AYUDAS Y BENEFICIOS SOCIALES</a></li>
-              <li><a href="{{ url('adif/doc/igualdad') }}" class="dropdown-item">IGUALDAD</a></li>
-              <li><a href="{{ url('adif/doc/legislacion') }}" class="dropdown-item">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
-              <li><a href="{{ url('adif/doc/licencias') }}" class="dropdown-item">LICENCIAS</a></li>
-              <li><a href="{{ url('adif/doc/mapa') }}" class="dropdown-item">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
-              <li><a href="{{ url('adif/doc/conciliacion') }}" class="dropdown-item">MEDIDAS DE CONCILIACIÓN</a></li>
-              <li><a href="{{ url('adif/doc/modelos') }}" class="dropdown-item">MODELOS DE SOLICITUD DE EMPRESA</a></li>
-              <li><a href="{{ url('adif/doc/protocolos') }}" class="dropdown-item">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
-              <li><a href="{{ url('adif/doc/salud') }}" class="dropdown-item">SALUD LABORAL</a></li>
-              <li><a href="{{ url('adif/doc/teletrabajo') }}" class="dropdown-item">TELETRABAJO</a></li>
-              <li><a href="{{ url('adif/doc/tablas') }}" class="dropdown-item">TABLAS SALARIALES</a></li>
-            </ul>
-        </li> --}}
-        <x-nav-link :href="route('adif')" :active="request()->routeIs('adif')">
-            {{ __('ADIF') }}
-        </x-nav-link>
-        <x-nav-link :href="route('renfe')" :active="request()->routeIs('renfe')">
-            {{ __('RENFE') }}
-        </x-nav-link>
-        <x-nav-link :href="route('empresasaux')" :active="request()->routeIs('empresasaux')">
-            {{ __('EMP.AUX.') }}
-        </x-nav-link>
-        <x-nav-link>JURÍDICA</x-nav-link>
-        <x-nav-link>BIBLIOTECA</x-nav-link>
-        <x-nav-link>RECURSOS</x-nav-link>
-        <x-nav-link>SFF-CGT</x-nav-link>
+    <div class="menu align-middle text-medium">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <x-nav-link :href="route('adif')" :active="request()->routeIs('adif')" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ __('ADIF') }}
+                </x-nav-link>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li>
+                        <a href="{{ route('adif') }}" class="dropdown-item dropdown-toggle" title="Documentación General de ADIF">DOC. GENERAL</a>
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-submenu">
+                            <li><a href="{{ url('adif/doc/afiliacion') }}" class="dropdown-item">AFILIACIÓN</a></li>
+                            <li><a href="{{ url('adif/doc/ayudas') }}" class="dropdown-item">AYUDAS Y BENEFICIOS SOCIALES</a></li>
+                            <li><a href="{{ url('adif/doc/igualdad') }}" class="dropdown-item">IGUALDAD</a></li>
+                            <li><a href="{{ url('adif/doc/legislacion') }}" class="dropdown-item">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
+                            <li><a href="{{ url('adif/doc/licencias') }}" class="dropdown-item">LICENCIAS</a></li>
+                            <li><a href="{{ url('adif/doc/mapa') }}" class="dropdown-item">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
+                            <li><a href="{{ url('adif/doc/conciliacion') }}" class="dropdown-item">MEDIDAS DE CONCILIACIÓN</a></li>
+                            <li><a href="{{ url('adif/doc/modelos') }}" class="dropdown-item">MODELOS DE SOLICITUD DE EMPRESA</a></li>
+                            <li><a href="{{ url('adif/doc/protocolos') }}" class="dropdown-item">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
+                            <li><a href="{{ url('adif/doc/salud') }}" class="dropdown-item">SALUD LABORAL</a></li>
+                            <li><a href="{{ url('adif/doc/teletrabajo') }}" class="dropdown-item">TELETRABAJO</a></li>
+                            <li><a href="{{ url('adif/doc/tablas') }}" class="dropdown-item">TABLAS SALARIALES</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ url('adif/infraestructura') }}" class="dropdown-item" title="Documentación del Colectivo de Infraestructura">INFRAESTRUCTURA</a></li>
+                    <li><a href="{{ url('adif/circulacion') }}" class="dropdown-item" title="Documentación del Colectivo de Circulación">CIRCULACIÓN</a></li>
+                    <li><a href="{{ url('adif/oficinas') }}" class="dropdown-item" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <x-nav-link :href="route('renfe')" :active="request()->routeIs('renfe')" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ __('RENFE') }}
+                </x-nav-link>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a href="{{ route('renfe') }}" class="dropdown-item dropdown-toggle" title="Documentación General de ADIF">DOC. GENERAL</a>
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-submenu">
+                            <li><a href="{{ url('renfe/doc/afiliacion') }}" class="dropdown-item">AFILIACIÓN</a></li>
+                            <li><a href="{{ url('renfe/doc/ayudas') }}" class="dropdown-item">AYUDAS Y BENEFICIOS SOCIALES</a></li>
+                            <li><a href="{{ url('renfe/doc/igualdad') }}" class="dropdown-item">IGUALDAD</a></li>
+                            <li><a href="{{ url('renfe/doc/legislacion') }}" class="dropdown-item">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
+                            <li><a href="{{ url('renfe/doc/licencias') }}" class="dropdown-item">LICENCIAS</a></li>
+                            <li><a href="{{ url('renfe/doc/mapa') }}" class="dropdown-item">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
+                            <li><a href="{{ url('renfe/doc/conciliacion') }}" class="dropdown-item">MEDIDAS DE CONCILIACIÓN</a></li>
+                            <li><a href="{{ url('renfe/doc/modelos') }}" class="dropdown-item">MODELOS DE SOLICITUD DE EMPRESA</a></li>
+                            <li><a href="{{ url('renfe/doc/protocolos') }}" class="dropdown-item">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
+                            <li><a href="{{ url('renfe/doc/salud') }}" class="dropdown-item">SALUD LABORAL</a></li>
+                            <li><a href="{{ url('renfe/doc/teletrabajo') }}" class="dropdown-item">TELETRABAJO</a></li>
+                            <li><a href="{{ url('renfe/doc/tablas') }}" class="dropdown-item">TABLAS SALARIALES</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ url('renfe/comercial') }}" class="dropdown-item" title="Documentación del Colectivo de Comercial">COMERCIAL</a></li>
+                    <li><a href="{{ url('renfe/intervencion') }}" class="dropdown-item" title="Documentación del Colectivo de Intervención">INTERVENCIÓN</a></li>
+                    <li><a href="{{ url('renfe/conduccion') }}" class="dropdown-item" title="Documentación del Colectivo de Conducción">CONDUCCIÓN</a></li>
+                    <li><a href="{{ url('renfe/talleres') }}" class="dropdown-item" title="Documentación del Colectivo de Talleres">TALLERES</a></li>
+                    <li><a href="{{ url('renfe/oficinas') }}" class="dropdown-item" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <x-nav-link :href="route('empresasaux')" :active="request()->routeIs('empresasaux')" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Empresas Auxiliares del Sector Ferroviario">
+                    {{ __('EMP.AUX.') }}
+                </x-nav-link>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a href="{{ url('empresasaux/serveo') }}" class="dropdown-item" title="Documentación de SERVEO(Anteriormente FERROVIAL)">SERVEO</a></li>
+                    <li><a href="{{ url('empresasaux/logirail') }}" class="dropdown-item" title="Documentación de LOGIRAIL">LOGIRAIL</a></li>
+                    <li><a href="{{ url('empresasaux/otras') }}" class="dropdown-item" title="Documentación de otras Empresas Auxiliares">OTRAS</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <x-nav-link :href="route('juridica')" :active="request()->routeIs('juridica')" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Jurídica">
+                    {{ __('JURÍDICA') }}
+                </x-nav-link>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a href="{{ url('juridica/convenios') }}" class="dropdown-item">CONVENIOS COLECTIVOS</a></li>
+                    <li><a href="{{ url('juridica/laboral') }}" class="dropdown-item">LEGISLACIÓN LABORAL</a></li>
+                    <li><a href="{{ url('juridica/ferroviaria') }}" class="dropdown-item">LEGISLACIÓN FERROVIARIA</a></li>
+                    <li><a href="{{ url('juridica/modelos') }}" class="dropdown-item">FORMULARIOS/MODELOS</a></li>
+                    <li><a href="{{ url('juridica/logros') }}" class="dropdown-item">LOGROS JURÍDICOS CGT</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <x-nav-link :href="route('biblioteca')" :active="request()->routeIs('biblioteca')" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Recopilación de nuestros comunicados y todo tipo de documentos relacionados con el Ferrocarril">
+                    {{ __('BIBLIOTECA') }}
+                </x-nav-link>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a href="{{ url('biblioteca/comunicados') }}" class="dropdown-item" title="Comunicados de la CGT">COMUNICADOS</a></li>
+                    <li><a href="{{ url('biblioteca/seguridad') }}" class="dropdown-item" title="Información de Seguridad en la Circulación">SEGURIDAD EN LA CIRCULACIÓN</a></li>
+                    <li><a href="{{ url('biblioteca/archivo') }}" class="dropdown-item" title="Archivo de información histórica">ARCHIVO HISTÓRICO</a></li>
+                    <li><a href="{{ url('biblioteca/defensa') }}" class="dropdown-item" title="Información del equipo estatal">DEFENSA DEL FERROCARRIL</a></li>
+                    <li><a href="{{ url('biblioteca/colegio') }}" class="dropdown-item" title="Colegio de Huérfanos Ferroviarios">COLEGIO DE HUÉRFANOS</a></li>
+                    <li><a href="{{ url('biblioteca/via') }}" class="dropdown-item" title="Magazine Ferroviario">VIA LIBERTARIA</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <x-nav-link :href="route('recursos')" :active="request()->routeIs('recursos')" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Recursos Audiovisuales para uso Multimedia">
+                    {{ __('RECURSOS') }}
+                </x-nav-link>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a href="{{ url('recursos/videos') }}" class="dropdown-item" title="Videos del equipo estatal">VIDEOS</a></li>
+                    <li><a href="{{ url('recursos/audios') }}" class="dropdown-item" title="Audios del equipo estatal">AUDIOS</a></li>
+                    <li><a href="{{ url('recursos/carteles') }}" class="dropdown-item" title="Carteles elaborados por el equipo estatal">CARTELES</a></li>
+                    <li><a href="{{ url('recursos/fotos') }}" class="dropdown-item" title="Fotos del equipo estatal">FOTOGRAFIAS</a></li>
+                    <li><a href="{{ url('recursos/logos') }}" class="dropdown-item" title="Logotipos para su uso en prensa">LOGOTIPOS</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <x-nav-link :href="route('juridica')" :active="request()->routeIs('juridica')" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Sector Federal Ferroviario de la CGT">
+                    {{ __('SFF-CGT') }}
+                </x-nav-link>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a href="{{ url('equipo/sp') }}" class="dropdown-item" title="Información del equipo estatal">EQUIPO</a></li>
+                <li><a href="{{ url('equipo/mapa') }}" class="dropdown-item" title="Información de Contacto de las Secciones Sindicales en España">MAPA SINDICAL</a></li>
+                <li><a href="{{ url('equipo/contacto') }}" class="dropdown-item" title="Formulario de Contacto">CONTACTO</a></li>
+                </ul>
+            </li> 
+        </ul>
         
     </div>
     <div class="hidden sm:flex sm:items-center sm:ml-6">
-        <x-dropdown align="right" width="48">
+        {{-- <x-dropdown align="right" width="48">
             <x-slot name="trigger">
                 <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                     <div>{{ Auth::user()?->name }}</div>
@@ -69,15 +212,22 @@
                     </x-dropdown-link>
                 </form>
             </x-slot>
-        </x-dropdown>
+        </x-dropdown> --}}
     </div>
-    <div class="col centrado">
-        <div class="dropdown mx-auto inline ms-sm-5">
-            <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenu2"
+    <div class="col ml-10">
+        <ul class="inline-flex m-0 grisMedio text-2xl">
+            <li><a href="https://twitter.com/SFFCGT" title="Twitter SFFCGT" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://es-es.facebook.com/cgtferroviario/" title="Facebook SFFCGT" target="_blank"><i class="fa-brands fa-facebook ml-2"></i></a></li>
+            <li><a href="https://www.youtube.com/c/CGTSectorFederalFerroviario" title="Youtube SFFCGT" target="_blank"><i class="fa-brands fa-youtube ml-2"></i></a></li>
+        </ul>
+    </div>
+    <div class="col flex">
+        <div class="dropdown">
+            <button class="btn btn-outline-danger dropdown-toggle" type="button" id="login"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 AREA Afiliados
             </button>
-            <ul class="dropdown-menu dropdown-menu-dark formLogin dropdown-menu-lg-end" aria-labelledby="dropdownMenu2">
+            <ul class="dropdown-menu dropdown-menu-dark formLogin dropdown-menu-lg-end" aria-labelledby="login">
                 @guest
                 <form method="POST" class="dropdown-menu-dark p-4" action="{{ route('login') }}">
                     @csrf

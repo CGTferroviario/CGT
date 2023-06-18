@@ -1,7 +1,3 @@
-{{-- <x-app-layout>
-    
-</x-app-layout> --}}
-
 @extends('plantillas.principal')
 
 @section('contenido')

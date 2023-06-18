@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('inicio');
+})->name('inicio');
 
 Route::get('/adif', [App\Http\Controllers\PaginaController::class, 'adif'])->name('adif');
 Route::prefix('adif/')->group(function () {
