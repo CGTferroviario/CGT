@@ -47,7 +47,7 @@
                         </div>
                     </div>
                 </div>  
-                <table id="example" class="display" style="width:100%">
+                <table id="tabla" class="display nowrap" style="width:100%">
                     <thead class="bg-oscuro text-white">
                         <tr>
                             <th class="text-center">Nº</th>

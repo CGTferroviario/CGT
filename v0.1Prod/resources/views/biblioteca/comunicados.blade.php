@@ -61,6 +61,10 @@
                 </div>
             </div>
             <div class="row">
+                <div class="paginacion my-3">
+                    {{ $comunicados->links('vendor.pagination.tailwind') }}
+                </div>
+                
                 @foreach ($comunicados as $comunicado)
                 <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                     <div class="card h-100 bg-grisOscuro-7 blanco bordeRojo" style="">

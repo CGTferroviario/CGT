@@ -14,14 +14,14 @@
 
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 text-gray-900 dark:text-gray-100">
+        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="p-6 text-gray-900">
                 {{ __("¡Estás logueado! Eres un Editor") }}
             </div>
         </div>
         
-        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 text-gray-900 dark:text-gray-100">
+        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="p-6 text-gray-900">
                 <h1 class="bold text-4xl mb-4">Comunicados de: {{ Auth::user()->nombre }}</h1>
                 @foreach(Auth::user()->comunicados as $comunicado)
                     <div class="card">

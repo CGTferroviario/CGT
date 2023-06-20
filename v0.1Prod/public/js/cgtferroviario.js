@@ -1,9 +1,11 @@
 // Tablas ordenables de DataTables
 
-var table = new DataTable('#example', {
+var table = new DataTable('#tabla', {
     language: {
         url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
     },
+    responsive: true,
+    "order": []
 });
 
 // Fin de DataTables
@@ -18,7 +20,7 @@ window.dataLayer = window.dataLayer || [];
 
 // Fin de Google Analytics
 
-// Esto es de la pestaña equipo dentro de la página SFFCGT
+// Esto es de la pestaña equipo dentro de la página SFFCGT Equipo
 
 var coll = document.getElementsByClassName("collapsible");
 var i;
@@ -34,3 +36,4 @@ for (i = 0; i < coll.length; i++) {
         } 
     });
 }
+// Fin A Equipo

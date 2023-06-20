@@ -3,7 +3,7 @@
     <!-- Sidebar starts -->
     <!-- Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] -->
     <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ --->
-    <div class="w-64 absolute sm:relative bg-oscuro shadow md:h-full flex-col justify-between flex">
+    <div class="w-64 absolute sm:relative bg-dark shadow md:h-full flex-col justify-between flex">
         <div class="px-8">
             <div class="w-full flex items-center">
                 <a class="navbar-brand text-center" href="{{ url('/') }}"><img class="inline" src="/img/admin/admin.png" />

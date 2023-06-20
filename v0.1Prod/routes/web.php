@@ -108,21 +108,6 @@ Route::prefix('equipo')->group(function () {
     Route::view('/contacto', 'equipo.contacto');
 });
 
-// Route::view('/afiliate', 'afiliate')->name('afiliate');
-// Route::post('/afiliate', [App\Http\Controllers\AfiliacionController::class, 'AfiliateForm'])->name('afiliate.store');
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::resource('comunicados', ComunicadoController::class)->name('comunicados', '');
-// Route::resource('documentos', DocumentoController::class)->name('documentos', '');
-// Route::resource('noticias', NoticiaController::class)->name('noticias', '');
-// Route::resource('archivos', ArchivoController::class)->name('archivos', '');
-// Route::resource('empresas', EmpresaController::class)->name('empresas', '');
-// Route::resource('categorias', CategoriaController::class)->name('categorias', '');
-// Route::resource('etiquetas', EtiquetaController::class)->name('etiquetas', '');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -147,15 +132,16 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
     Route::resource('/etiquetas', EtiquetaController::class)->name('etiquetas', '');
 
 });
-// Route::middleware(['auth', 'role:editor'])->name('editor.')->prefix('editor')->group(function() {
-//     Route::get('/', [IndexController::class, 'indexEditor']);
-//     Route::resource('comunicados', ComunicadoController::class)->name('comunicados', '');
-//     Route::resource('documentos', DocumentoController::class)->name('documentos', '');
-//     Route::resource('noticias', NoticiaController::class)->name('noticias', '');
-//     Route::resource('archivos', ArchivoController::class)->name('archivos', '');
-//     Route::resource('empresas', EmpresaController::class)->name('empresas', '');
-//     Route::resource('categorias', CategoriaController::class)->name('categorias', '');
-//     Route::resource('etiquetas', EtiquetaController::class)->name('etiquetas', '');
-// });
+
+Route::middleware(['auth', 'role:editor'])->name('editor.')->prefix('editor')->group(function() {
+    Route::get('/', [IndexController::class, 'indexEditor']);
+    // Route::resource('comunicados', ComunicadoController::class)->name('comunicados', '');
+    // Route::resource('documentos', DocumentoController::class)->name('documentos', '');
+    // Route::resource('noticias', NoticiaController::class)->name('noticias', '');
+    // Route::resource('archivos', ArchivoController::class)->name('archivos', '');
+    // Route::resource('empresas', EmpresaController::class)->name('empresas', '');
+    // Route::resource('categorias', CategoriaController::class)->name('categorias', '');
+    // Route::resource('etiquetas', EtiquetaController::class)->name('etiquetas', '');
+});
 
 require __DIR__.'/auth.php';
