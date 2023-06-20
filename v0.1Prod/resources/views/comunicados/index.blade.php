@@ -79,6 +79,10 @@
                                 <span>
                                     {{ $comunicado->publicado }}
                                 </span>
+                                <label class="switch">
+                                    <input type="checkbox" name="publicado" value="{{  $comunicado->publicado  }}" 
+                                        @if($comunicado->publicado) checked @endif>
+                                </label>
                             </td>
                             <td class="px-3 py-1">
                                 <div class="flex justify-end gap-2">

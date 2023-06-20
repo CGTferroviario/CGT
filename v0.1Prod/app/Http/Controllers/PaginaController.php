@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Comunicado;
+use App\Models\Empresa;
+use App\Models\Etiqueta;
 use Illuminate\Http\Request;
 
 class PaginaController extends Controller
@@ -28,7 +31,10 @@ class PaginaController extends Controller
     {
         return view('biblioteca.comunicados', [
             
-            'comunicados' => Comunicado::orderBy('updated_at', 'desc')->get()
+            'comunicados' => Comunicado::orderBy('updated_at', 'desc')->paginate(12),
+            'empresas' => Empresa::orderBy('id', 'asc')->get(),
+            'categorias' => Categoria::orderBy('id', 'asc')->get(),
+            'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
         ]);
     }
     public function prensa() 
