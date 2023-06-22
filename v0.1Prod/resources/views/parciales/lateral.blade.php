@@ -1,3 +1,28 @@
+<style>
+    .lni{
+        color: red;
+    }
+    .lni:hover{
+        color: white;
+    }
+    .nav-item a{
+        color: white;
+    }
+    .nav-item a:hover{
+        /* background-color: red; */
+        border: solid thin red;
+        color: black;
+    }
+    .nav-item span:hover{
+        background-color: red;
+        color: black;
+    }
+    .nav-item span{
+        padding: 10px;
+        padding-right: 15px;
+    }
+    
+</style>
 <div class="container-fluid pt-20">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-auto col-xl-auto px-sm-2 px-0 bg-dark">
@@ -9,47 +34,47 @@
                 </div>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 mt-2 align-items-center align-items-sm-start text-white" id="menu">
                     <li class="nav-item">                        
-                        <a href="{{ route('admin.dashboard') }}" :active="request()->routeIs('dashboard')" class="nav-link align-middle px-0">
+                        <a href="{{ route('admin.dashboard') }}" :active="request()->routeIs('dashboard')" class="nav-link align-middle">
                             <i class="lni lni-dashboard"></i> <span class="ms-1 d-none d-sm-inline">Panel de Control</span>
                         </a>
                     </li>
                     <li class="nav-item">                   
-                        <a href="{{ route('comunicados.index') }}" :active="request()->routeIs('comunicados')" class="nav-link align-middle px-0">
+                        <a href="{{ route('comunicados.index') }}" :active="request()->routeIs('comunicados')" class="nav-link align-middle">
                             <i class="lni lni-bullhorn"></i><span class="ms-1 d-none d-sm-inline">Comunicados</span>
                         </a>
                     </li>
                     <li class="nav-item">                   
-                        <a href="{{ route('noticias.index') }}" :active="request()->routeIs('noticias')" class="nav-link align-middle px-0">
+                        <a href="{{ route('noticias.index') }}" :active="request()->routeIs('noticias')" class="nav-link align-middle">
                             <i class="lni lni-book"></i><span class="ms-1 d-none d-sm-inline">Noticias</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('documentos.index') }}" :active="request()->routeIs('documentos')" class="nav-link align-middle px-0">
+                        <a href="{{ route('documentos.index') }}" :active="request()->routeIs('documentos')" class="nav-link align-middle">
                             <i class="lni lni-files"></i> <span class="ms-1 d-none d-sm-inline">Documentos</span>
                         </a>
                     </li>
                     <li class="nav-item">                    
-                        <a href="{{ route('empresas.index') }}" :active="request()->routeIs('empresas')" class="nav-link align-middle px-0">
+                        <a href="{{ route('empresas.index') }}" :active="request()->routeIs('empresas')" class="nav-link align-middle">
                             <i class="lni lni-apartment"></i> <span class="ms-1 d-none d-sm-inline">Empresas</span>
                         </a>
                     </li>
                     <li class="nav-item">                    
-                        <a href="{{ route('categorias.index') }}" :active="request()->routeIs('categorias')" class="nav-link align-middle px-0">
+                        <a href="{{ route('categorias.index') }}" :active="request()->routeIs('categorias')" class="nav-link align-middle">
                             <i class="lni lni-hammer"></i> <span class="ms-1 d-none d-sm-inline">Categorías</span>
                         </a>
                     </li>
                     <li class="nav-item">                    
-                        <a href="{{ route('etiquetas.index') }}" :active="request()->routeIs('etiquetas')" class="nav-link align-middle px-0">
+                        <a href="{{ route('etiquetas.index') }}" :active="request()->routeIs('etiquetas')" class="nav-link align-middle">
                             <i class="lni lni-tag"></i> <span class="ms-1 d-none d-sm-inline">Etiquetas</span>
                         </a>
                     </li>
                     <li class="nav-item">                    
-                        <a href="{{ route('admin.roles.index') }}" :active="request()->routeIs('roles')" class="nav-link align-middle px-0">
+                        <a href="{{ route('admin.roles.index') }}" :active="request()->routeIs('roles')" class="nav-link align-middle">
                             <i class="lni lni-support"></i> <span class="ms-1 d-none d-sm-inline">Perfiles</span>
                         </a>
                     </li>
                     <li class="nav-item">                    
-                        <a href="{{ route('admin.permissions.index') }}" :active="request()->routeIs('permissions')" class="nav-link align-middle px-0">
+                        <a href="{{ route('admin.permissions.index') }}" :active="request()->routeIs('permissions')" class="nav-link align-middle">
                             <i class="lni lni-license"></i> <span class="ms-1 d-none d-sm-inline">Permisos</span>
                         </a>
                     </li>
