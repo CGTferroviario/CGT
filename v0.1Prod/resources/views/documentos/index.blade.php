@@ -1,10 +1,9 @@
-@extends('plantillas.principal')
+<x-admin-layout>
 
 @section('contenido')
+<h1 class="m-0 py-3 text-center font-bold bg-rojoBrillante">DOCUMENTOS</h1>
 <div class="container-fluid fondo documentos">
     <div class="row">
-        <h1 class="m-0 py-3 centrado cabecera negro grande bg-rojoBrillante">DOCUMENTOS</h1>
-
         <div class="">
             <a href="{{ route('documentos.create') }}" class="btn btn-success">Añadir documento</a>
         </div>
@@ -64,3 +63,5 @@
 </div>
 
 @endsection
+
+</x-admin-layout>

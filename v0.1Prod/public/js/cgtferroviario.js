@@ -1,6 +1,6 @@
 // Tablas ordenables de DataTables
 
-// var table = new DataTable('#tabla', {
+// var table = new DataTable('#tablaComunicados', {
 //     language: {
 //         url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
 //     },

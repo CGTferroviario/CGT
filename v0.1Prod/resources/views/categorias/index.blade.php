@@ -1,9 +1,10 @@
-@extends('plantillas.principal')
+<x-admin-layout>
 
 @section('contenido')
+<h1 class="m-0 py-3 text-center font-bold bg-rojoBrillante">CATEGORÍAS</h1>
 <div class="container-fluid fondo comunicados">
     <div class="row">
-        <h1 class="m-0 py-3 text-center cabecera font-bold">CATEGORÍAS</h1>
+        
         <div class="col-md-4 pl-20 mt-4 sm:flex sm:items-center sm:justify-between">
             <div class="inline-flex overflow-hidden bg-white border divide-x rounded-lg rtl:flex-row-reverse">
                 <button class="px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 bg-gray-100 sm:text-sm">
@@ -68,3 +69,5 @@
 </div>
 
 @endsection
+
+</x-admin-layout>

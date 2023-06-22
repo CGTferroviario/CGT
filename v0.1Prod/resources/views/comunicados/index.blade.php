@@ -8,9 +8,10 @@
 </style>
 @section('contenido')
 
-<h1 class="m-0 py-3 text-center font-bold bg-rojoBrillante">COMUNICADOS</h1>
+
 <div class="container-fluid fondo comunicados">
-    <div class="row">      
+    <div class="row">
+        {{-- <h1 class="m-0 py-3 text-center font-bold bg-rojoBrillante">COMUNICADOS</h1> --}}
         <div class="px-10 pt-4">
             <div class="col-md-12 p-4 mt-2 bordeRojo bg-blanco-transp rounded-md">
                 <div class="row mt-2 mb-3">
@@ -48,7 +49,7 @@
                         </div>
                     </div>
                 </div>  
-                <table id="tablaComunicados" class="table table-striped nowrap" style="width:100%">
+                <table id="tablaComunicados" class="table table-striped nowrap" style="max-width:100%">
                     <thead class="bg-oscuro text-white">
                         <tr>
                             <th class="text-center">Nº</th>
@@ -71,11 +72,11 @@
                             <td class="text-center">{{ $comunicado->fecha }}</td>
                             <td>{{ $comunicado->user?->nombre }}</td>
                             <td>{{ $comunicado->titulo }}</td>
-                            <td>{{ $comunicado->subtitulo }}</td>
+                            <td class="text-sm">{{ $comunicado->subtitulo }}</td>
                             <td><span class="px-3 py-1 text-sm font-bold gap-x-2 rounded-full bg-{{ $comunicado->empresa?->nombre }}">{{ $comunicado->empresa?->nombre }}</span></td>
                             <td><span class="px-3 py-1 text-sm font-bold gap-x-2 rounded-full bg-{{ $comunicado->categoria?->nombre }}">{{ $comunicado->categoria?->nombre }}</span></td>
                             <td>{{ $comunicado->etiqueta?->nombre }}</td>
-                            <td class="max-h-28"> {!! nl2br(e($comunicado->cuerpo))!!} </td>
+                            <td class="max-h-20 text-xs"> {!! nl2br(e($comunicado->cuerpo))!!} </td>
                             <td class="text-center">
                                 <span>
                                     {{ $comunicado->publicado }}

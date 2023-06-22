@@ -1,38 +1,37 @@
 <style>
-    .lni{
+    #menuBarraLateral .lni{
         color: red;
     }
-    .lni:hover{
+    #menuBarraLateral .lni:hover{
         color: white;
     }
-    .nav-item a{
+    #menuBarraLateral .nav-item a{
         color: white;
     }
-    .nav-item a:hover{
+    #menuBarraLateral .nav-item a:hover{
         /* background-color: red; */
         border: solid thin red;
         color: black;
     }
-    .nav-item span:hover{
+    #menuBarraLateral .nav-item span:hover{
         background-color: red;
         color: black;
     }
-    .nav-item span{
+    #menuBarraLateral .nav-item span{
         padding: 10px;
         padding-right: 15px;
     }
-    
 </style>
 <div class="container-fluid pt-20">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-auto col-xl-auto px-sm-2 px-0 bg-dark">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <div id="" class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <div class="w-full flex items-center">
                     <a class="navbar-brand text-center" href="{{ url('/') }}"><img class="md:inline sm:hidden" src="/img/admin/admin.png" />
                         <h1 class="text-white text-center">ADMIN</h1>
                     </a>
                 </div>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 mt-2 align-items-center align-items-sm-start text-white" id="menu">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 mt-2 align-items-center align-items-sm-start text-white" id="menuBarraLateral">
                     <li class="nav-item">                        
                         <a href="{{ route('admin.dashboard') }}" :active="request()->routeIs('dashboard')" class="nav-link align-middle">
                             <i class="lni lni-dashboard"></i> <span class="ms-1 d-none d-sm-inline">Panel de Control</span>
