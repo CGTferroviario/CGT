@@ -258,20 +258,20 @@
                         Accede a tu <a href="/home">Panel de Afiliado</a>
                     </h6>
                     <hr>
-                    <span><a href="{{ route('admin.comunicados.index') }}" class="enlace">Comunicados</a></span>
+                    <span><a href="{{ route('comunicados.index') }}" class="enlace">Comunicados</a></span>
                     <div class="btn-group">
-                        <a href="{{ route('admin.comunicados.index') }}" class="btn btn-outline-secondary">Editar</a>
-                        <a href="{{ route('admin.comunicados.create') }}" class="btn btn-outline-info">Añadir</a>
+                        <a href="{{ route('comunicados.index') }}" class="btn btn-outline-secondary">Editar</a>
+                        <a href="{{ route('comunicados.create') }}" class="btn btn-outline-info">Añadir</a>
                     </div>
-                    <span><a href="{{ route('admin.etiquetas.index') }}" class="enlace">Etiquetas</a></span><a
-                        href="{{ route('admin.etiquetas.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
-                        href="{{ route('admin.etiquetas.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
-                    <span><a href="{{ route('admin.categorias.index') }}" class="enlace">Categorias</a></span><a
-                        href="{{ route('admin.categorias.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
-                        href="{{ route('admin.categorias.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
-                    <span><a href="{{ route('admin.empresas.index') }}" class="enlace">Empresas</a></span><a
-                        href="{{ route('admin.empresas.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
-                        href="{{ route('admin.empresas.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
+                    <span><a href="{{ route('etiquetas.index') }}" class="enlace">Etiquetas</a></span><a
+                        href="{{ route('etiquetas.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
+                        href="{{ route('etiquetas.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
+                    <span><a href="{{ route('categorias.index') }}" class="enlace">Categorias</a></span><a
+                        href="{{ route('categorias.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
+                        href="{{ route('categorias.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
+                    <span><a href="{{ route('empresas.index') }}" class="enlace">Empresas</a></span><a
+                        href="{{ route('empresas.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
+                        href="{{ route('empresas.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
 
                     <div class="inline dcha">
                         <button class="btn btn-outline-danger" href="{{ route('logout') }}" onclick="event.preventDefault();

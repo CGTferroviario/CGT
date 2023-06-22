@@ -1,14 +1,11 @@
 
 <x-admin-layout>
+
 @section('contenido')
-    {{-- <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Area de Afiliados') }}
-        </h2>
-    </x-slot> --}}
+
+<h1 class="m-0 py-3 text-center font-bold bg-rojoBrillante">PERFILES (ROLES)</h1>
 <div class="container-fluid fondo teletrabajo">
-    <div class="row">
-        <h1 class="text-center font-bold">PERFILES (ROLES)</h1>       
+    <div class="row">    
         <div class="px-10 pt-4">
             <div class="col-md-12 p-4 mt-4 bordeRojo bg-blanco-transp rounded-md">
                 <div class="mb-4 sm:flex sm:items-center sm:justify-end">

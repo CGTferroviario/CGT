@@ -17,12 +17,10 @@
     </head>
     
     <body>
-        @include('parciales.encabezado')
+        @include('parciales.barrasup')
         @include('parciales.lateral')
         
-        <main class="">
-            
-        </main>
+        
         
         @include('parciales.pie')
         

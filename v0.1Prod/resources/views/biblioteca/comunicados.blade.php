@@ -69,7 +69,7 @@
                 <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                     <div class="card h-100 bg-grisOscuro-7 blanco bordeRojo" style="">
                         <div class="card-header bordeBottomRojo">
-                            <a href="{{ route('admin.comunicados.show', $comunicado->id) }}"><h1 class="font-bold text-3xl">{{ $comunicado->numero }} / {{ $comunicado->titulo }}</h1></a>
+                            <a href="{{ route('comunicados.show', $comunicado->id) }}"><h1 class="font-bold text-3xl">{{ $comunicado->numero }} / {{ $comunicado->titulo }}</h1></a>
                             <p class="card-text mt-2">{{ $comunicado->subtitulo }}</p>
                         </div>
                         <div class="card-body">

@@ -1,12 +1,32 @@
 // Tablas ordenables de DataTables
 
-var table = new DataTable('#tabla', {
-    language: {
-        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
-    },
-    responsive: true,
-    "order": []
-});
+// var table = new DataTable('#tabla', {
+//     language: {
+//         url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
+//     },
+//     responsive: true,
+//     "order": []
+// });
+$(document).ready(function() {
+    $('#tablaComunicados').DataTable( {
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
+        },
+        responsive: {
+            details: {
+                display: $.fn.dataTable.Responsive.display.modal( {
+                    header: function ( row ) {
+                        var data = row.data();
+                        return 'Comunicado '+data[0]+' '+data[1];
+                    }
+                } ),
+                renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
+                    tableClass: 'table'
+                } )
+            }
+        }
+    } );
+} );
 
 // Fin de DataTables
 

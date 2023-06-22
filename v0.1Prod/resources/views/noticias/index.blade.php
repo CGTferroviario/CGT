@@ -1,12 +1,12 @@
-@extends('plantillas.principal')
+<x-admin-layout>
 
 @section('contenido')
 
+<h1 class="m-0 py-3 text-center font-bold bg-rojoBrillante">NOTICIAS</h1>
 <div class="container-fluid fondo documentos">
     <div class="row">
-        <h1 class="m-0 py-3 centrado cabecera negro grande bg-rojoBrillante">NOTICIAS</h1>
         <div class="">
-            <a href="{{ route('admin.noticias.create') }}" class="btn btn-success">Añadir Noticia</a>
+            <a href="{{ route('noticias.create') }}" class="btn btn-success">Añadir Noticia</a>
         </div>
         <div class="col-md-12">
             <table class="table bg-blanco">        
@@ -24,8 +24,8 @@
                     <td>{{ $noticia->numero }}</td>
                     <td>{{ $noticia->titulo }}</td>
                     <td>{{ $noticia->subtitulo }}</td>
-                    <td><span class="badge rounded-pill peq bg-verdeAdif">{{ $noticia->empresa }}</span></td>
-                    <td><span class="badge rounded-pill peq bg-moradoRenfe">{{ $noticia->categoria }}</span></td>
+                    <td><span class="badge rounded-pill peq bg-{{ $noticia->empresa }}">{{ $noticia->empresa }}</span></td>
+                    <td><span class="badge rounded-pill peq bg-{{ $noticia->categoria }}">{{ $noticia->categoria }}</span></td>
                     <td><span class="badge rounded-pill peq bg-rojoBrillante">{{ $noticia->etiqueta }}</span></td>
                     <td>{{ $noticia->cuerpo }}</td>
 
@@ -64,3 +64,4 @@
 </div>
 
 @endsection
+</x-admin-layout>

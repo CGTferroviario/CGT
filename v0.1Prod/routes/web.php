@@ -112,6 +112,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::resource('/comunicados', ComunicadoController::class)->name('comunicados', '');
+    Route::resource('/noticias', NoticiaController::class)->name('noticias', '');
+    Route::resource('/documentos', DocumentoController::class)->name('documentos', '');
+    Route::resource('/archivos', ArchivoController::class)->name('archivos', '');
+    Route::resource('/empresas', EmpresaController::class)->name('empresas', '');
+    Route::resource('/categorias', CategoriaController::class)->name('categorias', '');
+    Route::resource('/etiquetas', EtiquetaController::class)->name('etiquetas', '');
 });
 
 Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->group(function() {
@@ -122,15 +130,6 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
     Route::resource('/permissions', PermissionController::class);
 
     Route::get('/dashboard', [IndexController::class, 'dashboard'])->name('dashboard');
-    
-    Route::resource('/comunicados', ComunicadoController::class)->name('comunicados', '');
-    Route::resource('/noticias', NoticiaController::class)->name('noticias', '');
-    Route::resource('/documentos', DocumentoController::class)->name('documentos', '');
-    Route::resource('/archivos', ArchivoController::class)->name('archivos', '');
-    Route::resource('/empresas', EmpresaController::class)->name('empresas', '');
-    Route::resource('/categorias', CategoriaController::class)->name('categorias', '');
-    Route::resource('/etiquetas', EtiquetaController::class)->name('etiquetas', '');
-
 });
 
 Route::middleware(['auth', 'role:editor'])->name('editor.')->prefix('editor')->group(function() {

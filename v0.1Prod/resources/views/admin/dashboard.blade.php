@@ -1,5 +1,4 @@
-@extends('plantillas.principal')
-
+<x-admin-layout>
 
 @section('contenido')
 {{-- <x-slot name="header">
@@ -31,3 +30,5 @@
     </div>
 </div>
 @endsection
+
+</x-admin-layout>
