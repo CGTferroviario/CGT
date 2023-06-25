@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
@@ -11,12 +12,17 @@ class IndexController extends Controller
     {
         return view('admin.index');
     }
+    public function dashboard()
+    {
+        
+        return view('admin.dashboard');
+    }
     public function indexEditor()
     {
         return view('editor.index');
     }
-    public function dashboard()
+    public function dashboardEditor()
     {
-        return view('admin.dashboard');
+        return view('editor.dashboard');
     }
 }

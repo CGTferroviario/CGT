@@ -30,12 +30,12 @@ class UsersTableSeeder extends Seeder
             'tipo_perfil' => 'finanzas',
             'password' => Hash::make('nachocgt'),
         ]);
-        DB::table('users')->insert([
+        User::firstOrcreate([
             'nombre' => 'olga',
             'email' => 'olga@olga.com',
             'tipo_perfil' => 'editor',
             'password' => Hash::make('olgacgt'),
-        ]);
+        ])->assignRole('editor');
         DB::table('users')->insert([
             'nombre' => 'usuario',
             'email' => 'usuario@usuario.com',

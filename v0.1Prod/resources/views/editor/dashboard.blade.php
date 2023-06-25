@@ -2,7 +2,7 @@
     
 </x-app-layout> --}}
 
-@extends('plantillas.principal')
+<x-editor-layout>
 
 
 @section('contenido')
@@ -22,7 +22,7 @@
         
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900">
-                <h1 class="bold text-4xl mb-4">Comunicados de: {{ Auth::user()->nombre }}</h1>
+                <h1 class="bold text-4xl mb-4">Comunicados de: {{ Auth::user()->nombre }}, {{ Auth::user()->tipo_perfil }}</h1>
                 @foreach(Auth::user()->comunicados as $comunicado)
                     <div class="card">
                         <div class="card-body">
@@ -36,3 +36,5 @@
     </div>
 </div>
 @endsection
+
+</x-editor-layout>
