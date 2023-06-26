@@ -95,7 +95,7 @@
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <x-nav-link :href="route('renfe')" :active="request()->routeIs('renfe.*')" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <x-nav-link :href="route('renfe')" :active="request()->routeIs('renfe')" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {{ __('RENFE') }}
                 </x-nav-link>
                 <ul class="dropdown-menu dropdown-menu-dark">
@@ -255,7 +255,7 @@
                         Bienvenid@, {{ Auth::user()->name }}
                     </span><br>
                     <h6>
-                        Accede a tu <a href="/home">Panel de Afiliado</a>
+                        Accede a tu <a href="{{ url('editor/dashboard') }}">Panel de Afiliado</a>
                     </h6>
                     <hr>
                     <span><a href="{{ route('comunicados.index') }}" class="enlace">Comunicados</a></span>

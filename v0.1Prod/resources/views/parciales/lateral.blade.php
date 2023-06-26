@@ -27,7 +27,7 @@
         <div class="col-auto col-md-auto col-xl-auto px-sm-2 px-0 bg-dark">
             <div id="" class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <div class="w-full flex items-center">
-                    <a class="navbar-brand text-center" href="{{ url('/') }}"><img class="md:inline sm:hidden" src="/img/admin/admin.png" />
+                    <a class="navbar-brand mx-auto" href="{{ url('/') }}"><img class="md:inline sm:hidden" src="/img/admin/admin.png" />
                         <h1 class="text-white text-center">ADMIN</h1>
                     </a>
                 </div>

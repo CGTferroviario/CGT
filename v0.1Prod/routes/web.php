@@ -133,15 +133,10 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
 });
 
 Route::middleware(['auth', 'role:editor'])->name('editor.')->prefix('editor')->group(function() {
+    
     Route::get('/', [IndexController::class, 'indexEditor']);
     Route::get('/dashboard', [IndexController::class, 'dashboardEditor'])->name('dashboardEditor');
-    // Route::resource('comunicados', ComunicadoController::class)->name('comunicados', '');
-    // Route::resource('documentos', DocumentoController::class)->name('documentos', '');
-    // Route::resource('noticias', NoticiaController::class)->name('noticias', '');
-    // Route::resource('archivos', ArchivoController::class)->name('archivos', '');
-    // Route::resource('empresas', EmpresaController::class)->name('empresas', '');
-    // Route::resource('categorias', CategoriaController::class)->name('categorias', '');
-    // Route::resource('etiquetas', EtiquetaController::class)->name('etiquetas', '');
+
 });
 
 require __DIR__.'/auth.php';
