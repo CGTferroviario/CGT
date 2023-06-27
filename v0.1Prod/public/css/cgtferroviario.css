@@ -1,4 +1,15 @@
-/* HTML */
+/*
+1.- HTML
+2.- Barra Navegación Superior
+3.- Colores y Fondos
+4.- Sección Inicio
+5.- Sección ADIF
+6.- Sección RENFE
+7.- Sección Empresas Auxiliares
+8.- Sección Jurídica
+9.- Sección Biblioteca
+
+/* 1.- HTML */
 html{
     height: 100%;
 }
@@ -14,12 +25,41 @@ main{
     padding-bottom: 2em;
 }
 
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #dc3545 #212529;
+}
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: #212529;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #dc3545;
+  border-radius: 10px;
+  border: 2px solid #000000;
+}
+
+/*** Fin del Scroll ***/
+/* Fin HTML */
+
+/* 2.- Barra Navegación Superior */
+
+.sociales:hover{
+  color: red;
+}
 .titular{
     font-family: 'Brannboll Connect PERSONAL USE', sans-serif;
     color: white;
     font-size: 2em;
 }
-/* Sección de INICIO */
+
+
+/* 4.- Sección de INICIO */
 
 .tarjeta{
     width: 100%;
@@ -56,7 +96,7 @@ main{
 
 /* Fin Sección de INICIO */
 
-/* Sección de RENFE */
+/* 5.- Sección de RENFE */
 
 .tarjetaRenfe{
     width: 100%;
@@ -176,27 +216,6 @@ main{
   }
   
   /* Fin Sección de RENFE */
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-
-* {
-    scrollbar-width: auto;
-    scrollbar-color: #dc3545 #212529;
-}
-/* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-    width: 10px;
-}
-*::-webkit-scrollbar-track {
-    background: #212529;
-}
-*::-webkit-scrollbar-thumb {
-    background-color: #dc3545;
-    border-radius: 10px;
-    border: 2px solid #000000;
-}
-
-/*** Fin del Scroll ***/
 
 /* Colores */
 .rojo {
@@ -296,7 +315,6 @@ main{
     color: white;
 }
 
-
 /* Colores Categorias */
 .bg-INFRAESTRUCTURA {
     background: rgb(230, 230, 40);
@@ -326,15 +344,12 @@ main{
     background: rgb(189, 24, 211);
     color: white;
 }
-
 .bg-negro {
     background: black;
 }
-
 .bg-blanco {
     background: white;
 }
-
 .bg-oscuro {
     background: rgb(47, 47, 47);
 }
