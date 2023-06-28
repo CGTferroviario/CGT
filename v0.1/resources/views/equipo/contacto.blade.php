@@ -2,7 +2,7 @@
 
 @section('content')
 <h1 class="m-0 py-3 centrado negro grande bg-rojoBrillante">CONTACTO</h1>
-<div class="container mt-5">
+<div class="container-fluid mt-5">
     <!-- Success message -->
     @if(Session::has('success'))
         <div class="alert alert-success">

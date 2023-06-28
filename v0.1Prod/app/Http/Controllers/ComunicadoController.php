@@ -16,6 +16,12 @@ class ComunicadoController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function comunicados()
+    {
+        return view('comunicados.index', [
+            'comunicados' => Comunicado::orderBy('fecha', 'desc')->get()
+        ]);
+    }
     public function index()
     {
         return view('comunicados.index', [
@@ -23,14 +29,6 @@ class ComunicadoController extends Controller
         ]);
         
     }
-    public function comunicados()
-    {
-        return view('comunicados.index', [
-            'comunicados' => Comunicado::orderBy('fecha', 'desc')->get()
-        ]);
-        
-    }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -77,7 +75,7 @@ class ComunicadoController extends Controller
             
         ]);
 
-        return redirect(route('admin.comunicados.index'));
+        return redirect(route('comunicados.index'))->with('message', 'Comunicado Creado Correctamente');
     }
 
     /**
