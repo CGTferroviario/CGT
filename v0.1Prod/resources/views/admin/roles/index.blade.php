@@ -30,8 +30,14 @@
                         @foreach ($roles as $role)
                         <tr>
                             <td><span class="px-3 py-1 text-sm font-bold gap-x-2 rounded-full bg-blue-300">{{ $role->name }}</span></td>
-                            <td>Permisos asignados</td>
-                            <td>{{ $role->count() }}</td>                        
+                            <td>
+                                @if ($role->permissions)
+                                    @foreach ($role->permissions as $role_permission)
+                                        <button type="submit" class="hover:bg-red-500 p-1 rounded-md">{{ $role_permission->name }}</button>                
+                                    @endforeach
+                                @endif
+                            </td>
+                            <td>{{ $role->permissions->count() }}</td>                        
                             <td class="px-3 py-1">
                                 <div class="flex justify-end gap-4">
                                     <a x-data="{ tooltip: 'Edite' }" href="{{ route('admin.roles.edit', $role->id) }}"

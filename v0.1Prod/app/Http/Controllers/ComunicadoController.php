@@ -49,18 +49,15 @@ class ComunicadoController extends Controller
      */
     public function store(StoreComunicadoRequest $request)
     {
-        // $request->validated();
-        // dd($request);
         $publicado = $request->publicado;
         if ($request->publicado == 'on') {
             $publicado = 1;
         } else {
             $publicado = 0;
         };
-        $usuario = Auth::user()->id;
-        // $empresa = $comunicado->empresa->id;
 
-        // dd($request->empresa);
+        $usuario = Auth::user()->id;
+
         $comunicado = Comunicado::create([
             'numero' => $request->numero,
             'empresa_id' => $request->empresa,
@@ -77,8 +74,7 @@ class ComunicadoController extends Controller
             
             'publicado' => $publicado,
             'user_id' => $usuario,
-            // 'empresa_id' => 1 
-            // 'adjunto1' => $this->storeImage($request)
+            
         ]);
 
         return redirect(route('admin.comunicados.index'));

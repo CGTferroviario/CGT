@@ -18,30 +18,30 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->truncate(); //for cleaning earlier data to avoid duplicate entries
-        DB::table('users')->insert([
+        User::firstOrcreate([
             'nombre' => 'pablo',
             'email' => 'pablo@pablo.com',
             'tipo_perfil' => 'admin',
             'password' => Hash::make('pablocgt'),
-        ]);
-        DB::table('users')->insert([
+        ])->assignRole('admin');
+        User::firstOrcreate([
             'nombre' => 'nacho',
             'email' => 'nacho@nacho.com',
             'tipo_perfil' => 'finanzas',
             'password' => Hash::make('nachocgt'),
-        ]);
+        ])->assignRole('admin');
         User::firstOrcreate([
             'nombre' => 'olga',
             'email' => 'olga@olga.com',
             'tipo_perfil' => 'editor',
             'password' => Hash::make('olgacgt'),
         ])->assignRole('editor');
-        DB::table('users')->insert([
+        User::firstOrcreate([
             'nombre' => 'usuario',
             'email' => 'usuario@usuario.com',
             'tipo_perfil' => 'usuario',
             'password' => Hash::make('usuariocgt'), 
-        ]);
+        ])->assignRole('usuario');
         User::firstOrcreate([
             'nombre' => 'editor',
             'email' => 'editor@editor.com',

@@ -1,68 +1,8 @@
-<style type="text/css">
-/* Barra Superior Header.blade.php */
-.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-  background: rgb(220,53,69);
-  color: black;
-}
-.navbar-dark .navbar-nav .nav-link {
-  color: rgb(214,214,214);
-}
-/* La flechita que expande el desplegable */
-.dropdown-toggle::after {
-  color: rgb(220,53,69);
-}
-.dropdown-toggle:hover::after, .dropdown-toggle:focus::after {
-  color: white !important;
-}
-/* Fin flechita */
-
-.navbar-brand:hover{
-  border-bottom: none;
-}
-/* .activo{
-  border-bottom: solid 2px rgb(255,30,0);
-} */
-.sociales{
-  font-size: 120%;
-  margin-left: 10px;
-}
-.sociales:hover{
-  color:rgb(254, 71, 85);
-}
-.dropdown-menu-dark {
-  background-color: rgb(33,37,41);
-  border-color: rgba(0, 0, 0, 0.15);
-}
-.dropdown-menu-dark .dropdown-item:hover, .dropdown-menu-dark .dropdown-item:focus {
-  color: black;
-  background-color: rgb(220,53,69);
-}
-.dropdown-menu li {
-    position: relative;
-}
-
-.dropdown-menu .dropdown-submenu {
-    display: none;
-    position: absolute;
-    left: 99%;
-    top: -1px;
-}
-
-.dropdown-menu .dropdown-submenu-left {
-    right: 100%;
-    left: auto;
-}
-
-.dropdown-menu>li:hover>.dropdown-submenu {
-    display: block;
-}
-/* Fin Barra Superior */
-</style>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar fixed-top barraSup ">  
     <div class="logo">
         <a href="{{ route('inicio') }}" class="inline-flex">
             <img class="ml-1" src="/img/logo_sm.png" alt="CGT Ferroviario" />
-            <span class="mx-2 titular">Ferroviario7</span>
+            <span class="mx-2 titular mt-2">Ferroviario7</span>
         </a>
     </div>
     <div class="menu align-middle text-medium">
@@ -181,25 +121,24 @@
             </li> 
         </ul> 
     </div>
-    <div class="col ml-10">
-        <ul class="inline-flex m-0 grisMedio text-2xl">
-            <li><a href="https://twitter.com/SFFCGT" title="Twitter SFFCGT" target="_blank"><i class="fa-brands fa-twitter sociales"></i></a></li>
-            <li><a href="https://es-es.facebook.com/cgtferroviario/" title="Facebook SFFCGT" target="_blank"><i class="fa-brands fa-facebook ml-2 sociales"></i></a></li>
-            <li><a href="https://www.youtube.com/c/CGTSectorFederalFerroviario" title="Youtube SFFCGT" target="_blank"><i class="fa-brands fa-youtube ml-2 sociales"></i></a></li>
+    <div class="col ml-10 flex justify-center">
+        <ul class="inline-flex m-0 grisMedio text-3xl">
+            <li><a href="https://twitter.com/SFFCGT" title="Twitter SFFCGT" target="_blank"><i class="lni lni-twitter sociales"></i></a></li>
+            <li><a href="https://twitter.com/SFFCGT" title="Instagram SFFCGT" target="_blank"><i class="lni lni-instagram sociales"></i></a></li>
+            <li><a href="https://es-es.facebook.com/cgtferroviario/" title="Facebook SFFCGT" target="_blank"><i class="lni lni-facebook sociales"></i></a></li>
+            <li><a href="https://www.youtube.com/c/CGTSectorFederalFerroviario" title="Youtube SFFCGT" target="_blank"><i class="lni lni-youtube sociales"></i></a></li>
         </ul>
     </div>
-    <div class="col flex">
-        <div class="dropdown">
-            <button class="btn btn-outline-danger dropdown-toggle" type="button" id="login"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                AREA Afiliados
-            </button>
-            <ul class="dropdown-menu dropdown-menu-dark formLogin dropdown-menu-lg-end" aria-labelledby="login">
-                @guest
+    <div class="col flex justify-end mr-4">        
+        <button id="dropdownAreaAfiliados" data-dropdown-toggle="dropdown" class="btn btn-outline-danger" id="login" type="button">AREA Afiliados <i class="lni lni-chevron-down ml-1"></i></button>
+        <!-- Dropdown menu -->
+        <div id="dropdown" class="dropdown-menu dropdown-menu-dark z-10 hidden divide-y divide-gray-100 rounded-lg shadow w-auto">
+            @guest
+            <div class="login">
                 <form method="POST" class="dropdown-menu-dark p-4" action="{{ route('login') }}">
                     @csrf
                     <div class="mb-3">
-                        <label for="email" class="form-label">{{ __('Email Address') }}</label>
+                        <label for="email" class="form-label">{{ __('Email') }}</label>
                         <div class="mb-3">
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                                 name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -211,7 +150,7 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">{{ __('Password') }}</label>
+                        <label for="password" class="form-label">{{ __('Contraseña') }}</label>
                         <div class="mb-3">
                             <input id="password" type="password"
                                 class="form-control @error('password') is-invalid @enderror" name="password" required
@@ -242,51 +181,68 @@
                             </button>
 
                             @if (Route::has('password.request'))
+                            <p>
                             <a class="inline red peq" href="{{ route('password.request') }}">
                                 {{ __('¿Olvidaste tu contraseña?') }}
-                            </a>
+                            </a></p>
                             @endif
                         </div>
                     </div>
                 </form>
-                @else
-                <li class="nav-item dropdown-menu-dark p-3">
-                    <span class="inline">
-                        Bienvenid@, {{ Auth::user()->name }}
-                    </span><br>
-                    <h6>
-                        Accede a tu <a href="{{ url('editor/dashboard') }}">Panel de Afiliado</a>
-                    </h6>
-                    <hr>
-                    <span><a href="{{ route('comunicados.index') }}" class="enlace">Comunicados</a></span>
+            </div>
+            @else
+            <div class="login-nav p-3">
+                <div class="">
+                    <span class="">Bienvenid@, {{ Auth::user()->nombre }}</span>
+                </div>
+                <div class="mb-2">
+                    <h6 class="mb-2">Accede a tu <a href="{{ url('editor/dashboard') }}">Panel de Afiliado</a></h6>
+                </div>
+                <hr>
+                <div class="mb-2">
+                    <a href="{{ route('comunicados.index') }}" class="enlace inline-flex">Comunicados</a>
                     <div class="btn-group">
                         <a href="{{ route('comunicados.index') }}" class="btn btn-outline-secondary">Editar</a>
                         <a href="{{ route('comunicados.create') }}" class="btn btn-outline-info">Añadir</a>
                     </div>
-                    <span><a href="{{ route('etiquetas.index') }}" class="enlace">Etiquetas</a></span><a
-                        href="{{ route('etiquetas.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
-                        href="{{ route('etiquetas.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
-                    <span><a href="{{ route('categorias.index') }}" class="enlace">Categorias</a></span><a
-                        href="{{ route('categorias.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
-                        href="{{ route('categorias.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
-                    <span><a href="{{ route('empresas.index') }}" class="enlace">Empresas</a></span><a
-                        href="{{ route('empresas.index') }}" class="btn btn-outline-secondary ml-2">Editar</a><a
-                        href="{{ route('empresas.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
-
-                    <div class="inline dcha">
-                        <button class="btn btn-outline-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                      document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </button>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
+                </div>
+                <div class="mb-2 inline-flex">
+                    <div clas="">
+                        <a href="{{ route('etiquetas.index') }}" class="enlace">Etiquetas</a>
                     </div>
-                </li>
-                @endguest
-            </ul>
+                    <div class="btn-group">
+                        <a href="{{ route('etiquetas.index') }}" class="btn btn-outline-secondary ml-2">Editar</a>
+                        <a href="{{ route('etiquetas.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <a href="{{ route('categorias.index') }}" class="enlace">Categorias</a>
+                    <div class="btn-group">
+                        <a href="{{ route('categorias.index') }}" class="btn btn-outline-secondary ml-2">Editar</a>
+                        <a href="{{ route('categorias.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <a href="{{ route('empresas.index') }}" class="enlace">Empresas</a>
+                    <div class="btn-group">
+                        <a href="{{ route('empresas.index') }}" class="btn btn-outline-secondary ml-2">Editar</a>
+                        <a href="{{ route('empresas.create') }}" class="btn btn-outline-info ml-2">Añadir</a>
+                    </div>
+                </div>
+                <div class="mx-auto">
+                    <button class="btn btn-outline-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                        {{ __('Cerrar Sesión') }}
+                    </button>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+            </div>
+            @endguest
         </div>
+        
     </div>
 </nav>
 {{-- <nav class="bg-gray-800">

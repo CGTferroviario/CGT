@@ -21,28 +21,37 @@ class PermissionController extends Controller
     }
     public function store(Request $request)
     {
-        $validated = $request->validate(['name' => ['required', 'min:3'], 'descripcion' => 'required']);
+        $validated = $request->validate([
+            'name' => ['required'],
+            'descripcion' => ['required']
+        ]);
         Permission::create($validated);
-        return to_route('admin.permissions.create')->with('message', 'Permiso Creado Satisfactoriamente'); 
+
+        return to_route('admin.permissions.index')->with('message', 'Permiso Creado Correctamente');
     }
     public function edit(Permission $permission)
     {
-        $roles = Role::all();
         $permissions = Permission::all();
-        return view('admin.permissions.edit', compact('permissions','permission', 'roles'));
-
+        $roles = Role::all();
+        return view('admin.permissions.edit', compact('permission', 'roles', 'permissions'));
     }
     public function update(Request $request, Permission $permission)
     {
-        $validated = $request->validate(['name' => ['required']]);
+        
+        $validated = $request->validate([
+            'name' => ['required'],
+            'descripcion' => ['required']
+        ]);
         $permission->update($validated);
+        // dd($permission);
 
-        return to_route('admin.permissions.index')->with('message', 'Permission Updated Successfully');
+        return to_route('admin.permissions.index')->with('message', 'Permiso Actualizado Correctamente');
     }
     public function destroy(Permission $permission)
     {
         $permission->delete();
-        return back()->with('message', 'Permission deleted.');
+
+        return back()->with('message', 'Permiso Eliminado.');
     }
     public function assignRole(Request $request, Permission $permission)
     {
@@ -59,5 +68,6 @@ class PermissionController extends Controller
             return back()->with('message', 'Rol eliminado.');
         }
         return back()->with('message', 'Ese Rol no existe.');
+
     }
 }

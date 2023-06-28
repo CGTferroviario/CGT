@@ -16,16 +16,16 @@ class RoleController extends Controller
     }
     public function create()
     {
-        $roles = Role::all();
+        $roles = Role::whereNotIn('name', ['admin'])->get();
+
         return view('admin.roles.create', compact('roles'));
     }
     public function store(Request $request)
     {
-        // dd($request);
         $validated = $request->validate(['name' => ['required', 'min:3']]);
         Role::create($validated);
 
-        return to_route('admin.roles.create')->with('message', 'Perfil Creado Satisfactoriamente');
+        return to_route('admin.roles.index')->with('message', 'Perfil Creado Correctamente');
     }
     public function edit(Role $role)
     {
@@ -37,28 +37,29 @@ class RoleController extends Controller
         $validated = $request->validate(['name' => ['required']]);
         $role->update($validated);
 
-        return to_route('admin.roles.index')->with('message', 'Perfil Actualizado Satisfactoriamente');
+        return to_route('admin.roles.index')->with('message', 'Perfil Actualizado Correctamente');
     }
     public function destroy(Role $role)
     {
         $role->delete();
 
-        return back()->with('message', 'Perfil Eliminado.');
+        return back()->with('message', 'Perfil eliminado.');
     }
     public function givePermission(Request $request, Role $role)
     {
         if ($role->hasPermissionTo($request->permission)) {
-            return back()->with('message', 'Permission exists.');
+            return back()->with('message', 'Ese Permiso ya existe.');
         }
         $role->givePermissionTo($request->permission);
-        return back()->with('message', 'Permission added.');
+        return back()->with('message', 'Permiso Añadido.');
     }
     public function revokePermission(Role $role, Permission $permission)
     {
         if ($role->hasPermissionTo($permission)) {
             $role->revokePermissionTo($permission);
-            return back()->with('message', 'Permission revoked.');
+            return back()->with('message', 'Permiso revocado.');
         }
-        return back()->with('message', 'Permission does not exist.');
+        return back()->with('message', 'Permiso no existe.');
+
     }
 }
