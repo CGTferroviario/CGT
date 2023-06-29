@@ -123,7 +123,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->group(function() {
-    Route::get('/', [IndexController::class, 'indexAdmin']);
+    // Route::get('/', [IndexController::class, 'indexAdmin']);
     Route::resource('/roles', RoleController::class);
     Route::post('roles/{role}/permissions', [RoleController::class, 'givePermission'])->name('roles.permissions');
     Route::delete('roles/{role}/permissions/{permission}', [RoleController::class, 'revokePermission'])->name('roles.permissions.revoke');
@@ -138,6 +138,13 @@ Route::middleware(['auth', 'role:editor'])->name('editor.')->prefix('editor')->g
     
     Route::get('/', [IndexController::class, 'indexEditor']);
     Route::get('/dashboard', [IndexController::class, 'dashboardEditor'])->name('dashboardEditor');
+
+});
+
+Route::middleware(['auth', 'role:usuario'])->name('usuario.')->prefix('usuario')->group(function() {
+    
+    Route::get('/', [IndexController::class, 'indexUsuario']);
+    Route::get('/dashboard', [IndexController::class, 'dashboardUsuario'])->name('dashboardUsuario');
 
 });
 

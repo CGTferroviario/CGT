@@ -43,7 +43,7 @@ class AuthenticatedSessionController extends Controller
             break; 
 
             default:
-            return redirect('/dashboard'); 
+            return redirect('/usuario/dashboard'); 
             break;
         }
 

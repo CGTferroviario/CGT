@@ -25,4 +25,12 @@ class IndexController extends Controller
     {
         return view('editor.dashboard');
     }
+    public function indexUsuario()
+    {
+        return view('usuario.index');
+    }
+    public function dashboardUsuario()
+    {
+        return view('usuario.dashboard');
+    }
 }
