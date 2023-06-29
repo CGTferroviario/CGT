@@ -72,7 +72,6 @@ class ComunicadoController extends Controller
             
             'publicado' => $publicado,
             'user_id' => $usuario,
-            
         ]);
 
         return redirect(route('comunicados.index'))->with('message', 'Comunicado Creado Correctamente');
