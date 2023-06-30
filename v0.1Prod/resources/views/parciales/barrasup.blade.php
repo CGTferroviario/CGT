@@ -124,7 +124,7 @@
     <div class="col ml-10 flex justify-center">
         <ul class="inline-flex m-0 grisMedio text-3xl">
             <li><a href="https://twitter.com/SFFCGT" title="Twitter SFFCGT" target="_blank"><i class="lni lni-twitter sociales"></i></a></li>
-            <li><a href="https://twitter.com/SFFCGT" title="Instagram SFFCGT" target="_blank"><i class="lni lni-instagram sociales"></i></a></li>
+            <li><a href="https://www.instagram.com/sffcgt/" title="Instagram SFFCGT" target="_blank"><i class="lni lni-instagram sociales"></i></a></li>
             <li><a href="https://es-es.facebook.com/cgtferroviario/" title="Facebook SFFCGT" target="_blank"><i class="lni lni-facebook sociales"></i></a></li>
             <li><a href="https://www.youtube.com/c/CGTSectorFederalFerroviario" title="Youtube SFFCGT" target="_blank"><i class="lni lni-youtube sociales"></i></a></li>
         </ul>
