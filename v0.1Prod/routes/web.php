@@ -23,7 +23,7 @@ Route::get('/adif', [App\Http\Controllers\PaginaController::class, 'adif'])->nam
 Route::prefix('adif/')->group(function () {
     Route::view('/infraestructura', 'adif.infraestructura');
     Route::view('/circulacion', 'adif.circulacion'); 
-    Route::view('/oficinas', 'adif.oficinas');
+    Route::view('/oficinas', 'adif.oficinas'); 
 });
 Route::prefix('adif/doc')->group(function () {
     Route::view('/afiliacion', 'adif.doc.afiliacion');
@@ -77,7 +77,7 @@ Route::prefix('juridica')->group(function () {
     Route::view('/ferroviaria', 'juridica.ferroviaria');
     Route::view('/modelos', 'juridica.modelos');
     Route::view('/logros', 'juridica.logros');
-});
+}); 
 
 Route::get('/biblioteca', [App\Http\Controllers\PaginaController::class, 'biblioteca'])->name('biblioteca');
 Route::get('/biblioteca/comunicados', [App\Http\Controllers\PaginaController::class, 'comunicados'])->name('biblioteca.comunicados');

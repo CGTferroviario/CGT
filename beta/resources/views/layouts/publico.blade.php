@@ -18,7 +18,7 @@
     </head>
     <body class="font-sans antialiased">
 
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div class="h-100">
             @include('parciales.barrasuperior')
 
             <!-- Page Heading -->
@@ -31,8 +31,9 @@
             @endif
 
             <!-- Page Content -->
-            <main>
-                {{ $slot }} 
+            <main class="">
+                {{ $slot }}
+                @yield('contenido')
             </main>
         </div>
 

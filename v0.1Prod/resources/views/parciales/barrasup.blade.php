@@ -39,7 +39,7 @@
                     {{ __('RENFE') }}
                 </x-nav-link>
                 <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a href="{{ route('renfe') }}" class="dropdown-item dropdown-toggle" title="Documentación General de ADIF">DOC. GENERAL</a>
+                    <li><a href="{{ route('renfe') }}" class="dropdown-item dropdown-toggle" title="Documentación General de RENFE">DOC. GENERAL</a>
                         <ul class="dropdown-menu dropdown-menu-dark dropdown-submenu">
                             <li><a href="{{ url('renfe/doc/afiliacion') }}" class="dropdown-item">AFILIACIÓN</a></li>
                             <li><a href="{{ url('renfe/doc/ayudas') }}" class="dropdown-item">AYUDAS Y BENEFICIOS SOCIALES</a></li>
