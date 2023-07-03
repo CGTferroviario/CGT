@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ContactoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -107,10 +108,13 @@ Route::get('/equipo', function () {
 });
 // Route::get('/equipo', [App\Http\Controllers\PaginaController::class, 'equipo'])->name('equipo');
 // Route::post('/equipo/contacto', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+
 Route::prefix('equipo')->group(function () {
     Route::view('/sp', 'equipo.sp');
     Route::view('/mapa', 'equipo.mapa'); 
-    Route::view('/contacto', 'equipo.contacto');
+    // Route::view('/contacto', 'equipo.contacto');
+    Route::get('/contacto', [ContactoController::class, 'contacto']);
+    Route::post('/contacto', [ContactoController::class, 'store'])->name('equipo.contacto.store');
 });
 
 

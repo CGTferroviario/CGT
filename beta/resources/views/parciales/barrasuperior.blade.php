@@ -25,9 +25,10 @@
         <div class="flex md:order-3 pr-2">
             <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-black bg-red-500 hover:bg-red-200 focus:ring-2 focus:outline-none focus:ring-red-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" type="button">ÁREA Afiliados <i class="lni lni-chevron-down ml-2 text-white"></i></button>
             <!-- Dropdown menu -->
-            <div id="dropdown" class="z-10 hidden divide-y divide-gray-100 rounded-lg shadow w-96 bg-oscuro">
+            <div id="dropdown" class="z-10 hidden divide-y rounded-lg shadow w-96 bg-oscuro">
                 <div class="w-full max-w-sm p-4 bg-oscuro bordeRojo rounded-lg shadow sm:p-6 md:p-8">
-                    <form class="space-y-6" action="#">
+                    <form class="space-y-6" action="{{ route('login') }}">
+                        @csrf
                         <h5 class="text-xl font-medium rojoBrillante">Accede a tu Área de Afiliado</h5>
                         <div>
                             <label for="email" class="block mb-2 text-sm font-medium text-white">Email</label>
@@ -57,7 +58,7 @@
             <button data-collapse-toggle="navbar-sticky" type="button"
                 class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg border-x border-y hover:text-red-500 hover:border-red-500 border-white md:hidden focus:outline-none focus:ring-2 hover:bg-gray-900 focus:ring-gray-600"
                 aria-controls="navbar-sticky" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
+                <span class="sr-only">Abrir Menú Principal</span>
                 <i class="lni lni-line-spacing text-3xl"></i>
             </button>
         </div>
@@ -73,7 +74,7 @@
                             <li aria-labelledby="dropdownAdifLink">
                                 <button id="doubleDropdownButtonAdif" data-dropdown-toggle="doubleDropdownAdif" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación General de ADIF">
                                     DOC. GENERAL<i class="lni lni-chevron-right ml-2"></i></button>
-                                <div id="doubleDropdownAdif" class="z-20 hidden divide-y divide-gray-100 rounded-lg shadow w-44 bg-gray-700">
+                                <div id="doubleDropdownAdif" class="z-20 hidden divide-y rounded-lg shadow w-44 bg-gray-700">
                                     <ul class="py-2 text-sm text-gray-200" aria-labelledby="doubleDropdownButtonAdif">
                                         <li><a href="{{ url('adif/doc/afiliacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AFILIACIÓN</a></li>
                                         <li><a href="{{ url('adif/doc/ayudas') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AYUDAS Y BENEFICIOS SOCIALES</a></li>
@@ -97,98 +98,98 @@
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownRenfeLink" data-dropdown-toggle="dropdownRenfe" class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700 md:hover:bg-transparent">RENFE <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownRenfeLink" data-dropdown-toggle="dropdownRenfe" class="flex items-center justify-between w-full py-2 pl-3 pr-4  border-b md:hover:bg-transparent md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700">RENFE <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownRenfe" class="z-20 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
-                        <ul class="py-2 text-sm text-gray-700 text-gray-400" aria-labelledby="dropdownRenfeButton">
+                    <div id="dropdownRenfe" class="z-20 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
+                        <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownRenfeButton">
                             <li aria-labelledby="dropdownRenfeLink">
-                                <button id="doubleDropdownButtonRenfe" data-dropdown-toggle="doubleDropdownRenfe" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Documentación General de RENFE">
+                                <button id="doubleDropdownButtonRenfe" data-dropdown-toggle="doubleDropdownRenfe" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación General de RENFE">
                                     DOC. GENERAL<i class="lni lni-chevron-right ml-2"></i></button>
-                                <div id="doubleDropdownRenfe" class="z-20 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 bg-gray-700">
-                                    <ul class="py-2 text-sm text-gray-700 text-gray-200" aria-labelledby="doubleDropdownButtonRenfe">
-                                        <li><a href="{{ url('renfe/doc/afiliacion') }}" class="block px-2 py-1 hover:bg-gray-100 hover:bg-gray-600 text-gray-400 hover:text-white">AFILIACIÓN</a></li>
-                                        <li><a href="{{ url('renfe/doc/ayudas') }}" class="block px-2 py-1 hover:bg-gray-100 hover:bg-gray-600 text-gray-400 hover:text-white">AYUDAS Y BENEFICIOS SOCIALES</a></li>
-                                        <li><a href="{{ url('renfe/doc/igualdad') }}" class="block px-2 py-1 hover:bg-gray-100 hover:bg-gray-600 text-gray-400 hover:text-white">IGUALDAD</a></li>
-                                        <li><a href="{{ url('renfe/doc/legislacion') }}" class="block px-2 py-1 hover:bg-gray-100 hover:bg-gray-600 text-gray-400 hover:text-white">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
-                                        <li><a href="{{ url('renfe/doc/licencias') }}" class="block px-2 py-1 hover:bg-gray-100 hover:bg-gray-600 text-gray-400 hover:text-white">LICENCIAS</a></li>
-                                        <li><a href="{{ url('renfe/doc/mapa') }}" class="block px-2 py-1 hover:bg-gray-100 hover:bg-gray-600 text-gray-400 hover:text-white">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
-                                        <li><a href="{{ url('renfe/doc/conciliacion') }}" class="block px-2 py-1 hover:bg-gray-100 hover:bg-gray-600 text-gray-400 hover:text-white">MEDIDAS DE CONCILIACIÓN</a></li>
-                                        <li><a href="{{ url('renfe/doc/modelos') }}" class="block px-2 py-1 hover:bg-gray-100 hover:bg-gray-600 text-gray-400 hover:text-white">MODELOS DE SOLICITUD DE EMPRESA</a></li>
-                                        <li><a href="{{ url('renfe/doc/protocolos') }}" class="block px-2 py-1 hover:bg-gray-100 hover:bg-gray-600 text-gray-400 hover:text-white">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
-                                        <li><a href="{{ url('renfe/doc/salud') }}" class="block px-2 py-1 hover:bg-gray-100 hover:bg-gray-600 text-gray-400 hover:text-white">SALUD LABORAL</a></li>
-                                        <li><a href="{{ url('renfe/doc/teletrabajo') }}" class="block px-2 py-1 hover:bg-gray-100 hover:bg-gray-600 text-gray-400 hover:text-white">TELETRABAJO</a></li>
-                                        <li><a href="{{ url('renfe/doc/tablas') }}" class="block px-2 py-1 hover:bg-gray-100 hover:bg-gray-600 text-gray-400 hover:text-white">TABLAS SALARIALES</a></li>
+                                <div id="doubleDropdownRenfe" class="z-20 hidden divide-y rounded-lg shadow w-44 bg-gray-700">
+                                    <ul class="py-2 text-sm text-gray-200" aria-labelledby="doubleDropdownButtonRenfe">
+                                        <li><a href="{{ url('renfe/doc/afiliacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AFILIACIÓN</a></li>
+                                        <li><a href="{{ url('renfe/doc/ayudas') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AYUDAS Y BENEFICIOS SOCIALES</a></li>
+                                        <li><a href="{{ url('renfe/doc/igualdad') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">IGUALDAD</a></li>
+                                        <li><a href="{{ url('renfe/doc/legislacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
+                                        <li><a href="{{ url('renfe/doc/licencias') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">LICENCIAS</a></li>
+                                        <li><a href="{{ url('renfe/doc/mapa') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
+                                        <li><a href="{{ url('renfe/doc/conciliacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MEDIDAS DE CONCILIACIÓN</a></li>
+                                        <li><a href="{{ url('renfe/doc/modelos') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MODELOS DE SOLICITUD DE EMPRESA</a></li>
+                                        <li><a href="{{ url('renfe/doc/protocolos') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
+                                        <li><a href="{{ url('renfe/doc/salud') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">SALUD LABORAL</a></li>
+                                        <li><a href="{{ url('renfe/doc/teletrabajo') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">TELETRABAJO</a></li>
+                                        <li><a href="{{ url('renfe/doc/tablas') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">TABLAS SALARIALES</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="{{ url('renfe/comercial') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Comercial">COMERCIAL</a></li>
-                            <li><a href="{{ url('renfe/intervencion') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Intervención">INTERVENCIÓN</a></li>
-                            <li><a href="{{ url('renfe/conduccion') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Conducción">CONDUCCIÓN</a></li>
-                            <li><a href="{{ url('renfe/talleres') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Talleres">TALLERES</a></li>
-                            <li><a href="{{ url('renfe/oficinas') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
+                            <li><a href="{{ url('renfe/comercial') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Comercial">COMERCIAL</a></li>
+                            <li><a href="{{ url('renfe/intervencion') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Intervención">INTERVENCIÓN</a></li>
+                            <li><a href="{{ url('renfe/conduccion') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Conducción">CONDUCCIÓN</a></li>
+                            <li><a href="{{ url('renfe/talleres') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Talleres">TALLERES</a></li>
+                            <li><a href="{{ url('renfe/oficinas') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownEmpAuxLink" data-dropdown-toggle="dropdownEmpAux" class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700 md:hover:bg-transparent">EMP. AUX. <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownEmpAuxLink" data-dropdown-toggle="dropdownEmpAux" class="flex items-center justify-between w-full py-2 pl-3 pr-4  border-b md:hover:bg-transparent md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700">EMP. AUX. <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownEmpAux" class="z-20 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
-                        <ul class="py-2 text-sm text-gray-700 text-gray-400" aria-labelledby="dropdownEmpAuxButton">
-                            <li><a href="{{ url('empresasaux/serveo') }}#" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Documentación de SERVEO(Anteriormente FERROVIAL)">SERVEO</a></li>
-                            <li><a href="{{ url('empresasaux/logirail') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Documentación de LOGIRAIL">LOGIRAIL</a></li>
-                            <li><a href="{{ url('empresasaux/otras') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Documentación de otras Empresas Auxiliares">OTRAS EMPRESAS</a></li>
+                    <div id="dropdownEmpAux" class="z-20 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
+                        <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownEmpAuxButton">
+                            <li><a href="{{ url('empresasaux/serveo') }}#" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación de SERVEO(Anteriormente FERROVIAL)">SERVEO</a></li>
+                            <li><a href="{{ url('empresasaux/logirail') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación de LOGIRAIL">LOGIRAIL</a></li>
+                            <li><a href="{{ url('empresasaux/otras') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación de otras Empresas Auxiliares">OTRAS EMPRESAS</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownJuridicaLink" data-dropdown-toggle="dropdownJuridica" class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700 md:hover:bg-transparent">JURIDICA <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownJuridicaLink" data-dropdown-toggle="dropdownJuridica" class="flex items-center justify-between w-full py-2 pl-3 pr-4  border-b md:hover:bg-transparent md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700">JURIDICA <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownJuridica" class="z-20 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
-                        <ul class="py-2 text-sm text-gray-700 text-gray-400" aria-labelledby="dropdownJuridicaButton">
-                            <li><a href="{{ url('juridica/convenios') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white">CONVENIOS COLECTIVOS</a></li>
-                            <li><a href="{{ url('juridica/laboral') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white">LEGISLACIÓN LABORAL</a></li>
-                            <li><a href="{{ url('juridica/ferroviaria') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white">LEGISLACIÓN FERROVIARIA</a></li>
-                            <li><a href="{{ url('juridica/modelos') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white">FORMULARIOS <span class="rojoBrillante">//</span> MODELOS</a></li>
-                            <li><a href="{{ url('juridica/logros') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white">LOGROS JURÍDICOS CGT</a></li>
+                    <div id="dropdownJuridica" class="z-20 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
+                        <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownJuridicaButton">
+                            <li><a href="{{ url('juridica/convenios') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">CONVENIOS COLECTIVOS</a></li>
+                            <li><a href="{{ url('juridica/laboral') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">LEGISLACIÓN LABORAL</a></li>
+                            <li><a href="{{ url('juridica/ferroviaria') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">LEGISLACIÓN FERROVIARIA</a></li>
+                            <li><a href="{{ url('juridica/modelos') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">FORMULARIOS <span class="rojoBrillante">//</span> MODELOS</a></li>
+                            <li><a href="{{ url('juridica/logros') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">LOGROS JURÍDICOS CGT</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownBibliotecaLink" data-dropdown-toggle="dropdownBiblioteca" class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700 md:hover:bg-transparent">BIBLIOTECA <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownBibliotecaLink" data-dropdown-toggle="dropdownBiblioteca" class="flex items-center justify-between w-full py-2 pl-3 pr-4  border-b md:hover:bg-transparent md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700">BIBLIOTECA <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownBiblioteca" class="z-20 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
-                        <ul class="py-2 text-sm text-gray-700 text-gray-400" aria-labelledby="dropdownBibliotecaButton">
-                            <li><a href="{{ url('biblioteca/comunicados') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Comunicados de la CGT">COMUNICADOS</a></li>
-                            <li><a href="{{ url('biblioteca/seguridad') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Información de Seguridad en la Circulación">SEGURIDAD EN LA CIRCULACIÓN LABORAL</a></li>
-                            <li><a href="{{ url('biblioteca/archivo') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Archivo de información histórica">ARCHIVO HISTÓRICO</a></li>
-                            <li><a href="{{ url('biblioteca/defensa') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Información sobre la defensa de un ferrocarril público y social">DEFENSA DEL FERROCARRIL</a></li>
-                            <li><a href="{{ url('biblioteca/colegio') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Colegio de Huérfanos Ferroviarios">COLEGIO DE HUÉRFANOS</a></li>
-                            <li><a href="{{ url('biblioteca/via') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Magazine Ferroviario">VIA LIBERTARIA</a></li>
+                    <div id="dropdownBiblioteca" class="z-20 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
+                        <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownBibliotecaButton">
+                            <li><a href="{{ url('biblioteca/comunicados') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Comunicados de la CGT">COMUNICADOS</a></li>
+                            <li><a href="{{ url('biblioteca/seguridad') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Información de Seguridad en la Circulación">SEGURIDAD EN LA CIRCULACIÓN LABORAL</a></li>
+                            <li><a href="{{ url('biblioteca/archivo') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Archivo de información histórica">ARCHIVO HISTÓRICO</a></li>
+                            <li><a href="{{ url('biblioteca/defensa') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Información sobre la defensa de un ferrocarril público y social">DEFENSA DEL FERROCARRIL</a></li>
+                            <li><a href="{{ url('biblioteca/colegio') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Colegio de Huérfanos Ferroviarios">COLEGIO DE HUÉRFANOS</a></li>
+                            <li><a href="{{ url('biblioteca/via') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Magazine Ferroviario">VIA LIBERTARIA</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownRecursosLink" data-dropdown-toggle="dropdownRecursos" class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700 md:hover:bg-transparent">RECURSOS <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownRecursosLink" data-dropdown-toggle="dropdownRecursos" class="flex items-center justify-between w-full py-2 pl-3 pr-4  border-b md:hover:bg-transparent md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700">RECURSOS <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownRecursos" class="z-20 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
-                        <ul class="py-2 text-sm text-gray-700 text-gray-400" aria-labelledby="dropdownRecursosButton">
-                            <li><a href="{{ url('recursos/videos') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Videos del equipo estatal">VIDEOS</a></li>
-                            <li><a href="{{ url('recursos/audios') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Audios del equipo estatal">AUDIOS</a></li>
-                            <li><a href="{{ url('recursos/carteles') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Carteles elaborados por el equipo estatal">CARTELES</a>
+                    <div id="dropdownRecursos" class="z-20 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
+                        <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownRecursosButton">
+                            <li><a href="{{ url('recursos/videos') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Videos del equipo estatal">VIDEOS</a></li>
+                            <li><a href="{{ url('recursos/audios') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Audios del equipo estatal">AUDIOS</a></li>
+                            <li><a href="{{ url('recursos/carteles') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Carteles elaborados por el equipo estatal">CARTELES</a>
                             </li>
-                            <li><a href="{{ url('recursos/fotos') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Fotografías del equipo estatal">FOTOGRAFIAS</a></li>
-                            <li><a href="{{ url('recursos/logos') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Logotipos para su uso en prensa">LOGOTIPOS</a></li>
+                            <li><a href="{{ url('recursos/fotos') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Fotografías del equipo estatal">FOTOGRAFIAS</a></li>
+                            <li><a href="{{ url('recursos/logos') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Logotipos para su uso en prensa">LOGOTIPOS</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownEquipoLink" data-dropdown-toggle="dropdownEquipo" class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700 md:hover:bg-transparent">SFF-CGT <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownEquipoLink" data-dropdown-toggle="dropdownEquipo" class="flex items-center justify-between w-full py-2 pl-3 pr-4  border-b md:hover:bg-transparent md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700">SFF-CGT <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownEquipo" class="z-20 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
-                        <ul class="py-2 text-sm text-gray-700 text-gray-400" aria-labelledby="dropdownEquipoButton">
-                            <li><a href="{{ url('equipo/sp') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white" title="Información del equipo estatal">EQUIPO ESTATAL</a></li>
-                            <li><a href="{{ url('equipo/mapa') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white">MAPA SINDICAL</a></li>
-                            <li><a href="{{ url('equipo/contacto') }}" class="block px-4 py-2 hover:bg-gray-100 hover:bg-gray-600 hover:text-white">CONTACTO</a></li>
+                    <div id="dropdownEquipo" class="z-20 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
+                        <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownEquipoButton">
+                            <li><a href="{{ url('equipo/sp') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Información del equipo estatal">EQUIPO ESTATAL</a></li>
+                            <li><a href="{{ url('equipo/mapa') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">MAPA SINDICAL</a></li>
+                            <li><a href="{{ url('equipo/contacto') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">CONTACTO</a></li>
                         </ul>
                     </div>
                 </li>
