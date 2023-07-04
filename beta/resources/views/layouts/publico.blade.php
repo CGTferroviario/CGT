@@ -13,10 +13,10 @@
 
 
         <!-- Estilos -->
-        @include('parciales.estilo')
+        @include('parciales.estilo') 
 
     </head>
-    <body class="font-sans antialiased">
+    <body class=" antialiased">
 
         <div class="h-100">
             @include('parciales.barrasuperior')

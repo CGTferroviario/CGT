@@ -1,0 +1,89 @@
+
+//Instalar Laravel globalmente
+composer global require laravel/installer
+
+// Añadir laravel al PATH 
+export PATH="~/.config/composer/vendor/bin:$PATH"
+
+laravel new proyecto
+cd proyecto
+
+// Instalamos tailwindcss y flowbite (componentes)
+npm install -D tailwindcss postcss autoprefixer flowbite
+
+// Creamos el archivo de configuración de Tailwind CSS
+npx tailwindcss init -p
+
+// Añadir las rutas de las vistas y requerir Flowbite como un plugin en tailwind.config.js
+module.exports = {
+    content: [
+      "./resources/**/*.blade.php",
+      "./resources/**/*.js",
+      "./resources/**/*.vue",
+      "./node_modules/flowbite/**/*.js"
+    ],
+    theme: {
+      extend: {},
+    },
+    plugins: [
+        require('flowbite/plugin')
+    ],
+  }
+  
+// Añadir las directivas dentro de ./resources/css/app.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+----------------------
+
+// Incluir estas líneas en el <head>
+@vite(['resources/css/app.css','resources/js/app.js'])
+
+// Importar el paquete de Javascript de Flowbite en ./resources/js/app.js para activar la interacción con elementos componentes como los modals, desplegables y demás.
+import 'flowbite';
+
+// Crear una base de datos y actualizar el fichero .env con los datos de la BBDD y ejecutar las migraciones
+php artisan migrate
+
+// Instalar laravel breeze para autentificación
+composer require laravel/breeze --dev
+
+// Instalar Blade para Breeze
+php artisan breeze:install blade --dark
+
+// Instalar paquete de permisos Spatie
+composer require spatie/laravel-permission
+
+// Añadir esta línea en config/app.php
+'providers' => [
+    // ...
+    Spatie\Permission\PermissionServiceProvider::class,
+];
+
+// Publicar la migración y el fichero de configuración de permisos
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+
+// Limpiamos la cache
+php artisan optimize:clear
+
+// En config/database.php introducimos esta linea y verificamos que hayamos creado la BBDD con este tipo de collation
+'collation' => 'utf8mb4_spanish_ci',
+
+// Ejecutamos las migraciones
+php artisan migrate
+
+// Añadimos al modelo de usuario la característica HasRoles (app/Models/User)
+use HasRoles;
+
+// Añadimos la traducción de los mensajes de error y demás
+composer require laravel-lang/common --dev
+php artisan lang:add es
+
+// En el archivo config/app.php ponemos este valor
+'locale' => 'es',
+
+
+
+
+

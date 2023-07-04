@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-privado-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-900 leading-tight">
             {{ __('Panel de Control') }}
@@ -14,4 +14,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-privado-layout>

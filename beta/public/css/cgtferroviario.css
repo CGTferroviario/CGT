@@ -59,6 +59,12 @@ a:hover{
     color: white;
     font-size: 2em;
 }
+#navbar-sticky .lni-chevron-down, #navbar-sticky .lni-chevron-right {
+  color: red;
+}
+.sociales .lni{
+  margin-left: 4px;
+}
 
 /* 4.- Sección de INICIO */
 .tarjeta{
