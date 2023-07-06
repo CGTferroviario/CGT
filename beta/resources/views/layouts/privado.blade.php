@@ -21,6 +21,24 @@
 
             <!-- Page Content -->
             <main class="">
+
+                {{-- @switch($i)
+                    @case(1)
+
+                        @include('parciales.barralateral')
+
+                        @break
+
+                    @case(2)
+                        @include('parciales.barralateral')
+
+                        @break
+
+                    @default
+                        @include('parciales.barralateral')
+                @endswitch --}}
+
+
                 @include('parciales.barralateral')
                 {{ $slot }}
                 <div class="pt-20">

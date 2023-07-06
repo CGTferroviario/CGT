@@ -5,9 +5,11 @@
             {{ __('Comunicados') }}
         </h2>
     </x-slot>
+
     @section('contenido')
-
-        <h1>Hola</h1>
-
+        <div class="p-4 sm:ml-64">
+            <h1>Hola</h1>
+        </div>
     @endsection
+    
 </x-privado-layout>

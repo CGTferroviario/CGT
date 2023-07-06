@@ -1,3 +1,8 @@
+<style>
+    aside .lni{
+        font-size: 150%;
+    }
+</style>
 <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar"
     aria-controls="sidebar-multi-level-sidebar" type="button"
     class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
@@ -14,7 +19,7 @@
     aria-label="Sidebar">
     <div class="h-full px-3 py-4 pt-5 overflow-y-auto bg-gray-50 dark:bg-gray-800">
         <h1 class="text-white text-center">ADMIN</h1>
-        <ul class="space-y-2 font-medium">
+        <ul class="space-y-2 font-medium mt-5">
             <li class="nav-item">                        
                 <a href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-dashboard rojoBrillante transition duration-75  group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Panel de Control</span>
@@ -27,52 +32,40 @@
             </li>
             <li class="nav-item">                   
                 <a href="{{ url('noticias.index') }}" :active="request()->routeIs('noticias')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-book"></i><span class="ms-1 d-none d-sm-inline">Noticias</span>
+                    <i class="lni lni-book rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i><span class="ml-3">Noticias</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ url('documentos.index') }}" :active="request()->routeIs('documentos')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-files"></i> <span class="ms-1 d-none d-sm-inline">Documentos</span>
+                    <i class="lni lni-files rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Documentos</span>
                 </a>
             </li>
             <li class="nav-item">                    
                 <a href="{{ url('empresas.index') }}" :active="request()->routeIs('empresas')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-apartment"></i> <span class="ms-1 d-none d-sm-inline">Empresas</span>
+                    <i class="lni lni-apartment rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Empresas</span>
                 </a>
             </li>
             <li class="nav-item">                    
                 <a href="{{ url('categorias.index') }}" :active="request()->routeIs('categorias')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-hammer"></i> <span class="ms-1 d-none d-sm-inline">Categorías</span>
+                    <i class="lni lni-hammer rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Categorías</span>
                 </a>
             </li>
             <li class="nav-item">                    
                 <a href="{{ url('etiquetas.index') }}" :active="request()->routeIs('etiquetas')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-tag"></i> <span class="ms-1 d-none d-sm-inline">Etiquetas</span>
+                    <i class="lni lni-tag rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Etiquetas</span>
                 </a>
             </li>
             <li class="nav-item">                    
                 <a href="{{ url('admin.roles.index') }}" :active="request()->routeIs('roles')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-support"></i> <span class="ms-1 d-none d-sm-inline">Perfiles</span>
+                    <i class="lni lni-support rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Perfiles</span>
                 </a>
             </li>
             <li class="nav-item">                    
                 <a href="{{ url('admin.permissions.index') }}" :active="request()->routeIs('permissions')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-license"></i> <span class="ms-1 d-none d-sm-inline">Permisos</span>
+                    <i class="lni lni-license rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Permisos</span>
                 </a>
             </li>
-            <li>
-                <a href="#"
-                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
-                        <path
-                            d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                        <path
-                            d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
-                    </svg>
-                    <span class="ml-3">Dashboard</span>
-                </a>
-            </li>
+            <hr>
             <li>
                 <button type="button"
                     class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
@@ -139,17 +132,6 @@
                             d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
                     </svg>
                     <span class="flex-1 ml-3 whitespace-nowrap">Users</span>
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-                        <path
-                            d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z" />
-                    </svg>
-                    <span class="flex-1 ml-3 whitespace-nowrap">Products</span>
                 </a>
             </li>
             <li>
