@@ -107,8 +107,6 @@ Route::prefix('recursos')->group(function () {
 Route::get('/equipo', function () {
     return view('equipo')->name('equipo');
 });
-// Route::get('/equipo', [App\Http\Controllers\PaginaController::class, 'equipo'])->name('equipo');
-// Route::post('/equipo/contacto', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 
 Route::prefix('equipo')->group(function () {
     Route::view('/sp', 'equipo.sp');
