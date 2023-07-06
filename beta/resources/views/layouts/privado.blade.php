@@ -16,14 +16,14 @@
         @include('parciales.estilo') 
 
     </head>
-    <body class="font-sans antialiased">
+    <body class="antialiased">
 
         <div class="h-100">
             @include('parciales.barrasuperior')
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white dark:bg-red-500 shadow">
+                <header class="pt-20 bg-red-500 shadow">
                     <div class="max-w-7xl mx-auto py-3 px-2 sm:px-3 lg:px-4 text-center">
                         {{ $header }}
                     </div>
@@ -32,6 +32,7 @@
 
             <!-- Page Content -->
             <main class="">
+                @include('parciales.barralateral')
                 {{ $slot }}
                 @yield('contenido')
             </main>
