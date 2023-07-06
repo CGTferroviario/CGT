@@ -13,7 +13,53 @@
     class="fixed top-20 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
     aria-label="Sidebar">
     <div class="h-full px-3 py-4 pt-5 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+        <h1 class="text-white text-center">ADMIN</h1>
         <ul class="space-y-2 font-medium">
+            <li class="nav-item">                        
+                <a href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="lni lni-dashboard rojoBrillante transition duration-75  group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Panel de Control</span>
+                </a>
+            </li>
+            <li class="nav-item">                   
+                <a href="{{ route('intranet.comunicados.index') }}" :active="request()->routeIs('comunicados')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="lni lni-bullhorn rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i><span class="ml-3">Comunicados</span>
+                </a>
+            </li>
+            <li class="nav-item">                   
+                <a href="{{ url('noticias.index') }}" :active="request()->routeIs('noticias')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="lni lni-book"></i><span class="ms-1 d-none d-sm-inline">Noticias</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ url('documentos.index') }}" :active="request()->routeIs('documentos')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="lni lni-files"></i> <span class="ms-1 d-none d-sm-inline">Documentos</span>
+                </a>
+            </li>
+            <li class="nav-item">                    
+                <a href="{{ url('empresas.index') }}" :active="request()->routeIs('empresas')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="lni lni-apartment"></i> <span class="ms-1 d-none d-sm-inline">Empresas</span>
+                </a>
+            </li>
+            <li class="nav-item">                    
+                <a href="{{ url('categorias.index') }}" :active="request()->routeIs('categorias')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="lni lni-hammer"></i> <span class="ms-1 d-none d-sm-inline">Categorías</span>
+                </a>
+            </li>
+            <li class="nav-item">                    
+                <a href="{{ url('etiquetas.index') }}" :active="request()->routeIs('etiquetas')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="lni lni-tag"></i> <span class="ms-1 d-none d-sm-inline">Etiquetas</span>
+                </a>
+            </li>
+            <li class="nav-item">                    
+                <a href="{{ url('admin.roles.index') }}" :active="request()->routeIs('roles')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="lni lni-support"></i> <span class="ms-1 d-none d-sm-inline">Perfiles</span>
+                </a>
+            </li>
+            <li class="nav-item">                    
+                <a href="{{ url('admin.permissions.index') }}" :active="request()->routeIs('permissions')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="lni lni-license"></i> <span class="ms-1 d-none d-sm-inline">Permisos</span>
+                </a>
+            </li>
             <li>
                 <a href="#"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">

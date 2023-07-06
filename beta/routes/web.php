@@ -128,12 +128,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-Route::middleware('auth')->name('intranet')->prefix('intranet')->group(function () {
+Route::middleware('auth')->name('intranet.')->prefix('intranet')->group(function () {
     Route::resource('/comunicados', ComunicadoController::class);
-
-    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 

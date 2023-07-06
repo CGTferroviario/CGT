@@ -5,7 +5,7 @@
     <div id="indicators-carousel" class="relative w-full" data-carousel="static">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                <!-- Item 1 -->
+            <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
                 <img src="https://fakeimg.pl/1920x800?font=lobster" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>

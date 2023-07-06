@@ -1,85 +1,12 @@
-<nav class="bg-oscuro fixed w-full z-40 top-0 left-0 border-b border-red-500">
+<nav class="bg-oscuro fixed w-full z-40 top-0 left-0 border-b border-blue-500">
     <div class="flex flex-wrap items-center justify-between mx-auto p-1">
         <div class="flex items-center">
             <a href="{{ url('/') }}" class="flex logo">
-                <img class="ml-1" src="/img/logo_sm.png" alt="CGT Ferroviario" />
+                <img class="p-1" src="/img/logo_sm.png" alt="CGT Ferroviario" />
                 <span class="mx-2 titular mt-2 text-white sm:flex md:hidden xl:flex whitespace-nowrap">Ferroviario7</span>
             </a>
         </div>
-        <div class="flex md:order-2 md:mx-auto">
-            <ul class="inline-flex m-0 mt-2 text-gray-500 text-3xl sociales">
-                <li><a href="https://twitter.com/SFFCGT" title="Twitter SFFCGT" target="_blank"><i class="lni lni-twitter mr-1"></i></a></li>
-                <li><a href="https://www.instagram.com/sffcgt/" title="Instagram SFFCGT" target="_blank"><i class="lni lni-instagram"></i></a></li>
-                <li><a href="https://es-es.facebook.com/cgtferroviario/" title="Facebook SFFCGT" target="_blank"><i class="lni lni-facebook"></i></a></li>
-                <li><a href="https://www.youtube.com/c/CGTSectorFederalFerroviario" title="Youtube SFFCGT" target="_blank"><i class="lni lni-youtube"></i></a></li>
-            </ul>
-        </div>
-        {{-- <x-login> </x-login> --}}
-        <div class="flex md:order-3 pr-2">
-            <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-black bg-red-500 hover:bg-red-200 focus:ring-2 focus:outline-none focus:ring-red-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" type="button">ÁREA Afiliados <i class="lni lni-chevron-down ml-2 text-white"></i></button>
-           
-            <!-- Dropdown menu -->
-            <div id="dropdown" class="z-50 hidden divide-y rounded-lg shadow w-96 bg-oscuro">
-                @guest
-                    <div class="w-full max-w-sm p-4 bg-oscuro bordeRojo rounded-lg shadow sm:p-6 md:p-8">
-                        <form class="space-y-6" action="{{ route('login') }}">
-                            @csrf
-                            <h5 class="text-xl font-medium rojoBrillante">Accede a tu Área de Afiliado</h5>
-                            <div>
-                                <label for="email" class="block mb-2 text-sm font-medium text-white">Email</label>
-                                <input type="email" name="email" id="email" class="border text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 bg-gray-600 border-red-500 placeholder-gray-400 text-white" placeholder="usuario@email.com" required>
-                            </div>
-                            <div>
-                                <label for="password" class="block mb-2 text-sm font-medium text-white">Contraseña</label>
-                                <input type="password" name="password" id="password" placeholder="••••••••" class="border text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 bg-gray-600 border-red-500 placeholder-gray-400 text-white" required>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex items-start">
-                                    <div class="flex items-center h-5">
-                                        <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-red-500 text-red-500 focus:ring-1 focus:ring-red-500 ring-offset-gray-800 focus:ring-offset-gray-800" required>
-                                    </div>
-                                    <label for="remember" class="ml-2 text-sm font-medium text-red-500">Recuérdame</label>
-                                </div>
-                                <a href="#" class="ml-auto text-sm text-red-500 hover:underline">¿Olvidaste tu Contraseña?</a>
-                            </div>
-                            <button type="submit" class="w-full text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Acceder</button>
-                            <div class="text-sm font-medium text-gray-500">
-                                ¿No estás registrado? <a href="#" class="text-red-700 hover:underline">Crear Usuario</a>
-                            </div>
-                        </form>
-                    </div>
-                @else
-                <div class="w-full max-w-sm p-4 bg-oscuro bordeRojo rounded-lg shadow sm:p-6 md:p-8">
-                    <div class="inline-flex">
-                        <span class="text-white">
-                            Bienvenid@, {{ Auth::user()->name }}
-                        </span>
-                    </div>
-                    <div class="inline-flex float-right">
-                        <button class="text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" href="{{ route('logout') }}"
-                          onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                            {{ __('Cerrar Sesión') }}
-                        </button>
-      
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </div>
-                </div>
-                @endguest
-            </div>
-            
-
-            <button data-collapse-toggle="navbar-sticky" type="button"
-                class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg border-x border-y hover:text-red-500 hover:border-red-500 border-white md:hidden focus:outline-none focus:ring-2 hover:bg-gray-900 focus:ring-gray-600"
-                aria-controls="navbar-sticky" aria-expanded="false">
-                <span class="sr-only">Abrir Menú Principal</span>
-                <i class="lni lni-line-spacing text-3xl"></i>
-            </button>
-        </div>
-        
-        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 md:text-sm lg:text-base xl:text-lg" id="navbar-sticky">
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:text-sm lg:text-base xl:text-lg" id="navbar-sticky">
             <ul
                 class="flex flex-col p-4 md:p-0 mt-4 ml-1 font-medium border border-gray-700 rounded-lg md:flex-row md:space-x-4 md:mt-0 md:border-0">
                 <li>
@@ -211,5 +138,79 @@
                 </li>
             </ul>
         </div>
+        <div class="flex md:mx-auto">
+            <ul class="inline-flex m-0 mt-2 text-gray-500 text-3xl sociales">
+                <li><a href="https://twitter.com/SFFCGT" title="Twitter SFFCGT" target="_blank"><i class="lni lni-twitter mr-1"></i></a></li>
+                <li><a href="https://www.instagram.com/sffcgt/" title="Instagram SFFCGT" target="_blank"><i class="lni lni-instagram"></i></a></li>
+                <li><a href="https://es-es.facebook.com/cgtferroviario/" title="Facebook SFFCGT" target="_blank"><i class="lni lni-facebook"></i></a></li>
+                <li><a href="https://www.youtube.com/c/CGTSectorFederalFerroviario" title="Youtube SFFCGT" target="_blank"><i class="lni lni-youtube"></i></a></li>
+            </ul>
+        </div>
+        {{-- <x-login> </x-login> --}}
+        <div class="flex pr-2">
+            <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-black bg-red-500 hover:bg-red-200 focus:ring-2 focus:outline-none focus:ring-red-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" type="button">ÁREA Afiliados <i class="lni lni-chevron-down ml-2 text-white"></i></button>
+           
+            <!-- Dropdown menu -->
+            <div id="dropdown" class="z-50 hidden divide-y rounded-lg shadow w-96 bg-oscuro">
+                @guest
+                    <div class="w-full max-w-sm p-4 bg-oscuro bordeRojo rounded-lg shadow sm:p-6 md:p-8">
+                        <form class="space-y-6" action="{{ route('login') }}">
+                            @csrf
+                            <h5 class="text-xl font-medium rojoBrillante">Accede a tu Área de Afiliado</h5>
+                            <div>
+                                <label for="email" class="block mb-2 text-sm font-medium text-white">Email</label>
+                                <input type="email" name="email" id="email" class="border text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 bg-gray-600 border-red-500 placeholder-gray-400 text-white" placeholder="usuario@email.com" required>
+                            </div>
+                            <div>
+                                <label for="password" class="block mb-2 text-sm font-medium text-white">Contraseña</label>
+                                <input type="password" name="password" id="password" placeholder="••••••••" class="border text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 bg-gray-600 border-red-500 placeholder-gray-400 text-white" required>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-red-500 text-red-500 focus:ring-1 focus:ring-red-500 ring-offset-gray-800 focus:ring-offset-gray-800" required>
+                                    </div>
+                                    <label for="remember" class="ml-2 text-sm font-medium text-red-500">Recuérdame</label>
+                                </div>
+                                <a href="#" class="ml-auto text-sm text-red-500 hover:underline">¿Olvidaste tu Contraseña?</a>
+                            </div>
+                            <button type="submit" class="w-full text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Acceder</button>
+                            <div class="text-sm font-medium text-gray-500">
+                                ¿No estás registrado? <a href="#" class="text-red-700 hover:underline">Crear Usuario</a>
+                            </div>
+                        </form>
+                    </div>
+                @else
+                <div class="w-full max-w-sm p-4 bg-oscuro bordeRojo rounded-lg shadow sm:p-6 md:p-8">
+                    <div class="inline-flex">
+                        <span class="text-white">
+                            Bienvenid@, {{ Auth::user()->name }}
+                        </span>
+                    </div>
+                    <div class="inline-flex float-right">
+                        <button class="text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                            {{ __('Cerrar Sesión') }}
+                        </button>
+      
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
+                @endguest
+            </div>
+            
+
+            <button data-collapse-toggle="navbar-sticky" type="button"
+                class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg border-x border-y hover:text-red-500 hover:border-red-500 border-white md:hidden focus:outline-none focus:ring-2 hover:bg-gray-900 focus:ring-gray-600"
+                aria-controls="navbar-sticky" aria-expanded="false">
+                <span class="sr-only">Abrir Menú Principal</span>
+                <i class="lni lni-line-spacing text-3xl"></i>
+            </button>
+        </div>
+        
+        
     </div>
 </nav>

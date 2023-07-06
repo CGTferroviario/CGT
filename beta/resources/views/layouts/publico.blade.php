@@ -16,7 +16,7 @@
         @include('parciales.estilo') 
 
     </head>
-    <body class=" antialiased">
+    <body class="antialiased">
 
         <div class="h-100">
             @include('parciales.barrasuperior')
@@ -31,7 +31,7 @@
             @endif
 
             <!-- Page Content -->
-            <main class="">
+            <main class="pt-20">
                 {{ $slot }}
                 @yield('contenido')
             </main>

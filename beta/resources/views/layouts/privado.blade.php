@@ -10,10 +10,8 @@
 
         <title>{{ config('app.name', 'CGT Ferroviario') }}</title>
 
-
-
         <!-- Estilos -->
-        @include('parciales.estilo') 
+        @include('parciales.estilo')
 
     </head>
     <body class="antialiased">
@@ -21,20 +19,21 @@
         <div class="h-100">
             @include('parciales.barrasuperior')
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="pt-20 bg-red-500 shadow">
-                    <div class="max-w-7xl mx-auto py-3 px-2 sm:px-3 lg:px-4 text-center">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
             <!-- Page Content -->
             <main class="">
                 @include('parciales.barralateral')
                 {{ $slot }}
-                @yield('contenido')
+                <div class="pt-20">
+                    <!-- Page Heading -->
+                @if (isset($header))
+                    <header class="bg-red-500 shadow">
+                        <div class="max-w-7xl mx-auto py-3 px-2 sm:px-3 lg:px-4 text-center">
+                            {{ $header }}
+                        </div>
+                    </header>
+                @endif
+                    @yield('contenido')
+                </div>
             </main>
         </div>
 

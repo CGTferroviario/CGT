@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreComunicadoRequest;
 use App\Http\Requests\UpdateComunicadoRequest;
 use App\Models\Comunicado;
+use Spatie\FlareClient\View;
 
 class ComunicadoController extends Controller
 {
@@ -13,7 +14,7 @@ class ComunicadoController extends Controller
      */
     public function index()
     {
-        //
+        return view('intranet.comunicados.index');
     }
 
     /**
