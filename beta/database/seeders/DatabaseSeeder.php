@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Comunicado;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +21,21 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        //disable foreign key check for this connection before running seeders
+		DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
+        $this->call(RoleSeeder::class);
+        $this->call(PermisoSeeder::class);
+		$this->call(UserSeeder::class);
+        $this->call(EmpresaSeeder::class);
+        $this->call(CategoriaSeeder::class);
+
+        $comunicado = Comunicado::factory(50)->create([
+            
+        ]);
+
+		// supposed to only apply to a single connection and reset it's self
+		// but I like to explicitly undo what I've done for clarity
+		DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

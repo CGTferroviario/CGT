@@ -14,7 +14,9 @@ class ComunicadoController extends Controller
      */
     public function index()
     {
-        return view('intranet.comunicados.index');
+        return view('intranet.comunicados.index', [
+            'comunicados' => Comunicado::orderBy('fecha', 'desc')->get()
+        ]);
     }
 
     /**

@@ -70,70 +70,32 @@
         </div>
     </div>
     <div class="grid grid-cols-4 gap-4 p-4">
-        <div class="bg-grisOscuro-7 text-white mb-3 rounded-lg bordeRojo" style="">
-            <div class="p-2"><h2 class="text-xl font-bold">Plataforma Reivindicativa AFILIACIÓN</h2></div>
-            <div class="p-2 bordeRojo">
-                <span class="rounded-full bg-RENFE px-2 py-0.5">RENFE</span>
-                <span class="rounded-full bg-CIRCULACIÓN px-2 py-0.5">CIRCULACIÓN</span>
-                <p class="card-text mt-2">Este documento recoge las reivindicaciones de CGT para el colectivo de Circulación</p>
-            </div>
-            <div class="p-1 w-full inline-flex text-lg text-center">
-                <div class="w-1/2 hover:bg-red-500 hover:text-black rounded-b-md">
-                    <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="hover:text-black" target="blank"><i class="lni lni-display verDocs mr-1"></i>Visualizar</a>
+        {{-- <div class="paginacion my-3">
+            {{ $comunicados->links('vendor.pagination.tailwind') }}
+        </div> --}}
+        
+        @foreach ($comunicados as $comunicado)
+        <div class="">
+            <div class="card h-100 bg-grisOscuro-7 blanco bordeRojo" style="">
+                <div class="card-header bordeBottomRojo">
+                    <a href="{{ url('comunicados.show', $comunicado->id) }}"><h1 class="font-bold text-3xl">{{ $comunicado->numero }} / {{ $comunicado->titulo }}</h1></a>
+                    <p class="card-text mt-2">{{ $comunicado->subtitulo }}</p>
                 </div>
-                <div class="w-1/2 hover:bg-red-500 hover:text-black rounded-b-md">
-                    <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="hover:text-black" target="_blank" download="CGT_Afiliacion_Nomina"><i class="lni lni-download mr-1 verDocs"></i>Descargar</a>
+                <div class="card-body">
+                    <span class="badge rounded-pill peq bg-{{ $comunicado->empresa?->nombre }}">{{ $comunicado->empresa?->nombre }}</span>
+                    <span class="badge rounded-pill peq bg-{{ $comunicado->categoria?->nombre }}">{{ $comunicado->categoria?->nombre }}</span>
+                    <span class="badge rounded-pill peq bg-{{ $comunicado->etiqueta?->nombre }}">{{ $comunicado->etiqueta?->nombre }}</span>
+                    <p class="card-text mt-2 text-justify">{{ $comunicado->cuerpo }}</p>
                 </div>
-            </div>
-        </div>
-        <div class="bg-grisOscuro-7 text-white mb-3 rounded-lg bordeRojo" style="">
-            <div class="p-2"><h2 class="text-xl font-bold">Plataforma Reivindicativa AFILIACIÓN</h2></div>
-            <div class="p-2 bordeRojo">
-                <span class="rounded-full bg-RENFE px-2 py-0.5">RENFE</span>
-                <span class="rounded-full bg-CIRCULACIÓN px-2 py-0.5">AFILIACIÓN</span>
-                <p class="card-text mt-2">Este documento recoge las reivindicaciones de CGT para el colectivo de Circulación</p>
-            </div>
-            <div class="p-1 w-full inline-flex text-lg text-center">
-                <div class="w-1/2 hover:bg-red-500 hover:text-black rounded-b-md">
-                    <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="hover:text-black" target="blank"><i class="lni lni-display verDocs mr-1"></i>Visualizar</a>
-                </div>
-                <div class="w-1/2 hover:bg-red-500 hover:text-black rounded-b-md">
-                    <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="hover:text-black" target="_blank" download="CGT_Afiliacion_Nomina"><i class="lni lni-download mr-1 verDocs"></i>Descargar</a>
+                <div class="card-footer bordeTopRojo p-1">
+                    <div class="btn-group centrado w-100">
+                        <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="btn rojoBrillante" target="blank"><i class="fa fa-eye"></i>&nbsp;&nbsp;Visualizar</a>
+                        <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="btn rojoBrillante" target="_blank" download="CGT_Afiliacion_Nomina"><i class="fa fa-download"></i>&nbsp;&nbsp;Descargar</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="bg-grisOscuro-7 text-white mb-3 rounded-lg bordeRojo" style="">
-            <div class="p-2"><h2 class="text-xl font-bold">Plataforma Reivindicativa AFILIACIÓN</h2></div>
-            <div class="p-2 bordeRojo">
-                <span class="rounded-full bg-RENFE px-2 py-0.5">RENFE</span>
-                <span class="rounded-full bg-CIRCULACIÓN px-2 py-0.5">CIRCULACIÓN</span>
-                <p class="card-text mt-2">Este documento recoge las reivindicaciones de CGT para el colectivo de Circulación</p>
-            </div>
-            <div class="p-1 w-full inline-flex text-lg text-center">
-                <div class="w-1/2 hover:bg-red-500 hover:text-black rounded-b-md">
-                    <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="hover:text-black" target="blank"><i class="lni lni-display verDocs mr-1"></i>Visualizar</a>
-                </div>
-                <div class="w-1/2 hover:bg-red-500 hover:text-black rounded-b-md">
-                    <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="hover:text-black" target="_blank" download="CGT_Afiliacion_Nomina"><i class="lni lni-download mr-1 verDocs"></i>Descargar</a>
-                </div>
-            </div>
-        </div>
-        <div class="bg-grisOscuro-7 text-white mb-3 rounded-lg bordeRojo" style="">
-            <div class="p-2"><h2 class="text-xl font-bold">Plataforma Reivindicativa CIRCULACIÓN</h2></div>
-            <div class="p-2 bordeRojo">
-                <span class="rounded-full bg-RENFE px-2 py-0.5">RENFE</span>
-                <span class="rounded-full bg-CIRCULACIÓN px-2 py-0.5">CIRCULACIÓN</span>
-                <p class="card-text mt-2">Este documento recoge las reivindicaciones de CGT para el colectivo de Circulación</p>
-            </div>
-            <div class="p-1 w-full inline-flex text-lg text-center">
-                <div class="w-1/2 hover:bg-red-500 hover:text-black rounded-b-md">
-                    <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="hover:text-black" target="blank"><i class="lni lni-display verDocs mr-1"></i>Visualizar</a>
-                </div>
-                <div class="w-1/2 hover:bg-red-500 hover:text-black rounded-b-md">
-                    <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="hover:text-black" target="_blank" download="CGT_Afiliacion_Nomina"><i class="lni lni-download mr-1 verDocs"></i>Descargar</a>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection

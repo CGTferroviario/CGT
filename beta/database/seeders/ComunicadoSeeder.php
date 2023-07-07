@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Comunicado;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ComunicadoSeeder extends Seeder
 {
@@ -12,6 +14,6 @@ class ComunicadoSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        
     }
 }
