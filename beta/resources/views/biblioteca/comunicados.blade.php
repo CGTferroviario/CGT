@@ -69,28 +69,31 @@
             </select>
         </div>
     </div>
-    <div class="grid grid-cols-4 gap-4 p-4">
-        {{-- <div class="paginacion my-3">
-            {{ $comunicados->links('vendor.pagination.tailwind') }}
-        </div> --}}
+    <div class="paginacion mx-6 p-2">
+        {{ $comunicados->links() }}
+    </div>
+    <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">
+        
         
         @foreach ($comunicados as $comunicado)
-        <div class="">
-            <div class="card h-100 bg-grisOscuro-7 blanco bordeRojo" style="">
-                <div class="card-header bordeBottomRojo">
+        <div class="bordeRojo rounded-lg">
+            <div class="bg-grisOscuro-7 text-white rounded-lg">
+                <div class="bordeBottomRojo p-2">
                     <a href="{{ url('comunicados.show', $comunicado->id) }}"><h1 class="font-bold text-3xl">{{ $comunicado->numero }} / {{ $comunicado->titulo }}</h1></a>
-                    <p class="card-text mt-2">{{ $comunicado->subtitulo }}</p>
+                    <p class="mt-2">{{ $comunicado->subtitulo }}</p>
                 </div>
-                <div class="card-body">
-                    <span class="badge rounded-pill peq bg-{{ $comunicado->empresa?->nombre }}">{{ $comunicado->empresa?->nombre }}</span>
-                    <span class="badge rounded-pill peq bg-{{ $comunicado->categoria?->nombre }}">{{ $comunicado->categoria?->nombre }}</span>
-                    <span class="badge rounded-pill peq bg-{{ $comunicado->etiqueta?->nombre }}">{{ $comunicado->etiqueta?->nombre }}</span>
-                    <p class="card-text mt-2 text-justify">{{ $comunicado->cuerpo }}</p>
+                <div class="p-2">
+                    <span class="py-1 px-2 rounded-full bg-{{ $comunicado->empresa?->nombre }}">{{ $comunicado->empresa?->nombre }}</span>
+                    <span class="py-1 px-2 rounded-full bg-{{ $comunicado->categoria?->nombre }}">{{ $comunicado->categoria?->nombre }}</span>
+                    <span class="py-1 px-2 rounded-full bg-{{ $comunicado->etiqueta?->nombre }}">{{ $comunicado->etiqueta?->nombre }}</span>
+                    <p class="mt-2 text-justify">{{ $comunicado->cuerpo }}</p>
                 </div>
-                <div class="card-footer bordeTopRojo p-1">
-                    <div class="btn-group centrado w-100">
-                        <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="btn rojoBrillante" target="blank"><i class="fa fa-eye"></i>&nbsp;&nbsp;Visualizar</a>
-                        <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="btn rojoBrillante" target="_blank" download="CGT_Afiliacion_Nomina"><i class="fa fa-download"></i>&nbsp;&nbsp;Descargar</a>
+                <div class="p-1 w-full inline-flex text-lg text-center bordeTopRojo">
+                    <div class="w-1/2 hover:bg-red-500 hover:text-black rounded-b-md">
+                        <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="hover:text-black" target="blank"><i class="lni lni-display verDocs mr-1"></i>Visualizar</a>
+                    </div>
+                    <div class="w-1/2 hover:bg-red-500 hover:text-black rounded-b-md">
+                        <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class="hover:text-black" target="_blank" download="CGT_Afiliacion_Nomina"><i class="lni lni-download mr-1 verDocs"></i>Descargar</a>
                     </div>
                 </div>
             </div>

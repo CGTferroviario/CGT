@@ -87,7 +87,7 @@ Route::get('/biblioteca', function () {
     return view('biblioteca')->name('biblioteca');
 });
 Route::prefix('biblioteca')->group(function () {
-    Route::view('/comunicados', 'biblioteca.comunicados'); 
+    Route::get('/comunicados', [ComunicadoController::class, 'bibliotecaComunicados'])->name('biblioteca.comunicados'); 
     Route::view('/seguridad', 'biblioteca.seguridad'); 
     Route::view('/defensa', 'biblioteca.defensa');
     Route::view('/archivo', 'biblioteca.archivo');

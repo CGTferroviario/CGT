@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreComunicadoRequest;
 use App\Http\Requests\UpdateComunicadoRequest;
+use App\Models\Categoria;
 use App\Models\Comunicado;
+use App\Models\Empresa;
+use App\Models\Etiqueta;
 use Spatie\FlareClient\View;
 
 class ComunicadoController extends Controller
@@ -17,6 +20,18 @@ class ComunicadoController extends Controller
         return view('intranet.comunicados.index', [
             'comunicados' => Comunicado::orderBy('fecha', 'desc')->get()
         ]);
+    }
+
+    public function bibliotecaComunicados()
+    {
+        // dd($request);
+        return view('biblioteca.comunicados', [
+            
+            'comunicados' => Comunicado::orderBy('updated_at', 'desc')->paginate(12),
+            'empresas' => Empresa::orderBy('id', 'asc')->get(),
+            'categorias' => Categoria::orderBy('id', 'asc')->get(),
+            'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
+        ]);        
     }
 
     /**

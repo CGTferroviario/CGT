@@ -1,8 +1,3 @@
-<style>
-    aside .lni{
-        font-size: 150%;
-    }
-</style>
 <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar"
     aria-controls="sidebar-multi-level-sidebar" type="button"
     class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
@@ -31,37 +26,37 @@
                 </a>
             </li>
             <li class="nav-item">                   
-                <a href="{{ url('noticias.index') }}" :active="request()->routeIs('noticias')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ url('intranet.noticias.index') }}" :active="request()->routeIs('noticias')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-book rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i><span class="ml-3">Noticias</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ url('documentos.index') }}" :active="request()->routeIs('documentos')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ url('intranet.documentos.index') }}" :active="request()->routeIs('documentos')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-files rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Documentos</span>
                 </a>
             </li>
             <li class="nav-item">                    
-                <a href="{{ url('empresas.index') }}" :active="request()->routeIs('empresas')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ url('intranet.empresas.index') }}" :active="request()->routeIs('empresas')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-apartment rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Empresas</span>
                 </a>
             </li>
             <li class="nav-item">                    
-                <a href="{{ url('categorias.index') }}" :active="request()->routeIs('categorias')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ url('intranet.categorias.index') }}" :active="request()->routeIs('categorias')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-hammer rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Categorías</span>
                 </a>
             </li>
             <li class="nav-item">                    
-                <a href="{{ url('etiquetas.index') }}" :active="request()->routeIs('etiquetas')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ url('intranet.etiquetas.index') }}" :active="request()->routeIs('etiquetas')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-tag rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Etiquetas</span>
                 </a>
             </li>
             <li class="nav-item">                    
-                <a href="{{ url('admin.roles.index') }}" :active="request()->routeIs('roles')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ url('intranet.admin.roles.index') }}" :active="request()->routeIs('roles')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-support rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Perfiles</span>
                 </a>
             </li>
             <li class="nav-item">                    
-                <a href="{{ url('admin.permissions.index') }}" :active="request()->routeIs('permissions')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ url('intranet.admin.permissions.index') }}" :active="request()->routeIs('permissions')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-license rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Permisos</span>
                 </a>
             </li>

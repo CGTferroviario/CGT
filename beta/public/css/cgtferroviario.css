@@ -1,6 +1,7 @@
 /*
 1.- HTML
 2.- Barra Navegación Superior
+2.5 - Barra Lateral Intranet
 3.- Fondos
 4.- Colores
 5.- Sección Inicio
@@ -66,6 +67,11 @@ a:hover{
   margin-left: 4px;
 }
 /* Fin 2.- Barra Navegación Superior */
+
+/* 2.5 - Barra Lateral */
+aside .lni{
+  font-size: 150%;
+}
 
 /* 3.- Fondos */
 .fondo {
@@ -141,6 +147,7 @@ a:hover{
 .grisMedio { color: rgb(82, 82, 82); }
 .grisClaro { color: rgb(214, 214, 214); }
 .morado { color: rgb(130, 52, 245); }
+
 .RENFE { color: rgb(135, 0, 100); }
 .ADIF { color: rgb(0, 99, 56); }
 .SERVEO { color: rgb(255, 78, 0); }
@@ -160,35 +167,17 @@ a:hover{
 .bg-morado { background: rgb(130, 52, 245); }
 
 /* Colores Empresas */
-.bg-RENFE {
-  background: rgb(135, 0, 100);
-  color: white;
-}
-.bg-ADIF {
-  background: rgb(0, 99, 56);
-  color: white;
-}
-.bg-SERVEO {
-  background: rgb(255, 78, 0);
-  color: white;
-}
-.bg-LOGIRAIL {
-  background: rgb(126, 1, 126);
-  color: white;
-}
+.bg-RENFE { background: rgb(135, 0, 100); }
+.bg-ADIF { background: rgb(0, 99, 56); }
+.bg-SERVEO { background: rgb(255, 78, 0); }
+.bg-LOGIRAIL { background: rgb(126, 1, 126); }
 .bg-ILUNION {
   background: rgb(255,211,0);
   background: linear-gradient(180deg, rgba(255,211,0,1) 0%, rgba(0,121,199,1) 100%);
   color: white;
 }
-.bg-SABA {
-  background: rgb(1, 168, 151);
-  color: white;
-}
-.bg-FGV {
-  background: rgb(255, 178, 15);
-  color: white;
-}
+.bg-SABA { background: rgb(1, 168, 151); }
+.bg-FGV { background: rgb(255, 178, 15); }
 
 /* Colores Categorias */
 .bg-INFRAESTRUCTURA {
@@ -222,9 +211,24 @@ a:hover{
 .bg-negro { background: black; }
 .bg-blanco { background: white; }
 .bg-oscuro { background: rgb(47, 47, 47); }
-.bg-blanco-transp { background: rgba(255, 255, 255, .7); }
+.bg-blanco-transp { background: rgba(255, 255, 255, .2); }
 
 /* Fin 4.- Colores */
+
+/* Bordes */
+
+.bordeRojo{
+  border: thin solid rgb(254, 71, 85);
+}
+.bordeTopRojo {
+  border-top: thin solid rgb(254, 71, 85);
+}
+.bordeBottomRojo {
+  border-bottom: thin solid rgb(254, 71, 85);
+}
+.bordeNegro{
+  border: thin solid rgb(47, 47, 47);
+}
 
 
 

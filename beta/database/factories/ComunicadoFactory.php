@@ -28,7 +28,7 @@ class ComunicadoFactory extends Factory
             'fecha' => $this->faker->date(),
             'titulo' => $this->faker->sentence(),
             'subtitulo' => $this->faker->sentence(),
-            'cuerpo' => implode($this->faker->paragraphs(6)),
+            'cuerpo' => $this->faker->paragraphs(6, true),
             'adjunto1' => $this->faker->slug(),
             'adjunto2' => $this->faker->slug(),
             'adjunto3' => $this->faker->slug(),
