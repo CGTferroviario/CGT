@@ -1,4 +1,4 @@
-<nav class="bg-oscuro fixed w-full z-40 top-0 left-0 border-b border-blue-500">
+<nav class="bg-oscuro fixed w-full z-40 top-0 left-0">
     <div class="flex flex-wrap items-center justify-between mx-auto p-1">
         <div class="flex items-center">
             <a href="{{ url('/') }}" class="flex logo">

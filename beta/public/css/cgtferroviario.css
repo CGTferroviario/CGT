@@ -308,6 +308,10 @@ aside .lni{
 
 /* Fin 7.- Sección de RENFE */
 
+.dataTables_length select {
+  padding-right: 25px !important;
+}
+
 /* Tablas Responsive */
 .resp-table {
   width: 100%;
