@@ -111,7 +111,7 @@
             <div
                 class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">
 
-                <div class="col-span-4 paginacion">{{ $comunicados->links() }}</div>
+                <div class="col-span-4 paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
 
                 @foreach ($comunicados as $comunicado)
                     
@@ -129,7 +129,6 @@
                                 class="py-0.5 px-2 rounded-full font-semibold bg-{{ $comunicado->categoria?->nombre }}">{{ $comunicado->categoria?->nombre }}</span>
                             <span
                                 class="py-0.5 px-2 rounded-full font-semibold bg-{{ $comunicado->etiqueta?->nombre }}">{{ $comunicado->etiqueta?->nombre }}</span>
-                            {{-- <p class="mt-2 text-justify">{{ $comunicado->cuerpo }}</p> --}}
                         </div>
                         <div class="bg-white py-2.5 px-4 hover:bg-blue-light h-full">
                             <span class="text-black">
@@ -147,16 +146,6 @@
                                         class="lni lni-download verDocs mr-2 text-2xl"></i>Descargar</a>
                             </div>
                         </div>
-                        {{-- <div class="bg-green-900 py-2.5 px-4 hover:bg-blue-light">
-                            <span class="text-yellow-500">
-                                <span class="k-icon k-i-arrow-right hover:text-black"></span>
-                                <span class="hover:underline hover:text-black">sdfs1</span>
-                            </span>
-                            <button type="button" class="text-white">
-                                <span class="k-icon k-i-arrow-right hover:text-black"></span>
-                                <span class="hover:underline hover:text-black">sdfs1</span>
-                            </button>
-                        </div> --}}
                     </div>
                     {{-- <div class="bordeRojo rounded-lg">
                         <div class="bg-grisOscuro-7 text-white rounded-lg">

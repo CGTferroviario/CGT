@@ -198,6 +198,17 @@
                             @csrf
                         </form>
                     </div>
+                    <div class="mb-2">
+                        <h6 class="mb-2">Accede a tu <a href="{{ url('dashboard') }}">Panel de Afiliado</a></h6>
+                    </div>
+                    <hr>
+                    <div class="mb-2">
+                        <a href="{{ url('comunicados.index') }}" class="enlace inline-flex">Comunicados</a>
+                        <div class="btn-group">
+                            <a href="{{ url('comunicados.index') }}" class="btn btn-outline-secondary">Editar</a>
+                            <a href="{{ url('comunicados.create') }}" class="btn btn-outline-info">Añadir</a>
+                        </div>
+                    </div>
                 </div>
                 @endguest
             </div>
