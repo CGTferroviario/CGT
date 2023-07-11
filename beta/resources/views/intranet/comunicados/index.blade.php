@@ -31,8 +31,8 @@
                 <tbody>
                     @foreach ($comunicados as $comunicado)
                     <tr>
-                        <th>{{ $comunicado->numero }}</th>
-                        <th>
+                        <td>{{ $comunicado->numero }}</td>
+                        <td>
                             <div class="flex justify-start gap-1 text-xl mt-2">
                                 {{-- <div class="rounded-md p-2 hover:bg-blue-300 hover:text-white icono">
                                     <a href="" class=""><i class="lni lni-envelope"></i></a>
@@ -42,32 +42,33 @@
                                     <i class="lni lni-envelope"></i>
                                 </a> 
                                 <a x-data="{ tooltip: 'Edite' }" href="{{ url('comunicados.edit', $comunicado->id) }}"
-                                    class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar Rol">
+                                    class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar Comunicado">
                                     <i class="lni lni-pencil"></i>
                                 </a>                                
                                 <form method="POST" action="{{ url('comunicados.destroy', $comunicado->id) }}" onsubmit="return confirm('¿Deseas eliminar este comunicado?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class=" p-1 rounded-md">
-                                        <a x-data="{ tooltip: 'Delete' }" href="#" title="Eliminar Rol" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8">
+                                        <a x-data="{ tooltip: 'Delete' }" href="#" title="Eliminar Comunicado" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8">
                                             <i class="lni lni-trash-can"></i>
                                         </a>
                                     </button>
                                 </form>                                
                             </div>
-                        </th>
-                        <th>{{ $comunicado->fecha }}</th>
-                        <td><span class="px-3 py-1 text-sm font-bold rounded-full bg-{{ $comunicado->empresa?->nombre }}">{{ $comunicado->empresa?->nombre }}</span></td>
-                        <td><span class="px-3 py-1 text-sm font-bold rounded-full bg-{{ $comunicado->categoria?->nombre }}">{{ $comunicado->categoria?->nombre }}</span></td>
-                        <th>{{ $comunicado->etiqueta->nombre }}</th>
-                        <th>{{ $comunicado->titulo }}</th>
-                        <th>{{ $comunicado->subtitulo }}</th>
-                        <th>{!! nl2br(e($comunicado->cuerpo))!!}</th>
-                        <th>{{ $comunicado->adjunto1 }} 1</th>
-                        <th>{{ $comunicado->adjunto2 }} 2</th>
-                        <th>{{ $comunicado->adjunto3 }} 3</th>
-                        <th>{{ $comunicado->imagen }}</th>
-                        <th>{{ $comunicado->visualizaciones }}</th>
+                        </td>
+                        <td>{{ $comunicado->fecha }}</td>
+                        <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $comunicado->empresa?->nombre }}">{{ $comunicado->empresa?->nombre }}</span></td>
+                        <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $comunicado->categoria?->nombre }}">{{ $comunicado->categoria?->nombre }}</span></td>
+                        <td>{{ $comunicado->etiqueta->nombre }}</td>
+                        <td>{{ $comunicado->titulo }}</td>
+                        <td>{{ $comunicado->subtitulo }}</td>
+                        {{-- <td>{!! nl2br(e($comunicado->cuerpo))!!}</td> --}}
+                        <td>{{ $comunicado->cuerpo }}</td>
+                        <td>{{ $comunicado->adjunto1 }} 1</td>
+                        <td>{{ $comunicado->adjunto2 }} 2</td>
+                        <td>{{ $comunicado->adjunto3 }} 3</td>
+                        <td>{{ $comunicado->imagen }}</td>
+                        <td>{{ $comunicado->visualizaciones }}</td>
                     </tr>
                     @endforeach
                 </tbody>

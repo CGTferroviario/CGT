@@ -12,7 +12,7 @@
 <aside id="sidebar-multi-level-sidebar"
     class="fixed top-20 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
     aria-label="Sidebar">
-    <div class="h-full px-3 py-4 pt-5 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+    <div class="h-full px-3 py-4 pt-5 overflow-y-auto bg-oscuro">
         <h1 class="text-white text-center">ADMIN</h1>
         <ul class="space-y-2 font-medium mt-5">
             <li class="">                        

@@ -149,7 +149,6 @@
         {{-- <x-login> </x-login> --}}
         <div class="flex pr-2">
             <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-black bg-red-500 hover:bg-red-200 focus:ring-2 focus:outline-none focus:ring-red-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" type="button">ÁREA Afiliados <i class="lni lni-chevron-down ml-2 text-white"></i></button>
-           
             <!-- Dropdown menu -->
             <div id="dropdown" class="z-50 hidden divide-y rounded-lg shadow w-96 bg-oscuro">
                 @guest
@@ -189,11 +188,11 @@
                     </div>
                     <div class="inline-flex float-right">
                         <button class="text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" href="{{ route('logout') }}"
-                          onclick="event.preventDefault();
+                            onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                             {{ __('Cerrar Sesión') }}
                         </button>
-      
+
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
