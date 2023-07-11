@@ -202,10 +202,10 @@
                     </div>
                     <hr>
                     <div class="mb-2">
-                        <a href="{{ url('comunicados.index') }}" class="enlace inline-flex">Comunicados</a>
-                        <div class="btn-group">
-                            <a href="{{ url('comunicados.index') }}" class="btn btn-outline-secondary">Editar</a>
-                            <a href="{{ url('comunicados.create') }}" class="btn btn-outline-info">Añadir</a>
+                        <a href="{{ route('intranet.comunicados.index') }}" class="enlace inline-flex">Comunicados</a>
+                        <div class="">
+                            <a href="{{ url('intranet.comunicados.edit') }}" class="btn btn-outline-secondary">Editar</a>
+                            <a href="{{ url('intranet.comunicados.create') }}" class="btn btn-outline-info">Añadir</a>
                         </div>
                     </div>
                 </div>

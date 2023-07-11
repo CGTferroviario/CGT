@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ComunicadoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\EtiquetaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -128,6 +131,10 @@ Route::middleware('auth')->group(function () {
 });
 Route::middleware('auth')->name('intranet.')->prefix('intranet')->group(function () {
     Route::resource('/comunicados', ComunicadoController::class);
+    Route::resource('/empresas', EmpresaController::class);
+    Route::resource('/categorias', CategoriaController::class);
+    Route::resource('/etiquetas', EtiquetaController::class);
+
 });
 
 

@@ -19,12 +19,11 @@ class ComunicadoController extends Controller
     {
         return view('intranet.comunicados.index', [
             'comunicados' => Comunicado::orderBy('fecha', 'desc')->get()
-        ]);
+        ]); 
     }
 
     public function bibliotecaComunicados()
     {
-        // dd($request);
         return view('biblioteca.comunicados', [
             
             'comunicados' => Comunicado::orderBy('updated_at', 'desc')->paginate(12),

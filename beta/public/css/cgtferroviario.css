@@ -78,14 +78,13 @@ aside .lni{
   background-repeat: no-repeat;
   min-height: 600px;
 }
-.cabecera{
+/* .cabecera{
   position: absolute;
   top: 4em;
   background: rgb(47,47,47);
-  /* background: linear-gradient(180deg, rgba(47,47,47,1) 0%, rgba(47,47,47,1) 25%, rgba(47,47,47,1) 75%, rgba(254,71,85,1) 100%); */
   z-index: -1;
   color: white;
-}
+} */
 /* Fondos Documentación Iguales en ADIF y RENFE */
 .documentacion { background-image: url('/img/fondos/documentacion.png'); }
 .afiliacion { background-image: url('/img/fondos/doc/afiliacion.png'); }
@@ -167,17 +166,17 @@ aside .lni{
 .bg-morado { background: rgb(130, 52, 245); }
 
 /* Colores Empresas */
-.bg-RENFE { background: rgb(135, 0, 100); }
-.bg-ADIF { background: rgb(0, 99, 56); }
-.bg-SERVEO { background: rgb(255, 78, 0); }
-.bg-LOGIRAIL { background: rgb(126, 1, 126); }
+.bg-RENFE { background: rgb(135, 0, 100); color: white;}
+.bg-ADIF { background: rgb(0, 99, 56); color: white; }
+.bg-SERVEO { background: rgb(255, 78, 0); color: white; }
+.bg-LOGIRAIL { background: rgb(126, 1, 126); color: white; }
 .bg-ILUNION {
   background: rgb(255,211,0);
   background: linear-gradient(180deg, rgba(255,211,0,1) 0%, rgba(0,121,199,1) 100%);
   color: white;
 }
-.bg-SABA { background: rgb(1, 168, 151); }
-.bg-FGV { background: rgb(255, 178, 15); }
+.bg-SABA { background: rgb(1, 168, 151); color: white; }
+.bg-FGV { background: rgb(255, 178, 15); color: white; }
 
 /* Colores Categorias */
 .bg-INFRAESTRUCTURA {
@@ -211,7 +210,7 @@ aside .lni{
 .bg-negro { background: black; }
 .bg-blanco { background: white; }
 .bg-oscuro { background: rgb(47, 47, 47); }
-.bg-blanco-transp { background: rgba(255, 255, 255, .2); }
+.bg-blanco-transp { background: rgba(255, 255, 255, .7); }
 
 /* Fin 4.- Colores */
 

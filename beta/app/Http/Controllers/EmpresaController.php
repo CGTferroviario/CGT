@@ -13,7 +13,9 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        //
+        return view('intranet.empresas.index', [
+            'empresas' => Empresa::orderBy('id', 'asc')->get()
+        ]);
     }
 
     /**

@@ -13,7 +13,9 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        //
+        return view('intranet.categorias.index', [
+            'categorias' => Categoria::orderBy('id', 'asc')->get()
+        ]);
     }
 
     /**
