@@ -63,6 +63,8 @@ class EtiquetaController extends Controller
      */
     public function destroy(Etiqueta $etiqueta)
     {
-        //
+        $etiqueta->delete();
+
+        return to_route('intranet.etiquetas.index')->with('message', 'Etiqueta Eliminada.');
     }
 }

@@ -23,7 +23,8 @@
                         </button>
                     </div>
                 </div>
-                <div class="sm:flex sm:items-center sm:justify-between">
+                <div class="sm:flex-row sm:items-center sm:justify-between">
+                    <x-mensaje></x-mensaje>
                     <div class="flex items-center gap-x-3">
                         <h2 class="text-lg font-bold text-gray-800">Etiquetas</h2>
                         <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $etiquetas->count() }}</span>
@@ -64,7 +65,7 @@
                                             class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar etiqueta">
                                             <i class="lni lni-pencil"></i>
                                         </a>                                
-                                        <form method="POST" action="{{ url('etiquetas.destroy', $etiqueta->id) }}" onsubmit="return confirm('¿Deseas eliminar este etiqueta?');">
+                                        <form method="POST" action="{{ route('intranet.etiquetas.destroy', $etiqueta->id) }}" onsubmit="return confirm('¿Deseas eliminar este etiqueta?');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class=" p-1 rounded-md">

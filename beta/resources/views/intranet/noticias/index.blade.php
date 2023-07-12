@@ -23,12 +23,14 @@
                         </button>
                     </div>
                 </div>
-                <div class="sm:flex sm:items-center sm:justify-between">
+                <div class="sm:flex-row sm:items-center sm:justify-between">
+                    <x-mensaje></x-mensaje>
                     <div class="flex items-center gap-x-3">
                         <h2 class="text-lg font-bold text-gray-800">Noticias</h2>
                         <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $noticias->count() }}</span>
                         <p class="mt-1 text-sm text-gray-500">Estas son los noticias que llevamos este año.</p>
                     </div>
+                    
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-end">
                     <div class="flex items-center gap-x-3 align-middle">
@@ -81,7 +83,7 @@
                                     class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar Noticia">
                                     <i class="lni lni-pencil"></i>
                                 </a>                                
-                                <form method="POST" action="{{ url('noticias.destroy', $noticia->id) }}" onsubmit="return confirm('¿Deseas eliminar este noticia?');">
+                                <form method="POST" action="{{ route('intranet.noticias.destroy', $noticia->id) }}" onsubmit="return confirm('¿Deseas eliminar este noticia?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class=" p-1 rounded-md">

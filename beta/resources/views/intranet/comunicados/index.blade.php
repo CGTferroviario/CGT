@@ -10,6 +10,9 @@
     <div class="p-8 fondo comunicados">
         <div class="bg-blanco-transp bordeRojo rounded-lg p-4">
             <div class="grid grid-cols-3 mt-2 mb-3">
+                <div class="col-span-3">
+                    <x-mensaje></x-mensaje>
+                </div>
                 <div class="sm:flex sm:items-center sm:justify-start">
                     <div class="inline-flex overflow-hidden text-white divide-x rounded-lg rtl:flex-row-reverse">
                         <button class="px-3 py-2 text-xs font-medium text-black transition-colors duration-200 bg-red-500 sm:text-sm">
@@ -23,12 +26,13 @@
                         </button>
                     </div>
                 </div>
-                <div class="sm:flex sm:items-center sm:justify-between">
+                <div class="sm:flex-row sm:items-center sm:justify-between">
                     <div class="flex items-center gap-x-3">
                         <h2 class="text-lg font-bold text-gray-800">Comunicados</h2>
                         <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $comunicados->count() }}</span>
                         <p class="mt-1 text-sm text-gray-500">Estos son los comunicados que llevamos este año.</p>
                     </div>
+                    
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-end">
                     <div class="flex items-center gap-x-3 align-middle">
@@ -44,9 +48,9 @@
                 </div>
             </div> 
             <table id="comunicadosAdmin" class="display nowrap text-sm pt-5 font-normal rounded-t-lg" style="width:100%">
-                <thead class="rounded-t-lg bg-green-300">
+                <thead class="rounded-t-lg bg-black text-white">
                     <tr>
-                        <th>Nº</th>
+                        <th class="rounded-tl-lg">Nº</th>
                         <th>Acciones</th>
                         <th>Fecha</th>
                         <th title="Visualizaciones">Vis.</th>
@@ -54,7 +58,7 @@
                         <th>Título</th>
                         <th>Empresa</th>                        
                         <th>Categorías</th>
-                        <th>Etiquetas</th>
+                        <th class="rounded-tr-lg">Etiquetas</th>
                         <th>Subtítulo</th>
                         <th>Cuerpo</th>
                         <th>Adjunto 1</th>
@@ -69,9 +73,6 @@
                         <td>{{ $comunicado->numero }}</td>
                         <td>
                             <div class="flex justify-start gap-1 text-xl mt-2">
-                                {{-- <div class="rounded-md p-2 hover:bg-blue-300 hover:text-white icono">
-                                    <a href="" class=""><i class="lni lni-envelope"></i></a>
-                                </div> --}}
                                 <a x-data="{ tooltip: 'Enviar' }" href="{{ url('comunicados.edit', $comunicado->id) }}"
                                     class="text-blue-500 hover:bg-blue-500 hover:text-white p-1 rounded-lg h-8" title="Enviar por correo">
                                     <i class="lni lni-envelope"></i>
@@ -80,7 +81,7 @@
                                     class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar Comunicado">
                                     <i class="lni lni-pencil"></i>
                                 </a>                                
-                                <form method="POST" action="{{ url('comunicados.destroy', $comunicado->id) }}" onsubmit="return confirm('¿Deseas eliminar este comunicado?');">
+                                <form method="POST" action="{{ route('intranet.comunicados.destroy', $comunicado->id) }}" onsubmit="return confirm('¿Deseas eliminar este comunicado?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class=" p-1 rounded-md">

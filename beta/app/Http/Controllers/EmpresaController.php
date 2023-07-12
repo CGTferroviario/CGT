@@ -63,6 +63,8 @@ class EmpresaController extends Controller
      */
     public function destroy(Empresa $empresa)
     {
-        //
+        $empresa->delete();
+
+        return to_route('intranet.empresas.index')->with('message', 'Empresa Eliminada.');
     }
 }

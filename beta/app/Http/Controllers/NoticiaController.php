@@ -63,6 +63,8 @@ class NoticiaController extends Controller
      */
     public function destroy(Noticia $noticia)
     {
-        //
+        $noticia->delete();
+
+        return to_route('intranet.noticias.index')->with('message', 'Noticia Eliminada.');
     }
 }

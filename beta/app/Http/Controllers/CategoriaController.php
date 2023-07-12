@@ -63,6 +63,8 @@ class CategoriaController extends Controller
      */
     public function destroy(Categoria $categoria)
     {
-        //
+        $categoria->delete();
+
+        return to_route('intranet.categorias.index')->with('message', 'Categoría Eliminada.');
     }
 }

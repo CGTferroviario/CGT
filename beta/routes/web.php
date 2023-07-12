@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ComunicadoController;
 use App\Http\Controllers\ProfileController;
@@ -7,7 +8,10 @@ use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\EtiquetaController;
 use App\Http\Controllers\NoticiaController;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Spatie\Permission\Contracts\Permission;
 
 /*
 |--------------------------------------------------------------------------
@@ -136,6 +140,9 @@ Route::middleware('auth')->name('intranet.')->prefix('intranet')->group(function
     Route::resource('/empresas', EmpresaController::class);
     Route::resource('/categorias', CategoriaController::class);
     Route::resource('/etiquetas', EtiquetaController::class);
+    Route::resource('/roles', RoleController::class);
+    Route::resource('/permissions', PermissionController::class);
+    Route::resource('/usuarios', UserController::class);
 
 });
 

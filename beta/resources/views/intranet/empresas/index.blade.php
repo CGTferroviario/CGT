@@ -23,7 +23,8 @@
                         </button>
                     </div>
                 </div>
-                <div class="sm:flex sm:items-center sm:justify-between">
+                <div class="sm:flex-row sm:items-center sm:justify-between">
+                    <x-mensaje></x-mensaje>
                     <div class="flex items-center gap-x-3">
                         <h2 class="text-lg font-bold text-gray-800">Empresas</h2>
                         <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $empresas->count() }}</span>
@@ -63,15 +64,11 @@
                                 <td>{{ $empresa->id }}</td>
                                 <td>
                                     <div class="flex justify-start gap-1 text-xl mt-2">
-                                        {{-- <a x-data="{ tooltip: 'Enviar' }" href="{{ url('empresas.edit', $empresa->id) }}"
-                                            class="text-blue-500 hover:bg-blue-500 hover:text-white p-1 rounded-lg h-8" title="Enviar por correo">
-                                            <i class="lni lni-envelope"></i>
-                                        </a>  --}}
                                         <a x-data="{ tooltip: 'Edite' }" href="{{ url('empresas.edit', $empresa->id) }}"
                                             class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar empresa">
                                             <i class="lni lni-pencil"></i>
                                         </a>                                
-                                        <form method="POST" action="{{ url('empresas.destroy', $empresa->id) }}" onsubmit="return confirm('¿Deseas eliminar este empresa?');">
+                                        <form method="POST" action="{{ route('intranet.empresas.destroy', $empresa->id) }}" onsubmit="return confirm('¿Deseas eliminar esta empresa?');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class=" p-1 rounded-md">

@@ -19,7 +19,7 @@ class ComunicadoController extends Controller
     {
         return view('intranet.comunicados.index', [
             'comunicados' => Comunicado::orderBy('fecha', 'desc')->get()
-        ]); 
+        ]);
     }
 
     public function bibliotecaComunicados()
@@ -38,7 +38,12 @@ class ComunicadoController extends Controller
      */
     public function create()
     {
-        //
+        return view('intranet.comunicados.create', [
+            'comunicados' => Comunicado::orderBy('id', 'desc')->paginate(15),
+            'empresas' => Empresa::orderBy('id', 'asc')->get(),
+            'categorias' => Categoria::orderBy('id', 'asc')->get(),
+            'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
+        ]);
     }
 
     /**
@@ -78,6 +83,8 @@ class ComunicadoController extends Controller
      */
     public function destroy(Comunicado $comunicado)
     {
-        //
+        $comunicado->delete();
+
+        return to_route('intranet.comunicados.index')->with('message', 'Comunicado Eliminado.');
     }
 }

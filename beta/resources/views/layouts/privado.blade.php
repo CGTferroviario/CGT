@@ -21,6 +21,9 @@
 
             <!-- Page Content -->
             <main class="">
+                
+                        
+                
 
                 {{-- @switch($i)
                     @case(1)
@@ -40,16 +43,17 @@
 
 
                 @include('parciales.barralateral')
-                {{ $slot }}
+                
                 <div class="pt-20 sm:ml-52">
                     <!-- Page Heading -->
-                @if (isset($header))
-                    <header class="bg-red-500 shadow">
-                        <div class="max-w-7xl mx-auto py-3 px-2 sm:px-3 lg:px-4 text-center">
-                            {{ $header }}
-                        </div>
-                    </header>
-                @endif
+                    @if (isset($header))
+                        <header class="bg-red-500 shadow">
+                            <div class="max-w-7xl mx-auto py-3 px-2 sm:px-3 lg:px-4 text-center">
+                                {{ $header }}
+                            </div>
+                        </header>
+                    @endif
+                    {{ $slot }}
                     @yield('contenido')
                 </div>
             </main>

@@ -20,6 +20,7 @@
                     <i class="lni lni-dashboard rojoBrillante transition duration-75  group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Panel de Control</span>
                 </a>
             </li>
+            <hr>
             <li class="">                   
                 <a href="{{ route('intranet.comunicados.index') }}" :active="request()->routeIs('comunicados')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-bullhorn rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i><span class="ml-3">Comunicados</span>
@@ -50,23 +51,29 @@
                     <i class="lni lni-tag rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Etiquetas</span>
                 </a>
             </li>
+            <hr>
             <li class="">                    
-                <a href="{{ url('intranet.roles.index') }}" :active="request()->routeIs('roles')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-support rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Perfiles</span>
+                <a href="{{ route('intranet.roles.index') }}" :active="request()->routeIs('roles')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="lni lni-support rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Roles</span>
                 </a>
             </li>
             <li class="">                    
-                <a href="{{ url('intranet.permissions.index') }}" :active="request()->routeIs('permissions')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ route('intranet.permissions.index') }}" :active="request()->routeIs('permissions')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-license rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Permisos</span>
                 </a>
             </li>
             <li class="">                    
-                <a href="{{ url('intranet.users.index') }}" :active="request()->routeIs('users')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ route('intranet.usuarios.index') }}" :active="request()->routeIs('users')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-users rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Usuarios</span>
                 </a>
             </li>
             <hr>
-            <li>
+            <li class="">                    
+                <a href="{{ route('profile.edit') }}" :active="request()->routeIs('users')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="lni lni-user rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Perfil</span>
+                </a>
+            </li>
+            {{-- <li>
                 <button type="button"
                     class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
@@ -122,7 +129,7 @@
                     <span
                         class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </aside>
