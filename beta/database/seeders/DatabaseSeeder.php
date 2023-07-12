@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Comunicado;
+use App\Models\Noticia;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -31,6 +32,10 @@ class DatabaseSeeder extends Seeder
         $this->call(CategoriaSeeder::class);
 
         $comunicado = Comunicado::factory(50)->create([
+            
+        ]);
+
+        $noticia = Noticia::factory(50)->create([
             
         ]);
 

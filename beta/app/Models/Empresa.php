@@ -17,4 +17,8 @@ class Empresa extends Model
     {
         return $this->hasMany(Categoria::class); 
     }
+    public function noticias()
+    {
+        return $this->hasMany(Noticia::class, 'empresa_id');
+    }
 }

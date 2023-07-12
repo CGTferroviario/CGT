@@ -13,4 +13,8 @@ class Etiqueta extends Model
     {
         return $this->hasMany(Comunicado::class); 
     }
+    public function noticias()
+    {
+        return $this->hasMany(Noticia::class, 'etiqueta_id');
+    }
 }

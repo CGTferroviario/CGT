@@ -26,7 +26,7 @@
                 </a>
             </li>
             <li class="">                   
-                <a href="{{ url('intranet.noticias.index') }}" :active="request()->routeIs('noticias')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ route('intranet.noticias.index') }}" :active="request()->routeIs('noticias')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-book rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i><span class="ml-3">Noticias</span>
                 </a>
             </li>
@@ -46,7 +46,7 @@
                 </a>
             </li>
             <li class="">                    
-                <a href="{{ url('intranet.etiquetas.index') }}" :active="request()->routeIs('etiquetas')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ route('intranet.etiquetas.index') }}" :active="request()->routeIs('etiquetas')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-tag rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Etiquetas</span>
                 </a>
             </li>

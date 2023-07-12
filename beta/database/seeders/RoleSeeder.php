@@ -13,10 +13,12 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-        Role::firstOrcreate(['name' => 'admin' ]);
-        Role::firstOrcreate(['name' => 'superAdmin' ]);
-        Role::firstOrcreate(['name' => 'editor' ]);
-        Role::firstOrcreate(['name' => 'delegado' ]);
-        Role::firstOrcreate(['name' => 'usuario' ]);
+        Role::firstOrcreate(['name' => 'admin', 'descripcion' => 'El que corta el bakalao' ]);
+        Role::firstOrcreate(['name' => 'superAdmin', 'descripcion' => 'El puto amo del lugar' ]);
+        Role::firstOrcreate(['name' => 'editor', 'descripcion' => 'El que edita lo que haya que editar' ]);
+        Role::firstOrcreate(['name' => 'delegado', 'descripcion' => 'El que delega lo delegable' ]);
+        Role::firstOrcreate(['name' => 'coordinador', 'descripcion' => 'El coordinador siempre llama dos veces' ]);
+        Role::firstOrcreate(['name' => 'seccion', 'descripcion' => 'Las secciones seccionables' ]);
+        Role::firstOrcreate(['name' => 'usuario', 'descripcion' => 'El culpable de todo' ]);
     }
 }
