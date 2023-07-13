@@ -8,6 +8,7 @@ use App\Models\Categoria;
 use App\Models\Comunicado;
 use App\Models\Empresa;
 use App\Models\Etiqueta;
+use Illuminate\Support\Facades\Auth;
 use Spatie\FlareClient\View;
 
 class ComunicadoController extends Controller
@@ -51,7 +52,34 @@ class ComunicadoController extends Controller
      */
     public function store(StoreComunicadoRequest $request)
     {
-        //
+        $publicado = $request->publicado;
+        if ($request->publicado == 'on') {
+            $publicado = 1;
+        } else {
+            $publicado = 0;
+        };
+
+        $usuario = Auth::user()->id;
+
+        $comunicado = Comunicado::create([
+            'numero' => $request->numero,
+            'empresa_id' => $request->empresa,
+            'etiqueta_id' => $request->etiqueta,
+            'categoria_id' => $request->categoria,
+            'fecha' => $request->fecha,
+            'titulo' => $request->titulo,
+            'subtitulo' => $request->subtitulo,
+            'cuerpo' => $request->cuerpo,
+            'adjunto1' => $request->adjunto1,
+            'adjunto2' => $request->adjunto2,
+            'adjunto3' => $request->adjunto3,
+            'imagen' => $request->imagen,
+            
+            'publicado' => $publicado,
+            'user_id' => $usuario,
+        ]);
+
+        return redirect(route('comunicados.index'))->with('message', 'Comunicado Creado Correctamente');
     }
 
     /**

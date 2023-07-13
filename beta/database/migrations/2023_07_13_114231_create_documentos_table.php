@@ -11,24 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comunicados', function (Blueprint $table) {
+        Schema::create('documentos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedMediumInteger('visualizaciones')->default(0);
-            $table->unsignedMediumInteger('descargas')->default(0);
-            $table->boolean('publicado');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedTinyInteger('numero');
+            $table->unsignedMediumInteger('visualizaciones')->nullable();
+            $table->unsignedMediumInteger('descargas')->nullable();
             $table->unsignedBigInteger('empresa_id')->nullable();
             $table->unsignedBigInteger('categoria_id')->nullable();
             $table->unsignedBigInteger('etiqueta_id')->nullable();
             $table->date('fecha');
             $table->string('titulo');
-            $table->string('subtitulo');
-            $table->text('cuerpo');
-            $table->string('adjunto1')->nullable();
-            $table->string('adjunto2')->nullable();
-            $table->string('adjunto3')->nullable();
-            $table->string('imagen');
+            $table->text('descripcion');
+            $table->string('ruta');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade');
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
@@ -42,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comunicados');
+        Schema::dropIfExists('documentos');
     }
 };

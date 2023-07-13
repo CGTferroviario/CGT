@@ -103,7 +103,7 @@
                     <div id="dropdownBiblioteca" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownBibliotecaButton">
                             <li><a href="{{ url('biblioteca/comunicados') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Comunicados de la CGT">COMUNICADOS</a></li>
-                            <li><a href="{{ url('biblioteca/seguridad') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Información de Seguridad en la Circulación">SEGURIDAD EN LA CIRCULACIÓN LABORAL</a></li>
+                            <li><a href="{{ url('biblioteca/seguridad') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Información de Seguridad en la Circulación">SEGURIDAD EN LA CIRCULACIÓN</a></li>
                             <li><a href="{{ url('biblioteca/archivo') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Archivo de información histórica">ARCHIVO HISTÓRICO</a></li>
                             <li><a href="{{ url('biblioteca/defensa') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Información sobre la defensa de un ferrocarril público y social">DEFENSA DEL FERROCARRIL</a></li>
                             <li><a href="{{ url('biblioteca/colegio') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Colegio de Huérfanos Ferroviarios">COLEGIO DE HUÉRFANOS</a></li>

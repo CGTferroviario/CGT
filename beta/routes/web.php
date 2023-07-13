@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ComunicadoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\EtiquetaController;
 use App\Http\Controllers\NoticiaController;
@@ -143,6 +144,8 @@ Route::middleware('auth')->name('intranet.')->prefix('intranet')->group(function
     Route::resource('/roles', RoleController::class);
     Route::resource('/permissions', PermissionController::class);
     Route::resource('/usuarios', UserController::class);
+    Route::resource('/documentos', DocumentoController::class);
+
 
 });
 

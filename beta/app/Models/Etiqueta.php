@@ -11,10 +11,10 @@ class Etiqueta extends Model
 
     public function comunicados()
     {
-        return $this->hasMany(Comunicado::class); 
+        return $this->hasMany(Comunicado::class, 'etiqueta_id'); 
     }
     public function noticias()
     {
-        return $this->hasMany(Noticia::class, 'etiqueta_id');
+        return $this->hasMany(Noticia::class);
     }
 }

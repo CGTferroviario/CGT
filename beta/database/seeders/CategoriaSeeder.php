@@ -23,6 +23,8 @@ class CategoriaSeeder extends Seeder
             ['nombre' => 'CONDUCCIÓN', 'empresa_id' => 2 ],
             ['nombre' => 'TALLERES', 'empresa_id' => 2 ],
             ['nombre' => 'JURIDICA', 'empresa_id' => 2 ],
+            ['nombre' => 'BIBLIOTECA', 'empresa_id' => 0 ],
+            ['nombre' => 'RECURSOS', 'empresa_id' => 0 ],
         ]);
     }
 }

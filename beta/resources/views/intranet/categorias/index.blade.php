@@ -78,7 +78,7 @@
                                     </div>
                                 </td>
                                 <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $categoria->nombre }}">{{ $categoria->nombre }}</span></td>
-                                <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $categoria->empresa->nombre }}">{{ $categoria->empresa->nombre }}</span></td>
+                                <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $categoria->empresa?->nombre }}">{{ $categoria->empresa?->nombre }}</span></td>
                                 <td class="text-center">{{ $categoria->activa }}</td>
                             </tr>
                             
