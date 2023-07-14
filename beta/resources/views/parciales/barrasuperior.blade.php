@@ -1,7 +1,7 @@
 <nav class="bg-oscuro fixed w-full z-40 top-0 left-0">
     <div class="flex flex-wrap items-center justify-between mx-auto p-1">
         <div class="flex items-center">
-            <a href="{{ url('/') }}" class="flex logo">
+            <a href="{{ url('/intranet') }}" class="flex logo">
                 <img class="p-1" src="/img/logo_sm.png" alt="CGT Ferroviario" />
                 <span class="mx-2 titular mt-2 text-white sm:flex md:hidden xl:flex whitespace-nowrap">Ferroviario7</span>
             </a>
@@ -10,9 +10,9 @@
             <ul
                 class="flex flex-col p-4 md:p-0 mt-4 ml-1 font-medium border border-gray-700 rounded-lg md:flex-row md:space-x-4 md:mt-0 md:border-0">
                 <li>
-                    <button id="dropdownAdifLink" data-dropdown-toggle="dropdownAdif" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-green-500 md:hover:bg-transparent">ADIF <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownAdifLink" data-dropdown-toggle="dropdownAdif" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-red-500 md:hover:bg-transparent">ADIF <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownAdif" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
+                    <div id="dropdownAdif" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownAdifButton">
                             <li aria-labelledby="dropdownAdifLink">
                                 <button id="doubleDropdownButtonAdif" data-dropdown-toggle="doubleDropdownAdif" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación General de ADIF">
@@ -41,7 +41,7 @@
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownRenfeLink" data-dropdown-toggle="dropdownRenfe" class="flex items-center justify-between w-full py-2 pl-3 pr-4  border-b md:hover:bg-transparent md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700">RENFE <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownRenfeLink" data-dropdown-toggle="dropdownRenfe" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-red-500 md:hover:bg-transparent">RENFE <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownRenfe" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownRenfeButton">
@@ -74,7 +74,7 @@
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownEmpAuxLink" data-dropdown-toggle="dropdownEmpAux" class="flex items-center justify-between w-full py-2 pl-3 pr-4  border-b md:hover:bg-transparent md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700">EMP. AUX. <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownEmpAuxLink" data-dropdown-toggle="dropdownEmpAux" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-red-500 md:hover:bg-transparent">EMP. AUX. <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownEmpAux" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownEmpAuxButton">
@@ -85,7 +85,7 @@
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownJuridicaLink" data-dropdown-toggle="dropdownJuridica" class="flex items-center justify-between w-full py-2 pl-3 pr-4  border-b md:hover:bg-transparent md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700">JURIDICA <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownJuridicaLink" data-dropdown-toggle="dropdownJuridica" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-red-500 md:hover:bg-transparent">JURIDICA <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownJuridica" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownJuridicaButton">
@@ -98,11 +98,12 @@
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownBibliotecaLink" data-dropdown-toggle="dropdownBiblioteca" class="flex items-center justify-between w-full py-2 pl-3 pr-4  border-b md:hover:bg-transparent md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700">BIBLIOTECA <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownBibliotecaLink" data-dropdown-toggle="dropdownBiblioteca" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-red-500 md:hover:bg-transparent">BIBLIOTECA <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownBiblioteca" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownBibliotecaButton">
                             <li><a href="{{ url('biblioteca/comunicados') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Comunicados de la CGT">COMUNICADOS</a></li>
+                            <li><a href="{{ url('biblioteca/noticias') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Noticias del Sector Ferroviario de la CGT">NOTICIAS</a></li>
                             <li><a href="{{ url('biblioteca/seguridad') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Información de Seguridad en la Circulación">SEGURIDAD EN LA CIRCULACIÓN</a></li>
                             <li><a href="{{ url('biblioteca/archivo') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Archivo de información histórica">ARCHIVO HISTÓRICO</a></li>
                             <li><a href="{{ url('biblioteca/defensa') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Información sobre la defensa de un ferrocarril público y social">DEFENSA DEL FERROCARRIL</a></li>
@@ -112,7 +113,7 @@
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownRecursosLink" data-dropdown-toggle="dropdownRecursos" class="flex items-center justify-between w-full py-2 pl-3 pr-4  border-b md:hover:bg-transparent md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700">RECURSOS <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownRecursosLink" data-dropdown-toggle="dropdownRecursos" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-red-500 md:hover:bg-transparent">RECURSOS <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownRecursos" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownRecursosButton">
@@ -126,7 +127,7 @@
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownEquipoLink" data-dropdown-toggle="dropdownEquipo" class="flex items-center justify-between w-full py-2 pl-3 pr-4  border-b md:hover:bg-transparent md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700">SFF-CGT <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownEquipoLink" data-dropdown-toggle="dropdownEquipo" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-red-500 md:hover:bg-transparent">SFF-CGT <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownEquipo" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownEquipoButton">

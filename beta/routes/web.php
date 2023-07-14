@@ -9,6 +9,7 @@ use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\EtiquetaController;
 use App\Http\Controllers\NoticiaController;
+use App\Http\Controllers\PaginaController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -28,13 +29,16 @@ use Spatie\Permission\Contracts\Permission;
 Route::get('/', function () {
     return view('welcome'); 
 });
+Route::get('/intranet', function () {
+    return view('intranet'); 
+});
 Route::get('/adif', function () {
     return view('adif')->name('adif');
 });
 Route::prefix('adif/')->group(function () {
-    Route::view('/infraestructura', 'adif.infraestructura');
-    Route::view('/circulacion', 'adif.circulacion'); 
-    Route::view('/oficinas', 'adif.oficinas');
+    Route::get('/infraestructura', [PaginaController::class, 'infraestructura'])->name('adif.infraestructura');
+    Route::get('/circulacion', [PaginaController::class, 'circulacion'])->name('adif.circulacion');
+    Route::get('/oficinas', [PaginaController::class, 'oficinas'])->name('adif.oficinas');
 });
 Route::prefix('adif/doc')->group(function () {
     Route::view('/afiliacion', 'adif.doc.afiliacion');
@@ -96,7 +100,8 @@ Route::get('/biblioteca', function () {
     return view('biblioteca')->name('biblioteca');
 });
 Route::prefix('biblioteca')->group(function () {
-    Route::get('/comunicados', [ComunicadoController::class, 'bibliotecaComunicados'])->name('biblioteca.comunicados'); 
+    Route::get('/comunicados', [ComunicadoController::class, 'bibliotecaComunicados'])->name('biblioteca.comunicados');
+    Route::get('/noticias', [NoticiaController::class, 'bibliotecaNoticias'])->name('biblioteca.noticias'); 
     Route::view('/seguridad', 'biblioteca.seguridad'); 
     Route::view('/defensa', 'biblioteca.defensa');
     Route::view('/archivo', 'biblioteca.archivo');

@@ -138,7 +138,6 @@ aside .lni{
 
 /* 4.- Colores */
 
-/* Colores */
 .rojo { color: rgb(255, 30, 0); }
 .rojoOscuro { color: rgb(82, 10, 0); }
 .rojoBrillante { color: rgb(254, 71, 85); }
@@ -151,8 +150,7 @@ aside .lni{
 .ADIF { color: rgb(0, 99, 56); }
 .SERVEO { color: rgb(255, 78, 0); }
 .LOGIRAIL { color: rgb(126, 1, 126); }
-.negro { color: black; }
-.blanco { color: white; }
+
 .bg-rojo { background: rgb(255, 30, 0); }
 .bg-rojoBrillante {
   background: rgb(254, 71, 85);
@@ -164,72 +162,37 @@ aside .lni{
 .bg-grisMedio { background: rgb(82, 82, 82); }
 .bg-grisClaro { background: rgb(214, 214, 214); }
 .bg-morado { background: rgb(130, 52, 245); }
+.bg-oscuro { background: rgb(47, 47, 47); }
+.bg-blanco-transp { background: rgba(255, 255, 255, .7); }
 
 /* Colores Empresas */
 .bg-RENFE { background: rgb(135, 0, 100); color: white;}
 .bg-ADIF { background: rgb(0, 99, 56); color: white; }
 .bg-SERVEO { background: rgb(255, 78, 0); color: white; }
 .bg-LOGIRAIL { background: rgb(126, 1, 126); color: white; }
-.bg-ILUNION {
-  background: rgb(255,211,0);
-  background: linear-gradient(180deg, rgba(255,211,0,1) 0%, rgba(0,121,199,1) 100%);
-  color: white;
-}
+.bg-ILUNION { background: rgb(255,211,0);
+              background: linear-gradient(180deg, rgba(255,211,0,1) 0%, rgba(0,121,199,1) 100%);
+              color: white; }
 .bg-SABA { background: rgb(1, 168, 151); color: white; }
 .bg-FGV { background: rgb(255, 178, 15); color: white; }
 
 /* Colores Categorias */
-.bg-INFRAESTRUCTURA {
-  background: rgb(230, 230, 40);
-  color: black;
-}
-.bg-OFICINAS {
-  background: rgb(150, 150, 200);
-  color: white;
-}
-.bg-CIRCULACIÓN {
-  background: rgb(231, 95, 85);
-  color: white;
-}
-.bg-TALLERES {
-  background: rgb(145, 218, 11);
-  color: white;
-}
-.bg-CONDUCCIÓN {
-  background: rgb(221, 104, 236);
-  color: white;
-}
-.bg-INTERVENCIÓN {
-  background: rgb(97, 4, 109);
-  color: white;
-}
-.bg-COMERCIAL {
-  background: rgb(189, 24, 211);
-  color: white;
-}
-.bg-negro { background: black; }
-.bg-blanco { background: white; }
-.bg-oscuro { background: rgb(47, 47, 47); }
-.bg-blanco-transp { background: rgba(255, 255, 255, .7); }
+.bg-INFRAESTRUCTURA { background: rgb(230, 230, 40); color: black; }
+.bg-OFICINAS { background: rgb(150, 150, 200); color: white; }
+.bg-CIRCULACIÓN { background: rgb(231, 95, 85); color: white; }
+.bg-TALLERES { background: rgb(145, 218, 11); color: white; }
+.bg-CONDUCCIÓN { background: rgb(221, 104, 236); color: white; }
+.bg-INTERVENCIÓN { background: rgb(97, 4, 109); color: white; }
+.bg-COMERCIAL { background: rgb(189, 24, 211); color: white; }
 
 /* Fin 4.- Colores */
 
 /* Bordes */
 
-.bordeRojo{
-  border: thin solid rgb(254, 71, 85);
-}
-.bordeTopRojo {
-  border-top: thin solid rgb(254, 71, 85);
-}
-.bordeBottomRojo {
-  border-bottom: thin solid rgb(254, 71, 85);
-}
-.bordeNegro{
-  border: thin solid rgb(47, 47, 47);
-}
-
-
+.bordeRojo{ border: thin solid rgb(254, 71, 85); }
+.bordeTopRojo { border-top: thin solid rgb(254, 71, 85); }
+.bordeBottomRojo { border-bottom: thin solid rgb(254, 71, 85); }
+.bordeNegro{ border: thin solid rgb(47, 47, 47); }
 
 /* 5.- Sección de INICIO */
 .tarjeta{
