@@ -10,14 +10,14 @@
             <ul
                 class="flex flex-col p-4 md:p-0 mt-4 ml-1 font-medium border border-gray-700 rounded-lg md:flex-row md:space-x-4 md:mt-0 md:border-0">
                 <li>
-                    <button id="dropdownAdifLink" data-dropdown-toggle="dropdownAdif" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-red-500 md:hover:bg-transparent">ADIF <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownAdifLink" data-dropdown-toggle="dropdownAdif" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">ADIF <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownAdif" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-oscuro divide-gray-600">
+                    <div id="dropdownAdif" class="z-50 hidden font-normal divide-y rounded-lg shadow w-48 bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownAdifButton">
                             <li aria-labelledby="dropdownAdifLink">
                                 <button id="doubleDropdownButtonAdif" data-dropdown-toggle="doubleDropdownAdif" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación General de ADIF">
                                     DOC. GENERAL<i class="lni lni-chevron-right ml-2"></i></button>
-                                <div id="doubleDropdownAdif" class="z-50 hidden divide-y rounded-lg shadow w-44 bg-gray-700">
+                                <div id="doubleDropdownAdif" class="z-50 hidden divide-y rounded-lg shadow w-48 bg-oscuro">
                                     <ul class="py-2 text-sm text-gray-200" aria-labelledby="doubleDropdownButtonAdif">
                                         <li><a href="{{ url('adif/doc/afiliacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AFILIACIÓN</a></li>
                                         <li><a href="{{ url('adif/doc/ayudas') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AYUDAS Y BENEFICIOS SOCIALES</a></li>
@@ -41,14 +41,14 @@
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownRenfeLink" data-dropdown-toggle="dropdownRenfe" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-red-500 md:hover:bg-transparent">RENFE <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownRenfeLink" data-dropdown-toggle="dropdownRenfe" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">RENFE <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownRenfe" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
+                    <div id="dropdownRenfe" class="z-50 hidden font-normal divide-y rounded-lg shadow w-48 bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownRenfeButton">
                             <li aria-labelledby="dropdownRenfeLink">
                                 <button id="doubleDropdownButtonRenfe" data-dropdown-toggle="doubleDropdownRenfe" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación General de RENFE">
                                     DOC. GENERAL<i class="lni lni-chevron-right ml-2"></i></button>
-                                <div id="doubleDropdownRenfe" class="z-50 hidden divide-y rounded-lg shadow w-44 bg-gray-700">
+                                <div id="doubleDropdownRenfe" class="z-50 hidden divide-y rounded-lg shadow w-48 bg-oscuro">
                                     <ul class="py-2 text-sm text-gray-200" aria-labelledby="doubleDropdownButtonRenfe">
                                         <li><a href="{{ url('renfe/doc/afiliacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AFILIACIÓN</a></li>
                                         <li><a href="{{ url('renfe/doc/ayudas') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AYUDAS Y BENEFICIOS SOCIALES</a></li>
@@ -74,9 +74,9 @@
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownEmpAuxLink" data-dropdown-toggle="dropdownEmpAux" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-red-500 md:hover:bg-transparent">EMP. AUX. <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownEmpAuxLink" data-dropdown-toggle="dropdownEmpAux" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">EMP. AUX. <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownEmpAux" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
+                    <div id="dropdownEmpAux" class="z-50 hidden font-normal divide-y rounded-lg shadow w-48 bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownEmpAuxButton">
                             <li><a href="{{ url('empresasaux/serveo') }}#" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación de SERVEO(Anteriormente FERROVIAL)">SERVEO</a></li>
                             <li><a href="{{ url('empresasaux/logirail') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación de LOGIRAIL">LOGIRAIL</a></li>
@@ -85,9 +85,9 @@
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownJuridicaLink" data-dropdown-toggle="dropdownJuridica" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-red-500 md:hover:bg-transparent">JURIDICA <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownJuridicaLink" data-dropdown-toggle="dropdownJuridica" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">JURIDICA <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownJuridica" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
+                    <div id="dropdownJuridica" class="z-50 hidden font-normal divide-y rounded-lg shadow w-48 bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownJuridicaButton">
                             <li><a href="{{ url('juridica/convenios') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">CONVENIOS COLECTIVOS</a></li>
                             <li><a href="{{ url('juridica/laboral') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">LEGISLACIÓN LABORAL</a></li>
@@ -98,9 +98,9 @@
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownBibliotecaLink" data-dropdown-toggle="dropdownBiblioteca" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-red-500 md:hover:bg-transparent">BIBLIOTECA <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownBibliotecaLink" data-dropdown-toggle="dropdownBiblioteca" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">BIBLIOTECA <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownBiblioteca" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
+                    <div id="dropdownBiblioteca" class="z-50 hidden font-normal divide-y rounded-lg shadow w-48 bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownBibliotecaButton">
                             <li><a href="{{ url('biblioteca/comunicados') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Comunicados de la CGT">COMUNICADOS</a></li>
                             <li><a href="{{ url('biblioteca/noticias') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Noticias del Sector Ferroviario de la CGT">NOTICIAS</a></li>
@@ -113,9 +113,9 @@
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownRecursosLink" data-dropdown-toggle="dropdownRecursos" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-red-500 md:hover:bg-transparent">RECURSOS <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownRecursosLink" data-dropdown-toggle="dropdownRecursos" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">RECURSOS <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownRecursos" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
+                    <div id="dropdownRecursos" class="z-50 hidden font-normal divide-y rounded-lg shadow w-48 bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownRecursosButton">
                             <li><a href="{{ url('recursos/videos') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Videos del equipo estatal">VIDEOS</a></li>
                             <li><a href="{{ url('recursos/audios') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Audios del equipo estatal">AUDIOS</a></li>
@@ -127,9 +127,9 @@
                     </div>
                 </li>
                 <li>
-                    <button id="dropdownEquipoLink" data-dropdown-toggle="dropdownEquipo" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-gray-700 active:text-red-500 md:hover:bg-transparent">SFF-CGT <i class="lni lni-chevron-down ml-2"></i></button>
+                    <button id="dropdownEquipoLink" data-dropdown-toggle="dropdownEquipo" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">SFF-CGT <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownEquipo" class="z-50 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
+                    <div id="dropdownEquipo" class="z-50 hidden font-normal divide-y rounded-lg shadow w-48 bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownEquipoButton">
                             <li><a href="{{ url('equipo/sp') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Información del equipo estatal">EQUIPO ESTATAL</a></li>
                             <li><a href="{{ url('equipo/mapa') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">MAPA SINDICAL</a></li>

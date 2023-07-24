@@ -21,4 +21,8 @@ class Empresa extends Model
     {
         return $this->hasMany(Noticia::class, 'empresa_id');
     }
+    public function documentos()
+    {
+        return $this->hasMany(Documento::class);
+    }
 }

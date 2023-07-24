@@ -36,6 +36,11 @@
                     <i class="lni lni-files rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Documentos</span>
                 </a>
             </li>
+            <li class="">
+                <a href="{{ url('intranet.archivos.index') }}" :active="request()->routeIs('archivos')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="lni lni-archive rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Archivos</span>
+                </a>
+            </li>
             <li class="">                    
                 <a href="{{ route('intranet.empresas.index') }}" :active="request()->routeIs('empresas')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-apartment rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Empresas</span>

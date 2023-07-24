@@ -1,7 +1,7 @@
 <x-privado-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-900 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-900 leading-tight">
             {{ __('Documentos') }}
         </h2>
     </x-slot>
@@ -95,7 +95,6 @@
                         <td>{{ $documento->user->nombre }}</td>
                         <td>{{ $documento->titulo }}</td>
                         <td>{{ $documento->descripcion }}</td>
-                        {{-- @dd($documento) --}}
                         <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $documento->empresa?->nombre }}">{{ $documento->empresa?->nombre }}</span></td>
                         <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $documento->categoria?->nombre }}">{{ $documento->categoria?->nombre }}</span></td>
                         <td>{{ $documento->etiqueta?->nombre }}</td>

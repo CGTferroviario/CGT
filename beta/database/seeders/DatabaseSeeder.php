@@ -27,11 +27,11 @@ class DatabaseSeeder extends Seeder
         $this->call(CategoriaSeeder::class);
         $this->call(EtiquetaSeeder::class);
 
-        $comunicado = Comunicado::factory(50)->create([
+        $comunicado = Comunicado::factory(100)->create([
             
         ]);
 
-        $noticia = Noticia::factory(50)->create([
+        $noticia = Noticia::factory(100)->create([
             
         ]);
 

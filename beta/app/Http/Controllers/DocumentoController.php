@@ -12,21 +12,12 @@ use Illuminate\Support\Facades\Auth;
 
 class DocumentoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        
         return view('intranet.documentos.index', [
             'documentos' => Documento::orderBy('fecha', 'desc')->get()
-            
         ]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('intranet.documentos.create', [
@@ -36,15 +27,8 @@ class DocumentoController extends Controller
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
         ]);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreDocumentoRequest $request)
-    {
-        
-
-        
+    {        
         // $usuario = Auth::user()->id;
         
         $validatedData = $request->validated();
@@ -62,39 +46,15 @@ class DocumentoController extends Controller
         
         // Asociar la categoría, empresa, etiquetas y usuario
         $documento->user_id = auth()->user()->id;
-        // dd($request->empresa);
         $documento->empresa_id = $request->empresa;
         $documento->categoria_id = $request->categoria;
-        $documento->etiqeuta_id = $request->etiqueta;
-        // dd($documento);
+        $documento->etiqueta_id = $request->etiqueta;
         
         $documento->save();
 
         // $documento->etiquetas()->attach($validatedData['etiquetas']);
 
         return redirect()->back()->with('success', 'Documento subido correctamente.');
-
-        
-
-        // $comunicado = Comunicado::create([
-        //     'numero' => $request->numero,
-        //     'empresa_id' => $request->empresa,
-        //     'etiqueta_id' => $request->etiqueta,
-        //     'categoria_id' => $request->categoria,
-        //     'fecha' => $request->fecha,
-        //     'titulo' => $request->titulo,
-        //     'subtitulo' => $request->subtitulo,
-        //     'cuerpo' => $request->cuerpo,
-        //     'adjunto1' => $request->adjunto1,
-        //     'adjunto2' => $request->adjunto2,
-        //     'adjunto3' => $request->adjunto3,
-        //     'imagen' => $request->imagen,
-            
-        //     'publicado' => $publicado,
-        //     'user_id' => $usuario,
-        // ]);
-
-        // return redirect(route('comunicados.index'))->with('message', 'Comunicado Creado Correctamente');
     }
 
 

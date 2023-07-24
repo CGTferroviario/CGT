@@ -17,9 +17,9 @@ class ComunicadoFactory extends Factory
     public function definition(): array
     {
         return [
-            'numero' => fake()->unique()->numberBetween(1,50),
-            'visualizaciones' => $this->faker->numberBetween(1,4000),
-            'descargas' => $this->faker->numberBetween(1,4000),
+            'numero' => fake()->unique()->numberBetween(1,100),
+            // 'visualizaciones' => $this->faker->numberBetween(1,4000),
+            // 'descargas' => $this->faker->numberBetween(1,4000),
             'publicado' => $this->faker->boolean(),
             'user_id' => $this->faker->numberBetween(1,4),
             'empresa_id' => $this->faker->numberBetween(1,9),
