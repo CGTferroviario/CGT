@@ -17,4 +17,8 @@ class Etiqueta extends Model
     {
         return $this->hasMany(Noticia::class);
     }
+    public function documentos()
+    {
+        return $this->belongsToMany(Documento::class, 'documento_etiqueta');
+    }
 }

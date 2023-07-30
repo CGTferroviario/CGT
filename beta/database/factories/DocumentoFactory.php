@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Documento;
+use App\Models\Etiqueta;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,13 +20,12 @@ class DocumentoFactory extends Factory
 
     public function definition(): array
     {        
+    
         return [
-            // 'visualizaciones' => $this->faker->numberBetween(1,4000),
-            // 'descargas' => $this->faker->numberBetween(1,4000),
             'user_id' => $this->faker->numberBetween(1,4),
             'empresa_id' => $this->faker->numberBetween(1,5),
             'categoria_id' => $this->faker->numberBetween(1,9),
-            'etiqueta_id' => $this->faker->numberBetween(1,21),
+            // 'etiqueta_id' => $this->faker->numberBetween(1,21),
             'fecha' => $this->faker->date(),
             'titulo' => $this->faker->sentence(8),
             'descripcion' => $this->faker->paragraph,
@@ -35,6 +35,7 @@ class DocumentoFactory extends Factory
                 false
             ),
         ];
+        
     }
 }
 

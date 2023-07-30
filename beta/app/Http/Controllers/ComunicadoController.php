@@ -33,7 +33,7 @@ class ComunicadoController extends Controller
     {
         return view('intranet.comunicados.create', [
             'comunicados' => Comunicado::orderBy('id', 'desc')->paginate(15),
-            'empresas' => Empresa::orderBy('id', 'asc')->get(),
+            'empresas' => Empresa::where('comunicados', '=', 1)->orderBy('id', 'asc')->get(),
             'categorias' => Categoria::orderBy('id', 'asc')->get(),
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
         ]);

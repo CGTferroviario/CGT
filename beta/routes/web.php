@@ -35,56 +35,56 @@ Route::get('/intranet', function () {
 Route::get('/adif', function () {
     return view('adif')->name('adif');
 });
-Route::prefix('adif')->group(function () {
-    Route::get('/infraestructura', [PaginaController::class, 'infraestructura'])->name('adif.infraestructura');
-    Route::get('/circulacion', [PaginaController::class, 'circulacion'])->name('adif.circulacion');
-    Route::get('/oficinas', [PaginaController::class, 'oficinasADIF'])->name('adif.oficinas');
+Route::controller(PaginaController::class)->prefix('adif')->name('adif.')->group(function () {
+    Route::get('/infraestructura', 'infraestructura');
+    Route::get('/circulacion', 'circulacion');
+    Route::get('/oficinas', 'oficinasADIF');
 });
-Route::prefix('adif/doc')->group(function () {
-    Route::get('/afiliacion', [PaginaController::class, 'afiliacionADIF'])->name('adif.doc.afiliacion');
-    Route::get('/ayudas', [PaginaController::class, 'ayudasADIF'])->name('adif.doc.ayudas');
-    Route::get('/igualdad', [PaginaController::class, 'igualdadADIF'])->name('adif.doc.igualdad');
-    Route::get('/legislacion', [PaginaController::class, 'legislacionADIF'])->name('adif.doc.legislacion');
-    Route::get('/licencias', [PaginaController::class, 'licenciasADIF'])->name('adif.doc.licencias');
-    Route::get('/mapa', [PaginaController::class, 'mapaADIF'])->name('adif.doc.mapa');
-    Route::get('/conciliacion', [PaginaController::class, 'conciliacionADIF'])->name('adif.doc.conciliacion');
-    Route::get('/modelos', [PaginaController::class, 'modelosADIF'])->name('adif.doc.modelos');
-    Route::get('/protocolos', [PaginaController::class, 'protocolosADIF'])->name('adif.doc.protocolos');
-    Route::get('/salud', [PaginaController::class, 'saludADIF'])->name('adif.doc.salud');
-    Route::get('/teletrabajo', [PaginaController::class, 'teletrabajoADIF'])->name('adif.doc.teletrabajo');
-    Route::get('/tablas', [PaginaController::class, 'tablasADIF'])->name('adif.doc.tablas');
+Route::controller(PaginaController::class)->prefix('adif/doc')->name('adif.doc.')->group(function () {
+    Route::get('/afiliacion', 'afiliacionADIF');
+    Route::get('/ayudas', 'ayudasADIF');
+    Route::get('/igualdad', 'igualdadADIF');
+    Route::get('/legislacion', 'legislacionADIF');
+    Route::get('/licencias', 'licenciasADIF');
+    Route::get('/mapa', 'mapaADIF');
+    Route::get('/conciliacion', 'conciliacionADIF');
+    Route::get('/modelos', 'modelosADIF');
+    Route::get('/protocolos', 'protocolosADIF');
+    Route::get('/salud', 'saludADIF');
+    Route::get('/teletrabajo', 'teletrabajoADIF');
+    Route::get('/tablas', 'tablasADIF');
 });
 Route::get('/renfe', function () {
     return view('renfe')->name('renfe');
 });
-Route::prefix('renfe/')->group(function () {
-    Route::get('/comercial', [PaginaController::class, 'comercial'])->name('renfe.comercial');
-    Route::get('/intervencion', [PaginaController::class, 'intervencion'])->name('renfe.intervencion');
-    Route::get('/conduccion', [PaginaController::class, 'conduccion'])->name('renfe.conduccion');
-    Route::get('/talleres', [PaginaController::class, 'talleres'])->name('renfe.talleres');
-    Route::get('/oficinas', [PaginaController::class, 'oficinasRENFE'])->name('renfe.oficinas');
+Route::controller(PaginaController::class)->prefix('renfe')->name('renfe.')->group(function () {
+    Route::get('/comercial', 'comercial');
+    Route::get('/intervencion', 'intervencion');
+    Route::get('/conduccion', 'conduccion');
+    Route::get('/talleres', 'talleres');
+    Route::get('/oficinas', 'oficinasRENFE');
 });
-Route::prefix('renfe/doc')->group(function () {
-    Route::get('/afiliacion', [PaginaController::class, 'afiliacionRENFE'])->name('renfe.doc.afiliacion');
-    Route::get('/ayudas', [PaginaController::class, 'ayudasRENFE'])->name('renfe.doc.ayudas');
-    Route::get('/igualdad', [PaginaController::class, 'igualdadRENFE'])->name('renfe.doc.igualdad');
-    Route::get('/legislacion', [PaginaController::class, 'legislacionRENFE'])->name('renfe.doc.legislacion');
-    Route::get('/licencias', [PaginaController::class, 'licenciasRENFE'])->name('renfe.doc.licencias');
-    Route::get('/mapa', [PaginaController::class, 'mapaRENFE'])->name('renfe.doc.mapa');
-    Route::get('/conciliacion', [PaginaController::class, 'conciliacionRENFE'])->name('renfe.doc.conciliacion');
-    Route::get('/modelos', [PaginaController::class, 'modelosRENFE'])->name('renfe.doc.modelos');
-    Route::get('/protocolos', [PaginaController::class, 'protocolosRENFE'])->name('renfe.doc.protocolos');
-    Route::get('/salud', [PaginaController::class, 'saludRENFE'])->name('renfe.doc.salud');
-    Route::get('/teletrabajo', [PaginaController::class, 'teletrabajoRENFE'])->name('renfe.doc.teletrabajo');
-    Route::get('/tablas', [PaginaController::class, 'tablasRENFE'])->name('renfe.doc.tablas');
+Route::controller(PaginaController::class)->prefix('renfe/doc')->name('renfe.doc.')->group(function () {
+    Route::get('/afiliacion', 'afiliacionRENFE');
+    Route::get('/ayudas', 'ayudasRENFE');
+    Route::get('/igualdad', 'igualdadRENFE');
+    Route::get('/legislacion', 'legislacionRENFE');
+    Route::get('/licencias', 'licenciasRENFE');
+    Route::get('/mapa', 'mapaRENFE');
+    Route::get('/conciliacion', 'conciliacionRENFE');
+    Route::get('/modelos', 'modelosRENFE');
+    Route::get('/protocolos', 'protocolosRENFE');
+    Route::get('/salud', 'saludRENFE');
+    Route::get('/teletrabajo', 'teletrabajoRENFE');
+    Route::get('/tablas', 'tablasRENFE');
 });
 Route::get('/empresasaux', function () {
     return view('empresasaux')->name('empresasaux');
 });
-Route::prefix('empresasaux')->group(function () {
-    Route::get('/serveo', [PaginaController::class, 'serveo'])->name('empresasaux.oficinas');
-    Route::get('/logirail', [PaginaController::class, 'logirail'])->name('empresasaux.logirail');
-    Route::get('/otras', [PaginaController::class, 'otras'])->name('empresasaux.otras');
+Route::controller(PaginaController::class)->prefix('empresasaux')->name('empresasaux.')->group(function () {
+    Route::get('/serveo', 'serveo');
+    Route::get('/logirail', 'logirail');
+    Route::get('/otras', 'otras');
 });
 Route::get('/juridica', function () {
     return view('juridica')->name('juridica');

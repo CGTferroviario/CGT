@@ -12,6 +12,16 @@ class DocumentoSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $filename = 'database/seeders/comunicados.csv';
+        
+        $file = fopen($filename, 'r');
+        while (($line = fgetcsv($file)) !== FALSE) {
+            print_r("jajaj");
+            print_r($line);
+            exit;
+    }
+    exit;
+    fclose($file);
+
     }
 }

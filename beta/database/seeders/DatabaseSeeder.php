@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Comunicado;
 use App\Models\Documento;
 use App\Models\Noticia;
+use App\Models\Etiqueta;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EmpresaSeeder::class);
         $this->call(CategoriaSeeder::class);
         $this->call(EtiquetaSeeder::class);
+        
 
         $comunicado = Comunicado::factory(100)->create([
             
@@ -39,6 +41,9 @@ class DatabaseSeeder extends Seeder
             
         ]);
 
+        $this->call(DocumentoEtiquetaSeeder::class);
+
+        
 		// supposed to only apply to a single connection and reset it's self
 		// but I like to explicitly undo what I've done for clarity
 		DB::statement('SET FOREIGN_KEY_CHECKS=1;');

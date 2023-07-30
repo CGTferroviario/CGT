@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+
 
 class Documento extends Model
 {
@@ -24,8 +26,44 @@ class Documento extends Model
         return $this->belongsTo(Categoria::class);
     }
 
-    public function etiquetas()
+    public function etiqueta()
     {
-        return $this->belongsTo(Etiqueta::class);
+        return $this->belongsToMany(Etiqueta::class);
+    }
+
+    public function scopeporEmpresaYCategoria(Builder $query,$empresa,$categoria): void
+    {
+        $query->WhereHas('empresa', 
+                    function($query)  use($empresa)
+                        {$query->where('nombre','=',$empresa);
+                            })
+                ->withWhereHas('categoria', 
+                    function($query) use($categoria)
+                        {$query->where('nombre','=',$categoria);
+        });
+    }
+    public function scopeporEmpresaEtiqueta(Builder $query,$empresa,$etiqueta): void
+    {
+        $query->whereHas('empresa', 
+                    function($query)  use($empresa)
+                        {$query->where('nombre','=',$empresa);
+                            })
+                ->withWhereHas('etiqueta', 
+                    function($query) use($etiqueta)
+                        {$query->where('nombre','=',$etiqueta);
+        });
+    }
+    public function scopeporCategoriaEtiqueta(Builder $query,$categoria,$etiqueta): void
+    {
+        $query->whereHas('categoria', 
+                    function($query)  use($categoria)
+                        {$query->where('nombre','=',$categoria);
+                            })
+                ->withWhereHas('etiqueta', 
+                    function($query) use($etiqueta)
+                        {$query->where('nombre','=',$etiqueta);
+        });
     }
 }
+
+

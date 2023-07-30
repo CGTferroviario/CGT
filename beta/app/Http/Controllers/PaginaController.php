@@ -15,75 +15,66 @@ class PaginaController extends Controller
     }
     public function infraestructura() 
     {
-        // $documentos = Documento::withWhereHas('documentos', function ($query) {
-        //     $query->where('empresa', 'ADIF');
-        // })->get();
-
-        $posts = Documento::whereHas('categoria', function (Builder $query) {
-            $query->where('nombre',  'INFRAESTRUCTURA');
-        })->get();
-        dd($posts);
-        //$empresa = Empresa::
-        $documentos = Documento::where('empresa_id', 1)->where('categoria_id', 1)->get();
+        $documentos = Documento::porEmpresaYCategoria('ADIF','INFRAESTRUCTURA')->get();
         return view('adif.infraestructura', compact('documentos'));
     }
     public function circulacion() 
     {
-        $documentos = Documento::where('empresa_id', 1)->where('categoria_id', 2)->get();
+        $documentos = Documento::porEmpresaYCategoria('ADIF','CIRCULACIÓN')->get();
         return view('adif.circulacion', compact('documentos'));
     }
     public function oficinasADIF() 
     {
-        $documentos = Documento::where('empresa_id', 1)->where('categoria_id', 3)->get();
+        $documentos = Documento::porEmpresaYCategoria('ADIF','OFICINAS')->get();
         return view('adif.oficinas', compact('documentos'));
     }
     // Documentos Generales ADIF
     public function afiliacionADIF() {
-        $documentos = Documento::where('empresa_id', 1)->where('etiqueta_id', 1)->get();
+        $documentos = Documento::porEmpresaEtiqueta('ADIF','AFILIACIÓN')->get();
         return view('adif.doc.afiliacion', compact('documentos'));
     }
     public function ayudasADIF() {
-        $documentos = Documento::where('empresa_id', 1)->where('etiqueta_id', 2)->get();
+        $documentos = Documento::porEmpresaEtiqueta('ADIF','AYUDAS Y BENEFICIOS SOCIALES')->get();
         return view('adif.doc.ayudas', compact('documentos'));
     }
     public function igualdadADIF() {
-        $documentos = Documento::where('empresa_id', 1)->where('etiqueta_id', 3)->get();
+        $documentos = Documento::porEmpresaEtiqueta('ADIF','IGUALDAD')->get();
         return view('adif.doc.igualdad', compact('documentos'));
     }
     public function legislacionADIF() {
-        $documentos = Documento::where('empresa_id', 1)->where('etiqueta_id', 4)->get();
+        $documentos = Documento::porEmpresaEtiqueta('ADIF','LEGISLACIÓN · NORMATIVA LABORAL')->get();
         return view('adif.doc.legislacion', compact('documentos'));
     }
     public function licenciasADIF() {
-        $documentos = Documento::where('empresa_id', 1)->where('etiqueta_id', 5)->get();
+        $documentos = Documento::porEmpresaEtiqueta('ADIF','LICENCIAS')->get();
         return view('adif.doc.licencias', compact('documentos'));
     }
     public function mapaADIF() {
-        $documentos = Documento::where('empresa_id', 1)->where('etiqueta_id', 6)->get();
+        $documentos = Documento::porEmpresaEtiqueta('ADIF','MAPA ESTACIONES')->get();
         return view('adif.doc.mapa', compact('documentos'));
     }
     public function conciliacionADIF() {
-        $documentos = Documento::where('empresa_id', 1)->where('etiqueta_id', 7)->get();
+        $documentos = Documento::porEmpresaEtiqueta('ADIF','MEDIDAS DE CONCILIACIÓN')->get();
         return view('adif.doc.conciliacion', compact('documentos'));
     }
     public function modelosADIF() {
-        $documentos = Documento::where('empresa_id', 1)->where('etiqueta_id', 8)->get();
+        $documentos = Documento::porEmpresaEtiqueta('ADIF','MODELOS DE SOLICITUD DE EMPRESA')->get();
         return view('adif.doc.modelos', compact('documentos'));
     }
     public function protocolosADIF() {
-        $documentos = Documento::where('empresa_id', 1)->where('etiqueta_id', 9)->get();
+        $documentos = Documento::porEmpresaEtiqueta('ADIF','PROTOCOLOS FRENTE A LOS ACOSOS')->get();
         return view('adif.doc.protocolos', compact('documentos'));
     }
     public function saludADIF() {
-        $documentos = Documento::where('empresa_id', 1)->where('etiqueta_id', 10)->get();
+        $documentos = Documento::porEmpresaEtiqueta('ADIF','SALUD LABORAL')->get();
         return view('adif.doc.salud', compact('documentos'));
     }
     public function teletrabajoADIF() {
-        $documentos = Documento::where('empresa_id', 1)->where('etiqueta_id', 11)->get();
+        $documentos = Documento::porEmpresaEtiqueta('ADIF','TELETRABAJO')->get();
         return view('adif.doc.teletrabajo', compact('documentos'));
     }
     public function tablasADIF() {
-        $documentos = Documento::where('empresa_id', 1)->where('etiqueta_id', 12)->get();
+        $documentos = Documento::porEmpresaEtiqueta('ADIF','TABLAS SALARIALES')->get();
         return view('adif.doc.tablas', compact('documentos'));
     }    
     public function renfe()
@@ -92,76 +83,76 @@ class PaginaController extends Controller
     }
     public function comercial() 
     {
-        $documentos = Documento::where('empresa_id', 2)->where('categoria_id', 4)->get();
+        $documentos = Documento::porEmpresaYCategoria('RENFE','COMERCIAL')->get();
         return view('renfe.comercial', compact('documentos'));
     }
     public function intervencion() 
     {
-        $documentos = Documento::where('empresa_id', 2)->where('categoria_id', 5)->get();
+        $documentos = Documento::porEmpresaYCategoria('RENFE','INTERVENCIÓN')->get();
         return view('renfe.intervencion', compact('documentos'));
     }
     public function conduccion() 
     {
-        $documentos = Documento::where('empresa_id', 2)->where('categoria_id', 6)->get();
+        $documentos = Documento::porEmpresaYCategoria('RENFE','CONDUCCIÓN')->get();
         return view('renfe.conduccion', compact('documentos'));
     }
     public function talleres() 
     {
-        $documentos = Documento::where('empresa_id', 2)->where('categoria_id', 7)->get();
+        $documentos = Documento::porEmpresaYCategoria('RENFE','TALLERES')->get();
         return view('renfe.talleres', compact('documentos'));
     }
     public function oficinasRENFE() 
     {
-        $documentos = Documento::where('empresa_id', 2)->where('categoria_id', 3)->get();
+        $documentos = Documento::porEmpresaYCategoria('RENFE','OFICINAS')->get();
         return view('renfe.oficinas', compact('documentos'));
     }
     // Documentos Generales RENFE
     public function afiliacionRENFE() {
-        $documentos = Documento::where('empresa_id', 2)->where('etiqueta_id', 1)->get();
+        $documentos = Documento::porEmpresaEtiqueta('RENFE','AFILIACIÓN')->get();
         return view('renfe.doc.afiliacion', compact('documentos'));
     }
     public function ayudasRENFE() {
-        $documentos = Documento::where('empresa_id', 2)->where('etiqueta_id', 2)->get();
+        $documentos = Documento::porEmpresaEtiqueta('RENFE','AYUDAS Y BENEFICIOS SOCIALES')->get();
         return view('renfe.doc.ayudas', compact('documentos'));
     }
     public function igualdadRENFE() {
-        $documentos = Documento::where('empresa_id', 2)->where('etiqueta_id', 3)->get();
+        $documentos = Documento::porEmpresaEtiqueta('RENFE','IGUALDAD')->get();
         return view('renfe.doc.igualdad', compact('documentos'));
     }
     public function legislacionRENFE() {
-        $documentos = Documento::where('empresa_id', 2)->where('etiqueta_id', 4)->get();
+        $documentos = Documento::porEmpresaEtiqueta('RENFE','LEGISLACIÓN · NORMATIVA LABORAL')->get();
         return view('renfe.doc.legislacion', compact('documentos'));
     }
     public function licenciasRENFE() {
-        $documentos = Documento::where('empresa_id', 2)->where('etiqueta_id', 5)->get();
+        $documentos = Documento::porEmpresaEtiqueta('RENFE','LICENCIAS')->get();
         return view('renfe.doc.licencias', compact('documentos'));
     }
     public function mapaRENFE() {
-        $documentos = Documento::where('empresa_id', 2)->where('etiqueta_id', 6)->get();
+        $documentos = Documento::porEmpresaEtiqueta('RENFE','MAPA ESTACIONES')->get();
         return view('renfe.doc.mapa', compact('documentos'));
     }
     public function conciliacionRENFE() {
-        $documentos = Documento::where('empresa_id', 2)->where('etiqueta_id', 7)->get();
+        $documentos = Documento::porEmpresaEtiqueta('RENFE','MEDIDAS DE CONCILIACIÓN')->get();
         return view('renfe.doc.conciliacion', compact('documentos'));
     }
     public function modelosRENFE() {
-        $documentos = Documento::where('empresa_id', 2)->where('etiqueta_id', 8)->get();
+        $documentos = Documento::porEmpresaEtiqueta('RENFE','MODELOS DE SOLICITUD DE EMPRESA')->get();
         return view('renfe.doc.modelos', compact('documentos'));
     }
     public function protocolosRENFE() {
-        $documentos = Documento::where('empresa_id', 2)->where('etiqueta_id', 9)->get();
+        $documentos = Documento::porEmpresaEtiqueta('RENFE','PROTOCOLOS FRENTE A LOS ACOSOS')->get();
         return view('renfe.doc.protocolos', compact('documentos'));
     }
     public function saludRENFE() {
-        $documentos = Documento::where('empresa_id', 2)->where('etiqueta_id', 10)->get();
+        $documentos = Documento::porEmpresaEtiqueta('RENFE','SALUD LABORAL')->get();
         return view('renfe.doc.salud', compact('documentos'));
     }
     public function teletrabajoRENFE() {
-        $documentos = Documento::where('empresa_id', 2)->where('etiqueta_id', 11)->get();
+        $documentos = Documento::porEmpresaEtiqueta('RENFE','TELETRABAJO')->get();
         return view('renfe.doc.teletrabajo', compact('documentos'));
     }
     public function tablasRENFE() {
-        $documentos = Documento::where('empresa_id', 2)->where('etiqueta_id', 12)->get();
+        $documentos = Documento::porEmpresaEtiqueta('RENFE','TABLAS SALARIALES')->get();
         return view('renfe.doc.tablas', compact('documentos'));
     }
     public function empresasaux()

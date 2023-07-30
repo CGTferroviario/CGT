@@ -157,12 +157,12 @@ aside .lni{
   --tw-bg-opacity: 1;
   background-color: rgb(254 71 85 / var(--tw-bg-opacity));
 }
-.bg-grisOscuro { background: rgb(47, 47, 47); }
-.bg-grisOscuro-7 { background: rgba(47, 47, 47, .7); }
+
 .bg-grisMedio { background: rgb(82, 82, 82); }
 .bg-grisClaro { background: rgb(214, 214, 214); }
 .bg-morado { background: rgb(130, 52, 245); }
 .bg-oscuro { background: rgb(47, 47, 47); }
+.bg-oscuro-7 { background: rgba(47, 47, 47, .7); }
 .bg-blanco-transp { background: rgba(255, 255, 255, .7); }
 
 /* Colores Empresas */
