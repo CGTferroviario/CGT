@@ -152,12 +152,7 @@ aside .lni{
 .LOGIRAIL { color: rgb(126, 1, 126); }
 
 .bg-rojo { background: rgb(255, 30, 0); }
-.bg-rojoBrillante {
-  background: rgb(254, 71, 85);
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 71 85 / var(--tw-bg-opacity));
-}
-
+.bg-rojoBrillante { background: rgb(254, 71, 85); }
 .bg-grisMedio { background: rgb(82, 82, 82); }
 .bg-grisClaro { background: rgb(214, 214, 214); }
 .bg-morado { background: rgb(130, 52, 245); }

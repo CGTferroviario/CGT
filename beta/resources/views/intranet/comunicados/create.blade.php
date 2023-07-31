@@ -1,3 +1,14 @@
+<style>
+    input {
+  color-scheme: dark;
+}
+input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+  }
+.comunicados label{
+    margin-left: 12px;
+}
+</style>
 <x-privado-layout>
 
     <x-slot name="header">
@@ -30,7 +41,7 @@
                     <div class="flex items-center gap-x-3">
                         <h2 class="text-lg font-bold text-gray-800">Comunicados</h2>
                         <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $comunicados->count() }}</span>
-                        <p class="mt-1 text-sm text-gray-500">Estos son los comunicados que llevamos este año.</p>
+                        <p class="mt-1 text-sm text-gray-500">Estos son todos los comunicados.</p>
                     </div>
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-end">
@@ -80,177 +91,262 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    <?php 
+                                        
+                                        $month = date('m');
+                                        $day = date('d');
+                                        $year = date('Y');
+
+                                        $fecha = $year . '-' . $month . '-' . $day;
+                                        
+                                    ?>
                                     <div class="">
                                         <label for="fecha_com" class="block mb-2 text-sm font-medium text-white">Fecha</label>
-                                        <input type="date" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" name="fecha" placeholder="today()">
-                                    </div>
-                                    <div class="">
-                                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Name</label>
-                                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required="">
-                                    </div>
-                                    <div class="w-full">
-                                        <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand</label>
-                                        <input type="text" name="brand" id="brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Product brand" required="">
-                                    </div>
-                                    <div class="w-full">
-                                        <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
-                                        <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="$2999" required="">
-                                    </div>
-                                    <div>
-                                        <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
-                                        <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                                            <option selected="">Select category</option>
-                                            <option value="TV">TV/Monitors</option>
-                                            <option value="PC">PC</option>
-                                            <option value="GA">Gaming/Console</option>
-                                            <option value="PH">Phones</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label for="item-weight" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Item Weight (kg)</label>
-                                        <input type="number" name="item-weight" id="item-weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="12" required="">
-                                    </div> 
-                                    <div class="col-span-4">
-                                        <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-                                        <textarea id="description" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
+                                        <input type="date" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" name="fecha" value="<?php echo $fecha; ?>">
                                     </div>
                                 </div>
-                                <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-                                    Add product
-                                </button>
+                                <div class="grid gap-4 sm:grid-cols-12 sm:gap-6 mt-3">
+                                    <div>
+                                        <label for="numero" class="block mb-2 text-sm font-medium text-white">Nº</label>
+                                        <input type="number" name="numero" id="numero" class="w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-gray-400" placeholder="" required="">
+                                    </div>
+                                    <div class="col-span-5">
+                                        <label for="titulo" class="block mb-2 text-sm font-medium text-white">Título</label>
+                                        <input type="text" name="titulo" id="titulo" class="w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-gray-400" placeholder="" value="" required="">
+                                    </div>
+                                    <div class="col-span-6">
+                                        <label for="subtitulo" class="block mb-2 text-sm font-medium text-white">Subtítulo</label>
+                                        <input type="text" name="subtitulo" id="subtitulo" class="w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-gray-400" placeholder="" value="" required="">
+                                    </div>
+                                </div>
+                                        
+                                <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 mt-3">
+                                    <div class="col-span-2">
+                                        <label for="cuerpo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cuerpo</label>
+                                        <textarea id="cuerpo" rows="20" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="El cuerpo del comunicado..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="grid gap-4 sm:grid-cols-3 sm:gap-6 mt-3">
+                                    <div class="w-full">
+                                        <label for="pdf" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-add-files text-lg mr-2 mb-0"></i>Comunicado en PDF</label>
+                                        <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
+                                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                                <i class="lni lni-cloud-upload text-3xl mb-2 text-gray-400"></i>
+                                                <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Haz click o arrastra</span></p>
+                                                <p class="text-xs text-gray-400">para subir un fichero <span class="font-semibold">.PDF</span></p>
+                                            </div>
+                                            <input id="dropzone-file" type="file" class="hidden" />
+                                        </label>
+                                    </div>
+                                    <div class="w-full">
+                                        <label for="jpg" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-image text-lg mr-2 mb-0"></i>Comunicado en JPG</label>
+                                        <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
+                                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                                <i class="lni lni-cloud-upload text-3xl mb-2 text-gray-400"></i>
+                                                <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Haz click o arrastra</span></p>
+                                                <p class="text-xs text-gray-400">para subir un fichero <span class="font-semibold">.JPG</span></p>
+                                            </div>
+                                            <input id="dropzone-file" type="file" class="hidden" />
+                                        </label>
+                                    </div>
+                                    <div class="w-full">
+                                        <label for="adjunto" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-files text-lg mr-2 mb-0"></i>Adjunto adicional</label>
+                                        <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
+                                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                                <i class="lni lni-cloud-upload text-3xl mb-2 text-gray-400"></i>
+                                                <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Haz click o arrastra</span></p>
+                                                <p class="text-xs text-gray-400">para subir un fichero <span class="font-semibold">.JPG/.PNG,/.PDF</span></p>
+                                            </div>
+                                            <input id="dropzone-file" type="file" class="hidden" />
+                                        </label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-red-800">Subir Comunicado</button>
+                                <button class="w-100 btn btn-outline-danger btn-lg" type="submit"></button>
                             </form>
                         </div>
                     </section>
                 </div>
                 <div>
-                    <form class="needs-validation" novalidate="" action="{{ route('intranet.comunicados.store') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row g-3">
-                            <div class="col-md-3">
-                                <label for="country" class="form-label">Empresa</label>
-                                <select class="form-select" id="empresa" name="empresa" required="">
-                                        <option value="Elige empresa">Elige empresa</option>
-                                    @foreach ($empresas as $empresa)
-                                        <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
-                                    @endforeach
-                                </select>
-                                <div class="invalid-feedback">
-                                    Por favor, introduce un empresa.
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="categorias_comunicado" class="form-label">Categoría</label>
-                                <select class="form-select" id="categoria" name="categoria" required="">
-                                    <option value="Elige categoria">Elige Categoría</option>
-                                    @foreach ($categorias as $categoria)
-                                        <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
-                                    @endforeach
-                                </select>
-                                <div class="invalid-feedback">
-                                    Por favor, introduce un categoría.
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="country" class="form-label">Etiqueta</label>
-                                <select class="form-select" id="etiqueta" name="etiqueta" required="">
-                                    <option value="Elige etiqueta">Elige etiqueta</option>
-                                    @foreach ($etiquetas as $etiqueta)
-                                        <option value="{{ $etiqueta->id }}">{{ $etiqueta->nombre }}</option>
-                                    @endforeach
-                                </select>
-                                <div class="invalid-feedback">
-                                    Por favor, introduce una etiqueta.
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="fecha_com" class="form-label">Fecha</label>
-                                <input type="date" class="form-control rojoBrillante" name="fecha" placeholder="<?php echo date("Y/m/d"); ?>">
-                                <div class="invalid-feedback">
-                                    Por favor, introduce un fecha.
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <label for="country" class="form-label">Número</label>
-                                <input type="number" class="form-control" id="numero" name="numero" placeholder="" value="" required="">
-                                <div class="invalid-feedback">
-                                    Por favor, introduce un número de comunicado.
-                                </div>
-                            </div>
-                            <div class="col-sm-5">
-                                <label for="titulo" class="form-label">Título</label>
-                                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="" value="" required="">
-                                <div class="invalid-feedback">
-                                    Por favor, introduce un título de comunicado.
-                                </div>
-                            </div>
-                            
-                            <div class="col-sm-5">
-                                <label for="lastName" class="form-label">Subtitulo</label>
-                                <input type="text" class="form-control" id="subtitulo" name="subtitulo" placeholder="" value="" required="">
-                                <div class="invalid-feedback">
-                                    Por favor, introduce un subtítulo de comunicado.
-                                </div>
-                            </div>
-            
-                            <div class="col-12">
-                                <label for="username" class="form-label">Descripción</label>
-                                <textarea name="cuerpo" class="form-control" id="cuerpo" cols="30" rows="10"></textarea>
-                                <div class="invalid-feedback">
-                                    Por favor, introduce un cuerpo de comunicado.
-                                </div>
-                            </div>
-            
-                            <div class="col-12">
-                                <label for="email" class="form-label">Comunicado en PDF</label>
-                                <input type="text" name="adjunto1" class="form-control" id="doc_pdf">
-                                <div class="invalid-feedback">
-                                    Por favor, revisa el archivo en pdf del comunicado.
-                                </div>
-                            </div>
-            
-                            <div class="col-12">
-                                <label for="address" class="form-label">Adjuntos (anexos)</label>
-                                <input type="text"  name="adjunto2" class="form-control" id="doc_adj">
-                                <div class="invalid-feedback">
-                                    Please enter your shipping address.
-                                </div>
-                            </div>
-            
-                            <div class="col-12">
-                                <label for="address2" class="form-label">Imagen (jpg o png)</label>
-                                <input type="text" name="adjunto3" class="form-control" id="doc_img">
-                                <div class="invalid-feedback">
-                                    Por favor, introduce una imagen de comunicado.
-                                </div>
-                            </div>
-        
-                            <div class="col-12">
-                                <label for="address2" class="form-label">Imagen (jpg o png)</label>
-                                <input type="text" name="imagen" class="form-control" id="doc_img">
-                                <div class="invalid-feedback">
-                                    Por favor, introduce una imagen de comunicado.
-                                </div>
-                            </div>
-                            <div class="col-12">
+                    <div class="text-center">
+                        <h1 class="text-3xl rojoBrillante">Últimos comunicados</h1>
+                    </div>
+                    <ul class="list-group mb-3">
+                        @foreach ($comunicados as $comunicado)
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div class="inline-flex">
+                                <span class="text-body-secondary">{{ $comunicado->id }}. </span>
+                                <h6 class="my-0 ml-1">{{ $comunicado->titulo }}</h6>
                                 
-                                <label class="switch">
-                                    <input type="checkbox" name="publicado" class="form-control" id="publicado" checked >
-                                    <span class="slider round"></span>
-                                </label>
-                                <label for="address2" class="form-label align-bottom">Publicado</label>
-                                <div class="invalid-feedback">
-                                    Por favor, introduce una imagen de comunicado.
-                                </div>
+                            </div>
+                            <small class="text-body-secondary">{{ $comunicado->subtitulo }}</small>
+                        </li>
+                        @endforeach
+                    </ul>
+
+                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                        <table class="w-full text-sm text-left text-gray-400">
+                            <tbody>
+                                <tr class="border-b bg-gray-900 border-gray-700">
+                                    <td class="w-4 px-6 py-4 font-medium whitespace-nowrap text-white">
+                                        <span class="text-body-secondary">{{ $comunicado->id }}. </span>
+                                        
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <h6 class="my-0 ml-1">{{ $comunicado->titulo }}</h6>
+                                    </td>
+                                </tr>
+                                <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+                                    <td class="px-6 py-4">
+                                        
+                                    </td>
+                                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Microsoft Surface Pro
+                                    </td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+            
+                    {{-- <form class="card p-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Promo code">
+                            <button type="submit" class="btn btn-secondary">Redeem</button>
+                        </div>
+                    </form> --}}
+                </div>
+                
+            </div>
+            <div>
+                <form class="needs-validation" novalidate="" action="{{ route('intranet.comunicados.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <label for="country" class="form-label">Empresa</label>
+                            <select class="form-select" id="empresa" name="empresa" required="">
+                                    <option value="Elige empresa">Elige empresa</option>
+                                @foreach ($empresas as $empresa)
+                                    <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
+                                @endforeach
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor, introduce un empresa.
                             </div>
                         </div>
-                        <hr class="my-4">
-            
-                        <button class="w-100 btn btn-outline-danger btn-lg" type="submit">Subir Comunicado</button>
-                    </form>
-                </div>
+                        <div class="col-md-3">
+                            <label for="categorias_comunicado" class="form-label">Categoría</label>
+                            <select class="form-select" id="categoria" name="categoria" required="">
+                                <option value="Elige categoria">Elige Categoría</option>
+                                @foreach ($categorias as $categoria)
+                                    <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                                @endforeach
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor, introduce un categoría.
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="country" class="form-label">Etiqueta</label>
+                            <select class="form-select" id="etiqueta" name="etiqueta" required="">
+                                <option value="Elige etiqueta">Elige etiqueta</option>
+                                @foreach ($etiquetas as $etiqueta)
+                                    <option value="{{ $etiqueta->id }}">{{ $etiqueta->nombre }}</option>
+                                @endforeach
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor, introduce una etiqueta.
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="fecha_com" class="form-label">Fecha</label>
+                            <input type="date" class="form-control rojoBrillante" name="fecha" placeholder="<?php echo date("Y/m/d"); ?>">
+                            <div class="invalid-feedback">
+                                Por favor, introduce un fecha.
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="country" class="form-label">Número</label>
+                            <input type="number" class="form-control" id="numero" name="numero" placeholder="" value="" required="">
+                            <div class="invalid-feedback">
+                                Por favor, introduce un número de comunicado.
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <label for="titulo" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="" value="" required="">
+                            <div class="invalid-feedback">
+                                Por favor, introduce un título de comunicado.
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-5">
+                            <label for="lastName" class="form-label">Subtitulo</label>
+                            <input type="text" class="form-control" id="subtitulo" name="subtitulo" placeholder="" value="" required="">
+                            <div class="invalid-feedback">
+                                Por favor, introduce un subtítulo de comunicado.
+                            </div>
+                        </div>
+        
+                        <div class="col-12">
+                            <label for="username" class="form-label">Descripción</label>
+                            <textarea name="cuerpo" class="form-control" id="cuerpo" cols="30" rows="10"></textarea>
+                            <div class="invalid-feedback">
+                                Por favor, introduce un cuerpo de comunicado.
+                            </div>
+                        </div>
+        
+                        <div class="col-12">
+                            <label for="email" class="form-label">Comunicado en PDF</label>
+                            <input type="text" name="adjunto1" class="form-control" id="doc_pdf">
+                            <div class="invalid-feedback">
+                                Por favor, revisa el archivo en pdf del comunicado.
+                            </div>
+                        </div>
+        
+                        <div class="col-12">
+                            <label for="address" class="form-label">Adjuntos (anexos)</label>
+                            <input type="text"  name="adjunto2" class="form-control" id="doc_adj">
+                            <div class="invalid-feedback">
+                                Please enter your shipping address.
+                            </div>
+                        </div>
+        
+                        <div class="col-12">
+                            <label for="address2" class="form-label">Imagen (jpg o png)</label>
+                            <input type="text" name="adjunto3" class="form-control" id="doc_img">
+                            <div class="invalid-feedback">
+                                Por favor, introduce una imagen de comunicado.
+                            </div>
+                        </div>
+    
+                        <div class="col-12">
+                            <label for="address2" class="form-label">Imagen (jpg o png)</label>
+                            <input type="text" name="imagen" class="form-control" id="doc_img">
+                            <div class="invalid-feedback">
+                                Por favor, introduce una imagen de comunicado.
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            
+                            <label class="switch">
+                                <input type="checkbox" name="publicado" class="form-control" id="publicado" checked >
+                                <span class="slider round"></span>
+                            </label>
+                            <label for="address2" class="form-label align-bottom">Publicado</label>
+                            <div class="invalid-feedback">
+                                Por favor, introduce una imagen de comunicado.
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+        
+                    <button class="w-100 btn btn-outline-danger btn-lg" type="submit">Subir Comunicado</button>
+                </form>
             </div>
-            
         </div>
+        
     </div>
     @endsection
     
