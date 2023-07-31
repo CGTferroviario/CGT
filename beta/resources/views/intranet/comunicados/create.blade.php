@@ -32,7 +32,6 @@
                         <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $comunicados->count() }}</span>
                         <p class="mt-1 text-sm text-gray-500">Estos son los comunicados que llevamos este año.</p>
                     </div>
-                    
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-end">
                     <div class="flex items-center gap-x-3 align-middle">
