@@ -62,7 +62,7 @@ input::-webkit-calendar-picker-indicator {
                     <section class="bg-oscuro-7 rounded-lg">
                         <div class="py-8 px-4 mx-auto">
                             <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Comunicado</h2>
-                            <form action="#">
+                            <form action="{{ route('intranet.comunicados.store') }}" method="POST" enctype="multipart/form-data">
                                 <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
                                     <div class="">
                                         <label for="empresa" class="block mb-2 text-sm font-medium text-white">Empresa</label>
@@ -208,14 +208,6 @@ input::-webkit-calendar-picker-indicator {
                             </tbody>
                         </table>
                     </div>
-
-            
-                    {{-- <form class="card p-2">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Promo code">
-                            <button type="submit" class="btn btn-secondary">Redeem</button>
-                        </div>
-                    </form> --}}
                 </div>
                 
             </div>
