@@ -12,7 +12,7 @@ input::-webkit-calendar-picker-indicator {
 <x-privado-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-900 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-900 leading-tight">
             {{ __('Añadir Comunicados') }}
         </h2>
     </x-slot>
@@ -169,7 +169,7 @@ input::-webkit-calendar-picker-indicator {
                 </div>
                 <div>
                     <div class="text-center">
-                        <h1 class="text-3xl rojoBrillante">Últimos comunicados</h1>
+                        <h1 class="text-xl rojoBrillante">Últimos comunicados</h1>
                     </div>
                     <ul class="list-group mb-3">
                         @foreach ($comunicados as $comunicado)
@@ -183,33 +183,7 @@ input::-webkit-calendar-picker-indicator {
                         </li>
                         @endforeach
                     </ul>
-
-                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                        <table class="w-full text-sm text-left text-gray-400">
-                            <tbody>
-                                <tr class="border-b bg-gray-900 border-gray-700">
-                                    <td class="w-4 px-6 py-4 font-medium whitespace-nowrap text-white">
-                                        <span class="text-body-secondary">{{ $comunicado->id }}. </span>
-                                        
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <h6 class="my-0 ml-1">{{ $comunicado->titulo }}</h6>
-                                    </td>
-                                </tr>
-                                <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-                                    <td class="px-6 py-4">
-                                        
-                                    </td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Microsoft Surface Pro
-                                    </td>
-                                    
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
-                
             </div>
             <div>
                 <form class="needs-validation" novalidate="" action="{{ route('intranet.comunicados.store') }}" method="POST" enctype="multipart/form-data">

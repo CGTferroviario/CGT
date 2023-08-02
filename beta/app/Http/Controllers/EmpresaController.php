@@ -23,7 +23,11 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        //
+        return view('intranet.empresas.create', [
+            
+            'empresas' => Empresa::orderBy('id', 'asc')->get(),
+
+        ]);
     }
 
     /**
