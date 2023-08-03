@@ -57,10 +57,10 @@
                         <th title="Descargas">Descargas</th>
                         <th title="Autor">Autor</th>
                         <th>Título</th>
-                        <th>Descripción</th>
                         <th>Empresa</th>                        
                         <th>Categorías</th>
                         <th>Etiquetas</th>
+                        <th>Descripción</th>
                         <th class="rounded-tr-lg">Ruta</th>
                     </tr>
                 </thead>
@@ -93,11 +93,19 @@
                         <td>{{ $documento->visualizaciones }}</td>
                         <td>{{ $documento->descargas }}</td>
                         <td>{{ $documento->user->nombre }}</td>
-                        <td>{{ $documento->titulo }}</td>
-                        <td>{{ $documento->descripcion }}</td>
+                        <td>{{ $documento->titulo }}</td>                        
                         <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $documento->empresa?->nombre }}">{{ $documento->empresa?->nombre }}</span></td>
                         <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $documento->categoria?->nombre }}">{{ $documento->categoria?->nombre }}</span></td>
-                        <td>{{ $documento->etiqueta?->nombre }}</td>
+                        <td>
+                            @foreach ($documento->etiqueta as $etiqueta )
+                                <span
+                                    class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">
+                                        {{ $etiqueta->nombre }}
+                                    </span>
+                            @endforeach    
+                        </td>
+                        
+                        <td>{{ $documento->descripcion }}</td>
                         <td>{{ $documento->ruta }}</td>
                     </tr>
                     @endforeach
