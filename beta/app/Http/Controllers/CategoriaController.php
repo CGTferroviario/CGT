@@ -23,7 +23,11 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('intranet.categorias.create', [
+            
+            'categoria' => Categoria::orderBy('id', 'asc')->get(),
+
+        ]);
     }
 
     /**
