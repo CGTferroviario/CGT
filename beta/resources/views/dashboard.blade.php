@@ -30,7 +30,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4 mb-4">
+                <div class="grid grid-cols-3 gap-4 mb-4">
                     <div class="p-4 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
                         <img src="/img/proximamente.png" alt="" class="absolute">
 
@@ -41,19 +41,10 @@
                     <div class="p-4 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
                         <img src="/img/proximamente.png" alt="" class="absolute">
                         <img class="mx-auto" src="/img/EVA-JAC.png" alt="">
-                        <h1 class="rojoBrillante text-3xl text-center my-2 titular">E . V . A .  -  Escuela Virtual Autogestionada  -   <span title="Jose Antonio Cantarero">J . A . C .</span></h1>
+                        <h1 class="rojoBrillante text-3xl text-center my-2 titular">E . V . A .  -  Escuela Virtual Autogestionada  <br> <span title="Jose Antonio Cantarero">J . A . C .</span></h1>
 
                     </div>
-                    <div class="flex items-center justify-center rounded h-28 bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
-                        <p class="text-2xl text-gray-500 hover:text-gray-100">
-                            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 18 18">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 1v16M1 9h16" />
-                            </svg>
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-center rounded h-28 bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
+                    <div class="flex items-center justify-center rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
                         <p class="text-2xl text-gray-500 hover:text-gray-100">
                             <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 18 18">
