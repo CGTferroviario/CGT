@@ -2,7 +2,7 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-900 leading-tight">
-            {{ __('Empresas') }}
+            {{ __('Categorias') }}
         </h2>
     </x-slot>
 
@@ -11,17 +11,17 @@
         <div class="bg-blanco-transp bordeRojo rounded-lg p-4">
             <div class="grid grid-cols-3 mt-2 mb-3">
                 <div class="sm:flex sm:items-center sm:justify-between">
-                    <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500" title="Volver a Empresas">
+                    <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500" title="Volver a Categorias">
                         <i class="lni lni-arrow-left"></i>
-                        <a href="{{ route('intranet.empresas.index') }}" class="">Volver al Índice de empresas</a>
+                        <a href="{{ route('intranet.categorias.index') }}" class="">Volver al Índice de categorias</a>
                     </button>
                 </div>
                 <div class="sm:flex-row sm:items-center sm:justify-between">
                     <x-mensaje></x-mensaje>
                     <div class="flex items-center gap-x-3">
-                        <h2 class="text-lg font-bold text-gray-800">Empresas</h2>
-                        <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $empresas->count() }}</span>
-                        <p class="mt-1 text-sm text-gray-500">Estas son las empresas que tenemos registradas.</p>
+                        <h2 class="text-lg font-bold text-gray-800">Categorias</h2>
+                        <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $categorias->count() }}</span>
+                        <p class="mt-1 text-sm text-gray-500">Estas son las categorias que tenemos registradas.</p>
                     </div>
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-end">
@@ -31,8 +31,8 @@
             <div class="grid grid-cols-4">
                 <div class="col-span-3 bg-oscuro-7 rounded-lg">
                     <div class="py-8 px-4 mx-auto">
-                        <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Empresa</h2>
-                        <form action="{{ route('intranet.empresas.store') }}" method="POST" enctype="multipart/form-data">
+                        <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Categoria</h2>
+                        <form action="{{ route('intranet.categorias.store') }}" method="POST" enctype="multipart/form-data">
                             <div class="grid grid-cols-4 gap-4">
                                 <div class="col-span-3">
                                     <div class="grid gap-4 sm:grid-cols-5 sm:gap-6 mt-3">
@@ -63,7 +63,7 @@
                                         </div>
                                         <div class="col-span-5">
                                             <label for="descripcion" class="block mb-2 text-sm font-medium text-white">Descripción</label>
-                                            <textarea id="descripcion" rows="5" class="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white focus:ring-red-500 focus:border-red-500" placeholder="Descripción de la empresa y sus funciones..."></textarea>
+                                            <textarea id="descripcion" rows="5" class="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white focus:ring-red-500 focus:border-red-500" placeholder="Descripción de la categoria y sus funciones..."></textarea>
                                         </div>
                                     </div> 
                                 </div>
@@ -92,7 +92,7 @@
                             <tr class="">
                                 <th class="rounded-tl-lg">ID</th>
                                 <th>Acciones</th>
-                                <th>Empresa</th>
+                                <th>Categoria</th>
                                 <th>Descripción</th>                      
                                 <th>Logo</th>
                                 <th>Vales</th>
@@ -101,32 +101,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($empresas as $empresa)
+                            @foreach ($categorias as $categoria)
                             <tr>
-                                <td>{{ $empresa->id }}</td>
+                                <td>{{ $categoria->id }}</td>
                                 <td>
                                     <div class="flex justify-start gap-1 text-xl mt-2">
-                                        <a x-data="{ tooltip: 'Edite' }" href="{{ url('empresas.edit', $empresa->id) }}"
-                                            class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar empresa">
+                                        <a x-data="{ tooltip: 'Edite' }" href="{{ url('categorias.edit', $categoria->id) }}"
+                                            class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar categoria">
                                             <i class="lni lni-pencil"></i>
                                         </a>                                
-                                        <form method="POST" action="{{ route('intranet.empresas.destroy', $empresa->id) }}" onsubmit="return confirm('¿Deseas eliminar esta empresa?');">
+                                        <form method="POST" action="{{ route('intranet.categorias.destroy', $categoria->id) }}" onsubmit="return confirm('¿Deseas eliminar esta categoria?');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class=" p-1 rounded-md">
-                                                <a x-data="{ tooltip: 'Delete' }" href="#" title="Eliminar empresa" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8">
+                                                <a x-data="{ tooltip: 'Delete' }" href="#" title="Eliminar categoria" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8">
                                                     <i class="lni lni-trash-can"></i>
                                                 </a>
                                             </button>
                                         </form>                                
                                     </div>
                                 </td>
-                                <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $empresa->nombre }}">{{ $empresa->nombre }}</span></td>
-                                <td>{{ $empresa->descripcion }}</td>
-                                <td>{{ $empresa->logo }}</td>
-                                <td class="text-center">{{ $empresa->gestion_vales }}</td>
-                                <td class="text-center">{{ $empresa->comunicados }}</td>
-                                <td class="text-center">{{ $empresa->activa }}</td>
+                                <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $categoria->nombre }}">{{ $categoria->nombre }}</span></td>
+                                <td>{{ $categoria->descripcion }}</td>
+                                <td>{{ $categoria->logo }}</td>
+                                <td class="text-center">{{ $categoria->gestion_vales }}</td>
+                                <td class="text-center">{{ $categoria->comunicados }}</td>
+                                <td class="text-center">{{ $categoria->activa }}</td>
                             </tr>
                             @endforeach
                         </tbody>
