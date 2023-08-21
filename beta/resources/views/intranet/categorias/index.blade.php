@@ -27,7 +27,7 @@
                     <x-mensaje></x-mensaje>
                     <div class="flex items-center gap-x-3">
                         <h2 class="text-lg font-bold text-gray-800">Categorias</h2>
-                        <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $categorias->count() }}</span>
+                        {{-- <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $categorias->count() }}</span> --}}
                         <p class="mt-1 text-sm text-gray-500">Estas son las categorias que tenemos registradas.</p>
                     </div>
                 </div>

@@ -89,12 +89,12 @@ Route::controller(PaginaController::class)->prefix('empresasaux')->name('empresa
 Route::get('/juridica', function () {
     return view('juridica')->name('juridica');
 });
-Route::prefix('juridica')->group(function () {
-    Route::get('/convenios', [PaginaController::class, 'convenios'])->name('juridica.convenios');
-    Route::get('/laboral', [PaginaController::class, 'laboral'])->name('juridica.laboral');
-    Route::get('/ferroviaria', [PaginaController::class, 'ferroviaria'])->name('juridica.ferroviaria');
-    Route::get('/modelos', [PaginaController::class, 'modelos'])->name('juridica.modelos');
-    Route::get('/logros', [PaginaController::class, 'logros'])->name('juridica.logros');
+Route::controller(PaginaController::class)->prefix('juridica')->name('juridica.')->group(function () {
+    Route::get('/convenios', 'convenios');
+    Route::get('/laboral', 'laboral');
+    Route::get('/ferroviaria', 'ferroviaria');
+    Route::get('/modelos', 'modelos');
+    Route::get('/logros', 'logros');
 });
 Route::get('/biblioteca', function () {
     return view('biblioteca')->name('biblioteca');
@@ -102,11 +102,14 @@ Route::get('/biblioteca', function () {
 Route::prefix('biblioteca')->group(function () {
     Route::get('/comunicados', [ComunicadoController::class, 'bibliotecaComunicados'])->name('biblioteca.comunicados');
     Route::get('/noticias', [NoticiaController::class, 'bibliotecaNoticias'])->name('biblioteca.noticias');
-    Route::get('/seguridad', [PaginaController::class, 'seguridad'])->name('biblioteca.seguridad');
-    Route::get('/archivo', [PaginaController::class, 'archivo'])->name('biblioteca.archivo');
-    Route::get('/defensa', [PaginaController::class, 'defensa'])->name('biblioteca.defensa');
-    Route::get('/colegio', [PaginaController::class, 'colegio'])->name('biblioteca.colegio');
-    Route::get('/via', [PaginaController::class, 'via'])->name('biblioteca.via');
+
+    Route::controller(PaginaController::class)->name('biblioteca.')->group(function () {
+        Route::get('/seguridad', 'seguridad');
+        Route::get('/archivo', 'archivo');
+        Route::get('/defensa', 'defensa');
+        Route::get('/colegio', 'colegio');
+        Route::get('/via', 'via');
+    });
 });
 Route::get('/recursos', function () {
     return view('recursos')->name('recursos');

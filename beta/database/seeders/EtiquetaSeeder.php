@@ -36,6 +36,7 @@ class EtiquetaSeeder extends Seeder
             [ 'nombre' => 'ARCHIVO HISTÓRICO' , 'activa' => 1  ],
             [ 'nombre' => 'DEFENSA DEL FERROCARRIL' , 'activa' => 1  ],
             [ 'nombre' => 'COLEGIO DE HUÉRFANOS' , 'activa' => 1  ],
+            [ 'nombre' => 'VIA LIBERTARIA' , 'activa' => 1  ],
             [ 'nombre' => 'VIDEOS' , 'activa' => 1  ],
             [ 'nombre' => 'AUDIOS' , 'activa' => 1  ],
             [ 'nombre' => 'CARTELES' , 'activa' => 1  ],

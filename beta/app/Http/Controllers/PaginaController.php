@@ -15,17 +15,17 @@ class PaginaController extends Controller
     }
     public function infraestructura() 
     {
-        $documentos = Documento::porEmpresaYCategoria('ADIF','INFRAESTRUCTURA')->get();
+        $documentos = Documento::porEmpresaCategoria('ADIF','INFRAESTRUCTURA')->get();
         return view('adif.infraestructura', compact('documentos'));
     }
     public function circulacion() 
     {
-        $documentos = Documento::porEmpresaYCategoria('ADIF','CIRCULACIÓN')->get();
+        $documentos = Documento::porEmpresaCategoria('ADIF','CIRCULACIÓN')->get();
         return view('adif.circulacion', compact('documentos'));
     }
     public function oficinasADIF() 
     {
-        $documentos = Documento::porEmpresaYCategoria('ADIF','OFICINAS')->get();
+        $documentos = Documento::porEmpresaCategoria('ADIF','OFICINAS')->get();
         return view('adif.oficinas', compact('documentos'));
     }
     // Documentos Generales ADIF
@@ -83,27 +83,27 @@ class PaginaController extends Controller
     }
     public function comercial() 
     {
-        $documentos = Documento::porEmpresaYCategoria('RENFE','COMERCIAL')->get();
+        $documentos = Documento::porEmpresaCategoria('RENFE','COMERCIAL')->get();
         return view('renfe.comercial', compact('documentos'));
     }
     public function intervencion() 
     {
-        $documentos = Documento::porEmpresaYCategoria('RENFE','INTERVENCIÓN')->get();
+        $documentos = Documento::porEmpresaCategoria('RENFE','INTERVENCIÓN')->get();
         return view('renfe.intervencion', compact('documentos'));
     }
     public function conduccion() 
     {
-        $documentos = Documento::porEmpresaYCategoria('RENFE','CONDUCCIÓN')->get();
+        $documentos = Documento::porEmpresaCategoria('RENFE','CONDUCCIÓN')->get();
         return view('renfe.conduccion', compact('documentos'));
     }
     public function talleres() 
     {
-        $documentos = Documento::porEmpresaYCategoria('RENFE','TALLERES')->get();
+        $documentos = Documento::porEmpresaCategoria('RENFE','TALLERES')->get();
         return view('renfe.talleres', compact('documentos'));
     }
     public function oficinasRENFE() 
     {
-        $documentos = Documento::porEmpresaYCategoria('RENFE','OFICINAS')->get();
+        $documentos = Documento::porEmpresaCategoria('RENFE','OFICINAS')->get();
         return view('renfe.oficinas', compact('documentos'));
     }
     // Documentos Generales RENFE
@@ -177,27 +177,27 @@ class PaginaController extends Controller
     }
     public function convenios() 
     {
-        $documentos = Documento::where('categoria_id', 8)->where('etiqueta_id', 13)->get();
+        $documentos = Documento::porCategoriaEtiqueta('JURIDICA', 'CONVENIOS COLECTIVOS')->get();
         return view('juridica.convenios', compact('documentos'));
     }
     public function laboral() 
     {
-        $documentos = Documento::where('categoria_id', 8)->where('etiqueta_id', 14)->get();
+        $documentos = Documento::porCategoriaEtiqueta('JURIDICA', 'LEGISLACIÓN LABORAL')->get();
         return view('juridica.laboral', compact('documentos'));
     }
     public function ferroviaria() 
     {
-        $documentos = Documento::where('categoria_id', 8)->where('etiqueta_id', 15)->get();
+        $documentos = Documento::porCategoriaEtiqueta('JURIDICA', 'LEGISLACIÓN FERROVIARIA')->get();
         return view('juridica.ferroviaria', compact('documentos'));
     }
     public function modelos() 
     {
-        $documentos = Documento::where('categoria_id', 8)->where('etiqueta_id', 16)->get();
+        $documentos = Documento::porCategoriaEtiqueta('JURIDICA', 'FORMULARIOS // MODELOS')->get();
         return view('juridica.modelos', compact('documentos'));
     }
     public function logros() 
     {
-        $documentos = Documento::where('categoria_id', 8)->where('etiqueta_id', 17)->get();
+        $documentos = Documento::porCategoriaEtiqueta('JURIDICA', 'LOGROS JURÍDICOS CGT')->get();
         return view('juridica.logros', compact('documentos'));
     }
     public function biblioteca() 
@@ -206,27 +206,27 @@ class PaginaController extends Controller
     }
     public function seguridad() 
     {
-        $documentos = Documento::where('categoria_id', 9)->where('etiqueta_id', 18)->get();
+        $documentos = Documento::porCategoriaEtiqueta('BIBLIOTECA', 'SEGURIDAD EN LA CIRCULACIÓN')->get();
         return view('biblioteca.seguridad', compact('documentos'));
     }
     public function archivo() 
     {
-        $documentos = Documento::where('categoria_id', 9)->where('etiqueta_id', 19)->get();
+        $documentos = Documento::porCategoriaEtiqueta('BIBLIOTECA', 'ARCHIVO HISTÓRICO')->get();
         return view('biblioteca.archivo', compact('documentos'));
     }
     public function defensa() 
     {
-        $documentos = Documento::where('categoria_id', 9)->where('etiqueta_id', 20)->get();
+        $documentos = Documento::porCategoriaEtiqueta('BIBLIOTECA', 'DEFENSA DEL FERROCARRIL')->get();
         return view('biblioteca.defensa', compact('documentos'));
     }
     public function colegio() 
     {
-        $documentos = Documento::where('categoria_id', 9)->where('etiqueta_id', 21)->get();
+        $documentos = Documento::porCategoriaEtiqueta('BIBLIOTECA', 'COLEGIO DE HUÉRFANOS')->get();
         return view('biblioteca.colegio', compact('documentos'));
     }
     public function via() 
     {
-        $documentos = Documento::where('categoria_id', 9)->where('etiqueta_id', 22)->get();
+        $documentos = Documento::porCategoriaEtiqueta('BIBLIOTECA', 'VIA LIBERTARIA')->get();
         return view('biblioteca.via', compact('documentos'));
     }
     public function equipo()

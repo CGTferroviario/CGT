@@ -25,7 +25,7 @@ class CategoriaController extends Controller
     {
         return view('intranet.categorias.create', [
             
-            'categoria' => Categoria::orderBy('id', 'asc')->get(),
+            'categorias' => Categoria::orderBy('id', 'asc')->get(),
 
         ]);
     }

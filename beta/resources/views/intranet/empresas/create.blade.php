@@ -28,7 +28,7 @@
                     
                 </div>
             </div>
-            <div class="grid grid-cols-4">
+            <div class="grid grid-cols-4 gap-4">
                 <div class="col-span-3 bg-oscuro-7 rounded-lg">
                     <div class="py-8 px-4 mx-auto">
                         <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Empresa</h2>
@@ -84,59 +84,15 @@
                         </form>
                     </div>
                 </div>
-            </div>
-            <div class="grid grid-flow-col auto-cols-max">
-                <div class="sm:flex sm:items-center sm:justify-start">
-                    <table id="comunicadosAdmin" class="display nowrap text-sm pt-5 font-normal" style="width:auto">
-                        <thead class="bg-oscuro text-white">
-                            <tr class="">
-                                <th class="rounded-tl-lg">ID</th>
-                                <th>Acciones</th>
-                                <th>Empresa</th>
-                                <th>Descripción</th>                      
-                                <th>Logo</th>
-                                <th>Vales</th>
-                                <th>Comunicados</th>
-                                <th class="rounded-tr-lg">Activa</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($empresas as $empresa)
-                            <tr>
-                                <td>{{ $empresa->id }}</td>
-                                <td>
-                                    <div class="flex justify-start gap-1 text-xl mt-2">
-                                        <a x-data="{ tooltip: 'Edite' }" href="{{ url('empresas.edit', $empresa->id) }}"
-                                            class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar empresa">
-                                            <i class="lni lni-pencil"></i>
-                                        </a>                                
-                                        <form method="POST" action="{{ route('intranet.empresas.destroy', $empresa->id) }}" onsubmit="return confirm('¿Deseas eliminar esta empresa?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class=" p-1 rounded-md">
-                                                <a x-data="{ tooltip: 'Delete' }" href="#" title="Eliminar empresa" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8">
-                                                    <i class="lni lni-trash-can"></i>
-                                                </a>
-                                            </button>
-                                        </form>                                
-                                    </div>
-                                </td>
-                                <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $empresa->nombre }}">{{ $empresa->nombre }}</span></td>
-                                <td>{{ $empresa->descripcion }}</td>
-                                <td>{{ $empresa->logo }}</td>
-                                <td class="text-center">{{ $empresa->gestion_vales }}</td>
-                                <td class="text-center">{{ $empresa->comunicados }}</td>
-                                <td class="text-center">{{ $empresa->activa }}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-                <div class="sm:flex sm:items-center sm:justify-between">
-                    {{-- <h1>Hola</h1> --}}
-                </div>
-                <div class="sm:flex sm:items-center sm:justify-end">
-                    {{-- <h1>Hola</h1> --}}
+                <div class="bg-oscuro-7 rounded-lg p-4">
+                    <h1 class="rojoBrillante text-lg text-center">Empresas Ferroviarias</h1>
+                    @foreach ($empresas as $empresa)
+                        <p class="text-white">
+                            {{ $empresa->nombre }}
+                        </p>
+                        
+                    @endforeach
+                    
                 </div>
             </div>
             

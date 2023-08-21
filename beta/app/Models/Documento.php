@@ -31,7 +31,7 @@ class Documento extends Model
         return $this->belongsToMany(Etiqueta::class);
     }
 
-    public function scopeporEmpresaYCategoria(Builder $query,$empresa,$categoria): void
+    public function scopeporEmpresaCategoria(Builder $query,$empresa,$categoria): void
     {
         $query->WhereHas('empresa', 
                     function($query)  use($empresa)

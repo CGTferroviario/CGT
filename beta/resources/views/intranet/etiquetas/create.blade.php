@@ -2,7 +2,7 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-900 leading-tight">
-            {{ __('Categorias') }}
+            {{ __('Etiquetas') }}
         </h2>
     </x-slot>
 
@@ -11,17 +11,17 @@
         <div class="bg-blanco-transp bordeRojo rounded-lg p-4">
             <div class="grid grid-cols-3 mt-2 mb-3">
                 <div class="sm:flex sm:items-center sm:justify-between">
-                    <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500" title="Volver a Categorias">
+                    <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500" title="Volver a Etiquetas">
                         <i class="lni lni-arrow-left"></i>
-                        <a href="{{ route('intranet.categorias.index') }}" class="">Volver al Índice de categorias</a>
+                        <a href="{{ route('intranet.etiquetas.index') }}" class="">Volver al Índice de etiquetas</a>
                     </button>
                 </div>
                 <div class="sm:flex-row sm:items-center sm:justify-between">
                     <x-mensaje></x-mensaje>
                     <div class="flex items-center gap-x-3">
-                        <h2 class="text-lg font-bold text-gray-800">Categorias</h2>
-                        <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $categorias->count() }}</span>
-                        <p class="mt-1 text-sm text-gray-500">Estas son las categorias que tenemos registradas.</p>
+                        <h2 class="text-lg font-bold text-gray-800">Etiquetas</h2>
+                        {{-- <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $etiquetas->count() }}</span> --}}
+                        <p class="mt-1 text-sm text-gray-500">Estas son las etiquetas que tenemos registradas.</p>
                     </div>
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-end">
@@ -31,8 +31,8 @@
             <div class="grid grid-cols-4 gap-4">
                 <div class="col-span-3 bg-oscuro-7 rounded-lg">
                     <div class="py-8 px-4 mx-auto">
-                        <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Categoria</h2>
-                        <form action="{{ route('intranet.categorias.store') }}" method="POST" enctype="multipart/form-data">
+                        <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Etiqueta</h2>
+                        <form action="{{ route('intranet.etiquetas.store') }}" method="POST" enctype="multipart/form-data">
                             <div class="grid grid-cols-4 gap-4">
                                 <div class="col-span-3">
                                     <div class="grid gap-4 sm:grid-cols-5 sm:gap-6 mt-3">
@@ -63,7 +63,7 @@
                                         </div>
                                         <div class="col-span-5">
                                             <label for="descripcion" class="block mb-2 text-sm font-medium text-white">Descripción</label>
-                                            <textarea id="descripcion" rows="5" class="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white focus:ring-red-500 focus:border-red-500" placeholder="Descripción de la categoria y sus funciones..."></textarea>
+                                            <textarea id="descripcion" rows="5" class="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white focus:ring-red-500 focus:border-red-500" placeholder="Descripción de la etiqueta y sus funciones..."></textarea>
                                         </div>
                                     </div> 
                                 </div>
@@ -85,15 +85,18 @@
                     </div>
                 </div>
                 <div class="bg-oscuro-7 rounded-lg p-4">
-                    <h1 class="rojoBrillante text-lg text-center">Categorías</h1>
-                    @foreach ($categorias as $categoria)
+                    <h1 class="rojoBrillante text-lg text-center">Empresas Ferroviarias</h1>
+                    @foreach ($etiquetas as $etiqueta)
                         <p class="text-white">
-                            {{ $categoria->nombre }}
+                            {{ $etiqueta->nombre }}
                         </p>
                         
                     @endforeach
+                    
                 </div>
-            </div>            
+            </div>
+            
+            
         </div>
     </div>
     @endsection

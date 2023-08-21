@@ -23,7 +23,9 @@ class EtiquetaController extends Controller
      */
     public function create()
     {
-        //
+        return view('intranet.etiquetas.create', [
+            'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
+        ]); 
     }
 
     /**

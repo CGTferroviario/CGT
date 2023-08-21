@@ -12,14 +12,14 @@
                 <li>
                     <button id="dropdownAdifLink" data-dropdown-toggle="dropdownAdif" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">ADIF <i class="lni lni-chevron-down ml-2"></i></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownAdif" class="z-50 hidden font-normal divide-y rounded-lg shadow w-48 bg-oscuro divide-gray-600">
+                    <div id="dropdownAdif" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownAdifButton">
                             <li aria-labelledby="dropdownAdifLink">
                                 <button id="doubleDropdownButtonAdif" data-dropdown-toggle="doubleDropdownAdif" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación General de ADIF">
                                     DOC. GENERAL<i class="lni lni-chevron-right ml-2"></i></button>
-                                <div id="doubleDropdownAdif" class="z-50 hidden divide-y rounded-lg shadow w-48 bg-oscuro">
+                                <div id="doubleDropdownAdif" class="z-50 hidden divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro">
                                     <ul class="py-2 text-sm text-gray-200" aria-labelledby="doubleDropdownButtonAdif">
-                                        <li><a href="{{ url('adif/doc/afiliacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AFILIACIÓN</a></li>
+                                        <li><a href="{{ url('adif/doc/afiliacion') }}" class="block px-4 py-2 hover:bg-gray-600 text-gray-400 hover:text-white">AFILIACIÓN</a></li>
                                         <li><a href="{{ url('adif/doc/ayudas') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AYUDAS Y BENEFICIOS SOCIALES</a></li>
                                         <li><a href="{{ url('adif/doc/igualdad') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">IGUALDAD</a></li>
                                         <li><a href="{{ url('adif/doc/legislacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
