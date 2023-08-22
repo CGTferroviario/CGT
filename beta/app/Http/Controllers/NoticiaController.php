@@ -36,7 +36,12 @@ class NoticiaController extends Controller
      */
     public function create()
     {
-        //
+        return view('intranet.noticias.create', [
+            'noticias' => Noticia::orderBy('id', 'desc')->paginate(15),
+            'empresas' => Empresa::orderBy('id', 'asc')->get(),
+            'categorias' => Categoria::orderBy('id', 'asc')->get(),
+            'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
+        ]);
     }
 
     /**
