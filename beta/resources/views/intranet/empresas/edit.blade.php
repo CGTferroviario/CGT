@@ -44,7 +44,10 @@
                                         <div class="text-center">
                                             <label for="comunicados" class="block mb-2 text-sm font-medium text-white">Comunicados</label>
                                             <label class="relative inline-flex items-center mt-2 cursor-pointer">
-                                                <input type="checkbox" name="comunicados" id="comunicados" value="{{ $empresa->comunicados }}" class="sr-only peer">
+                                                {{-- <input type="checkbox" name="comunicados" {{ $empresa->comunicados==1?'checked':'' }}/> --}}
+                                                {{-- <input type="checkbox" name="comunicados" class="switch-input" value="1" {{ old($empresa->comunicados) ? 'checked="checked"' : '' }}/> --}}
+
+                                                <input type="checkbox" name="comunicados" id="comunicados" {{ old($empresa->comunicados) ? 'checked="checked"' : '' }} class="sr-only peer">
                                                 <div class="w-11 h-6 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-800 bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-red-600"></div>
                                             </label>
                                         </div>
@@ -64,7 +67,7 @@
                                         </div>
                                         <div class="col-span-5">
                                             <label for="descripcion" class="block mb-2 text-sm font-medium text-white">Descripción</label>
-                                            <textarea id="descripcion" name="descripcion" rows="5" value="{{ $empresa->descripcion }}" class="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white focus:ring-red-500 focus:border-red-500" placeholder="Descripción de la empresa y sus funciones..."></textarea>
+                                            <textarea id="descripcion" name="descripcion" rows="5" placeholder="{{ $empresa->descripcion }}" value="{{ $empresa->descripcion }}" class="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white focus:ring-red-500 focus:border-red-500"></textarea>
                                         </div>
                                     </div> 
                                 </div>
