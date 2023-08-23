@@ -32,8 +32,9 @@
                 <div class="col-span-3 bg-oscuro-7 rounded-lg">
                     <div class="py-8 px-4 mx-auto">
                         <h2 class="mb-4 text-xl font-bold text-white text-center">Editar Empresa</h2>
-                        <form action="{{ route('intranet.empresas.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('intranet.empresas.update', $empresa->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <div class="grid grid-cols-4 gap-4">
                                 <div class="col-span-3">
                                     <div class="grid gap-4 sm:grid-cols-5 sm:gap-6 mt-3">
@@ -44,10 +45,8 @@
                                         <div class="text-center">
                                             <label for="comunicados" class="block mb-2 text-sm font-medium text-white">Comunicados</label>
                                             <label class="relative inline-flex items-center mt-2 cursor-pointer">
-                                                {{-- <input type="checkbox" name="comunicados" {{ $empresa->comunicados==1?'checked':'' }}/> --}}
-                                                {{-- <input type="checkbox" name="comunicados" class="switch-input" value="1" {{ old($empresa->comunicados) ? 'checked="checked"' : '' }}/> --}}
-
-                                                <input type="checkbox" name="comunicados" id="comunicados" {{ old($empresa->comunicados) ? 'checked="checked"' : '' }} class="sr-only peer">
+                                    
+                                                <input type="checkbox" name="comunicados" id="comunicados" value="1" {{ old($empresa->comunicados) ? 'checked="checked"' : '' }} class="sr-only peer">
                                                 <div class="w-11 h-6 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-800 bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-red-600"></div>
                                             </label>
                                         </div>
@@ -67,7 +66,9 @@
                                         </div>
                                         <div class="col-span-5">
                                             <label for="descripcion" class="block mb-2 text-sm font-medium text-white">Descripción</label>
-                                            <textarea id="descripcion" name="descripcion" rows="5" placeholder="{{ $empresa->descripcion }}" value="{{ $empresa->descripcion }}" class="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white focus:ring-red-500 focus:border-red-500"></textarea>
+                                            <textarea id="descripcion" name="descripcion" rows="5" class="block p-2.5 w-full text-left text-sm rounded-lg border bg-gray-700 border-gray-600 text-white focus:ring-red-500 focus:border-red-500">
+                                                {{ old('descripcion', $empresa->descripcion) }}
+                                            </textarea>
                                         </div>
                                     </div> 
                                 </div>
@@ -83,7 +84,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-green-500">Añadir Empresa</button>
+                            <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-green-500">Editar Empresa</button>
                             <button class="w-100 btn btn-outline-danger btn-lg" type="submit"></button>
                         </form>
                     </div>

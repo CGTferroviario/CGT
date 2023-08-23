@@ -34,23 +34,23 @@ class EmpresaController extends Controller
     public function store(StoreEmpresaRequest $request)
     {
         $comunicados = $request->comunicados;
-        // if ($request->comunicados == 'on') {
-        //     $comunicados = true;
-        // } else {
-        //     $comunicados = false;
-        // };
+        if ($request->comunicados == 'on') {
+            $comunicados = true;
+        } else {
+            $comunicados = false;
+        };
         $gestion_vales = $request->gestion_vales;
-        // if ($request->gestion_vales == 'on') {
-        //     $gestion_vales = true;
-        // } else {
-        //     $gestion_vales = false;
-        // };
+        if ($request->gestion_vales == 'on') {
+            $gestion_vales = true;
+        } else {
+            $gestion_vales = false;
+        };
         $activa = $request->activa;
-        // if ($request->activa == 'on') {
-        //     $activa = true;
-        // } else {
-        //     $activa = false;
-        // };
+        if ($request->activa == 'on') {
+            $activa = true;
+        } else {
+            $activa = false;
+        };
         
         $empresa = Empresa::create([
             'nombre' => $request->nombre,
@@ -84,7 +84,7 @@ class EmpresaController extends Controller
      */
     public function update(UpdateEmpresaRequest $request, Empresa $empresa)
     {
-        $validated = $request->validate(['nombre' => ['required']]);
+        $validated = $request->validate(['nombre' => ['required'], 'descripcion' => ['required']]);
         $empresa->update($validated);
 
         return to_route('intranet.empresas.index')->with('message', 'Empresa Actualizada Correctamente');
