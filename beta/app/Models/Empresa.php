@@ -9,6 +9,8 @@ class Empresa extends Model
 {
     use HasFactory;
 
+    public $fillable = ['nombre', 'descripcion', 'logo', 'gestion_vales', 'comunicados', 'activa'];
+
     public function comunicados()
     {
         return $this->hasMany(Comunicado::class);
@@ -19,7 +21,7 @@ class Empresa extends Model
     }
     public function noticias()
     {
-        return $this->hasMany(Noticia::class, 'empresa_id');
+        return $this->hasMany(Noticia::class);
     }
     public function documentos()
     {

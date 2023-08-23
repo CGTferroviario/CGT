@@ -19,7 +19,7 @@ class EmpresaController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Muestra el formulario para crear una nueva empresa.
      */
     public function create()
     {
@@ -33,12 +33,37 @@ class EmpresaController extends Controller
      */
     public function store(StoreEmpresaRequest $request)
     {
-        //
+        $comunicados = $request->comunicados;
+        if ($request->comunicados == 'on') {
+            $comunicados = true;
+        } else {
+            $comunicados = false;
+        };
+        $gestion_vales = $request->gestion_vales;
+        if ($request->gestion_vales == 'on') {
+            $gestion_vales = true;
+        } else {
+            $gestion_vales = false;
+        };
+        $activa = $request->activa;
+        if ($request->activa == 'on') {
+            $activa = true;
+        } else {
+            $activa = false;
+        };
+
+        $empresa = Empresa::create([
+            'nombre' => $request->nombre,
+            'descripcion' => $request->descripcion,
+            'logo' => $request->logo,
+            'gestion_vales' => $gestion_vales,
+            'comunicados' => $comunicados,
+            'activa' => $activa,
+        ]);
+
+        return redirect(route('intranet.empresas.index'))->with('message', 'Empresa Creada Correctamente');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Empresa $empresa)
     {
         //
@@ -49,7 +74,9 @@ class EmpresaController extends Controller
      */
     public function edit(Empresa $empresa)
     {
-        //
+        // dd($empresa);
+        $empresas = Empresa::all();
+        return view('intranet.empresas.edit', compact('empresa', 'empresas'));
     }
 
     /**
@@ -57,7 +84,10 @@ class EmpresaController extends Controller
      */
     public function update(UpdateEmpresaRequest $request, Empresa $empresa)
     {
-        //
+        $validated = $request->validate(['nombre' => ['required']]);
+        $empresa->update($validated);
+
+        return to_route('intranet.empresas.index')->with('message', 'Empresa Actualizada Correctamente');
     }
 
     /**
