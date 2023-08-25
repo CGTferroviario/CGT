@@ -13,7 +13,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        //
+        $sliders = Slider::all();
+        return view('slider.index', compact('sliders'));
     }
 
     /**
@@ -21,7 +22,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        //
+        return view('intranet.sliders.create');
     }
 
     /**
@@ -29,7 +30,16 @@ class SliderController extends Controller
      */
     public function store(StoreSliderRequest $request)
     {
-        //
+        $request->validate([
+            'imagen' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+        ]);
+        if ($request->hasFile('imagen')) {
+            $image_path = $request->file('imagen')->store('imagen', 'public');
+        }
+        Slider::create([
+            'imagen' => $image_path
+        ]);
+        return redirect()->route('intranet.sliders.index');
     }
 
     /**
@@ -45,7 +55,7 @@ class SliderController extends Controller
      */
     public function edit(Slider $slider)
     {
-        //
+        return view('intranet.sliders.edit', compact('slider'));
     }
 
     /**
@@ -53,7 +63,16 @@ class SliderController extends Controller
      */
     public function update(UpdateSliderRequest $request, Slider $slider)
     {
-        //
+        $request->validate([
+            'imagen' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+        ]);
+        if ($request->hasFile('imagen')) {
+            $image_path = $request->file('imagen')->store('imagen', 'public');
+            $slider->update([
+                'imagen' => $image_path
+            ]);
+        }
+        return redirect()->route('sliders.index');
     }
 
     /**
@@ -61,6 +80,7 @@ class SliderController extends Controller
      */
     public function destroy(Slider $slider)
     {
-        //
+        $slider->delete();
+        return redirect()->route('sliders.index');
     }
 }
