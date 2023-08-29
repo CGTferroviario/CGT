@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
             
         ]);
 
-        $documento = Documento::factory(100)->create([
+        $documento = Documento::factory(1000)->create([
             
         ]);
 

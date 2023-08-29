@@ -32,6 +32,46 @@ class UserSeeder extends Seeder
             'password' => Hash::make('olgacgt'),
         ]);
         User::firstOrcreate([
+            'nombre' => 'elena',
+            'email' => 'elena@elena.com',
+            'password' => Hash::make('elenacgt'),
+        ]);
+        User::firstOrcreate([
+            'nombre' => 'eva',
+            'email' => 'eva@eva.com',
+            'password' => Hash::make('evacgt'),
+        ]);
+        User::firstOrcreate([
+            'nombre' => 'luzi',
+            'email' => 'luzi@luzi.com',
+            'password' => Hash::make('luzicgt'),
+        ]);
+        User::firstOrcreate([
+            'nombre' => 'noelia',
+            'email' => 'noelia@noelia.com',
+            'password' => Hash::make('noeliacgt'),
+        ]);
+        User::firstOrcreate([
+            'nombre' => 'dani',
+            'email' => 'dani@dani.com',
+            'password' => Hash::make('danicgt'),
+        ]);
+        User::firstOrcreate([
+            'nombre' => 'josue',
+            'email' => 'josue@josue.com',
+            'password' => Hash::make('josuecgt'),
+        ]);
+        User::firstOrcreate([
+            'nombre' => 'ruben',
+            'email' => 'ruben@ruben.com',
+            'password' => Hash::make('rubencgt'),
+        ]);
+        User::firstOrcreate([
+            'nombre' => 'admin',
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('admincgt'), 
+        ]);
+        User::firstOrcreate([
             'nombre' => 'usuario',
             'email' => 'usuario@usuario.com',
             'password' => Hash::make('usuariocgt'), 
@@ -40,7 +80,7 @@ class UserSeeder extends Seeder
             'nombre' => 'editor',
             'email' => 'editor@editor.com',
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => Hash::make('editorcgt')
         ]);
     }
 }

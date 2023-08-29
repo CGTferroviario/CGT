@@ -16,21 +16,22 @@
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownAdifButton">
                             <li aria-labelledby="dropdownAdifLink">
                                 <button id="doubleDropdownButtonAdif" data-dropdown-toggle="doubleDropdownAdif" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación General de ADIF">
-                                    DOC. GENERAL<i class="lni lni-chevron-right ml-2"></i></button>
+                                    DOC. GENERAL<i class="lni lni-chevron-right ml-2"></i>
+                                </button>
                                 <div id="doubleDropdownAdif" class="z-50 hidden divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro">
                                     <ul class="py-2 text-sm text-gray-200" aria-labelledby="doubleDropdownButtonAdif">
-                                        <li><a href="{{ url('adif/doc/afiliacion') }}" class="block px-4 py-2 hover:bg-gray-600 text-gray-400 hover:text-white">AFILIACIÓN</a></li>
-                                        <li><a href="{{ url('adif/doc/ayudas') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AYUDAS Y BENEFICIOS SOCIALES</a></li>
-                                        <li><a href="{{ url('adif/doc/igualdad') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">IGUALDAD</a></li>
-                                        <li><a href="{{ url('adif/doc/legislacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
-                                        <li><a href="{{ url('adif/doc/licencias') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">LICENCIAS</a></li>
-                                        <li><a href="{{ url('adif/doc/mapa') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
-                                        <li><a href="{{ url('adif/doc/conciliacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MEDIDAS DE CONCILIACIÓN</a></li>
-                                        <li><a href="{{ url('adif/doc/modelos') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MODELOS DE SOLICITUD DE EMPRESA</a></li>
-                                        <li><a href="{{ url('adif/doc/protocolos') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
-                                        <li><a href="{{ url('adif/doc/salud') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">SALUD LABORAL</a></li>
-                                        <li><a href="{{ url('adif/doc/teletrabajo') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">TELETRABAJO</a></li>
-                                        <li><a href="{{ url('adif/doc/tablas') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">TABLAS SALARIALES</a></li>
+                                        <li><a href="{{ route('adif.doc.afiliacion') }}" class="block px-4 py-2 hover:bg-gray-600 text-gray-400 hover:text-white">AFILIACIÓN</a></li>
+                                        <li><a href="{{ route('adif.doc.ayudas') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AYUDAS Y BENEFICIOS SOCIALES</a></li>
+                                        <li><a href="{{ route('adif.doc.igualdad') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">IGUALDAD</a></li>
+                                        <li><a href="{{ route('adif.doc.legislacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
+                                        <li><a href="{{ route('adif.doc.licencias') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">LICENCIAS</a></li>
+                                        <li><a href="{{ route('adif.doc.mapa') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
+                                        <li><a href="{{ route('adif.doc.conciliacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MEDIDAS DE CONCILIACIÓN</a></li>
+                                        <li><a href="{{ route('adif.doc.modelos') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MODELOS DE SOLICITUD DE EMPRESA</a></li>
+                                        <li><a href="{{ route('adif.doc.protocolos') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
+                                        <li><a href="{{ route('adif.doc.salud') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">SALUD LABORAL</a></li>
+                                        <li><a href="{{ route('adif.doc.teletrabajo') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">TELETRABAJO</a></li>
+                                        <li><a href="{{ route('adif.doc.tablas') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">TABLAS SALARIALES</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -182,30 +183,54 @@
                     </div>
                 @else
                 <div class="w-full max-w-sm p-4 bg-oscuro bordeRojo rounded-lg shadow sm:p-6 md:p-8">
-                    <div class="inline-flex">
-                        <span class="text-white">
-                            Bienvenid@, {{ Auth::user()->name }}
-                        </span>
-                    </div>
-                    <div class="inline-flex float-right">
-                        <button class="text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                            {{ __('Cerrar Sesión') }}
-                        </button>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </div>
-                    <div class="mb-2">
-                        <h6 class="mb-2">Accede a tu <a href="{{ url('dashboard') }}">Panel de Afiliado</a></h6>
-                    </div>
-                    <hr>
-                    <div class="mb-2">
-                        <a href="{{ route('intranet.comunicados.index') }}" class="enlace inline-flex">Comunicados</a>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="align-middle">
+                            <span class="text-white">
+                                Bienvenid@, {{ Auth::user()->nombre }}
+                            </span>
+                        </div>
                         <div class="">
+                            <button class="text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                {{ __('Cerrar Sesión') }}
+                            </button>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div class="col-span-3 pt-2 text-center">
+                            <h6 class="mb-2">Accede a tu <a href="{{ route('dashboard') }}" class="text-red-500 hover:text-red-900">Panel de Afiliado</a></h6>
+                        </div>
+                        <hr class="col-span-3 bg-red-500">
+                        <div>
+                            <a href="{{ route('intranet.comunicados.index') }}" class="enlace inline-flex">Comunicados</a>
+                        </div>
+                        <div class="py-2">
+                            <a href="{{ url('intranet.comunicados.edit') }}" class="btn bg-blue-300 p-2 rounded-lg">Editar</a>
+                        </div>
+                        <div>
+                            <a href="{{ url('intranet.comunicados.create') }}" class="btn btn-outline-info">Añadir</a>
+                        </div>
+                        <div>
+                            <a href="{{ route('intranet.comunicados.index') }}" class="enlace inline-flex">Noticias</a>
+                        </div>
+                        <div>
                             <a href="{{ url('intranet.comunicados.edit') }}" class="btn btn-outline-secondary">Editar</a>
+                        </div>
+                        <div>
+                            <a href="{{ url('intranet.comunicados.create') }}" class="btn btn-outline-info">Añadir</a>
+                        </div>
+                        <div>
+                            <a href="{{ route('intranet.comunicados.index') }}" class="enlace inline-flex">Documentos</a>
+                        </div>
+                        <div>
+                            <a href="{{ url('intranet.comunicados.edit') }}" class="btn btn-outline-secondary">Editar</a>
+                        </div>
+                        <div>
                             <a href="{{ url('intranet.comunicados.create') }}" class="btn btn-outline-info">Añadir</a>
                         </div>
                     </div>

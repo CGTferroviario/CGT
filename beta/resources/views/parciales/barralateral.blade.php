@@ -72,12 +72,23 @@
                     <i class="lni lni-users rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Usuarios</span>
                 </a>
             </li>
+            <li class="">                    
+                <a href="{{ route('intranet.usuarios.index') }}" :active="request()->routeIs('users')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="lni lni-map rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Secciones</span>
+                </a>
+            </li>
+            <li class="">                    
+                <a href="{{ route('intranet.usuarios.index') }}" :active="request()->routeIs('users')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="lni lni-consulting rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Afiliados</span>
+                </a>
+            </li>            
             <hr>
             <li class="">                    
                 <a href="{{ route('profile.edit') }}" :active="request()->routeIs('users')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-user rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"></i> <span class="ml-3">Perfil</span>
                 </a>
             </li>
+            
             {{-- <li>
                 <button type="button"
                     class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"

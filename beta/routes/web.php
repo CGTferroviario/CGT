@@ -31,18 +31,18 @@ Route::controller(PaginaController::class)->prefix('adif')->name('adif.')->group
     Route::get('/oficinas', 'oficinasADIF');
 });
 Route::controller(PaginaController::class)->prefix('adif/doc')->name('adif.doc.')->group(function () {
-    Route::get('/afiliacion', 'afiliacionADIF');
-    Route::get('/ayudas', 'ayudasADIF');
-    Route::get('/igualdad', 'igualdadADIF');
-    Route::get('/legislacion', 'legislacionADIF');
-    Route::get('/licencias', 'licenciasADIF');
-    Route::get('/mapa', 'mapaADIF');
-    Route::get('/conciliacion', 'conciliacionADIF');
-    Route::get('/modelos', 'modelosADIF');
-    Route::get('/protocolos', 'protocolosADIF');
-    Route::get('/salud', 'saludADIF');
-    Route::get('/teletrabajo', 'teletrabajoADIF');
-    Route::get('/tablas', 'tablasADIF');
+    Route::get('/afiliacion', 'afiliacionADIF')->name('afiliacion');
+    Route::get('/ayudas', 'ayudasADIF')->name('ayudas');
+    Route::get('/igualdad', 'igualdadADIF')->name('igualdad');
+    Route::get('/legislacion', 'legislacionADIF')->name('legislacion');
+    Route::get('/licencias', 'licenciasADIF')->name('licencias');
+    Route::get('/mapa', 'mapaADIF')->name('mapa');
+    Route::get('/conciliacion', 'conciliacionADIF')->name('conciliacion');
+    Route::get('/modelos', 'modelosADIF')->name('modelos');
+    Route::get('/protocolos', 'protocolosADIF')->name('protocolos');
+    Route::get('/salud', 'saludADIF')->name('salud');
+    Route::get('/teletrabajo', 'teletrabajoADIF')->name('teletrabajo');
+    Route::get('/tablas', 'tablasADIF')->name('tablas');
 });
 Route::get('/renfe', function () {
     return view('renfe')->name('renfe');

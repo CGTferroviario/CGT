@@ -30,7 +30,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="grid grid-cols-3 gap-4 mb-4">
+                <div class="grid grid-cols-4 gap-4 mb-4">
                     <div class="p-4 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
                         <img src="/img/proximamente.png" alt="" class="absolute">
 
@@ -44,14 +44,15 @@
                         <h1 class="rojoBrillante text-3xl text-center my-2 titular">E . V . A .  -  Escuela Virtual Autogestionada  <br> <span title="Jose Antonio Cantarero">J . A . C .</span></h1>
 
                     </div>
-                    <div class="flex items-center justify-center rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
-                        <p class="text-2xl text-gray-500 hover:text-gray-100">
-                            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 18 18">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 1v16M1 9h16" />
-                            </svg>
-                        </p>
+                    <div class="p-4 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer align-middle">
+                        <img src="/img/proximamente.png" alt="" class="absolute">
+                        <img class="mx-auto mt-32" src="/img/tren2.png" alt="">
+                        <h1 class="rojoBrillante text-3xl text-center my-2 titular">Viajes de Servicio</h1>
+                    </div>
+                    <div class="p-4 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer align-middle">
+                        <img src="/img/proximamente.png" alt="" class="absolute right-10">
+                        <img class="mx-auto" src="/img/inventory.png" alt="">
+                        <h1 class="rojoBrillante text-3xl text-center my-2 titular">Inventario</h1>
                     </div>
                 </div>
                 <div class="flex items-center justify-center h-48 mb-4 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer   ">
