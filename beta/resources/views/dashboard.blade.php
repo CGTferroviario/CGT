@@ -7,7 +7,7 @@
     @section('contenido')
         <div class="p-4">
             <div class="p-4 border-2 border-dashed rounded-lg border-red-500">
-                <div class="grid grid-cols-3 gap-4 mb-4">
+                <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-4">
                     <div class="flex items-center justify-center h-24 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
                         <div class="py-2">
                             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -19,38 +19,33 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex items-center justify-center h-24 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
-                        <p class="text-lg">
-                            Cambiar Eslogan
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-center h-24 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
-                        <p class="text-lg">
-                            Cambiar Slider
-                        </p>
-                    </div>
-                </div>
-                <div class="grid grid-cols-4 gap-4 mb-4">
                     <div class="p-4 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
-                        <img src="/img/proximamente.png" alt="" class="absolute">
-
+                        <img class="mt-20" src="/img/eslogan.png" alt="">
+                        <h1 class="rojoBrillante text-3xl text-center my-2 titular">Cambiar Eslogan</h1>
+                    </div>
+                    <div class="p-4 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
+                        <img class="mx-auto" src="/img/slider.png" alt="">
+                        <h1 class="rojoBrillante text-3xl text-center my-2 titular">Cambiar Slider</h1>
+                    </div>
+                    <div class="p-4 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
+                        <img class="mx-auto" src="/img/vales.png" alt="">
+                        <h1 class="rojoBrillante text-3xl text-center my-2 titular">Vales Hora</h1>
+                    </div>
+                    <div class="p-4 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer align-middle">
+                        <img class="mx-auto mt-32" src="/img/tren2.png" alt="">
+                        <h1 class="rojoBrillante text-3xl text-center my-2 titular">Viajes de Servicio</h1>
+                    </div>
+                    <div class="p-4 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
                         <img class="mx-auto" src="/img/estadisticas.png" alt="">
                         <h1 class="rojoBrillante text-3xl text-center my-2 titular">Estadísticas</h1>
-
                     </div>
                     <div class="p-4 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
-                        <img src="/img/proximamente.png" alt="" class="absolute">
                         <img class="mx-auto" src="/img/EVA-JAC.png" alt="">
                         <h1 class="rojoBrillante text-3xl text-center my-2 titular">E . V . A .  -  Escuela Virtual Autogestionada  <br> <span title="Jose Antonio Cantarero">J . A . C .</span></h1>
 
                     </div>
+                    
                     <div class="p-4 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer align-middle">
-                        <img src="/img/proximamente.png" alt="" class="absolute">
-                        <img class="mx-auto mt-32" src="/img/tren2.png" alt="">
-                        <h1 class="rojoBrillante text-3xl text-center my-2 titular">Viajes de Servicio</h1>
-                    </div>
-                    <div class="p-4 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer align-middle">
-                        <img src="/img/proximamente.png" alt="" class="absolute right-10">
                         <img class="mx-auto" src="/img/inventory.png" alt="">
                         <h1 class="rojoBrillante text-3xl text-center my-2 titular">Inventario</h1>
                     </div>

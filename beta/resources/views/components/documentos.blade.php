@@ -1,4 +1,4 @@
-<div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">
+<div class="grid sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">
     @foreach ($documentos as $documento)            
         <div class="mb-4 shadow hover:shadow-lg h-full flex flex-col bordeNegro rounded-lg">
             <div class="p-4 flex-1 bg-red-500 min-h-140 hover:bg-white rounded-t-lg">

@@ -44,7 +44,7 @@
 
                 @include('parciales.barralateral')
                 
-                <div class="pt-20 sm:ml-52">
+                <div class="pt-20 sm:ml-16 md:ml-52">
                     <!-- Page Heading -->
                     @if (isset($header))
                         <header class="bg-red-500 shadow">

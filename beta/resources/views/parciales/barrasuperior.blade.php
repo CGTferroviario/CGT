@@ -150,7 +150,7 @@
         </div>
         {{-- <x-login> </x-login> --}}
         <div class="flex pr-2">
-            <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-black bg-red-500 hover:bg-red-200 focus:ring-2 focus:outline-none focus:ring-red-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" type="button">ÁREA Afiliados <i class="lni lni-chevron-down ml-2 text-white"></i></button>
+            <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="font-medium px-5 py-2.5 text-center bg-oscuro text-red-500 border border-red-500 hover:bg-red-500 hover:text-black p-2 rounded-lg text-sm focus:ring-2 focus:outline-none focus:ring-red-500" type="button">ÁREA Afiliados <i class="lni lni-chevron-down ml-2 text-white"></i></button>
             <!-- Dropdown menu -->
             <div id="dropdown" class="z-50 hidden divide-y rounded-lg shadow w-96 bg-oscuro">
                 @guest
@@ -185,12 +185,12 @@
                 <div class="w-full max-w-sm p-4 bg-oscuro bordeRojo rounded-lg shadow sm:p-6 md:p-8">
                     <div class="grid grid-cols-2 gap-2">
                         <div class="align-middle">
-                            <span class="text-white">
+                            <p class="text-white my-auto">
                                 Bienvenid@, {{ Auth::user()->nombre }}
-                            </span>
+                            </p>
                         </div>
                         <div class="">
-                            <button class="text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" href="{{ route('logout') }}"
+                            <button class="font-medium px-5 py-2.5 text-center bg-oscuro text-red-500 border border-red-500 hover:bg-red-500 hover:text-black p-2 rounded-lg text-sm focus:ring-4 focus:outline-none focus:ring-black" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                                 {{ __('Cerrar Sesión') }}
@@ -200,38 +200,29 @@
                                 @csrf
                             </form>
                         </div>
-                    </div>
-                    <div class="grid grid-cols-3 gap-2">
-                        <div class="col-span-3 pt-2 text-center">
-                            <h6 class="mb-2">Accede a tu <a href="{{ route('dashboard') }}" class="text-red-500 hover:text-red-900">Panel de Afiliado</a></h6>
+                    {{-- </div>
+                    <div class="grid grid-cols-3 gap-2"> --}}
+                        <div class="col-span-2 pt-2 text-center">
+                            <h6 class="mb-2 text-white">Accede a tu <a href="{{ route('dashboard') }}" class="text-red-500 hover:text-red-100">Panel de Afiliado</a></h6>
                         </div>
-                        <hr class="col-span-3 bg-red-500">
-                        <div>
-                            <a href="{{ route('intranet.comunicados.index') }}" class="enlace inline-flex">Comunicados</a>
+                        <hr class="col-span-2 bg-red-500">
+                        <div class="py-2">
+                            <a href="{{ route('intranet.comunicados.index') }}" class="text-white">Comunicados</a>
                         </div>
                         <div class="py-2">
-                            <a href="{{ url('intranet.comunicados.edit') }}" class="btn bg-blue-300 p-2 rounded-lg">Editar</a>
+                            <a href="{{ route('intranet.comunicados.create') }}" class="bg-oscuro text-red-500 border border-red-500 hover:bg-red-500 hover:text-black p-2 rounded-lg text-sm">Añadir</a>
                         </div>
-                        <div>
-                            <a href="{{ url('intranet.comunicados.create') }}" class="btn btn-outline-info">Añadir</a>
+                        <div class="py-2">
+                            <a href="{{ route('intranet.noticias.index') }}" class="text-white">Noticias</a>
                         </div>
-                        <div>
-                            <a href="{{ route('intranet.comunicados.index') }}" class="enlace inline-flex">Noticias</a>
+                        <div class="py-2">
+                            <a href="{{ route('intranet.noticias.create') }}" class="bg-oscuro text-red-500 border border-red-500 hover:bg-red-500 hover:text-black p-2 rounded-lg text-sm">Añadir</a>
                         </div>
-                        <div>
-                            <a href="{{ url('intranet.comunicados.edit') }}" class="btn btn-outline-secondary">Editar</a>
+                        <div class="py-2">
+                            <a href="{{ route('intranet.documentos.index') }}" class="text-white">Documentos</a>
                         </div>
-                        <div>
-                            <a href="{{ url('intranet.comunicados.create') }}" class="btn btn-outline-info">Añadir</a>
-                        </div>
-                        <div>
-                            <a href="{{ route('intranet.comunicados.index') }}" class="enlace inline-flex">Documentos</a>
-                        </div>
-                        <div>
-                            <a href="{{ url('intranet.comunicados.edit') }}" class="btn btn-outline-secondary">Editar</a>
-                        </div>
-                        <div>
-                            <a href="{{ url('intranet.comunicados.create') }}" class="btn btn-outline-info">Añadir</a>
+                        <div class="py-2">
+                            <a href="{{ route('intranet.documentos.create') }}" class="bg-oscuro text-red-500 border border-red-500 hover:bg-red-500 hover:text-black p-2 rounded-lg text-sm">Añadir</a>
                         </div>
                     </div>
                 </div>
