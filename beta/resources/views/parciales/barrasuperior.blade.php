@@ -200,8 +200,6 @@
                                 @csrf
                             </form>
                         </div>
-                    {{-- </div>
-                    <div class="grid grid-cols-3 gap-2"> --}}
                         <div class="col-span-2 pt-2 text-center">
                             <h6 class="mb-2 text-white">Accede a tu <a href="{{ route('dashboard') }}" class="text-red-500 hover:text-red-100">Panel de Afiliado</a></h6>
                         </div>
@@ -228,8 +226,6 @@
                 </div>
                 @endguest
             </div>
-            
-
             <button data-collapse-toggle="navbar-sticky" type="button"
                 class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg border-x border-y hover:text-red-500 hover:border-red-500 border-white md:hidden focus:outline-none focus:ring-2 hover:bg-gray-900 focus:ring-gray-600"
                 aria-controls="navbar-sticky" aria-expanded="false">
@@ -237,7 +233,5 @@
                 <i class="lni lni-line-spacing text-3xl"></i>
             </button>
         </div>
-        
-        
     </div>
 </nav>
