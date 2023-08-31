@@ -74,12 +74,12 @@
                 </a>
             </li>
             <li class="">                    
-                <a href="{{ route('intranet.usuarios.index') }}" :active="request()->routeIs('users')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ route('intranet.secciones.index') }}" :active="request()->routeIs('secciones')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-map rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Secciones"></i> <span class="ml-3 sm:hidden md:flex">Secciones</span>
                 </a>
             </li>
             <li class="">                    
-                <a href="{{ route('intranet.usuarios.index') }}" :active="request()->routeIs('users')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ route('intranet.afiliados.index') }}" :active="request()->routeIs('afiliados')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="lni lni-consulting rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Afiliados"></i> <span class="ml-3 sm:hidden md:flex">Afiliados</span>
                 </a>
             </li>            
@@ -89,6 +89,7 @@
                     <i class="lni lni-user rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Perfil"></i> <span class="ml-3 sm:hidden md:flex">Perfil</span>
                 </a>
             </li>
+            
             
             {{-- <li>
                 <button type="button"

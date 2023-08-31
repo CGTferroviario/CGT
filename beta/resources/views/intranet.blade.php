@@ -2,6 +2,23 @@
 
 <h1 class="m-0 py-3 text-center bg-rojoBrillante font-bold">Si quieres que algo cambie...¡Elige CGT!</h1>
 <div class="w-full p-4">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            @foreach($sliders as $slider)
+            <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                <img class="d-block w-100" src="{{ asset('storage/' . $slider->image) }}" alt="Slide">
+            </div>
+            @endforeach
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
     <div id="indicators-carousel" class="relative w-full" data-carousel="static">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">

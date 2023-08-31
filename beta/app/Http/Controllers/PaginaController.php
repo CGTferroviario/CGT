@@ -5,10 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Database\Eloquent\Builder;
 use App\Models\Documento;
 use App\Models\Empresa;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class PaginaController extends Controller
 {
+    function intranet() {
+        $sliders = Slider::all();
+        return view('intranet', compact('sliders'));
+    }
     public function adif() 
     {
         return view('adif');

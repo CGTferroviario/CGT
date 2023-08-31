@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sliders', function (Blueprint $table) {
+        Schema::create('afiliados', function (Blueprint $table) {
             $table->id();
-            $table->string('imagen');
-            $table->text('descripcion');
             $table->timestamps();
         });
     }
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sliders');
+        Schema::dropIfExists('afiliados');
     }
 };

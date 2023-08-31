@@ -14,7 +14,7 @@ class SliderController extends Controller
     public function index()
     {
         $sliders = Slider::all();
-        return view('slider.index', compact('sliders'));
+        return view('intranet.sliders.index', compact('sliders'));
     }
 
     /**
@@ -72,7 +72,7 @@ class SliderController extends Controller
                 'imagen' => $image_path
             ]);
         }
-        return redirect()->route('sliders.index');
+        return redirect()->route('intranet.sliders.index');
     }
 
     /**
@@ -81,6 +81,6 @@ class SliderController extends Controller
     public function destroy(Slider $slider)
     {
         $slider->delete();
-        return redirect()->route('sliders.index');
+        return redirect()->route('intranet.sliders.index');
     }
 }

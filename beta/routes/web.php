@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AfiliadoController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ComunicadoController;
@@ -11,7 +12,10 @@ use App\Http\Controllers\EtiquetaController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\PaginaController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\SeccionController;
+use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
+use App\Models\Slider;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Contracts\Permission;
 
@@ -20,7 +24,9 @@ Route::get('/', function () {
     return view('welcome'); 
 });
 Route::get('/intranet', function () {
-    return view('intranet'); 
+    $sliders = Slider::all();
+    return view('intranet', compact('sliders'));
+    // Route::get('/', [PaginaController::class, 'intranet'])->name('intranet');
 });
 Route::get('/adif', function () {
     return view('adif')->name('adif');
@@ -141,6 +147,9 @@ Route::middleware('auth')->name('intranet.')->prefix('intranet')->group(function
     Route::resource('/permissions', PermissionController::class);
     Route::resource('/usuarios', UserController::class);
     Route::resource('/documentos', DocumentoController::class);
+    Route::resource('/sliders', SliderController::class);
+    Route::resource('/secciones', SeccionController::class);
+    Route::resource('/afiliados', AfiliadoController::class);
 });
 
 
