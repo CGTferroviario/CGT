@@ -6,12 +6,10 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    
     public function up(): void
     {
-        Schema::create('secciones', function (Blueprint $table) {
+        Schema::create('seccions', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
             $table->string('email')->unique();            
@@ -24,15 +22,11 @@ return new class extends Migration
             $table->timestamp('ult_logout')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('secciones');
+        Schema::dropIfExists('seccions');
     }
 };

@@ -1,8 +1,8 @@
 <x-privado-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-900 leading-tight">
-            {{ __('Usuarios') }}
+        <h2 class="font-semibold text-xl text-gray-900 leading-tight">
+            {{ __('Secciones') }}
         </h2>
     </x-slot>
 
@@ -26,9 +26,9 @@
                 <div class="sm:flex-row sm:items-center sm:justify-between">
                     <x-mensaje></x-mensaje>
                     <div class="flex items-center gap-x-3">
-                        <h2 class="text-lg font-bold text-gray-800">Usuarios</h2>
-                        <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $users->count() }}</span>
-                        <p class="mt-1 text-sm text-gray-500">Estas son las usuarias que tenemos registradas.</p>
+                        <h2 class="text-lg font-bold text-gray-800">Secciones</h2>
+                        <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $seccions->count() }}</span>
+                        <p class="mt-1 text-sm text-gray-500">Estas son las secciones que tenemos registradas.</p>
                     </div>
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-end">
@@ -39,7 +39,7 @@
                         </button>
                         <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500" title="Añadir un nuevo usuario">
                             <i class="lni lni-apartment"></i>
-                            <a href="{{ route('intranet.usuarios.create') }}" class="">Añadir usuario</a>
+                            <a href="{{ route('intranet.usuarios.create') }}" class="">Añadir sección</a>
                         </button>
                     </div>
                 </div>
@@ -58,20 +58,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
+                            @foreach ($seccions as $seccion)
                             <tr>
-                                <td>{{ $user->id }}</td>
+                                <td>{{ $seccion->id }}</td>
                                 <td>
                                     <div class="flex justify-start gap-1 text-xl mt-2">
-                                        <a x-data="{ tooltip: 'Edite' }" href="{{ url('users.edit', $user->id) }}"
+                                        <a x-data="{ tooltip: 'Reset' }" href="{{ url('seccions.edit', $seccion->id) }}"
                                             class="text-gray-800 hover:bg-gray-500 hover:text-white p-1 rounded-lg h-8" title="Resetear usuario">
                                             <i class="lni lni-unlock"></i>
                                         </a>
-                                        <a x-data="{ tooltip: 'Edite' }" href="{{ url('users.edit', $user->id) }}"
+                                        <a x-data="{ tooltip: 'Edit' }" href="{{ url('seccions.edit', $seccion->id) }}"
                                             class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar usuario">
                                             <i class="lni lni-pencil"></i>
                                         </a>                                
-                                        <form method="POST" action="{{ route('intranet.usuarios.destroy', $user->id) }}" onsubmit="return confirm('¿Deseas eliminar esta usuario?');">
+                                        <form method="POST" action="{{ route('intranet.usuarios.destroy', $seccion->id) }}" onsubmit="return confirm('¿Deseas eliminar esta usuario?');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class=" p-1 rounded-md">
@@ -82,10 +82,10 @@
                                         </form>                                
                                     </div>
                                 </td>
-                                <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-red-300 text-red-900">{{ $user->nombre }}</span></td>
-                                <td>{{ $user->email }}</td>
-                                <td class="text-center">{{ $user->last_login }}</td>
-                                <td class="text-center">{{ $user->last_logout }}</td>
+                                <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-red-300 text-red-900">{{ $seccion->nombre }}</span></td>
+                                <td>{{ $seccion->email }}</td>
+                                <td class="text-center">{{ $seccion->last_login }}</td>
+                                <td class="text-center">{{ $seccion->last_logout }}</td>
                             </tr>
                             @endforeach
                         </tbody>

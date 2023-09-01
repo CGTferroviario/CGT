@@ -13,7 +13,9 @@ class SeccionController extends Controller
      */
     public function index()
     {
-        //
+        return view('intranet.secciones.index', [
+            'seccions' => Seccion::orderBy('id', 'asc')->get()
+        ]);
     }
 
     /**
