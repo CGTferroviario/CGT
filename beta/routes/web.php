@@ -35,6 +35,7 @@ Route::controller(PaginaController::class)->prefix('adif')->name('adif.')->group
     Route::get('/infraestructura', 'infraestructura');
     Route::get('/circulacion', 'circulacion');
     Route::get('/oficinas', 'oficinasADIF');
+    Route::get('/estaciones', 'estaciones');
 });
 Route::controller(PaginaController::class)->prefix('adif/doc')->name('adif.doc.')->group(function () {
     Route::get('/afiliacion', 'afiliacionADIF')->name('afiliacion');

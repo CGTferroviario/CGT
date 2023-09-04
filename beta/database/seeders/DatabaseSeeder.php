@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EmpresaSeeder::class);
         $this->call(CategoriaSeeder::class);
         $this->call(EtiquetaSeeder::class);
+        $this->call(SeccionSeeder::class);
         
 
         $comunicado = Comunicado::factory(100)->create([

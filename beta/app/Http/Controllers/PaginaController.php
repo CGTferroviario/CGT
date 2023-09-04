@@ -33,6 +33,11 @@ class PaginaController extends Controller
         $documentos = Documento::porEmpresaCategoria('ADIF','OFICINAS')->get();
         return view('adif.oficinas', compact('documentos'));
     }
+    public function estaciones() 
+    {
+        $documentos = Documento::porEmpresaCategoria('ADIF','ESTACIONES')->get();
+        return view('adif.estaciones', compact('documentos'));
+    }
     // Documentos Generales ADIF
     public function afiliacionADIF() {
         $documentos = Documento::porEmpresaEtiqueta('ADIF','AFILIACIÓN')->get();

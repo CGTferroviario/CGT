@@ -39,7 +39,7 @@
                         </button>
                         <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500" title="Añadir un nuevo usuario">
                             <i class="lni lni-apartment"></i>
-                            <a href="{{ route('intranet.usuarios.create') }}" class="">Añadir sección</a>
+                            <a href="{{ route('intranet.secciones.create') }}" class="">Añadir sección</a>
                         </button>
                     </div>
                 </div>
@@ -53,6 +53,9 @@
                                 <th>Acciones</th>
                                 <th>Nombre</th>                        
                                 <th>Email</th>
+                                <th>Email2</th>
+                                <th>Descripción</th>
+                                <th>Teléfono</th>
                                 <th>Ult. Login</th>
                                 <th class="rounded-tr-lg">Ult. Logout</th>
                             </tr>
@@ -84,6 +87,9 @@
                                 </td>
                                 <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-red-300 text-red-900">{{ $seccion->nombre }}</span></td>
                                 <td>{{ $seccion->email }}</td>
+                                <td>{{ $seccion->email2 }}</td>
+                                <td>{{ $seccion->descripcion }}</td>
+                                <td>{{ $seccion->telefono }}</td>
                                 <td class="text-center">{{ $seccion->last_login }}</td>
                                 <td class="text-center">{{ $seccion->last_logout }}</td>
                             </tr>

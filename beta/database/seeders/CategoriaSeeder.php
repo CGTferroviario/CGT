@@ -18,6 +18,7 @@ class CategoriaSeeder extends Seeder
             ['nombre' => 'INFRAESTRUCTURA', 'empresa_id' => 1 ],
             ['nombre' => 'CIRCULACIÓN', 'empresa_id' => 1 ],
             ['nombre' => 'OFICINAS', 'empresa_id' => 1 ],
+            ['nombre' => 'ESTACIONES', 'empresa_id' => 1 ],
             ['nombre' => 'COMERCIAL', 'empresa_id' => 2 ],
             ['nombre' => 'INTERVENCIÓN', 'empresa_id' => 2 ],
             ['nombre' => 'CONDUCCIÓN', 'empresa_id' => 2 ],

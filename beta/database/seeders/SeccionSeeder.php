@@ -16,75 +16,38 @@ class SeccionSeeder extends Seeder
 
     public function run(): void
     {
-        DB::table('users')->truncate(); //for cleaning earlier data to avoid duplicate entries
+        DB::table('seccions')->truncate(); //for cleaning earlier data to avoid duplicate entries
         Seccion::firstOrcreate([
-            'nombre' => 'pablo',
-            'email' => 'pablo@pablo.com',
-            'email2' => 'pablo2@pablo.com',
-            'descripcion' => 'pablo@pablo.com',
-            'telefono' => 'pablo@pablo.com',
-            'password' => Hash::make('pablocgt'),
+            'nombre' => 'Madrid',
+            'email' => 'madrid@madrid.com',
+            'email2' => 'madrid2@madrid.com',
+            'descripcion' => 'La sección de Madrid',
+            'telefono' => '666666666',
+            'password' => Hash::make('madridcgt'),
         ]);
         Seccion::firstOrcreate([
-            'nombre' => 'nacho',
-            'email' => 'nacho@nacho.com',
-            'password' => Hash::make('nachocgt'),
+            'nombre' => 'Barcelona',
+            'email' => 'barcelona@barcelona.com',
+            'email2' => 'barcelona2@barcelona.com',
+            'descripcion' => 'La sección de Barcelona',
+            'telefono' => '666666667',
+            'password' => Hash::make('barcelonacgt'),
         ]);
         Seccion::firstOrcreate([
-            'nombre' => 'olga',
-            'email' => 'olga@olga.com',
-            'password' => Hash::make('olgacgt'),
+            'nombre' => 'Sevilla',
+            'email' => 'sevilla@sevilla.com',
+            'email2' => 'sevilla2@sevilla.com',
+            'descripcion' => 'La sección de Sevilla',
+            'telefono' => '666666668',
+            'password' => Hash::make('sevillacgt'),
         ]);
         Seccion::firstOrcreate([
-            'nombre' => 'elena',
-            'email' => 'elena@elena.com',
-            'password' => Hash::make('elenacgt'),
-        ]);
-        Seccion::firstOrcreate([
-            'nombre' => 'eva',
-            'email' => 'eva@eva.com',
-            'password' => Hash::make('evacgt'),
-        ]);
-        Seccion::firstOrcreate([
-            'nombre' => 'luzi',
-            'email' => 'luzi@luzi.com',
-            'password' => Hash::make('luzicgt'),
-        ]);
-        Seccion::firstOrcreate([
-            'nombre' => 'noelia',
-            'email' => 'noelia@noelia.com',
-            'password' => Hash::make('noeliacgt'),
-        ]);
-        Seccion::firstOrcreate([
-            'nombre' => 'dani',
-            'email' => 'dani@dani.com',
-            'password' => Hash::make('danicgt'),
-        ]);
-        Seccion::firstOrcreate([
-            'nombre' => 'josue',
-            'email' => 'josue@josue.com',
-            'password' => Hash::make('josuecgt'),
-        ]);
-        Seccion::firstOrcreate([
-            'nombre' => 'ruben',
-            'email' => 'ruben@ruben.com',
-            'password' => Hash::make('rubencgt'),
-        ]);
-        Seccion::firstOrcreate([
-            'nombre' => 'admin',
-            'email' => 'admin@admin.com',
-            'password' => Hash::make('admincgt'), 
-        ]);
-        Seccion::firstOrcreate([
-            'nombre' => 'usuario',
-            'email' => 'usuario@usuario.com',
-            'password' => Hash::make('usuariocgt'), 
-        ]);
-        Seccion::firstOrcreate([
-            'nombre' => 'editor',
-            'email' => 'editor@editor.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('editorcgt')
+            'nombre' => 'Valencia',
+            'email' => 'valencia@valencia.com',
+            'email2' => 'valencia2@valencia.com',
+            'descripcion' => 'La sección de Valencia',
+            'telefono' => '666666669',
+            'password' => Hash::make('valenciacgt'),
         ]);
     }
 }
