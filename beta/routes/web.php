@@ -32,10 +32,10 @@ Route::get('/adif', function () {
     return view('adif')->name('adif');
 });
 Route::controller(PaginaController::class)->prefix('adif')->name('adif.')->group(function () {
-    Route::get('/infraestructura', 'infraestructura');
-    Route::get('/circulacion', 'circulacion');
-    Route::get('/oficinas', 'oficinasADIF');
-    Route::get('/estaciones', 'estaciones');
+    Route::get('/infraestructura', 'infraestructura')->name('infraestructura');
+    Route::get('/circulacion', 'circulacion')->name('circulacion');
+    Route::get('/oficinas', 'oficinasADIF')->name('oficinas');
+    Route::get('/estaciones', 'estaciones')->name('estaciones');
 });
 Route::controller(PaginaController::class)->prefix('adif/doc')->name('adif.doc.')->group(function () {
     Route::get('/afiliacion', 'afiliacionADIF')->name('afiliacion');

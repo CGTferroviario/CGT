@@ -60,9 +60,6 @@ a:hover{
     color: white;
     font-size: 2em;
 }
-#navbar-sticky .lni-chevron-down, #navbar-sticky .lni-chevron-right {
-  color: red;
-}
 .sociales .lni{
   margin-left: 4px;
 }
@@ -176,6 +173,7 @@ aside .lni{
 .bg-INFRAESTRUCTURA { background: rgb(230, 230, 40); color: black; }
 .bg-OFICINAS { background: rgb(150, 150, 200); color: white; }
 .bg-CIRCULACIÓN { background: rgb(231, 95, 85); color: white; }
+.bg-ESTACIONES { background: rgb(0, 99, 0); color: white; }
 .bg-TALLERES { background: rgb(145, 218, 11); color: white; }
 .bg-CONDUCCIÓN { background: rgb(221, 104, 236); color: white; }
 .bg-INTERVENCIÓN { background: rgb(97, 4, 109); color: white; }

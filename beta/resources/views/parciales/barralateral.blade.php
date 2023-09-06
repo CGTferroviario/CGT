@@ -24,69 +24,69 @@
             <hr>
             <li class="">                   
                 <a href="{{ route('intranet.comunicados.index') }}" :active="request()->routeIs('comunicados')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-bullhorn rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Comunicados"></i><span class="ml-3 sm:hidden md:flex">Comunicados</span>
+                    <i class="lni lni-bullhorn rojoBrillante transition duration-75 group-hover:text-white" title="Comunicados"></i><span class="ml-3 sm:hidden md:flex">Comunicados</span>
                 </a>
             </li>
             <li class="">                   
                 <a href="{{ route('intranet.noticias.index') }}" :active="request()->routeIs('noticias')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-book rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Noticias"></i><span class="ml-3 sm:hidden md:flex">Noticias</span>
+                    <i class="lni lni-book rojoBrillante transition duration-75 group-hover:text-white" title="Noticias"></i><span class="ml-3 sm:hidden md:flex">Noticias</span>
                 </a>
             </li>
             <li class="">
                 <a href="{{ route('intranet.documentos.index') }}" :active="request()->routeIs('documentos')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-files rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Documentos"></i> <span class="ml-3 sm:hidden md:flex">Documentos</span>
+                    <i class="lni lni-files rojoBrillante transition duration-75 group-hover:text-white" title="Documentos"></i> <span class="ml-3 sm:hidden md:flex">Documentos</span>
                 </a>
             </li>
             <li class="">
                 <a href="{{ url('intranet.archivos.index') }}" :active="request()->routeIs('archivos')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-archive rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Archivos"></i> <span class="ml-3 sm:hidden md:flex">Archivos</span>
+                    <i class="lni lni-archive rojoBrillante transition duration-75 group-hover:text-white" title="Archivos"></i> <span class="ml-3 sm:hidden md:flex">Archivos</span>
                 </a>
             </li>
             <li class="">                    
                 <a href="{{ route('intranet.empresas.index') }}" :active="request()->routeIs('empresas')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-apartment rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Empresas"></i> <span class="ml-3 sm:hidden md:flex">Empresas</span>
+                    <i class="lni lni-apartment rojoBrillante transition duration-75 group-hover:text-white" title="Empresas"></i> <span class="ml-3 sm:hidden md:flex">Empresas</span>
                 </a>
             </li>
             <li class="">                    
                 <a href="{{ route('intranet.categorias.index') }}" :active="request()->routeIs('categorias')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-hammer rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Categorías"></i> <span class="ml-3 sm:hidden md:flex">Categorías</span>
+                    <i class="lni lni-hammer rojoBrillante transition duration-75 group-hover:text-white" title="Categorías"></i> <span class="ml-3 sm:hidden md:flex">Categorías</span>
                 </a>
             </li>
             <li class="">                    
                 <a href="{{ route('intranet.etiquetas.index') }}" :active="request()->routeIs('etiquetas')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-tag rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Etiquetas"></i> <span class="ml-3 sm:hidden md:flex">Etiquetas</span>
+                    <i class="lni lni-tag rojoBrillante transition duration-75 group-hover:text-white" title="Etiquetas"></i> <span class="ml-3 sm:hidden md:flex">Etiquetas</span>
                 </a>
             </li>
             <hr>
             <li class="">                    
                 <a href="{{ route('intranet.roles.index') }}" :active="request()->routeIs('roles')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-support rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Roles"></i> <span class="ml-3 sm:hidden md:flex">Roles</span>
+                    <i class="lni lni-support rojoBrillante transition duration-75 group-hover:text-white" title="Roles"></i> <span class="ml-3 sm:hidden md:flex">Roles</span>
                 </a>
             </li>
             <li class="">                    
                 <a href="{{ route('intranet.permissions.index') }}" :active="request()->routeIs('permissions')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-license rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Permisos"></i> <span class="ml-3 sm:hidden md:flex">Permisos</span>
+                    <i class="lni lni-license rojoBrillante transition duration-75 group-hover:text-white" title="Permisos"></i> <span class="ml-3 sm:hidden md:flex">Permisos</span>
                 </a>
             </li>
             <li class="">                    
                 <a href="{{ route('intranet.usuarios.index') }}" :active="request()->routeIs('users')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-users rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Usuarios"></i> <span class="ml-3 sm:hidden md:flex">Usuarios</span>
+                    <i class="lni lni-users rojoBrillante transition duration-75 group-hover:text-white" title="Usuarios"></i> <span class="ml-3 sm:hidden md:flex">Usuarios</span>
                 </a>
             </li>
             <li class="">                    
                 <a href="{{ route('intranet.secciones.index') }}" :active="request()->routeIs('secciones')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-map rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Secciones"></i> <span class="ml-3 sm:hidden md:flex">Secciones</span>
+                    <i class="lni lni-map rojoBrillante transition duration-75 group-hover:text-white" title="Secciones"></i> <span class="ml-3 sm:hidden md:flex">Secciones</span>
                 </a>
             </li>
             <li class="">                    
                 <a href="{{ route('intranet.afiliados.index') }}" :active="request()->routeIs('afiliados')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-consulting rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Afiliados"></i> <span class="ml-3 sm:hidden md:flex">Afiliados</span>
+                    <i class="lni lni-consulting rojoBrillante transition duration-75 group-hover:text-white" title="Afiliados"></i> <span class="ml-3 sm:hidden md:flex">Afiliados</span>
                 </a>
             </li>            
             <hr>
             <li class="">                    
                 <a href="{{ route('profile.edit') }}" :active="request()->routeIs('users')" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <i class="lni lni-user rojoBrillante transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" title="Perfil"></i> <span class="ml-3 sm:hidden md:flex">Perfil</span>
+                    <i class="lni lni-user rojoBrillante transition duration-75 group-hover:text-white" title="Perfil"></i> <span class="ml-3 sm:hidden md:flex">Perfil</span>
                 </a>
             </li>
             

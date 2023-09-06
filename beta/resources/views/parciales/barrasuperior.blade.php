@@ -8,15 +8,15 @@
         </div>
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:text-sm lg:text-base xl:text-lg" id="navbar-sticky">
             <ul
-                class="flex flex-col p-4 md:p-0 mt-4 ml-1 font-medium border border-gray-700 rounded-lg md:flex-row md:space-x-4 md:mt-0 md:border-0">
-                <li>
-                    <button id="dropdownAdifLink" data-dropdown-toggle="dropdownAdif" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">ADIF <i class="lni lni-chevron-down ml-2"></i></button>
+                class="flex flex-col p-4 md:p-0 mt-4 ml-1 font-medium border border-gray-700 rounded-lg md:flex-row md:space-x-1 md:mt-0 md:border-0">
+                <li class="group">
+                    <button id="dropdownAdifLink" data-dropdown-toggle="dropdownAdif" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">ADIF <i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownAdif" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownAdifButton">
-                            <li aria-labelledby="dropdownAdifLink">
+                            <li class="group" aria-labelledby="dropdownAdifLink">
                                 <button id="doubleDropdownButtonAdif" data-dropdown-toggle="doubleDropdownAdif" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación General de ADIF">
-                                    DOC. GENERAL<i class="lni lni-chevron-right ml-2"></i>
+                                    DOC. GENERAL<i class="lni lni-chevron-right ml-1 text-red-500 group-hover:text-white"></i>
                                 </button>
                                 <div id="doubleDropdownAdif" class="z-50 hidden divide-y rounded-lg shadow w-72 bordeRojo bg-oscuro">
                                     <ul class="py-2 text-sm text-gray-200" aria-labelledby="doubleDropdownButtonAdif">
@@ -38,17 +38,18 @@
                             <li><a href="{{ url('adif/infraestructura') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Infraestructura">INFRAESTRUCTURA</a></li>
                             <li><a href="{{ url('adif/circulacion') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Circulación">CIRCULACIÓN</a></li>
                             <li><a href="{{ url('adif/oficinas') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
+                            <li><a href="{{ route('adif.estaciones') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Estaciones">ESTACIONES</a></li>
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <button id="dropdownRenfeLink" data-dropdown-toggle="dropdownRenfe" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">RENFE <i class="lni lni-chevron-down ml-2"></i></button>
+                <li class="group">
+                    <button id="dropdownRenfeLink" data-dropdown-toggle="dropdownRenfe" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">RENFE <i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownRenfe" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownRenfeButton">
                             <li aria-labelledby="dropdownRenfeLink">
-                                <button id="doubleDropdownButtonRenfe" data-dropdown-toggle="doubleDropdownRenfe" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación General de RENFE">
-                                    DOC. GENERAL<i class="lni lni-chevron-right ml-2"></i></button>
+                                <button id="doubleDropdownButtonRenfe" data-dropdown-toggle="doubleDropdownRenfe" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-600 hover:text-white group" title="Documentación General de RENFE">
+                                    DOC. GENERAL<i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
                                 <div id="doubleDropdownRenfe" class="z-50 hidden divide-y rounded-lg shadow w-72 bordeRojo bg-oscuro">
                                     <ul class="py-2 text-sm text-gray-200" aria-labelledby="doubleDropdownButtonRenfe">
                                         <li><a href="{{ url('renfe/doc/afiliacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AFILIACIÓN</a></li>
@@ -74,8 +75,8 @@
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <button id="dropdownEmpAuxLink" data-dropdown-toggle="dropdownEmpAux" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">EMP. AUX. <i class="lni lni-chevron-down ml-2"></i></button>
+                <li class="group">
+                    <button id="dropdownEmpAuxLink" data-dropdown-toggle="dropdownEmpAux" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">EMP. AUX. <i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownEmpAux" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownEmpAuxButton">
@@ -85,8 +86,8 @@
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <button id="dropdownJuridicaLink" data-dropdown-toggle="dropdownJuridica" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">JURIDICA <i class="lni lni-chevron-down ml-2"></i></button>
+                <li class="group">
+                    <button id="dropdownJuridicaLink" data-dropdown-toggle="dropdownJuridica" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">JURIDICA <i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownJuridica" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownJuridicaButton">
@@ -98,8 +99,8 @@
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <button id="dropdownBibliotecaLink" data-dropdown-toggle="dropdownBiblioteca" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">BIBLIOTECA <i class="lni lni-chevron-down ml-2"></i></button>
+                <li class="group">
+                    <button id="dropdownBibliotecaLink" data-dropdown-toggle="dropdownBiblioteca" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">BIBLIOTECA <i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownBiblioteca" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownBibliotecaButton">
@@ -113,8 +114,8 @@
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <button id="dropdownRecursosLink" data-dropdown-toggle="dropdownRecursos" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">RECURSOS <i class="lni lni-chevron-down ml-2"></i></button>
+                <li class="group">
+                    <button id="dropdownRecursosLink" data-dropdown-toggle="dropdownRecursos" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">RECURSOS <i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownRecursos" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownRecursosButton">
@@ -127,8 +128,8 @@
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <button id="dropdownEquipoLink" data-dropdown-toggle="dropdownEquipo" class="flex items-center justify-between w-full py-2 pl-3 pr-4 border-b md:border-0 md:p-0 md:w-auto text-white md:hover:text-red-500 focus:text-white border-gray-700 hover:bg-oscuro active:text-red-500 md:hover:bg-transparent">SFF-CGT <i class="lni lni-chevron-down ml-2"></i></button>
+                <li class="group">
+                    <button id="dropdownEquipoLink" data-dropdown-toggle="dropdownEquipo" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">SFF-CGT <i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownEquipo" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownEquipoButton">
@@ -150,7 +151,7 @@
         </div>
         {{-- <x-login> </x-login> --}}
         <div class="flex pr-2">
-            <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="font-medium px-5 py-2.5 text-center bg-oscuro text-red-500 border border-red-500 hover:bg-red-500 hover:text-black p-2 rounded-lg text-sm focus:ring-2 focus:outline-none focus:ring-red-500" type="button">ÁREA Afiliados <i class="lni lni-chevron-down ml-2 text-white"></i></button>
+            <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="font-medium px-5 py-2.5 text-center bg-oscuro text-red-500 border border-red-500 hover:bg-red-500 hover:text-black p-2 rounded-lg text-sm focus:ring-2 focus:outline-none focus:ring-red-500" type="button">ÁREA Afiliados <i class="lni lni-chevron-down ml-1 text-white"></i></button>
             <!-- Dropdown menu -->
             <div id="dropdown" class="z-50 hidden divide-y rounded-lg shadow w-96 bg-oscuro">
                 @guest
