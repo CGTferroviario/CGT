@@ -14,9 +14,9 @@ class PaginaController extends Controller
         $sliders = Slider::all();
         return view('intranet', compact('sliders'));
     }
-    public function adif() 
+    public function docADIF() 
     {
-        return view('adif');
+        return view('adif.doc');
     }
     public function infraestructura() 
     {
@@ -87,9 +87,9 @@ class PaginaController extends Controller
         $documentos = Documento::porEmpresaEtiqueta('ADIF','TABLAS SALARIALES')->get();
         return view('adif.doc.tablas', compact('documentos'));
     }    
-    public function renfe()
+    public function docRENFE() 
     {
-        return view('renfe');
+        return view('renfe.doc');
     }
     public function comercial() 
     {

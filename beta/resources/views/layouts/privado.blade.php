@@ -15,32 +15,11 @@
 
     </head>
     <body class="antialiased">
-
         <div class="h-100">
             @include('parciales.barrasuperior')
 
             <!-- Page Content -->
             <main class="">
-                
-                        
-                
-
-                {{-- @switch($i)
-                    @case(1)
-
-                        @include('parciales.barralateral')
-
-                        @break
-
-                    @case(2)
-                        @include('parciales.barralateral')
-
-                        @break
-
-                    @default
-                        @include('parciales.barralateral')
-                @endswitch --}}
-
 
                 @include('parciales.barralateral')
                 

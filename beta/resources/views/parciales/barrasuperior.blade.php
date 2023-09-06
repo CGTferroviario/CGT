@@ -10,13 +10,13 @@
             <ul
                 class="flex flex-col p-4 md:p-0 mt-4 ml-1 font-medium border border-gray-700 rounded-lg md:flex-row md:space-x-1 md:mt-0 md:border-0">
                 <li class="group">
-                    <button id="dropdownAdifLink" data-dropdown-toggle="dropdownAdif" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">ADIF <i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
+                    <button id="dropdownAdifLink" data-dropdown-toggle="dropdownAdif" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">ADIF <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownAdif" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownAdifButton">
                             <li class="group" aria-labelledby="dropdownAdifLink">
-                                <button id="doubleDropdownButtonAdif" data-dropdown-toggle="doubleDropdownAdif" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación General de ADIF">
-                                    DOC. GENERAL<i class="lni lni-chevron-right ml-1 text-red-500 group-hover:text-white"></i>
+                                <button id="doubleDropdownButtonAdif" data-dropdown-trigger="hover" data-dropdown-toggle="doubleDropdownAdif" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-red-500 hover:text-black group" title="Documentación General de ADIF">
+                                    <a href="{{ route('adif.doc') }}" class="hover:text-black">DOC. GENERAL<i class="lni lni-chevron-right ml-5 text-red-500 group-hover:text-white"></i></a>
                                 </button>
                                 <div id="doubleDropdownAdif" class="z-50 hidden divide-y rounded-lg shadow w-72 bordeRojo bg-oscuro">
                                     <ul class="py-2 text-sm text-gray-200" aria-labelledby="doubleDropdownButtonAdif">
@@ -35,21 +35,22 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="{{ url('adif/infraestructura') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Infraestructura">INFRAESTRUCTURA</a></li>
-                            <li><a href="{{ url('adif/circulacion') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Circulación">CIRCULACIÓN</a></li>
-                            <li><a href="{{ url('adif/oficinas') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
-                            <li><a href="{{ route('adif.estaciones') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Estaciones">ESTACIONES</a></li>
+                            <li><a href="{{ url('adif/infraestructura') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Infraestructura">INFRAESTRUCTURA</a></li>
+                            <li><a href="{{ url('adif/circulacion') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Circulación">CIRCULACIÓN</a></li>
+                            <li><a href="{{ url('adif/oficinas') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
+                            <li><a href="{{ route('adif.estaciones') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Estaciones">ESTACIONES</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="group">
-                    <button id="dropdownRenfeLink" data-dropdown-toggle="dropdownRenfe" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">RENFE <i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
+                    <button id="dropdownRenfeLink" data-dropdown-toggle="dropdownRenfe" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">RENFE <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownRenfe" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownRenfeButton">
                             <li aria-labelledby="dropdownRenfeLink">
-                                <button id="doubleDropdownButtonRenfe" data-dropdown-toggle="doubleDropdownRenfe" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-600 hover:text-white group" title="Documentación General de RENFE">
-                                    DOC. GENERAL<i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
+                                <button id="doubleDropdownButtonRenfe" data-dropdown-trigger="hover" data-dropdown-toggle="doubleDropdownRenfe" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-red-500 hover:text-black group" title="Documentación General de RENFE">
+                                    <a href="{{ route('renfe.doc') }}" class="hover:text-black">DOC. GENERAL<i class="lni lni-chevron-right ml-5 text-red-500 group-hover:text-white"></i></a>
+                                </button>
                                 <div id="doubleDropdownRenfe" class="z-50 hidden divide-y rounded-lg shadow w-72 bordeRojo bg-oscuro">
                                     <ul class="py-2 text-sm text-gray-200" aria-labelledby="doubleDropdownButtonRenfe">
                                         <li><a href="{{ url('renfe/doc/afiliacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AFILIACIÓN</a></li>
@@ -67,75 +68,75 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="{{ url('renfe/comercial') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Comercial">COMERCIAL</a></li>
-                            <li><a href="{{ url('renfe/intervencion') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Intervención">INTERVENCIÓN</a></li>
-                            <li><a href="{{ url('renfe/conduccion') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Conducción">CONDUCCIÓN</a></li>
-                            <li><a href="{{ url('renfe/talleres') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Talleres">TALLERES</a></li>
-                            <li><a href="{{ url('renfe/oficinas') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
+                            <li><a href="{{ url('renfe/comercial') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Comercial">COMERCIAL</a></li>
+                            <li><a href="{{ url('renfe/intervencion') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Intervención">INTERVENCIÓN</a></li>
+                            <li><a href="{{ url('renfe/conduccion') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Conducción">CONDUCCIÓN</a></li>
+                            <li><a href="{{ url('renfe/talleres') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Talleres">TALLERES</a></li>
+                            <li><a href="{{ url('renfe/oficinas') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="group">
-                    <button id="dropdownEmpAuxLink" data-dropdown-toggle="dropdownEmpAux" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">EMP. AUX. <i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
+                    <button id="dropdownEmpAuxLink" data-dropdown-toggle="dropdownEmpAux" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">EMP. AUX. <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownEmpAux" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownEmpAuxButton">
-                            <li><a href="{{ url('empresasaux/serveo') }}#" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación de SERVEO(Anteriormente FERROVIAL)">SERVEO</a></li>
-                            <li><a href="{{ url('empresasaux/logirail') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación de LOGIRAIL">LOGIRAIL</a></li>
-                            <li><a href="{{ url('empresasaux/otras') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Documentación de otras Empresas Auxiliares">OTRAS EMPRESAS</a></li>
+                            <li><a href="{{ url('empresasaux/serveo') }}#" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación de SERVEO(Anteriormente FERROVIAL)">SERVEO</a></li>
+                            <li><a href="{{ url('empresasaux/logirail') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación de LOGIRAIL">LOGIRAIL</a></li>
+                            <li><a href="{{ url('empresasaux/otras') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación de otras Empresas Auxiliares">OTRAS EMPRESAS</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="group">
-                    <button id="dropdownJuridicaLink" data-dropdown-toggle="dropdownJuridica" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">JURIDICA <i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
+                    <button id="dropdownJuridicaLink" data-dropdown-toggle="dropdownJuridica" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">JURIDICA <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownJuridica" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownJuridicaButton">
-                            <li><a href="{{ url('juridica/convenios') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">CONVENIOS COLECTIVOS</a></li>
-                            <li><a href="{{ url('juridica/laboral') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">LEGISLACIÓN LABORAL</a></li>
-                            <li><a href="{{ url('juridica/ferroviaria') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">LEGISLACIÓN FERROVIARIA</a></li>
-                            <li><a href="{{ url('juridica/modelos') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">FORMULARIOS <span class="rojoBrillante">//</span> MODELOS</a></li>
-                            <li><a href="{{ url('juridica/logros') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">LOGROS JURÍDICOS CGT</a></li>
+                            <li><a href="{{ url('juridica/convenios') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">CONVENIOS COLECTIVOS</a></li>
+                            <li><a href="{{ url('juridica/laboral') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">LEGISLACIÓN LABORAL</a></li>
+                            <li><a href="{{ url('juridica/ferroviaria') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">LEGISLACIÓN FERROVIARIA</a></li>
+                            <li><a href="{{ url('juridica/modelos') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">FORMULARIOS <span class="rojoBrillante">//</span> MODELOS</a></li>
+                            <li><a href="{{ url('juridica/logros') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">LOGROS JURÍDICOS CGT</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="group">
-                    <button id="dropdownBibliotecaLink" data-dropdown-toggle="dropdownBiblioteca" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">BIBLIOTECA <i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
+                    <button id="dropdownBibliotecaLink" data-dropdown-toggle="dropdownBiblioteca" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">BIBLIOTECA <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownBiblioteca" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownBibliotecaButton">
-                            <li><a href="{{ url('biblioteca/comunicados') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Comunicados de la CGT">COMUNICADOS</a></li>
-                            <li><a href="{{ url('biblioteca/noticias') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Noticias del Sector Ferroviario de la CGT">NOTICIAS</a></li>
-                            <li><a href="{{ url('biblioteca/seguridad') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Información de Seguridad en la Circulación">SEGURIDAD EN LA CIRCULACIÓN</a></li>
-                            <li><a href="{{ url('biblioteca/archivo') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Archivo de información histórica">ARCHIVO HISTÓRICO</a></li>
-                            <li><a href="{{ url('biblioteca/defensa') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Información sobre la defensa de un ferrocarril público y social">DEFENSA DEL FERROCARRIL</a></li>
-                            <li><a href="{{ url('biblioteca/colegio') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Colegio de Huérfanos Ferroviarios">COLEGIO DE HUÉRFANOS</a></li>
-                            <li><a href="{{ url('biblioteca/via') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Magazine Ferroviario">VIA LIBERTARIA</a></li>
+                            <li><a href="{{ url('biblioteca/comunicados') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Comunicados de la CGT">COMUNICADOS</a></li>
+                            <li><a href="{{ url('biblioteca/noticias') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Noticias del Sector Ferroviario de la CGT">NOTICIAS</a></li>
+                            <li><a href="{{ url('biblioteca/seguridad') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Información de Seguridad en la Circulación">SEGURIDAD EN LA CIRCULACIÓN</a></li>
+                            <li><a href="{{ url('biblioteca/archivo') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Archivo de información histórica">ARCHIVO HISTÓRICO</a></li>
+                            <li><a href="{{ url('biblioteca/defensa') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Información sobre la defensa de un ferrocarril público y social">DEFENSA DEL FERROCARRIL</a></li>
+                            <li><a href="{{ url('biblioteca/colegio') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Colegio de Huérfanos Ferroviarios">COLEGIO DE HUÉRFANOS</a></li>
+                            <li><a href="{{ url('biblioteca/via') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Magazine Ferroviario">VIA LIBERTARIA</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="group">
-                    <button id="dropdownRecursosLink" data-dropdown-toggle="dropdownRecursos" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">RECURSOS <i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
+                    <button id="dropdownRecursosLink" data-dropdown-toggle="dropdownRecursos" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">RECURSOS <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownRecursos" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownRecursosButton">
-                            <li><a href="{{ url('recursos/videos') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Videos del equipo estatal">VIDEOS</a></li>
-                            <li><a href="{{ url('recursos/audios') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Audios del equipo estatal">AUDIOS</a></li>
-                            <li><a href="{{ url('recursos/carteles') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Carteles elaborados por el equipo estatal">CARTELES</a>
+                            <li><a href="{{ url('recursos/videos') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Videos del equipo estatal">VIDEOS</a></li>
+                            <li><a href="{{ url('recursos/audios') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Audios del equipo estatal">AUDIOS</a></li>
+                            <li><a href="{{ url('recursos/carteles') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Carteles elaborados por el equipo estatal">CARTELES</a>
                             </li>
-                            <li><a href="{{ url('recursos/fotos') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Fotografías del equipo estatal">FOTOGRAFIAS</a></li>
-                            <li><a href="{{ url('recursos/logos') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Logotipos para su uso en prensa">LOGOTIPOS</a></li>
+                            <li><a href="{{ url('recursos/fotos') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Fotografías del equipo estatal">FOTOGRAFIAS</a></li>
+                            <li><a href="{{ url('recursos/logos') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Logotipos para su uso en prensa">LOGOTIPOS</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="group">
-                    <button id="dropdownEquipoLink" data-dropdown-toggle="dropdownEquipo" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">SFF-CGT <i class="lni lni-chevron-down ml-1 text-red-500 group-hover:text-white"></i></button>
+                    <button id="dropdownEquipoLink" data-dropdown-toggle="dropdownEquipo" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">SFF-CGT <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownEquipo" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownEquipoButton">
-                            <li><a href="{{ url('equipo/sp') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white" title="Información del equipo estatal">EQUIPO ESTATAL</a></li>
-                            <li><a href="{{ url('equipo/mapa') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">MAPA SINDICAL</a></li>
-                            <li><a href="{{ url('equipo/contacto') }}" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">CONTACTO</a></li>
+                            <li><a href="{{ url('equipo/sp') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Información del equipo estatal">EQUIPO ESTATAL</a></li>
+                            <li><a href="{{ url('equipo/mapa') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">MAPA SINDICAL</a></li>
+                            <li><a href="{{ url('equipo/contacto') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">CONTACTO</a></li>
                         </ul>
                     </div>
                 </li>
@@ -151,7 +152,7 @@
         </div>
         {{-- <x-login> </x-login> --}}
         <div class="flex pr-2">
-            <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="font-medium px-5 py-2.5 text-center bg-oscuro text-red-500 border border-red-500 hover:bg-red-500 hover:text-black p-2 rounded-lg text-sm focus:ring-2 focus:outline-none focus:ring-red-500" type="button">ÁREA Afiliados <i class="lni lni-chevron-down ml-1 text-white"></i></button>
+            <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="font-medium px-4 py-2.5 text-center bg-oscuro text-red-500 border border-red-500 hover:bg-red-500 hover:text-black p-2 rounded-lg text-sm focus:ring-2 focus:outline-none focus:ring-red-500" type="button">ÁREA Afiliados <i class="lni lni-chevron-down ml-1 mt-1 text-white"></i></button>
             <!-- Dropdown menu -->
             <div id="dropdown" class="z-50 hidden divide-y rounded-lg shadow w-96 bg-oscuro">
                 @guest
