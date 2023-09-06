@@ -32,6 +32,11 @@ class UserSeeder extends Seeder
             'password' => Hash::make('olgacgt'),
         ]);
         User::firstOrcreate([
+            'nombre' => 'jesus',
+            'email' => 'jesus@jesus.com',
+            'password' => Hash::make('jesuscgt'),
+        ]);
+        User::firstOrcreate([
             'nombre' => 'elena',
             'email' => 'elena@elena.com',
             'password' => Hash::make('elenacgt'),
