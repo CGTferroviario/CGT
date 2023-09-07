@@ -19,19 +19,19 @@
                                     <a href="{{ route('adif.doc') }}" class="hover:text-black">DOC. GENERAL<i class="lni lni-chevron-right ml-5 text-red-500 group-hover:text-white"></i></a>
                                 </button>
                                 <div id="doubleDropdownAdif" class="z-50 hidden divide-y rounded-lg shadow w-72 bordeRojo bg-oscuro">
-                                    <ul class="py-2 text-sm text-gray-200" aria-labelledby="doubleDropdownButtonAdif">
-                                        <li><a href="{{ route('adif.doc.afiliacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AFILIACIÓN</a></li>
-                                        <li><a href="{{ route('adif.doc.ayudas') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AYUDAS Y BENEFICIOS SOCIALES</a></li>
-                                        <li><a href="{{ route('adif.doc.igualdad') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">IGUALDAD</a></li>
-                                        <li><a href="{{ route('adif.doc.legislacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
-                                        <li><a href="{{ route('adif.doc.licencias') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">LICENCIAS</a></li>
-                                        <li><a href="{{ route('adif.doc.mapa') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
-                                        <li><a href="{{ route('adif.doc.conciliacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MEDIDAS DE CONCILIACIÓN</a></li>
-                                        <li><a href="{{ route('adif.doc.modelos') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MODELOS DE SOLICITUD DE EMPRESA</a></li>
-                                        <li><a href="{{ route('adif.doc.protocolos') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
-                                        <li><a href="{{ route('adif.doc.salud') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">SALUD LABORAL</a></li>
-                                        <li><a href="{{ route('adif.doc.teletrabajo') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">TELETRABAJO</a></li>
-                                        <li><a href="{{ route('adif.doc.tablas') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">TABLAS SALARIALES</a></li>
+                                    <ul class="py-2 text-sm text-gray-400" aria-labelledby="doubleDropdownButtonAdif">
+                                        <li><a href="{{ route('adif.doc.afiliacion') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">AFILIACIÓN</a></li>
+                                        <li><a href="{{ route('adif.doc.ayudas') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">AYUDAS Y BENEFICIOS SOCIALES</a></li>
+                                        <li><a href="{{ route('adif.doc.igualdad') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">IGUALDAD</a></li>
+                                        <li><a href="{{ route('adif.doc.legislacion') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
+                                        <li><a href="{{ route('adif.doc.licencias') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">LICENCIAS</a></li>
+                                        <li><a href="{{ route('adif.doc.mapa') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
+                                        <li><a href="{{ route('adif.doc.conciliacion') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">MEDIDAS DE CONCILIACIÓN</a></li>
+                                        <li><a href="{{ route('adif.doc.modelos') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">MODELOS DE SOLICITUD DE EMPRESA</a></li>
+                                        <li><a href="{{ route('adif.doc.protocolos') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
+                                        <li><a href="{{ route('adif.doc.salud') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">SALUD LABORAL</a></li>
+                                        <li><a href="{{ route('adif.doc.teletrabajo') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">TELETRABAJO</a></li>
+                                        <li><a href="{{ route('adif.doc.tablas') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">TABLAS SALARIALES</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -52,19 +52,19 @@
                                     <a href="{{ route('renfe.doc') }}" class="hover:text-black">DOC. GENERAL<i class="lni lni-chevron-right ml-5 text-red-500 group-hover:text-white"></i></a>
                                 </button>
                                 <div id="doubleDropdownRenfe" class="z-50 hidden divide-y rounded-lg shadow w-72 bordeRojo bg-oscuro">
-                                    <ul class="py-2 text-sm text-gray-200" aria-labelledby="doubleDropdownButtonRenfe">
-                                        <li><a href="{{ url('renfe/doc/afiliacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AFILIACIÓN</a></li>
-                                        <li><a href="{{ url('renfe/doc/ayudas') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">AYUDAS Y BENEFICIOS SOCIALES</a></li>
-                                        <li><a href="{{ url('renfe/doc/igualdad') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">IGUALDAD</a></li>
-                                        <li><a href="{{ url('renfe/doc/legislacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
-                                        <li><a href="{{ url('renfe/doc/licencias') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">LICENCIAS</a></li>
-                                        <li><a href="{{ url('renfe/doc/mapa') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
-                                        <li><a href="{{ url('renfe/doc/conciliacion') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MEDIDAS DE CONCILIACIÓN</a></li>
-                                        <li><a href="{{ url('renfe/doc/modelos') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">MODELOS DE SOLICITUD DE EMPRESA</a></li>
-                                        <li><a href="{{ url('renfe/doc/protocolos') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
-                                        <li><a href="{{ url('renfe/doc/salud') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">SALUD LABORAL</a></li>
-                                        <li><a href="{{ url('renfe/doc/teletrabajo') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">TELETRABAJO</a></li>
-                                        <li><a href="{{ url('renfe/doc/tablas') }}" class="block px-2 py-1 hover:bg-gray-600 text-gray-400 hover:text-white">TABLAS SALARIALES</a></li>
+                                    <ul class="py-2 text-sm text-gray-400" aria-labelledby="doubleDropdownButtonRenfe">
+                                        <li><a href="{{ url('renfe/doc/afiliacion') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">AFILIACIÓN</a></li>
+                                        <li><a href="{{ url('renfe/doc/ayudas') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">AYUDAS Y BENEFICIOS SOCIALES</a></li>
+                                        <li><a href="{{ url('renfe/doc/igualdad') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">IGUALDAD</a></li>
+                                        <li><a href="{{ url('renfe/doc/legislacion') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
+                                        <li><a href="{{ url('renfe/doc/licencias') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">LICENCIAS</a></li>
+                                        <li><a href="{{ url('renfe/doc/mapa') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
+                                        <li><a href="{{ url('renfe/doc/conciliacion') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">MEDIDAS DE CONCILIACIÓN</a></li>
+                                        <li><a href="{{ url('renfe/doc/modelos') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">MODELOS DE SOLICITUD DE EMPRESA</a></li>
+                                        <li><a href="{{ url('renfe/doc/protocolos') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
+                                        <li><a href="{{ url('renfe/doc/salud') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">SALUD LABORAL</a></li>
+                                        <li><a href="{{ url('renfe/doc/teletrabajo') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">TELETRABAJO</a></li>
+                                        <li><a href="{{ url('renfe/doc/tablas') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">TABLAS SALARIALES</a></li>
                                     </ul>
                                 </div>
                             </li>
