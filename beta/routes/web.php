@@ -19,7 +19,6 @@ use App\Models\Slider;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Contracts\Permission;
 
-
 Route::get('/', function () {
     return view('welcome'); 
 });
@@ -57,11 +56,11 @@ Route::get('/renfe', function () {
 });
 Route::controller(PaginaController::class)->prefix('renfe')->name('renfe.')->group(function () {
     Route::get('/doc', 'docRENFE')->name('doc');
-    Route::get('/comercial', 'comercial');
-    Route::get('/intervencion', 'intervencion');
-    Route::get('/conduccion', 'conduccion');
-    Route::get('/talleres', 'talleres');
-    Route::get('/oficinas', 'oficinasRENFE');
+    Route::get('/comercial', 'comercial')->name('comercial');
+    Route::get('/intervencion', 'intervencion')->name('intervencion');
+    Route::get('/conduccion', 'conduccion')->name('conduccion');
+    Route::get('/talleres', 'talleres')->name('talleres');
+    Route::get('/oficinas', 'oficinasRENFE')->name('oficinas');
 });
 Route::controller(PaginaController::class)->prefix('renfe/doc')->name('renfe.doc.')->group(function () {
     Route::get('/afiliacion', 'afiliacionRENFE')->name('afiliacion');
@@ -81,19 +80,19 @@ Route::get('/empresasaux', function () {
     return view('empresasaux')->name('empresasaux');
 });
 Route::controller(PaginaController::class)->prefix('empresasaux')->name('empresasaux.')->group(function () {
-    Route::get('/serveo', 'serveo');
-    Route::get('/logirail', 'logirail');
-    Route::get('/otras', 'otras');
+    Route::get('/serveo', 'serveo')->name('serveo');
+    Route::get('/logirail', 'logirail')->name('logirail');
+    Route::get('/otras', 'otras')->name('otras');
 });
 Route::get('/juridica', function () {
     return view('juridica')->name('juridica');
 });
 Route::controller(PaginaController::class)->prefix('juridica')->name('juridica.')->group(function () {
-    Route::get('/convenios', 'convenios');
-    Route::get('/laboral', 'laboral');
-    Route::get('/ferroviaria', 'ferroviaria');
-    Route::get('/modelos', 'modelos');
-    Route::get('/logros', 'logros');
+    Route::get('/convenios', 'convenios')->name('convenios');
+    Route::get('/laboral', 'laboral')->name('laboral');
+    Route::get('/ferroviaria', 'ferroviaria')->name('ferroviaria');
+    Route::get('/modelos', 'modelos')->name('modelos');
+    Route::get('/logros', 'logros')->name('logros');
 });
 Route::get('/biblioteca', function () {
     return view('biblioteca')->name('biblioteca');
@@ -103,11 +102,11 @@ Route::prefix('biblioteca')->group(function () {
     Route::get('/noticias', [NoticiaController::class, 'bibliotecaNoticias'])->name('biblioteca.noticias');
 
     Route::controller(PaginaController::class)->name('biblioteca.')->group(function () {
-        Route::get('/seguridad', 'seguridad');
-        Route::get('/archivo', 'archivo');
-        Route::get('/defensa', 'defensa');
-        Route::get('/colegio', 'colegio');
-        Route::get('/via', 'via');
+        Route::get('/seguridad', 'seguridad')->name('seguridad');
+        Route::get('/archivo', 'archivo')->name('archivo');
+        Route::get('/defensa', 'defensa')->name('defensa');
+        Route::get('/colegio', 'colegio')->name('colegio');
+        Route::get('/via', 'via')->name('via');
     });
 });
 Route::get('/recursos', function () {

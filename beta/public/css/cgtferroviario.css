@@ -75,13 +75,6 @@ aside .lni{
   background-repeat: no-repeat;
   min-height: 600px;
 }
-/* .cabecera{
-  position: absolute;
-  top: 4em;
-  background: rgb(47,47,47);
-  z-index: -1;
-  color: white;
-} */
 /* Fondos Documentación Iguales en ADIF y RENFE */
 .documentacion { background-image: url('/img/fondos/documentacion.png'); }
 .afiliacion { background-image: url('/img/fondos/doc/afiliacion.png'); }

@@ -35,9 +35,9 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="{{ url('adif/infraestructura') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Infraestructura">INFRAESTRUCTURA</a></li>
-                            <li><a href="{{ url('adif/circulacion') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Circulación">CIRCULACIÓN</a></li>
-                            <li><a href="{{ url('adif/oficinas') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
+                            <li><a href="{{ route('adif.infraestructura') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Infraestructura">INFRAESTRUCTURA</a></li>
+                            <li><a href="{{ route('adif.circulacion') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Circulación">CIRCULACIÓN</a></li>
+                            <li><a href="{{ route('adif.oficinas') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
                             <li><a href="{{ route('adif.estaciones') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Estaciones">ESTACIONES</a></li>
                         </ul>
                     </div>
@@ -53,26 +53,26 @@
                                 </button>
                                 <div id="doubleDropdownRenfe" class="z-50 hidden divide-y rounded-lg shadow w-72 bordeRojo bg-oscuro">
                                     <ul class="py-2 text-sm text-gray-400" aria-labelledby="doubleDropdownButtonRenfe">
-                                        <li><a href="{{ url('renfe/doc/afiliacion') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">AFILIACIÓN</a></li>
-                                        <li><a href="{{ url('renfe/doc/ayudas') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">AYUDAS Y BENEFICIOS SOCIALES</a></li>
-                                        <li><a href="{{ url('renfe/doc/igualdad') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">IGUALDAD</a></li>
-                                        <li><a href="{{ url('renfe/doc/legislacion') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
-                                        <li><a href="{{ url('renfe/doc/licencias') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">LICENCIAS</a></li>
-                                        <li><a href="{{ url('renfe/doc/mapa') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
-                                        <li><a href="{{ url('renfe/doc/conciliacion') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">MEDIDAS DE CONCILIACIÓN</a></li>
-                                        <li><a href="{{ url('renfe/doc/modelos') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">MODELOS DE SOLICITUD DE EMPRESA</a></li>
-                                        <li><a href="{{ url('renfe/doc/protocolos') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
-                                        <li><a href="{{ url('renfe/doc/salud') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">SALUD LABORAL</a></li>
-                                        <li><a href="{{ url('renfe/doc/teletrabajo') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">TELETRABAJO</a></li>
-                                        <li><a href="{{ url('renfe/doc/tablas') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">TABLAS SALARIALES</a></li>
+                                        <li><a href="{{ route('renfe.doc.afiliacion') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">AFILIACIÓN</a></li>
+                                        <li><a href="{{ route('renfe.doc.ayudas') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">AYUDAS Y BENEFICIOS SOCIALES</a></li>
+                                        <li><a href="{{ route('renfe.doc.igualdad') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">IGUALDAD</a></li>
+                                        <li><a href="{{ route('renfe.doc.legislacion') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">LEGISLACIÓN · NORMATIVA LABORAL</a></li>
+                                        <li><a href="{{ route('renfe.doc.licencias') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">LICENCIAS</a></li>
+                                        <li><a href="{{ route('renfe.doc.mapa') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">MAPA ESTACIONES · RED ADIF Y RENFE</a></li>
+                                        <li><a href="{{ route('renfe.doc.conciliacion') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">MEDIDAS DE CONCILIACIÓN</a></li>
+                                        <li><a href="{{ route('renfe.doc.modelos') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">MODELOS DE SOLICITUD DE EMPRESA</a></li>
+                                        <li><a href="{{ route('renfe.doc.protocolos') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">PROTOCOLOS FRENTE A LOS ACOSOS</a></li>
+                                        <li><a href="{{ route('renfe.doc.salud') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">SALUD LABORAL</a></li>
+                                        <li><a href="{{ route('renfe.doc.teletrabajo') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">TELETRABAJO</a></li>
+                                        <li><a href="{{ route('renfe.doc.tablas') }}" class="block px-2 py-1 hover:bg-red-500 hover:text-black">TABLAS SALARIALES</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="{{ url('renfe/comercial') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Comercial">COMERCIAL</a></li>
-                            <li><a href="{{ url('renfe/intervencion') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Intervención">INTERVENCIÓN</a></li>
-                            <li><a href="{{ url('renfe/conduccion') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Conducción">CONDUCCIÓN</a></li>
-                            <li><a href="{{ url('renfe/talleres') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Talleres">TALLERES</a></li>
-                            <li><a href="{{ url('renfe/oficinas') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
+                            <li><a href="{{ route('renfe.comercial') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Comercial">COMERCIAL</a></li>
+                            <li><a href="{{ route('renfe.intervencion') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Intervención">INTERVENCIÓN</a></li>
+                            <li><a href="{{ route('renfe.conduccion') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Conducción">CONDUCCIÓN</a></li>
+                            <li><a href="{{ route('renfe.talleres') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Talleres">TALLERES</a></li>
+                            <li><a href="{{ route('renfe.oficinas') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación del Colectivo de Oficinas">OFICINAS</a></li>
                         </ul>
                     </div>
                 </li>
@@ -81,9 +81,9 @@
                     <!-- Dropdown menu -->
                     <div id="dropdownEmpAux" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownEmpAuxButton">
-                            <li><a href="{{ url('empresasaux/serveo') }}#" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación de SERVEO(Anteriormente FERROVIAL)">SERVEO</a></li>
-                            <li><a href="{{ url('empresasaux/logirail') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación de LOGIRAIL">LOGIRAIL</a></li>
-                            <li><a href="{{ url('empresasaux/otras') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación de otras Empresas Auxiliares">OTRAS EMPRESAS</a></li>
+                            <li><a href="{{ route('empresasaux.serveo') }}#" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación de SERVEO(Anteriormente FERROVIAL)">SERVEO</a></li>
+                            <li><a href="{{ route('empresasaux.logirail') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación de LOGIRAIL">LOGIRAIL</a></li>
+                            <li><a href="{{ route('empresasaux.otras') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Documentación de otras Empresas Auxiliares">OTRAS EMPRESAS</a></li>
                         </ul>
                     </div>
                 </li>
@@ -92,11 +92,11 @@
                     <!-- Dropdown menu -->
                     <div id="dropdownJuridica" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownJuridicaButton">
-                            <li><a href="{{ url('juridica/convenios') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">CONVENIOS COLECTIVOS</a></li>
-                            <li><a href="{{ url('juridica/laboral') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">LEGISLACIÓN LABORAL</a></li>
-                            <li><a href="{{ url('juridica/ferroviaria') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">LEGISLACIÓN FERROVIARIA</a></li>
-                            <li><a href="{{ url('juridica/modelos') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">FORMULARIOS <span class="rojoBrillante">//</span> MODELOS</a></li>
-                            <li><a href="{{ url('juridica/logros') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">LOGROS JURÍDICOS CGT</a></li>
+                            <li><a href="{{ route('juridica.convenios') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">CONVENIOS COLECTIVOS</a></li>
+                            <li><a href="{{ route('juridica.laboral') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">LEGISLACIÓN LABORAL</a></li>
+                            <li><a href="{{ route('juridica.ferroviaria') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">LEGISLACIÓN FERROVIARIA</a></li>
+                            <li><a href="{{ route('juridica.modelos') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">FORMULARIOS <span class="rojoBrillante">//</span> MODELOS</a></li>
+                            <li><a href="{{ route('juridica.logros') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">LOGROS JURÍDICOS CGT</a></li>
                         </ul>
                     </div>
                 </li>
