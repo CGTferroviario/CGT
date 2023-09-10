@@ -189,6 +189,7 @@ aside .lni{
   min-height: 312px;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
 }
 #comunicados{ background:url('/img/tarjetas/comunicados.png'); }
 #comunicados:hover{ background:url('/img/tarjetas/comunicados_on.png'); }

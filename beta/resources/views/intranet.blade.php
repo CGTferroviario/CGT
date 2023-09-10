@@ -55,36 +55,31 @@
         <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
             <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-red-600/30 group-hover:bg-white/50 dark:group-hover:bg-red-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-900/70 group-focus:outline-none">
                 <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                <span class="sr-only">Previous</span>
+                <span class="sr-only">Anterior</span>
             </span>
         </button>
         <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
             <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-red-600/30 group-hover:bg-white/50 dark:group-hover:bg-red-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-900/70 group-focus:outline-none">
                 <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                <span class="sr-only">Next</span>
+                <span class="sr-only">Siguiente</span>
             </span>
         </button>
     </div>
 </div>
-<div class="w-4/5 mx-auto grid gap-4 grid-cols-2 grid-rows-2">
-    <div class="col-md-6">
-        <a href="{{ route('biblioteca.comunicados') }}" class="">
-            <div class="tarjeta" id="comunicados" class="" title="Consulta nuestros comunicados"></div>
-        </a>
+<div class="pt-20 mx-auto grid gap-24 md:grid-cols-1 lg:grid-cols-2">
+    <div class="tarjeta" id="comunicados" class="" title="Consulta nuestros comunicados">
+        <a href="{{ route('biblioteca.comunicados') }}" class=""></a>
     </div>
-    <div class="col-md-6">
+    <div class="tarjeta" id="ayudas" class="" title="Toda la información de Ayudas Graciables y Beneficios Sociales">
         <a href="" class="">
-            <div class="tarjeta" id="ayudas" class="" title="Toda la información de Ayudas Graciables y Beneficios Sociales"></div>
         </a>
     </div>
-    <div class="col-md-6">
+    <div class="tarjeta" id="afiliate" class="" title="¡Afíliate con nosotros!">
         <a href="" class="">
-            <div class="tarjeta" id="afiliate" class="" title="¡Afíliate con nosotros!"></div>
         </a>
     </div>
-    <div class="col-md-6">
+    <div class="tarjeta" id="plataforma" class="" title="Accede a nuestra plataforma de Estudio">
         <a href="{{ url('http://www.comoserferroviario.es') }}" class="" target="_blank">
-            <div class="tarjeta" id="plataforma" class="" title="Accede a nuestra plataforma de Estudio"></div>
         </a>
     </div>
 </div>

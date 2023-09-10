@@ -121,7 +121,7 @@
                 @foreach ($comunicados as $comunicado)
                     
                     <div class="mb-4 shadow hover:shadow-lg h-full flex flex-col bordeNegro rounded-lg">
-                        <div class="p-4 flex-1 bg-red-500 h-140 hover:bg-white rounded-t-lg">
+                        <div class="p-4 flex-1 h-140 bg-red-500 hover:bg-white rounded-t-lg">
                             <a href="{{ url('comunicados.show', $comunicado->id) }}">
                                 <h1 class="font-bold text-3xl">{{ $comunicado->numero }} . {{ $comunicado->titulo }}
                                 </h1>

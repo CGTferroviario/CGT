@@ -116,6 +116,9 @@
                                             <input id="dropzone-file" type="file" class="hidden" />
                                         </label>
                                     </div>
+                                    {{-- <div class="col-span-6">
+                                        <x-subir-archivo></x-subir-archivo>
+                                    </div> --}}
                                 </div>
 
                                 <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-red-800">Subir Documento</button>
