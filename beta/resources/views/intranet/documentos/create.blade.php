@@ -1,7 +1,7 @@
 <x-privado-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-900 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-900 leading-tight">
             {{ __('Añadir Documento') }}
         </h2>
     </x-slot>
@@ -54,6 +54,7 @@
                         <div class="py-8 px-4 mx-auto">
                             <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Documento</h2>
                             <form action="{{ route('intranet.documentos.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
                                     <div class="">
                                         <label for="empresa" class="block mb-2 text-sm font-medium text-white">Empresa</label>
@@ -92,7 +93,7 @@
                                         
                                     ?>
                                     <div class="">
-                                        <label for="fecha_com" class="block mb-2 text-sm font-medium text-white">Fecha</label>
+                                        <label for="fecha" class="block mb-2 text-sm font-medium text-white">Fecha</label>
                                         <input type="date" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" name="fecha" value="<?php echo $fecha; ?>">
                                     </div>
                                 </div>
@@ -101,11 +102,15 @@
                                         <label for="titulo" class="block mb-2 text-sm font-medium text-white">Título</label>
                                         <input type="text" name="titulo" id="titulo" class="w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-gray-400" placeholder="" value="" required="">
                                         <div class="">
-                                            <label for="cuerpo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripción</label>
-                                            <textarea id="cuerpo" rows="5" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="El cuerpo del documento..."></textarea>
+                                            <label for="cuerpo" class="block mb-2 text-sm font-medium text-white">Descripción</label>
+                                            <textarea id="cuerpo" rows="5" class="block p-2.5 w-full text-sm text-white bg-gray-700 rounded-lg border border-gray-600 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400" placeholder="El cuerpo del documento..."></textarea>
                                         </div>
                                     </div>
                                     <div class="col-span-6">
+                                        <label for="pdf" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-add-files text-lg mr-2 mb-0"></i>Documento en PDF</label>
+                                        <input type="file" class="w-full bg-gray-900 rounded-lg text-white">
+                                    </div>
+                                    {{-- <div class="col-span-6">
                                         <label for="pdf" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-add-files text-lg mr-2 mb-0"></i>Documento en PDF</label>
                                         <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
                                             <div class="flex flex-col items-center justify-center pt-5 pb-6">
@@ -116,7 +121,7 @@
                                             <input id="dropzone-file" type="file" class="hidden" />
                                         </label>
                                     </div>
-                                    {{-- <div class="col-span-6">
+                                    <div class="col-span-6">
                                         <x-subir-archivo></x-subir-archivo>
                                     </div> --}}
                                 </div>
@@ -144,72 +149,6 @@
                         @endforeach
                     </ul>
                 </div>
-            </div>
-
-            <div>
-                <form novalidate="" action="{{ route('intranet.documentos.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="col-md-3">
-                        <label for="country" class="form-label">Empresa</label>
-                        <select class="form-select" id="empresa" name="empresa" required="">
-                                <option value="Elige empresa">Elige empresa</option>
-                            @foreach ($empresas as $empresa)
-                                <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
-                            @endforeach
-                        </select>
-                        <div class="invalid-feedback">
-                            Por favor, introduce un empresa.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="categorias_documento" class="form-label">Categoría</label>
-                        <select class="form-select" id="categoria" name="categoria" required="">
-                            <option value="Elige categoria">Elige Categoría</option>
-                            @foreach ($categorias as $categoria)
-                                <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
-                            @endforeach
-                        </select>
-                        <div class="invalid-feedback">
-                            Por favor, introduce un categoría.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="country" class="form-label">Etiqueta</label>
-                        <select class="form-select" id="etiqueta" name="etiqueta" required="">
-                            <option value="Elige etiqueta">Elige etiqueta</option>
-                            @foreach ($etiquetas as $etiqueta)
-                                <option value="{{ $etiqueta->id }}">{{ $etiqueta->nombre }}</option>
-                            @endforeach
-                        </select>
-                        <div class="invalid-feedback">
-                            Por favor, introduce una etiqueta.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="fecha_doc" class="form-label">Fecha</label>
-                        <input type="date" class="form-control rojoBrillante" name="fecha" placeholder="{{ now() }}">
-                        <div class="invalid-feedback">
-                            Por favor, introduce un fecha.
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label for="titulo">Título del documento:</label>
-                        <input type="text" name="titulo" id="titulo" required>
-                    </div>
-                
-                    <div>
-                        <label for="descripcion">Descripción:</label>
-                        <textarea name="descripcion" id="descripcion"></textarea>
-                    </div>
-                
-                    <div>
-                        <label for="file">Seleccionar documento:</label>
-                        <input type="file" name="file" id="file" required>
-                    </div>
-                
-                    <button type="submit">Subir Documento</button>
-                </form>                
             </div>
         </div>
     </div>
