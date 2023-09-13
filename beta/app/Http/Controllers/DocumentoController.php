@@ -30,11 +30,11 @@ class DocumentoController extends Controller
     public function store(StoreDocumentoRequest $request)
     {        
         // $usuario = Auth::user()->id;
-        
+        dd($request);
         $validatedData = $request->validated();
 
         // Guardar el archivo en el sistema de archivos local
-        $fileName = time().'.'.$request->file->extension();
+        $fileName = $request->titulo.'.'.$request->file->extension();
         $request->file->storeAs('public', $fileName);
 
         // Crear el documento en la base de datos

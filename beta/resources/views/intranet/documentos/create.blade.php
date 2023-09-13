@@ -14,17 +14,7 @@
                     <x-mensaje></x-mensaje>
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-start">
-                    <div class="inline-flex overflow-hidden text-white divide-x rounded-lg rtl:flex-row-reverse">
-                        <button class="px-3 py-2 text-xs font-medium text-black transition-colors duration-200 bg-red-500 sm:text-sm">
-                            Todos
-                        </button>
-                        <button class="px-3 py-2 text-xs font-medium bg-oscuro transition-colors duration-200 sm:text-sm hover:bg-red-500 hover:text-gray-900">
-                            Por empresa
-                        </button>
-                        <button class="px-3 py-2 text-xs font-medium bg-oscuro transition-colors duration-200 sm:text-sm hover:bg-red-500 hover:text-black">
-                            Por categoría
-                        </button>
-                    </div>
+                    
                 </div>
                 <div class="sm:flex-row sm:items-center sm:justify-between">
                     <div class="flex items-center gap-x-3">
@@ -102,13 +92,13 @@
                                         <label for="titulo" class="block mb-2 text-sm font-medium text-white">Título</label>
                                         <input type="text" name="titulo" id="titulo" class="w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-gray-400" placeholder="" value="" required="">
                                         <div class="">
-                                            <label for="cuerpo" class="block mb-2 text-sm font-medium text-white">Descripción</label>
-                                            <textarea id="cuerpo" rows="5" class="block p-2.5 w-full text-sm text-white bg-gray-700 rounded-lg border border-gray-600 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400" placeholder="El cuerpo del documento..."></textarea>
+                                            <label for="descripcion" class="block mb-2 text-sm font-medium text-white">Descripción</label>
+                                            <textarea id="descripcion" rows="5" name="descripcion" class="block p-2.5 w-full text-sm text-white bg-gray-700 rounded-lg border border-gray-600 focus:ring-red-500 focus:border-red-500 placeholder-gray-400" placeholder="Una descripción del documento..."></textarea>
                                         </div>
                                     </div>
                                     <div class="col-span-6">
-                                        <label for="pdf" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-add-files text-lg mr-2 mb-0"></i>Documento en PDF</label>
-                                        <input type="file" class="w-full bg-gray-900 rounded-lg text-white">
+                                        <label for="ruta" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-add-files text-lg mr-2 mb-0"></i>Documento en PDF</label>
+                                        <input type="file" name="ruta" id="ruta" class="w-full bg-gray-900 rounded-lg text-white">
                                     </div>
                                     {{-- <div class="col-span-6">
                                         <label for="pdf" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-add-files text-lg mr-2 mb-0"></i>Documento en PDF</label>
@@ -127,7 +117,7 @@
                                 </div>
 
                                 <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-red-800">Subir Documento</button>
-                                <button class="w-100 btn btn-outline-danger btn-lg" type="submit"></button>
+                                {{-- <button class="w-100 btn btn-outline-danger btn-lg" type="submit"></button> --}}
                             </form>
                         </div>
                     </section>
