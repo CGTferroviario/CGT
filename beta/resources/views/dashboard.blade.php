@@ -8,6 +8,9 @@
         <div class="p-4">
             <div class="p-4 border-2 border-dashed rounded-lg border-red-500">
                 <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-4">
+                    <div class="p-4 rounded bg-blue-300">
+
+                    </div>
                     <div class="flex items-center justify-center h-24 rounded bg-oscuro bordeRojo text-gray-500 hover:text-gray-100 cursor-pointer">
                         <div class="py-2">
                             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
