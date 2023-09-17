@@ -10,13 +10,11 @@ input::-webkit-calendar-picker-indicator {
 }
 </style>
 <x-privado-layout>
-
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-900 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-900 leading-tight titular2">
             {{ __('Añadir Comunicados') }}
         </h2>
     </x-slot>
-
     @section('contenido')
     <div class="p-8 fondo comunicados">
         <div class="bg-blanco-transp bordeRojo rounded-lg p-4">
@@ -63,6 +61,7 @@ input::-webkit-calendar-picker-indicator {
                         <div class="py-8 px-4 mx-auto">
                             <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Comunicado</h2>
                             <form action="{{ route('intranet.comunicados.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
                                     <div class="">
                                         <label for="empresa" class="block mb-2 text-sm font-medium text-white">Empresa</label>
@@ -122,8 +121,8 @@ input::-webkit-calendar-picker-indicator {
                                         
                                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 mt-3">
                                     <div class="col-span-2">
-                                        <label for="cuerpo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cuerpo</label>
-                                        <textarea id="cuerpo" rows="20" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="El cuerpo del comunicado..."></textarea>
+                                        <label for="cuerpo" class="block mb-2 text-sm font-medium text-white">Cuerpo</label>
+                                        <textarea id="cuerpo" name="cuerpo" rows="20" class="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-red-500 focus:border-red-500" placeholder="El cuerpo del comunicado..."></textarea>
                                     </div>
                                 </div>
                                 <div class="grid gap-4 sm:grid-cols-3 sm:gap-6 mt-3">
@@ -135,18 +134,18 @@ input::-webkit-calendar-picker-indicator {
                                                 <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Haz click o arrastra</span></p>
                                                 <p class="text-xs text-gray-400">para subir un fichero <span class="font-semibold">.PDF</span></p>
                                             </div>
-                                            <input id="dropzone-file" type="file" class="hidden" />
+                                            <input id="dropzone-file" name="pdf" type="file" class="hidden" />
                                         </label>
                                     </div>
                                     <div class="w-full">
-                                        <label for="jpg" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-image text-lg mr-2 mb-0"></i>Comunicado en JPG</label>
+                                        <label for="imagen" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-image text-lg mr-2 mb-0"></i>Comunicado en JPG</label>
                                         <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
                                             <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                                 <i class="lni lni-cloud-upload text-3xl mb-2 text-gray-400"></i>
                                                 <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Haz click o arrastra</span></p>
                                                 <p class="text-xs text-gray-400">para subir un fichero <span class="font-semibold">.JPG</span></p>
                                             </div>
-                                            <input id="dropzone-file" type="file" class="hidden" />
+                                            <input id="dropzone-file" name="imagen" type="file" class="hidden" />
                                         </label>
                                     </div>
                                     <div class="w-full">
@@ -157,7 +156,7 @@ input::-webkit-calendar-picker-indicator {
                                                 <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Haz click o arrastra</span></p>
                                                 <p class="text-xs text-gray-400">para subir un fichero <span class="font-semibold">.JPG/.PNG,/.PDF</span></p>
                                             </div>
-                                            <input id="dropzone-file" type="file" class="hidden" />
+                                            <input id="dropzone-file" name="imagen" type="file" class="hidden" />
                                         </label>
                                     </div>
                                 </div>
@@ -185,7 +184,7 @@ input::-webkit-calendar-picker-indicator {
                     </ul>
                 </div>
             </div>
-            <div>
+            {{-- <div>
                 <form class="needs-validation" novalidate="" action="{{ route('intranet.comunicados.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row g-3">
@@ -310,10 +309,8 @@ input::-webkit-calendar-picker-indicator {
         
                     <button class="w-100 btn btn-outline-danger btn-lg" type="submit">Subir Comunicado</button>
                 </form>
-            </div>
+            </div> --}}
         </div>
-        
     </div>
     @endsection
-    
 </x-privado-layout>

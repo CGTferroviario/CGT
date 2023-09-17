@@ -11,6 +11,10 @@ class Documento extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'visualizaciones', 'user_id', 'numero', 'empresa_id', 'categoria_id', 'etiqueta_id', 'fecha', 'titulo', 'descripcion', 'ruta',  
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

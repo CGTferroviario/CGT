@@ -30,10 +30,10 @@ class ComunicadoFactory extends Factory
             'titulo' => $this->faker->sentence(),
             'subtitulo' => $this->faker->sentence(),
             'cuerpo' => $this->faker->paragraphs(6, true),
-            'adjunto1' => $this->faker->slug(),
-            'adjunto2' => $this->faker->slug(),
-            'adjunto3' => $this->faker->slug(),
+            'pdf' => $this->faker->slug(),
             'imagen' => $this->faker->slug(),
+            'adjunto' => $this->faker->slug(),
+            
         ];
     }
 }

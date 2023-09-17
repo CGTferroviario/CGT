@@ -28,33 +28,48 @@ class DocumentoController extends Controller
         ]);
     }
     public function store(StoreDocumentoRequest $request)
-    {        
+    {
+        $usuario = Auth::user()->id;
+
+        $documento = Documento::create([
+            'empresa_id' => $request->empresa,
+            'categoria_id' => $request->categoria,
+            'fecha' => $request->fecha,
+            'titulo' => $request->titulo,
+            'descripcion' => $request->descripcion,
+            'ruta' => 'ruta',
+            'user_id' => $usuario,
+        ]);
+
+        return redirect(route('intranet.documentos.index'))->with('message', 'Documento Añadido Correctamente');
+
+
         // $usuario = Auth::user()->id;
-        dd($request);
-        $validatedData = $request->validated();
+        // dd($request);
+        // $validatedData = $request->validated();
 
         // Guardar el archivo en el sistema de archivos local
-        $fileName = $request->titulo.'.'.$request->file->extension();
-        $request->file->storeAs('public', $fileName);
+        // $fileName = $request->titulo.'.'.$request->file->extension();
+        // $request->file->storeAs('public', $fileName);
 
         // Crear el documento en la base de datos
-        $documento = new Documento();
-        $documento->titulo = $validatedData['titulo'];
-        $documento->descripcion = $validatedData['descripcion'];
-        $documento->ruta = $fileName;
-        $documento->fecha = $request->fecha;
+        // $documento = new Documento();
+        // $documento->titulo = $validatedData['titulo'];
+        // $documento->descripcion = $validatedData['descripcion'];
+        // $documento->ruta = $fileName;
+        // $documento->fecha = $request->fecha;
         
         // Asociar la categoría, empresa, etiquetas y usuario
-        $documento->user_id = auth()->user()->id;
-        $documento->empresa_id = $request->empresa;
-        $documento->categoria_id = $request->categoria;
-        $documento->etiqueta_id = $request->etiqueta;
+        // $documento->user_id = auth()->user()->id;
+        // $documento->empresa_id = $request->empresa;
+        // $documento->categoria_id = $request->categoria;
+        // $documento->etiqueta_id = $request->etiqueta;
         
-        $documento->save();
+        // $documento->save();
 
         // $documento->etiquetas()->attach($validatedData['etiquetas']);
 
-        return redirect()->back()->with('success', 'Documento subido correctamente.');
+        // return redirect()->back()->with('success', 'Documento subido correctamente.');
     }
 
 

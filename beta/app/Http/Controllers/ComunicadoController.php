@@ -40,6 +40,7 @@ class ComunicadoController extends Controller
     }
     public function store(StoreComunicadoRequest $request)
     {
+        // dd($request);
         $publicado = $request->publicado;
         if ($request->publicado == 'on') {
             $publicado = 1;
@@ -66,7 +67,7 @@ class ComunicadoController extends Controller
             'user_id' => $usuario,
         ]);
 
-        return redirect(route('comunicados.index'))->with('message', 'Comunicado Creado Correctamente');
+        return redirect(route('intranet.comunicados.index'))->with('message', 'Comunicado Creado Correctamente');
     }
     public function show(Comunicado $comunicado)
     {

@@ -14,7 +14,14 @@
                     <x-mensaje></x-mensaje>
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-start">
-                    
+                    <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500" title="Volver al Índice de Documento">
+                        <i class="lni lni-arrow-left"></i>
+                        <a href="{{ route('intranet.documentos.index') }}" class="">Todos los Documentos</a>
+                    </button>
+                    <button class="flex items-center justify-center w-1/2 px-2 py-2 ml-2 text-sm text-gray-100 transition-colors duration-200 bg-oscuro border rounded-lg gap-x-2 sm:w-auto hover:bg-green-500 hover:text-gray-100" title="Importar datos desde un archivo .csv">
+                        <i class="lni lni-upload"></i>
+                        <span>Importar CSV</span>
+                    </button>
                 </div>
                 <div class="sm:flex-row sm:items-center sm:justify-between">
                     <div class="flex items-center gap-x-3">
@@ -22,19 +29,8 @@
                         <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $documentos->count() }}</span>
                         <p class="mt-1 text-sm text-gray-500">Estos son los documentos que llevamos este año.</p>
                     </div>
-                    
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-end">
-                    <div class="flex items-center gap-x-3 align-middle">
-                        <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-100 transition-colors duration-200 bg-oscuro border rounded-lg gap-x-2 sm:w-auto hover:bg-green-500 hover:text-gray-100" title="Importar datos desde un archivo .csv">
-                            <i class="lni lni-upload"></i>
-                            <span>Importar CSV</span>
-                        </button>
-                        <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500" title="Añadir un nuevo documento">
-                            <i class="lni lni-add-files"></i>
-                            <a href="{{ route('intranet.documentos.create') }}" class="">Añadir documento</a>
-                        </button>
-                    </div>
                 </div>
             </div>
 

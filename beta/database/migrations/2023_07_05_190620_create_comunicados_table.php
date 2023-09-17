@@ -25,10 +25,9 @@ return new class extends Migration
             $table->string('titulo');
             $table->string('subtitulo');
             $table->text('cuerpo');
-            $table->string('adjunto1')->nullable();
-            $table->string('adjunto2')->nullable();
-            $table->string('adjunto3')->nullable();
-            $table->string('imagen');
+            $table->string('pdf')->nullable();
+            $table->string('imagen')->nullable();
+            $table->string('adjunto')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade');
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');

@@ -22,9 +22,7 @@ class StoreDocumentoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'titulo' => 'required|max:255',
-            'descripcion' => 'nullable',
-            'file' => 'required|mimes:pdf|max:2048',
+            
         ];
     }
 }

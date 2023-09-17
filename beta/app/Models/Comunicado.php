@@ -10,7 +10,7 @@ class Comunicado extends Model
     use HasFactory;
 
     protected $fillable = [
-        'visualizaciones', 'user_id', 'numero', 'empresa_id', 'categoria_id', 'etiqueta_id', 'fecha', 'titulo', 'subtitulo', 'cuerpo', 'adjunto1', 'adjunto2', 'adjunto3', 'imagen', 'publicado',   
+        'visualizaciones', 'user_id', 'numero', 'empresa_id', 'categoria_id', 'etiqueta_id', 'fecha', 'titulo', 'subtitulo', 'cuerpo', 'pdf', 'imagen', 'adjunto', 'publicado',   
     ];
     public function user()
     {
