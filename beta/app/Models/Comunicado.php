@@ -10,22 +10,22 @@ class Comunicado extends Model
     use HasFactory;
 
     protected $fillable = [
-        'visualizaciones', 'user_id', 'numero', 'empresa_id', 'categoria_id', 'etiqueta_id', 'fecha', 'titulo', 'subtitulo', 'cuerpo', 'pdf', 'imagen', 'adjunto', 'publicado',   
+        'visualizaciones', 'user_id', 'numero', 'empresa_id', 'categoria_id', 'fecha', 'titulo', 'subtitulo', 'cuerpo', 'pdf', 'imagen', 'adjunto', 'publicado',   
     ];
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class);
     }
     public function empresa()
     {
-        return $this->belongsTo(Empresa::class, 'empresa_id');
+        return $this->belongsTo(Empresa::class);
     }
     public function categoria()
     {
-        return $this->belongsTo(Categoria::class, 'categoria_id');
+        return $this->belongsTo(Categoria::class);
     }
     public function etiqueta()
     {
-        return $this->belongsTo(Etiqueta::class, 'etiqueta_id');
+        return $this->belongsToMany(Etiqueta::class);
     }
 }

@@ -25,7 +25,7 @@ class ComunicadoFactory extends Factory
             'empresa_id' => $this->faker->numberBetween(1,9),
             
             'categoria_id' => $this->faker->numberBetween(1,7),
-            'etiqueta_id' => $this->faker->numberBetween(1,26),
+            
             'fecha' => $this->faker->date(),
             'titulo' => $this->faker->sentence(),
             'subtitulo' => $this->faker->sentence(),

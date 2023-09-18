@@ -20,7 +20,6 @@ return new class extends Migration
             $table->unsignedTinyInteger('numero');
             $table->unsignedBigInteger('empresa_id')->nullable();
             $table->unsignedBigInteger('categoria_id')->nullable();
-            $table->unsignedBigInteger('etiqueta_id')->nullable();
             $table->date('fecha');
             $table->string('titulo');
             $table->string('subtitulo');
@@ -31,7 +30,6 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade');
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
-            $table->foreign('etiqueta_id')->references('id')->on('etiquetas')->onDelete('cascade');
             $table->timestamps();
         });
     }

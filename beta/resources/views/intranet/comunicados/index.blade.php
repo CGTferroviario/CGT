@@ -96,7 +96,13 @@
                         <td>{{ $comunicado->titulo }}</td>
                         <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $comunicado->empresa?->nombre }}">{{ $comunicado->empresa?->nombre }}</span></td>
                         <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $comunicado->categoria?->nombre }}">{{ $comunicado->categoria?->nombre }}</span></td>
-                        <td>{{ $comunicado->etiqueta->nombre }}</td>
+                        <td>
+                            @foreach ($comunicado->etiqueta as $etiqueta )
+                                <span class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">
+                                    {{ $etiqueta->nombre }}<br>
+                                </span>
+                            @endforeach    
+                        </td>
                         <td>{{ $comunicado->subtitulo }}</td>
                         <td>{!! nl2br(e($comunicado->cuerpo))!!}</td>
                         <td>{{ $comunicado->pdf }}</td>

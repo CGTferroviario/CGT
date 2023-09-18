@@ -33,7 +33,6 @@
                 <div class="sm:flex sm:items-center sm:justify-end">
                 </div>
             </div>
-
             <div class="grid grid-cols-3 gap-4">
                 <div class="col-span-2">
                     <section class="bg-oscuro-7 rounded-lg">
@@ -96,22 +95,7 @@
                                         <label for="ruta" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-add-files text-lg mr-2 mb-0"></i>Documento en PDF</label>
                                         <input type="file" name="ruta" id="ruta" class="w-full bg-gray-900 rounded-lg text-white">
                                     </div>
-                                    {{-- <div class="col-span-6">
-                                        <label for="pdf" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-add-files text-lg mr-2 mb-0"></i>Documento en PDF</label>
-                                        <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
-                                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                                <i class="lni lni-cloud-upload text-3xl mb-2 text-gray-400"></i>
-                                                <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Haz click o arrastra</span></p>
-                                                <p class="text-xs text-gray-400">para subir un fichero <span class="font-semibold">.PDF</span></p>
-                                            </div>
-                                            <input id="dropzone-file" type="file" class="hidden" />
-                                        </label>
-                                    </div>
-                                    <div class="col-span-6">
-                                        <x-subir-archivo></x-subir-archivo>
-                                    </div> --}}
                                 </div>
-
                                 <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-red-800">Subir Documento</button>
                                 {{-- <button class="w-100 btn btn-outline-danger btn-lg" type="submit"></button> --}}
                             </form>

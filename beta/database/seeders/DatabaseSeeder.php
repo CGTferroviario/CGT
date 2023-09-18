@@ -43,6 +43,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(DocumentoEtiquetaSeeder::class);
+        $this->call(ComunicadoEtiquetaSeeder::class);
 
         
 		// supposed to only apply to a single connection and reset it's self

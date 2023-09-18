@@ -59,10 +59,9 @@ class ComunicadoController extends Controller
             'titulo' => $request->titulo,
             'subtitulo' => $request->subtitulo,
             'cuerpo' => $request->cuerpo,
-            'adjunto1' => $request->adjunto1,
-            'adjunto2' => $request->adjunto2,
-            'adjunto3' => $request->adjunto3,
+            'pdf' => $request->pdf,
             'imagen' => $request->imagen,
+            'adjunto' => $request->adjunto,
             'publicado' => $publicado,
             'user_id' => $usuario,
         ]);
