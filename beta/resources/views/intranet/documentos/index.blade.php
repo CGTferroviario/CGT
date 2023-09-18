@@ -53,14 +53,14 @@
                         <th class="rounded-tl-lg">Nº</th>
                         <th>Acciones</th>
                         <th>Fecha</th>
-                        <th title="Visualizaciones">Vis.</th>
-                        <th title="Descargas">Descargas</th>
                         <th title="Autor">Autor</th>
                         <th>Título</th>
                         <th>Empresa</th>                        
                         <th>Categorías</th>
-                        <th>Etiquetas</th>
+                        <th class="rounded-tr-lg">Etiquetas</th>
                         <th>Descripción</th>
+                        <th title="Visualizaciones">Vis.</th>
+                        <th title="Descargas">Descargas</th>
                         <th class="rounded-tr-lg">Ruta</th>
                     </tr>
                 </thead>
@@ -90,8 +90,7 @@
                             </div>
                         </td>
                         <td>{{ $documento->fecha }}</td>
-                        <td>{{ $documento->visualizaciones }}</td>
-                        <td>{{ $documento->descargas }}</td>
+                        
                         <td>{{ $documento->user->nombre }}</td>
                         <td>{{ $documento->titulo }}</td>                        
                         <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $documento->empresa?->nombre }}">{{ $documento->empresa?->nombre }}</span></td>
@@ -100,12 +99,14 @@
                             @foreach ($documento->etiqueta as $etiqueta )
                                 <span
                                     class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">
-                                        {{ $etiqueta->nombre }}
+                                        {{ $etiqueta->nombre }}<br>
                                     </span>
                             @endforeach    
                         </td>
                         
                         <td>{{ $documento->descripcion }}</td>
+                        <td>{{ $documento->visualizaciones }}</td>
+                        <td>{{ $documento->descargas }}</td>
                         <td>{{ $documento->ruta }}</td>
                     </tr>
                     @endforeach

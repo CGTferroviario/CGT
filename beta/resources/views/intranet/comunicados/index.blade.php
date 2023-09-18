@@ -53,7 +53,6 @@
                         <th class="rounded-tl-lg">Nº</th>
                         <th>Acciones</th>
                         <th>Fecha</th>
-                        <th title="Visualizaciones">Vis.</th>
                         <th title="Autor">Autor</th>
                         <th>Título</th>
                         <th>Empresa</th>                        
@@ -61,10 +60,10 @@
                         <th class="rounded-tr-lg">Etiquetas</th>
                         <th>Subtítulo</th>
                         <th>Cuerpo</th>
-                        <th>Adjunto 1</th>
-                        <th>Adjunto 2</th>
-                        <th>Adjunto 3</th>
+                        <th>PDF</th>
                         <th>Imagen</th>
+                        <th>Adjunto</th>
+                        <th title="Visualizaciones">Vis.</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -93,7 +92,6 @@
                             </div>
                         </td>
                         <td>{{ $comunicado->fecha }}</td>
-                        <td>{{ $comunicado->visualizaciones }}</td>
                         <td>{{ $comunicado->user->nombre }}</td>
                         <td>{{ $comunicado->titulo }}</td>
                         <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $comunicado->empresa?->nombre }}">{{ $comunicado->empresa?->nombre }}</span></td>
@@ -101,11 +99,10 @@
                         <td>{{ $comunicado->etiqueta->nombre }}</td>
                         <td>{{ $comunicado->subtitulo }}</td>
                         <td>{!! nl2br(e($comunicado->cuerpo))!!}</td>
-                        {{-- <td>{{ $comunicado->cuerpo }}</td> --}}
-                        <td>{{ $comunicado->adjunto1 }} 1</td>
-                        <td>{{ $comunicado->adjunto2 }} 2</td>
-                        <td>{{ $comunicado->adjunto3 }} 3</td>
+                        <td>{{ $comunicado->pdf }}</td>
                         <td>{{ $comunicado->imagen }}</td>
+                        <td>{{ $comunicado->adjunto }}</td>
+                        <td>{{ $comunicado->visualizaciones }}</td>
                     </tr>
                     @endforeach
                 </tbody>
