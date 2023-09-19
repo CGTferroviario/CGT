@@ -59,7 +59,17 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="">
+                                    <div class="mb-">
+                                        <label class="block">
+                                            <span class="text-gray-700">Etiquetas</span>
+                                            <select name="etiquetas[]" class="block w-full mt-1" multiple>
+                                                @foreach ($etiquetas as $etiqueta)
+                                                <option value="{{ $etiqueta->id }}">{{ $etiqueta->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </label>
+                                    </div>
+                                    {{-- <div class="">
                                         <label for="etiqueta" class="block mb-2 text-sm font-medium text-white">Etiquetas</label>
                                         <select class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" id="etiqueta" name="etiqueta" required="">
                                                 <option value="Elige categoria">Elige etiquetas</option>
@@ -67,7 +77,7 @@
                                                 <option value="{{ $etiqueta->id }}">{{ $etiqueta->nombre }}</option>
                                             @endforeach
                                         </select>
-                                    </div>
+                                    </div> --}}
                                     <?php 
                                         
                                         $month = date('m');

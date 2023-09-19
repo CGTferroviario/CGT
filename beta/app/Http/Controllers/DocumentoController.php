@@ -40,6 +40,9 @@ class DocumentoController extends Controller
             'ruta' => 'ruta',
             'user_id' => $usuario,
         ]);
+        if ($request->has('etiquetas')) {
+            $documento->etiquetas()->attach($request->etiquetas);
+        }
 
         return redirect(route('intranet.documentos.index'))->with('message', 'Documento Añadido Correctamente');
 
