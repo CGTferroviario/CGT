@@ -1,3 +1,42 @@
+<style>
+.multiselect {
+}
+
+.selectBox {
+    position: relative;
+}
+
+.selectBox select {
+    width: 100%;
+}
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+[type='checkbox']:checked, [type='radio']:checked {
+    background-color: green;
+}
+
+#checkboxes {
+    display: none;
+}
+
+#checkboxes label {
+    display: block;
+}
+#checkboxes label input{
+    margin-right: 8px;
+}
+
+#checkboxes label:hover {
+    background-color: rgb(239,68,68);
+}
+</style>
 <x-privado-layout>
 
     <x-slot name="header">
@@ -59,25 +98,23 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="mb-">
-                                        <label class="block">
-                                            <span class="text-gray-700">Etiquetas</span>
-                                            <select name="etiquetas[]" class="block w-full mt-1" multiple>
-                                                @foreach ($etiquetas as $etiqueta)
-                                                <option value="{{ $etiqueta->id }}">{{ $etiqueta->name }}</option>
-                                                @endforeach
+                                    <div class="multiselect">
+                                        <label for="etiquetas" class="block mb-2 text-sm font-medium text-white">Etiquetas</label>
+                                        <div class="selectBox" onclick="showCheckboxes()">
+                                            <select class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400">
+                                                <option>Selecciona etiquetas</option>
                                             </select>
-                                        </label>
-                                    </div>
-                                    {{-- <div class="">
-                                        <label for="etiqueta" class="block mb-2 text-sm font-medium text-white">Etiquetas</label>
-                                        <select class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" id="etiqueta" name="etiqueta" required="">
-                                                <option value="Elige categoria">Elige etiquetas</option>
+                                            <div class="overSelect"></div>
+                                        </div>
+                                        <div id="checkboxes" class="p-1 w-auto bg-gray-700 text-sm text-white rounded-lg bordeRojo absolute h-48 overflow-auto">
                                             @foreach ($etiquetas as $etiqueta)
-                                                <option value="{{ $etiqueta->id }}">{{ $etiqueta->nombre }}</option>
+                                                <label for="{{ $etiqueta->nombre }}">
+                                                    <input type="checkbox" id="{{ $etiqueta->nombre }}" value="{{ $etiqueta->id }}" />{{ $etiqueta->nombre }}
+                                                </label>
                                             @endforeach
-                                        </select>
-                                    </div> --}}
+                                        </div>
+                                    </div>
+                                    
                                     <?php 
                                         
                                         $month = date('m');
@@ -135,3 +172,18 @@
     @endsection
     
 </x-privado-layout>
+
+<script>
+var expanded = false;
+
+function showCheckboxes() {
+    var checkboxes = document.getElementById("checkboxes");
+    if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+    } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+    }
+}
+</script>
