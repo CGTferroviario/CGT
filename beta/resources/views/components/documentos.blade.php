@@ -14,12 +14,8 @@
                     class="py-0.5 px-2 rounded-full font-semibold bg-{{ $documento->categoria?->nombre }}">{{ $documento->categoria?->nombre }}</span>
                 
                     @foreach ($documento->etiqueta as $etiqueta )
-                        <span
-                        class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">
-                            {{ $etiqueta->nombre }}
-                        </span>
+                        <span class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">{{ $etiqueta->nombre }}</span>
                     @endforeach
-                    
             </div>
             <div class="bg-white py-2.5 px-4 hover:bg-blue-light h-full">
                 <span>{{ $documento->fecha }}</span>

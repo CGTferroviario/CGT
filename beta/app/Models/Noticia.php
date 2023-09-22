@@ -9,20 +9,24 @@ class Noticia extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id', 'empresa_id', 'categoria_id', 'fecha', 'titulo', 'cuerpo', 'adjunto', 'imagen',
+    ];
+
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class); 
     }
     public function empresa()
     {
-        return $this->belongsTo(Empresa::class, 'empresa_id');
+        return $this->belongsTo(Empresa::class);
     }
     public function categoria()
     {
-        return $this->belongsTo(Categoria::class, 'categoria_id');
+        return $this->belongsTo(Categoria::class);
     }
     public function etiqueta()
     {
-        return $this->belongsTo(Etiqueta::class, 'etiqueta_id');
+        return $this->belongsToMany(Etiqueta::class);
     }
 }

@@ -14,17 +14,7 @@
                     <x-mensaje></x-mensaje>
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-start">
-                    <div class="inline-flex overflow-hidden text-white divide-x rounded-lg rtl:flex-row-reverse">
-                        <button class="px-3 py-2 text-xs font-medium text-black transition-colors duration-200 bg-red-500 sm:text-sm">
-                            Todos
-                        </button>
-                        <button class="px-3 py-2 text-xs font-medium bg-oscuro transition-colors duration-200 sm:text-sm hover:bg-red-500 hover:text-gray-900">
-                            Por empresa
-                        </button>
-                        <button class="px-3 py-2 text-xs font-medium bg-oscuro transition-colors duration-200 sm:text-sm hover:bg-red-500 hover:text-black">
-                            Por categoría
-                        </button>
-                    </div>
+                    
                 </div>
                 <div class="sm:flex-row sm:items-center sm:justify-between">
                     <div class="flex items-center gap-x-3">
@@ -73,14 +63,21 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="">
-                                        <label for="etiqueta" class="block mb-2 text-sm font-medium text-white">Etiquetas</label>
-                                        <select class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" id="etiqueta" name="etiqueta" required="">
-                                                <option value="Elige categoria">Elige etiquetas</option>
+                                    <div class="multiselect">
+                                        <label for="etiquetas" class="block mb-2 text-sm font-medium text-white">Etiquetas</label>
+                                        <div class="selectBox" onclick="showCheckboxes()">
+                                            <select class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400">
+                                                <option>Selecciona etiquetas</option>
+                                            </select>
+                                            <div class="overSelect"></div>
+                                        </div>
+                                        <div id="checkboxes" class="p-1 w-auto bg-gray-700 text-xs text-white rounded-lg bordeRojo absolute h-48 overflow-auto">
                                             @foreach ($etiquetas as $etiqueta)
-                                                <option value="{{ $etiqueta->id }}">{{ $etiqueta->nombre }}</option>
+                                                <label for="{{ $etiqueta->nombre }}">
+                                                    <input type="checkbox" id="{{ $etiqueta->nombre }}" value="{{ $etiqueta->id }}" />{{ $etiqueta->nombre }}
+                                                </label>
                                             @endforeach
-                                        </select>
+                                        </div>
                                     </div>
                                     <?php 
                                         

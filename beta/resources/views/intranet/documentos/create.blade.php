@@ -1,42 +1,3 @@
-<style>
-.multiselect {
-}
-
-.selectBox {
-    position: relative;
-}
-
-.selectBox select {
-    width: 100%;
-}
-
-.overSelect {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-
-[type='checkbox']:checked, [type='radio']:checked {
-    background-color: green;
-}
-
-#checkboxes {
-    display: none;
-}
-
-#checkboxes label {
-    display: block;
-}
-#checkboxes label input{
-    margin-right: 8px;
-}
-
-#checkboxes label:hover {
-    background-color: rgb(239,68,68);
-}
-</style>
 <x-privado-layout>
 
     <x-slot name="header">
@@ -106,7 +67,7 @@
                                             </select>
                                             <div class="overSelect"></div>
                                         </div>
-                                        <div id="checkboxes" class="p-1 w-auto bg-gray-700 text-sm text-white rounded-lg bordeRojo absolute h-48 overflow-auto">
+                                        <div id="checkboxes" class="p-1 w-auto bg-gray-700 text-xs text-white rounded-lg bordeRojo absolute h-48 overflow-auto">
                                             @foreach ($etiquetas as $etiqueta)
                                                 <label for="{{ $etiqueta->nombre }}">
                                                     <input type="checkbox" id="{{ $etiqueta->nombre }}" value="{{ $etiqueta->id }}" />{{ $etiqueta->nombre }}
@@ -172,18 +133,3 @@
     @endsection
     
 </x-privado-layout>
-
-<script>
-var expanded = false;
-
-function showCheckboxes() {
-    var checkboxes = document.getElementById("checkboxes");
-    if (!expanded) {
-        checkboxes.style.display = "block";
-        expanded = true;
-    } else {
-        checkboxes.style.display = "none";
-        expanded = false;
-    }
-}
-</script>

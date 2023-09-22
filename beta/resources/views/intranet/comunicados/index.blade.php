@@ -14,17 +14,7 @@
                     <x-mensaje></x-mensaje>
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-start">
-                    <div class="inline-flex overflow-hidden text-white divide-x rounded-lg rtl:flex-row-reverse">
-                        <button class="px-3 py-2 text-xs font-medium text-black transition-colors duration-200 bg-red-500 sm:text-sm">
-                            Todos
-                        </button>
-                        <button class="px-3 py-2 text-xs font-medium bg-oscuro transition-colors duration-200 sm:text-sm hover:bg-red-500 hover:text-gray-900">
-                            Por empresa
-                        </button>
-                        <button class="px-3 py-2 text-xs font-medium bg-oscuro transition-colors duration-200 sm:text-sm hover:bg-red-500 hover:text-black">
-                            Por categoría
-                        </button>
-                    </div>
+                    
                 </div>
                 <div class="sm:flex-row sm:items-center sm:justify-between">
                     <div class="flex items-center gap-x-3">

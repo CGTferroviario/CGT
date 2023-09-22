@@ -1,14 +1,3 @@
-<style>
-    input {
-  color-scheme: dark;
-}
-input::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-  }
-.comunicados label{
-    margin-left: 12px;
-}
-</style>
 <x-privado-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-900 leading-tight titular2">
@@ -81,7 +70,23 @@ input::-webkit-calendar-picker-indicator {
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="">
+                                    <div class="multiselect">
+                                        <label for="etiquetas" class="block mb-2 text-sm font-medium text-white">Etiquetas</label>
+                                        <div class="selectBox" onclick="showCheckboxes()">
+                                            <select class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400">
+                                                <option>Selecciona etiquetas</option>
+                                            </select>
+                                            <div class="overSelect"></div>
+                                        </div>
+                                        <div id="checkboxes" class="p-1 w-auto bg-gray-700 text-xs text-white rounded-lg bordeRojo absolute h-48 overflow-auto">
+                                            @foreach ($etiquetas as $etiqueta)
+                                                <label for="{{ $etiqueta->nombre }}">
+                                                    <input type="checkbox" id="{{ $etiqueta->nombre }}" value="{{ $etiqueta->id }}" />{{ $etiqueta->nombre }}
+                                                </label>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    {{-- <div class="">
                                         <label for="etiqueta" class="block mb-2 text-sm font-medium text-white">Añade Etiquetas</label>
                                         <select class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" id="etiqueta" name="etiqueta[]" required="">
                                                 <option value="Elige categoria">Añade etiquetas</option>
@@ -89,7 +94,7 @@ input::-webkit-calendar-picker-indicator {
                                                 <option value="{{ $etiqueta->id }}">{{ $etiqueta->nombre }}</option>
                                             @endforeach
                                         </select>
-                                    </div>
+                                    </div> --}}
                                     <?php 
                                         
                                         $month = date('m');
