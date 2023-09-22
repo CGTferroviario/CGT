@@ -101,7 +101,7 @@
                                     class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">
                                         {{ $etiqueta->nombre }}<br>
                                     </span>
-                            @endforeach    
+                            @endforeach 
                         </td>
                         
                         <td>{{ $documento->descripcion }}</td>

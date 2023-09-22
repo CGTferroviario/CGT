@@ -70,7 +70,7 @@
                                         <div id="checkboxes" class="p-1 w-auto bg-gray-700 text-xs text-white rounded-lg bordeRojo absolute h-48 overflow-auto">
                                             @foreach ($etiquetas as $etiqueta)
                                                 <label for="{{ $etiqueta->nombre }}">
-                                                    <input type="checkbox" id="{{ $etiqueta->nombre }}" value="{{ $etiqueta->id }}" />{{ $etiqueta->nombre }}
+                                                    <input type="checkbox" name="etiquetas[]" id="{{ $etiqueta->nombre }}" value="{{ $etiqueta->id }}" />{{ $etiqueta->nombre }}
                                                 </label>
                                             @endforeach
                                         </div>

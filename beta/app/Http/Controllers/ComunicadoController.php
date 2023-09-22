@@ -40,7 +40,7 @@ class ComunicadoController extends Controller
     }
     public function store(StoreComunicadoRequest $request)
     {
-        // dd($request);
+        dd($request);
         $publicado = $request->publicado;
         if ($request->publicado == 'on') {
             $publicado = 1;
