@@ -40,7 +40,7 @@ class ComunicadoController extends Controller
     }
     public function store(StoreComunicadoRequest $request)
     {
-        dd($request);
+        // dd($request);
         $publicado = $request->publicado;
         if ($request->publicado == 'on') {
             $publicado = 1;
@@ -65,7 +65,10 @@ class ComunicadoController extends Controller
             'publicado' => $publicado,
             'user_id' => $usuario,
         ]);
-
+        if ($request->has('etiquetas')) {
+            $comunicado->etiquetas()->attach($request->etiquetas);
+        }
+        dd($comunicado);
         return redirect(route('intranet.comunicados.index'))->with('message', 'Comunicado Creado Correctamente');
     }
     public function show(Comunicado $comunicado)

@@ -18,36 +18,44 @@ class SeccionSeeder extends Seeder
     {
         DB::table('seccions')->truncate(); //for cleaning earlier data to avoid duplicate entries
         Seccion::firstOrcreate([
-            'nombre' => 'Madrid',
-            'email' => 'madrid@madrid.com',
-            'email2' => 'madrid2@madrid.com',
-            'descripcion' => 'La sección de Madrid',
+            'nombre' => 'A Coruña',
+            'email' => 'acoruna@cgtferroviario.es',
+            'email2' => 'renfecor@cgtgalicia.org',
+            'descripcion' => 'La sección de A Coruña',
             'telefono' => '666666666',
-            'password' => Hash::make('madridcgt'),
+            'password' => Hash::make('acoruñacgt'),
         ]);
         Seccion::firstOrcreate([
-            'nombre' => 'Barcelona',
-            'email' => 'barcelona@barcelona.com',
-            'email2' => 'barcelona2@barcelona.com',
-            'descripcion' => 'La sección de Barcelona',
+            'nombre' => 'Álava',
+            'email' => 'alava@cgtferroviario.es',
+            'email2' => '',
+            'descripcion' => 'La sección de Álava',
             'telefono' => '666666667',
-            'password' => Hash::make('barcelonacgt'),
+            'password' => Hash::make('alavacgt'),
         ]);
         Seccion::firstOrcreate([
-            'nombre' => 'Sevilla',
-            'email' => 'sevilla@sevilla.com',
-            'email2' => 'sevilla2@sevilla.com',
-            'descripcion' => 'La sección de Sevilla',
+            'nombre' => 'Albacete',
+            'email' => 'albacete@cgtferroviario.es',
+            'email2' => 'cgtenrique@gmail.com',
+            'descripcion' => 'La sección de Albacete',
             'telefono' => '666666668',
-            'password' => Hash::make('sevillacgt'),
+            'password' => Hash::make('albacetecgt'),
         ]);
         Seccion::firstOrcreate([
-            'nombre' => 'Valencia',
-            'email' => 'valencia@valencia.com',
-            'email2' => 'valencia2@valencia.com',
-            'descripcion' => 'La sección de Valencia',
+            'nombre' => 'Alicante',
+            'email' => 'alicante@cgtferroviario.es',
+            'email2' => 'cgtferroviario@gmail.com',
+            'descripcion' => 'La sección de Alicante',
             'telefono' => '666666669',
-            'password' => Hash::make('valenciacgt'),
+            'password' => Hash::make('alicantecgt'),
+        ]);
+        Seccion::firstOrcreate([
+            'nombre' => 'Almería',
+            'email' => 'almeria@cgtferroviario.es',
+            'email2' => 'sffcgtalmería@gmail.com',
+            'descripcion' => 'La sección de Almería',
+            'telefono' => '666666669',
+            'password' => Hash::make('almeriacgt'),
         ]);
     }
 }

@@ -12,7 +12,7 @@ class DocumentoEtiquetaSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(): void 
     {
         $etiquetas = Etiqueta::all();
         Documento::all()->each(function ($documento) use ($etiquetas) { 

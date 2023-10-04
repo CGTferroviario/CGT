@@ -24,7 +24,7 @@ class Comunicado extends Model
     {
         return $this->belongsTo(Categoria::class);
     }
-    public function etiqueta()
+    public function etiquetas()
     {
         return $this->belongsToMany(Etiqueta::class);
     }

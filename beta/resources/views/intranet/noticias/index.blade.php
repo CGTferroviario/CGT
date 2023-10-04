@@ -88,7 +88,7 @@
                         <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $noticia->empresa?->nombre }}">{{ $noticia->empresa?->nombre }}</span></td>
                         <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $noticia->categoria?->nombre }}">{{ $noticia->categoria?->nombre }}</span></td>
                         <td>
-                            @foreach ($documento->etiqueta as $etiqueta )
+                            @foreach ($noticia->etiqueta as $etiqueta )
                                 <span
                                     class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">
                                         {{ $etiqueta->nombre }}<br>
