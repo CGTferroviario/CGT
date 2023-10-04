@@ -15,10 +15,14 @@ class Categoria extends Model
     }
     public function comunicados()
     {
-        return $this->hasMany(Comunicado::class, 'categoria_id');
+        return $this->hasMany(Comunicado::class);
+    }
+    public function documentos()
+    {
+        return $this->hasMany(Documento::class);
     }
     public function noticias()
     {
-        return $this->hasMany(Noticia::class, 'categoria_id');
+        return $this->hasMany(Noticia::class);
     }
 }
