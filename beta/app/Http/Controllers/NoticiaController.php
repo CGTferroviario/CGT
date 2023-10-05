@@ -50,7 +50,7 @@ class NoticiaController extends Controller
      */
     public function store(StoreNoticiaRequest $request)
     {
-        dd($request);
+        
         $usuario = Auth::user()->id;
 
         $noticia = Noticia::create([
@@ -58,15 +58,18 @@ class NoticiaController extends Controller
             'categoria_id' => $request->categoria,
             'fecha' => $request->fecha,
             'titulo' => $request->titulo,
-            'descripcion' => $request->descripcion,
+            'cuerpo' => $request->cuerpo,
+            'imagen' => $request->imagen,
+            'adjunto' => $request->adjunto,
             'ruta' => 'ruta',
             'user_id' => $usuario,
         ]);
         if ($request->has('etiquetas')) {
             $noticia->etiquetas()->attach($request->etiquetas);
         }
+        // dd($noticia);
 
-        return redirect(route('intranet.noticia.index'))->with('message', 'Noticia Añadida Correctamente');
+        return redirect(route('intranet.noticias.index'))->with('message', 'Noticia Añadida Correctamente');
 
     }
 

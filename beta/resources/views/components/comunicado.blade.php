@@ -9,7 +9,7 @@
         <span class="py-0.5 px-2 rounded-full font-semibold bg-{{ $comunicado->categoria?->nombre }}">{{ $comunicado->categoria?->nombre }}</span>
     </div>
     <div class="p-2 text-sm text-white bg-black">
-        @foreach ($comunicado->etiqueta as $etiqueta)
+        @foreach ($comunicado->etiquetas as $etiqueta)
             <span class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">{{ $etiqueta->nombre }}</span>
         @endforeach
     </div>

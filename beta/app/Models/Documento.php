@@ -52,7 +52,7 @@ class Documento extends Model
                     function($query)  use($empresa)
                         {$query->where('nombre','=',$empresa);
                             })
-                ->withWhereHas('etiqueta', 
+                ->withWhereHas('etiquetas', 
                     function($query) use($etiqueta)
                         {$query->where('nombre','=',$etiqueta);
         });
@@ -63,7 +63,7 @@ class Documento extends Model
                     function($query)  use($categoria)
                         {$query->where('nombre','=',$categoria);
                             })
-                ->withWhereHas('etiqueta', 
+                ->withWhereHas('etiquetas', 
                     function($query) use($etiqueta)
                         {$query->where('nombre','=',$etiqueta);
         });

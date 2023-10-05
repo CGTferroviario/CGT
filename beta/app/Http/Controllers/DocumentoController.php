@@ -15,7 +15,7 @@ class DocumentoController extends Controller
     public function index()
     {
         return view('intranet.documentos.index', [
-            'documentos' => Documento::orderBy('fecha', 'desc')->get()
+            'documentos' => Documento::orderBy('fecha', 'desc')->orderBy('fecha', 'desc')->paginate(12)
         ]);
     }
     public function create()
@@ -31,18 +31,35 @@ class DocumentoController extends Controller
     {
         $usuario = Auth::user()->id;
 
+        $empresaId = $request->empresa;
+        $empresa = Empresa::find($empresaId);
+        $nombre_empresa = $empresa->nombre;
+
+        $categoriaId = $request->categoria;
+        $categoria = Categoria::find($categoriaId);
+        $nombre_categoria = $categoria->nombre;
+
+        $etiquetaId = $request->etiquetas[0];
+        $etiqueta = Etiqueta::find($etiquetaId);
+        $nombre_etiqueta = $etiqueta->nombre;
+
+        $ruta = $nombre_empresa . '/' . $nombre_categoria . '/' . $nombre_etiqueta;
+
+        dd($ruta);
+
         $documento = Documento::create([
             'empresa_id' => $request->empresa,
             'categoria_id' => $request->categoria,
             'fecha' => $request->fecha,
             'titulo' => $request->titulo,
             'descripcion' => $request->descripcion,
-            'ruta' => 'ruta',
+            'ruta' => $ruta,
             'user_id' => $usuario,
         ]);
         if ($request->has('etiquetas')) {
             $documento->etiquetas()->attach($request->etiquetas);
         }
+        // dd($documento);
 
         return redirect(route('intranet.documentos.index'))->with('message', 'Documento Añadido Correctamente');
 
