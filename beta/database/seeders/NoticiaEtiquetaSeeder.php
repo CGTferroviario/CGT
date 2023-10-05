@@ -16,7 +16,7 @@ class NoticiaEtiquetaSeeder extends Seeder
     {
         $etiquetas = Etiqueta::all();
         Noticia::all()->each(function ($noticia) use ($etiquetas) { 
-            $noticia->etiqueta()->attach(
+            $noticia->etiquetas()->attach(
                 $etiquetas->random(rand(1, 3))->pluck('id')->toArray()
             );
         });

@@ -1,7 +1,7 @@
 <x-privado-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-900 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-900 leading-tight">
             {{ __('Añadir Noticia') }}
         </h2>
     </x-slot>
@@ -44,6 +44,7 @@
                         <div class="py-8 px-4 mx-auto">
                             <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Noticia</h2>
                             <form action="{{ route('intranet.noticias.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
                                     <div class="">
                                         <label for="empresa" class="block mb-2 text-sm font-medium text-white">Empresa</label>
@@ -89,7 +90,7 @@
                                         
                                     ?>
                                     <div class="">
-                                        <label for="fecha_com" class="block mb-2 text-sm font-medium text-white">Fecha</label>
+                                        <label for="fecha" class="block mb-2 text-sm font-medium text-white">Fecha</label>
                                         <input type="date" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" name="fecha" value="<?php echo $fecha; ?>">
                                     </div>
                                 </div>
@@ -98,12 +99,14 @@
                                         <label for="titulo" class="block mb-2 text-sm font-medium text-white">Título</label>
                                         <input type="text" name="titulo" id="titulo" class="w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-gray-400" placeholder="" value="" required="">
                                         <div class="">
-                                            <label for="cuerpo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripción</label>
-                                            <textarea id="cuerpo" rows="5" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="El cuerpo del noticia..."></textarea>
+                                            <label for="cuerpo" class="block mb-2 text-sm font-medium text-white">Descripción</label>
+                                            <textarea id="cuerpo" rows="5" class="block p-2.5 w-full text-sm rounded-lg border focus:ring-red-500 focus:border-red-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white" placeholder="El cuerpo del noticia..." name="cuerpo"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-span-6">
-                                        <label for="pdf" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-add-files text-lg mr-2 mb-0"></i>Noticia en PDF</label>
+                                        <label for="imagen" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-image text-lg mr-2 mb-0"></i>Imagen</label>
+                                        <input type="file" name="imagen" id="imagen" class="text-white">
+                                        <label for="pdf" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-add-files text-lg mr-2 mb-0"></i>Adjunto en PDF</label>
                                         <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
                                             <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                                 <i class="lni lni-cloud-upload text-3xl mb-2 text-gray-400"></i>
@@ -140,7 +143,7 @@
                 </div>
             </div>
 
-            <div>
+            {{-- <div>
                 <form novalidate="" action="{{ route('intranet.noticias.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="col-md-3">
@@ -204,7 +207,7 @@
                 
                     <button type="submit">Subir Noticia</button>
                 </form>                
-            </div>
+            </div> --}}
         </div>
     </div>
     @endsection

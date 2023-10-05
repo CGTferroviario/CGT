@@ -16,7 +16,7 @@ class ComunicadoEtiquetaSeeder extends Seeder
     {
         $etiquetas = Etiqueta::all();
         Comunicado::all()->each(function ($comunicado) use ($etiquetas) { 
-            $comunicado->etiqueta()->attach(
+            $comunicado->etiquetas()->attach(
                 $etiquetas->random(rand(1, 3))->pluck('id')->toArray()
             );
         });

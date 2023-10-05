@@ -86,20 +86,12 @@
                                             @endforeach
                                         </div>
                                     </div>
-                                    {{-- <div class="">
-                                        <label for="etiqueta" class="block mb-2 text-sm font-medium text-white">Añade Etiquetas</label>
-                                        <select class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" id="etiqueta" name="etiqueta[]" required="">
-                                                <option value="Elige categoria">Añade etiquetas</option>
-                                            @foreach ($etiquetas as $etiqueta)
-                                                <option value="{{ $etiqueta->id }}">{{ $etiqueta->nombre }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div> --}}
                                     <?php 
                                         
                                         $month = date('m');
                                         $day = date('d');
                                         $year = date('Y');
+                                        $ano = date('y');
 
                                         $fecha = $year . '-' . $month . '-' . $day;
                                         

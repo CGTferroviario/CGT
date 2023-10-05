@@ -8,6 +8,7 @@ use App\Models\Categoria;
 use App\Models\Empresa;
 use App\Models\Etiqueta;
 use App\Models\Noticia;
+use Illuminate\Support\Facades\Auth;
 
 class NoticiaController extends Controller
 {
@@ -49,7 +50,24 @@ class NoticiaController extends Controller
      */
     public function store(StoreNoticiaRequest $request)
     {
-        //
+        dd($request);
+        $usuario = Auth::user()->id;
+
+        $noticia = Noticia::create([
+            'empresa_id' => $request->empresa,
+            'categoria_id' => $request->categoria,
+            'fecha' => $request->fecha,
+            'titulo' => $request->titulo,
+            'descripcion' => $request->descripcion,
+            'ruta' => 'ruta',
+            'user_id' => $usuario,
+        ]);
+        if ($request->has('etiquetas')) {
+            $noticia->etiquetas()->attach($request->etiquetas);
+        }
+
+        return redirect(route('intranet.noticia.index'))->with('message', 'Noticia Añadida Correctamente');
+
     }
 
     /**

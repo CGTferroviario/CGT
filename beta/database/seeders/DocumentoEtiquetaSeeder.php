@@ -16,7 +16,7 @@ class DocumentoEtiquetaSeeder extends Seeder
     {
         $etiquetas = Etiqueta::all();
         Documento::all()->each(function ($documento) use ($etiquetas) { 
-            $documento->etiqueta()->attach(
+            $documento->etiquetas()->attach(
                 $etiquetas->random(rand(1, 3))->pluck('id')->toArray()
             );
         });

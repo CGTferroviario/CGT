@@ -27,6 +27,6 @@ class Noticia extends Model
     }
     public function etiquetas()
     {
-        return $this->belongsToMany(Etiqueta::class);
+        return $this->belongsToMany(Etiqueta::class, 'noticia_etiqueta');
     }
 }

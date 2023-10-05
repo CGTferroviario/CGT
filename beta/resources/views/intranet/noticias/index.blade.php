@@ -59,14 +59,11 @@
                         <td>{{ $noticia->numero }}</td>
                         <td>
                             <div class="flex justify-start gap-1 text-xl mt-2">
-                                {{-- <div class="rounded-md p-2 hover:bg-blue-300 hover:text-white icono">
-                                    <a href="" class=""><i class="lni lni-envelope"></i></a>
-                                </div> --}}
                                 <a x-data="{ tooltip: 'Enviar' }" href="{{ url('noticias.edit', $noticia->id) }}"
                                     class="text-blue-500 hover:bg-blue-500 hover:text-white p-1 rounded-lg h-8" title="Enviar por correo">
                                     <i class="lni lni-envelope"></i>
                                 </a> 
-                                <a x-data="{ tooltip: 'Edite' }" href="{{ url('noticias.edit', $noticia->id) }}"
+                                <a x-data="{ tooltip: 'Editar' }" href="{{ url('noticias.edit', $noticia->id) }}"
                                     class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar Noticia">
                                     <i class="lni lni-pencil"></i>
                                 </a>                                
@@ -88,7 +85,7 @@
                         <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $noticia->empresa?->nombre }}">{{ $noticia->empresa?->nombre }}</span></td>
                         <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $noticia->categoria?->nombre }}">{{ $noticia->categoria?->nombre }}</span></td>
                         <td>
-                            @foreach ($noticia->etiqueta as $etiqueta )
+                            @foreach ($noticia->etiquetas as $etiqueta )
                                 <span
                                     class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">
                                         {{ $etiqueta->nombre }}<br>
