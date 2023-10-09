@@ -13,16 +13,13 @@
                 <div class="col-span-3">
                     <x-mensaje></x-mensaje>
                 </div>
-                <div class="sm:flex sm:items-center sm:justify-start">
-                    
-                </div>
+                <div class="sm:flex sm:items-center sm:justify-start"></div>
                 <div class="sm:flex-row sm:items-center sm:justify-between">
                     <div class="flex items-center gap-x-3">
                         <h2 class="text-lg font-bold text-gray-800">Comunicados</h2>
                         <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $comunicados->count() }}</span>
                         <p class="mt-1 text-sm text-gray-500">Estos son los comunicados que llevamos este año.</p>
                     </div>
-                    
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-end">
                     <div class="flex items-center gap-x-3 align-middle">
@@ -62,11 +59,11 @@
                         <td>{{ $comunicado->numero }}</td>
                         <td>
                             <div class="flex justify-start gap-1 text-xl mt-2">
-                                <a x-data="{ tooltip: 'Enviar' }" href="{{ url('comunicados.edit', $comunicado->id) }}"
+                                <a x-data="{ tooltip: 'Enviar' }" href="{{ route('intranet.comunicados.edit', $comunicado->id) }}"
                                     class="text-blue-500 hover:bg-blue-500 hover:text-white p-1 rounded-lg h-8" title="Enviar por correo">
                                     <i class="lni lni-envelope"></i>
                                 </a> 
-                                <a x-data="{ tooltip: 'Edite' }" href="{{ url('comunicados.edit', $comunicado->id) }}"
+                                <a x-data="{ tooltip: 'Editar' }" href="{{ route('intranet.comunicados.edit', $comunicado->id) }}"
                                     class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar Comunicado">
                                     <i class="lni lni-pencil"></i>
                                 </a>                                
@@ -106,5 +103,4 @@
         </div>
     </div>
     @endsection
-    
 </x-privado-layout>

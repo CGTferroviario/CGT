@@ -229,10 +229,10 @@
                 @endguest
             </div>
             <button data-collapse-toggle="navbar-sticky" type="button"
-                class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg border-x border-y hover:text-red-500 hover:border-red-500 border-white md:hidden focus:outline-none focus:ring-2 hover:bg-gray-900 focus:ring-gray-600"
+                class="ml-4 inline-flex items-center p-2 text-sm text-gray-500 rounded-lg border-x border-y hover:text-red-500 hover:border-red-500 border-red-500 md:hidden focus:outline-none focus:ring-2 hover:bg-black focus:ring-red-500"
                 aria-controls="navbar-sticky" aria-expanded="false">
                 <span class="sr-only">Abrir Menú Principal</span>
-                <i class="lni lni-line-spacing text-3xl"></i>
+                <i class="lni lni-line-double"></i>
             </button>
         </div>
     </div>

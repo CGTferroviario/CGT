@@ -24,9 +24,7 @@
                         <p class="mt-1 text-sm text-gray-500">Estas son las empresas que tenemos registradas.</p>
                     </div>
                 </div>
-                <div class="sm:flex sm:items-center sm:justify-end">
-                    
-                </div>
+                <div class="sm:flex sm:items-center sm:justify-end"></div>
             </div>
             <div class="grid grid-cols-4 gap-4">
                 <div class="col-span-3 bg-oscuro-7 rounded-lg">
