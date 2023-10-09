@@ -29,6 +29,7 @@ class DocumentoController extends Controller
     }
     public function store(StoreDocumentoRequest $request)
     {
+
         $usuario = Auth::user()->id;
 
         $empresaId = $request->empresa;
@@ -45,7 +46,7 @@ class DocumentoController extends Controller
 
         $ruta = $nombre_empresa . '/' . $nombre_categoria . '/' . $nombre_etiqueta;
 
-        dd($ruta);
+        // dd($ruta);
 
         $documento = Documento::create([
             'empresa_id' => $request->empresa,
