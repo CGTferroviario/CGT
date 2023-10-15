@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('nombre');
             $table->text('descripcion');
             $table->string('logo')->nullable();
-            $table->boolean('gestion_vales');
-            $table->boolean('comunicados');
-            $table->boolean('activa');
+            $table->boolean('vales')->default(0);
+            $table->boolean('comunicados')->default(0);
+            $table->boolean('activa')->default(0);
             $table->timestamps();
         });
     }

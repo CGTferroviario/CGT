@@ -9,7 +9,7 @@ class Empresa extends Model
 {
     use HasFactory;
 
-    public $fillable = ['nombre', 'descripcion', 'logo', 'gestion_vales', 'comunicados', 'activa'];
+    public $fillable = ['nombre', 'descripcion', 'logo', 'vales', 'comunicados', 'activa'];
 
     public function comunicados()
     {

@@ -9,6 +9,8 @@ class Categoria extends Model
 {
     use HasFactory;
 
+    public $fillable = ['nombre', 'activa'];
+
     public function empresa()
     {
         return $this->belongsTo(Empresa::class);

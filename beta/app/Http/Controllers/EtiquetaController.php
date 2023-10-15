@@ -33,7 +33,14 @@ class EtiquetaController extends Controller
      */
     public function store(StoreEtiquetaRequest $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'activa' => 'required',
+        ]);
+ 
+        Etiqueta::create($request->all());
+
+        return redirect(route('intranet.etiquetas.index'))->with('message', 'Etiqueta Creada Correctamente');
     }
 
     /**
@@ -49,7 +56,9 @@ class EtiquetaController extends Controller
      */
     public function edit(Etiqueta $etiqueta)
     {
-        //
+        $etiquetas = Etiqueta::all();
+
+        return view('intranet.etiquetas.edit', compact('etiqueta', 'etiquetas'));
     }
 
     /**
@@ -57,7 +66,14 @@ class EtiquetaController extends Controller
      */
     public function update(UpdateEtiquetaRequest $request, Etiqueta $etiqueta)
     {
-        //
+        $validated = $request->validate([
+            'nombre' => ['required'],
+            'activa' => ['required']
+        ]);
+
+        $etiqueta->update($validated);
+
+        return to_route('intranet.etiquetas.index')->with('message', 'Etiqueta Actualizada Correctamente');
     }
 
     /**

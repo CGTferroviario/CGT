@@ -9,7 +9,7 @@ class Etiqueta extends Model
 {
     use HasFactory;
 
-    
+    public $fillable = ['nombre', 'activa'];
 
     public function documentos()
     {

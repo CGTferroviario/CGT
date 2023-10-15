@@ -83,7 +83,7 @@
                                 <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $empresa->nombre }}">{{ $empresa->nombre }}</span></td>
                                 <td>{{ $empresa->descripcion }}</td>
                                 <td>{{ $empresa->logo }}</td>
-                                <td class="text-center">{{ $empresa->gestion_vales }}</td>
+                                <td class="text-center">{{ $empresa->vales }}</td>
                                 <td class="text-center">{{ $empresa->comunicados }}</td>
                                 <td class="text-center">{{ $empresa->activa }}</td>
                             </tr>

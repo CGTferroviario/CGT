@@ -38,16 +38,14 @@
             <table id="comunicadosAdmin" class="display nowrap text-sm pt-5 font-normal rounded-t-lg" style="width:100%">
                 <thead class="rounded-t-lg bg-black text-white">
                     <tr>
-                        <th class="rounded-tl-lg">Nº</th>
-                        <th>Acciones</th>
+                        <th class="rounded-tl-lg">Acciones</th>
                         <th>Fecha</th>
                         <th title="Visualizaciones">Vis.</th>
                         <th title="Autor">Autor</th>
                         <th>Título</th>
-                        <th>Empresa</th>                        
-                        <th>Categorías</th>
+                        <th>Empresa</th>                       
+                        <th>Categoría</th>
                         <th class="rounded-tr-lg">Etiquetas</th>
-                        <th>Subtítulo</th>
                         <th>Cuerpo</th>
                         <th>Adjunto</th>
                         <th>Imagen</th>
@@ -56,14 +54,13 @@
                 <tbody>
                     @foreach ($noticias as $noticia)
                     <tr>
-                        <td>{{ $noticia->numero }}</td>
                         <td>
                             <div class="flex justify-start gap-1 text-xl mt-2">
                                 <a x-data="{ tooltip: 'Enviar' }" href="{{ url('noticias.edit', $noticia->id) }}"
                                     class="text-blue-500 hover:bg-blue-500 hover:text-white p-1 rounded-lg h-8" title="Enviar por correo">
                                     <i class="lni lni-envelope"></i>
                                 </a> 
-                                <a x-data="{ tooltip: 'Editar' }" href="{{ url('noticias.edit', $noticia->id) }}"
+                                <a x-data="{ tooltip: 'Editar' }" href="{{ route('intranet.noticias.edit', $noticia->id) }}"
                                     class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar Noticia">
                                     <i class="lni lni-pencil"></i>
                                 </a>                                
@@ -92,7 +89,6 @@
                                     </span>
                             @endforeach
                         </td>
-                        <td>{{ $noticia->subtitulo }}</td>
                         <td>{!! nl2br(e($noticia->cuerpo))!!}</td>
                         {{-- <td>{{ $noticia->cuerpo }}</td> --}}
                         <td>{{ $noticia->adjunto }} 1</td>

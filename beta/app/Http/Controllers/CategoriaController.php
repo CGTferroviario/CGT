@@ -35,7 +35,14 @@ class CategoriaController extends Controller
      */
     public function store(StoreCategoriaRequest $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'activa' => 'required',
+        ]);
+ 
+        Categoria::create($request->all());
+
+        return redirect(route('intranet.categorias.index'))->with('message', 'Categoría Creada Correctamente');
     }
 
     /**
@@ -51,7 +58,9 @@ class CategoriaController extends Controller
      */
     public function edit(Categoria $categoria)
     {
-        //
+        $categorias = Categoria::all();
+
+        return view('intranet.categorias.edit', compact('categoria', 'categorias'));
     }
 
     /**
@@ -59,7 +68,14 @@ class CategoriaController extends Controller
      */
     public function update(UpdateCategoriaRequest $request, Categoria $categoria)
     {
-        //
+        $validated = $request->validate([
+            'nombre' => ['required'],
+            'activa' => ['required']
+        ]);
+
+        $categoria->update($validated);
+
+        return to_route('intranet.categorias.index')->with('message', 'Categoria Actualizada Correctamente');
     }
 
     /**

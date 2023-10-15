@@ -31,20 +31,21 @@
             <div class="grid grid-cols-4 gap-4">
                 <div class="col-span-3 bg-oscuro-7 rounded-lg">
                     <div class="py-8 px-4 mx-auto">
-                        <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Categoria</h2>
-                        <form action="{{ route('intranet.categorias.store') }}" method="POST" enctype="multipart/form-data">
+                        <h2 class="mb-4 text-xl font-bold text-white text-center">Editar Categoria</h2>
+                        <form action="{{ route('intranet.categorias.update', $categoria->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <div class="grid grid-cols-4 gap-4">
                                 <div class="col-span-3">
                                     <div class="grid gap-4 sm:grid-cols-5 sm:gap-6 mt-3">
                                         <div class="col-span-2">
                                             <label for="nombre" class="block mb-2 text-sm font-medium text-white">Nombre</label>
-                                            <input type="text" name="nombre" id="nombre" class="w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-gray-400" placeholder="" value="" required="">
+                                            <input type="text" name="nombre" id="nombre" value="{{ $categoria->nombre }}" class="w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-gray-400" placeholder="" value="" required="">
                                         </div>
                                         <div class="text-center">
                                             <label for="activa" class="block mb-2 text-sm font-medium text-white">Activa</label>
                                             <label class="relative inline-flex items-center mt-2 cursor-pointer">
-                                                <input type="checkbox" name="activa_toggle" id="activa_toggle" class="sr-only peer">
+                                                <input type="checkbox" name="activa_toggle" id="activa_toggle" {{  ($categoria->activa == 1 ? ' checked' : '') }} class="sr-only peer">
                                                 <div class="w-11 h-6 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-800 bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-red-600"></div>
                                             </label>
                                             {{-- Input oculto que se usa para convertir el valor on/off en binario --}}
@@ -53,7 +54,7 @@
                                     </div> 
                                 </div>
                             </div>
-                            <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-green-500">Añadir Categoría</button>
+                            <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-green-500">Editar Categoría</button>
                             <button class="w-100 btn btn-outline-danger btn-lg" type="submit"></button>
                         </form>
                     </div>

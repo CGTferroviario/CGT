@@ -33,6 +33,7 @@
                     <div class="py-8 px-4 mx-auto">
                         <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Etiqueta</h2>
                         <form action="{{ route('intranet.etiquetas.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="grid grid-cols-4 gap-4">
                                 <div class="col-span-3">
                                     <div class="grid gap-4 sm:grid-cols-5 sm:gap-6 mt-3">
@@ -41,45 +42,18 @@
                                             <input type="text" name="nombre" id="nombre" class="w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-gray-400" placeholder="" value="" required="">
                                         </div>
                                         <div class="text-center">
-                                            <label for="comunicados" class="block mb-2 text-sm font-medium text-white">Comunicados</label>
-                                            <label class="relative inline-flex items-center mt-2 cursor-pointer">
-                                                <input type="checkbox" name="comunicados" id="comunicados" value="" class="sr-only peer">
-                                                <div class="w-11 h-6 rounded-full peer peer-focus:ring-4 peer-focus:ring-black dark:peer-focus:ring-red-800 bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                                            </label>
-                                        </div>
-                                        <div class="text-center">
-                                            <label for="gestion_vales" class="block mb-2 text-sm font-medium text-white">Gestión Vales</label>
-                                            <label class="relative inline-flex items-center mt-2 cursor-pointer">
-                                                <input type="checkbox" name="gestion_vales" id="gestion_vales" value="" class="sr-only peer" checked>
-                                                <div class="w-11 h-6 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-500 bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-blue-600"></div>
-                                            </label>
-                                        </div>
-                                        <div class="text-center">
                                             <label for="activa" class="block mb-2 text-sm font-medium text-white">Activa</label>
                                             <label class="relative inline-flex items-center mt-2 cursor-pointer">
-                                                <input type="checkbox" name="activa" id="activa" value="" class="sr-only peer" disabled>
-                                                <div class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                                                <input type="checkbox" name="activa_toggle" id="activa_toggle" class="sr-only peer">
+                                                <div class="w-11 h-6 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-800 bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-red-600"></div>
                                             </label>
-                                        </div>
-                                        <div class="col-span-5">
-                                            <label for="descripcion" class="block mb-2 text-sm font-medium text-white">Descripción</label>
-                                            <textarea id="descripcion" rows="5" class="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white focus:ring-red-500 focus:border-red-500" placeholder="Descripción de la etiqueta y sus funciones..."></textarea>
+                                            {{-- Input oculto que se usa para convertir el valor on/off en binario --}}
+                                            <input type="hidden" id="activa" name="activa" value="0">
                                         </div>
                                     </div> 
                                 </div>
-                                <div class="mt-3">
-                                    <label for="jpg" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-image text-md mr-2 mb-0"></i>Logotipo</label>
-                                    <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-56 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
-                                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                            <i class="lni lni-cloud-upload text-3xl mb-2 text-gray-400"></i>
-                                            <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Haz click o arrastra</span></p>
-                                            <p class="text-xs text-gray-400">para subir un fichero <span class="font-semibold">.JPG o .PNG</span></p>
-                                        </div>
-                                        <input id="dropzone-file" type="file" class="hidden" />
-                                    </label>
-                                </div>
                             </div>
-                            <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-green-500">Subir Comunicado</button>
+                            <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-green-500">Añadir Etiqueta</button>
                             <button class="w-100 btn btn-outline-danger btn-lg" type="submit"></button>
                         </form>
                     </div>

@@ -86,7 +86,15 @@ class NoticiaController extends Controller
      */
     public function edit(Noticia $noticia)
     {
-        //
+        return view('intranet.noticias.edit', [
+            'noticias' => Noticia::orderBy('id', 'desc')->paginate(15),
+            'empresas' => Empresa::orderBy('id', 'asc')->get(),
+            'categorias' => Categoria::orderBy('id', 'asc')->get(),
+            'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
+        ], compact('noticia'));
+        // $noticias = Noticia::all();
+
+        // return view('intranet.noticias.edit', compact('noticia', 'noticias'));
     }
 
     /**
@@ -94,7 +102,24 @@ class NoticiaController extends Controller
      */
     public function update(UpdateNoticiaRequest $request, Noticia $noticia)
     {
-        //
+        // dd($request);
+
+        $validated = $request->validate([
+            // 'empresa_id' => ['required'],
+            // 'categoria_id' => ['required'],
+            'fecha' => ['required'],
+            'titulo' => ['required'],
+            'cuerpo' => ['required'],
+            // 'imagen' => ['required'],
+            // 'adjunto' => ['required'],
+            // 'ruta' => 'ruta',
+            // 'user_id' => $usuario,
+        ]);
+        // dd($validated);
+
+        $noticia->update($validated);
+
+        return to_route('intranet.noticias.index')->with('message', 'Noticia Actualizada Correctamente');
     }
 
     /**

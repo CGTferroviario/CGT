@@ -62,7 +62,7 @@
                                 <td>{{ $categoria->id }}</td>
                                 <td>
                                     <div class="flex justify-start gap-1 text-xl mt-2">
-                                        <a x-data="{ tooltip: 'Edite' }" href="{{ url('categorias.edit', $categoria->id) }}"
+                                        <a x-data="{ tooltip: 'Edite' }" href="{{ route('intranet.categorias.edit', $categoria->id) }}"
                                             class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar categoria">
                                             <i class="lni lni-pencil"></i>
                                         </a>                                

@@ -44,23 +44,29 @@
                                         <div class="text-center">
                                             <label for="comunicados" class="block mb-2 text-sm font-medium text-white">Comunicados</label>
                                             <label class="relative inline-flex items-center mt-2 cursor-pointer">
-                                                <input type="checkbox" name="comunicados" id="comunicados" class="sr-only peer" checked>
+                                                <input type="checkbox" name="comunicados_toggle" id="comunicados_toggle" class="sr-only peer">
                                                 <div class="w-11 h-6 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-800 bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-red-600"></div>
                                             </label>
+                                            {{-- Input oculto que se usa para convertir el valor on/off en binario --}}
+                                            <input type="hidden" id="comunicados" name="comunicados" value="0">
                                         </div>
                                         <div class="text-center">
-                                            <label for="gestion_vales" class="block mb-2 text-sm font-medium text-white">Gestión Vales</label>
+                                            <label for="vales" class="block mb-2 text-sm font-medium text-white">Gestión Vales</label>
                                             <label class="relative inline-flex items-center mt-2 cursor-pointer">
-                                                <input type="checkbox" name="gestion_vales" id="gestion_vales" class="sr-only peer">
+                                                <input type="checkbox" name="vales_toggle" id="vales_toggle" class="sr-only peer">
                                                 <div class="w-11 h-6 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-800 bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-red-600"></div>
                                             </label>
+                                            {{-- Input oculto que se usa para convertir el valor on/off en binario --}}
+                                            <input type="hidden" id="vales" name="vales" value="0">
                                         </div>
                                         <div class="text-center">
                                             <label for="activa" class="block mb-2 text-sm font-medium text-white">Activa</label>
                                             <label class="relative inline-flex items-center mt-2 cursor-pointer">
-                                                <input type="checkbox" name="activa" id="activa" class="sr-only peer" checked>
+                                                <input type="checkbox" name="activa_toggle" id="activa_toggle" class="sr-only peer">
                                                 <div class="w-11 h-6 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-800 bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-red-600"></div>
                                             </label>
+                                            {{-- Input oculto que se usa para convertir el valor on/off en binario --}}
+                                            <input type="hidden" id="activa" name="activa" value="0">
                                         </div>
                                         <div class="col-span-5">
                                             <label for="descripcion" class="block mb-2 text-sm font-medium text-white">Descripción</label>

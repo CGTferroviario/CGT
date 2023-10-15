@@ -61,7 +61,7 @@
                                 <td>{{ $etiqueta->id }}</td>
                                 <td>
                                     <div class="flex justify-start gap-1 text-xl mt-2">
-                                        <a x-data="{ tooltip: 'Edite' }" href="{{ url('etiquetas.edit', $etiqueta->id) }}"
+                                        <a x-data="{ tooltip: 'Editar' }" href="{{ route('intranet.etiquetas.edit', $etiqueta->id) }}"
                                             class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar etiqueta">
                                             <i class="lni lni-pencil"></i>
                                         </a>                                
@@ -69,7 +69,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class=" p-1 rounded-md">
-                                                <a x-data="{ tooltip: 'Delete' }" href="#" title="Eliminar etiqueta" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8">
+                                                <a x-data="{ tooltip: 'Eliminar' }" href="#" title="Eliminar etiqueta" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8">
                                                     <i class="lni lni-trash-can"></i>
                                                 </a>
                                             </button>
@@ -77,7 +77,14 @@
                                     </div>
                                 </td>
                                 <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $etiqueta->nombre }}">{{ $etiqueta->nombre }}</span></td>
-                                <td class="text-center">{{ $etiqueta->activa }}</td>
+                                <td class="text-center">
+                                    <label class="relative inline-flex items-center mt-2 cursor-pointer">
+                                        <input type="checkbox" name="activa_toggle" id="activa_toggle" {{  ($etiqueta->activa == 1 ? ' checked' : '') }} disabled class="sr-only peer">
+                                        <div class="w-11 h-6 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-800 bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-red-600"></div>
+                                    </label>
+                                    {{-- Input oculto que se usa para convertir el valor on/off en binario --}}
+                                    <input type="hidden" id="activa" name="activa" value="{{ $etiqueta->activa ? 1 : 0 }}">
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
