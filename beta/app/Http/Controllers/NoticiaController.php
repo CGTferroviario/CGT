@@ -56,15 +56,14 @@ class NoticiaController extends Controller
         $usuario = Auth::user()->id;
 
         $request->validate([
-            // 'empresa_id' => 'required',
-            // 'categoria_id' => 'required',
+            'empresa_id' => 'nullable',
+            'categoria_id' => 'nullable',
             'fecha' => 'required',
             'titulo' => 'required',
             'cuerpo' => 'required',
             'imagen' => 'nullable|image',
             'adjunto' => 'nullable|pdf',
         ]);
-        // dd($request);
 
         $rutaImagen = null;
         if ($request->hasFile('imagen')) {
@@ -72,6 +71,8 @@ class NoticiaController extends Controller
             $imagenNombre = Str::slug($request->titulo) . '.' . $imagen->getClientOriginalExtension();
             $rutaImagen = $imagen->storeAs('noticias/imagenes', $imagenNombre, 'public');
         }
+
+
 
         $noticia = Noticia::create(array_merge($request->all(), ['imagen' => $rutaImagen, 'user_id' => $usuario]));
 
@@ -131,8 +132,8 @@ class NoticiaController extends Controller
         // dd($request);
 
         $validated = $request->validate([
-            // 'empresa_id' => ['required'],
-            // 'categoria_id' => ['required'],
+            'empresa_id' => ['nullable'],
+            'categoria_id' => ['nullable'],
             'fecha' => ['required'],
             'titulo' => ['required'],
             'cuerpo' => ['required'],
@@ -153,6 +154,8 @@ class NoticiaController extends Controller
      */
     public function destroy(Noticia $noticia)
     {
+        $noticia->etiquetas()->detach();
+
         $noticia->delete();
 
         return to_route('intranet.noticias.index')->with('message', 'Noticia Eliminada.');

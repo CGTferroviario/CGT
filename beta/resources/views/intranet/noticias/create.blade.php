@@ -113,7 +113,7 @@
                                                 <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Haz click o arrastra</span></p>
                                                 <p class="text-xs text-gray-400">para subir un fichero <span class="font-semibold">.PDF</span></p>
                                             </div>
-                                            <input id="dropzone-file" type="file" class="hidden" />
+                                            <input id="dropzone-file" type="file" name="pdf" class="hidden" />
                                         </label>
                                     </div>
                                 </div>
