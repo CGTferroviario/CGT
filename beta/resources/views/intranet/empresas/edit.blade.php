@@ -76,7 +76,13 @@
                                     </div> 
                                 </div>
                                 <div class="mt-3">
-                                    <label for="jpg" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-image text-md mr-2 mb-0"></i>Logotipo</label>
+                                    <label for="logo" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-image text-md mr-2 mb-0"></i>Logotipo</label>
+                                    
+                                    <input type="file" id="logo" name="logo">
+                                    @if ($empresa->logo)
+                                        <img src="{{ asset('storage/' . $empresa->logo) }}" alt="Logo">
+                                    @endif
+                                    {{-- <label for="jpg" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-image text-md mr-2 mb-0"></i>Logotipo</label>
                                     <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-56 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
                                         <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                             <i class="lni lni-cloud-upload text-3xl mb-2 text-gray-400"></i>
@@ -84,7 +90,7 @@
                                             <p class="text-xs text-gray-400">para subir un fichero <span class="font-semibold">.JPG o .PNG</span></p>
                                         </div>
                                         <input id="dropzone-file" type="file" class="hidden" />
-                                    </label>
+                                    </label> --}}
                                 </div>
                             </div>
                             <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-green-500">Editar Empresa</button>

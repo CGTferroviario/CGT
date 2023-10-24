@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEmpresaRequest;
 use App\Http\Requests\UpdateEmpresaRequest;
 use App\Models\Empresa;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+
 
 class EmpresaController extends Controller
 {
@@ -28,15 +31,26 @@ class EmpresaController extends Controller
 
     public function store(StoreEmpresaRequest $request)
     {
+        // dd($request);
         $request->validate([
             'nombre' => 'required',
             'descripcion' => 'required',
             'vales' => 'required',
             'comunicados' => 'required',
-            'activa' => 'required'
+            'activa' => 'required',
+            'logo' => 'nullable|image'
         ]);
- 
-        Empresa::create($request->all());
+
+        $rutaLogo = null;
+        if ($request->hasFile('logo')) {
+            $logo = $request->file('logo');
+            $logoName = Str::slug($request->nombre) . '.' . $logo->getClientOriginalExtension();
+            $rutaLogo = $logo->storeAs('logos', $logoName, 'public');
+        }
+
+        // dd($request);
+
+        Empresa::create(array_merge($request->all(), ['logo' => $rutaLogo]));
 
         return redirect(route('intranet.empresas.index'))->with('message', 'Empresa Creada Correctamente');
     }
@@ -66,10 +80,18 @@ class EmpresaController extends Controller
             'descripcion' => ['required'],
             'comunicados' => ['required'],
             'vales' => ['required'],
-            'activa' => ['required']
+            'activa' => ['required'],
+            'logo' => 'nullable|image'
         ]);
 
-        $empresa->update($validated);
+        $rutaLogo = $empresa->logo;
+        if ($request->hasFile('logo')) {
+            $logo = $request->file('logo');
+            $logoName = Str::slug($request->nombre) . '.' . $logo->getClientOriginalExtension();
+            $rutaLogo = $logo->storeAs('logos', $logoName, 'public');
+        }
+
+        $empresa->update(array_merge($request->all(), ['logo' => $rutaLogo]));
 
         return to_route('intranet.empresas.index')->with('message', 'Empresa Actualizada Correctamente');
     }
@@ -79,6 +101,11 @@ class EmpresaController extends Controller
      */
     public function destroy(Empresa $empresa)
     {
+        
+        if ($empresa->logo && Storage::disk('public')->exists($empresa->logo)) {
+            Storage::disk('public')->delete($empresa->logo);
+        }
+
         $empresa->delete();
 
         return to_route('intranet.empresas.index')->with('message', 'Empresa Eliminada.');

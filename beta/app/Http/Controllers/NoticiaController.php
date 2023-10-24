@@ -9,6 +9,8 @@ use App\Models\Empresa;
 use App\Models\Etiqueta;
 use App\Models\Noticia;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+
 
 class NoticiaController extends Controller
 {
@@ -53,20 +55,44 @@ class NoticiaController extends Controller
         
         $usuario = Auth::user()->id;
 
-        $noticia = Noticia::create([
-            'empresa_id' => $request->empresa,
-            'categoria_id' => $request->categoria,
-            'fecha' => $request->fecha,
-            'titulo' => $request->titulo,
-            'cuerpo' => $request->cuerpo,
-            'imagen' => $request->imagen,
-            'adjunto' => $request->adjunto,
-            'ruta' => 'ruta',
-            'user_id' => $usuario,
+        $request->validate([
+            // 'empresa_id' => 'required',
+            // 'categoria_id' => 'required',
+            'fecha' => 'required',
+            'titulo' => 'required',
+            'cuerpo' => 'required',
+            'imagen' => 'nullable|image',
+            'adjunto' => 'nullable|pdf',
         ]);
+        // dd($request);
+
+        $rutaImagen = null;
+        if ($request->hasFile('imagen')) {
+            $imagen = $request->file('imagen');
+            $imagenNombre = Str::slug($request->titulo) . '.' . $imagen->getClientOriginalExtension();
+            $rutaImagen = $imagen->storeAs('noticias/imagenes', $imagenNombre, 'public');
+        }
+
+        $noticia = Noticia::create(array_merge($request->all(), ['imagen' => $rutaImagen, 'user_id' => $usuario]));
+
         if ($request->has('etiquetas')) {
             $noticia->etiquetas()->attach($request->etiquetas);
         }
+
+        // $noticia = Noticia::create([
+        //     'empresa_id' => $request->empresa,
+        //     'categoria_id' => $request->categoria,
+        //     'fecha' => $request->fecha,
+        //     'titulo' => $request->titulo,
+        //     'cuerpo' => $request->cuerpo,
+        //     'imagen' => $request->imagen,
+        //     'adjunto' => $request->adjunto,
+        //     'ruta' => 'ruta',
+        //     'user_id' => $usuario,
+        // ]);
+        // if ($request->has('etiquetas')) {
+        //     $noticia->etiquetas()->attach($request->etiquetas);
+        // }
         // dd($noticia);
 
         return redirect(route('intranet.noticias.index'))->with('message', 'Noticia Añadida Correctamente');

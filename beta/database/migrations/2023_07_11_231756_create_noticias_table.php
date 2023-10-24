@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('titulo');
             $table->text('cuerpo');
             $table->string('adjunto')->nullable();
-            $table->string('imagen');
+            $table->string('imagen')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade');
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');

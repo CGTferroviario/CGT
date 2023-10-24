@@ -36,3 +36,26 @@ document.getElementById('vales_toggle').addEventListener('change', function() {
     document.getElementById('vales').value = this.checked ? 1 : 0;
 });
 // Fin Toggle Switch
+
+// Drag and Drop Dropzone
+Dropzone.options.logoDropzone = {
+    acceptedFiles: 'image/*',
+    dictDefaultMessage: 'Arrastra aquí los archivos para subir',
+    dictInvalidFileType: 'No puedes subir este tipo de archivos',
+    init: function() {
+        this.on('success', function(file, response) {
+            document.getElementById('logo').value = response.path;
+        });
+    }
+};
+Dropzone.options.comunicadosPdfDropzone = {
+    acceptedFiles: 'pdf/*',
+    dictDefaultMessage: 'Arrastra aquí los archivos para subir',
+    dictInvalidFileType: 'No puedes subir este tipo de archivos',
+    init: function() {
+        this.on('success', function(file, response) {
+            document.getElementById('pdf').value = response.path;
+        });
+    }
+};
+// Fin Drag and Drop

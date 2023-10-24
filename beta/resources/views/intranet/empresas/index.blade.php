@@ -45,15 +45,15 @@
                 </div>
             </div>
             <div class="grid grid-flow-col auto-cols-max">
-                <div class="sm:flex sm:items-center sm:justify-start">
+                <div class="sm:flex-row sm:items-center sm:justify-between">
                     <table id="comunicadosAdmin" class="display nowrap text-sm pt-5 font-normal" style="width:auto">
                         <thead class="bg-oscuro text-white">
                             <tr class="">
                                 <th class="rounded-tl-lg">ID</th>
                                 <th>Acciones</th>
-                                <th>Empresa</th>
-                                <th>Descripción</th>                   
                                 <th>Logo</th>
+                                <th>Empresa</th>
+                                <th>Descripción</th>
                                 <th>Vales</th>
                                 <th>Comunicados</th>
                                 <th class="rounded-tr-lg">Activa</th>
@@ -80,9 +80,10 @@
                                         </form>                                
                                     </div>
                                 </td>
+                                <td><img src="{{ asset('storage/' . $empresa->logo) }}" alt="Logo"></td>
                                 <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $empresa->nombre }}">{{ $empresa->nombre }}</span></td>
                                 <td>{{ $empresa->descripcion }}</td>
-                                <td>{{ $empresa->logo }}</td>
+                                
                                 <td class="text-center">
                                     <label class="relative inline-flex items-center mt-2 cursor-pointer">
                                         <input type="checkbox" name="activa_toggle" id="activa_toggle" {{  ($empresa->vales == 1 ? ' checked' : '') }} disabled class="sr-only peer">
@@ -111,12 +112,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                </div>
-                <div class="sm:flex sm:items-center sm:justify-between">
-                    {{-- <h1>Hola</h1> --}}
-                </div>
-                <div class="sm:flex sm:items-center sm:justify-end">
-                    {{-- <h1>Hola</h1> --}}
                 </div>
             </div>
             
