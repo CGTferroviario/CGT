@@ -14,9 +14,7 @@ use Illuminate\Support\Str;
 
 class NoticiaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         return view('intranet.noticias.index', [
@@ -34,9 +32,6 @@ class NoticiaController extends Controller
         ]);        
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('intranet.noticias.create', [
@@ -47,12 +42,8 @@ class NoticiaController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreNoticiaRequest $request)
     {
-        
         $usuario = Auth::user()->id;
 
         $request->validate([
@@ -72,9 +63,9 @@ class NoticiaController extends Controller
             $rutaImagen = $imagen->storeAs('noticias/imagenes', $imagenNombre, 'public');
         }
 
-
-
-        $noticia = Noticia::create(array_merge($request->all(), ['imagen' => $rutaImagen, 'user_id' => $usuario]));
+        $noticia = Noticia::create(array_merge($request->all(), 
+            ['imagen' => $rutaImagen, 'user_id' => $usuario, 'empresa_id' => $request->empresa, 'categoria_id' => $request->categoria]
+        ));
 
         if ($request->has('etiquetas')) {
             $noticia->etiquetas()->attach($request->etiquetas);
@@ -97,20 +88,13 @@ class NoticiaController extends Controller
         // dd($noticia);
 
         return redirect(route('intranet.noticias.index'))->with('message', 'Noticia Añadida Correctamente');
-
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Noticia $noticia)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Noticia $noticia)
     {
         return view('intranet.noticias.edit', [
@@ -124,16 +108,12 @@ class NoticiaController extends Controller
         // return view('intranet.noticias.edit', compact('noticia', 'noticias'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateNoticiaRequest $request, Noticia $noticia)
     {
-        // dd($request);
 
         $validated = $request->validate([
-            'empresa_id' => ['nullable'],
-            'categoria_id' => ['nullable'],
+            'empresa_id' => ['nullable|required'],
+            'categoria_id' => ['nullable|required'],
             'fecha' => ['required'],
             'titulo' => ['required'],
             'cuerpo' => ['required'],
@@ -142,16 +122,14 @@ class NoticiaController extends Controller
             // 'ruta' => 'ruta',
             // 'user_id' => $usuario,
         ]);
-        // dd($validated);
+
+        dd($validated);
 
         $noticia->update($validated);
 
         return to_route('intranet.noticias.index')->with('message', 'Noticia Actualizada Correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Noticia $noticia)
     {
         $noticia->etiquetas()->detach();
