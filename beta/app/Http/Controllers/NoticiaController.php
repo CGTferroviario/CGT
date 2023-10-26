@@ -112,8 +112,8 @@ class NoticiaController extends Controller
     {
 
         $validated = $request->validate([
-            'empresa_id' => ['nullable|required'],
-            'categoria_id' => ['nullable|required'],
+            'empresa' => ['required', 'exists:empresas,id'],
+            'categoria' => ['required', 'exists:categorias,id'],
             'fecha' => ['required'],
             'titulo' => ['required'],
             'cuerpo' => ['required'],
@@ -125,7 +125,7 @@ class NoticiaController extends Controller
 
         dd($validated);
 
-        $noticia->update($validated);
+        // $noticia->update($validated);
 
         return to_route('intranet.noticias.index')->with('message', 'Noticia Actualizada Correctamente');
     }
