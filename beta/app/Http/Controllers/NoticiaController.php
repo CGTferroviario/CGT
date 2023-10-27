@@ -71,22 +71,6 @@ class NoticiaController extends Controller
             $noticia->etiquetas()->attach($request->etiquetas);
         }
 
-        // $noticia = Noticia::create([
-        //     'empresa_id' => $request->empresa,
-        //     'categoria_id' => $request->categoria,
-        //     'fecha' => $request->fecha,
-        //     'titulo' => $request->titulo,
-        //     'cuerpo' => $request->cuerpo,
-        //     'imagen' => $request->imagen,
-        //     'adjunto' => $request->adjunto,
-        //     'ruta' => 'ruta',
-        //     'user_id' => $usuario,
-        // ]);
-        // if ($request->has('etiquetas')) {
-        //     $noticia->etiquetas()->attach($request->etiquetas);
-        // }
-        // dd($noticia);
-
         return redirect(route('intranet.noticias.index'))->with('message', 'Noticia Añadida Correctamente');
     }
 
@@ -103,29 +87,35 @@ class NoticiaController extends Controller
             'categorias' => Categoria::orderBy('id', 'asc')->get(),
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
         ], compact('noticia'));
-        // $noticias = Noticia::all();
-
-        // return view('intranet.noticias.edit', compact('noticia', 'noticias'));
     }
 
     public function update(UpdateNoticiaRequest $request, Noticia $noticia)
     {
-
         $validated = $request->validate([
             'empresa' => ['required', 'exists:empresas,id'],
             'categoria' => ['required', 'exists:categorias,id'],
             'fecha' => ['required'],
             'titulo' => ['required'],
             'cuerpo' => ['required'],
-            // 'imagen' => ['required'],
-            // 'adjunto' => ['required'],
-            // 'ruta' => 'ruta',
-            // 'user_id' => $usuario,
         ]);
 
-        dd($validated);
+        // Actualizar la noticia
+        $noticia->fecha = $request->fecha;
+        $noticia->titulo = $request->titulo;
+        $noticia->cuerpo = $request->cuerpo;
+        $noticia->save();
 
-        // $noticia->update($validated);
+        // Actualizar la empresa relacionada
+        $empresa = Empresa::find($request->empresa);
+        $noticia->empresa()->associate($empresa);
+        $noticia->save();
+
+        // Actualizar la categoría relacionada
+        $categoria = Categoria::find($request->categoria);
+        $noticia->categoria()->associate($categoria);
+        $noticia->save();
+
+        $noticia->update($validated);
 
         return to_route('intranet.noticias.index')->with('message', 'Noticia Actualizada Correctamente');
     }

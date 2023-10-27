@@ -11,11 +11,11 @@
     </div>
     <div class="p-2 text-sm text-white bg-black">
         @foreach ($noticia->etiquetas as $etiqueta)
-            <span class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">{{ $etiqueta->nombre }}</span>
+            <span class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">{{ $etiqueta->nombre }}</span> <br>
         @endforeach
     </div>
     <div class="bg-white py-2.5 px-4 hover:bg-blue-light h-full">
-        <img class="float-right" src="/img/logo_med.png">
+        <img class="float-right" src="{{ $noticia->imagen }}">
         <p class="text-black text-justify">{!! nl2br(e($noticia->cuerpo))!!}</p>
     </div>
     <div class="p-0.5 w-full inline-flex text-lg text-center bordeTopRojo rounded-b-lg bg-red-500  ">
