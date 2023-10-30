@@ -115,6 +115,9 @@ class NoticiaController extends Controller
         $noticia->categoria()->associate($categoria);
         $noticia->save();
 
+        // Actualiza las etiquetas
+        $noticia->etiquetas()->sync($request->etiquetas);
+
         $noticia->update($validated);
 
         return to_route('intranet.noticias.index')->with('message', 'Noticia Actualizada Correctamente');

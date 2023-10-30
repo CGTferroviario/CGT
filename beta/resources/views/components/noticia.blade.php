@@ -15,18 +15,18 @@
         @endforeach
     </div>
     <div class="bg-white py-2.5 px-4 hover:bg-blue-light h-full">
-        <img class="float-right" src="{{ $noticia->imagen }}">
+        <img class="float-right" src="{{ asset('storage/' . $noticia->imagen) }}">
         <p class="text-black text-justify">{!! nl2br(e($noticia->cuerpo))!!}</p>
     </div>
     <div class="p-0.5 w-full inline-flex text-lg text-center bordeTopRojo rounded-b-lg bg-red-500  ">
         <div class="w-1/2 rounded-bl-lg hover:text-red-500 hover:bg-black">
             <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class=""
-                target="blank"><i class="lni lni-display verDocs mr-2 text-2xl"></i>Visualizar</a>
+                target="blank"><i class="lni lni-display verDocs mr-2 text-2xl"></i>Ver Adjunto</a>
         </div>
         <div class="w-1/2 rounded-br-lg hover:text-red-500 hover:bg-black">
             <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class=""
                 target="_blank" download="CGT_Afiliacion_Nomina"><i
-                    class="lni lni-download verDocs mr-2 text-2xl"></i>Descargar</a>
+                    class="lni lni-download verDocs mr-2 text-2xl"></i>Descargar Adjunto</a>
         </div>
     </div>
 </div>
