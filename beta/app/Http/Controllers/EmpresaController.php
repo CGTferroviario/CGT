@@ -7,9 +7,10 @@ use App\Http\Requests\UpdateEmpresaRequest;
 use App\Models\Empresa;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
-// use Intervention\Image\ImageManagerStatic as Image;
+use Intervention\Image\ImageManager;
 
 
 
@@ -51,11 +52,16 @@ class EmpresaController extends Controller
             $logo = $request->file('logo');
             $logoName = Str::slug($request->nombre) . '.' . $logo->getClientOriginalExtension();
 
-            // Resize image
-            $resizedLogo = Image::make($logo)->resize(150, 50)->stream();
-            // dd($request);
-            // Store resized image
-            Storage::disk('public')->put('logos/' . $logoName, $resizedLogo);
+            // // Resize image
+            // $resizedLogo = Image::make($logo)->resize(150, 50)->stream();
+            // // Store resized image
+            // Storage::disk('public')->put('logos/' . $logoName, $resizedLogo);
+
+            // Create directory if it doesn't exist
+            $logoDirectory = public_path('logos');
+            if (!File::isDirectory($logoDirectory)) {
+                File::makeDirectory($logoDirectory, 0755, true);
+            }
 
             $rutaLogo = $logo->storeAs('logos', $logoName, 'public');
         }
