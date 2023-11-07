@@ -56,40 +56,12 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="">
-                                        <label for="categoria" class="block mb-2 text-sm font-medium text-white">Categoría</label>
-                                        <select class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" id="categoria" name="categoria" required="">
-                                                <option value="{{ $noticia->categoria?->id }}">{{ $noticia->categoria?->nombre }}</option>
-                                            @foreach ($categorias as $categoria)
-                                                <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="multiselect">
-                                        <label for="etiquetas" class="block mb-2 text-sm font-medium text-white">Etiquetas</label>
-                                        <div class="selectBox" onclick="showCheckboxes()">
-                                            <select class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400">
-                                                <option>Selecciona etiquetas</option>
-                                            </select>
-                                            <div class="overSelect"></div>
-                                        </div>
-                                        <div id="checkboxes" class="p-1 w-auto bg-gray-700 text-xs text-white rounded-lg bordeRojo absolute h-48 overflow-auto">
-                                            @foreach ($etiquetas as $etiqueta)
-                                                <label for="{{ $etiqueta->nombre }}">
-                                                    @if (old('etiqueta'))
-                                                        <input type="checkbox" name="etiquetas[]" id="{{ $etiqueta->nombre }}" value="{{ $etiqueta->id }}" {{ in_array($etiqueta->id, old('etiqueta')) ? 'checked' : '' }} />{{ $etiqueta->nombre }}
-                                                    @else
-                                                        <input type="checkbox" name="etiquetas[]" id="{{ $etiqueta->nombre }}" value="{{ $etiqueta->id }}" {{ $noticia->etiquetas->contains($etiqueta->id) ? 'checked' : '' }} />{{ $etiqueta->nombre }}
-                                                    @endif
-                                                    {{-- <input type="checkbox" name="etiquetas[]" id="{{ $etiqueta->nombre }}" value="{{ $etiqueta->id }}" />{{ $etiqueta->nombre }} --}}
-                                                </label>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    <div class="">
-                                        <label for="fecha" class="block mb-2 text-sm font-medium text-white">Fecha</label>
-                                        <input type="date" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" name="fecha" value="{{ $noticia->fecha }}">
-                                    </div>
+                                    <x-select-categoria-edit :categorias=$categorias :tipo=$noticia></x-select-categoria-edit>
+
+                                    <x-select-etiquetas-edit :etiquetas=$etiquetas :tipo=$noticia></x-select-etiquetas-edit>
+                                    
+                                    <x-input-fecha-edit :noticia=$noticia></x-input-fecha-edit>
+
                                 </div>
                                 <div class="grid gap-4 sm:grid-cols-12 sm:gap-6 mt-3">
                                     <div class="col-span-6">

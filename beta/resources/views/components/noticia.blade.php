@@ -5,13 +5,19 @@
             </h1>
         </a>
     </div>
-    <div class="p-2 text-sm text-white bg-black">
-        <span class="py-0.5 px-2 rounded-full font-semibold bg-{{ $noticia->empresa?->nombre }}">{{ $noticia->empresa?->nombre }}</span>
-        <span class="py-0.5 px-2 rounded-full font-semibold bg-{{ $noticia->categoria?->nombre }}">{{ $noticia->categoria?->nombre }}</span>
+    <div class="grid grid-cols-2 gap-4 p-2 pt-4 text-sm text-white bg-black">
+        <div class="">
+            <span class="py-0.5 px-2 rounded-full font-semibold bg-{{ $noticia->empresa?->nombre }}">{{ $noticia->empresa?->nombre }}</span>
+        </div>
+        <div class="justify-self-end">
+            <span class="py-0.5 px-2 rounded-full font-semibold bg-{{ $noticia->categoria?->nombre }}">{{ $noticia->categoria?->nombre }}</span>
+        </div>
     </div>
     <div class="p-2 text-sm text-white bg-black">
         @foreach ($noticia->etiquetas as $etiqueta)
-            <span class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">{{ $etiqueta->nombre }}</span> <br>
+            <div class="mr-2 inline-flex">
+                <span class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">{{ $etiqueta->nombre }}</span>
+            </div>
         @endforeach
     </div>
     <div class="bg-white py-2.5 px-4 hover:bg-blue-light h-full">
@@ -20,13 +26,10 @@
     </div>
     <div class="p-0.5 w-full inline-flex text-lg text-center bordeTopRojo rounded-b-lg bg-red-500  ">
         <div class="w-1/2 rounded-bl-lg hover:text-red-500 hover:bg-black">
-            <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class=""
-                target="blank"><i class="lni lni-display verDocs mr-2 text-2xl"></i>Ver Adjunto</a>
+            <a href="/storage/{{ $noticia->adjunto }}" class="" target="blank"><i class="lni lni-display verDocs mr-2 text-2xl"></i>Ver Adjunto</a>
         </div>
         <div class="w-1/2 rounded-br-lg hover:text-red-500 hover:bg-black">
-            <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class=""
-                target="_blank" download="CGT_Afiliacion_Nomina"><i
-                    class="lni lni-download verDocs mr-2 text-2xl"></i>Descargar Adjunto</a>
+            <a href="/storage/{{ $noticia->adjunto }}" class="" target="_blank" download="CGT_Afiliacion_Nomina"><i class="lni lni-download verDocs mr-2 text-2xl"></i>Descargar Adjunto</a>
         </div>
     </div>
 </div>

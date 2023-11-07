@@ -29,7 +29,7 @@ class DocumentoFactory extends Factory
             'fecha' => $this->faker->date(),
             'titulo' => $this->faker->sentence(8),
             'descripcion' => $this->faker->paragraph,
-            'ruta' => $this->faker->file(
+            'pdf' => $this->faker->file(
                 'public/storage/documentos',
                 storage_path('app/public/documentos'),
                 false

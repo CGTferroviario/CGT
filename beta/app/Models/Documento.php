@@ -12,7 +12,7 @@ class Documento extends Model
     use HasFactory;
 
     protected $fillable = [
-        'visualizaciones', 'user_id', 'numero', 'empresa_id', 'categoria_id', 'fecha', 'titulo', 'descripcion', 'ruta',  
+        'visualizaciones', 'user_id', 'numero', 'empresa_id', 'categoria_id', 'fecha', 'titulo', 'descripcion', 'pdf',  
     ];
 
     public function user()

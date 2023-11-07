@@ -58,7 +58,7 @@ class EmpresaController extends Controller
             // Storage::disk('public')->put('logos/' . $logoName, $resizedLogo);
 
             // Create directory if it doesn't exist
-            $logoDirectory = public_path('logos');
+            $logoDirectory = public_path('storage/empresas/logos');
             if (!File::isDirectory($logoDirectory)) {
                 File::makeDirectory($logoDirectory, 0755, true);
             }

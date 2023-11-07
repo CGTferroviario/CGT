@@ -9,6 +9,10 @@ use App\Models\Documento;
 use App\Models\Empresa;
 use App\Models\Etiqueta;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+
 
 class DocumentoController extends Controller
 {
@@ -32,6 +36,15 @@ class DocumentoController extends Controller
 
         $usuario = Auth::user()->id;
 
+        $request->validate([
+            'empresa_id' => 'nullable',
+            'categoria_id' => 'nullable',
+            'fecha' => 'required',
+            'titulo' => 'required',
+            'descripcion' => 'required',
+            "pdf" => "nullable|mimetypes:application/pdf|max:10000",
+        ]);
+
         $empresaId = $request->empresa;
         $empresa = Empresa::find($empresaId);
         $nombre_empresa = $empresa?->nombre;
@@ -44,23 +57,34 @@ class DocumentoController extends Controller
         $etiqueta = Etiqueta::find($etiquetaId);
         $nombre_etiqueta = $etiqueta?->nombre;
 
-        $ruta = $nombre_empresa . '/' . $nombre_categoria . '/' . $nombre_etiqueta;
+        $ruta = 'documentos' . '/' . $nombre_empresa . '/' . $nombre_categoria . '/' . $nombre_etiqueta;
 
-        dd($ruta);
+        $rutaDocumento = null;
+        if ($request->hasFile('pdf')) {
+            $pdf = $request->file('pdf');
+            $pdfNombre = Str::slug($request->titulo) . '.' . $pdf->getClientOriginalExtension();
 
-        $documento = Documento::create([
-            'empresa_id' => $request->empresa,
-            'categoria_id' => $request->categoria,
-            'fecha' => $request->fecha,
-            'titulo' => $request->titulo,
-            'descripcion' => $request->descripcion,
-            'ruta' => $ruta,
+            $pdfDirectory = public_path($ruta);
+            if (!File::isDirectory($pdfDirectory)) {
+                File::makeDirectory($pdfDirectory, 0755, true);
+            }
+            $rutaDocumento = $pdf->storeAs($ruta, $pdfNombre, 'public');
+        }
+
+        
+
+        // dd($ruta);
+
+        $documento = Documento::create(array_merge($request->all(), [
+            'pdf' => $rutaDocumento,
             'user_id' => $usuario,
-        ]);
+            'empresa_id' => $request->empresa,
+            'categoria_id' => $request->categoria
+        ]));
+
         if ($request->has('etiquetas')) {
             $documento->etiquetas()->attach($request->etiquetas);
         }
-        // dd($documento);
 
         return redirect(route('intranet.documentos.index'))->with('message', 'Documento Añadido Correctamente');
     }
@@ -79,7 +103,12 @@ class DocumentoController extends Controller
      */
     public function edit(Documento $documento)
     {
-        //
+        return view('intranet.documentos.edit', [
+            'documentos' => Documento::orderBy('id', 'desc')->paginate(15),
+            'empresas' => Empresa::orderBy('id', 'asc')->get(),
+            'categorias' => Categoria::orderBy('id', 'asc')->get(),
+            'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
+        ], compact('documento'));
     }
 
     /**
@@ -87,7 +116,36 @@ class DocumentoController extends Controller
      */
     public function update(UpdateDocumentoRequest $request, Documento $documento)
     {
-        //
+        $validated = $request->validate([
+            'empresa' => ['required', 'exists:empresas,id'],
+            'categoria' => ['required', 'exists:categorias,id'],
+            'fecha' => ['required'],
+            'titulo' => ['required'],
+            'descripcion' => ['required'],
+        ]);
+
+        // Actualizar el documento
+        $documento->fecha = $request->fecha;
+        $documento->titulo = $request->titulo;
+        $documento->cuerpo = $request->cuerpo;
+        $documento->save();
+
+        // Actualizar la empresa relacionada
+        $empresa = Empresa::find($request->empresa);
+        $documento->empresa()->associate($empresa);
+        $documento->save();
+
+        // Actualizar la categoría relacionada
+        $categoria = Categoria::find($request->categoria);
+        $documento->categoria()->associate($categoria);
+        $documento->save();
+
+        // Actualiza las etiquetas
+        $documento->etiquetas()->sync($request->etiquetas);
+
+        $documento->update($validated);
+
+        return to_route('intranet.documentos.index')->with('message', 'Documento Actualizado Correctamente');
     }
 
     /**
@@ -95,8 +153,15 @@ class DocumentoController extends Controller
      */
     public function destroy(Documento $documento)
     {
+        $documento->etiquetas()->detach();
+
+        if ($documento->pdf && Storage::disk('public')->exists($documento->pdf)) {
+            Storage::disk('public')->delete($documento->pdf);
+        }
+
         $documento->delete();
 
-        return to_route('intranet.documentos.index')->with('message', 'Documento Eliminado.');
+        return to_route('intranet.documentos.index')->with('message', 'Documento Eliminada.');
+
     }
 }

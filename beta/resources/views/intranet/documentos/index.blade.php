@@ -70,11 +70,11 @@
                         <td>{{ $documento->id }}</td>
                         <td>
                             <div class="flex justify-start gap-1 text-xl mt-2">
-                                <a x-data="{ tooltip: 'Enviar' }" href="{{ url('documentos.edit', $documento->id) }}"
+                                <a x-data="{ tooltip: 'Enviar' }" href="{{ route('intranet.documentos.edit', $documento->id) }}"
                                     class="text-blue-500 hover:bg-blue-500 hover:text-white p-1 rounded-lg h-8" title="Enviar por correo">
                                     <i class="lni lni-envelope"></i>
                                 </a> 
-                                <a x-data="{ tooltip: 'Edite' }" href="{{ url('documentos.edit', $documento->id) }}"
+                                <a x-data="{ tooltip: 'Editar' }" href="{{ route('intranet.documentos.edit', $documento->id) }}"
                                     class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar Documento">
                                     <i class="lni lni-pencil"></i>
                                 </a>                                
@@ -82,7 +82,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class=" p-1 rounded-md">
-                                        <a x-data="{ tooltip: 'Delete' }" href="#" title="Eliminar Documento" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8">
+                                        <a x-data="{ tooltip: 'Eliminar' }" href="#" title="Eliminar Documento" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8">
                                             <i class="lni lni-trash-can"></i>
                                         </a>
                                     </button>
@@ -97,17 +97,16 @@
                         <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $documento->categoria?->nombre }}">{{ $documento->categoria?->nombre }}</span></td>
                         <td>
                             @foreach ($documento->etiquetas as $etiqueta )
-                                <span
-                                    class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">
-                                        {{ $etiqueta->nombre }}<br>
-                                    </span>
-                            @endforeach 
+                                <span class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">
+                                    {{ $etiqueta->nombre }}<br>
+                                </span>
+                            @endforeach
                         </td>
                         
                         <td>{{ $documento->descripcion }}</td>
                         <td>{{ $documento->visualizaciones }}</td>
                         <td>{{ $documento->descargas }}</td>
-                        <td>{{ $documento->ruta }}</td>
+                        <td>{{ $documento->pdf }}</td>
                     </tr>
                     @endforeach
                 </tbody>

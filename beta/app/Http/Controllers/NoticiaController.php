@@ -9,6 +9,8 @@ use App\Models\Empresa;
 use App\Models\Etiqueta;
 use App\Models\Noticia;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 
@@ -53,19 +55,40 @@ class NoticiaController extends Controller
             'titulo' => 'required',
             'cuerpo' => 'required',
             'imagen' => 'nullable|image',
-            'adjunto' => 'nullable|pdf',
+            "adjunto" => "nullable|mimetypes:application/pdf|max:10000",
         ]);
 
         $rutaImagen = null;
         if ($request->hasFile('imagen')) {
             $imagen = $request->file('imagen');
             $imagenNombre = Str::slug($request->titulo) . '.' . $imagen->getClientOriginalExtension();
+
+            $imagenDirectory = public_path('storage/noticias/imagenes');
+            if (!File::isDirectory($imagenDirectory)) {
+                File::makeDirectory($imagenDirectory, 0755, true);
+            }
             $rutaImagen = $imagen->storeAs('noticias/imagenes', $imagenNombre, 'public');
         }
 
-        $noticia = Noticia::create(array_merge($request->all(), 
-            ['imagen' => $rutaImagen, 'user_id' => $usuario, 'empresa_id' => $request->empresa, 'categoria_id' => $request->categoria]
-        ));
+        $rutaAdjunto = null;
+        if ($request->hasFile('adjunto')) {
+            $adjunto = $request->file('adjunto');
+            $adjuntoNombre = Str::slug($request->titulo) . '.' . $adjunto->getClientOriginalExtension();
+
+            $adjuntoDirectory = public_path('storage/noticias/adjuntos');
+            if (!File::isDirectory($adjuntoDirectory)) {
+                File::makeDirectory($adjuntoDirectory, 0755, true);
+            }
+            $rutaAdjunto = $adjunto->storeAs('noticias/adjuntos', $adjuntoNombre, 'public');
+        }
+
+        $noticia = Noticia::create(array_merge($request->all(), [
+            'imagen' => $rutaImagen,
+            'adjunto' => $rutaAdjunto,
+            'user_id' => $usuario,
+            'empresa_id' => $request->empresa,
+            'categoria_id' => $request->categoria
+        ]));
 
         if ($request->has('etiquetas')) {
             $noticia->etiquetas()->attach($request->etiquetas);
@@ -126,6 +149,13 @@ class NoticiaController extends Controller
     public function destroy(Noticia $noticia)
     {
         $noticia->etiquetas()->detach();
+
+        if ($noticia->imagen && Storage::disk('public')->exists($noticia->imagen)) {
+            Storage::disk('public')->delete($noticia->imagen);
+        }
+        if ($noticia->adjunto && Storage::disk('public')->exists($noticia->adjunto)) {
+            Storage::disk('public')->delete($noticia->adjunto);
+        }
 
         $noticia->delete();
 

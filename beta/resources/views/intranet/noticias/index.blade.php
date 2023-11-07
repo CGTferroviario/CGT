@@ -34,7 +34,7 @@
                         </button>
                     </div>
                 </div>
-            </div> 
+            </div>
             <table id="comunicadosAdmin" class="display nowrap text-sm pt-5 font-normal rounded-t-lg" style="width:100%">
                 <thead class="rounded-t-lg bg-black text-white">
                     <tr>
@@ -91,7 +91,7 @@
                         </td>
                         <td>{!! nl2br(e($noticia->cuerpo))!!}</td>
                         {{-- <td>{{ $noticia->cuerpo }}</td> --}}
-                        <td>{{ $noticia->adjunto }} 1</td>
+                        <td>{{ $noticia->adjunto }}</td>
                         <td>{{ $noticia->imagen }}</td>
                     </tr>
                     @endforeach

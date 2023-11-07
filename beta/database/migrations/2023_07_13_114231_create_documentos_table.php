@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('fecha');
             $table->string('titulo');
             $table->text('descripcion');
-            $table->string('ruta');
+            $table->string('pdf')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade');
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');

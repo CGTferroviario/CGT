@@ -109,9 +109,9 @@
             </div>
             
             <div
-                class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">
+                class="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 gap-4 p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">
 
-                <div class="col-span-4 paginacion">{{ $noticias->links('vendor.pagination.tailwind') }}</div>
+                <div class="col-span-2 paginacion">{{ $noticias->links('vendor.pagination.tailwind') }}</div>
 
                 @foreach ($noticias as $noticia)
                     

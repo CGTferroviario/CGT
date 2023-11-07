@@ -2,7 +2,7 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-900 leading-tight">
-            {{ __('Añadir Documento') }}
+            {{ __('Editar Documento') }}
         </h2>
     </x-slot>
 
@@ -42,13 +42,13 @@
                                 @csrf
                                 <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
                                     
-                                    <x-select-empresa :empresas=$empresas></x-select-empresa>
+                                    <x-select-empresa-edit :empresas=$empresas :tipo=$documento></x-select-empresa-edit>
 
-                                    <x-select-categoria :categorias=$categorias :tipo=$documentos></x-select-categoria>
+                                    <x-select-categoria-edit :categorias=$categorias :tipo=$documento></x-select-categoria-edit>
                                     
-                                    <x-select-etiquetas :etiquetas=$etiquetas></x-select-etiquetas>
+                                    <x-select-etiquetas-edit :etiquetas=$etiquetas :tipo=$documento></x-select-etiquetas-edit>
 
-                                    <x-input-fecha></x-input-fecha>
+                                    <x-input-fecha-edit></x-input-fecha-edit>
 
                                 </div>
                                 <div class="grid gap-4 sm:grid-cols-12 sm:gap-6 mt-3">
