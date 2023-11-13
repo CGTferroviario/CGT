@@ -47,15 +47,7 @@
                                 @csrf
                                 @method('PUT')
                                 <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
-                                    <div class="">
-                                        <label for="empresa" class="block mb-2 text-sm font-medium text-white">Empresa</label>
-                                        <select class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" id="empresa" name="empresa" required="">
-                                                <option value="{{ $noticia->empresa?->id }}">{{ $noticia->empresa?->nombre }}</option>
-                                            @foreach ($empresas as $empresa)
-                                                <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                                    
                                     <x-select-categoria-edit :categorias=$categorias :tipo=$noticia></x-select-categoria-edit>
 
                                     <x-select-etiquetas-edit :etiquetas=$etiquetas :tipo=$noticia></x-select-etiquetas-edit>
@@ -69,7 +61,7 @@
                                         <input type="text" name="titulo" id="titulo" class="w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-gray-400" placeholder="" value="{{ $noticia->titulo }}" required="">
                                         <div class="">
                                             <label for="cuerpo" class="block mb-2 text-sm font-medium text-white">Descripción</label>
-                                            <textarea id="cuerpo" rows="5" class="block p-2.5 w-full text-sm rounded-lg border focus:ring-red-500 focus:border-red-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white" placeholder="El cuerpo de l noticia..." name="cuerpo">
+                                            <textarea id="cuerpo" rows="5" class="block p-2.5 w-full text-sm rounded-lg border focus:ring-red-500 focus:border-red-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white" placeholder="El cuerpo de la noticia..." name="cuerpo">
                                                 {{ $noticia->cuerpo }}
                                             </textarea>
                                         </div>

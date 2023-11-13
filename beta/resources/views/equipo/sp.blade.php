@@ -7,6 +7,43 @@
         <div class="px-10 pt-4 mx-4">
             <div class="col-md-12 p-4 mt-2 bordeRojo bg-blanco-transp rounded-md">
             <br>
+                <div class="grid grid-cols-2 gap-8">
+                    @foreach ($tipos as $tipo)
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>{{ $tipo }}</th>
+                                    
+                                    <!-- Add more columns as needed -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (${'equipo' . str_replace(' ', '', $tipo)} as $equipo)
+                                    <tr>
+                                        <td>{{ $equipo->cargo }}</td>
+                                        <td>{{ $equipo->usuario }}</td>
+                                        <td>{{ $equipo->email }}</td>
+
+                                        <!-- Add more fields as needed -->
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    @endforeach
+                    {{-- @foreach ($tipos as $tipo )
+                        <div class="">
+                            <table class="table">
+                                <thead class="bg-red-500">{{ $tipo }}</thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{ $secretarias }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    @endforeach --}}
+                </div>
+            <br>
                 <div class="grid grid-flow-col gap-8">
                     <div>
                         <div class="resp-table">

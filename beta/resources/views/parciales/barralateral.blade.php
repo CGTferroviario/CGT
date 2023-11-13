@@ -58,7 +58,7 @@
             </li>
             <hr>
             <li class="">                    
-                <a href="{{ route('intranet.equipo.index') }}" :active="request()->routeIs('equipo')" class="flex items-center p-2 rounded-lg text-white hover:bg-red-500 group hover:text-black">
+                <a href="{{ route('intranet.equipos.index') }}" :active="request()->routeIs('equipos')" class="flex items-center p-2 rounded-lg text-white hover:bg-red-500 group hover:text-black">
                     <i class="lni lni-briefcase-alt rojoBrillante transition duration-75 group-hover:text-white" title="Equipo"></i> <span class="ml-3 sm:hidden md:flex">Equipo</span>
                 </a>
             </li>

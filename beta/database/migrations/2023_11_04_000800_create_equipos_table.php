@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->id();
+            $table->string('tipo');
+            $table->string('cargo');
+            $table->string('usuario');
+            $table->string('email');
             $table->timestamps();
         });
     }

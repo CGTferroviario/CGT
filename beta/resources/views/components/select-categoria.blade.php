@@ -7,4 +7,3 @@
         @endforeach
     </select>
 </div>
-

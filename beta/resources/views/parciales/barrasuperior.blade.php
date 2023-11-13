@@ -134,7 +134,7 @@
                     <!-- Dropdown menu -->
                     <div id="dropdownEquipo" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
                         <ul class="py-2 text-sm text-gray-400" aria-labelledby="dropdownEquipoButton">
-                            <li><a href="{{ url('equipo/sp') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Información del equipo estatal">EQUIPO ESTATAL</a></li>
+                            <li><a href="{{ route('equipo.sp') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Información del equipo estatal">EQUIPO ESTATAL</a></li>
                             <li><a href="{{ url('equipo/mapa') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">MAPA SINDICAL</a></li>
                             <li><a href="{{ url('equipo/contacto') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">CONTACTO</a></li>
                         </ul>

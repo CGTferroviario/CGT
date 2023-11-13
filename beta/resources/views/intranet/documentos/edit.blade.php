@@ -38,8 +38,9 @@
                     <section class="bg-oscuro-7 rounded-lg">
                         <div class="py-8 px-4 mx-auto">
                             <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Documento</h2>
-                            <form action="{{ route('intranet.documentos.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('intranet.documentos.update', $documento->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                @method('PUT')
                                 <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
                                     
                                     <x-select-empresa-edit :empresas=$empresas :tipo=$documento></x-select-empresa-edit>
@@ -54,10 +55,10 @@
                                 <div class="grid gap-4 sm:grid-cols-12 sm:gap-6 mt-3">
                                     <div class="col-span-6">
                                         <label for="titulo" class="block mb-2 text-sm font-medium text-white">Título</label>
-                                        <input type="text" name="titulo" id="titulo" class="w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-gray-400" placeholder="" value="" required="">
+                                        <input type="text" name="titulo" id="titulo" class="w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-gray-400" placeholder="" value="{{ $documento->titulo }}" required="">
                                         <div class="">
                                             <label for="descripcion" class="block mb-2 text-sm font-medium text-white">Descripción</label>
-                                            <textarea id="descripcion" rows="5" name="descripcion" class="block p-2.5 w-full text-sm text-white bg-gray-700 rounded-lg border border-gray-600 focus:ring-red-500 focus:border-red-500 placeholder-gray-400" placeholder="Una descripción del documento..."></textarea>
+                                            <textarea id="descripcion" rows="5" name="descripcion" class="block p-2.5 w-full text-sm text-white bg-gray-700 rounded-lg border border-gray-600 focus:ring-red-500 focus:border-red-500 placeholder-gray-400" placeholder="Una descripción del documento...">{{ $documento->descripcion }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-span-6">

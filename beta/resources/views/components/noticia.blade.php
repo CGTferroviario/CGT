@@ -13,10 +13,10 @@
             <span class="py-0.5 px-2 rounded-full font-semibold bg-{{ $noticia->categoria?->nombre }}">{{ $noticia->categoria?->nombre }}</span>
         </div>
     </div>
-    <div class="p-2 text-sm text-white bg-black">
+    <div class="p-2 text-sm text-white bg-gray-800">
         @foreach ($noticia->etiquetas as $etiqueta)
             <div class="mr-2 inline-flex">
-                <span class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">{{ $etiqueta->nombre }}</span>
+                <span class="py-0.5 px-2 rounded-full font-semibold border border-red-500 text-red-500">{{ $etiqueta->nombre }}</span>
             </div>
         @endforeach
     </div>

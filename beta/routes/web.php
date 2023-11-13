@@ -125,7 +125,7 @@ Route::get('/equipo', function () {
 });
 
 Route::prefix('equipo')->group(function () {
-    Route::view('/sp', 'equipo.sp');
+    Route::get('/sp', [EquipoController::class, 'sp'])->name('equipo.sp');
     Route::view('/mapa', 'equipo.mapa'); 
     // Route::view('/contacto', 'equipo.contacto');
     Route::get('/contacto', [ContactoController::class, 'contacto']);
@@ -146,7 +146,7 @@ Route::middleware('auth')->name('intranet.')->prefix('intranet')->group(function
     Route::resource('/empresas', EmpresaController::class);
     Route::resource('/categorias', CategoriaController::class);
     Route::resource('/etiquetas', EtiquetaController::class);
-    Route::resource('/equipo', EquipoController::class);
+    Route::resource('/equipos', EquipoController::class);
     Route::resource('/roles', RoleController::class);
     Route::resource('/permissions', PermissionController::class);
     Route::resource('/usuarios', UserController::class);

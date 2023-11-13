@@ -19,7 +19,7 @@ class DocumentoController extends Controller
     public function index()
     {
         return view('intranet.documentos.index', [
-            'documentos' => Documento::orderBy('fecha', 'desc')->orderBy('fecha', 'desc')->paginate(12)
+            'documentos' => Documento::orderBy('fecha', 'desc')->paginate(12)
         ]);
     }
     public function create()
