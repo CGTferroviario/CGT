@@ -27,16 +27,19 @@ class ComunicadoController extends Controller
             'empresas' => Empresa::orderBy('id', 'asc')->get(),
             'categorias' => Categoria::orderBy('id', 'asc')->get(),
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
-        ]);        
+        ]);     
     }
     public function create()
     {
+        
         return view('intranet.comunicados.create', [
             'comunicados' => Comunicado::orderBy('id', 'desc')->paginate(15),
             'empresas' => Empresa::where('comunicados', '=', 1)->orderBy('id', 'asc')->get(),
             'categorias' => Categoria::orderBy('id', 'asc')->get(),
-            'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
+            'etiquetas' => Etiqueta::orderBy('id', 'asc')->get(),
+            
         ]);
+        
     }
     public function store(StoreComunicadoRequest $request)
     {
@@ -48,7 +51,7 @@ class ComunicadoController extends Controller
             $publicado = 0;
         };
 
-        $usuario = Auth::user()->id;
+        $usuario = Auth::user()->id; 
 
         $comunicado = Comunicado::create([
             'numero' => $request->numero,

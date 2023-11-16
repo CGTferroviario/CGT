@@ -16,46 +16,27 @@ class SeccionSeeder extends Seeder
 
     public function run(): void
     {
-        DB::table('seccions')->truncate(); //for cleaning earlier data to avoid duplicate entries
-        Seccion::firstOrcreate([
-            'nombre' => 'A Coruña',
-            'email' => 'acoruna@cgtferroviario.es',
-            'email2' => 'renfecor@cgtgalicia.org',
-            'descripcion' => 'La sección de A Coruña',
-            'telefono' => '666666666',
-            'password' => Hash::make('acoruñacgt'),
-        ]);
-        Seccion::firstOrcreate([
-            'nombre' => 'Álava',
-            'email' => 'alava@cgtferroviario.es',
-            'email2' => '',
-            'descripcion' => 'La sección de Álava',
-            'telefono' => '666666667',
-            'password' => Hash::make('alavacgt'),
-        ]);
-        Seccion::firstOrcreate([
-            'nombre' => 'Albacete',
-            'email' => 'albacete@cgtferroviario.es',
-            'email2' => 'cgtenrique@gmail.com',
-            'descripcion' => 'La sección de Albacete',
-            'telefono' => '666666668',
-            'password' => Hash::make('albacetecgt'),
-        ]);
-        Seccion::firstOrcreate([
-            'nombre' => 'Alicante',
-            'email' => 'alicante@cgtferroviario.es',
-            'email2' => 'cgtferroviario@gmail.com',
-            'descripcion' => 'La sección de Alicante',
-            'telefono' => '666666669',
-            'password' => Hash::make('alicantecgt'),
-        ]);
-        Seccion::firstOrcreate([
-            'nombre' => 'Almería',
-            'email' => 'almeria@cgtferroviario.es',
-            'email2' => 'sffcgtalmería@gmail.com',
-            'descripcion' => 'La sección de Almería',
-            'telefono' => '666666669',
-            'password' => Hash::make('almeriacgt'),
-        ]);
+        Seccion::truncate();
+
+        $csvFile = fopen(base_path("database/data/secciones.csv"), "r");
+
+        $firstline = true;
+        while (($data = fgetcsv($csvFile, 555, ";")) !== false) {
+            // dd($data[1]);
+            if (!$firstline) {
+                $equipo = Seccion::create([
+                    "nombre" => $data['0'],
+                    "email" => $data['1'],
+                    "email2" => $data['2'],                    
+                    "direccion" => $data['3'],
+                    "descripcion" => $data['4'],
+                    "telefono" => $data['5'],
+                    "password" => $data['6'],
+                ]);
+            }
+            $firstline = false;
+        }
+
+        fclose($csvFile);
     }
 }

@@ -24,8 +24,10 @@
             <main class="pt-20">
                 <!-- Page Heading -->
                 @if (isset($header))
-                    <header class="shadow">
-                        {{ $header }}
+                    <header class="bg-red-500 shadow">
+                        <div class="max-w-7xl mx-auto py-3 px-2 sm:px-3 lg:px-4 text-center">
+                            {{ $header }}
+                        </div>
                     </header>
                 @endif            
                 {{ $slot }}

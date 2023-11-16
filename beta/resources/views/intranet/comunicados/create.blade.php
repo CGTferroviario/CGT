@@ -52,54 +52,13 @@
                             <form action="{{ route('intranet.comunicados.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
-                                    <div class="">
-                                        <label for="empresa" class="block mb-2 text-sm font-medium text-white">Empresa</label>
-                                        <select class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" id="empresa" name="empresa" required="">
-                                                <option value="Elige empresa">Elige empresa</option>
-                                            @foreach ($empresas as $empresa)
-                                                <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="">
-                                        <label for="categoria" class="block mb-2 text-sm font-medium text-white">Categoría</label>
-                                        <select class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" id="categoria" name="categoria" required="">
-                                                <option value="Elige categoria">Elige categoria</option>
-                                            @foreach ($categorias as $categoria)
-                                                <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="multiselect">
-                                        <label for="etiquetas" class="block mb-2 text-sm font-medium text-white">Etiquetas</label>
-                                        <div class="selectBox" onclick="showCheckboxes()">
-                                            <select class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400">
-                                                <option>Selecciona etiquetas</option>
-                                            </select>
-                                            <div class="overSelect"></div>
-                                        </div>
-                                        <div id="checkboxes" class="p-1 w-auto bg-gray-700 text-xs text-white rounded-lg bordeRojo absolute h-48 overflow-auto">
-                                            @foreach ($etiquetas as $etiqueta)
-                                                <label for="{{ $etiqueta->nombre }}">
-                                                    <input type="checkbox" name="etiquetas[]" id="{{ $etiqueta->nombre }}" value="{{ $etiqueta->id }}" />{{ $etiqueta->nombre }}
-                                                </label>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    <?php 
-                                        
-                                        $month = date('m');
-                                        $day = date('d');
-                                        $year = date('Y');
-                                        $ano = date('y');
+                                    <x-select-empresa :empresas=$empresas></x-select-empresa>
 
-                                        $fecha = $year . '-' . $month . '-' . $day;
-                                        
-                                    ?>
-                                    <div class="">
-                                        <label for="fecha_com" class="block mb-2 text-sm font-medium text-white">Fecha</label>
-                                        <input type="date" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-gray-400" name="fecha" value="<?php echo $fecha; ?>">
-                                    </div>
+                                    <x-select-categoria :categorias=$categorias></x-select-categoria>
+                                    
+                                    <x-select-etiquetas :etiquetas=$etiquetas></x-select-etiquetas>
+
+                                    <x-input-fecha></x-input-fecha>
                                 </div>
                                 <div class="grid gap-4 sm:grid-cols-12 sm:gap-6 mt-3">
                                     <div>

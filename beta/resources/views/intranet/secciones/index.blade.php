@@ -55,6 +55,7 @@
                                 <th>Email</th>
                                 <th>Email2</th>
                                 <th>Descripción</th>
+                                <th>Dirección</th>
                                 <th>Teléfono</th>
                                 <th>Ult. Login</th>
                                 <th class="rounded-tr-lg">Ult. Logout</th>
@@ -89,6 +90,7 @@
                                 <td>{{ $seccion->email }}</td>
                                 <td>{{ $seccion->email2 }}</td>
                                 <td>{{ $seccion->descripcion }}</td>
+                                <td>{{ $seccion->direccion }}</td>
                                 <td>{{ $seccion->telefono }}</td>
                                 <td class="text-center">{{ $seccion->last_login }}</td>
                                 <td class="text-center">{{ $seccion->last_logout }}</td>
