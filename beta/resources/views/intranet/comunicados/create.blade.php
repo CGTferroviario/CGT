@@ -84,36 +84,41 @@
                                 <div class="grid gap-4 sm:grid-cols-3 sm:gap-6 mt-3">
                                     <div class="w-full">
                                         <label for="pdf" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-add-files text-lg mr-2 mb-0"></i>Comunicado en PDF</label>
-                                        <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
+                                        <input type="file" name="pdf" class="text-sm bg-red-500 rounded-full">
+
+                                        {{-- <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
                                             <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                                 <i class="lni lni-cloud-upload text-3xl mb-2 text-gray-400"></i>
                                                 <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Haz click o arrastra</span></p>
                                                 <p class="text-xs text-gray-400">para subir un fichero <span class="font-semibold">.PDF</span></p>
                                             </div>
                                             <input id="dropzone-file" name="pdf" type="file" class="hidden" />
-                                        </label>
+                                        </label> --}}
                                     </div>
                                     <div class="w-full">
+
                                         <label for="imagen" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-image text-lg mr-2 mb-0"></i>Comunicado en JPG</label>
-                                        <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
+                                        <input type="file" name="imagen" class="text-sm bg-red-500 rounded-full">
+                                        {{-- <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
                                             <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                                 <i class="lni lni-cloud-upload text-3xl mb-2 text-gray-400"></i>
                                                 <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Haz click o arrastra</span></p>
                                                 <p class="text-xs text-gray-400">para subir un fichero <span class="font-semibold">.JPG</span></p>
                                             </div>
                                             <input id="dropzone-file" name="imagen" type="file" class="hidden" />
-                                        </label>
+                                        </label> --}}
                                     </div>
                                     <div class="w-full">
                                         <label for="adjunto" class="block mb-2 text-sm font-medium text-white"><i class="lni lni-files text-lg mr-2 mb-0"></i>Adjunto adicional</label>
-                                        <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
+                                        <input type="file" name="adjunto" class="text-sm bg-red-500 rounded-full">
+                                        {{-- <label for="dropzone-file" class="!ml-0 flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-gray-700 border-gray-600 hover:border-red-500 hover:bg-gray-600">
                                             <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                                 <i class="lni lni-cloud-upload text-3xl mb-2 text-gray-400"></i>
                                                 <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Haz click o arrastra</span></p>
                                                 <p class="text-xs text-gray-400">para subir un fichero <span class="font-semibold">.JPG/.PNG,/.PDF</span></p>
                                             </div>
                                             <input id="dropzone-file" name="imagen" type="file" class="hidden" />
-                                        </label>
+                                        </label> --}}
                                     </div>
                                 </div>
                                 <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-red-800">Subir Comunicado</button>
