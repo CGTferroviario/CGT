@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('descripcion');
             $table->string('telefono');
             $table->string('password');
+            $table->string('responsable');
+            $table->string('ccaa_id')->nullable();
+            $table->string('provincia_id')->nullable();
             $table->timestamp('ult_login')->nullable();
             $table->timestamp('ult_logout')->nullable();
             $table->rememberToken();
