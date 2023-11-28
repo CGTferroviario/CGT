@@ -3,7 +3,7 @@
 @section('contenido')
     <h1 class="m-0 py-3 text-center bg-ADIF font-bold">CIRCULACIÓN</h1>
     <div class="fondo circulacion">
-        <div class="busqueda p-4 pt-6 flex justify-end">
+        {{-- <div class="busqueda p-4 pt-6 flex justify-end">
             <div class="w-1/4">
                 <form class="">
                     <div class="flex w-full">
@@ -56,19 +56,9 @@
                     </div>
                 </form>
             </div>
-        </div>
-        <div class="flex w-full justify-end p-4">
-            <div class="w-1/4">
-                <label for="large" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">Elige una etiqueta</label>
-                <select id="large" class="block w-full px-4 py-3 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option selected>Elige una etiqueta</option>
-                    <option value="US">Etiqueta 1</option>
-                    <option value="CA">Etiqueta 2</option>
-                    <option value="FR">Etiqueta 1</option>
-                    <option value="DE">Etiqueta 1</option>
-                </select>
-            </div>
-        </div>
+        </div> --}}
+        <x-busqueda></x-busqueda>
+        
         <div class="grid sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">
             <div class="col-span-4 paginacion">{{ $documentos->links('vendor.pagination.tailwind') }}</div>
             @foreach ($documentos as $documento)   
