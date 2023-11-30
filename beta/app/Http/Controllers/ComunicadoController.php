@@ -30,7 +30,7 @@ class ComunicadoController extends Controller
             'empresas' => Empresa::orderBy('id', 'asc')->get(),
             'categorias' => Categoria::orderBy('id', 'asc')->get(),
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
-        ]);     
+        ]);
     }
     public function create()
     {
@@ -133,12 +133,50 @@ class ComunicadoController extends Controller
     }
     public function edit(Comunicado $comunicado)
     {
-        //
+        return view('intranet.comunicados.edit', [
+            'comunicados' => Comunicado::orderBy('id', 'desc')->paginate(15),
+            'empresas' => Empresa::orderBy('id', 'asc')->get(),
+            'categorias' => Categoria::orderBy('id', 'asc')->get(),
+            'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
+        ], compact('comunicado'));
     }
 
     public function update(UpdateComunicadoRequest $request, Comunicado $comunicado)
     {
-        //
+        $validated = $request->validate([
+            'empresa' => ['required', 'exists:empresas,id'],
+            'categoria' => ['required', 'exists:categorias,id'],
+            'fecha' => ['required'],
+            'numero' => ['required'],
+            'titulo' => ['required'],
+            'subtitulo' => ['required'],
+            'cuerpo' => ['required'],
+        ]);
+        
+        // Actualizar el comunicado
+        $comunicado->fecha = $request->fecha;
+        $comunicado->numero = $request->numero;
+        $comunicado->titulo = $request->titulo;
+        $comunicado->subtitulo = $request->subtitulo;
+        $comunicado->cuerpo = $request->cuerpo;
+        $comunicado->save();
+
+        // Actualizar la empresa relacionada
+        $empresa = Empresa::find($request->empresa);
+        $comunicado->empresa()->associate($empresa);
+        $comunicado->save();
+
+        // Actualizar la categoría relacionada
+        $categoria = Categoria::find($request->categoria);
+        $comunicado->categoria()->associate($categoria);
+        $comunicado->save();
+
+        // Actualiza las etiquetas
+        $comunicado->etiquetas()->sync($request->etiquetas);
+
+        $comunicado->update($validated);
+
+        return to_route('intranet.comunicados.index')->with('message', 'Comunicado Actualizado Correctamente');
     }
 
     public function destroy(Comunicado $comunicado)
