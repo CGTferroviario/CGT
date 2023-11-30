@@ -124,7 +124,6 @@ class ComunicadoController extends Controller
         if ($request->has('etiquetas')) {
             $comunicado->etiquetas()->attach($request->etiquetas);
         }
-        // dd($comunicado);
         return redirect(route('intranet.comunicados.index'))->with('message', 'Comunicado Creado Correctamente');
     }
     public function show(Comunicado $comunicado)
@@ -152,7 +151,7 @@ class ComunicadoController extends Controller
             'subtitulo' => ['required'],
             'cuerpo' => ['required'],
         ]);
-        
+
         // Actualizar el comunicado
         $comunicado->fecha = $request->fecha;
         $comunicado->numero = $request->numero;
