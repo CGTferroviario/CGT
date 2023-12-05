@@ -80,7 +80,7 @@ class ComunicadoController extends Controller
             if (!File::isDirectory($imagenDirectory)) {
                 File::makeDirectory($imagenDirectory, 0755, true);
             }
-            $rutaImagen = $imagen->storeAs('comunicados/img', $imagenNombre, 'public');
+            $rutaImagen = $imagen->storeAs('/comunicados/img', $imagenNombre, 'public');
         }
 
         $rutaPdf = null;
@@ -92,7 +92,7 @@ class ComunicadoController extends Controller
             if (!File::isDirectory($pdfDirectory)) {
                 File::makeDirectory($pdfDirectory, 0755, true);
             }
-            $rutaPdf = $pdf->storeAs('comunicados/pdf', $pdfNombre, 'public');
+            $rutaPdf = $pdf->storeAs('/comunicados/pdf', $pdfNombre, 'public');
         }
 
         $rutaAdjunto = null;
@@ -104,7 +104,7 @@ class ComunicadoController extends Controller
             if (!File::isDirectory($adjuntoDirectory)) {
                 File::makeDirectory($adjuntoDirectory, 0755, true);
             }
-            $rutaAdjunto = $adjunto->storeAs('comunicados/adjuntos', $adjuntoNombre, 'public');
+            $rutaAdjunto = $adjunto->storeAs('/comunicados/adjuntos', $adjuntoNombre, 'public');
         }
 
         $comunicado = Comunicado::create(array_merge($request->all(), [

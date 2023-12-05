@@ -19,9 +19,9 @@ class DocumentoSeeder extends Seeder
             print_r("jajaj");
             print_r($line);
             exit;
-    }
-    exit;
-    fclose($file);
+        }
+        exit;
+        fclose($file);
 
     }
 }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('cargo');
             $table->string('usuario');
             $table->string('email');
+            $table->unsignedSmallInteger('orden')->unique();
             $table->timestamps();
         });
     }

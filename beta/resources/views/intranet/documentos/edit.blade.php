@@ -49,7 +49,7 @@
                                     
                                     <x-select-etiquetas-edit :etiquetas=$etiquetas :tipo=$documento></x-select-etiquetas-edit>
 
-                                    <x-input-fecha-edit></x-input-fecha-edit>
+                                    <x-input-fecha-edit :tipo=$documento></x-input-fecha-edit>
 
                                 </div>
                                 <div class="grid gap-4 sm:grid-cols-12 sm:gap-6 mt-3">

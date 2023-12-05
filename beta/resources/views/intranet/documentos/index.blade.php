@@ -106,7 +106,7 @@
                         <td>{{ $documento->descripcion }}</td>
                         <td>{{ $documento->visualizaciones }}</td>
                         <td>{{ $documento->descargas }}</td>
-                        <td>{{ $documento->pdf }}</td>
+                        <td><a href="{{ $documento->pdf }}" class="href" target="_blank">{{ $documento->pdf }}</a></td>
                     </tr>
                     @endforeach
                 </tbody>

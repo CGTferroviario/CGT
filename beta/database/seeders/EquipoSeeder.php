@@ -26,6 +26,7 @@ class EquipoSeeder extends Seeder
                     "cargo" => $data['1'],
                     "usuario" => $data['2'],
                     "email" => $data['3'],
+                    "orden" => $data['4'],
                 ]);    
             }
             $firstline = false;

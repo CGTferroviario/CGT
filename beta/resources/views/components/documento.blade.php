@@ -21,12 +21,12 @@
     </div>
     <div class="p-0.5 w-full inline-flex text-lg text-center bordeTopRojo rounded-b-lg bg-red-500  ">
         <div class="w-1/2 rounded-bl-lg hover:text-red-500 hover:bg-black">
-            <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class=""
+            <a href="{{ $documento->pdf }}" class=""
                 target="blank"><i class="lni lni-display verDocs mr-2 text-2xl"></i>Visualizar</a>
         </div>
         <div class="w-1/2 rounded-br-lg hover:text-red-500 hover:bg-black">
-            <a href="doc/AFILIACION/FICHA_AFILIACION_NOMINA.pdf" class=""
-                target="_blank" download="CGT_Afiliacion_Nomina"><i
+            <a href="{{ $documento->pdf }}" class=""
+                target="_blank" download="CGT_{{ $documento->titulo }}"><i
                     class="lni lni-download verDocs mr-2 text-2xl"></i>Descargar</a>
         </div>
     </div>

@@ -409,3 +409,13 @@ input [type='checkbox']:checked, [type='radio']:checked {
 #checkboxes label:hover {
   background-color: rgb(239,68,68);
 }
+
+
+.list-group .list-group-item {
+  border-radius: 0;
+  cursor: move;
+}
+
+.list-group .list-group-item:hover {
+  background-color: #f7f7f7;
+}

@@ -30,9 +30,9 @@ class ComunicadoFactory extends Factory
             'titulo' => $this->faker->sentence(),
             'subtitulo' => $this->faker->sentence(),
             'cuerpo' => $this->faker->paragraphs(6, true),
-            'pdf' => $this->faker->slug(),
-            'imagen' => $this->faker->slug(),
-            'adjunto' => $this->faker->slug(),
+            'pdf' => '/storage/comunicados/comunicado1.pdf',
+            'imagen' => '/storage/comunicados/comunicado1.jpg',
+            'adjunto' => '/storage/comunicados/adjunto1.pdf',
             
         ];
     }

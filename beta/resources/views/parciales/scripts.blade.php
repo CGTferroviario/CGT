@@ -1,5 +1,12 @@
 <!-- Scripts -->
 
+{{-- Alpine JS --}}
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+
+<x-laravel-blade-sortable::scripts/>
+
 {{-- DataTables --}}
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>

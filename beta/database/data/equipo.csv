@@ -1,46 +1,45 @@
-﻿tipo;cargo;usuario;email
-Secretariado Permanente;Secretaría General;Noelia Martín Sanguino;s.general@cgtferroviario.es
-Secretariado Permanente;Secretaría Organización;Daniel Hidalgo Muñoz;s.organizacion@cgtferroviario.es
-Secretariado Permanente;Secretaría de Acción Sindical y Salud Laboral;Jose Manuel Muñoz Póliz;accionsindical@cgtferroviario.es
-Secretariado Permanente;Secretaría de Admón, Finanzas, Medios Sindicales;Ignacio Barros Alonso;finanzas@cgtferroviario.es
-Secretariado Permanente;Secretaría de Formación;Jesús Bermejo Bermejo;formacion@cgtferroviario.es
-Secretariado Permanente;Secretaría de Expansión;Amelia Penedo Fernández;expansion@cgtferroviario.es
-Secretariado Permanente;Secretaría de Comunicación;Olga de la Huerta;comunicacion@cgtferroviario.es
-Secretariado Permanente;Secretaría de Jurídica;José Dolz Cabo;juridica@cgtferroviario.es
-Secretariado Permanente;Secretaría de Acción Social y Mujer;Elena García Esparza;accionsocial@cgtferroviario.es
-Secretariado Permanente;Secretaría de Expansión de las Empresas Privadas;Diana Murciano Paredes;serviciosauxiliares@cgtferroviario.es
-Coordinación Territorial;MADRID;Berta;ct.madrid@cgtferroviario.es
-Coordinación Territorial;ANDALUCÍA;Luis Murciano;ct.andalucia@cgtferroviario.es
-Coordinación Territorial;PAÍS VALENÇIA Y MURCIA;;ct.paisvalencia@cgtferroviario.es
-Coordinación Territorial;CATALUNYA;Enrique Villaseñor Osuna;ct.catalunya@cgtferroviario.es
-Coordinación Territorial;ARAGÓN / LA RIOJA;Jose Luis Fernández Jiménez;ct.aragon@cgtferroviario.es
-Coordinación Territorial;EUSKADI / NAVARRA;Iker Izquierdo Barreiro;ct.euskadi@cgtferroviario.es
-Coordinación Territorial;CASTILLA Y LEÓN;Felix Huete González;ct.cyl@cgtferroviario.es
-Coordinación Territorial;CANTABRIA;Javier Cobo González;ct.cantabria@cgtferroviario.es
-Coordinación Territorial;ASTURIAS;Diego Sánchez Álvarez;ct.asturias@cgtferroviario.es
-Coordinación Territorial;GALICIA;Ángel Valladares Nocito;ct.galicia@cgtferroviario.es
-Coordinación Territorial;CASTILLA-LA MANCHA;Juan Carlos Pérez Aguilera;ct.clm@cgtferroviario.es
-Coordinación Territorial;EXTREMADURA;Pablo López Zurdo;ct.extremadura@cgtferroviario.es
-Responsables Empresas;ADIF;Elena García Esparza;adif@cgtferroviario.es
-Responsables Empresas;RENFE OPERADORA;Pablo Saeta;renfe@cgtferroviario.es
-Responsables Empresas;FERROVIAL;Diana Murciano Paredes;ferrovial@cgtferroviario.es
-Responsables Empresas;LOGIRAIL;Nerea González Gutiérrez;logirail@cgtferroviario.es
-Coordinación ADIF;COORDINADOR;Enrique Villaseñor Osuna;adif@cgtferroviario.es
-Coordinación ADIF;SALUD LABORAL;Antonio Terré Jiménez;saludlaboral.adif@cgtferroviario.es
-Coordinación ADIF;SEG. EN LA CIRCULACIÓN;Diego Sánchez Álvarez;seg.cir.adif@cgtferroviario.es
-Coordinación ADIF;POLÍTICA SOCIAL;Elena García Esparza;politicasocial.adif@cgtferroviario.es
-Coordinación ADIF;FORMACIÓN;Amelia Penedo Fernández;formacion.adif@cgtferroviario.es
-Coordinación ADIF;INFRAESTRUCTURA;Carlos Montejano Andreu;infraestructura@cgtferroviario.es
-Coordinación ADIF;CIRCULACIÓN;Diego Sánchez Álvarez;circulacion@cgtferroviario.es
-Coordinación ADIF;OFICINAS;Gonzalo Wilhelmi Casanova;oficinas@cgtferroviario.es
-Coordinación ADIF;SERVICIOS LOGÍSTICOS;Enrique Villaseñor Osuna;servicioslogisticos@cgtferroviario.es
-Coordinación RENFE;COORDINADOR;Pablo Rodríguez Villanueva;renfe@cgtferroviario.es
-Coordinación RENFE;SALUD LABORAL;Sabino Alberto Quesada;saludlaboral.renfe@cgtferroviario.es
-Coordinación RENFE;SEG. EN LA CIRCULACIÓN;Manuel Alejandro Rodríguez Lobato;seg.cir.renfe@cgtferroviario.es
-Coordinación RENFE;POLÍTICA SOCIAL;Rosario Portero Córdoba;politicasocial.renfe@cgtferroviario.es
-Coordinación RENFE;FORMACIÓN;Rosario Portero Córdoba;formacion.renfe@cgtferroviario.es
-Coordinación RENFE;TRACCIÓN;Manuel Alejandro Rodríguez Lobato;traccion@cgtferroviario.es
-Coordinación RENFE;TALLERES;Pablo Rodríguez Villanueva;talleres@cgtferroviario.es
-Coordinación RENFE;INTERVENCIÓN;Miguel Lirio;intervencion@cgtferroviario.es
-Coordinación RENFE;COMERCIAL Y TAQUILLAS;Pablo Saeta Tejero;comercial@cgtferroviario.es
-Coordinación RENFE;OFICINAS;Sabino Alberto Quesada;oficinas@cgtferroviario.es
+﻿tipo;cargo;usuario;email;orden;;
+Secretariado Permanente;Secretaría General;Noelia Martín Sanguino;s.general@cgtferroviario.es;1;;
+Secretariado Permanente;Secretaría Organización;Daniel Hidalgo Muñoz;s.organizacion@cgtferroviario.es;2;;
+Secretariado Permanente;Secretaría de Acción Sindical y Salud Laboral;Jose Manuel Muñoz Póliz;accionsindical@cgtferroviario.es;3;;
+Secretariado Permanente;Secretaría de Admón, Finanzas, Medios Sindicales;Ignacio Barros Alonso;finanzas@cgtferroviario.es;4;;
+Secretariado Permanente;Secretaría de Formación;Jesús Bermejo Bermejo;formacion@cgtferroviario.es;5;;
+Secretariado Permanente;Secretaría de Expansión;Amelia Penedo Fernández;expansion@cgtferroviario.es;6;;
+Secretariado Permanente;Secretaría de Comunicación;Olga Lahuerta Cantón;comunicacion@cgtferroviario.es;7;;
+Secretariado Permanente;Secretaría de Jurídica;José Dolz Cabo;juridica@cgtferroviario.es;8;;
+Secretariado Permanente;Secretaría de Acción Social y Mujer;Elena García Esparza;accionsocial@cgtferroviario.es;9;;
+Secretariado Permanente;Secretaría de Expansión de las Empresas Privadas;Diana Murciano Paredes;serviciosauxiliares@cgtferroviario.es;10;;
+Coordinación Territorial;MADRID;Berta Vallespín Varela;ct.madrid@cgtferroviario.es;11;;
+Coordinación Territorial;ANDALUCÍA OCCIDENTAL;Luis Murciano Quintero;ct.andalucia@cgtferroviario.es;12;;
+Coordinación Territorial;ANDALUCÍA ORIENTAL;Miguel Montenegro Muriel;ct.andalucia@cgtferroviario.es;13;;
+Coordinación Territorial;PAÍS VALENÇIA Y MURCIA;;ct.paisvalencia@cgtferroviario.es;14;;
+Coordinación Territorial;CATALUNYA;Enrique Villaseñor Osuna;ct.catalunya@cgtferroviario.es;15;;
+Coordinación Territorial;ARAGÓN / LA RIOJA;Julián Moratalla Ruiz;ct.aragon@cgtferroviario.es;16;;
+Coordinación Territorial;EUSKADI / NAVARRA;Iker Izquierdo Barreiro;ct.euskadi@cgtferroviario.es;17;;
+Coordinación Territorial;CASTILLA Y LEÓN;Felix Huete González;ct.cyl@cgtferroviario.es;18;;
+Coordinación Territorial;CANTABRIA;Javier Cobo González;ct.cantabria@cgtferroviario.es;19;;
+Coordinación Territorial;ASTURIAS;Diego Sánchez Álvarez;ct.asturias@cgtferroviario.es;20;;
+Coordinación Territorial;GALICIA;Ángel Valladares Nocito;ct.galicia@cgtferroviario.es;21;;
+Coordinación Territorial;CASTILLA-LA MANCHA;Juan Carlos Pérez Aguilera;ct.clm@cgtferroviario.es;22;;
+Coordinación Territorial;EXTREMADURA;Pablo López Zurdo;ct.extremadura@cgtferroviario.es;23;;
+Coordinación ADIF;COORDINADOR;Elena García Esparza;adif@cgtferroviario.es;24;;
+Coordinación ADIF;SALUD LABORAL;Antonio Terré Jiménez;saludlaboral.adif@cgtferroviario.es;25;;
+Coordinación ADIF;SEG. EN LA CIRCULACIÓN;Diego Sánchez Álvarez;seg.cir.adif@cgtferroviario.es;26;;
+Coordinación ADIF;POLÍTICA SOCIAL;Eva Ródenas Jiménez;politicasocial.adif@cgtferroviario.es;27;;
+Coordinación ADIF;FORMACIÓN;Jesús Bermejo Bermejo;formacion.adif@cgtferroviario.es;28;;
+Coordinación ADIF;INFRAESTRUCTURA;Carlos Montejano Andreu;infraestructura@cgtferroviario.es;29;;
+Coordinación ADIF;CIRCULACIÓN;Álvaro Martín Morillo;circulacion@cgtferroviario.es;30;;
+Coordinación ADIF;OFICINAS;-;oficinas@cgtferroviario.es;31;;
+Coordinación ADIF;SERVICIOS LOGÍSTICOS;Enrique Villaseñor Osuna;servicioslogisticos@cgtferroviario.es;32;;
+Coordinación RENFE;COORDINADOR;Pablo Saeta Tejero;renfe@cgtferroviario.es;33;;
+Coordinación RENFE;SALUD LABORAL;Sabino Alberto Quesada;saludlaboral.renfe@cgtferroviario.es;34;;
+Coordinación RENFE;SEG. EN LA CIRCULACIÓN;Javier Hungría Estévez;seg.cir.renfe@cgtferroviario.es;35;;
+Coordinación RENFE;POLÍTICA SOCIAL;María Jose Guillén Guillén;politicasocial.renfe@cgtferroviario.es;36;;
+Coordinación RENFE;FORMACIÓN;María Jose Guillén Guillén;formacion.renfe@cgtferroviario.es;37;;
+Coordinación RENFE;TRACCIÓN;Javier Hungría Estévez;traccion@cgtferroviario.es;38;;
+Coordinación RENFE;TALLERES;-;talleres@cgtferroviario.es;39;;
+Coordinación RENFE;INTERVENCIÓN;Olga Lahuerta Cantón;intervencion@cgtferroviario.es;40;;
+Coordinación RENFE;COMERCIAL Y TAQUILLAS;Pablo Saeta Tejero;comercial@cgtferroviario.es;41;;
+Coordinación RENFE;OFICINAS;Sabino Alberto Quesada;oficinas@cgtferroviario.es;42;;
+Responsables Empresas;SERVEO;Diana Murciano Paredes;serveo@cgtferroviario.es;43;;
+Responsables Empresas;LOGIRAIL;Toñi Vallega Álvarez;logirail@cgtferroviario.es;44;;

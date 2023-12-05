@@ -6,6 +6,14 @@ new DataTable('#comunicadosAdmin', {
         url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
     },
 });
+
+new DataTable('#equipoSP', {
+    responsive: true,
+    rowReorder: true,
+    language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
+    },
+});
 // Fin Datatables
 
 // Select etiquetas multiples formulario
@@ -59,3 +67,17 @@ Dropzone.options.comunicadosPdfDropzone = {
     }
 };
 // Fin Drag and Drop
+
+// Sort
+
+// Simple list
+Sortable.create(simpleList, { 
+    handle: '.glyphicon-move',
+    animation: 150
+});
+
+// List with handle
+Sortable.create(listWithHandle, {
+  handle: '.glyphicon-move',
+  animation: 150
+});

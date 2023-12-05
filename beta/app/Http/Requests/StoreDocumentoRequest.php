@@ -22,6 +22,12 @@ class StoreDocumentoRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'empresa_id' => 'nullable',
+            'categoria_id' => 'nullable',
+            'fecha' => 'required|date',
+            'titulo' => 'required',
+            'descripcion' => 'required',
+            'pdf' => 'nullable|mimes:pdf|max:10000',
             
         ];
     }
