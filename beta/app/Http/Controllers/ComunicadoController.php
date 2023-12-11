@@ -34,7 +34,6 @@ class ComunicadoController extends Controller
     }
     public function create()
     {
-        
         return view('intranet.comunicados.create', [
             'comunicados' => Comunicado::orderBy('id', 'desc')->paginate(15),
             'empresas' => Empresa::where('comunicados', '=', 1)->orderBy('id', 'asc')->get(),
@@ -42,70 +41,52 @@ class ComunicadoController extends Controller
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get(),
             
         ]);
-        
     }
     public function store(StoreComunicadoRequest $request)
     {
-        $year = Carbon::now()->format('y');
-        // dd($year);
-        $publicado = $request->publicado;
-        if ($request->publicado == 'on') {
-            $publicado = 1;
-        } else {
-            $publicado = 0;
-        };
-
         $usuario = Auth::user()->id;
+        $year = Carbon::now()->format('y');
+        $anyo = Carbon::now()->format('Y');
         $numero = $request->numero . '.' . $year;
-
-        $request->validate([
-            'numero' => 'required',
-            'empresa_id' => 'nullable',
-            'categoria_id' => 'nullable',
-            'fecha' => 'required',
-            'titulo' => 'required',
-            'subtitulo' => 'required',
-            'cuerpo' => 'required',
-            'imagen' => 'nullable|image',
-            "pdf" => "nullable|mimetypes:application/pdf|max:10000",
-            "adjunto" => "nullable|mimetypes:application/pdf|max:10000",
-        ]);
         
-        $rutaImagen = null;
-        if ($request->hasFile('imagen')) {
-            $imagen = $request->file('imagen');
-            $imagenNombre = Str::slug($request->titulo) . '.' . $imagen->getClientOriginalExtension();
-
-            $imagenDirectory = public_path('storage/comunicados/img');
-            if (!File::isDirectory($imagenDirectory)) {
-                File::makeDirectory($imagenDirectory, 0755, true);
-            }
-            $rutaImagen = $imagen->storeAs('/comunicados/img', $imagenNombre, 'public');
-        }
-
         $rutaPdf = null;
         if ($request->hasFile('pdf')) {
             $pdf = $request->file('pdf');
-            $pdfNombre = Str::slug($request->titulo) . '.' . $pdf->getClientOriginalExtension();
+            $pdfNombre = $numero . '.' . Str::slug($request->titulo) . '.' . $pdf->getClientOriginalExtension();
 
-            $pdfDirectory = public_path('storage/comunicados/pdf');
-            if (!File::isDirectory($pdfDirectory)) {
-                File::makeDirectory($pdfDirectory, 0755, true);
+            $comDirectory = storage_path('comunicados/' . $anyo);
+            if (!File::isDirectory($comDirectory)) {
+                File::makeDirectory($comDirectory, 0755, true);
             }
-            $rutaPdf = $pdf->storeAs('/comunicados/pdf', $pdfNombre, 'public');
+            $rutaPdf = $pdf->storeAs('comunicados/' . $anyo, $pdfNombre, 'public');
+        }
+        // dd($comDirectory);
+
+        $rutaImagen = null;
+        if ($request->hasFile('imagen')) {
+            $imagen = $request->file('imagen');
+            $imagenNombre = $numero . '.' . Str::slug($request->titulo) . '.' . $imagen->getClientOriginalExtension();
+
+            $imagenDirectory = storage_path('comunicados/' . $anyo);
+            if (!File::isDirectory($imagenDirectory)) {
+                File::makeDirectory($imagenDirectory, 0755, true);
+            }
+            $rutaImagen = $imagen->storeAs('comunicados/' . $anyo, $imagenNombre, 'public');
         }
 
         $rutaAdjunto = null;
         if ($request->hasFile('adjunto')) {
             $adjunto = $request->file('adjunto');
-            $adjuntoNombre = Str::slug($request->titulo) . '.' . $adjunto->getClientOriginalExtension();
+            $adjuntoNombre = $numero . '.anexo-' . Str::slug($request->titulo) . '.' . $adjunto->getClientOriginalExtension();
 
-            $adjuntoDirectory = public_path('storage/comunicados/adjuntos');
+            $adjuntoDirectory = storage_path('comunicados/' . $anyo);
             if (!File::isDirectory($adjuntoDirectory)) {
                 File::makeDirectory($adjuntoDirectory, 0755, true);
             }
-            $rutaAdjunto = $adjunto->storeAs('/comunicados/adjuntos', $adjuntoNombre, 'public');
+            $rutaAdjunto = $adjunto->storeAs('comunicados/' . $anyo, $adjuntoNombre, 'public');
         }
+        // dd($request);
+        // dd($rutaAdjunto);
 
         $comunicado = Comunicado::create(array_merge($request->all(), [
             'numero' => $numero,
@@ -115,10 +96,10 @@ class ComunicadoController extends Controller
             'titulo' => $request->titulo,
             'subtitulo' => $request->subtitulo,
             'cuerpo' => $request->cuerpo,
-            'pdf' => $request->pdf,
-            'imagen' => $request->imagen,
-            'adjunto' => $request->adjunto,
-            'publicado' => $publicado,
+            'pdf' => $rutaPdf,
+            'imagen' => $rutaImagen,
+            'adjunto' => $rutaAdjunto,
+            'publicado' => 1,
             'user_id' => $usuario,
         ]));
         if ($request->has('etiquetas')) {
@@ -142,38 +123,22 @@ class ComunicadoController extends Controller
 
     public function update(UpdateComunicadoRequest $request, Comunicado $comunicado)
     {
-        $validated = $request->validate([
-            'empresa' => ['required', 'exists:empresas,id'],
-            'categoria' => ['required', 'exists:categorias,id'],
-            'fecha' => ['required'],
-            'numero' => ['required'],
-            'titulo' => ['required'],
-            'subtitulo' => ['required'],
-            'cuerpo' => ['required'],
-        ]);
 
         // Actualizar el comunicado
-        $comunicado->fecha = $request->fecha;
-        $comunicado->numero = $request->numero;
-        $comunicado->titulo = $request->titulo;
-        $comunicado->subtitulo = $request->subtitulo;
-        $comunicado->cuerpo = $request->cuerpo;
-        $comunicado->save();
+        $comunicado->update($request->validated());
 
         // Actualizar la empresa relacionada
         $empresa = Empresa::find($request->empresa);
         $comunicado->empresa()->associate($empresa);
-        $comunicado->save();
 
         // Actualizar la categoría relacionada
         $categoria = Categoria::find($request->categoria);
         $comunicado->categoria()->associate($categoria);
-        $comunicado->save();
 
-        // Actualiza las etiquetas
+        // Actualiza las etiquetas relacionadas
         $comunicado->etiquetas()->sync($request->etiquetas);
-
-        $comunicado->update($validated);
+        
+        $comunicado->save();
 
         return to_route('intranet.comunicados.index')->with('message', 'Comunicado Actualizado Correctamente');
     }

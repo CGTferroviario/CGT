@@ -64,7 +64,7 @@ class DocumentoController extends Controller
             if (!File::isDirectory($pdfDirectory)) {
                 File::makeDirectory($pdfDirectory, 0755, true);
             }
-            $rutaDocumento = '/storage/' . $pdf->storeAs($ruta, $pdfNombre, 'public');
+            $rutaDocumento = 'storage/' . $pdf->storeAs($ruta, $pdfNombre, 'public');
         }
 
         $documento = Documento::create([

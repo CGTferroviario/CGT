@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('documento_etiqueta', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("documento_id");
-            $table->foreign('documento_id')->references("id")->on("documentos")->ondelete("cascade");
-            $table->unsignedBigInteger("etiqueta_id");
-            $table->foreign('etiqueta_id')->references("id")->on("etiquetas")->ondelete("cascade");      
+            $table->unsignedBigInteger('documento_id');
+            $table->foreign('documento_id')->references('id')->on('documentos')->ondelete('cascade');
+            $table->unsignedBigInteger('etiqueta_id');
+            $table->foreign('etiqueta_id')->references('id')->on('etiquetas')->ondelete('cascade');      
             $table->timestamps();
             $table->unique(['documento_id', 'etiqueta_id']);
 

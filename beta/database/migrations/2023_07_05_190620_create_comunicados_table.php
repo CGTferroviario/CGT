@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedMediumInteger('descargas')->default(0);
             $table->boolean('publicado');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedTinyInteger('numero');
+            $table->string('numero');
             $table->unsignedBigInteger('empresa_id')->nullable();
             $table->unsignedBigInteger('categoria_id')->nullable();
             $table->date('fecha');

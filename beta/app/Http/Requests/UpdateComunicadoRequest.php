@@ -22,7 +22,13 @@ class UpdateComunicadoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'empresa' => ['nullable', 'exists:empresas,id'],
+            'categoria' => ['nullable', 'exists:categorias,id'],
+            'fecha' => ['required'],
+            'numero' => ['required'],
+            'titulo' => ['required'],
+            'subtitulo' => ['required'],
+            'cuerpo' => ['required'],
         ];
     }
 }

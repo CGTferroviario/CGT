@@ -37,126 +37,103 @@
                     </div>
                 </div>
                 <div class="container">
-                    <ul id="simpleList" class="list-group max-w-md divide-y divide-gray-200 dark:divide-gray-700">
-                        <li class="list-group-item pb-3 sm:pb-4">
-                            <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg"
-                                        alt="Neil image">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Neil Sims
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@flowbite.com
-                                    </p>
-                                </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $320
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item py-3 sm:py-4">
-                            <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg"
-                                        alt="Neil image">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Bonnie Green
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@flowbite.com
-                                    </p>
-                                </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $3467
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item py-3 sm:py-4">
-                            <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-2.jpg"
-                                        alt="Neil image">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Michael Gough
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@flowbite.com
-                                    </p>
-                                </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $67
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item py-3 sm:py-4">
-                            <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-5.jpg"
-                                        alt="Neil image">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Thomas Lean
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@flowbite.com
-                                    </p>
-                                </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $2367
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item pt-3 pb-0 sm:pt-4">
-                            <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-4.jpg"
-                                        alt="Neil image">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="text-sm font-medium text-gray-900 truncate ">
-                                        Lana Byrd
-                                    </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        email@flowbite.com
-                                    </p>
-                                </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    $367
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="relative overflow-x-auto">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">
+                                        Product name
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Color
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Category
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Price
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        Silver
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        Laptop
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Microsoft Surface Pro
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        White
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        Laptop PC
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        $1999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white dark:bg-gray-800">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Magic Mouse 2
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        Black
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        Accessories
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        $99
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-
-                <script>
-                    new Sortable(sortablelist, {
-                        animation: 150,
-                        ghostClass: 'blue-background-class'
-                    });
-                </script>
 
                 <div class="sort">
-
-                    <x-laravel-blade-sortable::sortable>
-                        <x-laravel-blade-sortable::sortable-item sort-key="jason">
-                            Jason
-                        </x-laravel-blade-sortable::sortable-item>
-                    </x-laravel-blade-sortable::sortable>
+                    <div class="bg-black p-2 text-white bordeRojo rounded-t-lg">
+                        <h1 class="text-center font-semibold">SECRETARIADO PERMANENTE (S.P.)</h1>
+                    </div>
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">Acciones</th>
+                                <th scope="col" class="px-6 py-3">Cargo</th>
+                                <th scope="col" class="px-6 py-3">Usuario</th>
+                                <th scope="col" class="px-6 py-3">Email</th>
+                                <th scope="col" class="px-6 py-3">Orden</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    @foreach ($equipoSPs as $equipoSP)
+                        <x-laravel-blade-sortable::sortable>
+                            <x-laravel-blade-sortable::sortable-item sort-key='order'>
+                                <div class="p-2 cursor-pointer text-sm border bordeRojo hover:border-black bg-oscuro hover:bg-red-500 text-white hover:text-black">
+                                    {{ $equipoSP->cargo }}
+                                </div>
+                            </x-laravel-blade-sortable::sortable-item>
+                        </x-laravel-blade-sortable::sortable>
+                    @endforeach
 
                 </div>
 
 
 
 
-                <table id="equipoSP" class="display nowrap text-sm pt-5 font-normal rounded-t-lg"
+                <table id="equiposp" class="display nowrap text-sm pt-5 font-normal rounded-t-lg"
                     style="width:100%">
                     <thead class="rounded-t-lg bg-black text-white">
                         <tr>
@@ -169,16 +146,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($equipos as $equipo)
+                        @foreach ($equipoSPs as $equipoSP)
                             <tr>
                                 <td>
                                     <div class="flex justify-start gap-1 text-xl mt-2">
-                                        <a x-data="{ tooltip: 'Editar' }" href="{{ route('intranet.equipos.edit', $equipo->id) }}"
+                                        <a x-data="{ tooltip: 'Editar' }" href="{{ route('intranet.equipos.edit', $equipoSP->id) }}"
                                             class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8"
                                             title="Editar Noticia">
                                             <i class="lni lni-pencil"></i>
                                         </a>
-                                        <form method="POST" action="{{ route('intranet.equipos.destroy', $equipo->id) }}"
+                                        <form method="POST" action="{{ route('intranet.equipos.destroy', $equipoSP->id) }}"
                                             onsubmit="return confirm('¿Deseas eliminar este equipo?');">
                                             @csrf
                                             @method('DELETE')
@@ -191,11 +168,11 @@
                                         </form>
                                     </div>
                                 </td>
-                                <td>{{ $equipo->tipo }}</td>
-                                <td>{{ $equipo->cargo }}</td>
-                                <td>{{ $equipo->usuario }}</td>
-                                <td>{{ $equipo->email }}</td>
-                                <td>{{ $equipo->orden }}</td>
+                                <td>{{ $equipoSP->tipo }}</td>
+                                <td>{{ $equipoSP->cargo }}</td>
+                                <td>{{ $equipoSP->usuario }}</td>
+                                <td>{{ $equipoSP->email }}</td>
+                                <td>{{ $equipoSP->orden }}</td>
                             </tr>
                         @endforeach
                     </tbody>

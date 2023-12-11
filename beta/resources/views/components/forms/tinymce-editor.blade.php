@@ -1,0 +1,1 @@
+<textarea id="cuerpo" name="cuerpo"></textarea>

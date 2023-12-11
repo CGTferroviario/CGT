@@ -91,10 +91,11 @@
                             @endforeach    
                         </td>
                         <td>{{ $comunicado->subtitulo }}</td>
-                        <td>{!! nl2br(e($comunicado->cuerpo))!!}</td>
-                        <td><a href="{{ $comunicado->pdf }}" class="href" target="_blank">{{ $comunicado->pdf }}</a></td>
-                        <td><a href="{{ $comunicado->imagen }}" class="href" target="_blank">{{ $comunicado->imagen }}</a></td>
-                        <td><a href="{{ $comunicado->adjunto }}" class="href" target="_blank">{{ $comunicado->adjunto }}</a></td>
+                        <td>{!! $comunicado->cuerpo !!}</td>
+                        {{-- <td>{!! nl2br(e($comunicado->cuerpo))!!}</td> --}}
+                        <td><a href="{{ asset($comunicado->pdf) }}" class="href" target="_blank">{{ $comunicado->pdf }}</a></td>
+                        <td><a href="{{ storage_path($comunicado->imagen) }}" class="href" target="_blank">{{ $comunicado->imagen }}</a></td>
+                        <td><a href="{{ storage_path($comunicado->adjunto) }}" class="href" target="_blank">{{ $comunicado->adjunto }}</a></td>
                         <td>{{ $comunicado->visualizaciones }}</td>
                     </tr>
                     @endforeach

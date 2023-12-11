@@ -5,6 +5,51 @@
 <div id="dropdown" class="z-50 hidden divide-y rounded-lg shadow w-96 bg-oscuro">
     @guest
         <div class="w-full max-w-sm p-4 bg-oscuro bordeRojo rounded-lg shadow sm:p-6 md:p-8">
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <h5 class="text-xl font-medium rojoBrillante text-center">Accede a tu Área de Afiliad@</h5>
+                <!-- Email Address -->
+                <div class="mt-4">
+                    <x-input-label for="email" :value="__('Email')" class="" />
+                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                </div>
+
+                <!-- Password -->
+                <div class="mt-4">
+                    <x-input-label for="password" :value="__('Contraseña')" />
+
+                    <x-text-input id="password" class="block mt-1 w-full"
+                                    type="password"
+                                    name="password"
+                                    required autocomplete="current-password" />
+
+                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                </div>
+
+                <!-- Remember Me -->
+                <div class="inline-flex mt-4">
+                    <label for="remember" class="inline-flex items-center">
+                        <input id="remember" type="checkbox" class="rounded bg-gray-900 border-gray-700 text-red-600 shadow-sm focus:ring-red-500 focus:ring-offset-gray-800" name="remember">
+                        <span class="ml-2 text-sm font-medium text-red-500">{{ __('Recuérdame') }}</span>
+                    </label>
+                </div>
+
+                <div class="inline-flex items-center justify-end mt-4">
+                    @if (Route::has('password.request'))
+                        <a class="underline text-sm text-gray-400 hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 focus:ring-offset-gray-800" href="{{ route('password.request') }}">
+                            {{ __('¿Olvidaste tu contraseña?') }}
+                        </a>
+                    @endif
+
+                    
+                </div>
+                <x-primary-button class="ml-3">
+                    {{ __('Acceder') }}
+                </x-primary-button>
+            </form>
+        </div>
+        {{-- <div class="w-full max-w-sm p-4 bg-oscuro bordeRojo rounded-lg shadow sm:p-6 md:p-8">
             <form class="space-y-6" action="{{ route('login') }}">
                 @csrf
                 <h5 class="text-xl font-medium rojoBrillante">Accede a tu Área de Afiliado</h5>
@@ -37,7 +82,7 @@
                     ¿No estás registrado? <a href="#" class="text-red-700 hover:underline">Crear Usuario</a>
                 </div>
             </form>
-        </div>
+        </div> --}}
     @else
         <div class="w-full max-w-sm p-4 bg-oscuro bordeRojo rounded-lg shadow sm:p-6 md:p-8">
             <div class="grid grid-cols-2 gap-2">

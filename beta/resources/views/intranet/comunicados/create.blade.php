@@ -51,6 +51,15 @@
                             <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Comunicado</h2>
                             <form action="{{ route('intranet.comunicados.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                @if ($errors->any())
+                                    <div class="p-4 mb-2 bordeRojo rounded-lg bg-red-200 text-sm text-red-500">
+                                        <ul class="pl-4 list-disc">
+                                            @foreach ($errors->all() as $error)
+                                            <li class="">{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
                                     <x-select-empresa :empresas=$empresas></x-select-empresa>
 
@@ -63,7 +72,7 @@
                                 <div class="grid gap-4 sm:grid-cols-12 sm:gap-6 mt-3">
                                     <div>
                                         <label for="numero" class="block mb-2 text-sm font-medium text-white">Nº</label>
-                                        <input type="number" name="numero" id="numero" class="w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-gray-400" placeholder="" required="">
+                                        <input type="text" name="numero" id="numero" class="w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-gray-400" placeholder="" required="">
                                     </div>
                                     <div class="col-span-5">
                                         <label for="titulo" class="block mb-2 text-sm font-medium text-white">Título</label>
@@ -77,6 +86,8 @@
                                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 mt-3">
                                     <div class="col-span-2">
                                         <label for="cuerpo" class="block mb-2 text-sm font-medium text-white">Cuerpo</label>
+                                        <x-head.tinymce-config />
+                                        {{-- <x-forms.tinymce-editor /> --}}
                                         <textarea id="cuerpo" name="cuerpo" rows="20" class="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-red-500 focus:border-red-500" placeholder="El cuerpo del comunicado..."></textarea>
                                     </div>
                                 </div>

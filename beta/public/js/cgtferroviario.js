@@ -21,14 +21,18 @@ var expanded = false;
 
 function showCheckboxes() {
     var checkboxes = document.getElementById("checkboxes");
-    if (!expanded) {
-        checkboxes.style.display = "block";
-        expanded = true;
-    } else {
+    checkboxes.style.display = expanded ? "none" : "block";
+    expanded = !expanded;
+
+}
+document.addEventListener('click', function(event) {
+    var checkboxes = document.getElementById("checkboxes");
+    var selectBox = document.querySelector(".selectBox");
+    if (!checkboxes.contains(event.target) && !selectBox.contains(event.target) && expanded) {
         checkboxes.style.display = "none";
         expanded = false;
     }
-}
+});
 // Final etiquetas
 
 // Convertir los Toggle Switch del valor on/off a 1/0
@@ -45,29 +49,6 @@ document.getElementById('vales_toggle').addEventListener('change', function() {
 });
 // Fin Toggle Switch
 
-// Drag and Drop Dropzone
-Dropzone.options.logoDropzone = {
-    acceptedFiles: 'image/*',
-    dictDefaultMessage: 'Arrastra aquí los archivos para subir',
-    dictInvalidFileType: 'No puedes subir este tipo de archivos',
-    init: function() {
-        this.on('success', function(file, response) {
-            document.getElementById('logo').value = response.path;
-        });
-    }
-};
-Dropzone.options.comunicadosPdfDropzone = {
-    acceptedFiles: 'pdf/*',
-    dictDefaultMessage: 'Arrastra aquí los archivos para subir',
-    dictInvalidFileType: 'No puedes subir este tipo de archivos',
-    init: function() {
-        this.on('success', function(file, response) {
-            document.getElementById('pdf').value = response.path;
-        });
-    }
-};
-// Fin Drag and Drop
-
 // Sort
 
 // Simple list
@@ -78,6 +59,6 @@ Sortable.create(simpleList, {
 
 // List with handle
 Sortable.create(listWithHandle, {
-  handle: '.glyphicon-move',
-  animation: 150
+    handle: '.glyphicon-move',
+    animation: 150
 });

@@ -40,9 +40,15 @@ class EquipoController extends Controller
     
     public function index()
     {
-        return view('intranet.equipos.index', [
-            'equipos' => Equipo::orderBy('id', 'asc')->get()
-        ]); 
+        $equipoSPs = Equipo::where('tipo' , 'Secretariado Permanente')->get();
+        $equipoct = Equipo::where('tipo' , 'Coordinación Territorial')->get();
+        $equipore = Equipo::where('tipo' , 'Responsables Empresas')->get();
+        $equipoadif = Equipo::where('tipo' , 'Coordinación ADIF')->get();
+        $equiporenfe = Equipo::where('tipo' , 'Coordinación RENFE')->get();
+
+        // dd($equipoSP);
+
+        return view('intranet.equipos.index', compact('equipoSPs', 'equipoct', 'equipore', 'equipoadif', 'equiporenfe'));
     }
 
     /**
