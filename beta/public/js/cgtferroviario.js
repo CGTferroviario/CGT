@@ -47,9 +47,11 @@ document.getElementById('comunicados_toggle').addEventListener('change', functio
 document.getElementById('vales_toggle').addEventListener('change', function() {
     document.getElementById('vales').value = this.checked ? 1 : 0;
 });
+
 // Fin Toggle Switch
 
 // Sort
+window.Sortable = require('sortablejs').default
 
 // Simple list
 Sortable.create(simpleList, { 

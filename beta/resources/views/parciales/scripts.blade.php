@@ -7,7 +7,7 @@
 
 <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
 
-<x-laravel-blade-sortable::scripts/>
+{{-- <x-laravel-blade-sortable::scripts/> --}}
 
 {{-- DataTables --}}
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

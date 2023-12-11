@@ -11,7 +11,7 @@
 
 {{-- Fuentes --}}
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,900;1,400;1,500;1,900&display=swap" rel="stylesheet">
-<link href="http://fonts.cdnfonts.com/css/brannboll-connect-personal-use" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/brannboll-connect-personal-use" rel="stylesheet">
 
 {{-- Iconos --}}
 <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
