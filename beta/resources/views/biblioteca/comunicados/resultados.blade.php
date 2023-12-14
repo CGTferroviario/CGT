@@ -3,6 +3,7 @@
     @section('contenido')
         <h1 class="m-0 py-3 text-center bg-rojoBrillante font-bold">COMUNICADOS</h1>
         <div class="fondo comunicados">
+            
             <div class="container mx-auto p-4">
                 <form action="{{ route('biblioteca.comunicados.buscar') }}" method="GET">
                     <div class="mb-4">
@@ -34,11 +35,13 @@
 
                 <div class="col-span-4 paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
 
-                @foreach ($comunicados as $comunicado)
-                    
-                    <x-comunicado :comunicado=$comunicado></x-comunicado>
+                <h2 class="text-2xl font-bold mb-4">Resultados de la búsqueda</h2>
 
-                @endforeach
+                @forelse ($comunicados as $comunicado)
+                    <x-comunicado :comunicado=$comunicado></x-comunicado>
+                @empty
+                    <p>No se encontraron resultados.</p>
+                @endforelse
 
                 <div class="col-span-4 paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
 
@@ -47,3 +50,18 @@
     @endsection
 
 </x-publico-layout>
+{{-- 
+<x-publico-layout>
+
+@section('content')
+    <div class="container mx-auto p-4">
+        <h2 class="text-2xl font-bold mb-4">Resultados de la búsqueda</h2>
+
+        @forelse ($comunicados as $comunicado)
+            <x-comunicado :comunicado=$comunicado></x-comunicado>
+        @empty
+            <p>No se encontraron resultados.</p>
+        @endforelse
+    </div>
+
+</x-publico-layout> --}}

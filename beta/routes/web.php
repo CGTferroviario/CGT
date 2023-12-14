@@ -28,6 +28,9 @@ Route::get('/intranet', function () {
     return view('intranet', compact('sliders'));
     // Route::get('/', [PaginaController::class, 'intranet'])->name('intranet');
 });
+
+
+
 Route::get('/adif', function () {
     return view('adif')->name('adif');
 });
@@ -100,6 +103,7 @@ Route::get('/biblioteca', function () {
 });
 Route::prefix('biblioteca')->group(function () {
     Route::get('/comunicados', [ComunicadoController::class, 'bibliotecaComunicados'])->name('biblioteca.comunicados');
+    Route::get('/comunicados/buscar', [ComunicadoController::class, 'buscar'])->name('biblioteca.comunicados.buscar');
     Route::get('/noticias', [NoticiaController::class, 'bibliotecaNoticias'])->name('biblioteca.noticias');
 
     Route::controller(PaginaController::class)->name('biblioteca.')->group(function () {

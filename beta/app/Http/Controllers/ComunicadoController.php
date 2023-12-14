@@ -8,6 +8,7 @@ use App\Models\Categoria;
 use App\Models\Comunicado;
 use App\Models\Empresa;
 use App\Models\Etiqueta;
+use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -31,6 +32,41 @@ class ComunicadoController extends Controller
             'categorias' => Categoria::orderBy('id', 'asc')->get(),
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
         ]);
+    }
+    public function buscar(Request $request)
+    {
+        $comunicados = Comunicado::orderBy('updated_at', 'desc')->paginate(12);
+        $empresas = Empresa::orderBy('id', 'asc')->get();
+        $categorias = Categoria::orderBy('id', 'asc')->get();
+        $etiquetas = Etiqueta::orderBy('id', 'asc')->get();
+        $termino = $request->input('termino');
+        $fecha = $request->input('fecha');
+        $categoria = $request->input('categorias');
+        $empresa = $request->input('empresas');
+        $etiquetasInput = $request->input('etiquetasInput');
+
+        $comunicados = Comunicado::where(function ($query) use ($termino) {
+            $query->where('titulo', 'like', "%$termino%")
+                ->orWhere('subtitulo', 'like', "%$termino%")
+                ->orWhere('cuerpo', 'like', "%$termino%");
+        })
+        ->when($fecha, function ($query) use ($fecha) {
+            $query->whereDate('fecha', $fecha);
+        })
+        ->when($categoria, function ($query) use ($categoria) {
+            $query->where('categoria', $categoria);
+        })
+        ->when($empresa, function ($query) use ($empresa) {
+            $query->where('empresa', $empresa);
+        })
+        // ->when($etiquetas, function ($query) use ($etiquetasInput) {
+        //     $query->whereHas('etiquetas', function ($subquery) use ($etiquetasInput) {
+        //         $subquery->whereIn('nombre', $etiquetasInput);
+        //     });
+        // })
+        ->paginate(12);
+        // dd($comunicados);
+        return view('biblioteca.comunicados.resultados', compact('comunicados', 'empresas', 'categorias', 'etiquetas'));
     }
     public function create()
     {

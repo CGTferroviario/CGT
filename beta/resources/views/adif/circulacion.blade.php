@@ -58,6 +58,9 @@
             </div>
         </div> --}}
         <x-busqueda></x-busqueda>
+
+        
+
         
         <div class="grid sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">
             <div class="col-span-4 paginacion">{{ $documentos->links('vendor.pagination.tailwind') }}</div>
