@@ -9,7 +9,7 @@
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:text-sm lg:text-base xl:text-lg" id="navbar-sticky">
             <ul
                 class="flex flex-col p-4 md:p-0 mt-4 ml-1 font-medium border border-gray-700 rounded-lg md:flex-row md:space-x-1 md:mt-0 md:border-0">
-                <li class="group">
+                <li class="group {{ Route::currentRouteNamed('adif.*') ? 'border-red-500' : 'border-transparent' }} border-b-2 hover:border-transparent">
                     <button id="dropdownAdifLink" data-dropdown-toggle="dropdownAdif" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">ADIF <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownAdif" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
@@ -42,7 +42,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="group">
+                <li class="group {{ Route::currentRouteNamed('renfe.*') ? 'border-red-500' : 'border-transparent' }} border-b-2 hover:border-transparent">
                     <button id="dropdownRenfeLink" data-dropdown-toggle="dropdownRenfe" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">RENFE <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownRenfe" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
@@ -76,7 +76,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="group">
+                <li class="group {{ Route::currentRouteNamed('empresasaux.*') ? 'border-red-500' : 'border-transparent' }} border-b-2 hover:border-transparent">
                     <button id="dropdownEmpAuxLink" data-dropdown-toggle="dropdownEmpAux" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">EMP. AUX. <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownEmpAux" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
@@ -87,7 +87,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="group">
+                <li class="group {{ Route::currentRouteNamed('juridica.*') ? 'border-red-500' : 'border-transparent' }} border-b-2 hover:border-transparent">
                     <button id="dropdownJuridicaLink" data-dropdown-toggle="dropdownJuridica" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">JURIDICA <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownJuridica" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
@@ -100,7 +100,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="group">
+                <li class="group {{ Route::currentRouteNamed('biblioteca.*') ? 'border-red-500' : 'border-transparent' }} border-b-2 hover:border-transparent">
                     <button id="dropdownBibliotecaLink" data-dropdown-toggle="dropdownBiblioteca" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">BIBLIOTECA <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownBiblioteca" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
@@ -115,7 +115,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="group">
+                <li class="group {{ Route::currentRouteNamed('recursos.*') ? 'border-red-500' : 'border-transparent' }} border-b-2 hover:border-transparent">
                     <button id="dropdownRecursosLink" data-dropdown-toggle="dropdownRecursos" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">RECURSOS <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownRecursos" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
@@ -129,7 +129,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="group">
+                <li class="group {{ Route::currentRouteNamed('equipo.*') ? 'border-red-500' : 'border-transparent' }} border-b-2 hover:border-transparent">
                     <button id="dropdownEquipoLink" data-dropdown-toggle="dropdownEquipo" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-gray-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">SFF-CGT <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownEquipo" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-gray-600">
