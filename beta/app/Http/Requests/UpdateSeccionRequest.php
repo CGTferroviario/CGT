@@ -11,7 +11,7 @@ class UpdateSeccionRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,16 @@ class UpdateSeccionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nombre' => ['required'],
+            'email' => ['required'],
+            'email2' => ['nullable'],
+            'telefono' => ['required'],
+            'direccion' => ['nullable'],
+            'descripcion' => ['nullable'],
+            'responsable' => ['required'],
+            'ccaa_id' => ['required', 'exists:ccaas,id'],
+            'provincia_id' => ['required', 'exists:provincias,id'],
+            'municipio_id' => ['required', 'exists:municipios,id'],        
         ];
     }
 }

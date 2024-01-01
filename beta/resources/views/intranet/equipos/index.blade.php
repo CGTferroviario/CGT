@@ -1,7 +1,7 @@
 <x-privado-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-900 leading-tight">
+        <h2 class="font-semibold text-xl text-zinc-900 leading-tight">
             {{ __('Equipo') }}
         </h2>
     </x-slot>
@@ -13,13 +13,13 @@
                     <div class="sm:flex sm:items-center sm:justify-start">
                         <div class="flex items-center gap-x-3 align-middle">
                             <button
-                                class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-100 transition-colors duration-200 bg-oscuro border rounded-lg gap-x-2 sm:w-auto hover:bg-green-500 hover:text-gray-100"
+                                class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-zinc-100 transition-colors duration-200 bg-oscuro border rounded-lg gap-x-2 sm:w-auto hover:bg-green-500 hover:text-zinc-100"
                                 title="Importar datos desde un archivo .csv">
                                 <i class="lni lni-upload"></i>
                                 <span>Importar CSV</span>
                             </button>
                             <button
-                                class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500"
+                                class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-zinc-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-zinc-900 hover:text-red-500"
                                 title="Añadir una nueva entrada en Equipo">
                                 <i class="lni lni-add-files"></i>
                                 <a href="{{ route('intranet.equipos.create') }}" class="">Añadir Equipo</a>
@@ -29,7 +29,7 @@
                     <div class="sm:flex-row sm:items-center sm:justify-between">
                         <x-mensaje></x-mensaje>
                         <div class="flex items-center gap-x-3">
-                            <h2 class="text-lg font-bold text-gray-800">Equipo Estatal</h2>
+                            <h2 class="text-lg font-bold text-zinc-800">Equipo Estatal</h2>
                         </div>
                     </div>
                     <div class="sm:flex sm:items-center sm:justify-end">
@@ -38,8 +38,8 @@
                 </div>
                 <div class="container">
                     <div class="relative overflow-x-auto">
-                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <table class="w-full text-sm text-left rtl:text-right text-zinc-500 dark:text-zinc-400">
+                            <thead class="text-xs text-zinc-700 uppercase bg-zinc-50 dark:bg-zinc-700 dark:text-zinc-400">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         Product name
@@ -56,8 +56,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <tr class="bg-white border-b dark:bg-zinc-800 dark:border-zinc-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-zinc-900 whitespace-nowrap dark:text-white">
                                         Apple MacBook Pro 17"
                                     </th>
                                     <td class="px-6 py-4">
@@ -70,8 +70,8 @@
                                         $2999
                                     </td>
                                 </tr>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <tr class="bg-white border-b dark:bg-zinc-800 dark:border-zinc-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-zinc-900 whitespace-nowrap dark:text-white">
                                         Microsoft Surface Pro
                                     </th>
                                     <td class="px-6 py-4">
@@ -84,8 +84,8 @@
                                         $1999
                                     </td>
                                 </tr>
-                                <tr class="bg-white dark:bg-gray-800">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <tr class="bg-white dark:bg-zinc-800">
+                                    <th scope="row" class="px-6 py-4 font-medium text-zinc-900 whitespace-nowrap dark:text-white">
                                         Magic Mouse 2
                                     </th>
                                     <td class="px-6 py-4">
@@ -107,8 +107,8 @@
                     <div class="bg-black p-2 text-white bordeRojo rounded-t-lg">
                         <h1 class="text-center font-semibold">SECRETARIADO PERMANENTE (S.P.)</h1>
                     </div>
-                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <table class="w-full text-sm text-left rtl:text-right text-zinc-500 dark:text-zinc-400">
+                        <thead class="text-xs text-zinc-700 uppercase bg-zinc-50 dark:bg-zinc-700 dark:text-zinc-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">Acciones</th>
                                 <th scope="col" class="px-6 py-3">Cargo</th>

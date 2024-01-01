@@ -10,9 +10,11 @@ use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\EquipoController;
 use App\Http\Controllers\EtiquetaController;
+use App\Http\Controllers\MunicipioController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\PaginaController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProvinciaController;
 use App\Http\Controllers\SeccionController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
@@ -28,6 +30,9 @@ Route::get('/intranet', function () {
     return view('intranet', compact('sliders'));
     // Route::get('/', [PaginaController::class, 'intranet'])->name('intranet');
 });
+
+Route::get('/intranet/provincias/{ccaa}', [ProvinciaController::class, 'index']);
+Route::get('/intranet/municipios/{provincia}', [MunicipioController::class, 'index']);
 
 
 
@@ -156,7 +161,7 @@ Route::middleware('auth')->name('intranet.')->prefix('intranet')->group(function
     Route::resource('/usuarios', UserController::class);
     Route::resource('/documentos', DocumentoController::class);
     Route::resource('/sliders', SliderController::class);
-    Route::resource('/secciones', SeccionController::class);
+    Route::resource('/seccions', SeccionController::class);
     Route::resource('/afiliados', AfiliadoController::class);
 });
 

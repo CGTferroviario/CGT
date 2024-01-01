@@ -17,25 +17,6 @@ new DataTable('#equipoSP', {
 });
 // Fin Datatables
 
-// Select etiquetas multiples formulario
-var expanded = false;
-
-function showCheckboxes() {
-    var checkboxes = document.getElementById("checkboxes");
-    checkboxes.style.display = expanded ? "none" : "block";
-    expanded = !expanded;
-
-}
-document.addEventListener('click', function(event) {
-    var checkboxes = document.getElementById("checkboxes");
-    var selectBox = document.querySelector(".selectBox");
-    if (!checkboxes.contains(event.target) && !selectBox.contains(event.target) && expanded) {
-        checkboxes.style.display = "none";
-        expanded = false;
-    }
-});
-// Final etiquetas
-
 // Convertir los Toggle Switch del valor on/off a 1/0
 document.getElementById('activa_toggle').addEventListener('change', function() {
     document.getElementById('activa').value = this.checked ? 1 : 0;

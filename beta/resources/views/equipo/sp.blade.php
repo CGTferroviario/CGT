@@ -9,7 +9,7 @@
             <br>
                 <div class="grid xl:grid-cols-2 lg:grid-cols-1 gap-8">
                     @foreach ($tipos as $tipo)
-                        <table class="w-full text-sm rounded-t-lg text-left rtl:text-right text-gray-200">
+                        <table class="w-full text-sm rounded-t-lg text-left rtl:text-right text-zinc-200">
                             <thead class="text-lg rounded-t-lg uppercase bg-red-500 text-black text-center">
                                 <tr class="rounded-t-lg">
                                     <th colspan="3" class="p-2 rounded-t-lg">{{ $tipo }}</th>

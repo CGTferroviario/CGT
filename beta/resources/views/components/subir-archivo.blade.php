@@ -1,7 +1,7 @@
 {{-- <div class="bg-white p7 rounded w-9/12 mx-auto">
-    <div x-data="dataFileDnD()" class="relative flex flex-col p-4 text-gray-400 border border-gray-200 rounded">
+    <div x-data="dataFileDnD()" class="relative flex flex-col p-4 text-zinc-400 border border-zinc-200 rounded">
         <div x-ref="dnd"
-            class="relative flex flex-col text-gray-400 border border-gray-200 border-dashed rounded cursor-pointer">
+            class="relative flex flex-col text-zinc-400 border border-zinc-200 border-dashed rounded cursor-pointer">
             <input accept="*" type="file" multiple
                 class="absolute inset-0 z-50 w-full h-full p-0 m-0 outline-none opacity-0 cursor-pointer"
                 @change="addFiles($event)"
@@ -24,25 +24,25 @@
             <div class="grid grid-cols-2 gap-4 mt-4 md:grid-cols-6" @drop.prevent="drop($event)"
                 @dragover.prevent="$event.dataTransfer.dropEffect = 'move'">
                 <template x-for="(_, index) in Array.from({ length: files.length })">
-                    <div class="relative flex flex-col items-center overflow-hidden text-center bg-gray-100 border rounded cursor-move select-none"
+                    <div class="relative flex flex-col items-center overflow-hidden text-center bg-zinc-100 border rounded cursor-move select-none"
                         style="padding-top: 100%;" @dragstart="dragstart($event)" @dragend="fileDragging = null"
                         :class="{'border-blue-600': fileDragging == index}" draggable="true" :data-index="index">
                         <button class="absolute top-0 right-0 z-50 p-1 bg-white rounded-bl focus:outline-none" type="button" @click="remove(index)">
-                            <svg class="w-4 h-4 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            <svg class="w-4 h-4 text-zinc-700" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                             </svg>
                         </button>
                         <template x-if="files[index].type.includes('audio/')">
-                            <svg class="absolute w-12 h-12 text-gray-400 transform top-1/2 -translate-y-2/3"
+                            <svg class="absolute w-12 h-12 text-zinc-400 transform top-1/2 -translate-y-2/3"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                             </svg>
                         </template>
                         <template x-if="files[index].type.includes('application/') || files[index].type === ''">
-                            <svg class="absolute w-12 h-12 text-gray-400 transform top-1/2 -translate-y-2/3"
+                            <svg class="absolute w-12 h-12 text-zinc-400 transform top-1/2 -translate-y-2/3"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -60,9 +60,9 @@
                         </template>
     
                         <div class="absolute bottom-0 left-0 right-0 flex flex-col p-2 text-xs bg-white bg-opacity-50">
-                            <span class="w-full font-bold text-gray-900 truncate"
+                            <span class="w-full font-bold text-zinc-900 truncate"
                                 x-text="files[index].name">Loading</span>
-                            <span class="text-xs text-gray-900" x-text="humanFileSize(files[index].size)">...</span>
+                            <span class="text-xs text-zinc-900" x-text="humanFileSize(files[index].size)">...</span>
                         </div>
     
                         <div class="absolute inset-0 z-40 transition-colors duration-300" @dragenter="dragenter($event)"
@@ -143,7 +143,7 @@ function dataFileDnD() {
 </script> --}}
 {{-- 
 <!-- component -->
-<div class="bg-gray-500 sm:px-8 md:px-16 sm:py-8">
+<div class="bg-zinc-500 sm:px-8 md:px-16 sm:py-8">
     <main class="container mx-auto max-w-screen-lg h-full">
       <!-- file upload modal -->
       <article aria-label="File Upload Modal" class="relative h-full flex flex-col bg-white shadow-xl rounded-md" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" ondragleave="dragLeaveHandler(event);" ondragenter="dragEnterHandler(event);">
@@ -159,24 +159,24 @@ function dataFileDnD() {
 
         <!-- scroll area -->
         <section class="h-full overflow-auto p-8 w-full flex flex-col">
-          <header class="border-dashed border-2 border-gray-400 py-12 flex flex-col justify-center items-center">
-            <p class="mb-3 font-semibold text-gray-900 flex flex-wrap justify-center">
+          <header class="border-dashed border-2 border-zinc-400 py-12 flex flex-col justify-center items-center">
+            <p class="mb-3 font-semibold text-zinc-900 flex flex-wrap justify-center">
               <span>Drag and drop your</span>&nbsp;<span>files anywhere or</span>
             </p>
             <input id="hidden-input" type="file" multiple class="hidden" />
-            <button id="button" class="mt-2 rounded-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
+            <button id="button" class="mt-2 rounded-sm px-3 py-1 bg-zinc-200 hover:bg-zinc-300 focus:shadow-outline focus:outline-none">
               Upload a file
             </button>
           </header>
 
-          <h1 class="pt-8 pb-3 font-semibold sm:text-lg text-gray-900">
+          <h1 class="pt-8 pb-3 font-semibold sm:text-lg text-zinc-900">
             To Upload
           </h1>
 
           <ul id="gallery" class="flex flex-1 flex-wrap -m-1">
             <li id="empty" class="h-full w-full text-center flex flex-col justify-center items-center">
               <img class="mx-auto w-32" src="https://user-images.githubusercontent.com/507615/54591670-ac0a0180-4a65-11e9-846c-e55ffce0fe7b.png" alt="no data" />
-              <span class="text-small text-gray-500">No files selected</span>
+              <span class="text-small text-zinc-500">No files selected</span>
             </li>
           </ul>
         </section>
@@ -186,7 +186,7 @@ function dataFileDnD() {
           <button id="submit" class="rounded-sm px-3 py-1 bg-blue-700 hover:bg-blue-500 text-white focus:shadow-outline focus:outline-none">
             Upload now
           </button>
-          <button id="cancel" class="ml-3 rounded-sm px-3 py-1 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
+          <button id="cancel" class="ml-3 rounded-sm px-3 py-1 hover:bg-zinc-300 focus:shadow-outline focus:outline-none">
             Cancel
           </button>
         </footer>
@@ -197,7 +197,7 @@ function dataFileDnD() {
   <!-- using two similar templates for simplicity in js code -->
   <template id="file-template">
     <li class="block p-1 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-1/8 h-24">
-      <article tabindex="0" class="group w-full h-full rounded-md focus:outline-none focus:shadow-outline elative bg-gray-100 cursor-pointer relative shadow-sm">
+      <article tabindex="0" class="group w-full h-full rounded-md focus:outline-none focus:shadow-outline elative bg-zinc-100 cursor-pointer relative shadow-sm">
         <img alt="upload preview" class="img-preview hidden w-full h-full sticky object-cover rounded-md bg-fixed" />
 
         <section class="flex flex-col rounded-md text-xs break-words w-full h-full z-20 absolute top-0 py-2 px-3">
@@ -210,8 +210,8 @@ function dataFileDnD() {
                 </svg>
               </i>
             </span>
-            <p class="p-1 size text-xs text-gray-700"></p>
-            <button class="delete ml-auto focus:outline-none hover:bg-gray-300 p-1 rounded-md text-gray-800">
+            <p class="p-1 size text-xs text-zinc-700"></p>
+            <button class="delete ml-auto focus:outline-none hover:bg-zinc-300 p-1 rounded-md text-zinc-800">
               <svg class="pointer-events-none fill-current w-4 h-4 ml-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path class="pointer-events-none" d="M3 6l3 18h12l3-18h-18zm19-4v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.316c0 .901.73 2 1.631 2h5.711z" />
               </svg>
@@ -224,7 +224,7 @@ function dataFileDnD() {
 
   <template id="image-template">
     <li class="block p-1 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-1/8 h-24">
-      <article tabindex="0" class="group hasImage w-full h-full rounded-md focus:outline-none focus:shadow-outline bg-gray-100 cursor-pointer relative text-transparent hover:text-white shadow-sm">
+      <article tabindex="0" class="group hasImage w-full h-full rounded-md focus:outline-none focus:shadow-outline bg-zinc-100 cursor-pointer relative text-transparent hover:text-white shadow-sm">
         <img alt="upload preview" class="img-preview w-full h-full sticky object-cover rounded-md bg-fixed" />
 
         <section class="flex flex-col rounded-md text-xs break-words w-full h-full z-20 absolute top-0 py-2 px-3">
@@ -239,7 +239,7 @@ function dataFileDnD() {
             </span>
 
             <p class="p-1 size text-xs"></p>
-            <button class="delete ml-auto focus:outline-none hover:bg-gray-300 p-1 rounded-md">
+            <button class="delete ml-auto focus:outline-none hover:bg-zinc-300 p-1 rounded-md">
               <svg class="pointer-events-none fill-current w-4 h-4 ml-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path class="pointer-events-none" d="M3 6l3 18h12l3-18h-18zm19-4v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.316c0 .901.73 2 1.631 2h5.711z" />
               </svg>
@@ -409,7 +409,7 @@ color: #2b6cb0;
 
       <!-- Documents uploads form and instructions -->
       <section class="mt-5 px-3 flex gap-6">
-        <div class="flex-1 flex flex-col items-center p-3 border-2 border-dotted border-gray-300 rounded-lg drag-area">
+        <div class="flex-1 flex flex-col items-center p-3 border-2 border-dotted border-zinc-300 rounded-lg drag-area">
         <i class="fa-sharp fa-solid fa-cloud-arrow-up text-6xl text-violet-400"></i>
           <header class="mt-6">
             <span class="drag-file">Drag files here to upload </span> or
@@ -418,7 +418,7 @@ color: #2b6cb0;
             </button>
             from your device
           </header>
-          <p class="mt-12 text-gray-400 text-sm">
+          <p class="mt-12 text-zinc-400 text-sm">
             JPG, PNG or PDF only, maximum file size-5MB
           </p>
           <input type="file" class="file-input" hidden />
@@ -439,7 +439,7 @@ color: #2b6cb0;
       <ul id="document-images" class="mt-6 px-3 bg-slate-100"></ul>
     </div>
     <div class="w-3/4 md:w-1/2 flex justify-between mt-8">
-      <button class="px-6 md:px-14 py-3 rounded-sm bg-gray-600 text-white document-prev-button" disabled>
+      <button class="px-6 md:px-14 py-3 rounded-sm bg-zinc-600 text-white document-prev-button" disabled>
         BACK
       </button>
       <button class="px-6 md:px-14 py-3 rounded-sm bg-violet-600 text-white document-next-button">

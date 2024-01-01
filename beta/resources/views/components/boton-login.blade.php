@@ -30,14 +30,14 @@
                 <!-- Remember Me -->
                 <div class="inline-flex mt-4">
                     <label for="remember" class="inline-flex items-center">
-                        <input id="remember" type="checkbox" class="rounded bg-gray-900 border-gray-700 text-red-600 shadow-sm focus:ring-red-500 focus:ring-offset-gray-800" name="remember">
+                        <input id="remember" type="checkbox" class="rounded bg-zinc-900 border-zinc-700 text-red-600 shadow-sm focus:ring-red-500 focus:ring-offset-zinc-800" name="remember">
                         <span class="ml-2 text-sm font-medium text-red-500">{{ __('Recuérdame') }}</span>
                     </label>
                 </div>
 
                 <div class="inline-flex items-center justify-end mt-4">
                     @if (Route::has('password.request'))
-                        <a class="underline text-sm text-gray-400 hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 focus:ring-offset-gray-800" href="{{ route('password.request') }}">
+                        <a class="underline text-sm text-zinc-400 hover:text-zinc-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 focus:ring-offset-zinc-800" href="{{ route('password.request') }}">
                             {{ __('¿Olvidaste tu contraseña?') }}
                         </a>
                     @endif
@@ -56,20 +56,20 @@
                 <div>
                     <label for="email" class="block mb-2 text-sm font-medium text-white">Email</label>
                     <input type="email" name="email" id="email"
-                        class="border text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 bg-gray-600 border-red-500 placeholder-gray-400 text-white"
+                        class="border text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 bg-zinc-600 border-red-500 placeholder-zinc-400 text-white"
                         placeholder="usuario@email.com" required>
                 </div>
                 <div>
                     <label for="password" class="block mb-2 text-sm font-medium text-white">Contraseña</label>
                     <input type="password" name="password" id="password" placeholder="••••••••"
-                        class="border text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 bg-gray-600 border-red-500 placeholder-gray-400 text-white"
+                        class="border text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 bg-zinc-600 border-red-500 placeholder-zinc-400 text-white"
                         required>
                 </div>
                 <div class="flex items-start">
                     <div class="flex items-start">
                         <div class="flex items-center h-5">
                             <input id="remember" type="checkbox" value=""
-                                class="w-4 h-4 border border-gray-300 rounded bg-red-500 text-red-500 focus:ring-1 focus:ring-red-500 ring-offset-gray-800 focus:ring-offset-gray-800"
+                                class="w-4 h-4 border border-zinc-300 rounded bg-red-500 text-red-500 focus:ring-1 focus:ring-red-500 ring-offset-zinc-800 focus:ring-offset-zinc-800"
                                 required>
                         </div>
                         <label for="remember" class="ml-2 text-sm font-medium text-red-500">Recuérdame</label>
@@ -78,7 +78,7 @@
                 </div>
                 <button type="submit"
                     class="w-full text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Acceder</button>
-                <div class="text-sm font-medium text-gray-500">
+                <div class="text-sm font-medium text-zinc-500">
                     ¿No estás registrado? <a href="#" class="text-red-700 hover:underline">Crear Usuario</a>
                 </div>
             </form>

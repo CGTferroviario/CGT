@@ -4,7 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreSeccionRequest;
 use App\Http\Requests\UpdateSeccionRequest;
+use App\Models\Categoria;
+use App\Models\Ccaa;
+use App\Models\Empresa;
+use App\Models\Etiqueta;
+use App\Models\Municipio;
+use App\Models\Provincia;
 use App\Models\Seccion;
+use Illuminate\Support\Facades\Log;
 
 class SeccionController extends Controller
 {
@@ -13,7 +20,7 @@ class SeccionController extends Controller
      */
     public function index()
     {
-        return view('intranet.secciones.index', [
+        return view('intranet.seccions.index', [
             'seccions' => Seccion::orderBy('id', 'asc')->get()
         ]);
     }
@@ -23,20 +30,34 @@ class SeccionController extends Controller
      */
     public function create()
     {
-        //
+        return view('intranet.seccions.create', [
+            'municipios' => Municipio::orderBy('id', 'desc')->get(),
+            'provincias' => Provincia::orderBy('id', 'asc')->get(),
+            'ccaas' => Ccaa::orderBy('id', 'asc')->get(),
+            'seccions' => Seccion::orderBy('id', 'asc')->get()
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreSeccionRequest $request)
     {
-        //
+        // dd($request);
+        $seccion = Seccion::create(array_merge($request->all(), [
+            'nombre' => $request->nombre,
+            'email' => $request->email,
+            'email2' => $request->email2,
+            'telefono' => $request->telefono,
+            'direccion' => $request->direccion,
+            'descripcion' => $request->descripcion,
+            'responsable' => $request->responsable,
+            'ccaa_id' => $request->ccaa_id,
+            'provincia_id' => $request->provincia_id,
+            'municipio_id' => $request->municipio_id,
+        ]));
+
+        return redirect(route('intranet.seccions.index'))->with('message', 'Sección Creada Correctamente');
+
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Seccion $seccion)
     {
         //
@@ -47,7 +68,12 @@ class SeccionController extends Controller
      */
     public function edit(Seccion $seccion)
     {
-        //
+        return view('intranet.seccions.edit', [
+            'seccions' => Seccion::orderBy('id', 'desc')->get(),
+            'municipios' => Municipio::orderBy('id', 'desc')->get(),
+            'provincias' => Provincia::orderBy('id', 'asc')->get(),
+            'ccaas' => Ccaa::orderBy('id', 'asc')->get(),
+        ], compact('seccion'));
     }
 
     /**
@@ -55,7 +81,25 @@ class SeccionController extends Controller
      */
     public function update(UpdateSeccionRequest $request, Seccion $seccion)
     {
-        //
+        // dd($seccion);
+        // Actualizar el comunicado
+        $seccion->update($request->validated());
+
+        // Actualizar la ccaa relacionada
+        $ccaa = Ccaa::find($request->ccaa_id);
+        $seccion->ccaa()->associate($ccaa);
+
+        // Actualizar la provincia relacionada
+        $provincia = Provincia::find($request->provincia_id);
+        $seccion->provincia()->associate($provincia);
+
+        // Actualizar la provincia relacionada
+        $municipio = Municipio::find($request->municpio_id);
+        $seccion->municipio()->associate($municipio);
+        
+        $seccion->save();
+
+        return to_route('intranet.seccions.index')->with('message', 'Sección Actualizada Correctamente');
     }
 
     /**
@@ -63,6 +107,8 @@ class SeccionController extends Controller
      */
     public function destroy(Seccion $seccion)
     {
-        //
+        $seccion->delete();
+
+        return to_route('intranet.seccions.index')->with('message', 'Sección Eliminada.');
     }
 }

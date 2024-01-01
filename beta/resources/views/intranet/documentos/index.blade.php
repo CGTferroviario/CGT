@@ -1,7 +1,7 @@
 <x-privado-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-900 leading-tight">
+        <h2 class="font-semibold text-xl text-zinc-900 leading-tight">
             {{ __('Documentos') }}
         </h2>
     </x-slot>
@@ -18,7 +18,7 @@
                         <button class="px-3 py-2 text-xs font-medium text-black transition-colors duration-200 bg-red-500 sm:text-sm">
                             Todos
                         </button>
-                        <button class="px-3 py-2 text-xs font-medium bg-oscuro transition-colors duration-200 sm:text-sm hover:bg-red-500 hover:text-gray-900">
+                        <button class="px-3 py-2 text-xs font-medium bg-oscuro transition-colors duration-200 sm:text-sm hover:bg-red-500 hover:text-zinc-900">
                             Por empresa
                         </button>
                         <button class="px-3 py-2 text-xs font-medium bg-oscuro transition-colors duration-200 sm:text-sm hover:bg-red-500 hover:text-black">
@@ -28,19 +28,19 @@
                 </div>
                 <div class="sm:flex-row sm:items-center sm:justify-between">
                     <div class="flex items-center gap-x-3">
-                        <h2 class="text-lg font-bold text-gray-800">Documentos</h2>
+                        <h2 class="text-lg font-bold text-zinc-800">Documentos</h2>
                         <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $documentos->count() }}</span>
-                        <p class="mt-1 text-sm text-gray-500">Estos son los documentos que llevamos este año.</p>
+                        <p class="mt-1 text-sm text-zinc-500">Estos son los documentos que llevamos este año.</p>
                     </div>
                     
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-end">
                     <div class="flex items-center gap-x-3 align-middle">
-                        <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-100 transition-colors duration-200 bg-oscuro border rounded-lg gap-x-2 sm:w-auto hover:bg-green-500 hover:text-gray-100" title="Importar datos desde un archivo .csv">
+                        <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-zinc-100 transition-colors duration-200 bg-oscuro border rounded-lg gap-x-2 sm:w-auto hover:bg-green-500 hover:text-zinc-100" title="Importar datos desde un archivo .csv">
                             <i class="lni lni-upload"></i>
                             <span>Importar CSV</span>
                         </button>
-                        <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-gray-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-gray-900 hover:text-red-500" title="Añadir un nuevo documento">
+                        <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-zinc-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-zinc-900 hover:text-red-500" title="Añadir un nuevo documento">
                             <i class="lni lni-add-files"></i>
                             <a href="{{ route('intranet.documentos.create') }}" class="">Añadir documento</a>
                         </button>

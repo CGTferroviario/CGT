@@ -3,30 +3,36 @@
     @section('contenido')
         <h1 class="m-0 py-3 text-center bg-rojoBrillante font-bold">COMUNICADOS</h1>
         <div class="fondo comunicados">
-            <div class="container mx-auto p-4">
-                <form action="{{ route('biblioteca.comunicados.buscar') }}" method="GET">
-                    <div class="mb-4">
-                        <label for="termino" class="block text-gray-700 text-sm font-bold mb-2">Término de búsqueda:</label>
-                        <input type="text" name="termino" id="termino" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    </div>
+            <div class="grid grid-cols-2 mx-auto p-8">
+                <div></div>
+                <div>
+                    <form action="{{ route('biblioteca.comunicados.buscar') }}" method="GET">
+                        <div class="grid grid-cols-4 gap-4">
+                            <div class="col-span-3 mb-4">
+                                <label for="termino" class="block text-zinc-700 text-sm font-bold mb-2">Término de búsqueda:</label>
+                                <input type="text" name="termino" id="termino" class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline">
+                            </div>
+                            <div class="mb-4 flex flex-col relative">
+                                <button type="submit" class="w-full absolute bottom-0 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                                    <i class="lni lni-search text-lg"></i>Buscar
+                                </button>
+                            </div>
+                        </div>
 
-                    <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
-                        <x-select-empresa :empresas=$empresas></x-select-empresa>
+                        <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
+                            <x-forms.select-empresa :empresas=$empresas></x-forms.select-empresa>
 
-                        <x-select-categoria :categorias=$categorias></x-select-categoria>
+                            <x-forms.select-categoria :categorias=$categorias></x-forms.select-categoria>
+                            
+                            <x-forms.select-etiquetas :etiquetas=$etiquetas></x-forms.select-etiquetas>
+
+                            <x-input-fecha></x-input-fecha>
+                        </div>
                         
-                        <x-select-etiquetas :etiquetas=$etiquetas></x-select-etiquetas>
 
-                        <x-input-fecha></x-input-fecha>
-                    </div>
-                    
-
-                    <div class="mb-4">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                            Buscar
-                        </button>
-                    </div>
-                </form>
+                        
+                    </form>
+                </div>
             </div>
             
             <div

@@ -7,8 +7,8 @@
             <div class="container mx-auto p-4">
                 <form action="{{ route('biblioteca.comunicados.buscar') }}" method="GET">
                     <div class="mb-4">
-                        <label for="termino" class="block text-gray-700 text-sm font-bold mb-2">Término de búsqueda:</label>
-                        <input type="text" name="termino" id="termino" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <label for="termino" class="block text-zinc-700 text-sm font-bold mb-2">Término de búsqueda:</label>
+                        <input type="text" name="termino" id="termino" class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline">
                     </div>
 
                     <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">

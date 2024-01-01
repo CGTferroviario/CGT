@@ -31,7 +31,6 @@ class SeccionSeeder extends Seeder
                     "direccion" => $data['3'],
                     "descripcion" => $data['4'],
                     "telefono" => $data['5'],
-                    "password" => $data['6'],
                 ]);
             }
             $firstline = false;

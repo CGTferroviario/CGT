@@ -11,7 +11,7 @@ class StoreSeccionRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,16 @@ class StoreSeccionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nombre' => 'required',
+            'email' => 'nullable',
+            'email2' => 'nullable',
+            'telefono' => 'required',
+            'direccion' => 'required',
+            'descripcion' => 'nullable',
+            'responsable' => 'required',
+            'ccaa_id' => 'required',
+            'provincia_id' => 'required',
+            'municipio_id' => 'required',
         ];
     }
 }

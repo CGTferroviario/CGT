@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Provincia extends Model
 {
     use HasFactory;
+
+    public function municipios()
+    {
+        return $this->hasMany(Municipio::class);
+    }
+
+    public function ccaa()
+    {
+        return $this->belongsTo(Ccaa::class);
+    }
 }

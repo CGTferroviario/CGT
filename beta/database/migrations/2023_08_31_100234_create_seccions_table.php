@@ -18,10 +18,13 @@ return new class extends Migration
             $table->string('direccion');
             $table->string('descripcion');
             $table->string('telefono');
-            $table->string('password');
             $table->string('responsable')->nullable();
-            $table->string('ccaa_id')->nullable();
-            $table->string('provincia_id')->nullable();
+            $table->unsignedBigInteger('ccaa_id')->nullable();
+            $table->unsignedBigInteger('provincia_id')->nullable();
+            $table->unsignedBigInteger('municipio_id')->nullable();
+            $table->foreign('ccaa_id')->references('id')->on('ccaas')->onDelete('cascade');
+            $table->foreign('provincia_id')->references('id')->on('provincias')->onDelete('cascade');
+            $table->foreign('municipio_id')->references('id')->on('municipios')->onDelete('cascade');
             $table->timestamp('ult_login')->nullable();
             $table->timestamp('ult_logout')->nullable();
             $table->rememberToken();

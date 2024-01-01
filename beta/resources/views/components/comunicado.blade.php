@@ -10,7 +10,9 @@
     </div>
     
     <div class="bg-white py-2.5 px-4 hover:bg-blue-light h-full">
-        <p class="text-black text-justify">{!! nl2br(e($comunicado->cuerpo))!!}</p>
+        {{-- <p class="text-black text-justify">{!! nl2br(e($comunicado->cuerpo))!!}</p> --}}
+        <p class="text-black text-justify">{!! ($comunicado->cuerpo) !!}</p>
+
     </div>
     <div class="p-2 text-sm text-white bg-black">
         @foreach ($comunicado->etiquetas as $etiqueta)
@@ -34,7 +36,7 @@
 
 <div class="flex flex-col max-w-xs rounded overflow-hidden shadow-lg">
     <!-- Header -->
-    <div class="flex-1 bg-gray-200 py-2 px-4">
+    <div class="flex-1 bg-zinc-200 py-2 px-4">
         <!-- Header content goes here -->
         <h1 class="font-bold text-3xl">{{ $comunicado->numero }} . {{ $comunicado->titulo }}</h1>
     </div>
@@ -51,7 +53,7 @@
     </div>
 
     <!-- Footer -->
-    <div class="bg-gray-200 py-2 px-4">
+    <div class="bg-zinc-200 py-2 px-4">
         <!-- Footer content goes here -->
         Card Footer
     </div>
