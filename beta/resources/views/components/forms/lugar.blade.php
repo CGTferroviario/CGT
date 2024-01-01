@@ -3,7 +3,7 @@
         <label for="ccaa_id" class="block mb-2 text-sm font-medium text-white">Comunidad Autónoma</label>
         <select name="ccaa_id" id="ccaa_id" required class="bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-zinc-400">
             @foreach($ccaas as $ccaa)
-                <option value="{{ $ccaa->id }}" {{ old('ccaa_id', $tipo->ccaa_id) == $ccaa->id ? 'selected' : '' }}>
+                <option value="{{ $ccaa->id }}" {{ old('ccaa_id') == $ccaa->id ? 'selected' : '' }}>
                     {{ $ccaa->nombre }}
                 </option>
             @endforeach
@@ -13,22 +13,11 @@
     <div>
         <label for="provincia_id" class="block mb-2 text-sm font-medium text-white">Provincia</label>
         <select name="provincia_id" id="provincia_id" required class="bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-zinc-400">
-            @foreach($provincias as $provincia)
-                <option value="{{ $provincia->id }}" {{ old('provincia_id', $tipo->provincia_id) == $provincia->id ? 'selected' : '' }}>
-                    {{ $provincia->nombre }}
-                </option>
-            @endforeach
-            
         </select>
     </div>
     <div>
         <label for="municipio_id" class="block mb-2 text-sm font-medium text-white">Municipio</label>
         <select name="municipio_id" id="municipio_id" required class="bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 placeholder-zinc-400">
-            @foreach($municipios as $municipio)
-                <option value="{{ $municipio->id }}" {{ old('municipio_id') == $municipio->id ? 'selected' : '' }}>
-                    {{ $municipio->nombre }}
-                </option>
-            @endforeach
         </select>
     </div>
 </div>
