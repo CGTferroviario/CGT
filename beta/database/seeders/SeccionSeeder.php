@@ -22,15 +22,15 @@ class SeccionSeeder extends Seeder
 
         $firstline = true;
         while (($data = fgetcsv($csvFile, 555, ";")) !== false) {
-            // dd($data[1]);
             if (!$firstline) {
                 $equipo = Seccion::create([
-                    "nombre" => $data['0'],
-                    "email" => $data['1'],
-                    "email2" => $data['2'],                    
-                    "direccion" => $data['3'],
-                    "descripcion" => $data['4'],
-                    "telefono" => $data['5'],
+                    "nombre" => mb_convert_encoding($data['0'], 'UTF-8', 'ISO-8859-1'),
+                    "email" => mb_convert_encoding($data['1'], 'UTF-8', 'ISO-8859-1'),
+                    "email2" => mb_convert_encoding($data['2'], 'UTF-8', 'ISO-8859-1'),                  
+                    "direccion" => mb_convert_encoding($data['3'], 'UTF-8', 'ISO-8859-1'),
+                    "descripcion" => mb_convert_encoding($data['4'], 'UTF-8', 'ISO-8859-1'),
+                    "telefono" => mb_convert_encoding($data['5'], 'UTF-8', 'ISO-8859-1'),
+                    "responsable" => mb_convert_encoding($data['6'], 'UTF-8', 'ISO-8859-1'),
                 ]);
             }
             $firstline = false;

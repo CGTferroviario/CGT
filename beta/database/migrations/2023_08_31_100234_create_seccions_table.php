@@ -25,8 +25,6 @@ return new class extends Migration
             $table->foreign('ccaa_id')->references('id')->on('ccaas')->onDelete('cascade');
             $table->foreign('provincia_id')->references('id')->on('provincias')->onDelete('cascade');
             $table->foreign('municipio_id')->references('id')->on('municipios')->onDelete('cascade');
-            $table->timestamp('ult_login')->nullable();
-            $table->timestamp('ult_logout')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
