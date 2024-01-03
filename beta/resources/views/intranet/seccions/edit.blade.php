@@ -1,9 +1,7 @@
 <x-privado-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-zinc-900 leading-tight">
-            {{ __('Añadir Sección') }}
-        </h2>
+        <h2 class="font-semibold text-xl text-zinc-900 leading-tight">Editar Sección</h2>
     </x-slot>
 
     @section('contenido')
@@ -31,7 +29,6 @@
             <div class="grid grid-cols-4 gap-4">
                 <div class="col-span-3 bg-oscuro-7 rounded-lg">
                     <div class="py-8 px-4 mx-auto">
-                        <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Seccion</h2>
                         <form action="{{ route('intranet.seccions.update', $seccion->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
@@ -77,7 +74,7 @@
                                     <x-forms.lugar-edit :tipo=$seccion :ccaas=$ccaas :provincias=$provincias :municipios=$municipios></x-forms.lugar>
                                 </div>
                             </div>
-                            <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-8 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-green-500">Añadir Seccion</button>
+                            <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-8 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-green-500">Editar Sección</button>
                         </form>
                     </div>
                 </div>

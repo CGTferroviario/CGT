@@ -47,8 +47,9 @@
                                 <th>Descripción</th>
                                 <th>Dirección</th>
                                 <th>Teléfono</th>
-                                <th>Ult. Login</th>
-                                <th class="rounded-tr-lg">Ult. Logout</th>
+                                <th>Comunidad</th>
+                                <th>Provincia</th>
+                                <th class="rounded-tr-lg">Municipio</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -60,23 +61,15 @@
                                             class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar usuario">
                                             <i class="lni lni-pencil"></i>
                                         </a>     
-                                        <form method="POST" action="{{ route('intranet.seccions.destroy', $seccion->id) }}" onsubmit="return confirm('¿Deseas eliminar este seccion?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class=" p-1 rounded-md">
-                                                <a x-data="{ tooltip: 'Delete' }" href="#" title="Eliminar Comunicado" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8">
-                                                    <i class="lni lni-trash-can"></i>
-                                                </a>
-                                            </button>
-                                        </form>                            
-                                        {{-- <form method="POST" action="{{ route('intranet.seccions.destroy', $seccion->id) }}" onsubmit="return confirm('¿Deseas eliminar esta sección?');">
+                                        
+                                        <form method="POST" action="{{ route('intranet.seccions.destroy', $seccion->id) }}" onsubmit="return confirm('¿Deseas eliminar esta sección?');">
 
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="p-1 rounded-md text-red-500 hover:bg-red-500 hover:text-white">
                                                 <i class="lni lni-trash-can"></i>
                                             </button>
-                                        </form>                                 --}}
+                                        </form>                    
                                     </div>
                                 </td>
                                 <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-red-300 text-red-900">{{ $seccion->nombre }}</span></td>
@@ -86,18 +79,13 @@
                                 <td>{{ $seccion->descripcion }}</td>
                                 <td>{{ $seccion->direccion }}</td>
                                 <td>{{ $seccion->telefono }}</td>
-                                <td class="text-center">{{ $seccion->last_login }}</td>
-                                <td class="text-center">{{ $seccion->last_logout }}</td>
+                                <td class="text-center">{{ $seccion->ccaa?->nombre }}</td>
+                                <td class="text-center">{{ $seccion->provincia?->nombre }}</td>
+                                <td class="text-center">{{ $seccion->municipio?->nombre }}</td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
-                </div>
-                <div class="sm:flex sm:items-center sm:justify-between">
-                    {{-- <h1>Hola</h1> --}}
-                </div>
-                <div class="sm:flex sm:items-center sm:justify-end">
-                    {{-- <h1>Hola</h1> --}}
                 </div>
             </div>
             

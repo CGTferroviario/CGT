@@ -13,7 +13,7 @@
                 <div class="sm:flex sm:items-center sm:justify-between">
                     <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-zinc-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-zinc-900 hover:text-red-500" title="Volver a Seccion">
                         <i class="lni lni-arrow-left"></i>
-                        <a href="{{ route('intranet.secciones.index') }}" class="">Volver al Índice de secciones</a>
+                        <a href="{{ route('intranet.seccions.index') }}" class="">Volver al Índice de secciones</a>
                     </button>
                 </div>
                 <div class="sm:flex-row sm:items-center sm:justify-between">
@@ -32,7 +32,7 @@
                 <div class="col-span-3 bg-oscuro-7 rounded-lg">
                     <div class="py-8 px-4 mx-auto">
                         <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Seccion</h2>
-                        <form action="{{ route('intranet.secciones.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('intranet.seccions.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @if ($errors->any())
                                 <div class="p-4 mb-2 bordeRojo rounded-lg bg-red-200 text-sm text-red-500">
@@ -73,7 +73,7 @@
                                     <input id="responsable" name="responsable" type="text" value="{{ old('responsable') }}" class="block p-2.5 w-full text-sm rounded-lg border bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:ring-red-500 focus:border-red-500" placeholder="Esta sección se ocupa de..."></input>
                                 </div>
                                 <div class="col-span-3">
-                                    <x-forms.lugar :ccaas=$ccaas :provincias=$provincias :municipios=$municipios></x-forms.lugar>
+                                    <x-forms.lugar :tipo=$seccions :ccaas=$ccaas :provincias=$provincias :municipios=$municipios></x-forms.lugar>
                                 </div>
                             </div>
                             <button type="submit" class="bg-red-500 w-full items-center px-5 py-2.5 mt-8 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-green-500">Añadir Seccion</button>

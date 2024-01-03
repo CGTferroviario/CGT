@@ -21,13 +21,12 @@
         </select>
     </div>
 </div>
-
+{{-- 
 <script>
     
     let ccaaSelect;
     let provinciaSelect;
     let municipioSelect;
-
 
     document.addEventListener('DOMContentLoaded', function() {
         ccaaSelect = document.getElementById('ccaa_id');
@@ -75,4 +74,38 @@
     });
     
     
+</script> --}}
+
+<script>
+
+let ccaaSelect;
+let provinciaSelect;
+let municipioSelect;
+
+document.getElementById('ccaa_id').addEventListener('change', function() {
+    fetch(`/intranet/provincias/${this.value}`)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('provincia_id').innerHTML = data;
+            // Si hay una sola provincia, carga automáticamente los municipios
+            loadMunicipios(provinciaSelect.value);
+        });
+});
+document.getElementById('provincia_id').addEventListener('change', function() {
+    fetch(`/intranet/municipios/${this.value}`)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('municipio_id').innerHTML = data;
+        });
+});
+function loadMunicipios(provinciaId) {
+            // Hacer una solicitud AJAX para obtener los municipios de la provincia
+            fetch(`/intranet/municipios/${provinciaId}`)
+                .then(response => response.text())
+                .then(data => {
+                    // Insertar la respuesta HTML directamente en el select de municipios
+                    municipioSelect.innerHTML = data;
+                });
+        }
+
 </script>
