@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEquipoRequest;
 use App\Http\Requests\UpdateEquipoRequest;
 use App\Models\Equipo;
+use App\Models\Seccion;
 
 class EquipoController extends Controller
 {
@@ -24,18 +25,19 @@ class EquipoController extends Controller
         
 
         // $equipo  = collect($equipo)->unique();
-  
+
         // dd($secretarias);
 
         return view('equipo.sp', compact('tipos', 'equipoSecretariadoPermanente', 'equipoCoordinaciónTerritorial', 'equipoResponsablesEmpresas', 'equipoCoordinaciónADIF', 'equipoCoordinaciónRENFE'));
-        // , [
-            
-        //     // 'equipos' => Equipo::orderBy('tipo', 'desc'),
-        //     // 'sp' => Equipo::get(),
-        //     // 'tipos' => Empresa::orderBy('id', 'asc')->get(),
-        //     // 'categorias' => Categoria::orderBy('id', 'asc')->get(),
-        //     // 'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
-        // ]);        
+
+    }
+
+    public function mapa()
+    {
+        $ccaas = Seccion::select('ccaa_id')->distinct()->pluck('ccaa_id');
+        dd($ccaas);
+
+        return view('equipo.mapa', compact('ccaas'));
     }
     
     public function index()

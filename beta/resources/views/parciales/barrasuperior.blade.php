@@ -105,13 +105,13 @@
                     <!-- Dropdown menu -->
                     <div id="dropdownBiblioteca" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-zinc-600">
                         <ul class="py-2 text-sm text-zinc-400" aria-labelledby="dropdownBibliotecaButton">
-                            <li><a href="{{ url('biblioteca/comunicados') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Comunicados de la CGT">COMUNICADOS</a></li>
-                            <li><a href="{{ url('biblioteca/noticias') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Noticias del Sector Ferroviario de la CGT">NOTICIAS</a></li>
-                            <li><a href="{{ url('biblioteca/seguridad') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Información de Seguridad en la Circulación">SEGURIDAD EN LA CIRCULACIÓN</a></li>
-                            <li><a href="{{ url('biblioteca/archivo') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Archivo de información histórica">ARCHIVO HISTÓRICO</a></li>
-                            <li><a href="{{ url('biblioteca/defensa') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Información sobre la defensa de un ferrocarril público y social">DEFENSA DEL FERROCARRIL</a></li>
-                            <li><a href="{{ url('biblioteca/colegio') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Colegio de Huérfanos Ferroviarios">COLEGIO DE HUÉRFANOS</a></li>
-                            <li><a href="{{ url('biblioteca/via') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Magazine Ferroviario">VIA LIBERTARIA</a></li>
+                            <li><a href="{{ route('biblioteca.comunicados') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Comunicados de la CGT">COMUNICADOS</a></li>
+                            <li><a href="{{ route('biblioteca.noticias') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Noticias del Sector Ferroviario de la CGT">NOTICIAS</a></li>
+                            <li><a href="{{ route('biblioteca.seguridad') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Información de Seguridad en la Circulación">SEGURIDAD EN LA CIRCULACIÓN</a></li>
+                            <li><a href="{{ route('biblioteca.archivo') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Archivo de información histórica">ARCHIVO HISTÓRICO</a></li>
+                            <li><a href="{{ route('biblioteca.defensa') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Información sobre la defensa de un ferrocarril público y social">DEFENSA DEL FERROCARRIL</a></li>
+                            <li><a href="{{ route('biblioteca.colegio') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Colegio de Huérfanos Ferroviarios">COLEGIO DE HUÉRFANOS</a></li>
+                            <li><a href="{{ route('biblioteca.via') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Magazine Ferroviario">VIA LIBERTARIA</a></li>
                         </ul>
                     </div>
                 </li>
@@ -135,8 +135,8 @@
                     <div id="dropdownEquipo" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-zinc-600">
                         <ul class="py-2 text-sm text-zinc-400" aria-labelledby="dropdownEquipoButton">
                             <li><a href="{{ route('equipo.sp') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Información del equipo estatal">EQUIPO ESTATAL</a></li>
-                            <li><a href="{{ url('equipo/mapa') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">MAPA SINDICAL</a></li>
-                            <li><a href="{{ url('equipo/contacto') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">CONTACTO</a></li>
+                            <li><a href="{{ route('equipo.mapa') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">MAPA SINDICAL</a></li>
+                            <li><a href="{{ route('equipo.contacto') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black">CONTACTO</a></li>
                         </ul>
                     </div>
                 </li>
