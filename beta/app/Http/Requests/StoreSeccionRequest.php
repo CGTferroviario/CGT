@@ -26,7 +26,7 @@ class StoreSeccionRequest extends FormRequest
             'email' => 'nullable',
             'email2' => 'nullable',
             'telefono' => 'required',
-            'direccion' => 'required',
+            'direccion' => 'nullable',
             'descripcion' => 'nullable',
             'responsable' => 'required',
             'ccaa_id' => 'required',

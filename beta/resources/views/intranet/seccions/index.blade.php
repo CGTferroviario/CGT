@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid-flow-col auto-cols-max">
+            <div class="grid grid-cols-1">
                 <div class="sm:flex sm:items-center sm:justify-start">
                     <table id="comunicadosAdmin" class="display nowrap text-sm pt-5 font-normal" style="width:auto">
                         <thead class="bg-oscuro text-white">
@@ -48,8 +48,7 @@
                                 <th>Dirección</th>
                                 <th>Teléfono</th>
                                 <th>Comunidad</th>
-                                <th>Provincia</th>
-                                <th class="rounded-tr-lg">Municipio</th>
+                                <th class="rounded-tr-lg">Provincia</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -81,7 +80,6 @@
                                 <td>{{ $seccion->telefono }}</td>
                                 <td class="text-center">{{ $seccion->ccaa?->nombre }}</td>
                                 <td class="text-center">{{ $seccion->provincia?->nombre }}</td>
-                                <td class="text-center">{{ $seccion->municipio?->nombre }}</td>
                             </tr>
                             @endforeach
                         </tbody>

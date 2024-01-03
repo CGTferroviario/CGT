@@ -6,6 +6,53 @@
     </x-slot>
     @section('contenido')
     <div class="p-8 fondo comunicados">
+
+        <div>
+            @foreach($seccionesPorCcaa as $ccaaId => $secciones)
+                @php
+                    $ccaa = $secciones->first()->ccaa;
+                @endphp
+                <div class="accordion-item">
+                    <button class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-zinc-500 border border-b-0 border-zinc-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-zinc-700 dark:text-zinc-400 hover:bg-blue-100 dark:hover:bg-zinc-800 gap-3">
+                        {{ $ccaa?->nombre }}
+                    </button>
+                    <div class="accordion-content">
+                        @foreach($secciones as $seccion)
+                            <div>
+                                <h3>{{ $seccion->nombre }}</h3>
+                                <p>Provincia: {{ $seccion->provincia?->nombre }}</p>
+                                <p>Municipio: {{ $seccion->municipio?->nombre }}</p>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        
+        <script>
+            // Obtén todos los botones de acordeón
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+        
+            // Añade un listener de eventos a cada botón
+            accordionButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    // Encuentra el contenido del acordeón correspondiente
+                    const accordionContent = this.nextElementSibling;
+        
+                    // Abre o cierra el acordeón
+                    if (this.classList.contains('active')) {
+                        // Si el acordeón está abierto, ciérralo
+                        this.classList.remove('active');
+                        accordionContent.style.maxHeight = 0;
+                    } else {
+                        // Si el acordeón está cerrado, ábrelo
+                        this.classList.add('active');
+                        accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                    }
+                });
+            });
+        </script>
+        
         
         <div id="accordion-color" data-accordion="collapse"
             data-active-classes="bg-blue-100 dark:bg-zinc-800 text-blue-600 dark:text-white">
@@ -86,7 +133,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        {{-- <div class="container">
             <button class="collapsible">Secciones Sindicales en Andalucía</button>
             <div class="content blanco">
                 <div class="resp-table">
@@ -750,7 +797,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         
     </div>
     @endsection

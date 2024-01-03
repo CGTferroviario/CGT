@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreSeccionRequest;
 use App\Http\Requests\UpdateSeccionRequest;
-use App\Models\Categoria;
 use App\Models\Ccaa;
-use App\Models\Empresa;
-use App\Models\Etiqueta;
 use App\Models\Municipio;
 use App\Models\Provincia;
 use App\Models\Seccion;
@@ -40,7 +37,7 @@ class SeccionController extends Controller
 
     public function store(StoreSeccionRequest $request)
     {
-        // dd($request);
+        dd($request);
         $seccion = Seccion::create(array_merge($request->all(), [
             'nombre' => $request->nombre,
             'email' => $request->email,
@@ -81,7 +78,7 @@ class SeccionController extends Controller
      */
     public function update(UpdateSeccionRequest $request, Seccion $seccion)
     {
-        // dd($seccion);
+        // dd($request);
         // Actualizar el comunicado
         $seccion->update($request->validated());
 
@@ -94,7 +91,7 @@ class SeccionController extends Controller
         $seccion->provincia()->associate($provincia);
 
         // Actualizar la provincia relacionada
-        $municipio = Municipio::find($request->municpio_id);
+        $municipio = Municipio::find($request->municipio_id);
         $seccion->municipio()->associate($municipio);
         
         $seccion->save();

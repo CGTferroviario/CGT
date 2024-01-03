@@ -14,10 +14,10 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('email')->unique();            
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('email2');
-            $table->string('direccion');
-            $table->string('descripcion');
-            $table->string('telefono');
+            $table->string('email2')->nullable();
+            $table->string('direccion')->nullable();
+            $table->string('descripcion')->nullable();
+            $table->string('telefono')->nullable();
             $table->string('responsable')->nullable();
             $table->unsignedBigInteger('ccaa_id')->nullable();
             $table->unsignedBigInteger('provincia_id')->nullable();

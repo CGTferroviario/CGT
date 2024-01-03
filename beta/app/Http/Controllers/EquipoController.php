@@ -34,10 +34,12 @@ class EquipoController extends Controller
 
     public function mapa()
     {
-        $ccaas = Seccion::select('ccaa_id')->distinct()->pluck('ccaa_id');
-        dd($ccaas);
+        $seccionesPorCcaa = Seccion::with('ccaa', 'provincia', 'municipio')->get()->groupBy('ccaa_id');
 
-        return view('equipo.mapa', compact('ccaas'));
+        
+        // dd($seccionesPorCcaa);
+
+        return view('equipo.mapa', compact('seccionesPorCcaa'));
     }
     
     public function index()
