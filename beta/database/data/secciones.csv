@@ -1,48 +1,48 @@
-"id","nombre","email","email_verified_at","email2","direccion","descripcion","telefono","responsable","ccaa_id","provincia_id","municipio_id","remember_token","created_at","updated_at"
-"1","A Coru√±a","acoruna@cgtferroviario.es",NULL,"renfecor@cgtgalicia.org","-","La secci√≥n de A Coru√±a","274242","√Ångel Valladares","12","15","1404",NULL,"2024-01-02 14:29:26","2024-01-03 21:10:22"
-"2","√Ålava","alava@cgtferroviario.es",NULL,"Sff-cgt@cgt.es","Avda","La secci√≥n de √Ålava","-","Josu√©","16","1","2715",NULL,"2024-01-02 14:29:26","2024-01-03 18:10:27"
-"3","Albacete","albacete@cgtferroviario.es",NULL,"cgtenrique@gmail.com","-","La secci√≥n de Albacete","-","-","8","2","100",NULL,"2024-01-02 14:29:26","2024-01-03 21:09:35"
-"4","Alicante","alicante@cgtferroviario.es",NULL,"cgtferroviario@gmail.com","-","La secci√≥n de Alicante","-","Javier Palomino","10","3","628",NULL,"2024-01-02 14:29:26","2024-01-03 21:08:57"
-"5","Almer√≠a","almeria@cgtferroviario.es",NULL,"sffcgtalmeria@gmail.com","-","La secci√≥n de Almer√≠a","331051","Alberto Oliveira","1","4","582",NULL,"2024-01-02 14:29:26","2024-01-03 21:08:18"
-"6","Asturias","asturies@cgtferroviario.es",NULL,"cgtrenfeasturias@gmail.com","-","La secci√≥n de Asturias","281312","Diego S√°nchez","3","33","2077",NULL,"2024-01-02 14:29:26","2024-01-03 21:07:28"
-"7","√Åvila","avila@cgtferroviario.es",NULL,"cgtavila@gmail.com","-","La secci√≥n de √Åvila","184237/998390","F√©lix Huete","7","5","872",NULL,"2024-01-02 14:29:26","2024-01-03 20:00:20"
-"8","Badajoz","badajoz@cgtferroviario.es",NULL,"badajozcgt@gmail.com","-","La secci√≥n de Badajoz","-","Pablo L√≥pez","11","6","678",NULL,"2024-01-02 14:29:26","2024-01-03 21:06:51"
-"9","Barcelona","barcelona@cgtferroviario.es",NULL,"sffcgtbcn@cgt.es","-","La secci√≥n de Barcelona","556436/556010/556139","Marcos","9","8","875",NULL,"2024-01-02 14:29:26","2024-01-03 21:04:35"
-"10","Bizkaia","bizkaia@cgtferroviario.es",NULL,"cgtrenbilbo@gmail.com","-","La secci√≥n de Bizkaia","679446/998013","Iker Izquierdo","16","48","962",NULL,"2024-01-02 14:29:26","2024-01-03 21:03:57"
-"11","Burgos","burgos@cgtferroviario.es",NULL,"Sff.cgtmiranda@gmail.com","-","La secci√≥n de Burgos","648106","√ìscar Balbas","7","9","2723",NULL,"2024-01-02 14:29:26","2024-01-03 21:02:51"
-"12","C√°ceres","caceres@cgtferroviario.es",NULL,"cacerescgt@gmail.com","-","La secci√≥n de C√°ceres","184536","Pablo L√≥pez","11","10","1730",NULL,"2024-01-02 14:29:26","2024-01-03 20:43:12"
-"13","C√°diz","cadiz@cgtferroviario.es",NULL,"Sff-cgt@cgt.es","-","La secci√≥n de C√°diz","332446","Mois√©s Navarro","1","11","540",NULL,"2024-01-02 14:29:26","2024-01-03 20:38:21"
-"14","Cantabria","cantabria@cgtferroviario.es",NULL,"sff@cgtcantabria.org","-","La secci√≥n de Cantabria","688251","Javier Cobo","6","39","3389",NULL,"2024-01-02 14:29:26","2024-01-03 21:02:15"
-"15","Castell√≥n","castellon@cgtferroviario.es",NULL,"sffcgtcastellon@gmail.com","-","La secci√≥n de Castell√≥n","-","Luis Va√≠llo","10","12","1871",NULL,"2024-01-02 14:29:26","2024-01-03 20:58:26"
-"16","Ciudad Real","ciudadreal@cgtferroviario.es",NULL,"sffssciudadrealferrocarril@gmail.com","-","La secci√≥n de Ciudad Real","180300","Juan Carlos P√©rez","8","13","1592",NULL,"2024-01-02 14:29:26","2024-01-03 20:57:40"
-"17","C√≥rdoba","cordoba@cgtferroviario.es",NULL,"sffcgtcordoba@gmail.com","-","La secci√≥n de C√≥rdoba","973485","Gonzalo Moyano","1","14","978",NULL,"2024-01-02 14:29:26","2024-01-03 20:37:44"
-"18","Cuenca","cuenca@cgtferroviario.es",NULL,"sff-cgt@cgt.es","-","La secci√≥n de Cuenca","-","-","8","16","3487",NULL,"2024-01-02 14:29:26","2024-01-03 20:37:07"
-"19","Gipuzkoa","gipuzkoa@cgtferroviario.es",NULL,"Cgt-irun@hotmail.com","-","La secci√≥n de Gipuzkoa","649741","Jos√© Antonio Bayo","16","20","3147",NULL,"2024-01-02 14:29:26","2024-01-03 20:33:19"
-"20","Girona","girona@cgtferroviario.es",NULL,"sffcgtgirona@gmail.com","-","La secci√≥n de Girona","552492","-","9","17","3525",NULL,"2024-01-02 14:29:26","2024-01-03 20:15:08"
-"21","Granada","granada@cgtferroviario.es",NULL,"Sff.cgt.granada@gmail.com","-","La secci√≥n de Granada","331501","Tom√°s Rodr√≠guez","1","18","3809",NULL,"2024-01-02 14:29:26","2024-01-03 20:14:18"
-"22","Guadalajara","guadalajara@cgtferroviario.es",NULL,"Sff-cgt@cgt.es","-","La secci√≥n de Guadalajara","-","Emilio Mendieta","8","19","5004",NULL,"2024-01-02 14:29:26","2024-01-03 20:10:24"
-"23","Huelva","huelva@cgtferroviario.es",NULL,"sff-cgt@cgt.es","-","La secci√≥n de Huelva","337298","Guadalupe Rodr√≠guez","1","21","1926",NULL,"2024-01-02 14:29:26","2024-01-03 20:07:24"
-"24","Huesca","huesca@cgtferroviario.es",NULL,"cgthuescafl@gmail.com","-","La secci√≥n de Huesca","-","Pepa Casermeiro","2","22","4877",NULL,"2024-01-02 14:29:26","2024-01-03 20:02:34"
-"25","Ja√©n","jaen@cgtferroviario.es",NULL,"Sff-cgt-jaen@hotmail.es","-","La secci√≥n de Ja√©n","331285/963546","Pablo Nieto","1","23","2334",NULL,"2024-01-02 14:29:26","2024-01-03 20:06:41"
-"26","La Rioja","larioja@cgtferroviario.es",NULL,"Sff.cgt.larioja@gmail.com","-","La secci√≥n de La Rioja","998314","Pablo Mart√≠n","17","26","3886",NULL,"2024-01-02 14:29:26","2024-01-03 20:05:52"
-"27","Leon","leon@cgtferroviario.es",NULL,"adifcgtleon@gmail.com","-","La secci√≥n de Le√≥n","242375","Jon√°s Santamar√≠a","7","24","3884",NULL,"2024-01-02 14:29:26","2024-01-03 20:03:09"
-"28","Lleida","lleida@cgtferroviario.es",NULL,"cgtsfflerida@gmail.com","-","La secci√≥n de Lleida","-","√Ångel Molano","9","25","4746",NULL,"2024-01-02 14:29:26","2024-01-03 20:01:35"
-"29","Lugo","lugo@cgtferroviario.es",NULL,"cgtmonforte@yahoo.es","-","La secci√≥n de Lugo","-","Antonio Ferreiro","12","27","1319",NULL,"2024-01-02 14:29:26","2024-01-03 19:57:19"
-"30","Madrid","madrid@cgtferroviario.es",NULL,"sffcgtmadrid@gmail.com","Avda Ciudad de Barcelona 8","La secci√≥n de Madrid","166931/166760","Berta Valera","13","28","3535",NULL,"2024-01-02 14:29:26","2024-01-03 19:39:19"
-"31","M√°laga","malaga@cgtferroviario.es",NULL,"malaga@sff-cgt.es","-","La secci√≥n de M√°laga","328287","Miguel Montenegro","1","29","3079",NULL,"2024-01-02 14:29:26","2024-01-03 19:31:35"
-"32","Murcia","murcia@cgtferroviario.es",NULL,"Sffcgt_murcia@yahoo.es","-","La secci√≥n de Murcia","967257","Miguel √Ångel Vel√°zquez","14","30","1417",NULL,"2024-01-02 14:29:26","2024-01-03 19:38:17"
-"33","Navarra","navarra@cgtferroviario.es",NULL,"Sff-cgt@cgt.es","-","La secci√≥n de Navarra","666468","Iker Izquierdo","15","31","6598",NULL,"2024-01-02 14:29:26","2024-01-03 18:46:51"
-"34","Ourense","ourense@cgtferroviario.es",NULL,"Sff-cgtourense@hotmail.com","Avda","La secci√≥n de Ourense","269297","Diego Pascual","12","32","2521",NULL,"2024-01-02 14:29:26","2024-01-03 18:44:43"
-"35","Palencia","palencia@cgtferroviario.es",NULL,"cgtpalenciasff@gmail.com","Avda","La secci√≥n de Palencia","164246","-","7","34","4750",NULL,"2024-01-02 14:29:26","2024-01-03 18:35:25"
-"36","Pontevedra","pontevedra@cgtferroviario.es",NULL,"sffcgtpontevedra@gmail.com","-","La secci√≥n de pontevedra","-","Juantxo Losada","12","36","1801",NULL,"2024-01-02 14:29:26","2024-01-03 18:34:45"
-"37","Salamanca","salamanca@cgtferroviario.es",NULL,"sffcgtsalamanca@gmail.com","-","La secci√≥n de segovia","285447/961224","Ubaldo Hern√°ndez","7","37","7576",NULL,"2024-01-02 14:29:26","2024-01-03 18:33:42"
-"38","Segovia","segovia@cgtferroviario.es",NULL,"Sff-cgt@cgt.es","-","La secci√≥n de segovia","-","Roberto Fern√°ndez","7","40","6472",NULL,"2024-01-02 14:29:26","2024-01-03 18:32:50"
-"39","Sevilla","sevilla@cgtferroviario.es",NULL,"sffcgtsev@gmail.com","-","La secci√≥n de sevilla","385435/967874","Luis Murciano","1","41","3958",NULL,"2024-01-02 14:29:26","2024-01-03 18:30:06"
-"40","Soria","soria@cgtferroviario.es",NULL,"cgtferroviariosoria@gmail.com","-","La secci√≥n de Soria","-","-","7","42","6031",NULL,"2024-01-02 14:29:26","2024-01-03 18:26:21"
-"41","Tarragona","tarragona@cgtferroviario.es",NULL,"sffcgttgn@gmail.com","Avda","La secci√≥n de Tarragona","961221/559213","Enrique Villase√±or","9","43","5447",NULL,"2024-01-02 14:29:26","2024-01-03 18:23:32"
-"42","Teruel","teruel@cgtferroviario.es",NULL,"teruel@cgtferroviario.es","Avda","La secci√≥n de Teruel","-","Pablo Justos","2","44","6869",NULL,"2024-01-02 14:29:26","2024-01-03 18:15:56"
-"43","Toledo","toledo@cgtferroviario.es",NULL,"Sff-cgt@cgt.es","Avda","La secci√≥n de Toledo","-","Jes√∫s Manzano","8","45","5921",NULL,"2024-01-02 14:29:26","2024-01-03 18:10:11"
-"44","Valencia","valencia@cgtferroviario.es",NULL,"cgtsffval@gmail.com","Avda","La secci√≥n de Valencia","437204/965287","Gabriel Tendero","10","46","7359",NULL,"2024-01-02 14:29:26","2024-01-03 17:46:29"
-"45","Valladolid","valladolid@cgtferroviario.es",NULL,"cgtadifva@gmail.com","Avda","La secci√≥n de Valladolid","268343","Francisco Molledo","7","47","6319",NULL,"2024-01-02 14:29:26","2024-01-03 17:24:31"
-"46","Zamora","zamora@cgtferroviario.es",NULL,"diferur@hotmail.es","Avda","La secci√≥n de Zamora","962564","Diego Fern√°ndez","7","49","7582",NULL,"2024-01-02 14:29:26","2024-01-03 16:53:13"
-"47","Zaragoza","zaragoza@cgtferroviario.es",NULL,"sffcgtzaragoza@gmail.com","Avda","La secci√≥n de Zaragoza","564277","Jos√© Luis Fern√°ndez","2","50","7685",NULL,"2024-01-02 14:29:26","2024-01-03 17:22:21"
+nombre;email;email2;direccion;descripcion;telefono;responsable;ccaa_id;provincia_id;municipio_id
+A CoruÒa;acoruna@cgtferroviario.es;renfecor@cgtgalicia.org;-;La secciÛn de A CoruÒa;274242;¡ngel Valladares;12;15;1404
+¡lava;alava@cgtferroviario.es;Sff-cgt@cgt.es;-;La secciÛn de ¡lava;-;JosuÈ;16;1;2715
+Albacete;albacete@cgtferroviario.es;cgtenrique@gmail.com;-;La secciÛn de Albacete;-;-;8;2;100
+Alicante;alicante@cgtferroviario.es;cgtferroviario@gmail.com;-;La secciÛn de Alicante;-;Javier Palomino;10;3;628
+AlmerÌa;almeria@cgtferroviario.es;sffcgtalmeria@gmail.com;-;La secciÛn de AlmerÌa;331051;Alberto Oliveira;1;4;582
+Asturias;asturies@cgtferroviario.es;cgtrenfeasturias@gmail.com;-;La secciÛn de Asturias;281312;Diego S·nchez;3;33;2077
+¡vila;avila@cgtferroviario.es;cgtavila@gmail.com;-;La secciÛn de ¡vila;184237/998390;FÈlix Huete;7;5;872
+Badajoz;badajoz@cgtferroviario.es;badajozcgt@gmail.com;-;La secciÛn de Badajoz;-;Pablo LÛpez;11;6;678
+Barcelona;barcelona@cgtferroviario.es;sffcgtbcn@cgt.es;-;La secciÛn de Barcelona;556436/556010/556139;Marcos;9;8;875
+Bizkaia;bizkaia@cgtferroviario.es;cgtrenbilbo@gmail.com;-;La secciÛn de Bizkaia;679446/998013;Iker Izquierdo;16;48;962
+Burgos;burgos@cgtferroviario.es;Sff.cgtmiranda@gmail.com;-;La secciÛn de Burgos;648106;”scar Balbas;7;9;2723
+C·ceres;caceres@cgtferroviario.es;cacerescgt@gmail.com;-;La secciÛn de C·ceres;184536;Pablo LÛpez;11;10;1730
+C·diz;cadiz@cgtferroviario.es;Sff-cgt@cgt.es;-;La secciÛn de C·diz;332446;MoisÈs Navarro;1;11;540
+Cantabria;cantabria@cgtferroviario.es;sff@cgtcantabria.org;-;La secciÛn de Cantabria;688251;Javier Cobo;6;39;3389
+CastellÛn;castellon@cgtferroviario.es;sffcgtcastellon@gmail.com;-;La secciÛn de CastellÛn;-;Luis VaÌllo;10;12;1871
+Ciudad Real;ciudadreal@cgtferroviario.es;sffssciudadrealferrocarril@gmail.com;-;La secciÛn de Ciudad Real;180300;Juan Carlos PÈrez;8;13;1592
+CÛrdoba;cordoba@cgtferroviario.es;sffcgtcordoba@gmail.com;-;La secciÛn de CÛrdoba;973485;Gonzalo Moyano;1;14;978
+Cuenca;cuenca@cgtferroviario.es;sff-cgt@cgt.es;-;La secciÛn de Cuenca;-;-;8;16;3487
+Gipuzkoa;gipuzkoa@cgtferroviario.es;Cgt-irun@hotmail.com;-;La secciÛn de Gipuzkoa;649741;JosÈ Antonio Bayo;16;20;3147
+Girona;girona@cgtferroviario.es;sffcgtgirona@gmail.com;-;La secciÛn de Girona;552492;-;9;17;3525
+Granada;granada@cgtferroviario.es;Sff.cgt.granada@gmail.com;-;La secciÛn de Granada;331501;Tom·s RodrÌguez;1;18;3809
+Guadalajara;guadalajara@cgtferroviario.es;Sff-cgt@cgt.es;-;La secciÛn de Guadalajara;-;Emilio Mendieta;8;19;5004
+Huelva;huelva@cgtferroviario.es;sff-cgt@cgt.es;-;La secciÛn de Huelva;337298;Guadalupe RodrÌguez;1;21;1926
+Huesca;huesca@cgtferroviario.es;cgthuescafl@gmail.com;-;La secciÛn de Huesca;-;Pepa Casermeiro;2;22;4877
+JaÈn;jaen@cgtferroviario.es;Sff-cgt-jaen@hotmail.es;-;La secciÛn de JaÈn;331285/963546;Pablo Nieto;1;23;2334
+La Rioja;larioja@cgtferroviario.es;Sff.cgt.larioja@gmail.com;-;La secciÛn de La Rioja;998314;Pablo MartÌn;17;26;3886
+Leon;leon@cgtferroviario.es;adifcgtleon@gmail.com;-;La secciÛn de LeÛn;242375;Jon·s SantamarÌa;7;24;3884
+Lleida;lleida@cgtferroviario.es;cgtsfflerida@gmail.com;-;La secciÛn de Lleida;-;¡ngel Molano;9;25;4746
+Lugo;lugo@cgtferroviario.es;cgtmonforte@yahoo.es;-;La secciÛn de Lugo;-;Antonio Ferreiro;12;27;1319
+Madrid;madrid@cgtferroviario.es;sffcgtmadrid@gmail.com;-;La secciÛn de Madrid;166931/166760;Berta Valera;13;28;3535
+M·laga;malaga@cgtferroviario.es;malaga@sff-cgt.es;-;La secciÛn de M·laga;328287;Miguel Montenegro;1;29;3079
+Murcia;murcia@cgtferroviario.es;Sffcgt_murcia@yahoo.es;-;La secciÛn de Murcia;967257;Miguel ¡ngel Vel·zquez;14;30;1417
+Navarra;navarra@cgtferroviario.es;Sff-cgt@cgt.es;-;La secciÛn de Navarra;666468;Iker Izquierdo;15;31;6598
+Ourense;ourense@cgtferroviario.es;Sff-cgtourense@hotmail.com;-;La secciÛn de Ourense;269297;Diego Pascual;12;32;2521
+Palencia;palencia@cgtferroviario.es;cgtpalenciasff@gmail.com;-;La secciÛn de Palencia;164246;-;7;34;4750
+Pontevedra;pontevedra@cgtferroviario.es;sffcgtpontevedra@gmail.com;-;La secciÛn de pontevedra;-;Juantxo Losada;12;36;1801
+Salamanca;salamanca@cgtferroviario.es;sffcgtsalamanca@gmail.com;-;La secciÛn de segovia;285447/961224;Ubaldo Hern·ndez;7;37;7576
+Segovia;segovia@cgtferroviario.es;Sff-cgt@cgt.es;-;La secciÛn de segovia;-;Roberto Fern·ndez;7;40;6472
+Sevilla;sevilla@cgtferroviario.es;sffcgtsev@gmail.com;-;La secciÛn de sevilla;385435/967874;Luis Murciano;1;41;3958
+Soria;soria@cgtferroviario.es;cgtferroviariosoria@gmail.com;-;La secciÛn de Soria;-;-;7;42;6031
+Tarragona;tarragona@cgtferroviario.es;sffcgttgn@gmail.com;-;La secciÛn de Tarragona;961221/559213;Enrique VillaseÒor;9;43;5447
+Teruel;teruel@cgtferroviario.es;teruel@cgtferroviario.es;-;La secciÛn de Teruel;-;Pablo Justos;2;44;6869
+Toledo;toledo@cgtferroviario.es;Sff-cgt@cgt.es;-;La secciÛn de Toledo;-;Jes˙s Manzano;8;45;5921
+Valencia;valencia@cgtferroviario.es;cgtsffval@gmail.com;-;La secciÛn de Valencia;437204/965287;Gabriel Tendero;10;46;7359
+Valladolid;valladolid@cgtferroviario.es;cgtadifva@gmail.com;-;La secciÛn de Valladolid;268343;Francisco Molledo;7;47;6319
+Zamora;zamora@cgtferroviario.es;diferur@hotmail.es;-;La secciÛn de Zamora;962564;Diego Fern·ndez;7;49;7582
+Zaragoza;zaragoza@cgtferroviario.es;sffcgtzaragoza@gmail.com;-;La secciÛn de Zaragoza;564277;JosÈ Luis Fern·ndez;2;50;7685
