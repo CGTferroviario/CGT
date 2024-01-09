@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEquipoRequest;
 use App\Http\Requests\UpdateEquipoRequest;
+use App\Models\Ccaa;
 use App\Models\Equipo;
 use App\Models\Seccion;
+use App\View\Components\select;
+use Illuminate\Http\Request;
 
 class EquipoController extends Controller
 {
@@ -32,14 +35,21 @@ class EquipoController extends Controller
 
     }
 
-    public function mapa()
+    public function mapa(Request $request)
     {
-        $seccionesPorCcaa = Seccion::with('ccaa', 'provincia', 'municipio')->get()->groupBy('ccaa_id');
+        $seccionesPorCcaas = Seccion::with('ccaa', 'provincia', 'municipio')->get()->groupBy('ccaa_id');
+        // Obtenemos una lista de todas las comunidades autónomas
+        $ccaas = Ccaa::all();
+        // Obtenemos una lista de todas las secciones de cada comunidad autónoma
+        $seccions = Seccion::where('ccaa_id', '=', $request->input('ccaa'))->get();
+        // Obtenemos una lista de todas las comunidades autónomas con secciones
+        $comunidades_autonomas_con_secciones = Seccion::distinct()->pluck('ccaa_id');
 
+        $seccion_seleccionada = request('ccaa');
         
-        // dd($seccionesPorCcaa);
+        // dd($seccions);
 
-        return view('equipo.mapa', compact('seccionesPorCcaa'));
+        return view('equipo.mapa', compact('seccionesPorCcaas', 'ccaas', 'seccions', 'comunidades_autonomas_con_secciones', 'seccion_seleccionada'));
     }
     
     public function index()

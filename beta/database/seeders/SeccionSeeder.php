@@ -31,6 +31,9 @@ class SeccionSeeder extends Seeder
                     "descripcion" => mb_convert_encoding($data['4'], 'UTF-8', 'ISO-8859-1'),
                     "telefono" => mb_convert_encoding($data['5'], 'UTF-8', 'ISO-8859-1'),
                     "responsable" => mb_convert_encoding($data['6'], 'UTF-8', 'ISO-8859-1'),
+                    "ccaa_id" => mb_convert_encoding($data['7'], 'UTF-8', 'ISO-8859-1'),
+                    "provincia_id" => mb_convert_encoding($data['8'], 'UTF-8', 'ISO-8859-1'),
+                    "municipio_id" => mb_convert_encoding($data['9'], 'UTF-8', 'ISO-8859-1'),
                 ]);
             }
             $firstline = false;
