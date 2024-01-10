@@ -33,16 +33,16 @@ document.getElementById('vales_toggle').addEventListener('change', function() {
 // Fin Toggle Switch
 
 // Sort
-window.Sortable = require('sortablejs').default
+// window.Sortable = require('sortablejs').default
 
 // Simple list
-Sortable.create(simpleList, { 
-    handle: '.glyphicon-move',
-    animation: 150
-});
+// Sortable.create(simpleList, { 
+//     handle: '.glyphicon-move',
+//     animation: 150
+// });
 
 // List with handle
-Sortable.create(listWithHandle, {
-    handle: '.glyphicon-move',
-    animation: 150
-});
+// Sortable.create(listWithHandle, {
+//     handle: '.glyphicon-move',
+//     animation: 150
+// });

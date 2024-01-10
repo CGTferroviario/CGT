@@ -103,7 +103,7 @@
                     </div>
                 </div>
 
-                <div class="sort">
+                {{-- <div class="sort">
                     <div class="bg-black p-2 text-white bordeRojo rounded-t-lg">
                         <h1 class="text-center font-semibold">SECRETARIADO PERMANENTE (S.P.)</h1>
                     </div>
@@ -128,7 +128,7 @@
                         </x-laravel-blade-sortable::sortable>
                     @endforeach
 
-                </div>
+                </div> --}}
 
 
 

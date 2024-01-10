@@ -19,17 +19,11 @@ class EquipoController extends Controller
     {
         $tipos = Equipo::select('tipo')->distinct()->pluck('tipo');
 
-
         $equipoSecretariadoPermanente = Equipo::where('tipo' , 'Secretariado Permanente')->get();
         $equipoCoordinaciónTerritorial = Equipo::where('tipo' , 'Coordinación Territorial')->get();
         $equipoResponsablesEmpresas = Equipo::where('tipo' , 'Responsables Empresas')->get();
         $equipoCoordinaciónADIF = Equipo::where('tipo' , 'Coordinación ADIF')->get();
         $equipoCoordinaciónRENFE = Equipo::where('tipo' , 'Coordinación RENFE')->get();
-        
-
-        // $equipo  = collect($equipo)->unique();
-
-        // dd($secretarias);
 
         return view('equipo.sp', compact('tipos', 'equipoSecretariadoPermanente', 'equipoCoordinaciónTerritorial', 'equipoResponsablesEmpresas', 'equipoCoordinaciónADIF', 'equipoCoordinaciónRENFE'));
 

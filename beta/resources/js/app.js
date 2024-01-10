@@ -11,7 +11,7 @@ Alpine.start();
 // Inicio SortableJS 
 
 // Complete SortableJS (with all plugins)
-import Sortable from 'sortablejs/modular/sortable.complete.esm.js';
+// import Sortable from 'sortablejs/modular/sortable.complete.esm.js';
 
 
 // Fin SortableJS
