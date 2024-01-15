@@ -135,8 +135,8 @@ Route::get('/equipo', function () {
 
 Route::prefix('equipo')->group(function () {
     Route::get('/sp', [EquipoController::class, 'sp'])->name('equipo.sp');
-    Route::get('/mapa', [EquipoController::class, 'mapa'])->name('equipo.mapa');
-    Route::post('/mapa', [EquipoController::class, 'mapa'])->name('equipo.mapa');
+    Route::match(['get','post'], '/mapa', [EquipoController::class, 'mapa'])->name('equipo.mapa');
+    // Route::post('/mapa', [EquipoController::class, 'mapa'])->name('equipo.mapa');
     // Route::view('/contacto', 'equipo.contacto');
     Route::get('/contacto', [ContactoController::class, 'contacto'])->name('equipo.contacto');
     Route::post('/contacto', [ContactoController::class, 'store'])->name('equipo.contacto.store');
