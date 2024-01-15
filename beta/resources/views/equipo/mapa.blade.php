@@ -12,9 +12,9 @@
                     {{ csrf_field() }}
                     <div class="my-4 inline-flex">
                         <div class="">
-                            <label for="ccaa" class="block mb-2 text-lg font-medium text-zinc-900">Secciones por Comunidad Autónoma:</label>
+                            <h2 for="ccaa" class="block mb-2 text-xl font-semibold text-zinc-800">Secciones por Comunidad Autónoma:</h2>
                             <div class="inline-flex">
-                                <select name="ccaa" class="mr-4 bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-zinc-400">
+                                <select name="ccaa" class="mr-4 bg-zinc-800 border border-zinc-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-zinc-400">
                                     @foreach ($ccaas as $ccaa)
                                         @if ($comunidades_autonomas_con_secciones->contains($ccaa->id))
                                             <option value="{{ $ccaa->id }}" {{ (isset($seccion_seleccionada) && $seccion_seleccionada == $ccaa->id) ? 'selected' : '' }}>
