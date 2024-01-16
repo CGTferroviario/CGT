@@ -1,7 +1,8 @@
-<div class="mb-4 shadow hover:shadow-lg h-full flex flex-col bordeNegro rounded-lg">
+{{-- <div class="mb-4 shadow hover:shadow-lg h-full flex flex-col bordeNegro rounded-lg">
     <div class="p-4 flex-1 h-140 bg-red-500 hover:bg-white rounded-t-lg">
         <a href="{{ url('documentos.show', $documento->id) }}">
-            <h1 class="font-bold text-3xl">{{ $documento->id }} . {{ $documento->titulo }}
+            <h1 class="font-bold text-3xl">
+                {{ $documento->titulo }}
             </h1>
         </a>
     </div>
@@ -28,6 +29,39 @@
             <a href="{{ $documento->pdf }}" class=""
                 target="_blank" download="CGT_{{ $documento->titulo }}"><i
                     class="lni lni-download verDocs mr-2 text-2xl"></i>Descargar</a>
+        </div>
+    </div>
+</div> --}}
+
+<div class="mx-auto">
+    <div class="flex flex-col h-full rounded-lg border border-zinc-900 shadow-md">
+        <!-- Card Header -->
+        <div class="p-1 border-b border-zinc-900 rounded-t-lg bg-red-500">
+            <h5 class="text-lg font-bold">{{ $documento->titulo }}</h5>
+        </div>
+        <!-- Card Body -->
+        <div class="flex-grow p-1 overflow-auto">
+            <div class="grid grid-cols-2">
+                <div class="">
+                    <span class="py-0.5 px-2 rounded-full font-semibold bg-{{ $documento->empresa?->nombre }}">{{ $documento->empresa?->nombre }}</span>
+                </div>
+                <div class="justify-self-end">
+                    <span class="py-0.5 px-2 rounded-full font-semibold bg-{{ $documento->categoria?->nombre }}">{{ $documento->categoria?->nombre }}</span>
+                </div>
+            </div>
+            {{ $documento->descripcion }}
+        </div>
+        <!-- Card Footer -->
+        <div class="p-0.5 border-t border-zinc-900 rounded-b-lg mt-auto inline-flex bg-red-500">
+            <div class="w-1/2 rounded-bl-lg hover:text-red-500 hover:bg-black text-center">
+                <a href="{{ $documento->pdf }}" class=""
+                    target="blank"><i class="lni lni-display verDocs mr-2 text-2xl"></i>Visualizar</a>
+            </div>
+            <div class="w-1/2 rounded-br-lg hover:text-red-500 hover:bg-black text-center">
+                <a href="{{ $documento->pdf }}" class=""
+                    target="_blank" download="CGT_{{ $documento->titulo }}"><i
+                        class="lni lni-download verDocs mr-2 text-2xl"></i>Descargar</a>
+            </div>
         </div>
     </div>
 </div>
