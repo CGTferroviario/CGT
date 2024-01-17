@@ -36,20 +36,25 @@
 <div class="mx-auto">
     <div class="flex flex-col h-full rounded-lg border border-zinc-900 shadow-md">
         <!-- Card Header -->
-        <div class="p-1 border-b border-zinc-900 rounded-t-lg bg-red-500">
-            <h5 class="text-lg font-bold">{{ $documento->titulo }}</h5>
+        <div class="p-2 border-b border-zinc-900 rounded-t-lg bg-red-500">
+            <h2 class="text-xl font-bold">{{ $documento->titulo }}</h2>
         </div>
         <!-- Card Body -->
-        <div class="flex-grow p-1 overflow-auto">
-            <div class="grid grid-cols-2">
-                <div class="">
-                    <span class="py-0.5 px-2 rounded-full font-semibold bg-{{ $documento->empresa?->nombre }}">{{ $documento->empresa?->nombre }}</span>
-                </div>
-                <div class="justify-self-end">
-                    <span class="py-0.5 px-2 rounded-full font-semibold bg-{{ $documento->categoria?->nombre }}">{{ $documento->categoria?->nombre }}</span>
-                </div>
+        <div class="empresa p-2 grid grid-cols-2">
+            <div class="justify-self-start">
+                <div class="py-0.5 px-2 rounded-full font-semibold bg-{{ $documento->empresa?->nombre }}">{{ $documento->empresa?->nombre }}</div>
             </div>
+            <div class="justify-self-end">
+                <div class="py-0.5 px-2 rounded-full font-semibold bg-{{ $documento->categoria?->nombre }}">{{ $documento->categoria?->nombre }}</div>
+            </div>
+        </div>
+        <div class="flex-grow p-2 overflow-auto">
             {{ $documento->descripcion }}
+        </div>
+        <div class="mt-auto p-1 text-center">
+            @foreach ($documento->etiquetas as $etiqueta )
+                <div class="py-0.5 px-2 m-0.5 inline-flex rounded-full font-semibold border-2 text-zinc-900 border-red-500">#{{ $etiqueta->nombre }}</div>
+            @endforeach
         </div>
         <!-- Card Footer -->
         <div class="p-0.5 border-t border-zinc-900 rounded-b-lg mt-auto inline-flex bg-red-500">

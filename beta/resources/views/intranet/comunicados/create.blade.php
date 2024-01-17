@@ -80,7 +80,7 @@
                                     </div>
                                     <div class="col-span-6">
                                         <label for="subtitulo" class="block mb-2 text-sm font-medium text-white">Subtítulo</label>
-                                        <input type="text" name="subtitulo" id="subtitulo" class="w-full bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-zinc-400" placeholder="" value="" required="">
+                                        <input type="text" name="subtitulo" id="subtitulo" class="w-full bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-zinc-400" placeholder="" value="">
                                     </div>
                                 </div>
                                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 mt-3">
