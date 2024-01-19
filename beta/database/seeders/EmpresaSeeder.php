@@ -16,10 +16,16 @@ class EmpresaSeeder extends Seeder
         DB::table('empresas')->insert([
             ['nombre' => 'ADIF', 'descripcion' => 'El Administrador de Infraestructuras Ferroviarias' , 'logo' => 'www.adif.es' , 'vales' => true, 'comunicados' => true, 'activa' => true], 
             ['nombre' => 'RENFE', 'descripcion' => 'Gestión de trenes y Viajeros' , 'logo' => 'www.renfe.es' , 'vales' => true, 'comunicados' => true, 'activa' => true], 
+            ['nombre' => 'CONJUNTO', 'descripcion' => 'Para los comunicados conjuntos' , 'logo' => 'conjunto' , 'vales' => false, 'comunicados' => true, 'activa' => false], 
+            ['nombre' => 'ADIF-RENFE', 'descripcion' => 'Afectan a ambas empresas' , 'logo' => 'adif-renfe' , 'vales' => false, 'comunicados' => true, 'activa' => false], 
+            ['nombre' => 'SECTOR', 'descripcion' => 'Para lo que afecta al Sector Federal Ferroviario' , 'logo' => 'sector' , 'vales' => false, 'comunicados' => true, 'activa' => false], 
+            ['nombre' => 'GENERALES', 'descripcion' => 'Para asuntos generales' , 'logo' => 'generales' , 'vales' => false, 'comunicados' => true, 'activa' => false], 
+            ['nombre' => 'SERVICIOS EXTERNOS', 'descripcion' => 'Servicios Externos' , 'logo' => 'servicios externos' , 'vales' => false, 'comunicados' => true, 'activa' => false], 
+            ['nombre' => 'S.AUX-AT.CLI', 'descripcion' => 'Servicios Auxiliares // Atención al Cliente' , 'logo' => 'servicios auxiliares' , 'vales' => false, 'comunicados' => true, 'activa' => false],
             ['nombre' => 'SERVEO', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.serveo.es' , 'vales' => false, 'comunicados' => true, 'activa' => true],
             ['nombre' => 'LOGIRAIL', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.logirail.es' , 'vales' => false, 'comunicados' => true, 'activa' => true],
             ['nombre' => 'SABA', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.saba.es' , 'vales' => false, 'comunicados' => false, 'activa' => true],
-            ['nombre' => 'FERROSER', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.ferroser.es' , 'vales' => false, 'comunicados' => false, 'activa' => true],
+            ['nombre' => 'FERROVIAL', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.ferroser.es' , 'vales' => false, 'comunicados' => false, 'activa' => true],
             ['nombre' => 'FGV', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.fgv.es' , 'vales' => false, 'comunicados' => false, 'activa' => true],
             ['nombre' => 'ILUNION', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.ilunion.es' , 'vales' => false, 'comunicados' => false, 'activa' => true],
             ['nombre' => 'ATHISA MEDIO AMBIENTE', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.athisa.es' , 'vales' => false, 'comunicados' => false, 'activa' => true],
@@ -30,8 +36,9 @@ class EmpresaSeeder extends Seeder
             ['nombre' => 'VECTALIA RAIL S.A.', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.vectalia.es' , 'vales' => false, 'comunicados' => false, 'activa' => true],
             ['nombre' => 'CLECE LIMPIEZA', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.clecelimpieza.es' , 'vales' => false, 'comunicados' => false, 'activa' => true],
             ['nombre' => 'CLECE ACERCA', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.cleceacerca.es' , 'vales' => false, 'comunicados' => false, 'activa' => true],
-            ['nombre' => 'IRYO', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.iryo.es' , 'vales' => false, 'comunicados' => false, 'activa' => true],
-            ['nombre' => 'ACTREN', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.actren.es' , 'vales' => false, 'comunicados' => false, 'activa' => true]
+            ['nombre' => 'IRYO', 'descripcion' => 'La operadora de trenes Italiana' , 'logo' => 'www.iryo.es' , 'vales' => false, 'comunicados' => false, 'activa' => true],
+            ['nombre' => 'ACTREN', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.actren.es' , 'vales' => false, 'comunicados' => false, 'activa' => true],
+            ['nombre' => 'OUIGO', 'descripcion' => 'La operadora de trenes Francesa' , 'logo' => 'www.ouigo.es' , 'vales' => false, 'comunicados' => true, 'activa' => true],
         ]);
     }
 }
