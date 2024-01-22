@@ -68,7 +68,9 @@
         <!-- Card Body -->
         <div class="empresa p-2 grid grid-flow-col">
             <div class="justify-self-start">
-                <div class="py-0.5 px-2 rounded-full font-semibold bg-{{ $comunicado->empresa?->nombre }}">{{ $comunicado->empresa?->nombre }}</div>
+                <div class="py-0.5 px-2 rounded-full font-semibold bg-{{ $comunicado->empresa?->nombre }}">
+                    <a href="{{ route('intranet.empresas.show', $comunicado->empresa?->id) }}">{{ $comunicado->empresa?->nombre }}</a>
+                </div>
             </div>
             <div class="justify-self-end">
                 {{ $comunicado->fecha }}

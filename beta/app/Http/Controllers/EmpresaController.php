@@ -75,7 +75,7 @@ class EmpresaController extends Controller
 
     public function show(Empresa $empresa)
     {
-        //
+        return view('intranet.empresas.show');
     }
 
     /**

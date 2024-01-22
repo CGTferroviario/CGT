@@ -29,5 +29,4 @@ class BuscadorController extends Controller
 
         return view('search-results', compact('resultados'));
     }
-
 }
