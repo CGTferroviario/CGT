@@ -23,7 +23,7 @@ class SeccionSeeder extends Seeder
         $firstline = true;
         while (($data = fgetcsv($csvFile, 555, ";")) !== false) {
             if (!$firstline) {
-                $equipo = Seccion::create([
+                $seccion = Seccion::create([
                     "nombre" => mb_convert_encoding($data['0'], 'UTF-8', 'ISO-8859-1'),
                     "email" => mb_convert_encoding($data['1'], 'UTF-8', 'ISO-8859-1'),
                     "email2" => mb_convert_encoding($data['2'], 'UTF-8', 'ISO-8859-1'),                  

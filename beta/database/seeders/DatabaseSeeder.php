@@ -34,9 +34,9 @@ class DatabaseSeeder extends Seeder
         $this->call(MunicipioSeeder::class);
         
 
-        $comunicado = Comunicado::factory(100)->create([
+        // $comunicado = Comunicado::factory(100)->create([
             
-        ]);
+        // ]);
 
         $noticia = Noticia::factory(100)->create([
             
@@ -49,6 +49,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DocumentoEtiquetaSeeder::class);
         $this->call(ComunicadoEtiquetaSeeder::class);
         $this->call(NoticiaEtiquetaSeeder::class);
+        $this->call(ComunicadoSeeder::class);
 
         
 		// supposed to only apply to a single connection and reset it's self
