@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Comunicado;
+use Carbon\Carbon;
 use DateTime;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -29,6 +30,8 @@ class ComunicadoSeeder extends Seeder
                 } else {
                     // Handle error
                 }
+                $creado = Carbon::createFromFormat('d/m/Y H:i', $data['15']);
+                $actualizado = Carbon::createFromFormat('d/m/Y H:i', $data['16']);
 
                 $comunicado = Comunicado::create([
                     "id" => mb_convert_encoding($data['0'], 'UTF-8', 'ISO-8859-1'),
@@ -46,8 +49,10 @@ class ComunicadoSeeder extends Seeder
                     "pdf" => mb_convert_encoding($data['12'], 'UTF-8', 'ISO-8859-1'),
                     "imagen" => mb_convert_encoding($data['13'], 'UTF-8', 'ISO-8859-1'),
                     "adjunto" => mb_convert_encoding($data['14'], 'UTF-8', 'ISO-8859-1'),
-                    "created_at" => mb_convert_encoding($data['15'], 'UTF-8', 'ISO-8859-1'),
-                    "updated_at" => mb_convert_encoding($data['16'], 'UTF-8', 'ISO-8859-1'),
+                    "created_at" => $creado,
+                    "updated_at" => $actualizado,
+                    // "created_at" => mb_convert_encoding($data['15'], 'UTF-8', 'ISO-8859-1'),
+                    // "updated_at" => mb_convert_encoding($data['16'], 'UTF-8', 'ISO-8859-1'),
                 ]);
             }
             $firstline = false;
