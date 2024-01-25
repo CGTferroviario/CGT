@@ -20,6 +20,9 @@ class ComunicadoSeeder extends Seeder
 
         $csvFile = fopen(base_path("database/data/comunicados.csv"), "r");
 
+        // Skip the first line
+        fgetcsv($csvFile);
+
         $fields = ['id', 'visualizaciones', 'descargas', 'publicado', 'user_id', 'numero', 'empresa_id', 'categoria_id', 'fecha', 'titulo', 'subtitulo', 'cuerpo', 'pdf', 'imagen', 'adjunto', 'created_at', 'updated_at'];
 
         while (($data = fgetcsv($csvFile, 555, ";")) !== false) {
@@ -29,7 +32,7 @@ class ComunicadoSeeder extends Seeder
 
             $row = [];
             foreach ($fields as $index => $field) {
-                $row[$field] = mb_convert_encoding($data[$index], 'UTF-8', 'ISO-8859-1');
+                $row[$field] = mb_convert_encoding($data[$index], 'UTF-8', 'Windows-1252');
             }
 
             $fecha = DateTime::createFromFormat('m/d/Y', $row['fecha']);
@@ -39,13 +42,8 @@ class ComunicadoSeeder extends Seeder
                 // Handle error
             }
 
-            // $creado = Carbon::createFromFormat('d/m/Y H:i', $data['15']);
-            // $actualizado = Carbon::createFromFormat('d/m/Y H:i', $data['16']);
-
-            
-
-            $row['created_at'] = Carbon::createFromFormat('d/m/Y H:i', $data['15']);
-            $row['updated_at'] = Carbon::createFromFormat('d/m/Y H:i', $data['16']);
+            $row['created_at'] = Carbon::now();
+            $row['updated_at'] = Carbon::now();
 
             Comunicado::create($row);
         }
