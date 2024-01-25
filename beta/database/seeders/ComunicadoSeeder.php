@@ -34,6 +34,7 @@ class ComunicadoSeeder extends Seeder
             foreach ($fields as $index => $field) {
                 $row[$field] = mb_convert_encoding($data[$index], 'UTF-8', 'Windows-1252');
             }
+            
 
             $fecha = DateTime::createFromFormat('m/d/Y', $row['fecha']);
             if ($fecha !== false) {
