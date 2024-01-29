@@ -1,5 +1,5 @@
 <x-publico-layout>
-    <h1 class="m-0 py-3 text-center bg-rojoBrillante font-bold">Si quieres que algo cambie...¡Elige CGT!</h1>
+    <h1 class="m-0 py-3 text-center bg-red-500 font-bold">Si quieres que algo cambie...¡Elige CGT!</h1>
     <x-slider :sliders=$sliders></x-slider>
     <div class="pt-20 mx-auto grid gap-24 md:grid-cols-1 lg:grid-cols-2">
         <div class="tarjeta" id="comunicados" class="" title="Consulta nuestros comunicados">

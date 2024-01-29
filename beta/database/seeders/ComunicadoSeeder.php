@@ -29,7 +29,8 @@ class ComunicadoSeeder extends Seeder
             $row = [];
             foreach ($fields as $index => $field) {
                 if (isset($data[$index])) {
-                    $row[$field] = str_replace('\n', "\n", mb_convert_encoding($data[$index], 'UTF-8', 'Windows-1252'));
+                    // $row[$field] = addslashes(str_replace('\n', "\n", mb_convert_encoding($data[$index], 'UTF-8', 'Windows-1252')));
+                    $row[$field] = iconv('Windows-1252', 'UTF-8//IGNORE', $data[$index]);
                 } else {
                     $row[$field] = null;
                 }
@@ -49,7 +50,6 @@ class ComunicadoSeeder extends Seeder
         }
 
         fclose($csvFile);
-
 
     }
 }

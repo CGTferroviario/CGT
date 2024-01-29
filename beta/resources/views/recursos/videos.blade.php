@@ -1,7 +1,7 @@
 <x-publico-layout>
 
 @section('contenido')
-<h1 class="m-0 py-3 text-center bg-rojoBrillante font-bold">VIDEOS</h1>
+<h1 class="m-0 py-3 text-center bg-red-500 font-bold">VIDEOS</h1>
 <div class="fondo videos">
     <div class="busqueda p-4 pt-6 flex justify-end">
         <div class="w-1/4">

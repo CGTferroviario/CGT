@@ -15,7 +15,7 @@
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-start">
                     <div class="flex items-center gap-x-3 align-middle">
-                        <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-zinc-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-zinc-900 hover:text-red-500" title="Añadir un nuevo noticia">
+                        <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-zinc-900 transition-colors duration-200 bg-red-500 bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-zinc-900 hover:text-red-500" title="Añadir un nuevo noticia">
                             <i class="lni lni-arrow-left"></i>
                             <a href="{{ route('intranet.noticias.index') }}" class="">Todas las Noticias</a>
                         </button>

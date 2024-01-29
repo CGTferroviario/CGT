@@ -11,7 +11,7 @@
         <div class="bg-blanco-transp bordeRojo rounded-lg p-4">
             <div class="grid grid-cols-3 mt-2 mb-3">
                 <div class="sm:flex sm:items-center sm:justify-between">
-                    <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-zinc-900 transition-colors duration-200 bg-rojoBrillante bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-zinc-900 hover:text-red-500" title="Volver a Empresas">
+                    <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-zinc-900 transition-colors duration-200 bg-red-500 bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-zinc-900 hover:text-red-500" title="Volver a Empresas">
                         <i class="lni lni-arrow-left"></i>
                         <a href="{{ route('intranet.empresas.index') }}" class="">Volver al Índice de empresas</a>
                     </button>
