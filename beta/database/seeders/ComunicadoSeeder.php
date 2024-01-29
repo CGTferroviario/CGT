@@ -26,15 +26,14 @@ class ComunicadoSeeder extends Seeder
         $fields = ['id', 'visualizaciones', 'descargas', 'publicado', 'user_id', 'numero', 'empresa_id', 'categoria_id', 'fecha', 'titulo', 'subtitulo', 'cuerpo', 'pdf', 'imagen', 'adjunto', 'created_at', 'updated_at'];
 
         while (($data = fgetcsv($csvFile, 555, ";")) !== false) {
-            if ($data === array_slice($data, 0, 1)) {
-                continue;
-            }
-
             $row = [];
             foreach ($fields as $index => $field) {
-                $row[$field] = mb_convert_encoding($data[$index], 'UTF-8', 'Windows-1252');
+                if (isset($data[$index])) {
+                    $row[$field] = str_replace('\n', "\n", mb_convert_encoding($data[$index], 'UTF-8', 'Windows-1252'));
+                } else {
+                    $row[$field] = null;
+                }
             }
-            
 
             $fecha = DateTime::createFromFormat('m/d/Y', $row['fecha']);
             if ($fecha !== false) {
@@ -50,6 +49,7 @@ class ComunicadoSeeder extends Seeder
         }
 
         fclose($csvFile);
+
 
     }
 }
