@@ -81,11 +81,9 @@ class EmpresaController extends Controller
             $empresa = Empresa::where('slug', $slug)->firstOrFail();
             return view('empresas.show', ['empresa' => $empresa]);
         } catch (ModelNotFoundException $e) {
-            abort(404, 'Categoria no encontrada');
+            abort(404, 'Empresa no encontrada');
         }
     }
-
-    
 
     /**
      * Show the form for editing the specified resource.
