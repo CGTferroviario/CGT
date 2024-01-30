@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCategoriaRequest;
 use App\Http\Requests\UpdateCategoriaRequest;
 use App\Models\Categoria;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class CategoriaController extends Controller
 {
@@ -48,9 +49,15 @@ class CategoriaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Categoria $categoria)
+    public function show(Categoria $categoria, $slug)
     {
-        //
+        // Mostramos la página de categoría
+        try {
+            $categoria = Categoria::where('slug', $slug)->firstOrFail();
+            return view('categorias.show', ['categoria' => $categoria]);
+        } catch (ModelNotFoundException $e) {
+            abort(404, 'Categoria no encontrada');
+        }
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEtiquetaRequest;
 use App\Http\Requests\UpdateEtiquetaRequest;
 use App\Models\Etiqueta;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class EtiquetaController extends Controller
 {
@@ -46,9 +47,15 @@ class EtiquetaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Etiqueta $etiqueta)
+    public function show(Etiqueta $etiqueta, $slug)
     {
-        //
+        // Mostramos la página de categoría
+        try {
+            $etiqueta = Etiqueta::where('slug', $slug)->firstOrFail();
+            return view('etiquetas.show', ['etiqueta' => $etiqueta]);
+        } catch (ModelNotFoundException $e) {
+            abort(404, 'Etiqueta no encontrada');
+        }
     }
 
     /**

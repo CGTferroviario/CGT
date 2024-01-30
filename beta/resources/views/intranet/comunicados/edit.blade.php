@@ -52,6 +52,15 @@
                             <form action="{{ route('intranet.comunicados.update', $comunicado->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
+                                @if ($errors->any())
+                                    <div class="p-4 mb-2 bordeRojo rounded-lg bg-red-200 text-sm text-red-500">
+                                        <ul class="pl-4 list-disc">
+                                            @foreach ($errors->all() as $error)
+                                            <li class="">{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
                                     <x-forms.select-empresa-edit :empresas=$empresas :tipo=$comunicado></x-select-empresa>
 
@@ -72,7 +81,7 @@
                                     </div>
                                     <div class="col-span-6">
                                         <label for="subtitulo" class="block mb-2 text-sm font-medium text-white">Subtítulo</label>
-                                        <input type="text" name="subtitulo" id="subtitulo" class="w-full bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-zinc-400" placeholder="" value="{{ $comunicado->subtitulo }}" required="">
+                                        <input type="text" name="subtitulo" id="subtitulo" class="w-full bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-zinc-400" placeholder="" value="{{ $comunicado->subtitulo }}">
                                     </div>
                                 </div>
                                         

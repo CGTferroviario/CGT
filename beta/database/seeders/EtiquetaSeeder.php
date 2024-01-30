@@ -14,7 +14,7 @@ class EtiquetaSeeder extends Seeder
     public function run(): void
     {
         DB::table('etiquetas')->truncate(); //for cleaning earlier data to avoid duplicate entries
-        DB::table('etiquetas')->insert([
+        $etiquetas = [
             [ 'nombre' => 'AFILIACIÓN' , 'activa' => 1  ],
             [ 'nombre' => 'AYUDAS Y BENEFICIOS SOCIALES' , 'activa' => 1  ],
             [ 'nombre' => 'IGUALDAD' , 'activa' => 1  ],
@@ -42,6 +42,13 @@ class EtiquetaSeeder extends Seeder
             [ 'nombre' => 'CARTELES' , 'activa' => 1  ],
             [ 'nombre' => 'FOTOGRAFIAS' , 'activa' => 1  ],
             [ 'nombre' => 'LOGOTIPOS' , 'activa' => 1  ],
-        ]);
+        ];
+        foreach ($etiquetas as $etiqueta) {
+            DB::table('etiquetas')->insert([
+                'nombre' => $etiqueta['nombre'],
+                'activa' => $etiqueta['activa'],
+                'slug' => \Illuminate\Support\Str::slug($etiqueta['nombre']),
+            ]);
+        }
     }
 }

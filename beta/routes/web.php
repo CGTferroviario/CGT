@@ -153,7 +153,8 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->name('intranet.')->prefix('intranet')->group(function () {
     Route::resource('/comunicados', ComunicadoController::class);
     Route::resource('/noticias', NoticiaController::class);
-    Route::resource('/empresas', EmpresaController::class);
+    Route::resource('/empresas', EmpresaController::class)->except(['show']);
+    
     Route::resource('/categorias', CategoriaController::class);
     Route::resource('/etiquetas', EtiquetaController::class);
     Route::resource('/equipos', EquipoController::class);
@@ -165,6 +166,12 @@ Route::middleware('auth')->name('intranet.')->prefix('intranet')->group(function
     Route::resource('/seccions', SeccionController::class);
     Route::resource('/afiliados', AfiliadoController::class);
 });
+
+
+Route::get('/empresas/{slug}', [EmpresaController::class, 'show'])->name('empresas.show');
+Route::get('/categorias/{slug}', [CategoriaController::class, 'show'])->name('categorias.show');
+Route::get('/etiquetas/{slug}', [EtiquetaController::class, 'show'])->name('etiquetas.show');
+
 
 
 require __DIR__.'/auth.php';

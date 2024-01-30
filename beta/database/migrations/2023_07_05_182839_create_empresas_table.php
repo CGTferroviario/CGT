@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('empresas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('slug');
             $table->text('descripcion');
             $table->string('logo')->nullable();
             $table->boolean('vales')->default(0);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEmpresaRequest;
 use App\Http\Requests\UpdateEmpresaRequest;
 use App\Models\Empresa;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\Facades\File;
@@ -73,10 +74,18 @@ class EmpresaController extends Controller
         return redirect(route('intranet.empresas.index'))->with('message', 'Empresa Creada Correctamente');
     }
 
-    public function show(Empresa $empresa)
+    public function show(Empresa $empresa, $slug)
     {
-        return view('intranet.empresas.show');
+        // Mostramos la página de empresa
+        try {
+            $empresa = Empresa::where('slug', $slug)->firstOrFail();
+            return view('empresas.show', ['empresa' => $empresa]);
+        } catch (ModelNotFoundException $e) {
+            abort(404, 'Categoria no encontrada');
+        }
     }
+
+    
 
     /**
      * Show the form for editing the specified resource.

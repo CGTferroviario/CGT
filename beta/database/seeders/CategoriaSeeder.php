@@ -13,8 +13,10 @@ class CategoriaSeeder extends Seeder
      */
     public function run(): void
     {
+        
         DB::table('categorias')->truncate(); //for cleaning earlier data to avoid duplicate entries
-        DB::table('categorias')->insert([
+
+        $categorias = [
             ['nombre' => 'INFRAESTRUCTURA'],
             ['nombre' => 'CIRCULACIÓN'],
             ['nombre' => 'OFICINAS'],
@@ -26,6 +28,14 @@ class CategoriaSeeder extends Seeder
             ['nombre' => 'JURIDICA'],
             ['nombre' => 'BIBLIOTECA'],
             ['nombre' => 'DOC.GENERAL'],
-        ]);
+        ];
+
+        foreach ($categorias as $categoria) {
+            DB::table('categorias')->insert([
+                'nombre' => $categoria['nombre'],
+                'slug' => \Illuminate\Support\Str::slug($categoria['nombre']),
+            ]);
+        }
+
     }
 }

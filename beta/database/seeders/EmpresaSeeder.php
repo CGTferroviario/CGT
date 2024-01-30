@@ -13,7 +13,9 @@ class EmpresaSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('empresas')->insert([
+        DB::table('empresas')->truncate(); //for cleaning earlier data to avoid duplicate entries
+
+        $empresas = [
             ['nombre' => 'ADIF', 'descripcion' => 'El Administrador de Infraestructuras Ferroviarias' , 'logo' => 'www.adif.es' , 'vales' => true, 'comunicados' => true, 'activa' => true], 
             ['nombre' => 'RENFE', 'descripcion' => 'Gestión de trenes y Viajeros' , 'logo' => 'www.renfe.es' , 'vales' => true, 'comunicados' => true, 'activa' => true], 
             ['nombre' => 'CONJUNTO', 'descripcion' => 'Para los comunicados conjuntos' , 'logo' => 'conjunto' , 'vales' => false, 'comunicados' => true, 'activa' => false], 
@@ -39,6 +41,18 @@ class EmpresaSeeder extends Seeder
             ['nombre' => 'IRYO', 'descripcion' => 'La operadora de trenes Italiana' , 'logo' => 'www.iryo.es' , 'vales' => false, 'comunicados' => false, 'activa' => true],
             ['nombre' => 'ACTREN', 'descripcion' => 'Servicios Auxiliares' , 'logo' => 'www.actren.es' , 'vales' => false, 'comunicados' => false, 'activa' => true],
             ['nombre' => 'OUIGO', 'descripcion' => 'La operadora de trenes Francesa' , 'logo' => 'www.ouigo.es' , 'vales' => false, 'comunicados' => true, 'activa' => true],
-        ]);
+        ];
+
+        foreach ($empresas as $empresa) {
+            DB::table('empresas')->insert([
+                'nombre' => $empresa['nombre'],
+                'slug' => \Illuminate\Support\Str::slug($empresa['nombre']),
+                'descripcion' => $empresa['descripcion'],
+                'logo' => $empresa['logo'],
+                'vales' => $empresa['vales'],
+                'comunicados' => $empresa['comunicados'],
+                'activa' => $empresa['activa'],
+            ]);
+        }
     }
 }
