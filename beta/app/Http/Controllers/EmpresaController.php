@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEmpresaRequest;
 use App\Http\Requests\UpdateEmpresaRequest;
+use App\Models\Comunicado;
+use App\Models\Documento;
 use App\Models\Empresa;
+use App\Models\Noticia;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Facade;
@@ -76,13 +79,18 @@ class EmpresaController extends Controller
 
     public function show(Empresa $empresa, $slug)
     {
+        
         // Mostramos la página de empresa
         try {
             $empresa = Empresa::where('slug', $slug)->firstOrFail();
-            return view('empresas.show', ['empresa' => $empresa]);
+            $comunicados = Comunicado::where('empresa_id', $empresa->id)->paginate(8);
+            $noticias = Noticia::where('empresa_id', $empresa->id)->paginate(8);
+            $documentos = Documento::where('empresa_id', $empresa->id)->paginate(8);
+            return view('empresas.show', compact('empresa', 'comunicados', 'noticias', 'documentos'));
         } catch (ModelNotFoundException $e) {
             abort(404, 'Empresa no encontrada');
         }
+
     }
 
     /**

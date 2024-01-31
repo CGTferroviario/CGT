@@ -8,14 +8,16 @@
         <div class="empresa p-2 grid grid-flow-col">
             <div class="justify-self-start">
                 <div class="py-0.5 px-2 rounded-full font-semibold bg-{{ $comunicado->empresa?->nombre }}">
-                    <a href="{{ route('empresas.show', ['slug' => $comunicado->empresa?->slug]) }}">{{ $comunicado->empresa?->nombre }}</a>
+                    @if($comunicado->empresa)
+                        <a href="{{ route('empresas.show', ['slug' => $comunicado->empresa?->slug]) }}">{{ $comunicado->empresa?->nombre }}</a>
+                    @endif
                 </div>
             </div>
             <div class="justify-self-end">
                 {{ $comunicado->fecha }}
             </div>
         </div>
-        <div class="flex-grow p-2 overflow-auto">
+        <div class="flex-grow p-2 overflow-auto bg-white">
             <p class="text-black text-justify">{!! nl2br(e($comunicado->cuerpo))!!}</p>
         </div>
         <div class="mt-auto p-1 text-center">

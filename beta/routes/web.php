@@ -154,9 +154,8 @@ Route::middleware('auth')->name('intranet.')->prefix('intranet')->group(function
     Route::resource('/comunicados', ComunicadoController::class);
     Route::resource('/noticias', NoticiaController::class);
     Route::resource('/empresas', EmpresaController::class)->except(['show']);
-    
-    Route::resource('/categorias', CategoriaController::class);
-    Route::resource('/etiquetas', EtiquetaController::class);
+    Route::resource('/categorias', CategoriaController::class)->except(['show']);
+    Route::resource('/etiquetas', EtiquetaController::class)->except(['show']);
     Route::resource('/equipos', EquipoController::class);
     Route::resource('/roles', RoleController::class);
     Route::resource('/permissions', PermissionController::class);
