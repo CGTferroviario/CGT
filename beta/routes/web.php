@@ -151,7 +151,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::middleware('auth')->name('intranet.')->prefix('intranet')->group(function () {
-    Route::resource('/comunicados', ComunicadoController::class);
+    Route::resource('/comunicados', ComunicadoController::class)->except(['show']);
     Route::resource('/noticias', NoticiaController::class);
     Route::resource('/empresas', EmpresaController::class)->except(['show']);
     Route::resource('/categorias', CategoriaController::class)->except(['show']);
@@ -166,7 +166,7 @@ Route::middleware('auth')->name('intranet.')->prefix('intranet')->group(function
     Route::resource('/afiliados', AfiliadoController::class);
 });
 
-
+Route::get('/comunicados/{slug}', [ComunicadoController::class, 'show'])->name('comunicados.show');
 Route::get('/empresas/{slug}', [EmpresaController::class, 'show'])->name('empresas.show');
 Route::get('/categorias/{slug}', [CategoriaController::class, 'show'])->name('categorias.show');
 Route::get('/etiquetas/{slug}', [EtiquetaController::class, 'show'])->name('etiquetas.show');

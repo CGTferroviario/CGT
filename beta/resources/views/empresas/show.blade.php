@@ -1,98 +1,67 @@
 <x-publico-layout>
-
     @section('contenido')
+        <x-slot name="header">
+            <h2 class="font-semibold text-xl text-zinc-900 leading-tight titular2">
+                {{ $empresa->nombre }}
+            </h2>
+        </x-slot>
         <div class="p-8 fondo comunicados">
-            <div class="bg-blanco-transp bordeRojo rounded-lg p-4">
-
-                <div id="accordion-collapse" data-accordion="collapse">
-                    <h2 id="accordion-collapse-heading-1">
-                        <button type="button"
-                            class="flex items-center justify-between w-full p-5 font-medium rtl:text-right border border-b-0 rounded-t-xl focus:ring-4 "
-                            data-accordion-target="#accordion-collapse-body-1" aria-expanded="true"
-                            aria-controls="accordion-collapse-body-1">
-                            <span>Comunicados</span>
-                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5 5 1 1 5" />
-                            </svg>
-                        </button>
-                    </h2>
-                    <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
-
-                        <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 m-6 rounded-lg">
-
-                            <div class="col-span-4 paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
-
-                            @foreach ($comunicados as $comunicado)
-                                
-                                <x-comunicado :comunicado=$comunicado></x-comunicado>
-
-                            @endforeach
-
-                            <div class="col-span-4 paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
-
-                        </div> 
-
-                    </div>
-                    <h2 id="accordion-collapse-heading-2">
-                        <button type="button"
-                            class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                            data-accordion-target="#accordion-collapse-body-2" aria-expanded="false"
-                            aria-controls="accordion-collapse-body-2">
-                            <span>Noticias</span>
-                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5 5 1 1 5" />
-                            </svg>
-                        </button>
-                    </h2>
-                    <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
-                        <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed
-                                using the Figma software so everything you see in the library has a design equivalent in our
-                                Figma file.</p>
-                            <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/"
-                                    class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based
-                                on the utility classes from Tailwind CSS and components from Flowbite.</p>
-                        </div>
-                    </div>
-                    <h2 id="accordion-collapse-heading-3">
-                        <button type="button"
-                            class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                            data-accordion-target="#accordion-collapse-body-3" aria-expanded="false"
-                            aria-controls="accordion-collapse-body-3">
-                            <span>Documentos</span>
-                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5 5 1 1 5" />
-                            </svg>
-                        </button>
-                    </h2>
-                    <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
-                        <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components
-                                from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product.
-                                Another difference is that Flowbite relies on smaller and standalone components, whereas
-                                Tailwind UI offers sections of pages.</p>
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both
-                                Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you
-                                from using the best of two worlds.</p>
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                            <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
-                                <li><a href="https://flowbite.com/pro/"
-                                        class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                                <li><a href="https://tailwindui.com/" rel="nofollow"
-                                        class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-                            </ul>
-                        </div>
+            <div id="accordion-collapse" data-accordion="collapse">
+                <h2 id="encabezado-comunicados">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rounded-t-xl rtl:text-right border border-b-0 focus:ring-1 focus:ring-zinc-800 border-zinc-700 text-zinc-800 bg-red-500 hover:bg-red-500 hover:text-zinc-800 gap-3"
+                        data-accordion-target="#acordeon-comunicados" aria-expanded="true"
+                        aria-controls="acordeon-comunicados">
+                        <span>Comunicados {{ $comunicados->count() }}</span>
+                        <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i>
+                    </button>
+                </h2>
+                <div id="acordeon-comunicados" class="hidden" aria-labelledby="encabezado-comunicados">
+                    <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 m-6 rounded-lg">
+                        <div class="col-span-4 paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
+                        @foreach ($comunicados as $comunicado)                                
+                            <x-comunicado :comunicado=$comunicado></x-comunicado>
+                        @endforeach
+                        <div class="col-span-4 paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
                     </div>
                 </div>
-
+                <h2 id="encabezado-noticias">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right border border-b-0 focus:ring-1 focus:ring-zinc-800 border-zinc-700 text-zinc-800 bg-red-500 hover:bg-red-500 hover:text-zinc-800 gap-3"
+                        data-accordion-target="#acordeon-noticias" aria-expanded="false"
+                        aria-controls="acordeon-noticias">
+                        <span>Noticias {{ $noticias->count() }}</span>
+                        <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i>
+                    </button>
+                </h2>
+                <div id="acordeon-noticias" class="hidden" aria-labelledby="encabezado-noticias">
+                    <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 m-6 rounded-lg">
+                        <div class="col-span-4 paginacion">{{ $noticias->links('vendor.pagination.tailwind') }}</div>
+                        @foreach ($noticias as $noticia)                                
+                            <x-noticia :noticia=$noticia></x-noticia>
+                        @endforeach
+                        <div class="col-span-4 paginacion">{{ $noticias->links('vendor.pagination.tailwind') }}</div>
+                    </div>
+                </div>
+                <h2 id="encabezado-documentos">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right border border-b-0 focus:ring-1 focus:ring-zinc-800 border-zinc-700 text-zinc-800 bg-red-500 hover:bg-red-500 hover:text-zinc-800 gap-3"
+                        data-accordion-target="#acordeon-documentos" aria-expanded="false"
+                        aria-controls="acordeon-documentos">
+                        <span>Documentos {{ $documentos->count() }}</span>
+                        <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i>
+                    </button>
+                </h2>
+                <div id="acordeon-documentos" class="hidden" aria-labelledby="encabezado-documentos">
+                    <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 m-6 rounded-lg">
+                        <div class="col-span-4 paginacion">{{ $documentos->links('vendor.pagination.tailwind') }}</div>
+                        @foreach ($documentos as $documento)                                
+                            <x-documento :documento=$documento></x-documento>
+                        @endforeach
+                        <div class="col-span-4 paginacion">{{ $documentos->links('vendor.pagination.tailwind') }}</div>
+                    </div>
+                </div>
             </div>
         </div>
     @endsection
-
 </x-publico-layout>

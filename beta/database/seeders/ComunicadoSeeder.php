@@ -42,7 +42,7 @@ class ComunicadoSeeder extends Seeder
             } else {
                 // Handle error
             }
-
+            $row['slug'] = \Illuminate\Support\Str::slug($row['titulo']);
             $row['created_at'] = Carbon::now();
             $row['updated_at'] = Carbon::now();
 

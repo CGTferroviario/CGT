@@ -7,7 +7,7 @@
         <!-- Cuerpo del Comunicado -->
         <div class="empresa p-2 grid grid-flow-col">
             <div class="justify-self-start">
-                <div class="py-0.5 px-2 rounded-full font-semibold bg-{{ $comunicado->empresa?->nombre }}">
+                <div class="py-0.5 px-2 inline rounded-full font-semibold bg-{{ $comunicado->empresa?->nombre }}">
                     @if($comunicado->empresa)
                         <a href="{{ route('empresas.show', ['slug' => $comunicado->empresa?->slug]) }}">{{ $comunicado->empresa?->nombre }}</a>
                     @endif
@@ -18,7 +18,10 @@
             </div>
         </div>
         <div class="flex-grow p-2 overflow-auto bg-white">
-            <p class="text-black text-justify">{!! nl2br(e($comunicado->cuerpo))!!}</p>
+            <p>{{ \Illuminate\Support\Str::limit($comunicado->cuerpo, 800, '...') }}</p>
+            <button type="button" onclick="window.location='{{ route('comunicados.show', $comunicado->id) }}';">Leer más</button>
+        
+            {{-- <p class="text-black text-justify">{!! nl2br(e($comunicado->cuerpo))!!}</p> --}}
         </div>
         <div class="mt-auto p-1 text-center">
             <div class="py-0.5 px-2 inline-flex rounded-full font-semibold bg-{{ $comunicado->categoria?->nombre }}">

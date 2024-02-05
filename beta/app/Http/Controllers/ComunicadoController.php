@@ -108,9 +108,10 @@ class ComunicadoController extends Controller
         }
         return redirect(route('intranet.comunicados.index'))->with('message', 'Comunicado Creado Correctamente');
     }
-    public function show(Comunicado $comunicado)
+    public function show(Comunicado $comunicado, $id)
     {
-        //
+        $comunicado = Comunicado::findOrFail($id);
+        return view('comunicados.show', ['comunicado' => $comunicado]);
     }
     public function edit(Comunicado $comunicado)
     {

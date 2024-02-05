@@ -22,6 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger('categoria_id')->nullable();
             $table->date('fecha');
             $table->string('titulo');
+            $table->string('slug');
             $table->string('subtitulo');
             $table->text('cuerpo');
             $table->string('pdf')->nullable();
