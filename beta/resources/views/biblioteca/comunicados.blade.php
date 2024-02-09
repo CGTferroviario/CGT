@@ -1,5 +1,4 @@
 <x-publico-layout>
-
     @section('contenido')
         <h1 class="m-0 py-3 text-center bg-red-500 font-bold">COMUNICADOS</h1>
         <div class="fondo comunicados">
@@ -18,7 +17,6 @@
                                 </button>
                             </div>
                         </div>
-
                         <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
                             <x-forms.select-empresa :empresas=$empresas></x-forms.select-empresa>
 
@@ -26,30 +24,18 @@
                             
                             <x-forms.select-etiquetas :etiquetas=$etiquetas></x-forms.select-etiquetas>
 
-                            <x-input-fecha></x-input-fecha>
+                            <x-forms.input-fecha></x-forms.input-fecha>
                         </div>
-                        
-
-                        
                     </form>
                 </div>
             </div>
-            
-            <div
-                class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">
-
+            <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">
                 <div class="col-span-4 paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
-
-                @foreach ($comunicados as $comunicado)
-                    
+                @foreach ($comunicados as $comunicado)            
                     <x-comunicado :comunicado=$comunicado></x-comunicado>
-
                 @endforeach
-
                 <div class="col-span-4 paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
-
             </div> 
         </div>
     @endsection
-
 </x-publico-layout>

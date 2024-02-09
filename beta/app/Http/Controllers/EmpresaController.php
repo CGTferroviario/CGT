@@ -79,7 +79,6 @@ class EmpresaController extends Controller
 
     public function show(Empresa $empresa, $slug)
     {
-        
         // Mostramos la página de empresa
         try {
             $empresa = Empresa::where('slug', $slug)->firstOrFail();
