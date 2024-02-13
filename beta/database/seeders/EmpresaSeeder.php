@@ -18,6 +18,7 @@ class EmpresaSeeder extends Seeder
         $empresas = [
             ['nombre' => 'ADIF', 'descripcion' => 'El Administrador de Infraestructuras Ferroviarias' , 'logo' => 'www.adif.es' , 'vales' => true, 'comunicados' => true, 'activa' => true], 
             ['nombre' => 'RENFE', 'descripcion' => 'Gestión de trenes y Viajeros' , 'logo' => 'www.renfe.es' , 'vales' => true, 'comunicados' => true, 'activa' => true], 
+            ['nombre' => 'CGT', 'descripcion' => 'La Confederación General del Trabajo' , 'logo' => 'www.cgtferroviario.es' , 'vales' => false, 'comunicados' => true, 'activa' => false],
             ['nombre' => 'CONJUNTO', 'descripcion' => 'Para los comunicados conjuntos' , 'logo' => 'conjunto' , 'vales' => false, 'comunicados' => true, 'activa' => false], 
             ['nombre' => 'ADIF-RENFE', 'descripcion' => 'Afectan a ambas empresas' , 'logo' => 'adif-renfe' , 'vales' => false, 'comunicados' => true, 'activa' => false], 
             ['nombre' => 'SECTOR', 'descripcion' => 'Para lo que afecta al Sector Federal Ferroviario' , 'logo' => 'sector' , 'vales' => false, 'comunicados' => true, 'activa' => false], 
