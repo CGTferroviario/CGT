@@ -20,6 +20,8 @@ return new class extends Migration
             $table->unsignedBigInteger('categoria_id')->nullable();
             $table->date('fecha');
             $table->string('titulo');
+            $table->string('slug');
+            $table->string('subtitulo');
             $table->text('cuerpo');
             $table->string('adjunto')->nullable();
             $table->string('imagen')->nullable();

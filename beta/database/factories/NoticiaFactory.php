@@ -25,6 +25,8 @@ class NoticiaFactory extends Factory
             'categoria_id' => $this->faker->numberBetween(1,7),
             'fecha' => $this->faker->date(),
             'titulo' => $this->faker->sentence(),
+            'slug' => $this->faker->slug(),
+            'subtitulo' => $this->faker->sentence(),
             'cuerpo' => $this->faker->paragraphs(4, true),
             'adjunto' => $this->faker->slug(),
             'imagen' => $this->faker->slug(),

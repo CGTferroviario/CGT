@@ -10,12 +10,12 @@ class Noticia extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'empresa_id', 'categoria_id', 'fecha', 'titulo', 'cuerpo', 'adjunto', 'imagen',
+        'user_id', 'empresa_id', 'categoria_id', 'fecha', 'titulo', 'slug', 'subtitulo', 'cuerpo', 'adjunto', 'imagen',
     ];
 
     public function user()
     {
-        return $this->belongsTo(User::class); 
+        return $this->belongsTo(User::class);
     }
     public function empresa()
     {
