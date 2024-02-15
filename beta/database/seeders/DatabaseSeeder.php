@@ -31,16 +31,15 @@ class DatabaseSeeder extends Seeder
         $this->call(SeccionSeeder::class);
         $this->call(CcaaSeeder::class);
         $this->call(ProvinciaSeeder::class);
-        $this->call(MunicipioSeeder::class);
-        
+        $this->call(MunicipioSeeder::class);        
 
         // $comunicado = Comunicado::factory(100)->create([
             
         // ]);
 
-        $noticia = Noticia::factory(100)->create([
+        // $noticia = Noticia::factory(100)->create([
             
-        ]);
+        // ]);
 
         $documento = Documento::factory(1000)->create([
             
@@ -50,6 +49,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ComunicadoEtiquetaSeeder::class);
         $this->call(NoticiaEtiquetaSeeder::class);
         $this->call(ComunicadoSeeder::class);
+        $this->call(NoticiaSeeder::class);
 
         
 		// supposed to only apply to a single connection and reset it's self
