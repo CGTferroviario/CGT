@@ -21,8 +21,8 @@ return new class extends Migration
             $table->date('fecha');
             $table->string('titulo');
             $table->string('slug');
-            $table->string('subtitulo');
-            $table->text('cuerpo');
+            $table->text('subtitulo');
+            $table->text('cuerpo')->nullable();
             $table->string('adjunto')->nullable();
             $table->string('imagen')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
