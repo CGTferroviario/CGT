@@ -12,7 +12,7 @@
                         class="flex items-center justify-between w-full p-5 font-medium rounded-t-xl rtl:text-right border border-b-0 focus:ring-1 focus:ring-zinc-800 border-zinc-700 text-zinc-200 group-hover:text-white bg-red-500 hover:bg-red-500 hover:text-zinc-800 gap-3"
                         data-accordion-target="#acordeon-comunicados" aria-expanded="true"
                         aria-controls="acordeon-comunicados">
-                        <span>Comunicados {{ $comunicados->count() }}</span>
+                        <span class="rounded-full py-2 px-4 bg-black">{{ $comunicados->count() }}</span><span>Comunicados</span>
                         <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-black active:text-black"></i>
                     </button>
                 </h2>
@@ -29,7 +29,7 @@
                         class="flex items-center justify-between w-full p-5 font-medium rtl:text-right border border-b-0 focus:ring-1 focus:ring-zinc-800 border-zinc-700 text-zinc-800 bg-red-500 hover:bg-red-500 hover:text-zinc-800 gap-3"
                         data-accordion-target="#acordeon-noticias" aria-expanded="false"
                         aria-controls="acordeon-noticias">
-                        <span>Noticias {{ $noticias->count() }}</span>
+                        <span class="rounded-full py-2 px-4 bg-black active:bg-red-500">{{ $noticias->count() }}</span><span>Noticias</span>
                         <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i>
                     </button>
                 </h2>
@@ -47,7 +47,7 @@
                         class="flex items-center justify-between w-full p-5 font-medium rtl:text-right border border-b-0 focus:ring-1 focus:ring-zinc-800 border-zinc-700 text-zinc-800 bg-red-500 hover:bg-red-500 hover:text-zinc-800 gap-3"
                         data-accordion-target="#acordeon-documentos" aria-expanded="false"
                         aria-controls="acordeon-documentos">
-                        <span>Documentos {{ $documentos->count() }}</span>
+                        <span class="rounded-full py-2 px-4 bg-black">{{ $documentos->count() }}</span><span>Documentos</span>
                         <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i>
                     </button>
                 </h2>

@@ -19,7 +19,7 @@
         </div>
         <div class="flex-grow p-2 overflow-auto bg-white">
             <p>{{ \Illuminate\Support\Str::limit($comunicado->cuerpo, 800, '...') }}</p>
-            <button type="button" onclick="window.location='{{ route('comunicados.show', $comunicado->id) }}';">Leer más</button>
+            <button class="rounded-lg border border-black p-2 bg-red-500 text-sm" type="button" onclick="window.location='{{ route('comunicados.show', $comunicado->id) }}';">Leer más</button>
         
             {{-- <p class="text-black text-justify">{!! nl2br(e($comunicado->cuerpo))!!}</p> --}}
         </div>

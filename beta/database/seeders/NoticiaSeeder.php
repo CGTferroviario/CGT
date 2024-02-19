@@ -23,10 +23,10 @@ class NoticiaSeeder extends Seeder
         while (($data = fgetcsv($csvFile,  555, ";")) !== false) {
             if (!$firstline) {
                 // Check if required fields are not empty
-                if (empty($data['0']) || empty($data['1']) || empty($data['2']) || empty($data['3']) || empty($data['4']) || empty($data['5']) || empty($data['6']) || empty($data['7']) || empty($data['9']) || empty($data['10']) || empty($data['11']) || empty($data['12'])) {
-                    // Handle error, possibly by logging or throwing an exception
-                    continue;
-                }
+                // if (empty($data['0']) || empty($data['1']) || empty($data['2']) || empty($data['3']) || empty($data['4']) || empty($data['5']) || empty($data['6']) || empty($data['7']) || empty($data['9']) || empty($data['10']) || empty($data['11']) || empty($data['12'])) {
+                //     // Handle error, possibly by logging or throwing an exception
+                //     continue;
+                // }
 
                 $fecha = DateTime::createFromFormat('m/d/Y', $data['6']);
                 if ($fecha === false) {
@@ -43,7 +43,7 @@ class NoticiaSeeder extends Seeder
                     "categoria_id" => mb_convert_encoding($data['5'], 'UTF-8', 'ISO-8859-1'),
                     "fecha" => $fecha->format('Y-m-d'),
                     "titulo" => mb_convert_encoding($data['7'], 'UTF-8', 'ISO-8859-1'),
-                    "slug" => \Illuminate\Support\Str::slug($data['7']),
+                    "slug" => substr(\Illuminate\Support\Str::slug($data['7']),  0, 20),
                     "subtitulo" => isset($data['9']) ? mb_convert_encoding($data['9'], 'UTF-8', 'ISO-8859-1') : null,
                     "cuerpo" => isset($data['10']) ? mb_convert_encoding($data['10'], 'UTF-8', 'ISO-8859-1') : null,
                     "adjunto" => isset($data['11']) ? mb_convert_encoding($data['11'], 'UTF-8', 'ISO-8859-1') : null,
