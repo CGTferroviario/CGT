@@ -26,7 +26,7 @@ class SeccionSeeder extends Seeder
                 $seccion = Seccion::create([
                     "nombre" => mb_convert_encoding($data['0'], 'UTF-8', 'ISO-8859-1'),
                     "email" => mb_convert_encoding($data['1'], 'UTF-8', 'ISO-8859-1'),
-                    "email2" => mb_convert_encoding($data['2'], 'UTF-8', 'ISO-8859-1'),                  
+                    "email2" => mb_convert_encoding($data['2'], 'UTF-8', 'ISO-8859-1'),
                     "direccion" => mb_convert_encoding($data['3'], 'UTF-8', 'ISO-8859-1'),
                     "descripcion" => mb_convert_encoding($data['4'], 'UTF-8', 'ISO-8859-1'),
                     "telefono" => mb_convert_encoding($data['5'], 'UTF-8', 'ISO-8859-1'),
