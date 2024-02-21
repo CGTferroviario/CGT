@@ -2,11 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Imports\NoticiasImport;
 use App\Models\Noticia;
 use DateTime;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel as FacadesExcel;
 
 class NoticiaSeeder extends Seeder
 {
@@ -17,43 +19,45 @@ class NoticiaSeeder extends Seeder
     {
         Noticia::truncate();
 
-        $csvFile = fopen(base_path("database/data/noticias.opt.csv"), "r");
+        FacadesExcel::import(new NoticiasImport, 'database/data/noticias.csv');
 
-        $firstline = true;
-        while (($data = fgetcsv($csvFile,  555, ";")) !== false) {
-            if (!$firstline) {
-                // Check if required fields are not empty
-                // if (empty($data['0']) || empty($data['1']) || empty($data['2']) || empty($data['3']) || empty($data['4']) || empty($data['5']) || empty($data['6']) || empty($data['7']) || empty($data['9']) || empty($data['10']) || empty($data['11']) || empty($data['12'])) {
-                //     // Handle error, possibly by logging or throwing an exception
-                //     continue;
-                // }
+        // $csvFile = fopen(base_path("database/data/noticias.csv"), "r");
 
-                $fecha = DateTime::createFromFormat('m/d/Y', $data['6']);
-                if ($fecha === false) {
-                    // Handle date parsing error
-                    continue;
-                }
+        // $firstline = true;
+        // while (($data = fgetcsv($csvFile,  555, ";")) !== false) {
+        //     if (!$firstline) {
+        //         // Check if required fields are not empty
+        //         // if (empty($data['0']) || empty($data['1']) || empty($data['2']) || empty($data['3']) || empty($data['4']) || empty($data['5']) || empty($data['6']) || empty($data['7']) || empty($data['9']) || empty($data['10']) || empty($data['11']) || empty($data['12'])) {
+        //         //     // Handle error, possibly by logging or throwing an exception
+        //         //     continue;
+        //         // }
 
-                $Noticia = Noticia::create([
-                    "id" => mb_convert_encoding($data['0'], 'UTF-8', 'ISO-8859-1'),
-                    "visualizaciones" => mb_convert_encoding($data['1'], 'UTF-8', 'ISO-8859-1'),
-                    "publicado" => mb_convert_encoding($data['2'], 'UTF-8', 'ISO-8859-1'),
-                    "user_id" => mb_convert_encoding($data['3'], 'UTF-8', 'ISO-8859-1'),
-                    "empresa_id" => mb_convert_encoding($data['4'], 'UTF-8', 'ISO-8859-1'),
-                    "categoria_id" => mb_convert_encoding($data['5'], 'UTF-8', 'ISO-8859-1'),
-                    "fecha" => $fecha->format('Y-m-d'),
-                    "titulo" => mb_convert_encoding($data['7'], 'UTF-8', 'ISO-8859-1'),
-                    "slug" => substr(\Illuminate\Support\Str::slug($data['7']),  0, 20),
-                    "subtitulo" => isset($data['9']) ? mb_convert_encoding($data['9'], 'UTF-8', 'ISO-8859-1') : null,
-                    "cuerpo" => isset($data['10']) ? mb_convert_encoding($data['10'], 'UTF-8', 'ISO-8859-1') : null,
-                    "adjunto" => isset($data['11']) ? mb_convert_encoding($data['11'], 'UTF-8', 'ISO-8859-1') : null,
-                    "imagen" => isset($data['12']) ? mb_convert_encoding($data['12'], 'UTF-8', 'ISO-8859-1') : null,
-                ]);
-            }
-            $firstline = false;
-        }
+        //         $fecha = DateTime::createFromFormat('m/d/Y', $data['6']);
+        //         if ($fecha === false) {
+        //             // Handle date parsing error
+        //             continue;
+        //         }
 
-        fclose($csvFile);
+        //         $Noticia = Noticia::create([
+        //             "id" => mb_convert_encoding($data['0'], 'UTF-8', 'ISO-8859-1'),
+        //             "visualizaciones" => mb_convert_encoding($data['1'], 'UTF-8', 'ISO-8859-1'),
+        //             "publicado" => mb_convert_encoding($data['2'], 'UTF-8', 'ISO-8859-1'),
+        //             "user_id" => mb_convert_encoding($data['3'], 'UTF-8', 'ISO-8859-1'),
+        //             "empresa_id" => mb_convert_encoding($data['4'], 'UTF-8', 'ISO-8859-1'),
+        //             "categoria_id" => mb_convert_encoding($data['5'], 'UTF-8', 'ISO-8859-1'),
+        //             "fecha" => $fecha->format('Y-m-d'),
+        //             "titulo" => mb_convert_encoding($data['7'], 'UTF-8', 'ISO-8859-1'),
+        //             "slug" => substr(\Illuminate\Support\Str::slug($data['7']),  0, 20),
+        //             "subtitulo" => isset($data['9']) ? mb_convert_encoding($data['9'], 'UTF-8', 'ISO-8859-1') : null,
+        //             "cuerpo" => isset($data['10']) ? mb_convert_encoding($data['10'], 'UTF-8', 'ISO-8859-1') : null,
+        //             "adjunto" => isset($data['11']) ? mb_convert_encoding($data['11'], 'UTF-8', 'ISO-8859-1') : null,
+        //             "imagen" => isset($data['12']) ? mb_convert_encoding($data['12'], 'UTF-8', 'ISO-8859-1') : null,
+        //         ]);
+        //     }
+        //     $firstline = false;
+        // }
+
+        // fclose($csvFile);
 
         // Noticia::truncate();
 
