@@ -24,16 +24,16 @@ class SeccionSeeder extends Seeder
         while (($data = fgetcsv($csvFile, 555, ";")) !== false) {
             if (!$firstline) {
                 $seccion = Seccion::create([
-                    "nombre" => mb_convert_encoding($data['0'], 'UTF-8', 'ISO-8859-1'),
-                    "email" => mb_convert_encoding($data['1'], 'UTF-8', 'ISO-8859-1'),
-                    "email2" => mb_convert_encoding($data['2'], 'UTF-8', 'ISO-8859-1'),
-                    "direccion" => mb_convert_encoding($data['3'], 'UTF-8', 'ISO-8859-1'),
-                    "descripcion" => mb_convert_encoding($data['4'], 'UTF-8', 'ISO-8859-1'),
-                    "telefono" => mb_convert_encoding($data['5'], 'UTF-8', 'ISO-8859-1'),
-                    "responsable" => mb_convert_encoding($data['6'], 'UTF-8', 'ISO-8859-1'),
-                    "ccaa_id" => mb_convert_encoding($data['7'], 'UTF-8', 'ISO-8859-1'),
-                    "provincia_id" => mb_convert_encoding($data['8'], 'UTF-8', 'ISO-8859-1'),
-                    "municipio_id" => mb_convert_encoding($data['9'], 'UTF-8', 'ISO-8859-1'),
+                    "nombre" => $data['0'],
+                    "email" => $data['1'],
+                    "email2" => $data['2'],
+                    "direccion" => $data['3'],
+                    "descripcion" => $data['4'],
+                    "telefono" => $data['5'],
+                    "responsable" => $data['6'],
+                    "ccaa_id" => $data['7'],
+                    "provincia_id" => $data['8'],
+                    "municipio_id" => $data['9'],
                 ]);
             }
             $firstline = false;

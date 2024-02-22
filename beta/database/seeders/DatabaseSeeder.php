@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CategoriaSeeder::class);
         $this->call(EtiquetaSeeder::class);
         $this->call(EquipoSeeder::class);
-        $this->call(SeccionSeeder::class);
+        // $this->call(SeccionSeeder::class);
         $this->call(CcaaSeeder::class);
         $this->call(ProvinciaSeeder::class);
         $this->call(MunicipioSeeder::class);        
@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ComunicadoEtiquetaSeeder::class);
         $this->call(NoticiaEtiquetaSeeder::class);
         // $this->call(ComunicadoSeeder::class);
-        $this->call(NoticiaSeeder::class);
+        // $this->call(NoticiaSeeder::class);
 
         
 		// supposed to only apply to a single connection and reset it's self
