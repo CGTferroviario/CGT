@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('fecha');
             $table->string('titulo');
             $table->string('slug');
-            $table->text('subtitulo');
+            $table->text('subtitulo')->nullable();
             $table->text('cuerpo')->nullable();
             $table->string('adjunto')->nullable();
             $table->string('imagen')->nullable();

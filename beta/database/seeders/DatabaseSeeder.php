@@ -28,10 +28,10 @@ class DatabaseSeeder extends Seeder
         $this->call(CategoriaSeeder::class);
         $this->call(EtiquetaSeeder::class);
         $this->call(EquipoSeeder::class);
-        // $this->call(SeccionSeeder::class);
         $this->call(CcaaSeeder::class);
         $this->call(ProvinciaSeeder::class);
-        $this->call(MunicipioSeeder::class);        
+        $this->call(MunicipioSeeder::class);
+        $this->call(SeccionSeeder::class);
 
         // $comunicado = Comunicado::factory(100)->create([
             

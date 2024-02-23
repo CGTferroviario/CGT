@@ -62,6 +62,11 @@
                     <i class="lni lni-briefcase-alt rojoBrillante transition duration-75 group-hover:text-white" title="Equipo"></i> <span class="ml-3 sm:hidden md:flex">Equipo</span>
                 </a>
             </li>
+            <li class="">                    
+                <a href="{{ route('intranet.seccions.index') }}" :active="request()->routeIs('seccions')" class="flex items-center p-2 rounded-lg text-white hover:bg-red-500 group hover:text-black">
+                    <i class="lni lni-map rojoBrillante transition duration-75 group-hover:text-white" title="Secciones"></i> <span class="ml-3 sm:hidden md:flex">Secciones</span>
+                </a>
+            </li>
             <hr>
             <li class="">                    
                 <a href="{{ route('intranet.roles.index') }}" :active="request()->routeIs('roles')" class="flex items-center p-2 rounded-lg text-white hover:bg-red-500 group hover:text-black">
@@ -78,11 +83,7 @@
                     <i class="lni lni-users rojoBrillante transition duration-75 group-hover:text-white" title="Usuarios"></i> <span class="ml-3 sm:hidden md:flex">Usuarios</span>
                 </a>
             </li>
-            <li class="">                    
-                <a href="{{ route('intranet.seccions.index') }}" :active="request()->routeIs('seccions')" class="flex items-center p-2 rounded-lg text-white hover:bg-red-500 group hover:text-black">
-                    <i class="lni lni-map rojoBrillante transition duration-75 group-hover:text-white" title="Secciones"></i> <span class="ml-3 sm:hidden md:flex">Secciones</span>
-                </a>
-            </li>
+            
             <li class="">                    
                 <a href="{{ route('intranet.afiliados.index') }}" :active="request()->routeIs('afiliados')" class="flex items-center p-2 rounded-lg text-white hover:bg-red-500 group hover:text-black">
                     <i class="lni lni-consulting rojoBrillante transition duration-75 group-hover:text-white" title="Afiliados"></i> <span class="ml-3 sm:hidden md:flex">Afiliados</span>
