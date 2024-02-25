@@ -13,14 +13,17 @@
                     @endif
                 </div>
             </div>
-            <div class="justify-self-end">
-                {{ $comunicado->fecha }}
-            </div>
+            
         </div>
         <div class="flex-grow p-2 overflow-auto bg-white">
-            <p>{{ \Illuminate\Support\Str::limit($comunicado->cuerpo, 800, '...') }}</p>
+            <div class="py-1">
+                {{ $comunicado->fecha }}
+            </div>
+            <p class="text-black text-justify">
+                {{-- Ponemos este texto entre exclamaciones para que no muestre etiquetas html --}}
+                {!! \Illuminate\Support\Str::limit($comunicado->cuerpo, 800, '...') !!}
+            </p>
             <button class="rounded-lg border border-black p-2 bg-red-500 text-sm" type="button" onclick="window.location='{{ route('comunicados.show', $comunicado->id) }}';">Leer más</button>
-        
             {{-- <p class="text-black text-justify">{!! nl2br(e($comunicado->cuerpo))!!}</p> --}}
         </div>
         <div class="mt-auto p-1 text-center">

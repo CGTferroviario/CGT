@@ -16,6 +16,7 @@ class ComunicadoSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Comunicado::truncate();
 
         $csvFile = fopen(base_path("database/data/comunicados.csv"), "r");
@@ -24,9 +25,9 @@ class ComunicadoSeeder extends Seeder
         while (($data = fgetcsv($csvFile, 555, ";")) !== false) {
             if (!$firstline) {
 
-                $fecha = DateTime::createFromFormat('m/d/Y', $data['6']);
+                $fecha = DateTime::createFromFormat('d/m/Y', $data['8']);
                 if ($fecha !== false) {
-                    $row['6'] = $fecha->format('Y-m-d');
+                    $row['8'] = $fecha->format('Y-m-d');
                 } else {
                     // Handle error
                 }
@@ -37,8 +38,13 @@ class ComunicadoSeeder extends Seeder
                     }
                 }
 
+                $cuerpo = \Illuminate\Support\Str::of($data['12'])->replace("\n", "<br>");
+
+
                 $Comunicado = Comunicado::create([
                     "id" => $data['0'],
+                    "visualizaciones" => $data['1'],
+                    "descargas" => $data['2'],
                     "publicado" => $data['3'],
                     "user_id" => $data['4'],
                     "numero" => $data['5'],
@@ -47,58 +53,18 @@ class ComunicadoSeeder extends Seeder
                     "fecha" => $fecha,
                     "titulo" => $data['9'],
                     "slug" => substr(\Illuminate\Support\Str::slug($data['9']), 0, 30),
-                    "subtitulo" => $data['10'],
-                    "cuerpo" => $data['11'],
-                    "visualizaciones" => $data['1'],
-                    "descargas" => $data['2'],
-                                      
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    "adjunto" => $data['12'],
-                    "imagen" => $data['13'],
+                    "subtitulo" => $data['11'],
+                    "cuerpo" => $cuerpo,    
+                    "pdf" => $data['13'],
+                    // "adjunto" => $data['12'],
+                    // "imagen" => $data['13'],
                 ]);
             }
             $firstline = false;
         }
 
         fclose($csvFile);
-
-        // // Skip the first line
-        // fgetcsv($csvFile);
-
-        // $fields = ['id', 'visualizaciones', 'descargas', 'publicado', 'user_id', 'numero', 'empresa_id', 'categoria_id', 'fecha', 'titulo', 'subtitulo', 'cuerpo', 'pdf', 'imagen', 'adjunto', 'created_at', 'updated_at'];
-
-        // while (($data = fgetcsv($csvFile, 555, ";")) !== false) {
-        //     $row = [];
-        //     foreach ($fields as $index => $field) {
-        //         if (isset($data[$index])) {
-        //             // $row[$field] = addslashes(str_replace('\n', "\n", mb_convert_encoding($data[$index], 'UTF-8', 'Windows-1252')));
-        //             $row[$field] = iconv('Windows-1252', 'UTF-8//IGNORE', $data[$index]);
-        //         } else {
-        //             $row[$field] = null;
-        //         }
-        //     }
-
-        //     $fecha = DateTime::createFromFormat('m/d/Y', $row['fecha']);
-        //     if ($fecha !== false) {
-        //         $row['fecha'] = $fecha->format('Y-m-d');
-        //     } else {
-        //         // Handle error
-        //     }
-        //     $row['slug'] = substr(\Illuminate\Support\Str::slug($row['titulo']), 0, 20);
-        //     $row['created_at'] = Carbon::now();
-        //     $row['updated_at'] = Carbon::now();
-
-        //     Comunicado::create($row);
-        // }
-
-        // fclose($csvFile);
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
     }
 }

@@ -68,7 +68,7 @@
                                     
                                     <x-forms.select-etiquetas-edit :etiquetas=$etiquetas :tipo=$comunicado></x-select-etiquetas>
 
-                                    <x-input-fecha></x-input-fecha>
+                                    <x-forms.input-fecha></x-input-fecha>
                                 </div>
                                 <div class="grid gap-4 sm:grid-cols-12 sm:gap-6 mt-3">
                                     <div>

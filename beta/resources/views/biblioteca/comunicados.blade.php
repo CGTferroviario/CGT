@@ -29,13 +29,14 @@
                     </form>
                 </div>
             </div>
-            <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">
-                <div class="col-span-4 paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
+            <div class="col-span-4 paginacion">{{ $comunicados->onEachSide(2)->links() }}</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">
+                
                 @foreach ($comunicados as $comunicado)            
                     <x-comunicado :comunicado=$comunicado></x-comunicado>
                 @endforeach
-                <div class="col-span-4 paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
             </div> 
+            <div class="col-span-4 paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
         </div>
     @endsection
 </x-publico-layout>
