@@ -21,42 +21,6 @@ class NoticiaSeeder extends Seeder
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
-        // Noticia::truncate();
-
-        // $csvFile = fopen(base_path("database/data/noticias.csv"), "r");
-
-        // $firstline = true;
-        // while (($data = fgetcsv($csvFile, 555, ";")) !== false) {
-        //     if (!$firstline) {
-
-        //         $fecha = DateTime::createFromFormat('m/d/Y', $data['6']);
-        //         if ($fecha !== false) {
-        //             $row['6'] = $fecha->format('Y-m-d');
-        //         } else {
-        //             // Handle error
-        //         }
-
-        //         $Noticia = Noticia::create([
-        //             "id" => $data['0'],
-        //             "visualizaciones" => $data['1'],
-        //             "publicado" => $data['2'],                  
-        //             "user_id" => $data['3'],
-        //             "empresa_id" => $data['4'],
-        //             "categoria_id" => $data['5'],
-        //             "fecha" => $fecha,
-        //             "titulo" => $data['7'],
-        //             "slug" => substr(\Illuminate\Support\Str::slug($data['7']), 0, 20),
-        //             "subtitulo" => $data['9'],
-        //             "cuerpo" => $data['10'],
-        //             "adjunto" => $data['11'],
-        //             "imagen" => $data['12'],
-        //         ]);
-        //     }
-        //     $firstline = false;
-        // }
-
-        // fclose($csvFile);
-
         Noticia::truncate();
 
         $csvFile = fopen(base_path("database/data/noticias.csv"), "r");
@@ -65,18 +29,22 @@ class NoticiaSeeder extends Seeder
         while (($data = fgetcsv($csvFile, 555, ";")) !== false) {
             if (!$firstline) {
 
-                $fecha = DateTime::createFromFormat('m/d/Y', $data['6']);
+                // Convertimos la fecha del formato español al formato americano que es lo que acepta la BBDD
+                $fecha = DateTime::createFromFormat('d/m/Y', $data['6']);
                 if ($fecha !== false) {
                     $row['6'] = $fecha->format('Y-m-d');
                 } else {
                     // Handle error
                 }
 
+                // Revisamos todos los campos y rellenamos en caso de vacío
                 for ($i = 0; $i < count($data); $i++) {
                     if (empty($data[$i])) {
                         $data[$i] = 0;
                     }
                 }
+
+                $cuerpo = \Illuminate\Support\Str::of($data['10'])->replace("\n", "<br>");
 
                 $Noticia = Noticia::create([
                     "id" => $data['0'],
@@ -89,9 +57,9 @@ class NoticiaSeeder extends Seeder
                     "titulo" => $data['7'],
                     "slug" => substr(\Illuminate\Support\Str::slug($data['7']), 0, 30),
                     "subtitulo" => $data['9'],
-                    "cuerpo" => $data['10'],
-                    "adjunto" => $data['11'],
-                    "imagen" => $data['12'],
+                    "cuerpo" => $cuerpo,
+                    // "adjunto" => $data['11'],
+                    // "imagen" => $data['12'],
                 ]);
             }
             $firstline = false;

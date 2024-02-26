@@ -3,17 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\Comunicado;
-use Carbon\Carbon;
 use DateTime;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class ComunicadoSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+    
     public function run(): void
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
@@ -25,21 +21,21 @@ class ComunicadoSeeder extends Seeder
         while (($data = fgetcsv($csvFile, 555, ";")) !== false) {
             if (!$firstline) {
 
+                // Convertimos la fecha del formato español al formato americano que es lo que acepta la BBDD
                 $fecha = DateTime::createFromFormat('d/m/Y', $data['8']);
                 if ($fecha !== false) {
                     $row['8'] = $fecha->format('Y-m-d');
                 } else {
                     // Handle error
                 }
-
+                // Revisamos todos los campos y rellenamos en caso de vacío
                 for ($i = 0; $i < count($data); $i++) {
                     if (empty($data[$i])) {
-                        $data[$i] = 0;
+                        $data[$i] = "---";
                     }
                 }
 
                 $cuerpo = \Illuminate\Support\Str::of($data['12'])->replace("\n", "<br>");
-
 
                 $Comunicado = Comunicado::create([
                     "id" => $data['0'],

@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DocumentoEtiquetaSeeder::class);
         $this->call(ComunicadoEtiquetaSeeder::class);
         $this->call(NoticiaEtiquetaSeeder::class);
-        // $this->call(ComunicadoSeeder::class);
+        $this->call(ComunicadoSeeder::class);
         // $this->call(NoticiaSeeder::class);
 
         

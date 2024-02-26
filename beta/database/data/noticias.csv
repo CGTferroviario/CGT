@@ -1,4 +1,4 @@
-﻿id;visualizaciones;publicado;user_id;empresa_id;categoria_id;fecha;titulo;slug;subtitulo;cuerpo;adjunto;imagen
+id;visualizaciones;publicado;user_id;empresa_id;categoria_id;fecha;titulo;slug;subtitulo;cuerpo;adjunto;imagen
 1;0;1;1;3;1;05/01/2015;AÑO NUEVO, TELE NUEVA - CGT ESTRENA CANAL DE TV;;"Rojo y Negro tv es un espacio televisivo crítico, anarcosindicalista y libertario patrocinado por CGT, por, para y desde el movimiento obrero y su lucha de clase.
 Emitido en directo en Madrid en Canal 33 y en la web de rojoynegrotv.org
 ";"Os dejamos los enlaces para que podáis darle a me gusta, seguir o suscribirse al canal para que podáis seguir los movimientos y contenidos del nuevo espacio televisivo con mayor facilidad. Y muy importante, haciéndose seguidor, fan o suscribirse, en cada una de estas páginas nos ayudas a crecer en número en seguidores y capacidad de difusión colectiva, para nosotr@s es un placer que podamos contar con tu ayuda en este sencillo apoyo con el sencillo gesto de un click dentro de cada uno de estos enlaces para que crezcamos en numero de seguidores y difusión.
@@ -78,7 +78,7 @@ Así mismo, estas Elecciones Sindicales se están haciendo famosas por el voto c
 En condiciones normales de voto libre y personal, CGT estaría en condiciones de obtener un gran resultado electoral, y esta es la manera torticera de evitarlo.
 
 Si les sale bien, acordaran en todas las empresas para apuntalar todos sus chiringuitos, construidos y mantenidos por quienes muy pronto los derribaran…";1;CGT Combativo y eficaz.png
-6;0;1;1;3;1;11/03/2015;"Tercer programa de RNtv: ""Las Marchas de la Dignidad vuelven a Madrid""";;Programa emitido en directo el pasado martes 10 de marzo, desde el Canal33 de Madrid y en streaming  rojoynegrotv.info;"¿Es cierta la recuperación económica que venden Rajoy, consejos de ministros, y diversos políticos? ¿Entonces, por qué vuelven las Marchas de la Dignidad a Madrid el próximo 21M?
+6;0;1;1;3;1;11/03/2015;"Tercer programa de RNtv: 'Las Marchas de la Dignidad vuelven a Madrid'";;Programa emitido en directo el pasado martes 10 de marzo, desde el Canal33 de Madrid y en streaming  rojoynegrotv.info;"¿Es cierta la recuperación económica que venden Rajoy, consejos de ministros, y diversos políticos? ¿Entonces, por qué vuelven las Marchas de la Dignidad a Madrid el próximo 21M?
 
 Presenta:   Adriana Castizo @musicadrika
 Invitados:
@@ -106,7 +106,7 @@ POR UN REPARTO DEMOCRÁTICO DE LOS MEDIOS SINDICALES
 CONTRA LA REPRESIÓN SINDICAL A CGT
 ¡PARTICIPA EN LA CONCENTRACIÓN DEL 30 DE MARZO EN ATOCHA!
 ";1;PEQUE - concentracion 30M-2015.jpg
-9;0;1;1;3;1;06/04/2015;Objeción Fiscal 2015;;"La CGT lanza su campaña de objeción fiscal para 2015, este año apoyamos los proyectos de ""Tamquem els CIEs"" y ""Rereguarda en Moviment"", espereramos la participación de todas y todos.";"No con nuestro dinero 
+9;0;1;1;3;1;06/04/2015;Objeción Fiscal 2015;;"La CGT lanza su campaña de objeción fiscal para 2015, este año apoyamos los proyectos de 'Tamquem els CIEs' y 'Rereguarda en Moviment', espereramos la participación de todas y todos.";"No con nuestro dinero 
 
 Implacable en su presión fiscal, El Estado no cesa de pedirnos: IRPF, IVA, impuestos indirectos, tasas...  Y en este tiempo de tremendos recortes en gasto social, de pérdida de derechos y de la mayoría de nuestras conquistas, de desmantelamiento de lo público, cuando el parco estado del bienestar que aún disfrutábamos se tambalea, observamos con vergüenza cómo, año tras año, se renuevan enormes inversiones en el más estéril de los gastos: el Gasto Militar.  
 
@@ -894,7 +894,7 @@ CGT tiene representación e implantación en las entidades donde se han producid
 
 Tras la aportación de la exorbitada fianza impuesta por el magistrado de la Audiencia Nacional y la retirada de la acusación popular de UPyD, termina ahora la lucha por la exigencia de nuestro derecho para comparecer en la causa y comienza el ejercicio real de la acción penal, por nosotros mismos con nuestros medios, como CGT, al objeto de exigir que de algún modo se repare el daño causado, que los responsables no eludan la acción penal y que se desenmascare a quienes han llevado a que toda la sociedad haya pagado colectivamente las deudas generadas por sectores minoritarios, además de defender los derechos de las y los trabajadores que fueron despedidos en una salvaje reestructuración del sector financiero.
 ";1;BANKIA-CGT.jpg
-41;0;1;1;3;1;03/05/2016;1º DE MAYO;;Intervención del secretario general de CGT al finalizar la manifestación del 1º de mayo en Madrid.; **;1;poliz-1 mayo.jpg
+41;0;1;1;3;1;03/05/2016;1º DE MAYO;;Intervención del secretario general de CGT al finalizar la manifestación del 1º de mayo en Madrid.;;1;poliz-1 mayo.jpg
 42;0;1;1;3;1;04/05/2016;Entrevista a Jose Manuel Muñoz, Secretario General de la CGT;;“Estaría bien que el pelotazo de la nueva política llegara al sindicalismo”.;"El secretario general de CGT habla sobre las dificultades del sindicalismo alternativo, la mala imagen dejada por las centrales mayoritarias y sobre la necesidad de recuperar los derechos y libertades perdidos la pasada legislatura.
 
 
@@ -992,7 +992,7 @@ Creemos que la única acción posible es que el Estado actúe. Puede esquivar to
 
 Fue un desastre. Pactar un 1% de subida salarial cuando llevamos años de congelación salarial y gente con bajadas del 5%... Hemos visto que hasta los funcionarios, los más protegidos según se dice, les han bajado el 5%. Vemos que la parte empresarial está ganando. Por eso no tiene ni pies ni cabeza. Más aún cuando nos hemos dejado derechos laborales por el camino a todos los niveles y en todos los sectores. Ya no es el sueldo, son las vacaciones, los días de libre disposición, los convenios… Es un disparate. Todos tenemos que poner un poco de nuestra parte y los únicos que la ponen para sacar el país adelante es la clase trabajadora. Es que hemos pagado la deuda de la banca y de todos y, además, ahora nos controlan que no se nos vaya de las manos el déficit. A nosotros, a los trabajadores.
 ";1;entrevista_poliz_publico.jpg
-43;0;1;1;3;1;17/05/2016;Lo público… “Tenemos Derecho a tener Derechos” ;;En el decimocuarto programa de RNtv-Debate hablamos sobre Lo Público... porque tenemos Derecho a tener Derechos.; **;1;RyN-14.jpg
+43;0;1;1;3;1;17/05/2016;Lo público… “Tenemos Derecho a tener Derechos” ;;En el decimocuarto programa de RNtv-Debate hablamos sobre Lo Público... porque tenemos Derecho a tener Derechos.;;1;RyN-14.jpg
 44;0;1;1;3;1;23/05/2016;EN DEFENSA DE LO PÚBLICO;;¿Tenemos derecho a tener derechos?;"Hablamos:
 
 •	del Derecho a la Sanidad Pública universal y de calidad.
@@ -1066,10 +1066,10 @@ La defensa de los Servicios Públicos como derechos sociales para todas, nos ind
 La lucha de todas las personas afectadas (millones), de los movimientos sociales y de los sindicatos verdaderamente de clase, es la única garantía de empujar en el giro de 180º, para lograr la reapropiación de lo que es de todos y todas.
 
 La Lucha es el Único Camino";1;En defensa de lo Publico.png
-45;0;1;1;3;1;07/06/2016;Rueda de prensa CGT #xLoPúblico;;"Presentación de la campaña de CGT en defensa de los servicios públicos y la reversión de sectores privatizados, así como de la manifestación estatal del 18 de junio en Madrid, bajo el lema: ""Tenemos derecho a tener derechos"""; **;1;presentacion publico.jpg
+45;0;1;1;3;1;07/06/2016;Rueda de prensa CGT #xLoPúblico;;"Presentación de la campaña de CGT en defensa de los servicios públicos y la reversión de sectores privatizados, así como de la manifestación estatal del 18 de junio en Madrid, bajo el lema: ""Tenemos derecho a tener derechos""";;1;presentacion publico.jpg
 46;0;1;1;3;1;20/06/2016;CGT TOMA MADRID;;"En defensa de lo Público. Tenemos derecho a tener derechos. 
 Manifestación estatal en Madrid en defensa de lo público el sábado 18 de junio.
-"; **;1;manifa_18_06_16.jpg
+";;1;manifa_18_06_16.jpg
 47;0;1;1;3;1;23/06/2016;SEGURO POR PÉRDIDA DE HABERES POR SANCIÓN ;;El SFF-CGT ofrece a todos los afiliados un seguro que garantiza la pérdida económica dejada de percibir durante el periodo de suspensión temporal de empleo y sueldo, de la habilitación, título o licencia de cualificación profesional.;"El mismo seguro también garantiza la defensa de la responsabilidad penal del Asegurado.
 
 Las garantías que se han acordado contratar cubren una defensa penal con un límite de 3000€, y un subsidio por suspensión temporal de empleo y sueldo con un límite mensual de 1800€ durante un máximo de 12 meses. El coste anual es de 22€. Consideramos que es una herramienta muy útil para todos los trabajadores.
@@ -1280,7 +1280,7 @@ PAN, TRABAJO, TECHO E IGUALDAD:
     Por la defensa de los Servicios Públicos como derechos esenciales.
     Contra el feminicidio: Nos queremos vivas, ni una menos
 ";1;Marchas 27m.png
-56;0;1;1;3;1;29/05/2017;Boletín Salud Laboral nº 42: INCAPACIDAD LABORAL PERMANENTE;;En este nuevo Boletín de Salud Laboral hemos realizado un resumen de la situación de los trabajadores/as afectados por un proceso patológico o traumático derivado de una enfermedad o accidente y que como consecuencia queda reducida su capacidad laboral de forma presumiblemente reducida. A modo de guía, se recoge un extracto de la normativa vigente del Ministerio de Empleo y Seguridad Social en el que se señalan los diferentes grados de Incapacidad Permanente y sus correspondientes requisitos.; **;1;boletin_sl_42.jpg
+56;0;1;1;3;1;29/05/2017;Boletín Salud Laboral nº 42: INCAPACIDAD LABORAL PERMANENTE;;En este nuevo Boletín de Salud Laboral hemos realizado un resumen de la situación de los trabajadores/as afectados por un proceso patológico o traumático derivado de una enfermedad o accidente y que como consecuencia queda reducida su capacidad laboral de forma presumiblemente reducida. A modo de guía, se recoge un extracto de la normativa vigente del Ministerio de Empleo y Seguridad Social en el que se señalan los diferentes grados de Incapacidad Permanente y sus correspondientes requisitos.;;1;boletin_sl_42.jpg
 57;0;1;1;3;1;22/06/2017;28J MANIFESTACIÓN POR UN ORGULLO CRÍTICO;;El 28 de junio, se conmemora el día Internacional por el Orgullo LGTBIQ+: Lesbianas, Gays, Transexuales, Bisexuales, Intersexuales, Queers y demás sexualidades no heteronormativas orgullosas de su disidencia.;"¡Todas las personas tenemos derecho a vivir nuestras vidas en libertad y con dignidad.
 
 Somos un orgullo autogestionado, horizontal, anticapitalista, antirracista y transfeminista y hoy, 28J, salimos a la calle como bolleras, maricas, latines, trans*, intersex, negres, queer, arrománticas, asexuales, viciosas, bisexuales, alorrománticas, gordes, sordas, pansexuales, poliamorosas, moras, trabajadoras sexuales, diversas funcionales y como todas aquellas personas que con nuestra existencia cuestionamos la heteronorma.
@@ -1395,7 +1395,7 @@ atención a bordo de los trenes, entre otras.
 63;0;1;1;3;1;19/01/2018;"INCAPACIDAD TEMPORAL - Definición - Prestaciones económicas -	Tabla resumen";;"La prestación económica por incapacidad temporal cubre la falta de ingresos que se produce cuando el trabajador/a, debido a una enfermedad o accidente, está imposibilitado/a temporalmente para trabajar y recibe asistencia sanitaria de la Seguridad Social o Mutua correspondiente.
 
 En este nuevo Boletín de Salud Laboral hacemos un resumen de las prestaciones económicas que el trabajador/a debe de percibir a cargo de la Seguridad Social y del complemento que según Normativa Laboral de Renfe y Adif les corresponde.
-"; **;1;boletin_sl_47.jpg
+";;1;boletin_sl_47.jpg
 64;0;1;1;3;1;01/03/2018;HUELGA 8M - SIN NOSOTRAS EL MUNDO NO FUNCIONA;;Denunciamos la mercantilización que nos explota y esclaviza en la precariedad de nuestras vidas, siendo especialmente cruel en las vidas y discriminación a las mujeres.;"Denunciamos que nos dificulten doblemente a las mujeres el acceso al empleo, no queremos más empleo precario, temporal, jornadas parciales y horarios incompatibles con el trabajo de cuidados que se nos imponen. Exigimos que se acabe con la brecha salarial, la desigualdad en las pensiones, el acoso sexual y por razón de sexo en los centros de trabajo.
 
 No pueden continuar las violencias machistas y del mercado que nos tratan como objetos, posesiones del mercado, de los hombres que nos violan, acosan, maltratan y asesinan, que enferman e incapacitan a las mujeres para vivir. Pero también de las instituciones y sus leyes que reproducen actitudes y conductas machistas. Denunciamos las leyes por no garantizar el derecho a que todas las vidas sean sostenidas sin discriminar a ninguna. Exigimos respeto social y que la Iglesia no se siga inmiscuyendo.
@@ -1432,7 +1432,7 @@ Trataremos de denunciar también, haciendo paradas durante el trayecto, los ámb
 Desde aquí, invitamos a las ferroviarias y ferroviarios a participar en esta Manifestación y os pedimos que hagáis extensiva esta invitación a todas las personas que tengan éstas mismas inquietudes.
 
 ¡POR TI, POR TODAS, POR LO PÚBLICO!";1;7A Manifestacion xLoPublico.jpeg
-66;0;1;1;3;1;12/04/2018;"Presentación ""Un ferrocarril público y social""";;"Presentación Power Point realizada por el SP del SFF-CGT para la presentación del folleto ""Un ferrocarril público y social"", actualizado en 2018."; **;1;PPS ferrocarril publico social.jpg
+66;0;1;1;3;1;12/04/2018;"Presentación ""Un ferrocarril público y social""";;"Presentación Power Point realizada por el SP del SFF-CGT para la presentación del folleto ""Un ferrocarril público y social"", actualizado en 2018.";;1;PPS ferrocarril publico social.jpg
 67;0;1;1;5;1;01/05/2018;Boletín Salud Laboral nº 45: Accidentes y enfermedades labobrales. Mutuas, gastos desplazamiento, reclamaciones contingencia;;La Ley 35/2010 que modificó el artículo 74 de la Ley General de la Seguridad Social, añadió un inédito apartado 4 que establece que “las Mutuas podrán destinar una parte de excedentes que se obtengan en la gestión de las contingencias profesionales a un sistema de reducción de las cotizaciones por contingencias comunes de las empresas asociadas”.;"Para que esto se aplique es necesario que se hayan reducido los costes de la incapacidad temporal por debajo de los límites establecidos, reduciendo los índices de absentismo a través de medidas de presión contra los trabajadores/as de las empresas componentes de la Mutua.
 
 Esta trama de “empresarios asociados sin ánimo de lucro” pone en entredicho la presunta protección de la salud y el bienestar de todas las trabajadoras/es, priorizando los objetivos económico-productivos por encima de la salud de los mismos.
@@ -1486,7 +1486,7 @@ TODOS ESTOS CAMBIOS ENTRARÁN EN VIGOR EL DÍA 1 DE JUNIO DE 2108
 71;0;1;1;3;1;19/07/2018;"INCAPACIDAD TEMPORAL - Definición - Prestaciones económicas -	Tabla resumen";;"La prestación económica por incapacidad temporal cubre la falta de ingresos que se produce cuando el trabajador/a, debido a una enfermedad o accidente, está imposibilitado/a temporalmente para trabajar y recibe asistencia sanitaria de la Seguridad Social o Mutua correspondiente.
 
 En este nuevo Boletín de Salud Laboral hacemos un resumen de las prestaciones económicas que el trabajador/a debe de percibir a cargo de la Seguridad Social y del complemento que según Normativa Laboral de Renfe y Adif les corresponde.
-"; **;1;boletin_sl_47.jpg
+";;1;boletin_sl_47.jpg
 72;0;1;1;1;1;28/09/2018;ADIF - ENVEJECIMIENTO Y RENOVACIÓN DE PLANTILLA;;El I Convenio Colectivo de ADIF y ADIF A.V. determinó, entre otras cuestiones, la necesidad de mantener el nivel de empleo y la internalización de las cargas de trabajo:;"Cláusula 3ª Empleabilidad y calidad de empleo. Las Entidades y la Representación Sindical del personal acuerdan, con objeto de mantener la estabilidad laboral y el nivel de empleo, dar continuidad a la Comisión Mixta de empleabilidad de Adif y crear la de Adif AV, para analizar propuestas de cuantas medidas organizativas y de flexibilidad se estimen necesarias para mejorar los recursos humanos de ambas empresas, que podrían incluir movilidad geográfica y funcional así como internalización de cargas de trabajo.
 
 A través de este nuevo Boletín de Salud Laboral hemos realizado un breve estudio de la situación actual de la plantilla y el nivel de empleo basado en datos recogidos en las Memorias Anuales de Salud Laboral de Adif y Adif Alta Velocidad publicadas.
@@ -1514,7 +1514,7 @@ Queremos que los gobiernos sepan que estamos unidas/os y que no vamos a permitir
 &#61692;	Queremos conciliar la vida familiar y la vida laboral, con corresponsabilidad de los cuidados.
 CGT, DIGNIDAD, TRABAJO Y LUCHA
 ";1;MADRID Puerta del Sol.jpg
-75;0;1;1;5;1;30/10/2018;SIN ACUERDO, LA HUELGA SE MANTIENE;;**;"SIN ACUERDO EN LA NEGOCIACIÓN, CGT MANTIENE LA HUELGA DE MAÑANA 31
+75;0;1;1;5;1;30/10/2018;SIN ACUERDO, LA HUELGA SE MANTIENE;;;"SIN ACUERDO EN LA NEGOCIACIÓN, CGT MANTIENE LA HUELGA DE MAÑANA 31
 
 Madrid 30/10/2018
 
@@ -1525,7 +1525,7 @@ Desde CGT cuesta entender la irresponsabilidad que supone mantener posturas fér
 Por todo lo anterior, CGT no desconvocará la huelga del 31 de octubre y seguirá manteniendo una posición coherente con la defensa de un ferrocarril público, social y sostenible, junto a las justas reivindicaciones de las personas trabajadoras de las empresas ADIF y RENFE.
 
 ";1;Cartel_huelga_31o_2018.png
-76;0;1;1;5;1;13/11/2018;CGT reclama al ministro Ábalos más inversiones en trenes de Cercanías y Media Distancia ;;**;"En los últimos meses, CGT nos hemos reunido con diferentes partidos políticos, tanto en las Cortes Valencianas, como en el Congreso de los Diputados. Les hemos trasladado la problemática de la falta de personal que acucia tanto en Renfe, como en Adif, sobre todo en conducción, intervención, taquillas, talleres y mantenimiento de infraestructura, además de recordarles la falta de inversiones en el ferrocarril convencional, y la aplicación de la ley 6/2018 para instaurar las 37,5h de trabajo.
+76;0;1;1;5;1;13/11/2018;CGT reclama al ministro Ábalos más inversiones en trenes de Cercanías y Media Distancia ;;;"En los últimos meses, CGT nos hemos reunido con diferentes partidos políticos, tanto en las Cortes Valencianas, como en el Congreso de los Diputados. Les hemos trasladado la problemática de la falta de personal que acucia tanto en Renfe, como en Adif, sobre todo en conducción, intervención, taquillas, talleres y mantenimiento de infraestructura, además de recordarles la falta de inversiones en el ferrocarril convencional, y la aplicación de la ley 6/2018 para instaurar las 37,5h de trabajo.
 
 Ayer, por motivo de la puesta en marcha del nuevo servicio entre  Castellón y Vinaroz, se dieron cita el Ministro de Fomento, el Presidente de la Generalitat, el Presidente de Renfe y la Consejera de Infraestructuras, y desde CGT quisimos dejar palpables nuestras reivindicaciones, haciendo acto de presencia y forzando que tuvieran que acercarse a los que reivindicábamos para escuchar nuestra protesta. Paralelamente, les hicimos entrega de una carta en la que se resumía la situación del transporte ferroviario en la Comunidad, con especial atención a las cercanías y sus miles de supresiones. El encuentro, aunque tenso al principio, transcurrió en un inusual acercamiento hacia nuestra postura y el compromiso de tenerlas en cuenta en la medida de lo posible en las próximas actuaciones.
 ";1;para web.jpg
@@ -1584,7 +1584,7 @@ A finales del 2018, y tras las promesas de eliminar esas categorías, SEMAF, UGT
 CGT, sigue mostrándose contraria a la INSOLIDARIDAD que predican estas categorías y a la injustica que provocan. 
 CGT firmó un compromiso con los trabajadores y trabajadoras a los que les afecta y afectará esta situación, y lo seguiremos manteniendo.
 ";1;CGT BARRENDERO .jpg
-82;0;1;1;5;1;15/02/2019;SOMOS LA CGT;;**;"En esta sociedad de competitividad, eufemismo de supervivencia; el poder intenta ejercerse en demasiados campos de nuestra vida. Llevándonos a situaciones de indefensión y a las que dificilmente podemos hacer frente en solitario. 
+82;0;1;1;5;1;15/02/2019;SOMOS LA CGT;;;"En esta sociedad de competitividad, eufemismo de supervivencia; el poder intenta ejercerse en demasiados campos de nuestra vida. Llevándonos a situaciones de indefensión y a las que dificilmente podemos hacer frente en solitario. 
 Es por ello, que nos unimos para protegernos y desde esa unión mostrar que un Mundo Nuevo es posible.";1;SI QUEREMOS EMPRENDER.png
 83;0;1;1;3;1;20/02/2019;8M, HUELGA GENERAL.;;CGT ha convocado huelga general el 8 de marzo de 24 horas para las empresas ADIF, ADIF AV y RENFE;"Bajo los lemas “Sin nosotras el mundo no funciona”, “Sin nosotras no hay ni producción ni reproducción”, “Queremos parar para parar el mundo”, “Huelga para vivir, huelga para cuidarnos”, el pasado 8M de 2018 desarrollamos una histórica jornada de Huelga General de 24 horas, laboral, de consumo, de cuidados y estudiantil, participando activamente en la convocatoria que el Movimiento Feminista lanzaba a la sociedad. 
 Millones de mujeres fuimos protagonistas, en primera fila, ocupando el espacio público, dando un significativo paso hacia adelante, irreversible, en el proceso de lucha por la igualdad y la emancipación total, que venimos construyendo las mujeres desde hace muchos años, hasta conseguir que todas las personas seamos “socialmente iguales, humanamente diferentes, totalmente libres” como proponemos desde CGT. Durante todo el año 2018 se mantuvieron en contra de la justicia patriarcal, por la despenalización del aborto, contra la violencia sexual y en general contra las violencias machistas, construyéndose una lucha internacional y global imparable.
@@ -1636,8 +1636,8 @@ Transcribimos este texto extraído de la Constitución Española, para hacer hin
 El compromiso solidario de CGT y la plantilla que ha podido secundar las huelgas por la mejora de los servicios ferroviarios, la conciliación familiar y laboral, la renovación de la plantilla y rejuvenecimiento de la misma, al día de hoy, sigue teniendo como respuesta el silencio ministerial y empresarial. 
 
 Desde CGT seguimos esperando una respuesta por parte de los responsables que abra un periodo de negociación que impida la convocatoria de nuevos paros.";1;PECES.jpg
-88;0;1;1;2;1;06/09/2019;LA MOVILIDAD EN RENFE;;**;Los hermanos Marx explican los concursos de movilidad de Renfe, aportando luz a quienes no acabamos de entenderlos.;1;HERMANOS MARX.png
-89;0;1;1;2;1;16/09/2019;El PSOE desangra el ferrocarril convencional.;;**;"Como en ocasiones anteriores y con la “nocturnidad y alevosía” que ofrece el mes vacacional de agosto, sirvió para que el Consejo de Ministros aprobara la cancelación de los servicios ferroviarios que afectarán a varios territorios andaluces. Zonas que se suman a la degradación de la cornisa cantábrica con casi 4.000 trenes suprimidos en los últimos meses, los problemas constantes en el núcleo de cercanías de Madrid y el constante goteo que se produce en Extremadura, Cataluña, Castilla La Mancha, etc.
+88;0;1;1;2;1;06/09/2019;LA MOVILIDAD EN RENFE;;;Los hermanos Marx explican los concursos de movilidad de Renfe, aportando luz a quienes no acabamos de entenderlos.;1;HERMANOS MARX.png
+89;0;1;1;2;1;16/09/2019;El PSOE desangra el ferrocarril convencional.;;;"Como en ocasiones anteriores y con la “nocturnidad y alevosía” que ofrece el mes vacacional de agosto, sirvió para que el Consejo de Ministros aprobara la cancelación de los servicios ferroviarios que afectarán a varios territorios andaluces. Zonas que se suman a la degradación de la cornisa cantábrica con casi 4.000 trenes suprimidos en los últimos meses, los problemas constantes en el núcleo de cercanías de Madrid y el constante goteo que se produce en Extremadura, Cataluña, Castilla La Mancha, etc.
 
 A partir del 23 de septiembre, las relaciones incluidas en las Órdenes de Servicio Público (OSP) con trenes de Media Distancia Granada-Sevilla, Málaga-Sevilla y Ronda-Málaga desaparecerán, cumpliendo así el acuerdo del Consejo de Ministros del pasado 30 de agosto, sin que inicien su circulación las tres relaciones diarias con trenes AVANT entre Granada-Sevilla y Málaga-Granada que también se anunciaron en ese mismo Consejo de Ministros.
 
@@ -1650,7 +1650,7 @@ CGT, ante la desidia y el atropello de la Administración Pública, seguirá def
 
 Secretaría de Comunicación del SFF-CGT
 ";1;recortado cartel Ferrocarril CGT RGB.jpg
-90;0;1;1;5;1;26/09/2019;Renacen los privilegios del Régimen.;;**;"La garantías de incorporación de los militares a un puesto de trabajo en el Sector Público (ADIF-RENFE) es un insulto a los principios fundamentales y a las personas que, aprobando un concurso-oposición siguen en espera de ser contratados (RENFE), o tienen contratos precarios de relevo sin garantías de continuidad (ADIF).
+90;0;1;1;5;1;26/09/2019;Renacen los privilegios del Régimen.;;;"La garantías de incorporación de los militares a un puesto de trabajo en el Sector Público (ADIF-RENFE) es un insulto a los principios fundamentales y a las personas que, aprobando un concurso-oposición siguen en espera de ser contratados (RENFE), o tienen contratos precarios de relevo sin garantías de continuidad (ADIF).
 Existe una Constitución y sus leyes, en las que nos apoyamos para poder desenvolvernos y convivir con cierta normalidad. En su desarrollo descubrimos que existen ciertas garantías generadas y que son los Principios de Igualdad, Mérito, Capacidad, Transparencia y Seguridad Jurídica que deben darse en las oposiciones y concursos– oposiciones en el Sector Público. 
 En la novela Rebelión en la Granja, se crearon siete mandamientos que, a partir de cierto momento, todos los animales debían respetar, pero que poco a poco se fueron eliminando; como parece que ahora está ocurriendo en este país con la incontestable integración de ciertos militares que pasan a la reserva -cobrando una pensión- en el sector público y las empresas que lo conforman por la vía de los estudios de las subcomisiones, comisiones y por último, el BOE.
 130 militares entrarán a formar parte de las plantillas de Renfe y Adif, saltándose los principios de capacidad, mérito y transparencia, generando a su vez, indefensión jurídica en los cientos de personas que aprobaron la reciente Oferta de Empleo Público y que se encuentran a la espera de poder obtener un puesto de trabajo al que dedicaron mucho esfuerzo, tiempo, estudio y dinero.  
@@ -1662,21 +1662,21 @@ Es deshonesto intentar falsificar la realidad. Integridad es reconocer los hecho
 Una vez más, el Ministerio que ha dejado desatendido el ferrocarril en España, obviando sus necesidades reales, abandonando miles de kilómetros de vías, cerrando estaciones, dejando sin tren a millones de ciudadan@s que pagan sus impuestos y paralelamente ha atendido fielmente a los intereses de las grandes empresas constructoras; viene ahora a generar nueva conflictividad.
 
 CGT, sí se posiciona en contra de esta decisión política, y no lo hace por la procedencia de este personal, sino por el método elegido de ingreso, que no pasa por el mecanismo habitual de las Ofertas de Empleo Público abiertas a toda la ciudadanía, sin tratos preferentes o distinciones. Igualdad, capacidad, mérito, transparencia… Honestidad.";1;Foto-soldados.jpg
-91;0;1;1;5;1;16/10/2019;Concentración de CGT contra las privatizaciones y el deterioro del ferrocarril.;;**;"CGT se concentra mañana 17 a partir de las 12.30 h frente al Ministerio de Fomento para denunciar la situación de las principales empresas del Sector Ferroviario en España, RENFE y ADIF, que sigue siendo caótica; caminando a pasos agigantados hacia la precariedad, la externalización de todos los servicios y una más que deficiente prestación del servicio de transporte encomendado por la sociedad a estas empresas.
+91;0;1;1;5;1;16/10/2019;Concentración de CGT contra las privatizaciones y el deterioro del ferrocarril.;;;"CGT se concentra mañana 17 a partir de las 12.30 h frente al Ministerio de Fomento para denunciar la situación de las principales empresas del Sector Ferroviario en España, RENFE y ADIF, que sigue siendo caótica; caminando a pasos agigantados hacia la precariedad, la externalización de todos los servicios y una más que deficiente prestación del servicio de transporte encomendado por la sociedad a estas empresas.
 CGT como sindicato representativo con amplia implantación en estas dos empresas lleva años denunciando la situación, promoviendo movilizaciones y luchando para revertir la programación degenerativa a la que las distintas Direcciones de las empresas con el guión implantado por el Ministerio de Fomento, están llevando a cabo.
 Animamos a las asociaciones sociales, plataformas en defensa de lo público y el ferrocarril, y al resto de la ciudadanía a que se una a nosotr@s, pues el futuro del servicio de transporte por tren afecta de manera directa a to@s.
 Esta concentración viene enmarcada en un Plan de Acción global de concentraciones en el territorio español durante este mes, cerrando éstas con esta gran concentración frente al ministerio de Fomento y que casi con toda seguridad, se verá complementada con nuevas movilizaciones en periodos de huelga.
 Luchamos por un ferrocarril público, social y sostenible, por el cese del proceso privatizador y externalizador que se está llevando a cabo en el sector, por el cumplimiento de las normativas laborales y los acuerdos que empresa y trabajadores llevaron a efecto, en protesta contra el ingreso de excedentes militares por la puerta de atrás y por tasas de reposición necesarias que garanticen la calidad y la seguridad en el transporte.
 
 ";1;Cartel 3 CONCENTRACION 17.10.19 bajo.jpg
-92;0;1;1;2;1;08/11/2019;CENTROS DE GESTIÓN, UN POLVORÍN CON ANUNCIO DE EXPLOSIÓN;;**;"Desde hace tiempo la falta de previsión, el mirar para otro lado, incumplir los compromisos para la prestación de unos servicios de calidad, y la “comprensión” incomprensible de algunos sindicatos para con la empresa, han conducido a los Centros de Gestión a lo largo y ancho de este país a una situación insostenible.
+92;0;1;1;2;1;08/11/2019;CENTROS DE GESTIÓN, UN POLVORÍN CON ANUNCIO DE EXPLOSIÓN;;;"Desde hace tiempo la falta de previsión, el mirar para otro lado, incumplir los compromisos para la prestación de unos servicios de calidad, y la “comprensión” incomprensible de algunos sindicatos para con la empresa, han conducido a los Centros de Gestión a lo largo y ancho de este país a una situación insostenible.
 Desde hace tiempo, CGT ha intentado, sin éxito, promover soluciones para sacar adelante este servicio y que el personal que desarrolla su trabajo en los CGO puedan tener una actividad laboral normal, minimizando la presión que se ejerce sobre ellos y que se cumplan las condiciones laborales de acuerdo al derecho que la Normativa les otorga. 
 Para ello, intentamos involucrar al resto de sindicatos, intentando incluir puntos a desarrollar en los comités provinciales y en otros foros. Como ejemplo, valga nuestro intento de tratar temas que afectan directamente a los trabajadores en el Comité de Barcelona Sur.
 Como queda demostrado en la documentación que se adjunta, la mayoría del Comité (CCOO, Semaf y UGT) eliminó el punto que CGT planteaba, por lo que no se pudo tratar lo que planteábamos y la problemática del CGO continuó hasta el presente.
 Ahora, y por parte de CCOO, parece que toca hablar del tema (Comunicado 63) y abanderar la lucha de este personal. Sin embargo, los trabajadores/as continúan desde hace meses esperando soluciones y discriminados respecto a otros trabajadores a los que sí, esas mayorías sindicales, permiten que se traten sus temas.
 Una vez más, la incoherencia se manifiesta en la actividad sindical, siendo ésta muy dañina para los intereses de l@s trabajadores/as y que desde CGT no podemos dejar pasar la oportunidad de “retratar” a quienes así obran y suponen un perjuicio evidente para terceros.
 ";1;cgo.png
-93;0;1;1;5;1;20/02/2020;CGT convoca a los alcaldes de los municipios de Extremadura.;;**;"CGT se ha puesto en contacto con más de 200 alcaldes de municipios cacereños (Extremadura) para que, de manera conjunta y coordinada, se afronte la problemática concreta del cierre de taquillas y abandono del ferrocarril público y social por parte de las dos principales empresas ferroviarias, Renfe y Adif, con la “colaboración” del Ministerio de Fomento.
+93;0;1;1;5;1;20/02/2020;CGT convoca a los alcaldes de los municipios de Extremadura.;;;"CGT se ha puesto en contacto con más de 200 alcaldes de municipios cacereños (Extremadura) para que, de manera conjunta y coordinada, se afronte la problemática concreta del cierre de taquillas y abandono del ferrocarril público y social por parte de las dos principales empresas ferroviarias, Renfe y Adif, con la “colaboración” del Ministerio de Fomento.
 A estas alturas, nadie puede negar que el derecho a la movilidad ejercido a través del transporte ferroviario de los extremeños sea una quimera. Promesa tras promesa, década tras década, las estaciones y los servicios paralelos que se prestan en éstas, han sido pasto de la destrucción y el abandono. Pueblos que han visto como sus estaciones se encuentran cerradas y en ruinas; como sus vías están abandonadas o transformadas en Vías Verdes. 
 En la línea de estas acciones, el anuncio del cierre de nuevas estaciones por parte de Adif y la no continuidad en la prestación de venta de billetes y atención al cliente por parte de Renfe, ha venido a reclamar de forma más contundente por parte de CGT la necesidad urgente en el mantenimiento de los servicios a los que la ciudadanía tiene derecho. Y no un derecho por ser extremeños o de tal o cual sindicato o partido político. Hablamos del Derecho que nos otorga el pago de impuestos de manera religiosa tal y como nos manda la Hacienda Pública y los impuestos que abonamos con la adquisición de bienes y servicios.
 Desde CGT pensamos que es un error colosal, pensar que la mejora del transporte ferroviario vendrá de la mano de un partido político u otro, la historia nos dice que cuando un derecho como es el de la movilidad no se está aplicando, es la propia ciudadanía y sus representantes más directos quienes tienen que reivindicar a través de la presión mediática, la organización de concentraciones y manifestaciones continuadas en el tiempo y la labor política de los y las responsables municipales.
@@ -1692,7 +1692,7 @@ Esperamos que la voluntad, el buen hacer y la responsabilidad para con sus vecin
 
 Secretaría de Comunicación del SFF-CGT
 ";1;incendiotren4.jpg
-94;0;1;1;3;1;06/03/2020;Día Internacional de la Mujer Trabajadora;;**;"
+94;0;1;1;3;1;06/03/2020;Día Internacional de la Mujer Trabajadora;;;"
 El 8 de marzo de 2017, millones de mujeres de muchas partes del mundo fuimos a una huelga histórica por ser la primera huelga de mujeres global que iba más allá de una huelga laboral, incluyendo ámbitos como huelga de cuidados, de consumo y estudiantil.
 
 Es justo reconocer que el movimiento feminista transfronterizo y transcultural ha conseguido que estas luchas estén en las agendas públicas. CGT se ha implicado con este movimiento participando activamente, no sólo convocando las huelgas de los 8M, sino en las diferentes movilizaciones y acciones conjuntas.
@@ -1730,7 +1730,7 @@ Consulta y difunde.
 https://drive.google.com/file/d/1sMp6gLcjbJeECWLliIH0HOXUAd2Iz2BE/view
 
 Salud";1;COVID.png
-97;0;1;1;3;1;21/05/2020;SOLIDARIDAD CON LAS COMPAÑERAS DE NISSAN;;**;"Las organizaciones miembros de la Red Sindical Internacional de Solidaridad y de Luchas apoyan a los trabajadores y trabajadoras de la fábrica de Nissan en Montcada i Reixac, cerca de Barcelona, en su lucha contra el cierre de su fábrica por parte de la multinacional Renault-Nissan-Mitsubishi.
+97;0;1;1;3;1;21/05/2020;SOLIDARIDAD CON LAS COMPAÑERAS DE NISSAN;;;"Las organizaciones miembros de la Red Sindical Internacional de Solidaridad y de Luchas apoyan a los trabajadores y trabajadoras de la fábrica de Nissan en Montcada i Reixac, cerca de Barcelona, en su lucha contra el cierre de su fábrica por parte de la multinacional Renault-Nissan-Mitsubishi.
 
 La prensa japonesa anuncia el cierre de Nissan en Cataluña. Si la planta de Barcelona cierra, se verían afectados más de 3.000 empleos directos y 20.000 indirectos. La información del periódico «Nikkei» llega después de meses de filtraciones en la prensa, indicando que la alianza internacional Renault-Nissan-Mitsubishi reorganizará sus industrias; la empresa japonesa está aprovechando la crisis de COVID-19 para reducir su presencia en Europa y retirarse a Japón, China y Estados Unidos. Así, Nissan podría reducir su capacidad de producción en un 20% hasta finales de marzo de 2023. Estas elecciones son inaceptables y una vez más ponen los beneficios antes que las vidas de miles de trabajadores y trabajadoras.
 
@@ -1741,7 +1741,7 @@ El cierre de fábricas para uno y la vuelta al trabajo en condiciones inaceptabl
 http://www.laboursolidarity.org/Apoyo-a-los-huelguistas-de-Nissan?lang=es
 
 ";1;IMG_7233.JPG
-98;0;1;1;3;1;01/06/2020;Vacúnate, afíliate a la CGT;;**;"Desigualdad, precariedad, corrupción, crisis-estafa… La sociedad está enferma, llena de virus y también de tragedia, feminicidios, mordazas, CIE… Virus que llevan mucho más tiempo y que vinieron para quedarse. Virus que aparecen seguidos a veces: deuda, despido, desahucio…
+98;0;1;1;3;1;01/06/2020;Vacúnate, afíliate a la CGT;;;"Desigualdad, precariedad, corrupción, crisis-estafa… La sociedad está enferma, llena de virus y también de tragedia, feminicidios, mordazas, CIE… Virus que llevan mucho más tiempo y que vinieron para quedarse. Virus que aparecen seguidos a veces: deuda, despido, desahucio…
 Y a veces no, pero que vuelven: ERTE, traiciones, ERE… Ante todo eso sólo hay una vacuna posible. La calle, la unión, la lucha, ésa es la única cura para no quedarnos definitivamente más solas, más aisladas, más vulnerables y más débiles. La CGT es un sindicato asambleario, donde todos y todas deciden. Ésa la vacuna de la que te hablamos en estas páginas.
 
 ¿Quiénes somos?
@@ -1826,17 +1826,17 @@ Secretariado Permanente del SFF-CGT
 ";1;CONCENTRACIONES.jpeg
 100;0;1;1;1;1;17/09/2020;Muévete con CGT;;Paros parciales;"CGT se posiciona en contra del escenario privatizador emprendido por ADIF y Ministerio de Transportes por infinitas razones, entre ellas: aumento del coste de las obras de mantenimiento, precariedad laboral de los trabajadores contratados, mayor accidentabilidad laboral, enriquecimiento del sector privado con dinero público, etc.
 Apoya los paros y estarás defendiendo tu continuidad laboral y la de otras trabajadoras que vendrán despues.";1;MuevetePronto.jpg
-101;0;1;1;5;1;30/11/2020;EL MODELO AVE. UNA GRAN ESTAFA;;**;Programa Especial Ferrocarril. En el abordamos un tema que, en apariencia, nos lo han vendido como el culmen de la modernidad en las infraestructuras, pero ¿qué hay de cierto en todo esto? Lo desvelamos en este programa de la manos de Juan Ramón Ferrandis Bresó, uno de los mejores comunicadores sobre ferrocarril de España, y que como buen conocedor de la zona del Levante, también abordará esos aspectos desconocidos del Corredor Mediterráneo. ;1;Sin tAtulo.png
+101;0;1;1;5;1;30/11/2020;EL MODELO AVE. UNA GRAN ESTAFA;;;Programa Especial Ferrocarril. En el abordamos un tema que, en apariencia, nos lo han vendido como el culmen de la modernidad en las infraestructuras, pero ¿qué hay de cierto en todo esto? Lo desvelamos en este programa de la manos de Juan Ramón Ferrandis Bresó, uno de los mejores comunicadores sobre ferrocarril de España, y que como buen conocedor de la zona del Levante, también abordará esos aspectos desconocidos del Corredor Mediterráneo. ;1;Sin tAtulo.png
 102;0;1;1;1;1;27/03/2021;Mundo Vendido ;;ADIFLEAKS;"La traición en forma de desconvocatoria.
 
 Las 667 plazas no son una victoria, son la tasa de reposición.
 
 Las otras 1000 plazas quedan a expensas de que las apruebe Hacienda.
  ¡SIN GARANTÍAS NO SE DESCONVOCA!";1;Mundo Vendido Def.jpg
-103;0;1;1;3;1;22/09/2021;CGT EN CONTRA DEL CIERRE DE LA ESTACIÓN DE CASATEJADA;;**;El próximo viernes, CGT se concentrará contra el cierre de la estación de Casatejada y la disminución de los trenes que otorgan el derecho a la movilidad de la mayoría de la población. Te esperamos.;1;CASATEJADA.jpeg
-104;0;1;1;5;1;23/09/2021;Rodea la estación.;;**;"A partir de las 11h se desarrollará “RODEA LA ESTACIÓN” coincidiendo con la nueva jornada de huelga convocada por CGT en RENFE Málaga y con el día de acción global por el clima, poniendo en valor al ferrocarril como medio de transporte medioambientalmente más sostenible pese a las prácticas de RENFE y del Ministerio de Transportes que tienen a Málaga y su provincia en situación de emergencia ferroviaria.
+103;0;1;1;3;1;22/09/2021;CGT EN CONTRA DEL CIERRE DE LA ESTACIÓN DE CASATEJADA;;;El próximo viernes, CGT se concentrará contra el cierre de la estación de Casatejada y la disminución de los trenes que otorgan el derecho a la movilidad de la mayoría de la población. Te esperamos.;1;CASATEJADA.jpeg
+104;0;1;1;5;1;23/09/2021;Rodea la estación.;;;"A partir de las 11h se desarrollará “RODEA LA ESTACIÓN” coincidiendo con la nueva jornada de huelga convocada por CGT en RENFE Málaga y con el día de acción global por el clima, poniendo en valor al ferrocarril como medio de transporte medioambientalmente más sostenible pese a las prácticas de RENFE y del Ministerio de Transportes que tienen a Málaga y su provincia en situación de emergencia ferroviaria.
 ";1;rodea la estaciAn.jpeg
-105;0;1;1;3;1;14/10/2021;Por un tren que vertebre el territorio y enfríe el planeta;;**;"La declaración del año 2021 como año europeo del ferrocarril supone una oportunidad para relanzar y poner en primer lugar de prioridades la defensa del ferrocarril como medio de transporte seguro, al servicio de las personas y medioambientalmente sostenible.
+105;0;1;1;3;1;14/10/2021;Por un tren que vertebre el territorio y enfríe el planeta;;;"La declaración del año 2021 como año europeo del ferrocarril supone una oportunidad para relanzar y poner en primer lugar de prioridades la defensa del ferrocarril como medio de transporte seguro, al servicio de las personas y medioambientalmente sostenible.
 
 Los sucesivos gobiernos del PP y PSOE han realizado durante los últimos años una política de transporte ferroviario orientada a su liberalización y privatización, destinando ingentes cantidades de dinero público a la construcción de líneas de Alta Velocidad que pudiesen hacer atractiva la llegada de operadores privados y abandonando las inversiones en las líneas ferroviarias normales/convencionales, utilizadas por el 95% de las personas que usan el tren. La Alta Velocidad ha consumido grandes inversiones públicas, tiene un gran impacto
 ambiental y energético, y ha contribuido al aislamiento de infinidad de zonas rurales. Esta concepción del transporte se aleja del papel de prestación de servicio público, de vertebración del territorio y de reequilibrio territorial que debe jugar el ferrocarril.
@@ -1846,10 +1846,10 @@ La progresiva disminución de servicios en los municipios de menos de 20.000 hab
 Por otro lado, no podemos olvidar que vivimos en una situación de emergencia climática en la que el ferrocarril es una pieza clave en la imprescindible descarbonización del transporte. La apuesta por un errado modelo basado en la carretera y en el automóvil ha debilitado un sistema ferroviario normal/convencional y electrificado, que hoy debería jugar un papel central en la lucha climática. Es prioritario centrar esfuerzos en el trasvase al ferrocarril de mercancías y personas que hoy son transportadas por carretera. Reivindicamos el ferrocarril como uno de los modos de transporte más eficientes energéticamente y con menores emisiones; eje de una movilidad sostenible y multimodal que contribuye tanto a la construcción de ciudades más habitables como al equilibrio del conjunto del territorio. A estos criterios deberían responder la planificación y debates sobre transporte y movilidad en todos los ámbitos, desde el más global a los locales, con actuaciones que contribuyan responsablemente al enfriamiento del planeta.
 
 Desde las plataformas por el tren y las organizaciones firmantes de este manifiesto, conscientes de la importancia social, vertebradora y sostenible del transporte ferroviario, trasladamos una propuesta a la ciudadanía para hacer posible un giro radical en las políticas de transporte, y así avanzar hacia un modelo sostenible donde la movilidad a pie, en bicicleta y en tren sean la prioridad, y el resto de modos sean subsidiarios y complementarios en tanto no reduzcan al mínimo su agresividad medioambiental.";1;Digital_castellano_01_WEB.jpg
-106;0;1;1;3;1;15/10/2021;II CONGRESO SECTOR FEDERAL FERROVIARIO CGT;;**;"En la ciudad de Antequera (Málaga) se ha iniciado el II Congreso Federal del Sector Ferroviario de CGT, en el que están participando delegadas del 90% de las provincias del estado español y de todas las empresas con implantación en el sector, además de las representaciones de sindicatos amigos de Bélgica, Italia y Francia.
+106;0;1;1;3;1;15/10/2021;II CONGRESO SECTOR FEDERAL FERROVIARIO CGT;;;"En la ciudad de Antequera (Málaga) se ha iniciado el II Congreso Federal del Sector Ferroviario de CGT, en el que están participando delegadas del 90% de las provincias del estado español y de todas las empresas con implantación en el sector, además de las representaciones de sindicatos amigos de Bélgica, Italia y Francia.
 De este congreso saldrán elegidas las personas que conducirán la línea de actuación frente a los continuos ataques de las empresas del sector y sus líneas políticas de desmantelamiento paulatino de los servicios ferroviarios de carácter público, de calidad y sostenible.
 Miles de trabajadoras y millones de ciudadanas apoyan este modelo sindical libre de interferencias de poder. Te sumas?";1;IMG20211015130258.jpg
-107;0;1;1;3;1;20/10/2021;Manifestación por la vertebración del territorio y el clima;;**;"Necesitamos trenes que realmente permitan el derecho a la movilidad de tod@s, a precios asequibles. El planeta somos tod@s, no podemos seguir calentándolo hasta hacerlo imposible para la vida.
+107;0;1;1;3;1;20/10/2021;Manifestación por la vertebración del territorio y el clima;;;"Necesitamos trenes que realmente permitan el derecho a la movilidad de tod@s, a precios asequibles. El planeta somos tod@s, no podemos seguir calentándolo hasta hacerlo imposible para la vida.
 Que sea una gran manifestación, hazlo posible con tu asistencia.?????
 Necesitamos el compromiso de toda la ciudadanía. Súmate a la defensa de un ferrocarril público, social y medioambientalmente sostenible.
 La declaración del año 2021 como año europeo del ferrocarril supone una oportunidad para relanzar y poner en primer lugar de prioridades la defensa del ferrocarril como medio de transporte seguro, al servicio de las personas y medioambientalmente sostenible.
@@ -1862,12 +1862,12 @@ La progresiva disminución de servicios en los municipios de menos de 20.000 hab
 Por otro lado, no podemos olvidar que vivimos en una situación de emergencia climática en la que el ferrocarril es una pieza clave en la imprescindible descarbonización del transporte. La apuesta por un errado modelo basado en la carretera y en el automóvil ha debilitado un sistema ferroviario normal/convencional y electrificado, que hoy debería jugar un papel central en la lucha climática. Es prioritario centrar esfuerzos en el trasvase al ferrocarril de mercancías y personas que hoy son transportadas por carretera. Reivindicamos el ferrocarril como uno de los modos de transporte más eficientes energéticamente y con menores emisiones; eje de una movilidad sostenible y multimodal que contribuye tanto a la construcción de ciudades más habitables como al equilibrio del conjunto del territorio. A estos criterios deberían responder la planificación y debates sobre transporte y movilidad en todos los ámbitos, desde el más global a los locales, con actuaciones que contribuyan responsablemente al enfriamiento del planeta.
 
 Desde las plataformas por el tren y las organizaciones firmantes de este manifiesto, conscientes de la importancia social, vertebradora y sostenible del transporte ferroviario, trasladamos una propuesta a la ciudadanía para hacer posible un giro radical en las políticas de transporte, y así avanzar hacia un modelo sostenible donde la movilidad a pie, en bicicleta y en tren sean la prioridad, y el resto de modos sean subsidiarios y complementarios en tanto no reduzcan al mínimo su agresividad medioambiental.";1;Cartel General Castellano Tirso.jpg
-108;0;1;1;3;1;22/10/2021;La rebelión del ferrocarril para todos y todas;;**;"Onda Barricada reinicia su labor con un programa que retoma nuestra labor donde la dejamos, el ferrocarril público. Queremos señalar con esto que las luchas continúan y que la calle es la que debe guiarnos en nuestro quehacer diario.
+108;0;1;1;3;1;22/10/2021;La rebelión del ferrocarril para todos y todas;;;"Onda Barricada reinicia su labor con un programa que retoma nuestra labor donde la dejamos, el ferrocarril público. Queremos señalar con esto que las luchas continúan y que la calle es la que debe guiarnos en nuestro quehacer diario.
 
 Hemos viajado a Antequera para asistir a una manifestación muy animada y con una asistencia de personas más que aceptable, en la que se reclamaba ese tren necesario para vertebral el territorio, un ferrocarril publico, social, sostenible y seguro. Coincidió esta manifestación con la celebración del Congreso del Sector Ferroviario y fue realmente interesante poder ver como se reunieron decenas de ferroviarios y ferroviarias venidos de todo el estado, y sobre todo ver como muchas personas jóvenes ya están implicadas en la defensa de lo público.
 
 Nuestra reflexión en este caso tiene relación con esto que hemos comentado al principio y esperamos que tú respondas a la pregunta: ¿Cuándo terminan las luchas?";1;Antequera.jpg
-109;0;1;1;5;1;28/10/2021;UNIDOS EN DEFENSA DEL EMPLEO PÚBLICO FERROVIARIO EN GALICIA;;**;"Los Comités de Empresa de Adif y Renfe de las cuatro provincias
+109;0;1;1;5;1;28/10/2021;UNIDOS EN DEFENSA DEL EMPLEO PÚBLICO FERROVIARIO EN GALICIA;;;"Los Comités de Empresa de Adif y Renfe de las cuatro provincias
 gallegas convocamos una concentración en la estación de A Coruña
 para exigir la cobertura de todos los puestos de personal necesarios
 para poder cubrir todas las cargas de trabajo con las debidas
@@ -1905,7 +1905,7 @@ desfavorecidas y sin ninguna intención de su recuperación.
 CONCENTRACIÓN POR EL EMPLEO PÚBLICO FERROVIARIO EN GALICIA
 A CORUÑA.PLAZA DE SAN CRISTÓBAL. 29 DE OCTUBRE A LAS 11.30 hs.
 ¡¡¡ACUDE!!!";1;cartel galicia.jpeg
-110;0;1;1;3;1;29/10/2021;CONCENTRACIÓN CONTRA EL DESMEMBRAMIENTO DE LAS EMPRESAS FERROVIARIAS Y POR LA CREACIÓN DE EMPLEO;;**;"El próximo 3 de noviembre, tenemos una cita importantísima en el Ministerio de Transportes, para protestar por las numerosas agresiones que está sufriendo el ferrocarril público.
+110;0;1;1;3;1;29/10/2021;CONCENTRACIÓN CONTRA EL DESMEMBRAMIENTO DE LAS EMPRESAS FERROVIARIAS Y POR LA CREACIÓN DE EMPLEO;;;"El próximo 3 de noviembre, tenemos una cita importantísima en el Ministerio de Transportes, para protestar por las numerosas agresiones que está sufriendo el ferrocarril público.
 
 Son muy preocupantes las noticias sobre las peticiones de transferencia de competencias que, unidas al proceso de liberalización del sector, pueden desmembrar y destruir nuestra red ferroviaria. Una red que debe vertebrar todos los territorios y servir de elemento integrador.
 
@@ -1916,8 +1916,8 @@ Para conseguir estos objetivos, es imprescindible que se oiga nuestra voz. Te es
 
 CGT LUCHA POR TUS DERECHOS. ¡ÚNETE!
 ";1;COM 97. ANEXO. SECTOR. CARTEL 3N.jpg
-111;0;1;1;3;1;04/11/2021;CGT EN DEFENSA DEL FERROCARRIL PÚBLICO, SOCIAL Y SOSTENIBLE.;;**;CGT se volvió a concentrar frente al ministerio de transportes para pedir la reposición de todas las circulaciones pre-pandemia, el aumento en la inversión de trenes regionales y cercanías, y mejores frecuencias en aquellos territorios en los que el derecho a la movilidad ha sido apartado de la agenda política.;1;Logo.png
-112;0;1;1;3;1;25/11/2021;Día Internacional contra las Violencias Machistas;;**;"Es mucha la violencia que diariamente sufrimos las mujeres en este sistema capitalista y patriarcal, y en muchas ocasiones se invisibiliza y se normaliza. No seremos cómplices con nuestro silencio. Por eso, el día 25 de noviembre, abrimos los ojos y alzamos la voz todas juntas para decir: ¡¡Basta!!
+111;0;1;1;3;1;04/11/2021;CGT EN DEFENSA DEL FERROCARRIL PÚBLICO, SOCIAL Y SOSTENIBLE.;;;CGT se volvió a concentrar frente al ministerio de transportes para pedir la reposición de todas las circulaciones pre-pandemia, el aumento en la inversión de trenes regionales y cercanías, y mejores frecuencias en aquellos territorios en los que el derecho a la movilidad ha sido apartado de la agenda política.;1;Logo.png
+112;0;1;1;3;1;25/11/2021;Día Internacional contra las Violencias Machistas;;;"Es mucha la violencia que diariamente sufrimos las mujeres en este sistema capitalista y patriarcal, y en muchas ocasiones se invisibiliza y se normaliza. No seremos cómplices con nuestro silencio. Por eso, el día 25 de noviembre, abrimos los ojos y alzamos la voz todas juntas para decir: ¡¡Basta!!
 
 Basta de asesinatos machistas, Basta de violencia vicaria, de violencia económica… en definitiva, Basta de violencia patriarcal. Alzamos la voz, para exigir seguridad, respeto e igualdad, en todos los espacios de nuestras vidas.
 
@@ -1946,7 +1946,7 @@ El avance de lo que ya sabemos de la negociación de la reforma laboral de este 
 
 O nos defendemos ahora o tendremos que lamentarnos en el futuro
 El 18 de diciembre tod@s a la calle";1;photo_2021-12-10_08-25-32.jpg
-114;0;1;1;1;1;15/03/2023;CGT CONVOCA HUELGAS LOS DÍAS 20/03 Y 10/04. Por LA REDUCCIÓN DE JORNADA EN DÍAS. 35 horas YA! Por la productividad desorbitada.;;**;"¿POR QUÉ HUELGA?
+114;0;1;1;1;1;15/03/2023;CGT CONVOCA HUELGAS LOS DÍAS 20/03 Y 10/04. Por LA REDUCCIÓN DE JORNADA EN DÍAS. 35 horas YA! Por la productividad desorbitada.;;;"¿POR QUÉ HUELGA?
 
 Porque es urgente abrir la negociación de las 35 horas: desde el 17 de noviembre, la empresa nos debe media hora por cada día que trabajamos. 
 
@@ -1958,7 +1958,7 @@ Porque ya es hora de que la empresa nos remunere justamente por las nuevas funci
 
 Porque el aumento, a nuestra costa, de la productividad de ADIF se da en un escenario de inflación exorbitada y sostenida, con el que perdemos día a día poder adquisitivo. 
 ";1;Cartel Huelgas ADIF 2023.jpg
-115;0;1;1;3;1;22/03/2023;"Nueva Actividad Lúdico-Educativa ""Campamentos Verano para niñ@s""";;**;"Buenos días
+115;0;1;1;3;1;22/03/2023;"Nueva Actividad Lúdico-Educativa ""Campamentos Verano para niñ@s""";;;"Buenos días
 
 Os informamos de la Publicidad de la actividad Lúdico-Educativa para que podáis por distintas vías darle la mayor difusión posible.
 
@@ -1979,7 +1979,7 @@ Si causara baja voluntaria antes de alcanzar los 5 años continuados en alta, ab
 SOCIOS CON ANTIGÜEDAD igual o superior al periodo de carencia (5 años)
 
 Subvención establecida y, además, por una vez para cada uno de sus nietos.  Si los hijos de estos Socios hubieran tramitado el Alta en la Asociación con carácter previo a recibir la subvención por primera vez, podrán optar a la misma en sucesivas ocasiones, mediante su mantenimiento como Socio del CHF, sin que en este caso se les aplique  el periodo de carencia establecido con carácter general ni el compromiso expresado en los apartados anteriores.";1;CHF 2023 MODELO ACTIVIDAD LDICO - EDUCATIVA.png
-116;0;1;1;3;1;30/03/2023;"¿Conoces la Nueva Actividad Lúdico-Educativa del CHF?  ""Campamentos Verano para niñ@s""";;**;"¿Estás buscando los mejores campamentos de verano?
+116;0;1;1;3;1;30/03/2023;"¿Conoces la Nueva Actividad Lúdico-Educativa del CHF?  ""Campamentos Verano para niñ@s""";;;"¿Estás buscando los mejores campamentos de verano?
 
 ¿Quieres contratarlos con descuentos superiores al 35%?
 
