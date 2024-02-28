@@ -1,7 +1,7 @@
 <div class="mb-4 shadow hover:shadow-lg h-full flex flex-col bordeRojo rounded-lg">
     <div class="p-4 flex-1 bg-red-500 h-full hover:bg-white rounded-t-lg">
         <a href="{{ url('noticias.show', $noticia->id) }}">
-            <h1 class="font-bold text-3xl">{{ $noticia->id }} . {{ $noticia->titulo }}
+            <h1 class="font-bold text-3xl">{{ $noticia->titulo }}
             </h1>
         </a>
     </div>
@@ -22,7 +22,7 @@
     </div>
     <div class="bg-white py-2.5 px-4 hover:bg-blue-light h-full">
         <img class="float-right" src="{{ asset('storage/' . $noticia->imagen) }}">
-        <p class="text-black text-justify">{!! nl2br(e($noticia->cuerpo))!!}</p>
+        <p class="text-black text-justify">{!! ($noticia->cuerpo)!!}</p>
     </div>
     <div class="p-0.5 w-full inline-flex text-lg text-center bordeTopRojo rounded-b-lg bg-red-500  ">
         <div class="w-1/2 rounded-bl-lg hover:text-red-500 hover:bg-black">

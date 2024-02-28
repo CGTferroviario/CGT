@@ -31,7 +31,7 @@ class ComunicadoSeeder extends Seeder
                 // Revisamos todos los campos y rellenamos en caso de vacío
                 for ($i = 0; $i < count($data); $i++) {
                     if (empty($data[$i])) {
-                        $data[$i] = "---";
+                        $data[$i] = 0;
                     }
                 }
 

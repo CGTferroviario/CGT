@@ -13,7 +13,6 @@
                     @endif
                 </div>
             </div>
-            
         </div>
         <div class="flex-grow p-2 overflow-auto bg-white">
             <div class="py-1">

@@ -1,4 +1,4 @@
-id;visualizaciones;publicado;user_id;empresa_id;categoria_id;fecha;titulo;slug;subtitulo;cuerpo;adjunto;imagen
+﻿id;visualizaciones;publicado;user_id;empresa_id;categoria_id;fecha;titulo;slug;subtitulo;cuerpo;adjunto;imagen
 1;0;1;1;3;1;05/01/2015;AÑO NUEVO, TELE NUEVA - CGT ESTRENA CANAL DE TV;;"Rojo y Negro tv es un espacio televisivo crítico, anarcosindicalista y libertario patrocinado por CGT, por, para y desde el movimiento obrero y su lucha de clase.
 Emitido en directo en Madrid en Canal 33 y en la web de rojoynegrotv.org
 ";"Os dejamos los enlaces para que podáis darle a me gusta, seguir o suscribirse al canal para que podáis seguir los movimientos y contenidos del nuevo espacio televisivo con mayor facilidad. Y muy importante, haciéndose seguidor, fan o suscribirse, en cada una de estas páginas nos ayudas a crecer en número en seguidores y capacidad de difusión colectiva, para nosotr@s es un placer que podamos contar con tu ayuda en este sencillo apoyo con el sencillo gesto de un click dentro de cada uno de estos enlaces para que crezcamos en numero de seguidores y difusión.
@@ -43,7 +43,7 @@ CONTRA LA REPRESIÓN.
 
 ¡No a la Ley Mordaza y no a la Reforma Penal!";1;ley_mordaza.jpg
 3;0;1;1;5;1;27/01/2015;POR UN FERROCARRIL PÚBLICO Y SOCIAL;;"Elecciones sindicales en Renfe y Adif 2015
-Elige CGT";"<iframe width=""460"" height=""315"" src=""//www.youtube.com/embed/wN0jA0QwiBk"" frameborder=""0"" allowfullscreen></iframe>";1;video_fps.jpg
+Elige CGT";"<iframe class=""w-full"" height=""400px""src=""//www.youtube.com/embed/wN0jA0QwiBk"" frameborder=""0"" allowfullscreen></iframe>";1;video_fps.jpg
 4;0;1;1;3;1;09/02/2015;“La recuperación de la que habla Rajoy es cierta...;;"...los ricos, los banqueros y las grandes corporaciones, se han puesto morados con los millones de euros robados de las arcas públicas”. 
 CGT denuncia la gran estafa que el gobierno del PP y la Troika están llevando a cabo desde el inicio de la “gran crisis”, a costa de la mayoría social, a la cual se les deja morir por no poder pagar un medicamento, como en los casos de la hepatitis C.";"
 
