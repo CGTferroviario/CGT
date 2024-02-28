@@ -27,7 +27,7 @@ class ComunicadoController extends Controller
     {
         return view('biblioteca.comunicados', [
             
-            'comunicados' => Comunicado::orderBy('updated_at', 'desc')->paginate(12),
+            'comunicados' => Comunicado::orderBy('fecha', 'desc')->paginate(12),
             'empresas' => Empresa::orderBy('id', 'asc')->get(),
             'categorias' => Categoria::orderBy('id', 'asc')->get(),
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
