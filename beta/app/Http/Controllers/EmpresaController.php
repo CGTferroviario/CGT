@@ -50,12 +50,14 @@ class EmpresaController extends Controller
             'logo' => 'nullable|image'
         ]);
 
+        $slug = Str::slug($request->nombre);
+
         $rutaLogo = null;
         if ($request->hasFile('logo')) {
             $logo = $request->file('logo');
-            $logoName = Str::slug($request->nombre) . '.' . $logo->getClientOriginalExtension();
+            $logoName = $slug . '.' . $logo->getClientOriginalExtension();
 
-            // // Resize image
+            // // Resize image 
             // $resizedLogo = Image::make($logo)->resize(150, 50)->stream();
             // // Store resized image
             // Storage::disk('public')->put('logos/' . $logoName, $resizedLogo);
@@ -71,7 +73,7 @@ class EmpresaController extends Controller
 
         // dd($request);
 
-        Empresa::create(array_merge($request->all(), ['logo' => $rutaLogo]));
+        Empresa::create(array_merge($request->all(), ['logo' => $rutaLogo, 'slug' => $slug]));
 
         return redirect(route('intranet.empresas.index'))->with('message', 'Empresa Creada Correctamente');
     }
