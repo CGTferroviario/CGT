@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
-use Intervention\Image\ImageManager;
+
+use Intervention\Image\Drivers\Imagick\Driver;
 
 
 
@@ -40,7 +41,6 @@ class EmpresaController extends Controller
 
     public function store(StoreEmpresaRequest $request)
     {
-        // dd($request);
         $request->validate([
             'nombre' => 'required',
             'descripcion' => 'required',
@@ -57,25 +57,21 @@ class EmpresaController extends Controller
             $logo = $request->file('logo');
             $logoName = $slug . '.' . $logo->getClientOriginalExtension();
 
-            // // Resize image 
-            // $resizedLogo = Image::make($logo)->resize(150, 50)->stream();
-            // // Store resized image
-            // Storage::disk('public')->put('logos/' . $logoName, $resizedLogo);
+            // Use the Image facade to load the image file
+            $image = Image::make($logo);
 
-            // Create directory if it doesn't exist
-            $logoDirectory = public_path('storage/empresas/logos');
-            if (!File::isDirectory($logoDirectory)) {
-                File::makeDirectory($logoDirectory, 0755, true);
-            }
+            // Perform image manipulations
+            $image->resize(150, 50);
 
-            $rutaLogo = $logo->storeAs('logos', $logoName, 'public');
+            // Save the manipulated image
+            $rutaLogo = 'logos/' . $logoName;
+            $image->save(public_path('storage/' . $rutaLogo));
         }
-
-        // dd($request);
 
         Empresa::create(array_merge($request->all(), ['logo' => $rutaLogo, 'slug' => $slug]));
 
         return redirect(route('intranet.empresas.index'))->with('message', 'Empresa Creada Correctamente');
+
     }
 
     public function show(Empresa $empresa, $slug)
