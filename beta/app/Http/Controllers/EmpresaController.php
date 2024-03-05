@@ -10,14 +10,10 @@ use App\Models\Empresa;
 use App\Models\Noticia;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Intervention\Image\Facades\Image;
-
 use Intervention\Image\Drivers\Imagick\Driver;
-
-
-
+use Intervention\Image\ImageManager;
+use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 
 class EmpresaController extends Controller
 {
@@ -29,46 +25,41 @@ class EmpresaController extends Controller
         ]);
     }
 
-    /**
-     * Muestra el formulario para crear una nueva empresa.
-     */
+    // Muestra el formulario para crear una nueva empresa.
     public function create()
     {
         return view('intranet.empresas.create', [
             'empresas' => Empresa::orderBy('id', 'asc')->get(),
         ]);
     }
-
+    // Almacenamos la información del formulario para crear una nueva empresa.
     public function store(StoreEmpresaRequest $request)
     {
-        $request->validate([
-            'nombre' => 'required',
-            'descripcion' => 'required',
-            'vales' => 'required',
-            'comunicados' => 'required',
-            'activa' => 'required',
-            'logo' => 'nullable|image'
-        ]);
-
+        // Guardamos el valor del slug, es decir, el nombre de empresa sin espacios
         $slug = Str::slug($request->nombre);
-
         $rutaLogo = null;
+
         if ($request->hasFile('logo')) {
+
             $logo = $request->file('logo');
             $logoName = $slug . '.' . $logo->getClientOriginalExtension();
+            $rutaLogo = public_path('/logos');
 
-            // Use the Image facade to load the image file
-            $image = Image::make($logo);
-
-            // Perform image manipulations
-            $image->resize(150, 50);
+            // Usamos Intervention Image para cambiarle el tamaño al logo y que tenga un tamaño de 50px de alto
+            $manager = new ImageManager(Driver::class);
+            $image = $manager->read($logo);
+            $logo = $image->scale(height: 50);
 
             // Save the manipulated image
             $rutaLogo = 'logos/' . $logoName;
             $image->save(public_path('storage/' . $rutaLogo));
         }
 
+        // Guardamos todos los datos en la tabla Empresa
         Empresa::create(array_merge($request->all(), ['logo' => $rutaLogo, 'slug' => $slug]));
+
+        // Optimizamos el tamaño de la imagen con el paquete de Spatie Optimizer
+        ImageOptimizer::optimize(public_path('storage/' . $rutaLogo));
 
         return redirect(route('intranet.empresas.index'))->with('message', 'Empresa Creada Correctamente');
 
@@ -76,7 +67,7 @@ class EmpresaController extends Controller
 
     public function show(Empresa $empresa, $slug)
     {
-        // Mostramos la página de empresa
+        // Mostramos la página de empresa, donde se verán los comunicados, noticias y documentos relativos a esa empresa
         try {
             $empresa = Empresa::where('slug', $slug)->firstOrFail();
             $comunicados = Comunicado::where('empresa_id', $empresa->id)->paginate(8);
@@ -89,9 +80,7 @@ class EmpresaController extends Controller
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    // Mostramos el formulario para editar una empresa
     public function edit(Empresa $empresa)
     {
         $empresas = Empresa::all();
@@ -99,35 +88,38 @@ class EmpresaController extends Controller
         return view('intranet.empresas.edit', compact('empresa', 'empresas'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    // Actualizamos la información que tenemos almacenada sobre esa empresa
     public function update(UpdateEmpresaRequest $request, Empresa $empresa)
     {
-        $validated = $request->validate([
-            'nombre' => ['required'],
-            'descripcion' => ['required'],
-            'comunicados' => ['required'],
-            'vales' => ['required'],
-            'activa' => ['required'],
-            'logo' => 'nullable|image'
-        ]);
+        // Guardamos el valor del slug, es decir, el nombre de empresa sin espacios
+        $slug = Str::slug($request->nombre);
+        $rutaLogo = null;
 
-        $rutaLogo = $empresa->logo;
         if ($request->hasFile('logo')) {
-            $logo = $request->file('logo');
-            $logoName = Str::slug($request->nombre) . '.' . $logo->getClientOriginalExtension();
-            $rutaLogo = $logo->storeAs('logos', $logoName, 'public');
-        }
 
-        $empresa->update(array_merge($request->all(), ['logo' => $rutaLogo]));
+            $logo = $request->file('logo');
+            $logoName = $slug . '.' . $logo->getClientOriginalExtension();
+            $rutaLogo = public_path('/logos');
+
+            // Usamos Intervention Image para cambiarle el tamaño al logo y que tenga un tamaño de 50px de alto
+            $manager = new ImageManager(Driver::class);
+            $image = $manager->read($logo);
+            $logo = $image->scale(height: 50);
+
+            // Save the manipulated image
+            $rutaLogo = 'logos/' . $logoName;
+            $image->save(public_path('storage/' . $rutaLogo));
+        }
+        // Guardamos todos los datos en la tabla Empresa
+        $empresa->update(array_merge($request->all(), ['logo' => $rutaLogo, 'slug' => $slug]));
+
+        // Optimizamos el tamaño de la imagen con el paquete de Spatie Optimizer
+        ImageOptimizer::optimize(public_path('storage/' . $rutaLogo));
 
         return to_route('intranet.empresas.index')->with('message', 'Empresa Actualizada Correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    // Eliminamos el recurso especificado de la BBDD y si tiene un logo asociado, se elimina
     public function destroy(Empresa $empresa)
     {
         

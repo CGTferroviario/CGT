@@ -22,7 +22,12 @@ class StoreEmpresaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nombre' => 'required',
+            'descripcion' => 'required',
+            'vales' => 'required',
+            'comunicados' => 'required',
+            'activa' => 'required',
+            'logo' => 'nullable|image'
         ];
     }
 }

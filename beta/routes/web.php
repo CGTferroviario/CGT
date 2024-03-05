@@ -20,13 +20,7 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
 use App\Models\Slider;
 use Illuminate\Support\Facades\Route;
-use Spatie\Permission\Contracts\Permission;
 
-// use Intervention\Image\Laravel\Facades\Image;
-
-// Route::get('/', function () {
-//     $image = Image::read('images/example.jpg');
-// });
 
 Route::get('/', function () {
     return view('welcome'); 

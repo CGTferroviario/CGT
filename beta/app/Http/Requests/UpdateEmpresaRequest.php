@@ -22,7 +22,12 @@ class UpdateEmpresaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nombre' => ['required'],
+            'descripcion' => ['required'],
+            'comunicados' => ['required'],
+            'vales' => ['required'],
+            'activa' => ['required'],
+            'logo' => 'nullable|image'
         ];
     }
 }
