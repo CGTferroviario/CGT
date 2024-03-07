@@ -181,12 +181,14 @@ aside .lni{
 .bg-logirail:hover { background: rgb(126, 1, 126); color: white; cursor: pointer; }
 .bg-saba { color: rgb(1, 168, 151); border-width: 2px; border-color: rgb(1, 168, 151); letter-spacing: 1px; }
 .bg-saba:hover { background: rgb(1, 168, 151); color: white; cursor: pointer; }
-.bg-ferrovial { color: rgb(254, 194, 6); border-width: 2px; border-color: rgb(254, 194, 6); letter-spacing: 1px; }
-.bg-ferrovial:hover { background: rgb(254, 194, 6); border-color: black; color: black; cursor: pointer; }
-
-.bg-ILUNION { background: rgb(255, 211, 0);
-              background: linear-gradient(180deg, rgba(255,211,0,1) 0%, rgba(0,121,199,1) 100%);
-              color: white; }
+.bg-ferrovial { color: black; border-width: 2px; border-color: rgb(254, 194, 6); letter-spacing: 1px; }
+.bg-ferrovial:hover { background: rgb(254, 194, 6); border-color: black; color: white; cursor: pointer; }
+.bg-fgv { color: black; border-width: 2px; border-color: rgb(255, 178, 15); letter-spacing: 1px; }
+.bg-fgv:hover { background: rgb(255, 178, 15); border-color: black; color: white; cursor: pointer; }
+.bg-ilunion { color: rgb(0, 121, 199); border-width: 2px; border-color: rgb(255, 211, 0); letter-spacing: 1px; }
+.bg-ilunion:hover { background: rgb(255, 211, 0); border-color: rgb(0, 121, 199);
+                    background: linear-gradient(90deg, rgba(255,211,0,1) 0%, rgba(0,121,199,1) 100%);
+                    color: white; cursor: pointer; }
 .bg-ATHISA { background: rgb(0,155,58);
           background: linear-gradient(180deg, rgba(0,155,58,1) 0%, rgba(0,139,233,1) 100%);
           color: white; }
@@ -227,7 +229,7 @@ aside .lni{
 
 
 
-.bg-FGV { background: rgb(255, 178, 15); color: white; }
+
 
 /* Colores Categorias */
 .bg-INFRAESTRUCTURA { background: rgb(230, 230, 40); color: black; }
