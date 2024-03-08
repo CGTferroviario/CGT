@@ -163,13 +163,10 @@ aside .lni{
 .bg-adif-renfe:hover { background:  rgb(0, 99, 56);
       background: linear-gradient(90deg, rgba(0, 99, 56,1) 0%, rgba(135, 0, 100,1) 100%); border: none;
       color: white; cursor: pointer; }
-.bg-cgt { color: rgb(255, 0, 56); border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
+.bg-cgt, .bg-conjunto, .bg-sector, .bg-generales { color: rgb(255, 0, 56); border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
 .bg-cgt:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
-.bg-conjunto { color: rgb(255, 0, 56); border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
 .bg-conjunto:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
-.bg-sector { color: rgb(255, 0, 56); border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
 .bg-sector:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
-.bg-generales { color: rgb(255, 0, 56); border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
 .bg-generales:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
 .bg-servicios-externos { color: rgb(255, 0, 56); border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
 .bg-servicios-externos:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
@@ -189,26 +186,16 @@ aside .lni{
 .bg-ilunion:hover { background: rgb(255, 211, 0); border-color: rgb(0, 121, 199);
                     background: linear-gradient(90deg, rgba(255,211,0,1) 0%, rgba(0,121,199,1) 100%);
                     color: white; cursor: pointer; }
-.bg-ATHISA { background: rgb(0,155,58);
-          background: linear-gradient(180deg, rgba(0,155,58,1) 0%, rgba(0,139,233,1) 100%);
-          color: white; }
-.bg-INTERSERVE { background: rgb(0,165,231);
-  background: linear-gradient(180deg, rgba(0,165,231,1) 0%, rgba(78,78,78,1) 100%);
-  color: white; }
-.bg-ACCIONA {
-  background: rgb(213, 0, 0);
-  border-width: 1px;
-  border-color: black;
-}
-.bg-BTREN {
-  background: rgb(135, 1, 114);
-  background: linear-gradient(180deg, rgba( 135, 1, 114,1) 0%, rgba( 102, 103, 107, 1) 100%);
-  color: white;
-}
-.bg-EUROMACLEAN {
-  background: rgb(7, 47, 84) ;
-  color: white;
-}
+.bg-athisa-medio-ambiente { color: rgb(59, 143, 226); border-width: 2px; border-color: rgb(14,156,62); cursor: pointer; letter-spacing: 1px; }           
+.bg-athisa-medio-ambiente:hover { background: rgb(14,156,62); border-color: rgb(59, 143, 226); color: white; }
+.bg-interserve { color: rgb(0,165,231); border-width: 2px; border-color: rgb(0,165,231); letter-spacing: 1px; }
+.bg-interserve:hover { background: rgb(0,165,231); border-color: rgb(78, 78, 78); color: rgb(78, 78, 78); cursor: pointer; }
+.bg-acciona { color: rgb(213,0,0); border-width: 2px; border-color: black; letter-spacing: 1px; }
+.bg-acciona:hover { background: rgb(213, 0, 0); color: black; border-width: 2px; border-color: white; cursor: pointer; }
+.bg-btren {  border-width: 2px; border-color: rgb(135, 1, 114); color: rgb(78, 78, 78); letter-spacing: 1px; }
+.bg-btren:hover { background: rgb(135, 1, 114); border-color: rgb(78, 78, 78); color: white; cursor: pointer; }
+.bg-euromaclean { color: rgb(83, 164, 187); border-width: 2px; border-color: rgb(83, 164, 187); letter-spacing: 1px; }
+.bg-euromaclean:hover { background: rgb(83, 164, 187); border-color: rgb(78, 78, 78); color: white; cursor: pointer; }
 .bg-VECTALIA {
   background: rgb( 155, 194, 38) ;
   color: white;

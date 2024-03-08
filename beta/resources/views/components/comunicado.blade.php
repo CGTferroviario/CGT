@@ -2,7 +2,7 @@
     <div class="flex flex-col h-full rounded-lg border border-zinc-900 shadow-md">
         <!-- Encabezado del comunicados -->
         <div class="p-2 border-b border-zinc-900 rounded-t-lg bg-red-500">
-            <h2 class="text-xl font-bold">{{ $comunicado->numero }} . {{ $comunicado->titulo }}</h2>
+            <h2 class="text-xl font-bold">{{ $comunicado->numero }} / {{ $comunicado->titulo }}</h2>
         </div>
         <!-- Cuerpo del Comunicado -->
         <div class="empresa p-2 grid grid-flow-col">
