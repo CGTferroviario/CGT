@@ -196,24 +196,20 @@ aside .lni{
 .bg-btren:hover { background: rgb(135, 1, 114); border-color: rgb(78, 78, 78); color: white; cursor: pointer; }
 .bg-euromaclean { color: rgb(83, 164, 187); border-width: 2px; border-color: rgb(83, 164, 187); letter-spacing: 1px; }
 .bg-euromaclean:hover { background: rgb(83, 164, 187); border-color: rgb(78, 78, 78); color: white; cursor: pointer; }
-.bg-VECTALIA {
-  background: rgb( 155, 194, 38) ;
-  color: white;
-}
-.bg-CLECE {
-  background: rgb( 45, 69, 97) ;
-  color: white;
-}
-.bg-IRYO {
-  background: rgb(204, 13, 20);
-  color: white;
-}
-.bg-ACTREN {
-  background: rgb(135, 1, 114);
-  background: linear-gradient(180deg, rgba( 227, 29, 26, 1) 0%, rgba( 135, 1, 114, 1) 100%);
-  color: white;
-}
+.bg-vectalia-rail-sa { color: rgb(155, 194, 38); border-width: 2px; border-color: rgb(155, 194, 38); letter-spacing: 1px; }
+.bg-vectalia-rail-sa:hover { background: rgb(155, 194, 38); border-color: rgb(155, 194, 38); color: white; cursor: pointer; }
+.bg-clece-limpieza { color: rgb(45, 69, 97); border-width: 2px; border-color: rgb(45, 69, 97); letter-spacing: 1px; }
+.bg-clece-limpieza:hover { background: rgb(45, 69, 97); color: white; cursor: pointer; }
 
+.bg-clece-acerca { color: rgb(45, 69, 97); border-width: 2px; border-color: rgb(255, 153, 0); letter-spacing: 1px; }
+.bg-clece-acerca:hover { background: rgb( 45, 69, 97) ; color: rgb(255, 153, 0); cursor: pointer; }
+.bg-iryo { color: rgb(204, 13, 20); border-width: 2px; border-color: rgb(204, 13, 20); letter-spacing: 1px; }
+.bg-iryo:hover { background: rgb(204, 13, 20); color: white; border-color: rgb(204, 13, 20); cursor: pointer; }
+
+.bg-actren { color: rgb(204, 13, 20); border-width: 2px; border-color: rgb(137, 0, 100); letter-spacing: 1px; }
+.bg-actren:hover { background: rgb(137, 0, 100); color: white; border-color: rgb(85, 85, 90); cursor: pointer; }
+.bg-ouigo { color: rgb(228, 0, 106); border-width: 2px; border-color: rgb(228, 0, 106); letter-spacing: 1px; }
+.bg-ouigo:hover { background: rgb(228, 0, 106); color: white; cursor: pointer; }
 
 
 
