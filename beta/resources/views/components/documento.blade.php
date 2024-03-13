@@ -42,7 +42,7 @@
         <!-- Card Body -->
         <div class="empresa p-2 grid grid-cols-2">
             <div class="justify-self-start">
-                <div class="py-0.5 px-2 rounded-full font-semibold bg-{{ $documento->empresa?->nombre }}">{{ $documento->empresa?->nombre }}</div>
+                <div class="py-0.5 px-2 rounded-full font-semibold bg-{{ $documento->empresa?->slug }}" title="{{ $documento->empresa?->nombre }}">{{ $documento->empresa?->nombre }}</div>
             </div>
             <div class="justify-self-end">
                 <div class="py-0.5 px-2 rounded-full font-semibold bg-{{ $documento->categoria?->nombre }}">{{ $documento->categoria?->nombre }}</div>

@@ -65,23 +65,23 @@
                                 <td>{{ $empresa->id }}</td>
                                 <td>
                                     <div class="flex justify-start gap-1 text-xl mt-2">
-                                        <a x-data="{ tooltip: 'Editar' }" href="{{ route('intranet.empresas.edit', $empresa->id) }}"
+                                        <a href="{{ route('intranet.empresas.edit', $empresa->id) }}"
                                             class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar empresa">
                                             <i class="lni lni-pencil"></i>
-                                        </a>                                
+                                        </a> 
                                         <form method="POST" action="{{ route('intranet.empresas.destroy', $empresa->id) }}" onsubmit="return confirm('¿Deseas eliminar esta empresa?');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class=" p-1 rounded-md">
-                                                <a x-data="{ tooltip: 'Eliminar' }" href="#" title="Eliminar empresa" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8">
+                                                <a href="#" title="Eliminar empresa" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8">
                                                     <i class="lni lni-trash-can"></i>
                                                 </a>
                                             </button>
-                                        </form>                                
+                                        </form>
                                     </div>
                                 </td>
                                 <td><img src="{{ asset('storage/' . $empresa->logo) }}" alt="Logo"></td>
-                                <td><span class="px-3 py-1 font-extrabold rounded-full bg-{{ $empresa->slug }}">{{ $empresa->nombre }}</span></td>
+                                <td><span class="px-3 py-1 font-extrabold rounded-full bg-{{ $empresa->slug }}" title="{{ $documento->empresa?->nombre }}">{{ $empresa->nombre }}</span></td>
                                 <td>{{ $empresa->descripcion }}</td>
                                 
                                 <td class="text-center">
