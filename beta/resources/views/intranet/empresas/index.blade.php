@@ -11,17 +11,6 @@
         <div class="bg-blanco-transp bordeRojo rounded-lg p-4">
             <div class="grid grid-cols-3 mt-2 mb-3">
                 <div class="sm:flex sm:items-center sm:justify-between">
-                    {{-- <div class="inline-flex overflow-hidden text-white divide-x rounded-lg rtl:flex-row-reverse">
-                        <button class="px-3 py-2 text-xs font-medium text-black transition-colors duration-200 bg-red-500 sm:text-sm">
-                            Todas
-                        </button>
-                        <button class="px-3 py-2 text-xs font-medium bg-oscuro transition-colors duration-200 sm:text-sm hover:bg-red-500 hover:text-zinc-900" title="Empresas en activo">
-                            Activas
-                        </button>
-                        <button class="px-3 py-2 text-xs font-medium bg-oscuro transition-colors duration-200 sm:text-sm hover:bg-red-500 hover:text-black" title="Empresas que pueden subir comunicados">
-                            Comunicados
-                        </button>
-                    </div> --}}
                 </div>
                 <div class="sm:flex-row sm:items-center sm:justify-between">
                     <x-mensaje></x-mensaje>
