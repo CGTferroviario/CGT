@@ -3,7 +3,15 @@
 
 <script src="datatables/datatables.min.js"></script>
 
-<style>
+ <style>
+    span.dtr-data{
+        display: inline-block;
+        max-width: 1000px;
+        text-overflow: ellipsis;
+        word-break: break-all;
+        white-space: normal;
+    }
+/* 
 @media (min-width: 640px) {
     span.dtr-data{
         max-width: 50px;
@@ -17,9 +25,9 @@
         word-break: break-all;
         white-space: normal;
     }
-}
+} */
 
-</style>
+</style> 
 
 
 
