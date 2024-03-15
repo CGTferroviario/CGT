@@ -9,16 +9,15 @@
     @section('contenido')
     <div class="p-8 fondo comunicados">
         <div class="bg-blanco-transp bordeRojo rounded-lg p-4">
-            <div class="grid grid-cols-3 mt-2 mb-3">
-                <div class="col-span-3">
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 mt-2 mb-3">
+                <div class="sm:grid-span-1 md:col-span-2">
                     <x-mensaje></x-mensaje>
                 </div>
-                <div class="sm:flex sm:items-center sm:justify-start"></div>
                 <div class="sm:flex-row sm:items-center sm:justify-between">
                     <div class="flex items-center gap-x-3">
                         <h2 class="text-lg font-bold text-zinc-800">Comunicados</h2>
                         <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $comunicados->count() }}</span>
-                        <p class="mt-1 text-sm text-zinc-500">Estos son los comunicados que llevamos este año.</p>
+                        <p class="mt-1 text-sm text-zinc-500">Estos son los comunicados que llevamos desde 2017.</p>
                     </div>
                 </div>
                 <div class="sm:flex sm:items-center sm:justify-end">
@@ -33,8 +32,9 @@
                         </button>
                     </div>
                 </div>
-            </div> 
-            <table id="comunicadosAdmin" class="display nowrap text-sm pt-5 font-normal rounded-t-lg" style="width:100%">
+            </div>
+            <x-datatables></x-datatables>
+            <table id="comunicados1" class="text-sm pt-5 font-normal rounded-t-lg table table-striped nowrap" style="width:100%">
                 <thead class="rounded-t-lg bg-black text-white">
                     <tr>
                         <th class="rounded-tl-lg">Nº</th>

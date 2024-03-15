@@ -15,6 +15,16 @@ new DataTable('#equipoSP', {
         url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
     },
 });
+
+new DataTable('#comunicados1', {
+    responsive: true,
+    order: [[1, 'desc']],
+    pagingType: 'simple_numbers',
+    language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
+    },
+});
+
 // Fin Datatables
 
 // Convertir los Toggle Switch del valor on/off a 1/0
