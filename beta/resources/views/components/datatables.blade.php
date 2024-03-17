@@ -1,7 +1,7 @@
-<link href="datatables/datatables.min.css" rel="stylesheet">
+<link href="/datatables/datatables.min.css" rel="stylesheet">
 
 
-<script src="datatables/datatables.min.js"></script>
+<script src="/datatables/datatables.min.js"></script>
 
  <style>
     span.dtr-data{

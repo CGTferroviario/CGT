@@ -1,0 +1,27 @@
+﻿id;nombre;slug;descripcion;logo;vales;comunicados;activa;created_at;updated_at
+1;ADIF;adif;El Administrador de Infraestructuras Ferroviarias;empresas/logos/adif.png;1;1;1;04/03/2024 11:02;04/03/2024 11:02
+2;RENFE;renfe;Gestión de trenes y Viajeros;empresas/logos/renfe.png;1;1;1;05/03/2024 16:28;05/03/2024 16:28
+3;CGT;cgt;La Confederación General del Trabajo;empresas/logos/cgt.png;0;1;0;05/03/2024 16:41;05/03/2024 16:41
+4;CONJUNTO;conjunto;Para los comunicados conjuntos;empresas/logos/conjunto.png;0;1;0;06/03/2024 12:00;06/03/2024 12:00
+5;ADIF-RENFE;adif-renfe;Afectan a ambas empresas;empresas/logos/adif-renfe.png;0;1;0;06/03/2024 12:09;06/03/2024 12:09
+6;SECTOR;sector;Para lo que afecta al Sector Federal Ferroviario;empresas/logos/sector.png;0;1;0;06/03/2024 12:06;06/03/2024 12:06
+7;GENERALES;generales;Para asuntos generales;empresas/logos/generales.png;0;1;0;06/03/2024 12:09;06/03/2024 12:09
+8;SERVICIOS EXTERNOS;servicios-externos;Servicios Externos;empresas/logos/servicios-externos.png;0;1;0;06/03/2024 11:56;06/03/2024 11:56
+9;S.AUX-AT.CLI;saux-atcli;Servicios Auxiliares // Atención al Cliente;empresas/logos/saux-atcli.png;0;1;0;06/03/2024 11:53;06/03/2024 11:53
+10;SERVEO;serveo;Servicios Auxiliares;empresas/logos/serveo.png;0;1;1;05/03/2024 16:48;05/03/2024 16:48
+11;LOGIRAIL;logirail;Servicios Auxiliares;empresas/logos/logirail.png;0;1;1;05/03/2024 16:53;05/03/2024 16:53
+12;SABA;saba;Servicios Auxiliares;empresas/logos/saba.png;0;0;1;06/03/2024 10:11;06/03/2024 10:11
+13;FERROVIAL;ferrovial;Servicios Auxiliares;empresas/logos/ferrovial.png;0;0;1;06/03/2024 10:15;06/03/2024 10:15
+14;FGV;fgv;Servicios Auxiliares;empresas/logos/fgv.png;0;0;1;05/03/2024 16:49;05/03/2024 16:49
+15;ILUNION;ilunion;Servicios Auxiliares;empresas/logos/ilunion.png;0;0;1;06/03/2024 10:22;06/03/2024 10:22
+16;ATHISA MEDIO AMBIENTE;athisa-medio-ambiente;Servicios Auxiliares;empresas/logos/athisa-medio-ambiente.png;0;0;1;06/03/2024 10:38;06/03/2024 10:38
+17;INTERSERVE;interserve;Servicios Auxiliares;empresas/logos/interserve.;0;0;1;06/03/2024 10:40;06/03/2024 10:40
+18;ACCIONA;acciona;Servicios Auxiliares;empresas/logos/acciona.png;0;0;1;05/03/2024 16:45;05/03/2024 16:45
+19;BTREN;btren;Servicios Auxiliares;empresas/logos/btren.png;0;0;1;06/03/2024 10:47;06/03/2024 10:47
+20;EUROMACLEAN;euromaclean;Servicios Auxiliares;empresas/logos/euromaclean.png;0;0;1;06/03/2024 10:51;06/03/2024 10:51
+21;VECTALIA RAIL S.A.;vectalia-rail-sa;Servicios Auxiliares;empresas/logos/vectalia-rail-sa.png;0;0;1;06/03/2024 10:59;06/03/2024 10:59
+22;CLECE LIMPIEZA;clece-limpieza;Servicios Auxiliares;empresas/logos/clece-limpieza.png;0;0;1;06/03/2024 11:04;06/03/2024 11:04
+23;CLECE ACERCA;clece-acerca;Servicios Auxiliares;empresas/logos/clece-acerca.png;0;0;1;06/03/2024 11:14;06/03/2024 11:14
+24;IRYO;iryo;La operadora de trenes Italiana;empresas/logos/iryo.png;0;0;1;06/03/2024 11:22;06/03/2024 11:22
+25;ACTREN;actren;Servicios Auxiliares;empresas/logos/actren.png;0;0;1;06/03/2024 11:25;06/03/2024 11:25
+26;OUIGO;ouigo;La operadora de trenes Francesa;empresas/logos/ouigo.png;0;1;1;06/03/2024 11:28;06/03/2024 11:28

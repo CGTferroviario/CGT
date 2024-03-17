@@ -16,7 +16,7 @@
                     <x-mensaje></x-mensaje>
                     <div class="flex items-center gap-x-3">
                         <h2 class="text-lg font-bold text-zinc-800">Empresas</h2>
-                        <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $empresas->count() }}</span>
+                        <span class="px-3 py-2 text-sm font-semibold text-black bg-red-500 rounded-full">{{ $empresas->count() }}</span>
                         <p class="mt-1 text-sm text-zinc-500">Estas son las empresas que tenemos registradas.</p>
                     </div>
                 </div>
@@ -70,32 +70,32 @@
                                     </div>
                                 </td>
                                 <td><img src="{{ asset('storage/' . $empresa->logo) }}" alt="Logo"></td>
-                                <td><span class="px-3 py-1 font-extrabold rounded-full bg-{{ $empresa->slug }}" title="{{ $documento->empresa?->nombre }}">{{ $empresa->nombre }}</span></td>
+                                <td><span class="px-3 py-1 font-extrabold rounded-full bg-{{ $empresa->slug }}" title="{{ $empresa->nombre }}">{{ $empresa->nombre }}</span></td>
                                 <td>{{ $empresa->descripcion }}</td>
                                 
                                 <td class="text-center">
                                     <label class="relative inline-flex items-center mt-2 cursor-pointer">
-                                        <input type="checkbox" name="activa_toggle" id="activa_toggle" {{  ($empresa->vales == 1 ? ' checked' : '') }} disabled class="sr-only peer">
+                                        <input type="checkbox" name="" id="" {{  ($empresa->vales == 1 ? ' checked' : '') }} disabled class="sr-only peer">
                                         <div class="w-11 h-6 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-800 bg-zinc-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-zinc-600 peer-checked:bg-red-600"></div>
                                     </label>
                                     {{-- Input oculto que se usa para convertir el valor on/off en binario --}}
-                                    <input type="hidden" id="activa" name="activa" value="{{ $empresa->vales ? 1 : 0 }}">
+                                    <input type="hidden" id="" name="" value="{{ $empresa->vales ? 1 : 0 }}">
                                 </td>
                                 <td class="text-center">
                                     <label class="relative inline-flex items-center mt-2 cursor-pointer">
-                                        <input type="checkbox" name="activa_toggle" id="activa_toggle" {{  ($empresa->comunicados == 1 ? ' checked' : '') }} disabled class="sr-only peer">
+                                        <input type="checkbox" name="" id="" {{  ($empresa->comunicados == 1 ? ' checked' : '') }} disabled class="sr-only peer">
                                         <div class="w-11 h-6 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-800 bg-zinc-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-zinc-600 peer-checked:bg-red-600"></div>
                                     </label>
                                     {{-- Input oculto que se usa para convertir el valor on/off en binario --}}
-                                    <input type="hidden" id="activa" name="activa" value="{{ $empresa->comunicados ? 1 : 0 }}">
+                                    <input type="hidden" id="" name="" value="{{ $empresa->comunicados ? 1 : 0 }}">
                                 </td>
                                 <td class="text-center">
                                     <label class="relative inline-flex items-center mt-2 cursor-pointer">
-                                        <input type="checkbox" name="activa_toggle" id="activa_toggle" {{  ($empresa->activa == 1 ? ' checked' : '') }} disabled class="sr-only peer">
+                                        <input type="checkbox" name="" id="" {{  ($empresa->activa == 1 ? ' checked' : '') }} disabled class="sr-only peer">
                                         <div class="w-11 h-6 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-800 bg-zinc-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-zinc-600 peer-checked:bg-red-600"></div>
                                     </label>
                                     {{-- Input oculto que se usa para convertir el valor on/off en binario --}}
-                                    <input type="hidden" id="activa" name="activa" value="{{ $empresa->activa ? 1 : 0 }}">
+                                    <input type="hidden" id="" name="" value="{{ $empresa->activa ? 1 : 0 }}">
                                 </td>
                             </tr>
                             @endforeach

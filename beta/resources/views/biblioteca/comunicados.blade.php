@@ -1,6 +1,6 @@
 <x-publico-layout>
     @section('contenido')
-        <h1 class="m-0 py-3 text-center bg-red-500 font-bold">COMUNICADOS</h1>
+        <h1 class="m-0 py-3 text-center bg-red-500 font-bold leading-tight titular">COMUNICADOS</h1>
         <div class="fondo comunicados">
             <div class="grid grid-cols-2 mx-auto p-8">
                 <div></div>

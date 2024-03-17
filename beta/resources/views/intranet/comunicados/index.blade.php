@@ -9,29 +9,29 @@
     @section('contenido')
     <div class="p-8 fondo comunicados">
         <div class="bg-blanco-transp bordeRojo rounded-lg p-4">
-            <div class="grid sm:grid-cols-1 md:grid-cols-2 mt-2 mb-3">
-                <div class="sm:grid-span-1 md:col-span-2">
+            <div class="grid grid-cols-1 md:grid-cols-3 mt-2 mb-3">
+                <div class="col-span-1 md:col-span-3">
                     <x-mensaje></x-mensaje>
                 </div>
-                <div class="flex items-center gap-x-3 align-middle">
-                    <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-zinc-100 transition-colors duration-200 bg-oscuro border rounded-lg gap-x-2 sm:w-auto hover:bg-green-500 hover:text-zinc-100" title="Importar datos desde un archivo .csv">
-                        <i class="lni lni-upload"></i>
-                        <span>Importar CSV</span>
-                    </button>
-                    <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-zinc-900 transition-colors duration-200 bg-red-500 bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-zinc-900 hover:text-red-500" title="Añadir un nuevo comunicado">
-                        <i class="lni lni-add-files"></i>
-                        <a href="{{ route('intranet.comunicados.create') }}" class="">Añadir comunicado</a>
-                    </button>
-                </div>
-                
-                <div class="sm:flex-row sm:items-center sm:justify-between">
-                    <div class="flex items-center gap-x-3">
-                        <h2 class="text-lg font-bold text-zinc-800">Comunicados</h2>
-                        <span class="px-3 py-1 text-xs text-red-600 bg-red-200 rounded-full">{{ $comunicados->count() }}</span>
-                        <p class="mt-1 text-sm text-zinc-500">Estos son los comunicados que llevamos desde 2017.</p>
+                <div class="col-span-1 md:col-span-3 gap-x-3 md:flex">
+                    <div class="mb-3 grow text-center">
+                        <span class="px-2 py-2.5 text-sm border border-black font-semibold text-black bg-red-500 rounded-full">{{ $comunicados->count() }}</span>
+                        <span class="text-base font-medium text-zinc-800">Comunicados desde 2017</span>
                     </div>
+                    <div class="mb-3 shrink text-center">
+                        <button class="w-full px-2 py-2 text-sm text-zinc-100 transition-colors duration-200 bg-oscuro border rounded-lg gap-x-2 sm:w-auto hover:bg-green-500 hover:text-zinc-100" title="Importar datos desde un archivo .csv">
+                            <i class="lni lni-upload"></i>
+                            <span>Importar CSV</span>
+                        </button>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <button class="w-full px-2 py-2 text-sm text-zinc-900 transition-colors duration-200 bg-red-500 bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-zinc-900 hover:text-red-500" title="Añadir un nuevo comunicado">
+                            <i class="lni lni-add-files"></i>
+                            <a href="{{ route('intranet.comunicados.create') }}" class="">Añadir comunicado</a>
+                        </button>
+                    </div>
+                    
                 </div>
-                
             </div>
             <x-datatables></x-datatables>
             <table id="comunicados1" class="text-sm pt-5 font-normal rounded-t-lg table table-striped nowrap" style="width:100%">

@@ -28,17 +28,17 @@ new DataTable('#comunicados1', {
 // Fin Datatables
 
 // Convertir los Toggle Switch del valor on/off a 1/0
-document.getElementById('activa_toggle').addEventListener('change', function() {
-    document.getElementById('activa').value = this.checked ? 1 : 0;
-});
+// document.getElementById('activa_toggle').addEventListener('change', function() {
+//     document.getElementById('activa').value = this.checked ? 1 : 0;
+// });
 
-document.getElementById('comunicados_toggle').addEventListener('change', function() {
-    document.getElementById('comunicados').value = this.checked ? 1 : 0;
-});
+// document.getElementById('comunicados_toggle').addEventListener('change', function() {
+//     document.getElementById('comunicados').value = this.checked ? 1 : 0;
+// });
 
-document.getElementById('vales_toggle').addEventListener('change', function() {
-    document.getElementById('vales').value = this.checked ? 1 : 0;
-});
+// document.getElementById('vales_toggle').addEventListener('change', function() {
+//     document.getElementById('vales').value = this.checked ? 1 : 0;
+// });
 
 // Fin Toggle Switch
 

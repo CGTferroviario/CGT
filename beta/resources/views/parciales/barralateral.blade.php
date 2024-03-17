@@ -1,6 +1,6 @@
 <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar"
     aria-controls="sidebar-multi-level-sidebar" type="button"
-    class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-zinc-500 rounded-lg sm:hidden hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-200 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:focus:ring-zinc-600">
+    class="inline-flex items-center absolute top-20 p-1 mt-2 ml-1 text-sm rounded-lg sm:hidden bg-black hover:bg-red-500 focus:outline-none focus:ring-1 text-red-500 hover:text-black border-2 border-red-500 hover:border-black focus:ring-red-500">
     <span class="sr-only">Open sidebar</span>
     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <path clip-rule="evenodd" fill-rule="evenodd"
@@ -10,10 +10,10 @@
 </button>
 
 <aside id="sidebar-multi-level-sidebar"
-    class="fixed top-20 left-0 z-10 sm:w-16 md:w-52 h-screen transition-transform -translate-x-full sm:translate-x-0"
+    class="fixed top-20 left-0 z-50 sm:w-16 md:w-52 h-screen transition-transform -translate-x-full sm:translate-x-0"
     aria-label="Sidebar">
     <div class="h-full px-3 py-4 pt-5 sm:overflow-y-hidden md:overflow-y-auto bg-oscuro">
-        <h1 class="text-white sm:text-center sm:hidden md:flex">ADMIN</h1>
+        <h1 class="text-white text-center sm:hidden md:block">ADMIN</h1>
         <ul class="space-y-2 font-medium mt-5">
             <li class="">
                 <a href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" class="flex items-center p-2 rounded-lg text-white hover:bg-red-500 group hover:text-black">
