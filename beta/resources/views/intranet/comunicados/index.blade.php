@@ -1,7 +1,7 @@
 <x-privado-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-zinc-800 dark:text-zinc-900 leading-tight">
+        <h2 class="font-semibold text-xl text-zinc-800 dark:text-zinc-900 leading-tight titular2">
             {{ __('Comunicados') }}
         </h2>
     </x-slot>
@@ -16,7 +16,7 @@
                 <div class="col-span-1 md:col-span-3 gap-x-3 md:flex">
                     <div class="mb-3 grow text-center">
                         <span class="px-2 py-2.5 text-sm border border-black font-semibold text-black bg-red-500 rounded-full">{{ $comunicados->count() }}</span>
-                        <span class="text-base font-medium text-zinc-800">Comunicados desde 2017</span>
+                        <span class="text-base font-medium text-zinc-800">Comunicados desde <b>2017</b></span>
                     </div>
                     <div class="mb-3 shrink text-center">
                         <button class="w-full px-2 py-2 text-sm text-zinc-100 transition-colors duration-200 bg-oscuro border rounded-lg gap-x-2 sm:w-auto hover:bg-green-500 hover:text-zinc-100" title="Importar datos desde un archivo .csv">
@@ -30,7 +30,6 @@
                             <a href="{{ route('intranet.comunicados.create') }}" class="">Añadir comunicado</a>
                         </button>
                     </div>
-                    
                 </div>
             </div>
             <x-datatables></x-datatables>
@@ -59,28 +58,25 @@
                         <td>{{ $comunicado->numero }}</td>
                         <td>
                             <div class="flex justify-start gap-1 text-xl mt-2">
-                                <a href="{{ route('intranet.comunicados.edit', $comunicado->id) }}"
-                                    class="text-blue-500 hover:bg-blue-500 hover:text-white p-1 rounded-lg h-8" title="Enviar por correo">
+                                <!-- Enviar por Email -->
+                                <a href="{{ route('intranet.comunicados.edit', $comunicado->id) }}" class="text-blue-500 hover:bg-blue-500 hover:text-white p-1 rounded-lg h-8" title="Enviar por correo">
                                     <i class="lni lni-envelope"></i>
-                                </a> 
-                                <a href="{{ route('intranet.comunicados.edit', $comunicado->id) }}"
-                                    class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar Comunicado">
+                                </a>
+                            
+                                <!-- Editar Comunicado -->
+                                <a href="{{ route('intranet.comunicados.edit', $comunicado->id) }}" class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar Comunicado">
                                     <i class="lni lni-pencil"></i>
                                 </a>
-                                {{-- <a href="{{ route('intranet.comunicados.destroy', $comunicado->id) }}"
-                                    class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8" title="Editar Comunicado">
-                                    <i class="lni lni-trash-can"></i>
-                                </a> --}}
+                            
+                                <!-- Eliminar Comunicado -->
                                 <form method="POST" action="{{ route('intranet.comunicados.destroy', $comunicado->id) }}" onsubmit="return confirm('¿Deseas eliminar este comunicado?');">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class=" p-1 rounded-md">
-                                        <a href="#" title="Eliminar Comunicado" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8">
-                                            <i class="lni lni-trash-can"></i>
-                                        </a>
+                                    <button type="submit" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8" title="Eliminar Comunicado">
+                                        <i class="lni lni-trash-can"></i>
                                     </button>
-                                </form>                          
-                            </div>
+                                </form>
+                            </div>    
                         </td>
                         <td>{{ $comunicado->fecha }}</td>
                         <td>{{ $comunicado->user->nombre }}</td>
