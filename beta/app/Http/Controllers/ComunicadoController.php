@@ -13,7 +13,8 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-
+use DataTables;
+use Yajra\DataTables\DataTables as DataTablesDataTables;
 
 class ComunicadoController extends Controller
 {
@@ -22,6 +23,28 @@ class ComunicadoController extends Controller
         return view('intranet.comunicados.index', [
             'comunicados' => Comunicado::orderBy('fecha', 'desc')->get()
         ]);
+    }
+    public function getComunicadosAjax(Request $request)
+    {
+        dd($request);
+        if ($request->ajax()) {
+            $data = Comunicado::select('id', 'numero', 'fecha', 'user_id', 'titulo', 'empresa_id', 'categoria_id', 'subtitulo', 'cuerpo', 'pdf', 'imagen', 'adjunto', 'visualizaciones');
+            return DataTablesDataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                    $editUrl = route('intranet.comunicados.edit', $row->id);
+                    $deleteUrl = route('intranet.comunicados.destroy', $row->id);
+                    $editButton = '<a href="'.$editUrl.'" class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8" title="Editar Comunicado"><i class="lni lni-pencil"></i></a>';
+                    $deleteButton = '<form method="POST" action="'.$deleteUrl.'" onsubmit="return confirm(\'¿Deseas eliminar este comunicado?\');">
+                                        @csrf
+                                        @method(\'DELETE\')
+                                        <button type="submit" class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8" title="Eliminar Comunicado"><i class="lni lni-trash-can"></i></button>
+                                    </form>';
+                    return $editButton . $deleteButton;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
     }
     public function bibliotecaComunicados()
     {

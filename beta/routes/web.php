@@ -152,6 +152,7 @@ Route::middleware('auth')->group(function () {
 });
 Route::middleware('auth')->name('intranet.')->prefix('intranet')->group(function () {
     Route::resource('/comunicados', ComunicadoController::class)->except(['show']);
+    Route::get('/comunicados-ajax', [ComunicadoController::class, 'getComunicadosAjax'])->name('comunicados.ajax');
     Route::resource('/noticias', NoticiaController::class);
     Route::resource('/empresas', EmpresaController::class)->except(['show']);
     Route::resource('/categorias', CategoriaController::class)->except(['show']);

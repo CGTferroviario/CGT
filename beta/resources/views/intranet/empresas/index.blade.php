@@ -1,7 +1,7 @@
 <x-privado-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-zinc-800 dark:text-zinc-900 leading-tight">
+        <h2 class="font-semibold text-xl text-zinc-900 leading-tight titular">
             {{ __('Empresas') }}
         </h2>
     </x-slot>
@@ -9,26 +9,25 @@
     @section('contenido')
     <div class="p-8 fondo documentacion">
         <div class="bg-blanco-transp bordeRojo rounded-lg p-4">
-            <div class="grid grid-cols-3 mt-2 mb-3">
-                <div class="sm:flex sm:items-center sm:justify-between">
-                </div>
-                <div class="sm:flex-row sm:items-center sm:justify-between">
+            <div class="grid grid-cols-1 lg:grid-cols-3 mt-2 mb-3">
+                <div class="col-span-1 lg:col-span-3">
                     <x-mensaje></x-mensaje>
-                    <div class="flex items-center gap-x-3">
-                        <h2 class="text-lg font-bold text-zinc-800">Empresas</h2>
-                        <span class="px-3 py-2 text-sm font-semibold text-black bg-red-500 rounded-full">{{ $empresas->count() }}</span>
-                        <p class="mt-1 text-sm text-zinc-500">Estas son las empresas que tenemos registradas.</p>
-                    </div>
                 </div>
-                <div class="sm:flex sm:items-center sm:justify-end">
-                    <div class="flex items-center gap-x-3 align-middle">
-                        <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-zinc-100 transition-colors duration-200 bg-oscuro border rounded-lg gap-x-2 sm:w-auto hover:bg-green-500 hover:text-zinc-100" title="Importar datos desde un archivo .csv">
+                <div class="col-span-1 lg:col-span-3 gap-x-3 md:flex">
+                    <div class="mb-3 grow text-center">
+                        <span class="px-2 py-2 text-sm border border-black font-semibold text-black bg-red-500 rounded-full">{{ $empresas->count() }}</span>
+                        <span class="text-base font-medium text-zinc-800">Empresas Ferroviarias registradas</span>
+                    </div>
+                    <div class="mb-3 shrink text-center">
+                        <button class="w-full px-2 py-2 text-sm text-zinc-100 transition-colors duration-200 bg-oscuro border rounded-lg gap-x-2 hover:bg-green-500 hover:text-zinc-100" title="Importar datos desde un archivo .csv">
                             <i class="lni lni-upload"></i>
                             <span>Importar CSV</span>
                         </button>
-                        <button class="flex items-center justify-center w-1/2 px-2 py-2 text-sm text-zinc-900 transition-colors duration-200 bg-red-500 bordeNegro rounded-lg gap-x-2 sm:w-auto hover:bg-zinc-900 hover:text-red-500" title="Añadir un nuevo empresa">
-                            <i class="lni lni-apartment"></i>
-                            <a href="{{ route('intranet.empresas.create') }}" class="">Añadir empresa</a>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <button class="w-full px-2 py-2 text-sm text-zinc-900 transition-colors duration-200 bg-red-500 bordeNegro rounded-lg gap-x-2 hover:bg-zinc-900 hover:text-red-500" title="Añadir una nueva empresa">
+                            <i class="lni lni-add-files"></i>
+                            <a href="{{ route('intranet.empresas.create') }}" class="">Añadir comunicado</a>
                         </button>
                     </div>
                 </div>
