@@ -38,6 +38,8 @@
             </main>
         </div>
 
+        @stack('scripts')
+
         @include('parciales.pie')
 
         @include('parciales.scripts')

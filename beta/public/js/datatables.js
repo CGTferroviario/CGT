@@ -1,3 +1,6 @@
+import './bootstrap';
+import 'laravel-datatables-vite';
+
 new DataTable('#tablaComunicados', {
     processing: true,
     serverSide: true,
