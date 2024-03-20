@@ -3,7 +3,7 @@
         <div class="flex items-center">
             <a href="{{ url('/intranet') }}" class="flex logo">
                 <img class="p-1" src="/img/logo_sm.png" alt="CGT Ferroviario" />
-                <span class="mx-2 titular mt-2 text-white sm:flex md:hidden xl:flex whitespace-nowrap">Ferroviario7</span>
+                <span class="mx-2 logo-texto mt-2 text-white sm:flex md:hidden xl:flex whitespace-nowrap">Ferroviario7</span>
             </a>
         </div>
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:text-sm lg:text-base xl:text-lg" id="navbar-sticky">

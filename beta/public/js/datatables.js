@@ -2,12 +2,15 @@ import './bootstrap';
 import 'laravel-datatables-vite';
 
 new DataTable('#tablaComunicados', {
+    language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
+    },
     processing: true,
     serverSide: true,
     ajax: "{{ route('intranet.comunicados.ajax') }}",
     columns: [
         { data: 'numero', name: 'numero' },
-        { data: 'action', name: 'action', orderable: false, searchable: false },
+        { data: 'acciones', name: 'acciones', orderable: false, searchable: false },
         { data: 'fecha', name: 'fecha' },
         { data: 'user.nombre', name: 'user.nombre' },
         { data: 'titulo', name: 'titulo' },

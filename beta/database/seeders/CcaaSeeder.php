@@ -16,6 +16,7 @@ class CcaaSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Ccaa::truncate();
 
         $csvFile = fopen(base_path("database/data/ccaas.csv"), "r");
@@ -33,5 +34,6 @@ class CcaaSeeder extends Seeder
         }
 
         fclose($csvFile);
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

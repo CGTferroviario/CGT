@@ -13,6 +13,7 @@ class EtiquetaSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('etiquetas')->truncate(); //for cleaning earlier data to avoid duplicate entries
         $etiquetas = [
             [ 'nombre' => 'AFILIACIÓN' , 'activa' => 1  ],
@@ -50,5 +51,6 @@ class EtiquetaSeeder extends Seeder
                 'slug' => \Illuminate\Support\Str::slug($etiqueta['nombre']),
             ]);
         }
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

@@ -17,6 +17,7 @@ class ProvinciaSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Provincia::truncate();
 
         $csvFile = fopen(base_path("database/data/provincias.csv"), "r");
@@ -35,5 +36,6 @@ class ProvinciaSeeder extends Seeder
         }
 
         fclose($csvFile);
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

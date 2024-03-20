@@ -13,7 +13,7 @@ class CategoriaSeeder extends Seeder
      */
     public function run(): void
     {
-        
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('categorias')->truncate(); //for cleaning earlier data to avoid duplicate entries
 
         $categorias = [
@@ -36,6 +36,7 @@ class CategoriaSeeder extends Seeder
                 'slug' => \Illuminate\Support\Str::slug($categoria['nombre']),
             ]);
         }
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
     }
 }

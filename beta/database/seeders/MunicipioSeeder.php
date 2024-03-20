@@ -16,6 +16,7 @@ class MunicipioSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Municipio::truncate();
 
         $csvFile = fopen(base_path("database/data/municipios.csv"), "r");
@@ -35,5 +36,6 @@ class MunicipioSeeder extends Seeder
         }
 
         fclose($csvFile);
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

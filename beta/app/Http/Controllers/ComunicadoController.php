@@ -17,11 +17,18 @@ use Illuminate\Support\Str;
 
 class ComunicadoController extends Controller
 {
-    public function index()
+    // public function index(ComunicadosDataTable $dataTable)
+    // {
+    //     // dd($dataTable);
+    //     return $dataTable->render('intranet.comunicados.index');
+    //     // return view('intranet.comunicados.index', [
+    //     //     'comunicados' => Comunicado::orderBy('fecha', 'desc')->get(),
+    //     // ]);
+    // }
+    public function index(ComunicadosDataTable $dataTable)
     {
-        return view('intranet.comunicados.index', [
-            'comunicados' => Comunicado::orderBy('fecha', 'desc')->get()
-        ]);
+        $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
+        return $dataTable->render('intranet.comunicados.index', compact('comunicados'));
     }
     public function getComunicadosAjax(ComunicadosDataTable $dataTable)
     {   
