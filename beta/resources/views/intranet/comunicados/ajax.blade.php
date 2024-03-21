@@ -1,4 +1,4 @@
-
+{{-- 
 @section('content')
     <div class="card">
         <div class="card-header">Administración de Comunicados</div>
@@ -10,4 +10,4 @@
 
 @push('scripts')
     {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
-@endpush
+@endpush --}}

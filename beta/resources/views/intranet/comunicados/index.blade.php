@@ -32,10 +32,8 @@
                     </div>
                 </div>
             </div>
-            {{-- <x-datatables></x-datatables> --}}
 
             <div class="card">
-                <div class="card-header">Administración de Comunicados</div>
                 <div class="card-body">
                     {{ $dataTable->table() }}
                 </div>
@@ -43,7 +41,7 @@
 
             @push('scripts')
                 {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
-            @endpush
+            @endpush-
 
             {{-- <table id="tablaComunicados" class="text-sm pt-5 font-normal rounded-t-lg table table-striped nowrap" style="width:100%">
                 <thead class="rounded-t-lg bg-black text-white">
@@ -112,29 +110,6 @@
                     @endforeach
                 </tbody>
             </table> --}}
-            {{-- <table id="tablaComunicados" class="text-sm pt-5 font-normal rounded-t-lg table table-striped nowrap" style="width:100%">
-                <thead class="rounded-t-lg bg-black text-white">
-                    <tr>
-                        <th class="rounded-tl-lg">Nº</th>
-                        <th>Acciones</th>
-                        <th>Fecha</th>
-                        <th title="Autor">Autor</th>
-                        <th>Título</th>
-                        <th>Empresa</th>                        
-                        <th>Categorías</th>
-                        <th class="rounded-tr-lg">Etiquetas</th>
-                        <th>Subtítulo</th>
-                        <th>Cuerpo</th>
-                        <th>PDF</th>
-                        <th>Imagen</th>
-                        <th>Adjunto</th>
-                        <th title="Visualizaciones">Vis.</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- DataTables will populate this section -->
-                </tbody>
-            </table>             --}}
         </div>
     </div>
     @endsection

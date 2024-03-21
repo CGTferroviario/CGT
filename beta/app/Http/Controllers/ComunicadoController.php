@@ -30,10 +30,10 @@ class ComunicadoController extends Controller
         $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
         return $dataTable->render('intranet.comunicados.index', compact('comunicados'));
     }
-    public function getComunicadosAjax(ComunicadosDataTable $dataTable)
-    {   
-        return $dataTable->render('comunicados.ajax');
-    }
+    // public function getComunicadosAjax(ComunicadosDataTable $dataTable)
+    // {   
+    //     return $dataTable->render('comunicados.ajax');
+    // }
     public function bibliotecaComunicados()
     {
         return view('biblioteca.comunicados', [

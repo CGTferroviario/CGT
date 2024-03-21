@@ -15,34 +15,36 @@ use Yajra\DataTables\Services\DataTable;
 class ComunicadosDataTable extends DataTable
 {
     /**
-     * Build the DataTable class.
+     * Construimos la clase DataTables
      *
-     * @param QueryBuilder $query Results from query() method.
+     * @param QueryBuilder $query Resultados del método query()
+     * 
+     * 
      */
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('user.nombre', function(Comunicado $comunicado) {
-                return $comunicado->user->nombre; // Accessing the related model's attribute
+                return $comunicado->user->nombre; // Accediendo al modelo relacionado
             })
             ->addColumn('empresa.nombre', function(Comunicado $comunicado) {
-                return $comunicado->empresa->nombre; // Accessing the related model's attribute
+                return $comunicado->empresa->nombre; // Accediendo al modelo relacionado
             })
             ->addColumn('categoria.nombre', function(Comunicado $comunicado) {
-                return $comunicado->categoria->nombre; // Accessing the related model's attribute
+                return $comunicado->categoria->nombre; // Accediendo al modelo relacionado
             })
             ->addColumn('etiquetas', function(Comunicado $comunicado) {
                 return $comunicado->etiquetas->map(function($etiqueta) {
-                    return $etiqueta->nombre; // Assuming 'nombre' is the attribute you want to display
+                    return $etiqueta->nombre; // 'nombre' es el atributo que quieres mostrar
                 })->implode(', ');
             })
-            // Add other columns as needed
+            // Añadir otras columnas
             ->addColumn('acciones', function(Comunicado $comunicado) {
-                // Manually construct the URLs for the actions
+                // Construimos manualmente las URLs para las acciones
                 $editUrl = route('intranet.comunicados.edit', $comunicado->id);
                 $destroyUrl = route('intranet.comunicados.destroy', $comunicado->id);
             
-                // Construct the HTML content
+                // Construimos el contenido HTML
                 $html = '<div class="flex justify-start gap-1 text-xl mt-2">';
                 $html .= '<a href="' . $editUrl . '" class="text-blue-500 hover:bg-blue-500 hover:text-white p-1 rounded-lg h-8" title="Enviar por correo">';
                 $html .= '<i class="lni lni-envelope"></i>';
@@ -61,12 +63,10 @@ class ComunicadosDataTable extends DataTable
             
                 return $html;
             })            
-            // ->rawColumns(['acciones']) // Specify the column(s) that should render HTML
             ->addColumn('cuerpo', function(Comunicado $comunicado) {
-                // Example of returning HTML content for the 'action' column
                 return $comunicado->cuerpo;
             })
-            ->rawColumns(['cuerpo', 'acciones']) // Specify the column(s) that should render HTML
+            ->rawColumns(['cuerpo', 'acciones']) // Especifica las columnas que deben renderizar HTML
             ->setRowId('id');
     }
 
@@ -89,7 +89,7 @@ class ComunicadosDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     //->dom('Bfrtip')
-                    ->orderBy(1)
+                    ->orderBy(2)
                     ->selectStyleSingle()
                     ->buttons([
                         Button::make('excel'),
@@ -114,13 +114,14 @@ class ComunicadosDataTable extends DataTable
     public function getColumns(): array
     {
         return [
+            Column::make('numero'),
             Column::computed('acciones')
                 ->title('Acciones')
                 ->exportable(false)
                 ->printable(false)
                 ->width(60)
                 ->addClass('text-center'),
-            Column::make('id'),
+            Column::make('numero'),
             Column::make('fecha'),
             Column::make('user.nombre')->title('Usuario'), // Adjust the column name to match
             // Column::make('user.nombre'),
