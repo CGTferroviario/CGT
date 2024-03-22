@@ -12,6 +12,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
+
 class ComunicadosDataTable extends DataTable
 {
     /**
@@ -71,7 +72,12 @@ class ComunicadosDataTable extends DataTable
                 $html = '<span class="px-3 py-1 text-sm font-semibold rounded-full bg-' . $comunicado->empresa->slug . '">' . $comunicado->empresa->slug . '</span>';
                 return $html;
             })
-            ->rawColumns(['cuerpo', 'acciones', 'empresa']) // Specify the columns that should render HTML
+            ->editColumn('categoria', function ($comunicado) {
+                // Construct the HTML content for the 'empresa' field
+                $html = '<span class="px-3 py-1 text-sm font-semibold rounded-full bg-' . $comunicado->categoria->slug . '">' . $comunicado->categoria->slug . '</span>';
+                return $html;
+            })
+            ->rawColumns(['cuerpo', 'acciones', 'empresa', 'categoria']) // Specify the columns that should render HTML
             ->setRowId('id');
     }
 
@@ -134,13 +140,10 @@ class ComunicadosDataTable extends DataTable
             Column::make('etiquetas')->title('Etiquetas'),
             Column::make('subtitulo'),
             Column::make('cuerpo'),
-            Column::make('subtitulo'),
             Column::make('pdf'),
             Column::make('imagen'),
             Column::make('adjunto'),
             Column::make('visualizaciones'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
         ];
     }
 

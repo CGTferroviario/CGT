@@ -7,7 +7,7 @@
         <!-- Cuerpo del Comunicado -->
         <div class="empresa p-2 grid grid-flow-col">
             <div class="justify-self-start">
-                <div class="py-0.5 px-2 inline rounded-full font-semibold bg-{{ $comunicado->empresa?->nombre }}">
+                <div class="py-0.5 px-2 inline rounded-full font-semibold bg-{{ $comunicado->empresa?->slug }}">
                     @if($comunicado->empresa)
                         <a href="{{ route('empresas.show', ['slug' => $comunicado->empresa?->slug]) }}">{{ $comunicado->empresa?->nombre }}</a>
                     @endif

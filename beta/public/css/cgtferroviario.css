@@ -28,9 +28,9 @@ main{
 a{
   text-decoration: none;
 }
-a:hover{
+/* a:hover{
   color: #dc3545;
-}
+} */
 
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
