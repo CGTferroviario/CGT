@@ -7,10 +7,10 @@
     </div>
     <div class="grid grid-cols-2 gap-4 p-2 pt-4 text-sm text-white bg-black">
         <div class="">
-            <span class="py-0.5 px-2 rounded-full font-semibold bg-{{ $noticia->empresa?->nombre }}">{{ $noticia->empresa?->nombre }}</span>
+            <span class="py-0.5 px-2 rounded-full font-semibold bg-{{ $noticia->empresa?->slug }}">{{ $noticia->empresa?->nombre }}</span>
         </div>
         <div class="justify-self-end">
-            <span class="py-0.5 px-2 rounded-full font-semibold bg-{{ $noticia->categoria?->nombre }}">{{ $noticia->categoria?->nombre }}</span>
+            <span class="py-0.5 px-2 rounded-full font-semibold bg-{{ $noticia->categoria?->slug }}">{{ $noticia->categoria?->nombre }}</span>
         </div>
     </div>
     <div class="p-2 text-sm text-white bg-zinc-800">

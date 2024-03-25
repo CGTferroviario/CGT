@@ -215,6 +215,8 @@ aside .lni{
 
 
 /* Colores Categorias */
+.bg-infraestructura { color: rgb(230, 230, 40); border-width: 2px; border-color: rgb(230, 230, 40); letter-spacing: 1px; }
+.bg-infraestructura:hover { background: rgb(230, 230, 40) ; color: black; cursor: pointer; }
 .bg-INFRAESTRUCTURA { background: rgb(230, 230, 40); color: black; }
 .bg-OFICINAS { background: rgb(150, 150, 200); color: white; }
 .bg-CIRCULACIÓN { background: rgb(231, 95, 85); color: white; }

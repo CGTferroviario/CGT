@@ -1,23 +1,32 @@
 <div class="mx-auto w-full">
-    <div class="flex flex-col h-full rounded-lg border border-zinc-900 shadow-md">
+    <div class="flex flex-col h-full rounded-lg border border-zinc-900 shadow-md bg-white">
         <!-- Encabezado del comunicados -->
         <div class="p-2 border-b border-zinc-900 rounded-t-lg bg-red-500">
             <h2 class="text-xl font-bold">{{ $comunicado->numero }} / {{ $comunicado->titulo }}</h2>
         </div>
         <!-- Cuerpo del Comunicado -->
-        <div class="empresa p-2 grid grid-flow-col">
-            <div class="justify-self-start">
+        <div class="grid grid-cols-2 mt-2">
+            <div class="p-2 justify-self-start">
                 <div class="py-0.5 px-2 inline rounded-full font-semibold bg-{{ $comunicado->empresa?->slug }}">
                     @if($comunicado->empresa)
                         <a href="{{ route('empresas.show', ['slug' => $comunicado->empresa?->slug]) }}">{{ $comunicado->empresa?->nombre }}</a>
                     @endif
                 </div>
             </div>
+            <div class="p-2 justify-self-end">
+                <div class="py-0.5 px-2 inline rounded-full font-semibold bg-{{ $comunicado->categoria?->slug }}">
+                    @if($comunicado->categoria)
+                        <a href="{{ route('categorias.show', ['slug' => $comunicado->categoria?->slug]) }}">{{ $comunicado->categoria?->nombre }}</a>
+                    @endif
+                </div>
+            </div>
         </div>
-        <div class="flex-grow p-2 overflow-auto bg-white">
-            <div class="py-1 justify-self-end">
+        <div class="grid grid-cols-1">
+            <div class="py-1 px-4 justify-self-end italic">
                 {{ $comunicado->fecha }}
             </div>
+        </div>
+        <div class="flex-grow p-2 overflow-auto">
             <p class="text-black text-justify">
                 {{-- Ponemos este texto entre exclamaciones para que no muestre etiquetas html --}}
                 {!! \Illuminate\Support\Str::limit($comunicado->cuerpo, 800, '...') !!}
@@ -25,16 +34,14 @@
             <button class="rounded-lg border border-black p-2 bg-red-500 text-sm" type="button" onclick="window.location='{{ route('comunicados.show', $comunicado->id) }}';">Leer más</button>
         </div>
         <div class="mt-auto p-1 text-center">
-            <div class="py-0.5 px-2 inline-flex rounded-full font-semibold bg-{{ $comunicado->categoria?->nombre }}">
-                @if($comunicado->categoria)
-                    <a href="{{ route('categorias.show', ['slug' => $comunicado->categoria?->slug]) }}">{{ $comunicado->categoria?->nombre }}</a>
-                @endif
-            </div>
-            @foreach ($comunicado->etiquetas as $etiqueta )
+            
+            @forelse ($comunicado->etiquetas as $etiqueta )
                 <div class="py-0.5 px-2 m-0.5 inline-flex rounded-full font-semibold border-2 text-zinc-900 border-red-500">
                     <a href="{{ route('etiquetas.show', ['slug' => $etiqueta->slug]) }}">#{{ $etiqueta->nombre }}</a>
                 </div>
-            @endforeach
+            @empty
+                <p class="italic text-sm">No hay etiquetas asociadas</p>
+            @endforelse
         </div>
         <!-- Pie del comunicado -->
         <div class="p-0.5 border-t border-zinc-900 rounded-b-lg mt-auto inline-flex bg-red-500">
@@ -50,3 +57,5 @@
         </div>
     </div>
 </div>
+
+
