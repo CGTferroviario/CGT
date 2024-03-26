@@ -1,10 +1,9 @@
 <x-publico-layout>
     @section('contenido')
-        <h1 class="m-0 py-3 text-center bg-red-500 font-bold leading-tight titular2">COMUNICADOS</h1>
+        <h1 class="m-0 py-3 text-center bg-red-500 font-bold leading-tight titular">COMUNICADOS</h1>
         <div class="fondo comunicados">
-            <div class="grid grid-cols-2 mx-auto p-8">
-                <div></div>
-                <div>
+            <div class="grid grid-cols-1 mx-auto p-8">
+                <div class="justify-self-end">
                     <form action="{{ route('biblioteca.comunicados.buscar') }}" method="GET">
                         <div class="grid grid-cols-4 gap-4">
                             <div class="col-span-3 mb-4">

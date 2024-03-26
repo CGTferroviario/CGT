@@ -9,6 +9,8 @@ class Comunicado extends Model
 {
     use HasFactory;
 
+    protected $dates = ['fecha'];
+
     protected $fillable = [
         'visualizaciones', 'user_id', 'numero', 'empresa_id', 'categoria_id', 'fecha', 'titulo', 'subtitulo', 'cuerpo', 'pdf', 'imagen', 'adjunto', 'publicado',   
     ];

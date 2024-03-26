@@ -17,28 +17,54 @@ use Illuminate\Support\Str;
 
 class ComunicadoController extends Controller
 {
-    // public function index(ComunicadosDataTable $dataTable)
-    // {
-    //     // dd($dataTable);
-    //     return $dataTable->render('intranet.comunicados.index');
-    //     // return view('intranet.comunicados.index', [
-    //     //     'comunicados' => Comunicado::orderBy('fecha', 'desc')->get(),
-    //     // ]);
-    // }
+    
+
     public function index(ComunicadosDataTable $dataTable)
     {
+        // Fetch all Comunicados ordered by fecha in descending order
         $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
+
+        // Format all dates in the collection to 'dd/mm/yyyy'
+        $comunicados->map(function ($comunicado) {
+            // Ensure the fecha attribute is treated as a Carbon instance
+            $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
+            return $comunicado;
+        });
+
+        // Pass the formatted Comunicados to the view
         return $dataTable->render('intranet.comunicados.index', compact('comunicados'));
     }
+
+    // public function index(ComunicadosDataTable $dataTable)
+    // {
+    //     // Cogemos todos los comunicados ordenados por fecha de manera descendente
+    //     $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
+
+    //     // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
+    //     $comunicados->map(function ($comunicado) {
+    //         $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('dd/mm/yyyy');
+    //         return $comunicado;
+    //     });
+    //     // Pasar la fecha formateada y todos los comunicados a la vista
+    //     return $dataTable->render('intranet.comunicados.index', compact('comunicados'));
+    // }
     // public function getComunicadosAjax(ComunicadosDataTable $dataTable)
     // {   
     //     return $dataTable->render('comunicados.ajax');
     // }
     public function bibliotecaComunicados()
     {
+        // Fetch all Comunicados ordered by fecha in descending order and paginate
+        $comunicados = Comunicado::orderBy('fecha', 'desc')->paginate(12);
+
+        // Format all dates in the collection to 'dd/mm/yyyy'
+        $comunicados->getCollection()->transform(function ($comunicado) {
+            $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
+            return $comunicado;
+        });
+
         return view('biblioteca.comunicados', [
-            
-            'comunicados' => Comunicado::orderBy('fecha', 'desc')->paginate(12),
+            'comunicados' => $comunicados,
             'empresas' => Empresa::orderBy('id', 'asc')->get(),
             'categorias' => Categoria::orderBy('id', 'asc')->get(),
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()

@@ -1,7 +1,7 @@
 <x-publico-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-zinc-900 leading-tight titular2">
+        <h2 class="font-semibold text-xl text-zinc-900 leading-tight titular">
             {{ $categoria->nombre }}
         </h2>
     </x-slot>
