@@ -1,4 +1,4 @@
-<div class="mx-auto w-full">
+{{-- <div class="mx-auto w-full">
     <div class="flex flex-col h-full rounded-lg border border-zinc-900 shadow-md bg-white">
         <!-- Encabezado del comunicados -->
         <div class="p-2 border-b border-zinc-900 rounded-t-lg bg-red-500">
@@ -30,7 +30,7 @@
         </div>
         <div class="flex-grow p-2 overflow-auto">
             <p class="text-black text-justify">
-                {{-- Ponemos este texto entre exclamaciones para que no muestre etiquetas html --}}
+                <!-- Ponemos este texto entre exclamaciones para que no muestre etiquetas html -->
                 {!! \Illuminate\Support\Str::limit($comunicado->cuerpo, 800, '...') !!}
             </p>
             <button class="rounded-lg border border-black p-2 bg-red-500 text-sm" type="button"
@@ -51,7 +51,7 @@
         <div class="p-0.5 border-t border-zinc-900 rounded-b-lg mt-auto inline-flex bg-red-500">
             <div class="w-1/2 rounded-bl-lg hover:text-red-500 hover:bg-black text-center">
                 <a href="{{ $comunicado->pdf }}" class="" target="blank">
-                    {{-- <i class="lni lni-display verDocs mr-2 text-2xl"></i> --}}
+                    <!-- <i class="lni lni-display verDocs mr-2 text-2xl"></i> -->
                     <i class="lni lni-popup text-2xl mr-2 mb-1 align-middle"></i>Leer más...</a>
             </div>
             <div class="w-1/2 rounded-br-lg hover:text-red-500 hover:bg-black text-center">
@@ -61,10 +61,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 <!-- Tarjeta Comunicado -->
-<div class="max-w-md mx-auto rounded-xl shadow-md overflow-hidden md:max-w-2xl flex flex-col h-full">
+<div class="max-w-md mx-auto border border-zinc-900 rounded-xl shadow-md overflow-hidden md:max-w-2xl flex flex-col h-full">
     <!-- Encabezado -->
     <div class="h-20 flex items-center p-2 border-b border-zinc-900 rounded-t-lg bg-red-500"
         title="{{ $comunicado->titulo }}">
