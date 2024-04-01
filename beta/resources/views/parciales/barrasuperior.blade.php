@@ -115,7 +115,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="group {{ Route::currentRouteNamed('recursos.*') ? 'border-red-500' : 'border-transparent' }} border-b-2 hover:border-transparent">
+                {{-- <li class="group {{ Route::currentRouteNamed('recursos.*') ? 'border-red-500' : 'border-transparent' }} border-b-2 hover:border-transparent">
                     <button id="dropdownRecursosLink" data-dropdown-toggle="dropdownRecursos" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-zinc-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">RECURSOS <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->
                     <div id="dropdownRecursos" class="z-50 hidden font-normal divide-y rounded-lg shadow w-auto bordeRojo bg-oscuro divide-zinc-600">
@@ -128,7 +128,7 @@
                             <li><a href="{{ url('recursos/logos') }}" class="block px-4 py-2 hover:bg-red-500 hover:text-black" title="Logotipos para su uso en prensa">LOGOTIPOS</a></li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
                 <li class="group {{ Route::currentRouteNamed('equipo.*') ? 'border-red-500' : 'border-transparent' }} border-b-2 hover:border-transparent">
                     <button id="dropdownEquipoLink" data-dropdown-toggle="dropdownEquipo" class="flex items-center justify-between w-full border-b md:border-0 md:p-2 md:w-auto text-white md:hover:text-black focus:text-white border-zinc-700 md:hover:bg-red-500 active:text-red-500 rounded-lg p-2">SFF-CGT <i class="lni lni-chevron-down ml-1 mt-1 text-red-500 group-hover:text-white"></i></button>
                     <!-- Dropdown menu -->

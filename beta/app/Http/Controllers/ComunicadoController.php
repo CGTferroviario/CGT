@@ -21,10 +21,10 @@ class ComunicadoController extends Controller
 
     public function index(ComunicadosDataTable $dataTable)
     {
-        // Fetch all Comunicados ordered by fecha in descending order
+        // Cogemos todos los comunicados ordenados por fecha de manera descendente
         $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
 
-        // Format all dates in the collection to 'dd/mm/yyyy'
+        // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
         $comunicados->map(function ($comunicado) {
             // Ensure the fecha attribute is treated as a Carbon instance
             $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
@@ -54,10 +54,10 @@ class ComunicadoController extends Controller
     // }
     public function bibliotecaComunicados()
     {
-        // Fetch all Comunicados ordered by fecha in descending order and paginate
+        // Cogemos todos los comunicados ordenados por fecha de manera descendente y paginamos 12
         $comunicados = Comunicado::orderBy('fecha', 'desc')->paginate(12);
 
-        // Format all dates in the collection to 'dd/mm/yyyy'
+        // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
         $comunicados->getCollection()->transform(function ($comunicado) {
             $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
             return $comunicado;

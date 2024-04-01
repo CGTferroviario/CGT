@@ -1,4 +1,5 @@
 <x-publico-layout>
+
     @section('contenido')
         <h1 class="m-0 py-3 text-center bg-red-500 font-bold leading-tight titular">COMUNICADOS</h1>
         <div class="fondo comunicados">
@@ -7,11 +8,14 @@
                     <form action="{{ route('biblioteca.comunicados.buscar') }}" method="GET">
                         <div class="grid grid-cols-4 gap-4">
                             <div class="col-span-3 mb-4">
-                                <label for="termino" class="block text-zinc-700 text-sm font-bold mb-2">Término de búsqueda:</label>
-                                <input type="text" name="termino" id="termino" class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline">
+                                <label for="termino" class="block text-zinc-700 text-sm font-bold mb-2">Término de
+                                    búsqueda:</label>
+                                <input type="text" name="termino" id="termino"
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline">
                             </div>
                             <div class="mb-4 flex flex-col relative">
-                                <button type="submit" class="w-full absolute bottom-0 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                                <button type="submit"
+                                    class="w-full absolute bottom-0 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                                     <i class="lni lni-search text-lg"></i>Buscar
                                 </button>
                             </div>
@@ -20,7 +24,7 @@
                             <x-forms.select-empresa :empresas=$empresas></x-forms.select-empresa>
 
                             <x-forms.select-categoria :categorias=$categorias></x-forms.select-categoria>
-                            
+
                             <x-forms.select-etiquetas :etiquetas=$etiquetas></x-forms.select-etiquetas>
 
                             <x-forms.input-fecha></x-forms.input-fecha>
@@ -29,12 +33,13 @@
                 </div>
             </div>
             <div class="w-full px-8">{{ $comunicados->onEachSide(2)->links() }}</div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">
-                
-                @foreach ($comunicados as $comunicado)            
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">
+
+                @foreach ($comunicados as $comunicado)
                     <x-comunicado :comunicado=$comunicado></x-comunicado>
                 @endforeach
-            </div> 
+            </div>
             <div class="col-span-4 paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
         </div>
     @endsection
