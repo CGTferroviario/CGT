@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+.quiz-container {
+    margin-bottom: 20px;
+}
+
+.quiz-body {
+    margin-bottom: 10px;
+}
+
+.quiz-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.traffic-light {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.traffic-light .light {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.traffic-light .red {
+    background-color: red;
+}
+
+.traffic-light .yellow {
+    background-color: yellow;
+}
+
+.traffic-light .green {
+    background-color: green;
+}
+
+</style>
+<body>
+    <div class="quiz-container" id="quiz">
+        <div class="quiz-body">
+            <h2 id="question">Question Text</h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer" id="a" class="answer" />
+                    <label for="a" id="a_text">Siempre o casi siempre</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="b" class="answer" />
+                    <label for="b" id="b_text">A menudo</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="c" class="answer" />
+                    <label for="c" id="c_text">A veces</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="d" class="answer" />
+                    <label for="d" id="d_text">Nunca o casi nunca</label>
+                </li>
+            </ul>
+        </div>
+        <div class="quiz-footer">
+            <button type="button" id="btn">Enviar</button>
+        </div>
+    </div>
+    <div class="result-container" id="result">
+        <!-- Traffic light will be displayed here -->
+    </div>
+</body>
+</html>
+<script>
+const quizData = [
+    // Example question structure
+    {
+        question: "¿Trabajas los sábados?",
+        a: "Siempre o casi siempre",
+        b: "A menudo",
+        c: "A veces",
+        d: "Nunca o casi nunca",
+        correct: "a"
+    },
+    {
+        question: "¿Trabajas los domingos y festivos?",
+        a: "Siempre o casi siempre",
+        b: "A menudo",
+        c: "A veces",
+        d: "Nunca o casi nunca",
+        correct: "a"
+    },
+    {
+        question: "¿Tienes la posibilidad de tomar días u horas libres para atender asuntos de tipo personal?",
+        a: "Siempre o casi siempre",
+        b: "A menudo",
+        c: "A veces",
+        d: "Nunca o casi nunca",
+        correct: "a"
+    },
+    {
+        question: "¿Con qué frecuencia tienes que trabajar más tiempo del horario habitual, hacer horas extra o llevarte trabajo a casa?",
+        a: "Siempre o casi siempre",
+        b: "A menudo",
+        c: "A veces",
+        d: "Nunca o casi nunca",
+        correct: "a"
+    },
+    // Add more questions here
+];
+
+const quiz = document.querySelector(".quiz-body");
+const answerEl = document.querySelectorAll(".answer");
+const questionEl = document.getElementById("question");
+const resultEl = document.getElementById("result");
+const btnSubmit = document.getElementById("btn");
+
+let currentQuiz = 0;
+let score = 0;
+
+loadQuiz();
+
+function loadQuiz() {
+    deselectAnswers();
+    const currentQuizData = quizData[currentQuiz];
+    questionEl.innerText = currentQuizData.question;
+    document.getElementById('a_text').innerText = currentQuizData.a;
+    document.getElementById('b_text').innerText = currentQuizData.b;
+    document.getElementById('c_text').innerText = currentQuizData.c;
+    document.getElementById('d_text').innerText = currentQuizData.d;
+}
+
+
+// function loadQuiz() {
+//     deselectAnswers();
+//     const currentQuizData = quizData[currentQuiz];
+//     questionEl.innerText = currentQuizData.question;
+//     a_txt.innerText = currentQuizData.a;
+//     b_txt.innerText = currentQuizData.b;
+//     c_txt.innerText = currentQuizData.c;
+//     d_txt.innerText = currentQuizData.d;
+// }
+
+function deselectAnswers() {
+    answerEl.forEach((answerEl) => {
+        answerEl.checked = false;
+    });
+}
+
+function getSelected() {
+    let answer;
+    answerEl.forEach((answerEls) => {
+        if (answerEls.checked) {
+            answer = answerEls.id;
+        }
+    });
+    return answer;
+}
+
+btnSubmit.addEventListener("click", function () {
+    const answers = getSelected();
+    if (answers) {
+        if (answers === quizData[currentQuiz].correct) {
+            score++;
+        }
+        nextQuestion();
+    }
+});
+
+function nextQuestion() {
+    currentQuiz++;
+    if (currentQuiz < quizData.length) {
+        loadQuiz();
+    } else {
+        displayTrafficLight();
+    }
+}
+
+function displayTrafficLight() {
+    resultEl.innerHTML = '';
+    if (score < 10) {
+        resultEl.innerHTML = '<div class="traffic-light"><div class="light red"></div></div>';
+    } else if (score < 15) {
+        resultEl.innerHTML = '<div class="traffic-light"><div class="light yellow"></div></div>';
+    } else {
+        resultEl.innerHTML = '<div class="traffic-light"><div class="light green"></div></div>';
+    }
+}
+</script>
