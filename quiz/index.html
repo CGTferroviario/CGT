@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traffic Light Quiz</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Riesgos Laborales</title>
 </head>
 <style>
 body {
     font-family: Arial, sans-serif;
+    height: 100%;
 }
 
 .quiz-container {
@@ -58,9 +58,9 @@ body {
 
 </style>
 <body>
-    <div class="quiz-container" id="quiz">
+    <div class="p-8 mt-8 w-1/3 mx-auto border border-red-500 rounded-lg" id="quiz">
         <div class="quiz-body">
-            <h2 id="question">Question Text</h2>
+            <h2 id="question" class="font-semibold text-2xl">Preguntas</h2>
             <ul>
                 <li>
                     <input type="radio" name="answer" id="a" class="answer" />
@@ -81,7 +81,7 @@ body {
             </ul>
         </div>
         <div class="quiz-footer">
-            <button type="button" id="btn">Enviar</button>
+            <button type="button" id="btn" class="bg-red-500 hover:bg-zinc-900 hover:text-red-500 p-2 rounded-lg">Enviar</button>
         </div>
     </div>
     <div class="result-container" id="result">
@@ -89,7 +89,10 @@ body {
     </div>
 </body>
 </html>
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> -->
 <script>
+    
 const quizData = [
     // Example question structure
     {
@@ -98,7 +101,7 @@ const quizData = [
         b: "A menudo",
         c: "A veces",
         d: "Nunca o casi nunca",
-        correct: "a"
+        scores: {a: 4, b: 3, c: 2, d: 1},
     },
     {
         question: "¿Trabajas los domingos y festivos?",
@@ -106,7 +109,7 @@ const quizData = [
         b: "A menudo",
         c: "A veces",
         d: "Nunca o casi nunca",
-        correct: "a"
+        scores: {a: 4, b: 3, c: 2, d: 1},
     },
     {
         question: "¿Tienes la posibilidad de tomar días u horas libres para atender asuntos de tipo personal?",
@@ -114,7 +117,7 @@ const quizData = [
         b: "A menudo",
         c: "A veces",
         d: "Nunca o casi nunca",
-        correct: "a"
+        scores: {a: 4, b: 3, c: 2, d: 1},
     },
     {
         question: "¿Con qué frecuencia tienes que trabajar más tiempo del horario habitual, hacer horas extra o llevarte trabajo a casa?",
@@ -122,9 +125,8 @@ const quizData = [
         b: "A menudo",
         c: "A veces",
         d: "Nunca o casi nunca",
-        correct: "a"
+        scores: {a: 4, b: 3, c: 2, d: 1},
     },
-    // Add more questions here
 ];
 
 const quiz = document.querySelector(".quiz-body");
@@ -148,17 +150,6 @@ function loadQuiz() {
     document.getElementById('d_text').innerText = currentQuizData.d;
 }
 
-
-// function loadQuiz() {
-//     deselectAnswers();
-//     const currentQuizData = quizData[currentQuiz];
-//     questionEl.innerText = currentQuizData.question;
-//     a_txt.innerText = currentQuizData.a;
-//     b_txt.innerText = currentQuizData.b;
-//     c_txt.innerText = currentQuizData.c;
-//     d_txt.innerText = currentQuizData.d;
-// }
-
 function deselectAnswers() {
     answerEl.forEach((answerEl) => {
         answerEl.checked = false;
@@ -178,9 +169,9 @@ function getSelected() {
 btnSubmit.addEventListener("click", function () {
     const answers = getSelected();
     if (answers) {
-        if (answers === quizData[currentQuiz].correct) {
-            score++;
-        }
+        const currentQuestion = quizData[currentQuiz];
+        const selectedScore = currentQuestion.scores[answers];
+        score += selectedScore;
         nextQuestion();
     }
 });
