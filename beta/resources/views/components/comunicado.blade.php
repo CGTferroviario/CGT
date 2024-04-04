@@ -76,16 +76,14 @@
             <div class="p-2 justify-self-start">
                 <div class="py-0.5 px-2 inline rounded-full font-semibold bg-{{ $comunicado->empresa?->slug }}">
                     @if ($comunicado->empresa)
-                        <a
-                            href="{{ route('empresas.show', ['slug' => $comunicado->empresa?->slug]) }}">{{ $comunicado->empresa?->nombre }}</a>
+                        <a href="{{ route('empresas.show', ['slug' => $comunicado->empresa?->slug]) }}">{{ $comunicado->empresa?->nombre }}</a>
                     @endif
                 </div>
             </div>
             <div class="p-2 justify-self-end">
                 <div class="py-0.5 px-2 inline rounded-full font-semibold bg-{{ $comunicado->categoria?->slug }}">
                     @if ($comunicado->categoria)
-                        <a
-                            href="{{ route('categorias.show', ['slug' => $comunicado->categoria?->slug]) }}">{{ $comunicado->categoria?->nombre }}</a>
+                        <a href="{{ route('categorias.show', ['slug' => $comunicado->categoria?->slug]) }}">{{ $comunicado->categoria?->nombre }}</a>
                     @endif
                 </div>
             </div>
@@ -95,9 +93,11 @@
                 {{ $comunicado->fecha }}
             </div>
         </div>
-        <p class="text-base text-justify line-clamp-[20]">
-            {!! $comunicado->cuerpo !!}
-        </p>
+        <div class="px-2">
+            <p class="text-base text-justify line-clamp-[20]">
+                {!! $comunicado->cuerpo !!}
+            </p>
+        </div>
         <div class="mt-auto p-1 text-center">
             @forelse ($comunicado->etiquetas as $etiqueta)
                 <div
