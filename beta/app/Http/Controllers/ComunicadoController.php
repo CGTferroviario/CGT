@@ -26,12 +26,12 @@ class ComunicadoController extends Controller
 
         // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
         $comunicados->map(function ($comunicado) {
-            // Ensure the fecha attribute is treated as a Carbon instance
+            // Aseguramos que el atributo fecha se trata como una instancia de Carbon
             $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
             return $comunicado;
         });
 
-        // Pass the formatted Comunicados to the view
+        // Pasamos el comunicado formateado a la vista
         return $dataTable->render('intranet.comunicados.index', compact('comunicados'));
     }
 
@@ -52,24 +52,75 @@ class ComunicadoController extends Controller
     // {   
     //     return $dataTable->render('comunicados.ajax');
     // }
+
     public function bibliotecaComunicados()
     {
-        // Cogemos todos los comunicados ordenados por fecha de manera descendente y paginamos 12
-        $comunicados = Comunicado::orderBy('fecha', 'desc')->paginate(12);
-
-        // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
-        $comunicados->getCollection()->transform(function ($comunicado) {
-            $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
-            return $comunicado;
+        // Obtener todos los comunicados y agruparlos por año
+        $comunicados = Comunicado::orderBy('fecha', 'desc')->get()->groupBy(function($comunicado) {
+            return Carbon::parse($comunicado->fecha)->format('Y');
         });
 
+        // Obtener los años únicos
+        $years = $comunicados->keys();
+
+        // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
+        $comunicados->transform(function ($yearComunicados, $year) {
+            $yearComunicados->transform(function ($comunicado) {
+                $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
+                return $comunicado;
+            });
+            return $yearComunicados;
+        });
+
+
+        // Paginación manual es necesaria porque paginate no funciona directamente con groupBy
+        $page = request()->get('page', 1);
+        $perPage = 12;
+        $offset = ($page * $perPage) - $perPage;
+
+        // $paginatedComunicados = new \Illuminate\Pagination\LengthAwarePaginator(
+        //     array_slice($comunicados->toArray(), $offset, $perPage, true),
+        //     count($comunicados),
+        //     $perPage,
+        //     $page,
+        //     ['path' => request()->url(), 'query' => request()->query()]
+        // );
+        $paginatedComunicados = new \Illuminate\Pagination\LengthAwarePaginator(
+            $comunicados->slice($offset, $perPage)->values(),
+            count($comunicados),
+            $perPage,
+            $page,
+            ['path' => request()->url(), 'query' => request()->query()]
+        );
+        
+
         return view('biblioteca.comunicados', [
-            'comunicados' => $comunicados,
+            'comunicados' => $paginatedComunicados,
+            'years' => $years, // Pasar los años a la vista
             'empresas' => Empresa::orderBy('id', 'asc')->get(),
             'categorias' => Categoria::orderBy('id', 'asc')->get(),
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
         ]);
     }
+
+    // public function bibliotecaComunicados()
+    // {
+    //     // Cogemos todos los comunicados ordenados por fecha de manera descendente y paginamos 12
+    //     $comunicados = Comunicado::orderBy('fecha', 'desc')->paginate(12);
+
+    //     // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
+    //     $comunicados->getCollection()->transform(function ($comunicado) {
+    //         $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
+    //         return $comunicado;
+    //     });
+
+    //     return view('biblioteca.comunicados', [
+    //         'comunicados' => $comunicados,
+    //         'empresas' => Empresa::orderBy('id', 'asc')->get(),
+    //         'categorias' => Categoria::orderBy('id', 'asc')->get(),
+    //         'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
+    //     ]);
+    // }
     public function create()
     {
         return view('intranet.comunicados.create', [
