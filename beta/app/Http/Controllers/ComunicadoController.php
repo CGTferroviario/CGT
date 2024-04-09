@@ -18,7 +18,6 @@ use Illuminate\Support\Str;
 class ComunicadoController extends Controller
 {
     
-
     public function index(ComunicadosDataTable $dataTable)
     {
         // Cogemos todos los comunicados ordenados por fecha de manera descendente
@@ -35,72 +34,89 @@ class ComunicadoController extends Controller
         return $dataTable->render('intranet.comunicados.index', compact('comunicados'));
     }
 
-    // public function index(ComunicadosDataTable $dataTable)
-    // {
-    //     // Cogemos todos los comunicados ordenados por fecha de manera descendente
-    //     $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
-
-    //     // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
-    //     $comunicados->map(function ($comunicado) {
-    //         $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('dd/mm/yyyy');
-    //         return $comunicado;
-    //     });
-    //     // Pasar la fecha formateada y todos los comunicados a la vista
-    //     return $dataTable->render('intranet.comunicados.index', compact('comunicados'));
-    // }
-    // public function getComunicadosAjax(ComunicadosDataTable $dataTable)
-    // {   
-    //     return $dataTable->render('comunicados.ajax');
-    // }
-
     public function bibliotecaComunicados()
     {
         // Obtener todos los comunicados y agruparlos por año
         $comunicados = Comunicado::orderBy('fecha', 'desc')->get()->groupBy(function($comunicado) {
-            return Carbon::parse($comunicado->fecha)->format('Y');
+            return Carbon::parse($comunicado->fecha)->format('d/m/Y');
         });
 
         // Obtener los años únicos
-        $years = $comunicados->keys();
+        $years = $comunicados->map(function ($yearComunicados, $year) {
+            return $year;
+        })->unique();
+        
+        // $years = $comunicados->keys();
 
         // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
-        $comunicados->transform(function ($yearComunicados, $year) {
-            $yearComunicados->transform(function ($comunicado) {
+        $comunicados = $comunicados->map(function ($yearComunicados, $year) {
+            return $yearComunicados->map(function ($comunicado) {
                 $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
                 return $comunicado;
             });
-            return $yearComunicados;
         });
+        
+        
+
+        // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
+        // $comunicados->transform(function ($yearComunicados, $year) {
+        //     $yearComunicados->transform(function ($comunicado) {
+        //         $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
+        //         return $comunicado;
+        //     });
+        //     return $yearComunicados;
+        // });
 
 
         // Paginación manual es necesaria porque paginate no funciona directamente con groupBy
-        $page = request()->get('page', 1);
-        $perPage = 12;
-        $offset = ($page * $perPage) - $perPage;
+        // $page = request()->get('page', 1);
+        // $perPage = 12;
+        // $offset = ($page * $perPage) - $perPage;
 
         // $paginatedComunicados = new \Illuminate\Pagination\LengthAwarePaginator(
-        //     array_slice($comunicados->toArray(), $offset, $perPage, true),
+        //     $comunicados->slice($offset, $perPage)->values(),
         //     count($comunicados),
         //     $perPage,
         //     $page,
         //     ['path' => request()->url(), 'query' => request()->query()]
         // );
+        
+        // Paginación manual es necesaria porque paginate no funciona directamente con groupBy
+        $page = request()->get('page', 1);
+        $perPage = 12;
+        $offset = ($page - 1) * $perPage;
+
         $paginatedComunicados = new \Illuminate\Pagination\LengthAwarePaginator(
             $comunicados->slice($offset, $perPage)->values(),
-            count($comunicados),
+            $comunicados->count(),
             $perPage,
             $page,
             ['path' => request()->url(), 'query' => request()->query()]
         );
         
+        // Obtener empresas, categorías y etiquetas
+        $empresas = Empresa::pluck('id');
+        $categorias = Categoria::pluck('id');
+        $etiquetas = Etiqueta::pluck('id');
 
         return view('biblioteca.comunicados', [
-            'comunicados' => $paginatedComunicados,
-            'years' => $years, // Pasar los años a la vista
+            'comunicados' => $comunicados,
+            'years' => $years,
             'empresas' => Empresa::orderBy('id', 'asc')->get(),
+            // 'empresas' => $empresas,
             'categorias' => Categoria::orderBy('id', 'asc')->get(),
+            // 'categorias' => $categorias,
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
+            // 'etiquetas' => $etiquetas
         ]);
+
+        // return view('biblioteca.comunicados', [
+        //     'comunicados' => $paginatedComunicados,
+        //     'years' => $years, // Pasar los años a la vista
+        //     'empresas' => Empresa::orderBy('id', 'asc')->get(),
+        //     'categorias' => Categoria::orderBy('id', 'asc')->get(),
+        //     'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
+        // ]);
     }
 
     // public function bibliotecaComunicados()
