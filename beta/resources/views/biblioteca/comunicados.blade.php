@@ -15,17 +15,18 @@
                     </select>
                 </div>
                 {{-- <div class="col-span-1 md:col-span-2 lg:col-span-2 xl:col-span-3">{{ $comunicados->links() }}</div> --}}
-                @foreach ($comunicados as $year => $yearComunicados)
-                    <div class="year-group" id="{{ $year }}">
-                        {{-- <h2>{{ $year }}</h2> --}}
-                        @foreach ($yearComunicados as $comunicado)
-                            <x-comunicado :comunicado=$comunicado></x-comunicado>
-                        @endforeach
-                    </div>
-                @endforeach
+                {{-- @foreach($comunicadosAgrupados as $year => $comunicados)
+                    <h2>{{ $year }}</h2>
+                    @foreach($comunicados as $comunicado)
+                        <div>
+                            <h3>{{ $comunicado->titulo }}</h3>
+                            <p>{{ $comunicado->fecha }}</p>
+                        </div>
+                    @endforeach
+                @endforeach --}}
+
                 {{-- <div class="col-span-3">{{ $comunicados->links('vendor.pagination.tailwind') }}</div> --}}
             </div>
-            
         </div>
     @endsection
 </x-publico-layout>

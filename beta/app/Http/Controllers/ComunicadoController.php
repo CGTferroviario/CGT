@@ -43,54 +43,24 @@ class ComunicadoController extends Controller
         $years = $comunicados->pluck('fecha')->map(function ($fecha) {
             return \Carbon\Carbon::parse($fecha)->year;
         })->unique();
-        
+
         // Obtener todos los comunicados y agruparlos por año
-        // $comunicados = Comunicado::orderBy('fecha', 'desc')->get()->groupBy(function($comunicado) {
-        //     return Carbon::parse($comunicado->fecha)->format('d/m/Y');
-        // });
-        
-        
-        // $years = $comunicados->keys();
-
-        // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
-        $comunicados = $comunicados->map(function ($yearComunicados, $year) {
-            return $yearComunicados->map(function ($comunicado) {
-                $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
-                return $comunicado;
-            });
+        $comunicadosAgrupados = $comunicados->groupBy(function ($comunicado) {
+            return \Carbon\Carbon::parse($comunicado->fecha)->year;
         });
-        
-        
 
         // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
-        // $comunicados->transform(function ($yearComunicados, $year) {
-        //     $yearComunicados->transform(function ($comunicado) {
-        //         $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
-        //         return $comunicado;
-        //     });
-        //     return $yearComunicados;
-        // });
+        $comunicados = $comunicados->map(function ($comunicado) {
+            $comunicado->fecha = \Carbon\Carbon::parse($comunicado->fecha)->format('d/m/Y');
+            return $comunicado;
+        });
 
-
-        // Paginación manual es necesaria porque paginate no funciona directamente con groupBy
-        // $page = request()->get('page', 1);
-        // $perPage = 12;
-        // $offset = ($page * $perPage) - $perPage;
-
-        // $paginatedComunicados = new \Illuminate\Pagination\LengthAwarePaginator(
-        //     $comunicados->slice($offset, $perPage)->values(),
-        //     count($comunicados),
-        //     $perPage,
-        //     $page,
-        //     ['path' => request()->url(), 'query' => request()->query()]
-        // );
-        
         // Paginación manual es necesaria porque paginate no funciona directamente con groupBy
         $page = request()->get('page', 1);
         $perPage = 12;
         $offset = ($page - 1) * $perPage;
 
-        $paginatedComunicados = new \Illuminate\Pagination\LengthAwarePaginator(
+        $comunicadosAgrupados = new \Illuminate\Pagination\LengthAwarePaginator(
             $comunicados->slice($offset, $perPage)->values(),
             $comunicados->count(),
             $perPage,
@@ -99,28 +69,20 @@ class ComunicadoController extends Controller
         );
         
         // Obtener empresas, categorías y etiquetas
-        $empresas = Empresa::pluck('id');
-        $categorias = Categoria::pluck('id');
-        $etiquetas = Etiqueta::pluck('id');
+        $empresas = Empresa::whereHas('comunicados')->get();
+        $categorias = Categoria::whereHas('comunicados')->get();
+        $etiquetas = Etiqueta::whereHas('comunicados')->get();
+
+        // dd($categorias);
 
         return view('biblioteca.comunicados', [
             'comunicados' => $comunicados,
+            'comunicadosAgrupados' => $comunicadosAgrupados,
             'years' => $years,
-            'empresas' => Empresa::orderBy('id', 'asc')->get(),
-            // 'empresas' => $empresas,
-            'categorias' => Categoria::orderBy('id', 'asc')->get(),
-            // 'categorias' => $categorias,
-            'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
-            // 'etiquetas' => $etiquetas
+            'empresas' => $empresas,
+            'categorias' => $categorias,
+            'etiquetas' => $etiquetas
         ]);
-
-        // return view('biblioteca.comunicados', [
-        //     'comunicados' => $paginatedComunicados,
-        //     'years' => $years, // Pasar los años a la vista
-        //     'empresas' => Empresa::orderBy('id', 'asc')->get(),
-        //     'categorias' => Categoria::orderBy('id', 'asc')->get(),
-        //     'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
-        // ]);
     }
 
     // public function bibliotecaComunicados()
