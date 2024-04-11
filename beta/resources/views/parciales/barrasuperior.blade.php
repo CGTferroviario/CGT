@@ -144,10 +144,10 @@
         </div>
         <div class="flex md:mx-auto">
             <ul class="inline-flex m-0 mt-2 text-zinc-500 text-3xl sociales">
-                <li><a href="https://twitter.com/SFFCGT" title="Twitter SFFCGT" target="_blank"><i class="lni lni-twitter mr-1"></i></a></li>
-                <li><a href="https://www.instagram.com/sffcgt/" title="Instagram SFFCGT" target="_blank"><i class="lni lni-instagram"></i></a></li>
-                <li><a href="https://es-es.facebook.com/cgtferroviario/" title="Facebook SFFCGT" target="_blank"><i class="lni lni-facebook"></i></a></li>
-                <li><a href="https://www.youtube.com/c/CGTSectorFederalFerroviario" title="Youtube SFFCGT" target="_blank"><i class="lni lni-youtube"></i></a></li>
+                <li><a href="https://twitter.com/SFFCGT" title="Twitter SFFCGT" target="_blank"><i class="lni lni-twitter mr-1 hover:text-red-500"></i></a></li>
+                <li><a href="https://www.instagram.com/sffcgt/" title="Instagram SFFCGT" target="_blank"><i class="lni lni-instagram hover:text-red-500"></i></a></li>
+                <li><a href="https://es-es.facebook.com/cgtferroviario/" title="Facebook SFFCGT" target="_blank"><i class="lni lni-facebook hover:text-red-500"></i></a></li>
+                <li><a href="https://www.youtube.com/c/CGTSectorFederalFerroviario" title="Youtube SFFCGT" target="_blank"><i class="lni lni-youtube hover:text-red-500"></i></a></li>
             </ul>
         </div>
         {{-- <x-login> </x-login> --}}

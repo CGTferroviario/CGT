@@ -36,15 +36,19 @@ class ComunicadoController extends Controller
 
     public function bibliotecaComunicados()
     {
-        // Obtener todos los comunicados y agruparlos por año
-        $comunicados = Comunicado::orderBy('fecha', 'desc')->get()->groupBy(function($comunicado) {
-            return Carbon::parse($comunicado->fecha)->format('d/m/Y');
-        });
+        // Obtener todos los comunicados
+        $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
 
         // Obtener los años únicos
-        $years = $comunicados->map(function ($yearComunicados, $year) {
-            return $year;
+        $years = $comunicados->pluck('fecha')->map(function ($fecha) {
+            return \Carbon\Carbon::parse($fecha)->year;
         })->unique();
+        
+        // Obtener todos los comunicados y agruparlos por año
+        // $comunicados = Comunicado::orderBy('fecha', 'desc')->get()->groupBy(function($comunicado) {
+        //     return Carbon::parse($comunicado->fecha)->format('d/m/Y');
+        // });
+        
         
         // $years = $comunicados->keys();
 
