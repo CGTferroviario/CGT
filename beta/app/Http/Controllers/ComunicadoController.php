@@ -73,10 +73,10 @@ class ComunicadoController extends Controller
         $categorias = Categoria::whereHas('comunicados')->get();
         $etiquetas = Etiqueta::whereHas('comunicados')->get();
 
-        // dd($categorias);
+        dd($comunicados);
 
         return view('biblioteca.comunicados', [
-            'comunicados' => $comunicados,
+            // 'comunicados' => $comunicados,
             'comunicadosAgrupados' => $comunicadosAgrupados,
             'years' => $years,
             'empresas' => $empresas,
