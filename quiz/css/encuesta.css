@@ -1,0 +1,40 @@
+html,
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.bg-image {
+    background-image: url("../img/test.jpg");
+    background-size: cover;
+    background-position: top;
+    height: 100vh;
+    position: relative;
+}
+
+.quiz-container {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+}
+
+.quiz-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.result-container {
+    position: absolute;
+    top: 34.5%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+    .quiz-container {
+        width: 90%;
+        left: 50%;
+    }
+}
