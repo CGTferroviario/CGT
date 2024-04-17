@@ -66,6 +66,7 @@
 <!-- Tarjeta Comunicado -->
 <div class="max-w-md mx-auto border border-zinc-900 rounded-xl shadow-md overflow-hidden md:max-w-2xl flex flex-col h-full">
     <!-- Encabezado -->
+    {{-- @dd($comunicado) --}}
     <div class="h-20 flex items-center p-2 border-b border-zinc-900 rounded-t-lg bg-red-500"
         title="{{ $comunicado->titulo }}">
         <h2 class="font-bold text-lg line-clamp-2">{{ $comunicado->numero }} // {{ $comunicado->titulo }}</h2>

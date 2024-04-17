@@ -8,12 +8,13 @@ use Illuminate\View\Component;
 
 class comunicado extends Component
 {
+    public $comunicado;
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($comunicado)
     {
-        //
+        $this->comunicado = $comunicado;
     }
 
     /**

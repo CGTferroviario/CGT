@@ -17,7 +17,7 @@ use Illuminate\Support\Str;
 
 class ComunicadoController extends Controller
 {
-    
+
     public function index(ComunicadosDataTable $dataTable)
     {
         // Cogemos todos los comunicados ordenados por fecha de manera descendente
@@ -56,24 +56,24 @@ class ComunicadoController extends Controller
         });
 
         // Paginación manual es necesaria porque paginate no funciona directamente con groupBy
-        $page = request()->get('page', 1);
-        $perPage = 12;
-        $offset = ($page - 1) * $perPage;
+        // $page = request()->get('page', 1);
+        // $perPage = 12;
+        // $offset = ($page - 1) * $perPage;
 
-        $comunicadosAgrupados = new \Illuminate\Pagination\LengthAwarePaginator(
-            $comunicados->slice($offset, $perPage)->values(),
-            $comunicados->count(),
-            $perPage,
-            $page,
-            ['path' => request()->url(), 'query' => request()->query()]
-        );
-        
+        // $comunicadosAgrupados = new \Illuminate\Pagination\LengthAwarePaginator(
+        //     $comunicados->slice($offset, $perPage)->values(),
+        //     $comunicados->count(),
+        //     $perPage,
+        //     $page,
+        //     ['path' => request()->url(), 'query' => request()->query()]
+        // );
+
         // Obtener empresas, categorías y etiquetas
         $empresas = Empresa::whereHas('comunicados')->get();
         $categorias = Categoria::whereHas('comunicados')->get();
         $etiquetas = Etiqueta::whereHas('comunicados')->get();
 
-        dd($comunicados);
+        // dd($comunicadosAgrupados);
 
         return view('biblioteca.comunicados', [
             // 'comunicados' => $comunicados,
@@ -110,7 +110,7 @@ class ComunicadoController extends Controller
             'empresas' => Empresa::where('comunicados', '=', 1)->orderBy('id', 'asc')->get(),
             'categorias' => Categoria::orderBy('id', 'asc')->get(),
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get(),
-            
+
         ]);
     }
     public function store(StoreComunicadoRequest $request)
@@ -119,7 +119,7 @@ class ComunicadoController extends Controller
         $year = Carbon::now()->format('y');
         $anyo = Carbon::now()->format('Y');
         $numero = $request->numero . '.' . $year;
-        
+
         $rutaPdf = null;
         if ($request->hasFile('pdf')) {
             $pdf = $request->file('pdf');
@@ -209,7 +209,7 @@ class ComunicadoController extends Controller
 
         // Actualiza las etiquetas relacionadas
         $comunicado->etiquetas()->sync($request->etiquetas);
-        
+
         $comunicado->save();
 
         return to_route('intranet.comunicados.index')->with('message', 'Comunicado Actualizado Correctamente');
@@ -238,21 +238,21 @@ class ComunicadoController extends Controller
                 ->orWhere('subtitulo', 'like', "%$termino%")
                 ->orWhere('cuerpo', 'like', "%$termino%");
         })
-        ->when($fecha, function ($query) use ($fecha) {
-            $query->whereDate('fecha', $fecha);
-        })
-        ->when($categoria, function ($query) use ($categoria) {
-            $query->where('categoria', $categoria);
-        })
-        ->when($empresa, function ($query) use ($empresa) {
-            $query->where('empresa', $empresa);
-        })
-        // ->when($etiquetas, function ($query) use ($etiquetasInput) {
-        //     $query->whereHas('etiquetas', function ($subquery) use ($etiquetasInput) {
-        //         $subquery->whereIn('nombre', $etiquetasInput);
-        //     });
-        // })
-        ->paginate(12);
+            ->when($fecha, function ($query) use ($fecha) {
+                $query->whereDate('fecha', $fecha);
+            })
+            ->when($categoria, function ($query) use ($categoria) {
+                $query->where('categoria', $categoria);
+            })
+            ->when($empresa, function ($query) use ($empresa) {
+                $query->where('empresa', $empresa);
+            })
+            // ->when($etiquetas, function ($query) use ($etiquetasInput) {
+            //     $query->whereHas('etiquetas', function ($subquery) use ($etiquetasInput) {
+            //         $subquery->whereIn('nombre', $etiquetasInput);
+            //     });
+            // })
+            ->paginate(12);
         // dd($comunicados);
         return view('biblioteca.comunicados.resultados', compact('comunicados', 'empresas', 'categorias', 'etiquetas'));
     }
