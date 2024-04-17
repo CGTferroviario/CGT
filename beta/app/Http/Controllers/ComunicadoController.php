@@ -14,6 +14,8 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use Spatie\LaravelCollectionsMacros\Support\PaginateEach;
+
 
 class ComunicadoController extends Controller
 {
@@ -33,7 +35,7 @@ class ComunicadoController extends Controller
         // Pasamos el comunicado formateado a la vista
         return $dataTable->render('intranet.comunicados.index', compact('comunicados'));
     }
-
+    
     public function bibliotecaComunicados()
     {
         // Obtener todos los comunicados
@@ -55,28 +57,23 @@ class ComunicadoController extends Controller
             return $comunicado;
         });
 
-        // Paginación manual es necesaria porque paginate no funciona directamente con groupBy
-        // $page = request()->get('page', 1);
-        // $perPage = 12;
-        // $offset = ($page - 1) * $perPage;
+        // Paginación con paginateEach
+        $comunicadosAgrupados->paginateEach(12, function ($grupoDeComunicados, $pagina) {
+            // Procesar cada grupo de comunicados por página
+            $grupoDeComunicados->map(function ($comunicado) {
+                $comunicado->fecha = \Carbon\Carbon::parse($comunicado->fecha)->format('d/m/Y');
+                return $comunicado;
+            });
 
-        // $comunicadosAgrupados = new \Illuminate\Pagination\LengthAwarePaginator(
-        //     $comunicados->slice($offset, $perPage)->values(),
-        //     $comunicados->count(),
-        //     $perPage,
-        //     $page,
-        //     ['path' => request()->url(), 'query' => request()->query()]
-        // );
+            return $grupoDeComunicados;
+        });
 
         // Obtener empresas, categorías y etiquetas
         $empresas = Empresa::whereHas('comunicados')->get();
         $categorias = Categoria::whereHas('comunicados')->get();
         $etiquetas = Etiqueta::whereHas('comunicados')->get();
 
-        // dd($comunicadosAgrupados);
-
         return view('biblioteca.comunicados', [
-            // 'comunicados' => $comunicados,
             'comunicadosAgrupados' => $comunicadosAgrupados,
             'years' => $years,
             'empresas' => $empresas,
@@ -85,24 +82,57 @@ class ComunicadoController extends Controller
         ]);
     }
 
+
+
     // public function bibliotecaComunicados()
     // {
-    //     // Cogemos todos los comunicados ordenados por fecha de manera descendente y paginamos 12
-    //     $comunicados = Comunicado::orderBy('fecha', 'desc')->paginate(12);
+    //     // Obtener todos los comunicados
+    //     $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
+
+    //     // Obtener los años únicos
+    //     $years = $comunicados->pluck('fecha')->map(function ($fecha) {
+    //         return \Carbon\Carbon::parse($fecha)->year;
+    //     })->unique();
+
+    //     // Obtener todos los comunicados y agruparlos por año
+    //     $comunicadosAgrupados = $comunicados->groupBy(function ($comunicado) {
+    //         return \Carbon\Carbon::parse($comunicado->fecha)->year;
+    //     });
 
     //     // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
-    //     $comunicados->getCollection()->transform(function ($comunicado) {
-    //         $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
+    //     $comunicados = $comunicados->map(function ($comunicado) {
+    //         $comunicado->fecha = \Carbon\Carbon::parse($comunicado->fecha)->format('d/m/Y');
     //         return $comunicado;
     //     });
 
+    //     // Paginación manual es necesaria porque paginate no funciona directamente con groupBy
+    //     // $page = request()->get('page', 1);
+    //     // $perPage = 12;
+    //     // $offset = ($page - 1) * $perPage;
+
+    //     // $comunicadosAgrupados = new \Illuminate\Pagination\LengthAwarePaginator(
+    //     //     $comunicados->slice($offset, $perPage)->values(),
+    //     //     $comunicados->count(),
+    //     //     $perPage,
+    //     //     $page,
+    //     //     ['path' => request()->url(), 'query' => request()->query()]
+    //     // );
+
+    //     // Obtener empresas, categorías y etiquetas
+    //     $empresas = Empresa::whereHas('comunicados')->get();
+    //     $categorias = Categoria::whereHas('comunicados')->get();
+    //     $etiquetas = Etiqueta::whereHas('comunicados')->get();
+
     //     return view('biblioteca.comunicados', [
-    //         'comunicados' => $comunicados,
-    //         'empresas' => Empresa::orderBy('id', 'asc')->get(),
-    //         'categorias' => Categoria::orderBy('id', 'asc')->get(),
-    //         'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()
+    //         'comunicadosAgrupados' => $comunicadosAgrupados,
+    //         'grupoDeComunicados' => $grupoDeComunicados,
+    //         'years' => $years,
+    //         'empresas' => $empresas,
+    //         'categorias' => $categorias,
+    //         'etiquetas' => $etiquetas
     //     ]);
     // }
+
     public function create()
     {
         return view('intranet.comunicados.create', [

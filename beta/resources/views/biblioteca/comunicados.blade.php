@@ -18,17 +18,28 @@
                     </select>
                 </div>
                 {{-- @dd($comunicadosAgrupados) --}}
-                @foreach ($comunicadosAgrupados as $year => $comunicados)
+                {{-- @foreach ($comunicadosAgrupados as $year => $comunicados)
                     <h2>{{ $year }}</h2>
-                    {{-- @dd($comunicados) --}}
+                    @dd($comunicados)
 
                     @foreach ($comunicados as $comunicado)
-                    {{-- @dump($comunicado) --}}
+                        @dump($comunicado)
 
                         <x-comunicado :comunicado="$comunicado" />
-                        {{-- @dump($comunicado) --}}
-
+                        @dump($comunicado)
                     @endforeach
+                @endforeach --}}
+
+                @foreach ($comunicadosAgrupados as $year => $grupoDeComunicados)
+                    <h2>{{ $year }}</h2>
+                    <ul>
+                        @foreach ($grupoDeComunicados as $comunicado)
+                            <li>
+                                <a href="{{ route('comunicados.show', $comunicado->id) }}">{{ $comunicado->titulo }}</a>
+                                <span class="fecha">{{ $comunicado->fecha }}</span>
+                            </li>
+                        @endforeach
+                    </ul>
                 @endforeach
 
                 {{-- <div class="col-span-1 md:col-span-2 lg:col-span-2 xl:col-span-3">{{ $comunicados->links() }}</div> --}}
