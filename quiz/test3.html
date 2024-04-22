@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+ <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Test de Salud Laboral</title>
@@ -12,274 +12,312 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-  </head>
-  <style>
-    html {
-        height: 100%;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      height: 100%;
-    }
-    .bg-image {
-        background-image: url('img/test.jpg');
-        background-size: cover;
-        background-position: top;
-        height: 100vh; /* Adjust this value based on your needs */
-        position: relative; /* Make the container position relative */
-    }
-    .quiz-container {
-        position: absolute;
-        top: 50%; /* Adjust these values to position the button */
-        left: 75%;
-        transform: translate(-50%, -50%); /* Center the button */
-        width: 450px;
-    }
-    .quiz-body {
-      margin-bottom: 10px;
-    }
-    .quiz-footer {
-      display: flex;
-      justify-content: center;
-    }
-    .result-container {
-        position: absolute;
-        top: 34.5%; /* Adjust these values to position the button */
-        left: 45%;
-        transform: translate(-50%, -50%); /* Center the button */
-    }
-
-    .traffic-light {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .traffic-light .light {
-        width: 448px;
-        height: 607px;
-    }
-
-    .traffic-light .red {
-        background-image: url(img/rojo.jpg);
-    }
-
-    .traffic-light .yellow {
-        background-image: url(img/amarillo.jpg);
-    }
-
-    .traffic-light .green {
-        background-image: url(img/verde.jpg);
-    }
-
-    .traffic-light .blue {
-        background-image: url(img/naranja.jpg);
-    }
-    .container-button {
-      display: flex;
-      align-items: center;
-    }
-
-  </style>
-  <body>
+    <link rel="stylesheet" href="css/encuesta.css" />
+ </head>
+  
+ <body>
     <div class="bg-image d-flex justify-content-center align-items-center">
-        <div class="card rounded shadow mb-3 quiz-container" id="quiz">
-            <div class="card-header">
-                <h4 id="question" class="card-title font-weight-bold mb-2">
-                    Preguntas
-                </h4>
-            </div>
-            <div class="card-body">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                    <input type="radio" name="answer" id="a" class="answer" />
-                    <label for="a" id="a_text"></label>
-                    </li>
-                    <li class="list-group-item">
-                    <input type="radio" name="answer" id="b" class="answer" />
-                    <label for="b" id="b_text"></label>
-                    </li>
-                    <li class="list-group-item">
-                    <input type="radio" name="answer" id="c" class="answer" />
-                    <label for="c" id="c_text"></label>
-                    </li>
-                    <li class="list-group-item">
-                    <input type="radio" name="answer" id="d" class="answer" />
-                    <label for="d" id="d_text"></label>
-                    </li>
-                </ul>
-            </div>
-            <div class="card-footer">
-                <button type="button" id="btn" class="btn btn-outline-danger">
-                    Enviar
-                </button>
-            </div>
+      <div class="card rounded shadow mb-3 quiz-container" id="quiz">
+        <!-- Contenido del quiz -->
+        <div class="card-header">
+          <h4 id="question" class="card-title font-weight-bold mb-2">
+            Preguntas
+          </h4>
         </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <input type="radio" name="answer" id="a" class="answer" />
+              <label for="a" id="a_text"></label>
+            </li>
+            <li class="list-group-item">
+              <input type="radio" name="answer" id="b" class="answer" />
+              <label for="b" id="b_text"></label>
+            </li>
+            <li class="list-group-item">
+              <input type="radio" name="answer" id="c" class="answer" />
+              <label for="c" id="c_text"></label>
+            </li>
+            <li class="list-group-item">
+              <input type="radio" name="answer" id="d" class="answer" />
+              <label for="d" id="d_text"></label>
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <button type="button" id="btn" class="btn btn-outline-danger">
+            Enviar
+          </button>
+          <div id="scoreDisplay" class="d-inline"></div>
+        </div>
+      </div>
     </div>
-    <div class="result-container" id="result"></div>
+    <div class="result-container hidden" id="result"></div>
     <script>
-        const quizData = [
-          // Example question structure
-          {
-            question: "¿Trabajas los domingos y festivos?",
-            a: "Siempre o casi siempre",
-            b: "A menudo",
-            c: "A veces",
-            d: "Nunca o casi nunca",
-            scores: { a: 1, b: 2, c: 3, d: 4 },
-          },
-          {
-            question:
-              "¿Dispones de al menos 48 horas consecutivas de descanso en el transcurso de una semana (7 días consecutivos)?",
-            a: "Siempre o casi siempre",
-            b: "A menudo",
-            c: "A veces",
-            d: "Nunca o casi nunca",
-            scores: { a: 4, b: 3, c: 2, d: 1 },
-          },
-          {
-            question:
-              "¿Tu horario laboral te permite compaginar tu tiempo libre (vacaciones, días libres, horarios de entrada y salida) con los de tu familia y amistades?",
-            a: "Siempre o casi siempre",
-            b: "A menudo",
-            c: "A veces",
-            d: "Nunca o casi nunca",
-            scores: { a: 4, b: 3, c: 2, d: 1 },
-          },
-          {
-            question:
-              "¿Puedes marcar tu propio ritmo de trabajo a lo largo de la jornada laboral?",
-            a: "Siempre o casi siempre",
-            b: "A menudo",
-            c: "A veces",
-            d: "Nunca o casi nunca",
-            scores: { a: 4, b: 3, c: 2, d: 1 },
-          },
-          {
-            question: "En general, la cantidad de trabajo que tienes es:",
-            a: "Excesiva",
-            b: "Elevada",
-            c: "Adecuada",
-            d: "Escasa",
-            scores: { a: 1, b: 2, c: 3, d: 4 },
-          },
-          {
-            question: "El trabajo que realizas, ¿te resulta complicado o difícil?",
-            a: "Siempre o casi siempre",
-            b: "A menudo",
-            c: "A veces",
-            d: "Nunca o casi nunca",
-            scores: { a: 1, b: 2, c: 3, d: 4 },
-          },
-          {
-            question: "El trabajo que realizas, ¿te resulta rutinario?",
-            a: "No",
-            b: "A veces",
-            c: "Bastante",
-            d: "Mucho",
-            scores: { a: 4, b: 3, c: 2, d: 1 },
-          },
-          {
-            question:
-              "En general, ¿consideras que las tareas que realizas tienen sentido?",
-            a: "Mucho",
-            b: "Bastante",
-            c: "Poco",
-            d: "Nada",
-            scores: { a: 4, b: 3, c: 2, d: 1 },
-          },
-          {
-            question:
-              "En general, ¿está tu trabajo reconocido y apreciado por...? El público, client@s, pasajer@s, etc.",
-            a: "Siempre o casi siempre",
-            b: "A menudo",
-            c: "A veces",
-            d: "Nunca o casi nunca",
-            scores: { a: 4, b: 3, c: 2, d: 1 },
-          },
-          {
-            question:
-              "Considerando los deberes y responsabilidades de tu trabajo, ¿estás satisfech@ con el salario que recibes?",
-            a: "Muy satisfecho",
-            b: "Satisfecho",
-            c: "Insatisfecho",
-            d: "Muy insatisfecho",
-            scores: { a: 4, b: 3, c: 2, d: 1 },
-          },
-        ];
+      // Variables y datos iniciales
+      const backgroundImages = {
+        rojo: "url(img/rojo.jpg)",
+        verde: "url(img/verde.jpg)",
+        amarillo: "url(img/amarillo.jpg)",
+        naranja: "url(img/naranja.jpg)",
+      };
+      const quizData = [
+        // Datos del quiz
+        {
+          question: "¿Trabajas los domingos y festivos?",
+          a: "Siempre o casi siempre",
+          b: "A menudo",
+          c: "A veces",
+          d: "Nunca o casi nunca",
+          scores: { a: 1, b: 2, c: 3, d: 4 },
+        },
+        {
+          question:
+            "¿Dispones de al menos 48 horas consecutivas de descanso en el transcurso de una semana (7 días consecutivos)?",
+          a: "Siempre o casi siempre",
+          b: "A menudo",
+          c: "A veces",
+          d: "Nunca o casi nunca",
+          scores: { a: 4, b: 3, c: 2, d: 1 },
+        },
+        {
+          question:
+            "¿Tu horario laboral te permite compaginar tu tiempo libre (vacaciones, días libres, horarios de entrada y salida) con los de tu familia y amistades?",
+          a: "Siempre o casi siempre",
+          b: "A menudo",
+          c: "A veces",
+          d: "Nunca o casi nunca",
+          scores: { a: 4, b: 3, c: 2, d: 1 },
+        },
+        {
+          question:
+            "¿Puedes marcar tu propio ritmo de trabajo a lo largo de la jornada laboral?",
+          a: "Siempre o casi siempre",
+          b: "A menudo",
+          c: "A veces",
+          d: "Nunca o casi nunca",
+          scores: { a: 4, b: 3, c: 2, d: 1 },
+        },
+        {
+          question: "En general, la cantidad de trabajo que tienes es:",
+          a: "Excesiva",
+          b: "Elevada",
+          c: "Adecuada",
+          d: "Escasa",
+          scores: { a: 1, b: 2, c: 3, d: 4 },
+        },
+        {
+          question:
+            "El trabajo que realizas, ¿te resulta complicado o difícil?",
+          a: "Siempre o casi siempre",
+          b: "A menudo",
+          c: "A veces",
+          d: "Nunca o casi nunca",
+          scores: { a: 1, b: 2, c: 3, d: 4 },
+        },
+        {
+          question: "El trabajo que realizas, ¿te resulta rutinario?",
+          a: "No",
+          b: "A veces",
+          c: "Bastante",
+          d: "Mucho",
+          scores: { a: 4, b: 3, c: 2, d: 1 },
+        },
+        {
+          question:
+            "En general, ¿consideras que las tareas que realizas tienen sentido?",
+          a: "Mucho",
+          b: "Bastante",
+          c: "Poco",
+          d: "Nada",
+          scores: { a: 4, b: 3, c: 2, d: 1 },
+        },
+        {
+          question:
+            "En general, ¿está tu trabajo reconocido y apreciado por...? El público, client@s, pasajer@s, etc.",
+          a: "Siempre o casi siempre",
+          b: "A menudo",
+          c: "A veces",
+          d: "Nunca o casi nunca",
+          scores: { a: 4, b: 3, c: 2, d: 1 },
+        },
+        {
+          question:
+            "Considerando los deberes y responsabilidades de tu trabajo, ¿estás satisfech@ con el salario que recibes?",
+          a: "Muy satisfecho",
+          b: "Satisfecho",
+          c: "Insatisfecho",
+          d: "Muy insatisfecho",
+          scores: { a: 4, b: 3, c: 2, d: 1 },
+        },
+      ];
+
+      const quiz = document.querySelector(".quiz-body");
+      const answerEl = document.querySelectorAll(".answer");
+      const questionEl = document.getElementById("question");
+      const resultEl = document.getElementById("result");
+      const btnSubmit = document.getElementById("btn");
       
-        const quiz = document.querySelector(".quiz-body");
-        const answerEl = document.querySelectorAll(".answer");
-        const questionEl = document.getElementById("question");
-        const resultEl = document.getElementById("result");
-        const btnSubmit = document.getElementById("btn");
-      
-        let currentQuiz = 0;
-        let score = 0;
-      
-        loadQuiz();
-      
-        function loadQuiz() {
-          deselectAnswers();
-          const currentQuizData = quizData[currentQuiz];
-          questionEl.innerText = currentQuizData.question;
-          document.getElementById("a_text").innerText = currentQuizData.a;
-          document.getElementById("b_text").innerText = currentQuizData.b;
-          document.getElementById("c_text").innerText = currentQuizData.c;
-          document.getElementById("d_text").innerText = currentQuizData.d;
-        }
-      
-        function deselectAnswers() {
-          answerEl.forEach((answerEl) => {
-            answerEl.checked = false;
-          });
-        }
-      
-        function getSelected() {
-          let answer;
-          answerEl.forEach((answerEls) => {
-            if (answerEls.checked) {
-              answer = answerEls.id;
-            }
-          });
-          return answer;
-        }
-      
-        btnSubmit.addEventListener("click", function () {
-          const answers = getSelected();
-          if (answers) {
-            const currentQuestion = quizData[currentQuiz];
-            const selectedScore = currentQuestion.scores[answers];
-            score += selectedScore;
-            nextQuestion();
+      let currentQuiz = 0;
+      let score = 0;
+
+      // Carga el primer quiz
+      loadQuiz();
+
+      // Función para cargar el quiz
+      function loadQuiz() {
+        // Código para cargar el quiz
+        deselectAnswers();
+        const currentQuizData = quizData[currentQuiz];
+        questionEl.innerText = currentQuizData.question;
+        document.getElementById("a_text").innerText = currentQuizData.a;
+        document.getElementById("b_text").innerText = currentQuizData.b;
+        document.getElementById("c_text").innerText = currentQuizData.c;
+        document.getElementById("d_text").innerText = currentQuizData.d;
+      }
+
+      // Función para deseleccionar respuestas
+      function deselectAnswers() {
+        // Código para deseleccionar respuestas
+        answerEl.forEach((answerEl) => {
+          answerEl.checked = false;
+        });
+      }
+
+      // Función para obtener la respuesta seleccionada
+      function getSelected() {
+        // Código para obtener la respuesta seleccionada
+        let answer;
+        answerEl.forEach((answerEls) => {
+          if (answerEls.checked) {
+            answer = answerEls.id;
           }
         });
-      
-        function nextQuestion() {
-          currentQuiz++;
-          if (currentQuiz < quizData.length) {
-            loadQuiz();
-          } else {
-            displayTrafficLight();
-          }
+        return answer;
+      }
+
+      // Evento del botón de enviar
+      document.getElementById("btn").addEventListener("click", function () {
+        // Código para manejar el envío del quiz
+        const answers = getSelected();
+        if (answers) {
+          const currentQuestion = quizData[currentQuiz];
+          const selectedScore = currentQuestion.scores[answers];
+          score += selectedScore;
+          updateScoreDisplay(); // Update the score display
+          nextQuestion();
         }
-      
-        function displayTrafficLight() {
-          resultEl.innerHTML = "";
-          if (score < 15) {
-            resultEl.innerHTML =
-              '<div class="traffic-light"><div class="light red"></div></div><p>Trabajas más que un japonés en huelga</p>';
-          } else if (score < 25) {
-            resultEl.innerHTML =
-              '<div class="traffic-light"><div class="light yellow"></div></div><p>Trabajas más que el butanero de Hitler</p>';
-          } else if (score < 35) {
-            resultEl.innerHTML =
-              '<div class="traffic-light"><div class="light green"></div></div><p>Trabajas menos que los intermitentes del tren</p>';
-          } else {
-            resultEl.innerHTML =
-              '<div class="traffic-light"><div class="light blue"></div></div><p>Trabajas menos que el sastre de Tarzán</p>';
-          }
+      });
+
+      // Función para pasar a la siguiente pregunta
+      function nextQuestion() {
+        // Código para pasar a la siguiente pregunta
+        currentQuiz++;
+        if (currentQuiz < quizData.length) {
+          loadQuiz();
+        } else {
+          document.querySelector(".quiz-container").style.display = "none";
+          resultado();
         }
+      }
+
+      // Función para mostrar el resultado
+      function resultado() {
+        // Código para mostrar el resultado
+        document.getElementById("result").classList.remove("hidden");
+
+        // Definir los mensajes y colores de manera centralizada
+        const messages = [
+          {
+            score: 15,
+            color: "text-danger",
+            message: "GLUPS!<br>TIENES UN RIESGO ALTO",
+            advice:
+              "No dudes en buscar apoyo. Habla con tu empresa para que puedan buscar una solución.",
+          },
+          {
+            score: 25,
+            color: "text-warning",
+            message: "OOOPS!<br>ES HORA DE ACTUAR",
+            advice:
+              "Toma conciencia de tu situación actual y busca identificar qué aspectos puedes cambiar. Si el estrés persiste, corre el riesgo de desequilibrar tu vida laboral y personal.",
+          },
+          {
+            score: 35,
+            color: "text-warning-emphasis",
+            message: "UUUY!<br>CUIDADO",
+            advice:
+              "Debes estar alerta. Empiezas a estar un poco estresado debido al trabajo. Es importante identificar los factores que te generan estrés para poder abordarlos de manera preventiva.",
+          },
+          {
+            score: Infinity,
+            color: "text-success",
+            message: "WOW!<br>NO TIENES RIESGO",
+            advice:
+              "No se detectan signos de estrés en absoluto. Tu equilibrio es excelente; sigue así y comparte tus estrategias de gestión con los demás. ¡Tu actitud es contagiosa!",
+          },
+        ];
+
+        // Función para generar el HTML basado en la puntuación
+        function generateResultHTML(score, valoracion) {
+          let messageObj = messages.find((msg) => score < msg.score);
+          return `<h2 class="${messageObj.color}">${messageObj.message}</h2>
+          <p>${messageObj.advice} <b>No dudes en buscar apoyo.</b> Habla con tu empresa para que puedan buscar una solución.
+          <br>Tu puntuación es: ${score}</p>
+          <p>Este ha sido un test rápido, para una evaluación más profunda, entra en: <br> <button>Test de INSS</button> <br> Valoración: ${valoracion}</p>`;
+        }
+
+        // Asignar el color de fondo basado en la puntuación
+        let backgroundImage;
+        if (score < 15) {
+          backgroundImage = backgroundImages.rojo;
+        } else if (score < 25) {
+          backgroundImage = backgroundImages.naranja;
+        } else if (score < 35) {
+          backgroundImage = backgroundImages.amarillo;
+        } else {
+          backgroundImage = backgroundImages.verde;
+        }
+
+        // Mostrar el resultado
+        resultEl.innerHTML = generateResultHTML(score, valoracion);
+
+        // Select the div with class 'bg-image' and set its background image
+        const bgImageDiv = document.querySelector(".bg-image");
+        bgImageDiv.style.backgroundImage = backgroundImage;
+        bgImageDiv.style.backgroundSize = "cover"; // Ensure the image covers the entire div
+        bgImageDiv.style.backgroundRepeat = "no-repeat"; // Prevent the image from repeating
+
+        // Definir los rangos de puntuación y los mensajes de valoración
+        let valoracion;
+        if (score < 15) {
+          valoracion = "Muy malo";
+        } else if (score < 25) {
+          valoracion = "Malo";
+        } else if (score < 35) {
+          valoracion = "Regular";
+        } else {
+          valoracion = "Bueno";
+        }
+
+        // Mostrar la valoración en el contenedor de resultados
+        // resultEl.innerHTML = `<h2 class="text-success">WOW!<br>NO TIENES RIESGO</h2>
+        //                   <p>No se detectan signos de estrés en absoluto. Tu equilibrio es excelente; sigue así y comparte tus estrategias de gestión con los demás. ¡Tu actitud es contagiosa!
+        //                   <br>Tu puntuación es: ${score}</p>
+        //                   <p>Este ha sido un test rápido, para una evaluación más profunda, entra en: <br> <button>Test de INSS</button> <br> Valoración: ${valoracion}</p>`;
+      }
+
+      // Assuming you have a div with id 'scoreDisplay' to show the score
+      const scoreDisplay = document.getElementById("scoreDisplay");
+
+      // Función para actualizar la puntuación
+      function updateScoreDisplay() {
+        // Código para actualizar la puntuación
+        scoreDisplay.textContent = `Puntuación: ${score}`;
+      }
+
+      // Llamada inicial para actualizar la puntuación
+      updateScoreDisplay();
     </script>
-  </body>
+ </body>
 </html>

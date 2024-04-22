@@ -4,6 +4,10 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.hidden {
+    display: none;
+}
+
 .bg-image {
     background-image: url("../img/test.jpg");
     background-size: cover;
@@ -12,12 +16,21 @@ body {
     position: relative;
 }
 
+.relative-button {
+    position: absolute;
+    top: 68%;
+    /* Adjust these values to position the button */
+    left: 85%;
+    transform: translate(-50%, -50%);
+    /* Center the button */
+}
+
 .quiz-container {
     position: absolute;
     top: 50%;
     left: 75%;
     transform: translate(-50%, -50%);
-    width: 450px;
+    width: 600px;
 }
 
 .quiz-footer {
@@ -27,8 +40,13 @@ body {
 
 .result-container {
     position: absolute;
-    top: 34.5%;
-    left: 45%;
+    border-radius: 25px;
+    border: solid green;
+    padding: 10px;
+    width: 600px;
+    background-color: white;
+    top: 50%;
+    left: 75%;
     transform: translate(-50%, -50%);
 }
 
