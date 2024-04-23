@@ -250,6 +250,17 @@
 
         // Función para generar el HTML basado en la puntuación
         function generateResultHTML(score) {
+          // Definir los rangos de puntuación y los mensajes de valoración
+          let valoracion = 0;
+          if (score < 15) {
+            valoracion = "Muy malo";
+          } else if (score < 25) {
+            valoracion = "Malo";
+          } else if (score < 35) {
+            valoracion = "Regular";
+          } else {
+            valoracion = "Bueno";
+          }
           let messageObj = messages.find((msg) => score < msg.score);
           return `<h2 class="${messageObj.color}">${messageObj.message}</h2>
           <p>${messageObj.advice} <b>No dudes en buscar apoyo.</b> Habla con tu empresa para que puedan buscar una solución.
@@ -278,17 +289,7 @@
         bgImageDiv.style.backgroundSize = "cover"; // Ensure the image covers the entire div
         bgImageDiv.style.backgroundRepeat = "no-repeat"; // Prevent the image from repeating
 
-        // Definir los rangos de puntuación y los mensajes de valoración
-        let valoracion = 0;
-        if (score < 15) {
-          valoracion = "Muy malo";
-        } else if (score < 25) {
-          valoracion = "Malo";
-        } else if (score < 35) {
-          valoracion = "Regular";
-        } else {
-          valoracion = "Bueno";
-        }
+        
 
         // Mostrar la valoración en el contenedor de resultados
         resultEl.innerHTML = `<h2 class="text-success">WOW!<br>NO TIENES RIESGO</h2>
