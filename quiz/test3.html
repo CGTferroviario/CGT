@@ -230,28 +230,28 @@
         const messages = [
           {
             score: 15,
-            color: "text-danger",
+            color: "riesgo-alto",
             message: "GLUPS!<br>TIENES UN RIESGO ALTO",
             advice:
               "No dudes en buscar apoyo. Habla con tu empresa para que puedan buscar una solución.",
           },
           {
             score: 25,
-            color: "text-warning",
+            color: "riesgo-medio",
             message: "OOOPS!<br>ES HORA DE ACTUAR",
             advice:
               "Toma conciencia de tu situación actual y busca identificar qué aspectos puedes cambiar. Si el estrés persiste, corre el riesgo de desequilibrar tu vida laboral y personal.",
           },
           {
             score: 35,
-            color: "text-warning-emphasis",
+            color: "riesgo-bajo",
             message: "UUUY!<br>CUIDADO",
             advice:
               "Debes estar alerta. Empiezas a estar un poco estresado debido al trabajo. Es importante identificar los factores que te generan estrés para poder abordarlos de manera preventiva.",
           },
           {
             score: Infinity,
-            color: "text-success",
+            color: "riesgo-cero",
             message: "WOW!<br>NO TIENES RIESGO",
             advice:
               "No se detectan signos de estrés en absoluto. Tu equilibrio es excelente; sigue así y comparte tus estrategias de gestión con los demás. ¡Tu actitud es contagiosa!",
@@ -264,7 +264,7 @@
           return `<h2 class="${messageObj.color}">${messageObj.message}</h2>
           <p>${messageObj.advice} <b>No dudes en buscar apoyo.</b> Habla con tu empresa para que puedan buscar una solución.
           <br>Tu puntuación es: ${score}</p>
-          <p>Este ha sido un test rápido, para una evaluación más profunda, entra en: <br> <button>Test de INSS</button> <br> Valoración: ${valoracion}</p>`;
+          <p>Este ha sido un test rápido, para una evaluación más profunda, entra en: <br> <button class="boton">Test de INSS</button> <br> Valoración: ${valoracion}</p>`;
         }
 
         // Asignar el color de fondo basado en la puntuación
@@ -299,12 +299,6 @@
         } else {
           valoracion = "Bueno";
         }
-
-        // Mostrar la valoración en el contenedor de resultados
-        // resultEl.innerHTML = `<h2 class="text-success">WOW!<br>NO TIENES RIESGO</h2>
-        //                   <p>No se detectan signos de estrés en absoluto. Tu equilibrio es excelente; sigue así y comparte tus estrategias de gestión con los demás. ¡Tu actitud es contagiosa!
-        //                   <br>Tu puntuación es: ${score}</p>
-        //                   <p>Este ha sido un test rápido, para una evaluación más profunda, entra en: <br> <button>Test de INSS</button> <br> Valoración: ${valoracion}</p>`;
       }
 
       // Assuming you have a div with id 'scoreDisplay' to show the score
