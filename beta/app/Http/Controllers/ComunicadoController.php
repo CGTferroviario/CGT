@@ -10,6 +10,8 @@ use App\Models\Comunicado;
 use App\Models\Empresa;
 use App\Models\Etiqueta;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -56,18 +58,22 @@ class ComunicadoController extends Controller
             $comunicado->fecha = \Carbon\Carbon::parse($comunicado->fecha)->format('d/m/Y');
             return $comunicado;
         });
+        
+        // Define how many items we want to be visible in each page
+        $perPage = 10;
 
-        // Paginación con paginateEach
-        $comunicadosAgrupados->paginateEach(12, function ($grupoDeComunicados, $pagina) {
-            // Procesar cada grupo de comunicados por página
-            $grupoDeComunicados->map(function ($comunicado) {
-                $comunicado->fecha = \Carbon\Carbon::parse($comunicado->fecha)->format('d/m/Y');
-                return $comunicado;
-            });
+        // Get current page form url e.x. &page=1
+        $page = Paginator::resolveCurrentPage();
 
-            return $grupoDeComunicados;
-        });
+        // Slice the collection to get the items to display in current page
+        $currentPageItems = $comunicadosAgrupados->slice(($page - 1) * $perPage, $perPage)->all();
 
+
+        // Create our paginator and pass it to the view
+        $comunicadosPaginados = new LengthAwarePaginator($currentPageItems, count($comunicadosAgrupados), $perPage, $page, [
+            'path' => Paginator::resolveCurrentPath(),
+        ]);
+        // dd($comunicadosPaginados);
         // Obtener empresas, categorías y etiquetas
         $empresas = Empresa::whereHas('comunicados')->get();
         $categorias = Categoria::whereHas('comunicados')->get();
@@ -75,12 +81,18 @@ class ComunicadoController extends Controller
 
         return view('biblioteca.comunicados', [
             'comunicadosAgrupados' => $comunicadosAgrupados,
+            'comunicadosPaginados' => $comunicadosPaginados,
             'years' => $years,
             'empresas' => $empresas,
             'categorias' => $categorias,
             'etiquetas' => $etiquetas
         ]);
     }
+
+
+
+
+
 
 
 
