@@ -45,8 +45,8 @@ const quizData = [
     question: "En general, la cantidad de trabajo que tienes es:",
     a: "Excesiva",
     b: "Elevada",
-    c: "Adecuada",
-    d: "Escasa",
+    c: "Escasa",
+    d: "Adecuada",
     scores: { a: 1, b: 2, c: 3, d: 4 },
   },
   {
@@ -233,11 +233,6 @@ function resultado() {
   bgImageDiv.style.backgroundSize = "cover"; // Ensure the image covers the entire div
   bgImageDiv.style.backgroundRepeat = "no-repeat"; // Prevent the image from repeating
 
-  // Mostrar la valoración en el contenedor de resultados
-  // resultEl.innerHTML = `<h2 class="text-success mx-auto">WOW!<br>NO TIENES RIESGO</h2>
-  //                         <p>No se detectan signos de estrés en absoluto. Tu equilibrio es excelente; sigue así y comparte tus estrategias de gestión con los demás. ¡Tu actitud es contagiosa!
-  //                         <br>Tu puntuación es: ${score}</p>
-  //                         <p>Este ha sido un test rápido, para una evaluación más profunda, entra en: <br> <button>Test de INSS</button> <br> Valoración: ${valoracion}</p>`;
 }
 
 // Assuming you have a div with id 'scoreDisplay' to show the score
