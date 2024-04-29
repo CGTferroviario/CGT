@@ -137,8 +137,8 @@ body {
     }
 
     .boton-portada {
-        bottom: 42%;
-        right: 29%;
+        bottom: 38%;
+        right: 27%;
     }
 
     .bg {
@@ -150,5 +150,11 @@ body {
         width: 90%;
         bottom: 3%;
         right: 5%;
+    }
+    .titular {
+        font-size: 2rem !important;
+    }
+    .result-container p{
+        font-size: .9em;;
     }
 }
