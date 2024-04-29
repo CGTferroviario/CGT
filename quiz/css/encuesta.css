@@ -15,15 +15,10 @@ body {
     background-image: url('../img/fondo.jpg');
     background-size: cover;
     background-position: top;
-    height: 100vh; /* Adjust this value based on your needs */
-    position: relative; /* Make the container position relative */
-}
-
-/* Media query for mobile screens (adjust width as needed) */
-@media (max-width: 768px) {
-    .portada {
-      background-image: url('../img/fondo_v.jpg');  /* Replace with your mobile image path */
-    }
+    height: 100vh;
+    /* Adjust this value based on your needs */
+    position: relative;
+    /* Make the container position relative */
 }
 
 .relative-button {
@@ -35,16 +30,6 @@ body {
     /* Center the button */
 }
 
-/* Media query for mobile screens (adjust width as needed) */
-@media (max-width: 768px) {
-    .relative-button {
-      background-image: url('../img/fondo_v.jpg');  /* Replace with your mobile image path */
-      top: 5%;
-      /* Adjust these values to position the button */
-      left: 50%;
-    }
-}
-
 .bg-image {
     background-image: url("../img/test.jpg");
     background-size: cover;
@@ -53,27 +38,12 @@ body {
     position: relative;
 }
 
-/* Media query for mobile screens (adjust width as needed) */
-@media (max-width: 768px) {
-    .bg-image {
-      background-image: url('../img/test_v.jpg');  /* Replace with your mobile image path */
-    }
-}
-
 .quiz-container {
     position: absolute;
     top: 50%;
     left: 75%;
     transform: translate(-50%, -50%);
     width: 600px;
-}
-
-@media (max-width: 768px) {
-    .quiz-container {
-        width: 90%;
-        left: 50%;
-        top: 80%;
-    }
 }
 
 .quiz-footer {
@@ -94,19 +64,12 @@ body {
     text-align: center;
 }
 
-@media (max-width: 768px) {
-    .result-container {
-        width: 90%;
-        left: 50%;
-        top: 40%;
-    }
-}
-
-.titular{
+.titular {
     font-family: 'Edo', sans-serif;
     font-size: 3.5rem !important;
 }
-.boton{
+
+.boton {
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
@@ -116,27 +79,82 @@ body {
     color: white;
     text-decoration: none;
 }
-.riesgo-alto{
-    color: rgba(203,54,68,1) !important;
+
+.riesgo-alto {
+    color: rgba(203, 54, 68, 1) !important;
 }
-.bg-riesgo-alto{
-    background: rgba(203,54,68,1) !important;
+
+.bg-riesgo-alto {
+    background: rgba(203, 54, 68, 1) !important;
 }
-.riesgo-medio{
-    color: rgba(223,128,45,1) !important;
+
+.riesgo-medio {
+    color: rgba(223, 128, 45, 1) !important;
 }
-.bg-riesgo-medio{
-    background: rgba(223,128,45,1) !important;
+
+.bg-riesgo-medio {
+    background: rgba(223, 128, 45, 1) !important;
 }
-.riesgo-bajo{
-    color: rgba(218,160,44,1) !important;
+
+.riesgo-bajo {
+    color: rgba(218, 160, 44, 1) !important;
 }
-.bg-riesgo-bajo{
-    background: rgba(218,160,44,1) !important;
+
+.bg-riesgo-bajo {
+    background: rgba(218, 160, 44, 1) !important;
 }
-.riesgo-cero{
-    color: rgba(126,161,33,1) !important;
+
+.riesgo-cero {
+    color: rgba(126, 161, 33, 1) !important;
 }
-.bg-riesgo-cero{
-    background: rgba(126,161,33,1) !important;
+
+.bg-riesgo-cero {
+    background: rgba(126, 161, 33, 1) !important;
+}
+
+.borde-riesgo-alto {
+    border: solid 5px #c33644;
+}
+
+.borde-riesgo-medio {
+    border: solid 5px #df802b;
+}
+
+.borde-riesgo-bajo {
+    border: solid 5px #da9f2a;
+}
+
+.borde-riesgo-cero {
+    border: solid 5px #7fa121;
+}
+
+/* Media query for mobile screens (adjust width as needed) */
+@media (max-width: 768px) {
+    .portada {
+        background-image: url('../img/fondo_v.jpg');
+        /* Replace with your mobile image path */
+    }
+
+    .relative-button {
+        top: 5%;
+        /* Adjust these values to position the button */
+        left: 50%;
+    }
+
+    .bg-image {
+        background-image: url('../img/test_v.jpg');
+        /* Replace with your mobile image path */
+    }
+
+    .quiz-container {
+        width: 90%;
+        left: 50%;
+        top: 80%;
+    }
+
+    .result-container {
+        width: 90%;
+        left: 50%;
+        top: 70%;
+    }
 }

@@ -1,9 +1,18 @@
+function isMobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 const backgroundImages = {
   rojo: "url(img/rojo_sin.jpg)",
   verde: "url(img/verde_sin.jpg)",
   amarillo: "url(img/amarillo_sin.jpg)",
   naranja: "url(img/naranja_sin.jpg)",
+  rojo_v: "url(img/rojo_sin_v.jpg)",
+  verde_v: "url(img/verde_sin_v.jpg)",
+  amarillo_v: "url(img/amarillo_sin_v.jpg)",
+  naranja_v: "url(img/naranja_sin_v.jpg)",
 };
+
 const quizData = [
   // Example question structure
   {
@@ -177,7 +186,7 @@ function resultado() {
       color: "riesgo-bajo",
       mensaje: "UUUY!<br>CUIDADO",
       consejo:
-        "Debes estar alerta. Empiezas a estar un poco estresado debido al trabajo.<br>Es importante identificar los factores que te generan estrés para poder abordarlos de manera preventiva.",
+        "Debes estar alerta. Empiezas a estar un poco estresad@ debido al trabajo.<br>Es importante identificar los factores que te generan estrés para poder abordarlos de manera preventiva.",
     },
     {
       score: Infinity,
@@ -203,25 +212,29 @@ function resultado() {
     }
     let messageObj = mensajes.find((msg) => score < msg.score);
     return `<h2 class="${messageObj.color} titular">${messageObj.mensaje}</h2>
-          <p>${messageObj.consejo} <b>No dudes en buscar apoyo.</b> Habla con tu empresa para que puedan buscar una solución.
+          <p>${messageObj.consejo}
           <br>Tu puntuación es: ${score}</p>
           <br>
-          <p class="${messageObj.color} fw-semibold">Este ha sido un test rápido, para una evaluación más profunda, entra en: <br><br>
-          <a href="./pdf/Encuesta-FPSICO-4.0-en-pdf.pdf" class="boton bg-${messageObj.color} inline" target="_blank">Test de INSS</a>
-          <a href="./pdf/FPSICO 4.1 Manual de uso.pdf" class="boton bg-${messageObj.color} inline" target="_blank">Manual</a> <br>
+          <p class="${messageObj.color} fw-semibold">Este ha sido un test rápido, para más información, entra en: <br><br>
+          <a href="https://www.insst.es/materias/riesgos/riesgos-psicosociales" class="boton bg-${messageObj.color}" target="_blank">Web de INSS</a>
           <br> Valoración: ${valoracion}</p>`;
   }
 
+  const resultContainer = document.getElementById('result');
   // Asignar el color de fondo basado en la puntuación
   let backgroundImage;
   if (score < 15) {
-    backgroundImage = backgroundImages.rojo;
+    backgroundImage = isMobile() ? backgroundImages.rojo_v : backgroundImages.rojo;
+    resultContainer.classList.add('borde-riesgo-alto');
   } else if (score < 25) {
-    backgroundImage = backgroundImages.naranja;
+    backgroundImage = isMobile() ? backgroundImages.naranja_v : backgroundImages.naranja;
+    resultContainer.classList.add('borde-riesgo-medio');
   } else if (score < 35) {
-    backgroundImage = backgroundImages.amarillo;
+    backgroundImage = isMobile() ? backgroundImages.amarillo_v : backgroundImages.amarillo;
+    resultContainer.classList.add('borde-riesgo-bajo');
   } else {
-    backgroundImage = backgroundImages.verde;
+    backgroundImage = isMobile() ? backgroundImages.verde_v : backgroundImages.verde;
+    resultContainer.classList.add('borde-riesgo-cero');
   }
 
   // Mostrar el resultado
