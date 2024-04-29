@@ -85,7 +85,7 @@ const quizData = [
   },
   {
     question:
-      "En general, ¿está tu trabajo reconocido y apreciado por...? El público, client@s, pasajer@s, etc.",
+      "En general, ¿está tu trabajo reconocido y apreciado por...el público, client@s, pasajer@s, etc.?",
     a: "Siempre o casi siempre",
     b: "A menudo",
     c: "A veces",
@@ -95,10 +95,10 @@ const quizData = [
   {
     question:
       "Considerando los deberes y responsabilidades de tu trabajo, ¿estás satisfech@ con el salario que recibes?",
-    a: "Muy satisfecho",
-    b: "Satisfecho",
-    c: "Insatisfecho",
-    d: "Muy insatisfecho",
+    a: "Muy satisfech@",
+    b: "Satisfech@",
+    c: "Insatisfech@",
+    d: "Muy insatisfech@",
     scores: { a: 4, b: 3, c: 2, d: 1 },
   },
 ];
@@ -146,7 +146,7 @@ btnSubmit.addEventListener("click", function () {
     const currentQuestion = quizData[currentQuiz];
     const selectedScore = currentQuestion.scores[answers];
     score += selectedScore;
-    updateScoreDisplay(); // Update the score display
+    // updateScoreDisplay(); // Update the score display
     nextQuestion();
   }
 });
@@ -212,12 +212,10 @@ function resultado() {
     }
     let messageObj = mensajes.find((msg) => score < msg.score);
     return `<h2 class="${messageObj.color} titular">${messageObj.mensaje}</h2>
-          <p>${messageObj.consejo}
-          <br>Tu puntuación es: ${score}</p>
-          <br>
+          <p>${messageObj.consejo}</p>
           <p class="${messageObj.color} fw-semibold">Este ha sido un test rápido, para más información, entra en: <br><br>
           <a href="https://www.insst.es/materias/riesgos/riesgos-psicosociales" class="boton bg-${messageObj.color}" target="_blank">Web de INSS</a>
-          <br> Valoración: ${valoracion}</p>`;
+          </p>`;
   }
 
   const resultContainer = document.getElementById('result');
@@ -241,20 +239,18 @@ function resultado() {
   resultEl.innerHTML = generateResultHTML(score);
 
   // Select the div with class 'bg-image' and set its background image
-  const bgImageDiv = document.querySelector(".bg-image");
-  bgImageDiv.style.backgroundImage = backgroundImage;
-  bgImageDiv.style.backgroundSize = "cover"; // Ensure the image covers the entire div
-  bgImageDiv.style.backgroundRepeat = "no-repeat"; // Prevent the image from repeating
+  const bgDiv = document.querySelector(".bg");
+  bgDiv.style.backgroundImage = backgroundImage;
 
 }
 
 // Assuming you have a div with id 'scoreDisplay' to show the score
-const scoreDisplay = document.getElementById("scoreDisplay");
+// const scoreDisplay = document.getElementById("scoreDisplay");
 
 // Function to update the score display
-function updateScoreDisplay() {
-  scoreDisplay.textContent = `Puntuación: ${score}`;
-}
+// function updateScoreDisplay() {
+//   scoreDisplay.textContent = `Puntuación: ${score}`;
+// }
 
 // Call updateScoreDisplay initially to set the initial score display
-updateScoreDisplay();
+// updateScoreDisplay();

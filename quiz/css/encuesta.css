@@ -1,6 +1,9 @@
 html,
 body {
+    width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-weight: 600;
@@ -12,56 +15,50 @@ body {
 }
 
 .portada {
-    background-image: url('../img/fondo.jpg');
-    background-size: cover;
+    background-image: url("../img/fondo.jpg");
+    /* Full height */
+    height: 100%;
+    width: 100%;
+    /* Center and scale the image nicely */
     background-position: top;
-    height: 100vh;
-    /* Adjust this value based on your needs */
-    position: relative;
-    /* Make the container position relative */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.relative-button {
-    position: absolute;
-    top: 68%;
-    /* Adjust these values to position the button */
-    left: 85%;
-    transform: translate(-50%, -50%);
-    /* Center the button */
-}
-
-.bg-image {
+.bg {
     background-image: url("../img/test.jpg");
-    background-size: cover;
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
     background-position: top;
-    height: 100vh;
-    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.quiz-container {
+.boton-portada {
     position: absolute;
-    top: 50%;
-    left: 75%;
-    transform: translate(-50%, -50%);
+    bottom: 19%;
+    right: 4%;
+}
+
+.quiz-container, .result-container {
+    position: absolute;
+    bottom: 5%;
+    right: 1%;
     width: 600px;
+}
+.result-container {
+    border-radius: 25px;
+    border: solid;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    font-size: 90%;
 }
 
 .quiz-footer {
     display: flex;
     justify-content: center;
-}
-
-.result-container {
-    position: absolute;
-    border-radius: 25px;
-    border: solid;
-    padding: 10px;
-    width: 600px;
-    background-color: white;
-    top: 55%;
-    left: 80%;
-    transform: translate(-50%, -50%);
-    text-align: center;
 }
 
 .titular {
@@ -78,6 +75,10 @@ body {
     font-weight: 900;
     color: white;
     text-decoration: none;
+}
+
+.card-body li{
+    font-size: 80% !important;
 }
 
 .riesgo-alto {
@@ -135,26 +136,19 @@ body {
         /* Replace with your mobile image path */
     }
 
-    .relative-button {
-        top: 5%;
-        /* Adjust these values to position the button */
-        left: 50%;
+    .boton-portada {
+        bottom: 42%;
+        right: 29%;
     }
 
-    .bg-image {
+    .bg {
         background-image: url('../img/test_v.jpg');
         /* Replace with your mobile image path */
     }
 
-    .quiz-container {
+    .quiz-container, .result-container {
         width: 90%;
-        left: 50%;
-        top: 80%;
-    }
-
-    .result-container {
-        width: 90%;
-        left: 50%;
-        top: 70%;
+        bottom: 3%;
+        right: 5%;
     }
 }
