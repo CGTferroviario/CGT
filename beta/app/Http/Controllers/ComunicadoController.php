@@ -16,7 +16,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Spatie\LaravelCollectionsMacros\Support\PaginateEach;
+use Spatie\LaravelCollectionsMacros\Support;
 
 
 class ComunicadoController extends Controller
@@ -68,12 +68,11 @@ class ComunicadoController extends Controller
         // Slice the collection to get the items to display in current page
         $currentPageItems = $comunicadosAgrupados->slice(($page - 1) * $perPage, $perPage)->all();
 
-
         // Create our paginator and pass it to the view
         $comunicadosPaginados = new LengthAwarePaginator($currentPageItems, count($comunicadosAgrupados), $perPage, $page, [
             'path' => Paginator::resolveCurrentPath(),
         ]);
-        // dd($comunicadosPaginados);
+
         // Obtener empresas, categorías y etiquetas
         $empresas = Empresa::whereHas('comunicados')->get();
         $categorias = Categoria::whereHas('comunicados')->get();
