@@ -1,6 +1,5 @@
 <!-- Tarjeta Comunicado -->
-<div
-    class="max-w-md mx-auto border border-zinc-900 rounded-xl shadow-md overflow-hidden md:max-w-2xl flex flex-col min-h-0">
+<div class="max-w-md mx-auto border border-zinc-900 rounded-xl shadow-md overflow-hidden md:max-w-2xl flex flex-col min-h-0">
     <!-- Encabezado -->
     <div class="h-20 flex items-center p-2 border-b border-zinc-900 rounded-t-lg bg-red-500"
         title="{{ $comunicado->titulo }}">
@@ -12,16 +11,14 @@
             <div class="p-2 justify-self-start">
                 <div class="py-0.5 px-2 inline rounded-full font-semibold bg-{{ $comunicado->empresa?->slug }}">
                     @if ($comunicado->empresa)
-                        <a
-                            href="{{ route('empresas.show', ['slug' => $comunicado->empresa?->slug]) }}">{{ $comunicado->empresa?->nombre }}</a>
+                        <a href="{{ route('empresas.show', ['slug' => $comunicado->empresa?->slug]) }}">{{ $comunicado->empresa?->nombre }}</a>
                     @endif
                 </div>
             </div>
             <div class="p-2 justify-self-end">
                 <div class="py-0.5 px-2 inline rounded-full font-semibold bg-{{ $comunicado->categoria?->slug }}">
                     @if ($comunicado->categoria)
-                        <a
-                            href="{{ route('categorias.show', ['slug' => $comunicado->categoria?->slug]) }}">{{ $comunicado->categoria?->nombre }}</a>
+                        <a href="{{ route('categorias.show', ['slug' => $comunicado->categoria?->slug]) }}">{{ $comunicado->categoria?->nombre }}</a>
                     @endif
                 </div>
             </div>
@@ -36,7 +33,6 @@
                 {!! $comunicado->cuerpo !!}
             </p>
         </div>
-        
         <div class="mt-auto p-1 text-center">
             @forelse ($comunicado->etiquetas as $etiqueta)
                 <div
@@ -50,17 +46,15 @@
     </div>
     <!-- Footer -->
     <div class="p-0.5 border-t border-zinc-900 rounded-b-lg mt-auto inline-flex bg-red-500">
-        <div class="w-1/2 rounded-bl-lg hover:text-red-500 hover:bg-black text-center cursor-pointer"
-            data-modal-target="comunicado{{ $comunicado->numero }}"
-            data-modal-toggle="comunicado{{ $comunicado->numero }}">
+        <div class="w-1/2 rounded-bl-lg hover:text-red-500 hover:bg-black text-center cursor-pointer" data-modal-target="comunicado{{ $comunicado->numero }}" data-modal-toggle="comunicado{{ $comunicado->numero }}">
             <span>
                 <i class="lni lni-popup text-2xl mr-2 mb-1 align-middle"></i>Leer más...
             </span>
         </div>
         <div class="w-1/2 rounded-br-lg hover:text-red-500 hover:bg-black text-center">
-            <a href="{{ $comunicado->pdf }}" class="" target="_blank"
-                download="CGT_{{ $comunicado->titulo }}"><i
-                    class="lni lni-download verDocs mr-2 text-2xl"></i>Descargar</a>
+            <a href="{{ $comunicado->pdf }}" class="" target="_blank" download="CGT_{{ $comunicado->titulo }}">
+                <i class="lni lni-download verDocs mr-2 text-2xl"></i>Descargar
+            </a>
         </div>
     </div>
 </div>
@@ -74,14 +68,11 @@
             <!-- Modal header -->
             <div
                 class="relative flex flex-shrink-0 items-center bg-red-500 justify-between p-4 pr-12 border-b border-zinc-900 rounded-t-xl">
-                <h5 class="text-xl font-semibold leading-normal text-zinc-800"
-                    id="comunicado{{ $comunicado->numero }}Titulo">
+                <h5 class="text-xl font-semibold leading-normal text-zinc-800" id="comunicado{{ $comunicado->numero }}Titulo">
                     COM.{{ $comunicado->numero }} // {{ $comunicado->titulo }}
                 </h5>
                 <button type="button" title="Cerrar"
-                    class="absolute top-4 right-4 text-zinc-900 border-2 border-zinc-900 bg-transparent hover:bg-zinc-900 hover:text-white rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
-                    data-modal-hide="comunicado{{ $comunicado->numero }}">
-
+                    class="absolute top-4 right-4 text-zinc-900 border-2 border-zinc-900 bg-transparent hover:bg-zinc-900 hover:text-white rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="comunicado{{ $comunicado->numero }}">
                     <i class="lni lni-close font-bold"></i>
                     <span class="sr-only">Cerrar</span>
                 </button>
@@ -90,20 +81,16 @@
             <div class="flex-auto overflow-y-auto relative p-4 bg-white">
                 <div class="grid grid-cols-2">
                     <div class="p-2 justify-self-start">
-                        <div
-                            class="py-0.5 px-2 inline rounded-full font-semibold bg-{{ $comunicado->empresa?->slug }}">
+                        <div class="py-0.5 px-2 inline rounded-full font-semibold bg-{{ $comunicado->empresa?->slug }}">
                             @if ($comunicado->empresa)
-                                <a
-                                    href="{{ route('empresas.show', ['slug' => $comunicado->empresa?->slug]) }}">{{ $comunicado->empresa?->nombre }}</a>
+                                <a href="{{ route('empresas.show', ['slug' => $comunicado->empresa?->slug]) }}">{{ $comunicado->empresa?->nombre }}</a>
                             @endif
                         </div>
                     </div>
                     <div class="p-2 justify-self-end">
-                        <div
-                            class="py-0.5 px-2 inline rounded-full font-semibold bg-{{ $comunicado->categoria?->slug }}">
+                        <div class="py-0.5 px-2 inline rounded-full font-semibold bg-{{ $comunicado->categoria?->slug }}">
                             @if ($comunicado->categoria)
-                                <a
-                                    href="{{ route('categorias.show', ['slug' => $comunicado->categoria?->slug]) }}">{{ $comunicado->categoria?->nombre }}</a>
+                                <a href="{{ route('categorias.show', ['slug' => $comunicado->categoria?->slug]) }}">{{ $comunicado->categoria?->nombre }}</a>
                             @endif
                         </div>
                     </div>
@@ -117,32 +104,28 @@
                     {!! $comunicado->cuerpo !!}
                 </div>
                 @forelse ($comunicado->etiquetas as $etiqueta)
-                    <div
-                        class="py-0.5 px-2 m-0.5 inline-flex rounded-full font-semibold border-2 text-zinc-900 border-red-500">
-                        <a
-                            href="{{ route('etiquetas.show', ['slug' => $etiqueta->slug]) }}">#{{ $etiqueta->nombre }}</a>
+                    <div class="py-0.5 px-2 m-0.5 inline-flex rounded-full font-semibold border-2 text-zinc-900 border-red-500">
+                        <a href="{{ route('etiquetas.show', ['slug' => $etiqueta->slug]) }}">#{{ $etiqueta->nombre }}</a>
                     </div>
                 @empty
                     <p class="italic text-sm text-center">No hay etiquetas asociadas</p>
                 @endforelse
             </div>
             <div class="flex items-center p-0.5 bg-red-500 border border-zinc-900 rounded-b-xl">
-                <div class="w-1/3 rounded-bl-lg hover:text-red-500 hover:bg-black text-center cursor-pointer"
-                    data-modal-target="comunicado{{ $comunicado->numero }}"
-                    data-modal-toggle="comunicado{{ $comunicado->numero }}">
-                    <span>
+                <div class="w-1/3 rounded-bl-lg hover:text-red-500 hover:bg-black text-center cursor-pointer" data-modal-target="comunicado{{ $comunicado->numero }}" data-modal-toggle="comunicado{{ $comunicado->numero }}">
+                    <a href="{{ $comunicado->pdf }}" class="" target="_blank" download="CGT_{{ $comunicado->titulo }}">
                         <i class="lni lni-popup text-2xl mr-2 mb-1 align-middle"></i>PDF
-                    </span>
+                    </a>
                 </div>
                 <div class="w-1/3 hover:text-red-500 hover:bg-black text-center">
-                    <a href="{{ $comunicado->pdf }}" class="" target="_blank"
-                        download="CGT_{{ $comunicado->titulo }}"><i
-                            class="lni lni-download verDocs mr-2 text-2xl"></i>JPG</a>
+                    <a href="{{ $comunicado->jpg }}" class="" target="_blank" download="CGT_{{ $comunicado->titulo }}">
+                        <i class="lni lni-image text-2xl mr-2 mb-1 align-middle"></i>JPG
+                    </a>
                 </div>
                 <div class="w-1/3 rounded-br-lg hover:text-red-500 hover:bg-black text-center">
-                    <a href="{{ $comunicado->pdf }}" class="" target="_blank"
-                        download="CGT_{{ $comunicado->titulo }}"><i
-                            class="lni lni-download verDocs mr-2 text-2xl"></i>ADJUNTO</a>
+                    <a href="{{ $comunicado->pdf }}" class="" target="_blank" download="CGT_{{ $comunicado->titulo }}">
+                        <i class="lni lni-download text-2xl mr-2 mb-1 align-middle"></i>ADJUNTO
+                    </a>
                 </div>
             </div>
         </div>
