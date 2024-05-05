@@ -36,41 +36,69 @@ class ComunicadoController extends Controller
         // Pasamos el comunicado formateado a la vista
         return $dataTable->render('intranet.comunicados.index', compact('comunicados'));
     }
-    
-    public function bibliotecaComunicados()
+
+    public function bibliotecaComunicados(Request $request)
     {
+        // Inicializar $paginators como una colección vacía al principio
+        $paginators = collect();
+
+        // Obtener el valor del select (por ejemplo, 'todos' o un año específico)
+        $yearFilter = $request->input('year_filter', 'todos');
+
+        // Si el filtro es 'todos', obtener todos los comunicados y aplicar paginación manualmente
+        if ($yearFilter === 'todos') {
+            $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
+            $paginator = new LengthAwarePaginator($comunicados, $comunicados->count(), $comunicados->count(), 1, [
+                'path' => Paginator::resolveCurrentPath(),
+            ]);
+            return view('biblioteca.comunicados', [
+                'comunicados' => $paginator,
+                'years' => [], // No necesitas años si se muestran todos los comunicados
+                'empresas' => Empresa::whereHas('comunicados')->get(),
+                'categorias' => Categoria::whereHas('comunicados')->get(),
+                'etiquetas' => Etiqueta::whereHas('comunicados')->get(),
+            ]);
+        }
         // Obtener todos los comunicados
         $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
-
-        // Obtener los años únicos
-        $years = $comunicados->pluck('fecha')->map(function ($fecha) {
-            return \Carbon\Carbon::parse($fecha)->year;
-        })->unique();
-
-        // Obtener todos los comunicados y agruparlos por año
-        $comunicadosAgrupados = $comunicados->groupBy(function ($comunicado) {
-            return \Carbon\Carbon::parse($comunicado->fecha)->year;
-        });
 
         // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
         $comunicados = $comunicados->map(function ($comunicado) {
             $comunicado->fecha = \Carbon\Carbon::parse($comunicado->fecha)->format('d/m/Y');
             return $comunicado;
         });
-        
+
+        // Obtener los años únicos
+        $years = $comunicados->pluck('fecha')->map(function ($fecha) {
+            return \Carbon\Carbon::createFromFormat('d/m/Y', $fecha)->year;
+        })->unique();
+
+        // Obtener todos los comunicados y agruparlos por año
+        $comunicadosAgrupados = $comunicados->groupBy(function ($comunicado) {
+            return \Carbon\Carbon::createFromFormat('d/m/Y', $comunicado->fecha)->year;
+        });
+
         // Define how many items we want to be visible in each page
         $perPage = 12;
 
-        // Get current page form url e.x. &page=1
-        $page = Paginator::resolveCurrentPage();
+        // Create a collection to hold the paginators
+        $paginators = collect();
 
-        // Slice the collection to get the items to display in current page
-        $currentPageItems = $comunicadosAgrupados->slice(($page - 1) * $perPage, $perPage)->all();
+        // Apply pagination to each group of communications
+        foreach ($comunicadosAgrupados as $year => $comunicadosPorAno) {
+            // Get current page form url e.x. &page=1
+            $page = Paginator::resolveCurrentPage();
 
-        // Create our paginator and pass it to the view
-        $comunicadosPaginados = new LengthAwarePaginator($currentPageItems, count($comunicadosAgrupados), $perPage, $page, [
-            'path' => Paginator::resolveCurrentPath(),
-        ]);
+            // Slice the collection to get the items to display in current page
+            $currentPageItems = $comunicadosPorAno->slice(($page - 1) * $perPage, $perPage)->all();
+
+            // Create our paginator and add it to the collection
+            $paginator = new LengthAwarePaginator($currentPageItems, count($comunicadosPorAno), $perPage, $page, [
+                'path' => Paginator::resolveCurrentPath(),
+            ]);
+
+            $paginators->put($year, $paginator);
+        }
 
         // Obtener empresas, categorías y etiquetas
         $empresas = Empresa::whereHas('comunicados')->get();
@@ -79,13 +107,14 @@ class ComunicadoController extends Controller
 
         return view('biblioteca.comunicados', [
             'comunicadosAgrupados' => $comunicadosAgrupados,
-            'comunicadosPaginados' => $comunicadosPaginados,
+            'paginators' => $paginators,
             'years' => $years,
             'empresas' => $empresas,
             'categorias' => $categorias,
             'etiquetas' => $etiquetas
         ]);
     }
+
 
     public function create()
     {

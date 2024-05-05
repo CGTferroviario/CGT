@@ -69,7 +69,7 @@
                     class="block p-2.5 w-full z-20 text-sm rounded-e-lg border-s-2 border bg-zinc-700 border-s-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:border-red-500"
                     placeholder="Busca comunicados..." required />
                 <button type="submit"
-                    class="absolute top-0 end-0 p-2 text-sm font-medium h-full text-zinc-900 hover:text-red-500 bg-red-500 hover:bg-zinc-900 rounded-e-lg border border-red-700 focus:ring-4 focus:outline-none focus:ring-red-800">
+                    class="absolute top-0 end-0 p-2 text-sm font-medium h-full text-zinc-800 hover:text-red-500 bg-red-500 hover:bg-zinc-800 rounded-e-lg border border-zinc-800 hover:border-red-500 focus:ring-4 focus:outline-none focus:ring-red-800">
                     <i class="lni lni-keyword-research text-xl mb-2"></i>
                     <span class="sr-only">Buscar</span>
                 </button>

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use Illuminate\Database\Eloquent\Builder;
 use App\Models\Documento;
 use App\Models\Empresa;
+use App\Models\Etiqueta;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -94,27 +96,43 @@ class PaginaController extends Controller
     public function comercial() 
     {
         $documentos = Documento::porEmpresaCategoria('RENFE','COMERCIAL')->orderBy('fecha', 'desc')->paginate(12);
-        return view('renfe.comercial', compact('documentos'));
+        $empresas = Empresa::whereHas('documentos')->get();
+        $categorias = Categoria::whereHas('documentos')->get();
+        $etiquetas = Etiqueta::whereHas('documentos')->get();
+        return view('renfe.comercial', compact('documentos', 'empresas', 'categorias', 'etiquetas'));
     }
     public function intervencion() 
     {
         $documentos = Documento::porEmpresaCategoria('RENFE','INTERVENCIÓN')->orderBy('fecha', 'desc')->paginate(12);
-        return view('renfe.intervencion', compact('documentos'));
+        $empresas = Empresa::whereHas('documentos')->get();
+        $categorias = Categoria::whereHas('documentos')->get();
+        $etiquetas = Etiqueta::whereHas('documentos')->get();
+        // dd($empresas);
+        return view('renfe.intervencion', compact('documentos', 'empresas', 'categorias', 'etiquetas'));
     }
     public function conduccion() 
     {
         $documentos = Documento::porEmpresaCategoria('RENFE','CONDUCCIÓN')->orderBy('fecha', 'desc')->paginate(12);
-        return view('renfe.conduccion', compact('documentos'));
+        $empresas = Empresa::whereHas('documentos')->get();
+        $categorias = Categoria::whereHas('documentos')->get();
+        $etiquetas = Etiqueta::whereHas('documentos')->get();
+        return view('renfe.conduccion', compact('documentos', 'empresas', 'categorias', 'etiquetas'));
     }
     public function talleres() 
     {
         $documentos = Documento::porEmpresaCategoria('RENFE','TALLERES')->orderBy('fecha', 'desc')->paginate(12);
-        return view('renfe.talleres', compact('documentos'));
+        $empresas = Empresa::whereHas('documentos')->get();
+        $categorias = Categoria::whereHas('documentos')->get();
+        $etiquetas = Etiqueta::whereHas('documentos')->get();
+        return view('renfe.talleres', compact('documentos', 'empresas', 'categorias', 'etiquetas'));
     }
     public function oficinasRENFE() 
     {
         $documentos = Documento::porEmpresaCategoria('RENFE','OFICINAS')->orderBy('fecha', 'desc')->paginate(12);
-        return view('renfe.oficinas', compact('documentos'));
+        $empresas = Empresa::whereHas('documentos')->get();
+        $categorias = Categoria::whereHas('documentos')->get();
+        $etiquetas = Etiqueta::whereHas('documentos')->get();
+        return view('renfe.oficinas', compact('documentos', 'empresas', 'categorias', 'etiquetas'));
     }
     // Documentos Generales RENFE
     public function afiliacionRENFE() {

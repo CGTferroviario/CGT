@@ -91,8 +91,8 @@
                         <td>{{ $comunicado->fecha }}</td>
                         <td>{{ $comunicado->user->nombre }}</td>
                         <td>{{ $comunicado->titulo }}</td>
-                        <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $comunicado->empresa?->slug }}">{{ $comunicado->empresa?->nombre }}</span></td>
-                        <td><span class="px-3 py-1 text-sm font-semibold rounded-full bg-{{ $comunicado->categoria?->nombre }}">{{ $comunicado->categoria?->nombre }}</span></td>
+                        <td><span class="px-3 py-1 text-sm font-semibold rounded-full badge-{{ $comunicado->empresa?->slug }}">{{ $comunicado->empresa?->nombre }}</span></td>
+                        <td><span class="px-3 py-1 text-sm font-semibold rounded-full badge-{{ $comunicado->categoria?->nombre }}">{{ $comunicado->categoria?->nombre }}</span></td>
                         <td>
                             @foreach ($comunicado->etiquetas as $etiqueta )
                                 <span class="py-0.5 px-2 rounded-full font-semibold bg-blue-500">

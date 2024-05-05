@@ -1,7 +1,7 @@
 <x-publico-layout>
 
     @section('contenido')
-        <h1 class="m-0 py-3 text-center bg-SERVEO font-bold">OTRAS EMPRESAS AUXILIARES FERROVIARIAS</h1>
+        <h1 class="m-0 py-3 text-center bg-cgt font-bold titular">OTRAS EMPRESAS AUXILIARES FERROVIARIAS</h1>
         <div class="fondo protocolos">
             <div class="busqueda p-4 pt-6 flex justify-end">
                 <div class="w-1/4">

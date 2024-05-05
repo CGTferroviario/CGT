@@ -155,16 +155,19 @@ aside .lni{
 .bg-blanco-transp { background: rgba(255, 255, 255, .7); }
 
 /* Colores Empresas */
-.bg-renfe { color: rgb(135, 0, 100); border-width: 2px; border-color: rgb(135, 0, 100); letter-spacing: 1px;}
-.bg-renfe:hover { background: rgb(135, 0, 100); color: white; cursor: pointer;}
-.bg-adif { color: rgb(0, 99, 56); border-width: 2px; border-color: rgb(0, 99, 56); letter-spacing: 1px; }
-.bg-adif:hover { background: rgb(0, 99, 56); color: white; cursor: pointer; }
+.bg-renfe { background: rgb(135, 0, 100); color: white; }
+.badge-renfe { color: rgb(135, 0, 100); border-width: 2px; border-color: rgb(135, 0, 100); letter-spacing: 1px;}
+.badge-renfe:hover { background: rgb(135, 0, 100); color: white; cursor: pointer;}
+.bg-adif { background: rgb(0, 99, 56); color: white; }
+.badge-adif { color: rgb(0, 99, 56); border-width: 2px; border-color: rgb(0, 99, 56); letter-spacing: 1px; }
+.badge-adif:hover { background: rgb(0, 99, 56); color: white; cursor: pointer; }
 .bg-adif-renfe { color: rgb(0, 99, 56); border-width: 2px; border-color: rgb(0, 99, 56); letter-spacing: 1px; }
 .bg-adif-renfe:hover { background:  rgb(0, 99, 56);
       background: linear-gradient(90deg, rgba(0, 99, 56,1) 0%, rgba(135, 0, 100,1) 100%); border: none;
       color: white; cursor: pointer; }
-.bg-cgt, .bg-conjunto, .bg-sector, .bg-generales { color: rgb(255, 0, 56); border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
-.bg-cgt:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
+.bg-cgt { background: rgb(255, 0, 56); border-color: black; color: black; }
+.badge-cgt, .badge-conjunto, .badge-sector, .badge-generales { color: white; background-color: black; border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
+.badge-cgt:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
 .bg-conjunto:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
 .bg-sector:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
 .bg-generales:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
@@ -172,10 +175,12 @@ aside .lni{
 .bg-servicios-externos:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
 .bg-saux-atcli { color: rgb(255, 0, 56); border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
 .bg-saux-atcli:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
-.bg-serveo { color: rgb(255, 78, 0); border-width: 2px; border-color: rgb(255, 78, 0); letter-spacing: 1px; }
-.bg-serveo:hover { background: rgb(255, 78, 0); color: white; cursor: pointer; }
-.bg-logirail { color: rgb(126, 1, 126); border-width: 2px; border-color: rgb(126, 1, 126); letter-spacing: 1px; }
-.bg-logirail:hover { background: rgb(126, 1, 126); color: white; cursor: pointer; }
+.bg-serveo { background: rgb(255, 78, 0); color: white; }
+.badge-serveo { color: rgb(255, 78, 0); border-width: 2px; border-color: rgb(255, 78, 0); letter-spacing: 1px; }
+.badge-serveo:hover { background: rgb(255, 78, 0); color: white; cursor: pointer; }
+.bg-logirail { background: rgb(126, 1, 126); color: white; }
+.badge-logirail { color: rgb(126, 1, 126); border-width: 2px; border-color: rgb(126, 1, 126); letter-spacing: 1px; }
+.badge-logirail:hover { background: rgb(126, 1, 126); color: white; cursor: pointer; }
 .bg-saba { color: rgb(1, 168, 151); border-width: 2px; border-color: rgb(1, 168, 151); letter-spacing: 1px; }
 .bg-saba:hover { background: rgb(1, 168, 151); color: white; cursor: pointer; }
 .bg-ferrovial { color: black; border-width: 2px; border-color: rgb(254, 194, 6); letter-spacing: 1px; }
@@ -215,9 +220,10 @@ aside .lni{
 
 
 /* Colores Categorias */
-.bg-infraestructura { color: rgb(230, 230, 40); border-width: 2px; border-color: rgb(230, 230, 40); letter-spacing: 1px; }
-.bg-infraestructura:hover { background: rgb(230, 230, 40) ; color: black; cursor: pointer; }
-.bg-INFRAESTRUCTURA { background: rgb(230, 230, 40); color: black; }
+.bg-infraestructura { background: rgb(230, 230, 40); color: black; }
+.badge-infraestructura { color: rgb(230, 230, 40); border-width: 2px; border-color: rgb(230, 230, 40); letter-spacing: 1px; }
+.badge-infraestructura:hover { background: rgb(230, 230, 40) ; color: black; cursor: pointer; }
+
 .bg-OFICINAS { background: rgb(150, 150, 200); color: white; }
 .bg-CIRCULACIÓN { background: rgb(231, 95, 85); color: white; }
 .bg-ESTACIONES { background: rgb(0, 99, 0); color: white; }

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="keywords" content="sindicato sector federal ferroviario renfe adif anarcosindicalismo trabajadores derechos">
-        <meta name="description" content="Sector Federal Ferroviario - CGT"
+        <meta name="description" content="Sector Federal Ferroviario - CGT">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="author" content="Sector Federal Ferroviario - CGT">
 
@@ -24,11 +24,11 @@
             <main class="pt-20">
                 <!-- Page Heading -->
                 @if (isset($header))
-                    <header class="bg-red-500 shadow">
-                        <div class="max-w-7xl mx-auto py-3 px-2 sm:px-3 lg:px-4 text-center">
+                    {{-- <header class="bg-red-500 shadow">
+                        <div class="max-w-7xl mx-auto py-3 px-2 sm:px-3 lg:px-4 text-center"> --}}
                             {{ $header }}
-                        </div>
-                    </header>
+                        {{-- </div>
+                    </header> --}}
                 @endif            
                 {{ $slot }}
                 @yield('contenido')

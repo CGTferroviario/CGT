@@ -1,8 +1,8 @@
 <x-publico-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-zinc-900 leading-tight">
+        <h1 class="m-0 py-3 font-semibold text-lg text-center text-zinc-900 bg-red-500 leading-tight titular">
             {{ __('MAPA SINDICAL - Sector Federal Ferroviario CGT') }}
-        </h2>
+        </h1>
     </x-slot>
     @section('contenido')
         <div class="p-8 fondo comunicados">

@@ -1,7 +1,7 @@
 <x-publico-layout>
 
     @section('contenido')
-        <h1 class="m-0 py-3 text-center bg-RENFE font-bold">MAPA DE ESTACIONES · RED ADIF Y RENFE</h1>
+        <h1 class="m-0 py-3 text-center bg-renfe font-bold">MAPA DE ESTACIONES · RED ADIF Y RENFE</h1>
         <div class="fondo mapa">
             <div class="busqueda p-4 pt-6 flex justify-end">
                 <div class="w-1/4">

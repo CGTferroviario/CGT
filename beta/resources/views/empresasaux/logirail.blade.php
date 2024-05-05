@@ -1,7 +1,7 @@
 <x-publico-layout>
 
 @section('contenido')
-    <h1 class="m-0 py-3 text-center bg-LOGIRAIL font-bold">LOGIRAIL</h1>
+    <h1 class="m-0 py-3 text-center bg-logirail font-bold titular">LOGIRAIL</h1>
     <div class="fondo protocolos">
         <div class="busqueda p-4 pt-6 flex justify-end">
             <div class="w-1/4">

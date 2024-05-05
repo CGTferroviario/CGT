@@ -1,7 +1,7 @@
 <x-publico-layout>
 
 @section('contenido')
-<h1 class="m-0 py-3 text-center bg-red-500">CONTACTO</h1>
+<h1 class="m-0 py-3 font-semibold text-lg text-center text-zinc-900 bg-red-500 leading-tight titular">CONTACTO</h1>
 <section class="fondo modelos">
     <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-zinc-900 dark:text-white">Escríbenos</h2>

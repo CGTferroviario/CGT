@@ -1,7 +1,7 @@
 <x-publico-layout>
 
 @section('contenido')
-<h1 class="m-0 py-3 negro text-center text-bold bg-red-500">Equipo Estatal del SECTOR FEDERAL FERROVIARIO - CGT</h1>
+<h1 class="m-0 py-3 font-semibold text-lg text-center text-zinc-900 bg-red-500 leading-tight titular">Equipo Estatal del SECTOR FEDERAL FERROVIARIO - CGT</h1>
 <div class="fondo ayudas">
     <div class="row">
         <div class="px-10 pt-4 mx-4">

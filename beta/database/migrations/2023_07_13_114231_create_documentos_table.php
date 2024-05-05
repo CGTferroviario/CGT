@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('documentos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedMediumInteger('visualizaciones')->default(0);
             $table->unsignedMediumInteger('descargas')->default(0);
             $table->unsignedBigInteger('empresa_id')->nullable();
             $table->unsignedBigInteger('categoria_id')->nullable();
@@ -22,6 +21,8 @@ return new class extends Migration
             $table->string('titulo');
             $table->text('descripcion');
             $table->string('pdf')->nullable();
+            $table->string('imagen')->nullable();
+            $table->boolean('vigente')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade');
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');

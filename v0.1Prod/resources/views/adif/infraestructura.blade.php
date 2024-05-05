@@ -1,14 +1,14 @@
 @extends('plantillas.publica')
 
 @section('contenido')
-    <h1 class="m-0 py-3 text-center bg-ADIF">INFRAESTRUCTURA</h1>
+    <h1 class="m-0 py-3 text-center bg-adif">INFRAESTRUCTURA</h1>
     <div class="container-fluid fondo infraestructura">
         <div class="row">
             <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
                 <div class="card bg-grisOscuro-7 mb-3 blanco bordeRojo" style="">
                     <div class="card-header"><h3>Plataforma Reivindicativa INFRA</h3></div>
                     <div class="card-body bordeRojo">
-                        <span class="badge rounded-pill peq bg-ADIF">ADIF</span>
+                        <span class="badge rounded-pill peq badge-adif">ADIF</span>
                         <span class="badge rounded-pill peq bg-INFRAESTRUCTURA negro">INFRAESTRUCTURA</span>
                                             
                         <p class="card-text mt-2">Este documento recoge las reivindicaciones de CGT para el colectivo de Infraestructura</p>

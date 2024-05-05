@@ -25,11 +25,12 @@ class DocumentoFactory extends Factory
             'user_id' => $this->faker->numberBetween(1,4),
             'empresa_id' => $this->faker->numberBetween(1,5),
             'categoria_id' => $this->faker->numberBetween(1,10),
-            // 'etiqueta_id' => $this->faker->numberBetween(1,21),
             'fecha' => $this->faker->date(),
             'titulo' => $this->faker->sentence(8),
             'descripcion' => $this->faker->paragraph,
             'pdf' => '/storage/documentos/documento1.pdf',
+            'imagen' => '/storage/documentos/documento1.jpg',
+            'vigente' => $this->faker->boolean(),
             // 'pdf' => $this->faker->file(
             //     'public/storage/documentos',
             //     storage_path('app/public/documentos'),

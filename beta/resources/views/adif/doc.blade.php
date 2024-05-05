@@ -1,7 +1,7 @@
 <x-publico-layout>
     <x-slot name="header">
-        <div class="mx-auto py-3 px-2 sm:px-3 lg:px-4 text-center bg-ADIF">
-            <h2 class="font-semibold text-xl text-white leading-tight">
+        <div class="mx-auto py-3 px-2 sm:px-3 lg:px-4 text-center bg-adif">
+            <h2 class="font-semibold text-xl text-white leading-tight titular">
                 {{ __('Documentación General ADIF') }}
             </h2>
         </div>
