@@ -165,56 +165,53 @@ aside .lni{
 .bg-adif-renfe:hover { background:  rgb(0, 99, 56);
       background: linear-gradient(90deg, rgba(0, 99, 56,1) 0%, rgba(135, 0, 100,1) 100%); border: none;
       color: white; cursor: pointer; }
-.bg-cgt { background: rgb(255, 0, 56); border-color: black; color: black; }
+.bg-cgt, .bg-conjunto, .bg-sector, .bg-generales { background: rgb(255, 0, 56); border-color: black; color: black; }
 .badge-cgt, .badge-conjunto, .badge-sector, .badge-generales { color: white; background-color: black; border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
-.badge-cgt:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
-.bg-conjunto:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
-.bg-sector:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
-.bg-generales:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
-.bg-servicios-externos { color: rgb(255, 0, 56); border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
-.bg-servicios-externos:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
-.bg-saux-atcli { color: rgb(255, 0, 56); border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
-.bg-saux-atcli:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
+.badge-cgt:hover, .badge-conjunto:hover, .badge-sector:hover, .badge-generales:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
+.badge-servicios-externos { color: rgb(255, 0, 56); border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
+.badge-servicios-externos:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
+.badge-saux-atcli { color: rgb(255, 0, 56); border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
+.badge-saux-atcli:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
 .bg-serveo { background: rgb(255, 78, 0); color: white; }
 .badge-serveo { color: rgb(255, 78, 0); border-width: 2px; border-color: rgb(255, 78, 0); letter-spacing: 1px; }
 .badge-serveo:hover { background: rgb(255, 78, 0); color: white; cursor: pointer; }
 .bg-logirail { background: rgb(126, 1, 126); color: white; }
 .badge-logirail { color: rgb(126, 1, 126); border-width: 2px; border-color: rgb(126, 1, 126); letter-spacing: 1px; }
 .badge-logirail:hover { background: rgb(126, 1, 126); color: white; cursor: pointer; }
-.bg-saba { color: rgb(1, 168, 151); border-width: 2px; border-color: rgb(1, 168, 151); letter-spacing: 1px; }
-.bg-saba:hover { background: rgb(1, 168, 151); color: white; cursor: pointer; }
-.bg-ferrovial { color: black; border-width: 2px; border-color: rgb(254, 194, 6); letter-spacing: 1px; }
-.bg-ferrovial:hover { background: rgb(254, 194, 6); border-color: black; color: white; cursor: pointer; }
-.bg-fgv { color: black; border-width: 2px; border-color: rgb(255, 178, 15); letter-spacing: 1px; }
-.bg-fgv:hover { background: rgb(255, 178, 15); border-color: black; color: white; cursor: pointer; }
-.bg-ilunion { color: rgb(0, 121, 199); border-width: 2px; border-color: rgb(255, 211, 0); letter-spacing: 1px; }
-.bg-ilunion:hover { background: rgb(255, 211, 0); border-color: rgb(0, 121, 199);
+.badge-saba { color: rgb(1, 168, 151); border-width: 2px; border-color: rgb(1, 168, 151); letter-spacing: 1px; }
+.badge-saba:hover { background: rgb(1, 168, 151); color: white; cursor: pointer; }
+.badge-ferrovial { color: black; border-width: 2px; border-color: rgb(254, 194, 6); letter-spacing: 1px; }
+.badge-ferrovial:hover { background: rgb(254, 194, 6); border-color: black; color: white; cursor: pointer; }
+.badge-fgv { color: black; border-width: 2px; border-color: rgb(255, 178, 15); letter-spacing: 1px; }
+.badge-fgv:hover { background: rgb(255, 178, 15); border-color: black; color: white; cursor: pointer; }
+.badge-ilunion { color: rgb(0, 121, 199); border-width: 2px; border-color: rgb(255, 211, 0); letter-spacing: 1px; }
+.badge-ilunion:hover { background: rgb(255, 211, 0); border-color: rgb(0, 121, 199);
                     background: linear-gradient(90deg, rgba(255,211,0,1) 0%, rgba(0,121,199,1) 100%);
                     color: white; cursor: pointer; }
-.bg-athisa-medio-ambiente { color: rgb(59, 143, 226); border-width: 2px; border-color: rgb(14,156,62); cursor: pointer; letter-spacing: 1px; }           
-.bg-athisa-medio-ambiente:hover { background: rgb(14,156,62); border-color: rgb(59, 143, 226); color: white; }
-.bg-interserve { color: rgb(0,165,231); border-width: 2px; border-color: rgb(0,165,231); letter-spacing: 1px; }
-.bg-interserve:hover { background: rgb(0,165,231); border-color: rgb(78, 78, 78); color: rgb(78, 78, 78); cursor: pointer; }
-.bg-acciona { color: rgb(213,0,0); border-width: 2px; border-color: black; letter-spacing: 1px; }
-.bg-acciona:hover { background: rgb(213, 0, 0); color: black; border-width: 2px; border-color: white; cursor: pointer; }
-.bg-btren {  border-width: 2px; border-color: rgb(135, 1, 114); color: rgb(78, 78, 78); letter-spacing: 1px; }
-.bg-btren:hover { background: rgb(135, 1, 114); border-color: rgb(78, 78, 78); color: white; cursor: pointer; }
-.bg-euromaclean { color: rgb(83, 164, 187); border-width: 2px; border-color: rgb(83, 164, 187); letter-spacing: 1px; }
-.bg-euromaclean:hover { background: rgb(83, 164, 187); border-color: rgb(78, 78, 78); color: white; cursor: pointer; }
-.bg-vectalia-rail-sa { color: rgb(155, 194, 38); border-width: 2px; border-color: rgb(155, 194, 38); letter-spacing: 1px; }
-.bg-vectalia-rail-sa:hover { background: rgb(155, 194, 38); border-color: rgb(155, 194, 38); color: white; cursor: pointer; }
-.bg-clece-limpieza { color: rgb(45, 69, 97); border-width: 2px; border-color: rgb(45, 69, 97); letter-spacing: 1px; }
-.bg-clece-limpieza:hover { background: rgb(45, 69, 97); color: white; cursor: pointer; }
+.badge-athisa-medio-ambiente { color: rgb(59, 143, 226); border-width: 2px; border-color: rgb(14,156,62); cursor: pointer; letter-spacing: 1px; }           
+.badge-athisa-medio-ambiente:hover { background: rgb(14,156,62); border-color: rgb(59, 143, 226); color: white; }
+.badge-interserve { color: rgb(0,165,231); border-width: 2px; border-color: rgb(0,165,231); letter-spacing: 1px; }
+.badge-interserve:hover { background: rgb(0,165,231); border-color: rgb(78, 78, 78); color: rgb(78, 78, 78); cursor: pointer; }
+.badge-acciona { color: rgb(213,0,0); border-width: 2px; border-color: black; letter-spacing: 1px; }
+.badge-acciona:hover { background: rgb(213, 0, 0); color: black; border-width: 2px; border-color: white; cursor: pointer; }
+.badge-btren {  border-width: 2px; border-color: rgb(135, 1, 114); color: rgb(78, 78, 78); letter-spacing: 1px; }
+.badge-btren:hover { background: rgb(135, 1, 114); border-color: rgb(78, 78, 78); color: white; cursor: pointer; }
+.badge-euromaclean { color: rgb(83, 164, 187); border-width: 2px; border-color: rgb(83, 164, 187); letter-spacing: 1px; }
+.badge-euromaclean:hover { background: rgb(83, 164, 187); border-color: rgb(78, 78, 78); color: white; cursor: pointer; }
+.badge-vectalia-rail-sa { color: rgb(155, 194, 38); border-width: 2px; border-color: rgb(155, 194, 38); letter-spacing: 1px; }
+.badge-vectalia-rail-sa:hover { background: rgb(155, 194, 38); border-color: rgb(155, 194, 38); color: white; cursor: pointer; }
+.badge-clece-limpieza { color: rgb(45, 69, 97); border-width: 2px; border-color: rgb(45, 69, 97); letter-spacing: 1px; }
+.badge-clece-limpieza:hover { background: rgb(45, 69, 97); color: white; cursor: pointer; }
 
-.bg-clece-acerca { color: rgb(45, 69, 97); border-width: 2px; border-color: rgb(255, 153, 0); letter-spacing: 1px; }
-.bg-clece-acerca:hover { background: rgb( 45, 69, 97) ; color: rgb(255, 153, 0); cursor: pointer; }
-.bg-iryo { color: rgb(204, 13, 20); border-width: 2px; border-color: rgb(204, 13, 20); letter-spacing: 1px; }
-.bg-iryo:hover { background: rgb(204, 13, 20); color: white; border-color: rgb(204, 13, 20); cursor: pointer; }
+.badge-clece-acerca { color: rgb(45, 69, 97); border-width: 2px; border-color: rgb(255, 153, 0); letter-spacing: 1px; }
+.badge-clece-acerca:hover { background: rgb( 45, 69, 97) ; color: rgb(255, 153, 0); cursor: pointer; }
+.badge-iryo { color: rgb(204, 13, 20); border-width: 2px; border-color: rgb(204, 13, 20); letter-spacing: 1px; }
+.badge-iryo:hover { background: rgb(204, 13, 20); color: white; border-color: rgb(204, 13, 20); cursor: pointer; }
 
-.bg-actren { color: rgb(204, 13, 20); border-width: 2px; border-color: rgb(137, 0, 100); letter-spacing: 1px; }
-.bg-actren:hover { background: rgb(137, 0, 100); color: white; border-color: rgb(85, 85, 90); cursor: pointer; }
-.bg-ouigo { color: rgb(228, 0, 106); border-width: 2px; border-color: rgb(228, 0, 106); letter-spacing: 1px; }
-.bg-ouigo:hover { background: rgb(228, 0, 106); color: white; cursor: pointer; }
+.badge-actren { color: rgb(204, 13, 20); border-width: 2px; border-color: rgb(137, 0, 100); letter-spacing: 1px; }
+.badge-actren:hover { background: rgb(137, 0, 100); color: white; border-color: rgb(85, 85, 90); cursor: pointer; }
+.badge-ouigo { color: rgb(228, 0, 106); border-width: 2px; border-color: rgb(228, 0, 106); letter-spacing: 1px; }
+.badge-ouigo:hover { background: rgb(228, 0, 106); color: white; cursor: pointer; }
 
 
 
@@ -224,13 +221,34 @@ aside .lni{
 .badge-infraestructura { color: rgb(230, 230, 40); border-width: 2px; border-color: rgb(230, 230, 40); letter-spacing: 1px; }
 .badge-infraestructura:hover { background: rgb(230, 230, 40) ; color: black; cursor: pointer; }
 
-.bg-OFICINAS { background: rgb(150, 150, 200); color: white; }
-.bg-CIRCULACIÓN { background: rgb(231, 95, 85); color: white; }
-.bg-ESTACIONES { background: rgb(0, 99, 0); color: white; }
-.bg-TALLERES { background: rgb(145, 218, 11); color: white; }
-.bg-CONDUCCIÓN { background: rgb(221, 104, 236); color: white; }
-.bg-INTERVENCIÓN { background: rgb(97, 4, 109); color: white; }
-.bg-COMERCIAL { background: rgb(189, 24, 211); color: white; }
+.bg-oficinas { background: rgb(150, 150, 200); color: white; }
+.badge-oficinas { color: rgb(150, 150, 200); border-width: 2px; border-color: rgb(150, 150, 200); letter-spacing: 1px; }
+.badge-oficinas:hover { background: rgb(150, 150, 200) ; color: white; cursor: pointer; }
+
+.bg-circulacion { background: rgb(231, 95, 85); color: white; }
+.badge-circulacion { color: rgb(231, 95, 85); border-width: 2px; border-color: rgb(231, 95, 85); letter-spacing: 1px; }
+.badge-circulacion:hover { background: rgb(231, 95, 85); color: white; cursor: pointer; }
+
+.bg-estaciones { background: rgb(0, 99, 0); color: white; }
+.badge-estaciones { color: rgb(0, 99, 0); border-width: 2px; border-color: rgb(0, 99, 0); letter-spacing: 1px; }
+.badge-estaciones:hover { background: rgb(231, 95, 85); color: white; cursor: pointer; }
+
+
+.bg-talleres { background: rgb(145, 218, 11); color: white; }
+.badge-talleres { color: rgb(145, 218, 11); border-width: 2px; border-color: rgb(145, 218, 11); letter-spacing: 1px; }
+.badge-talleres:hover { background: rgb(145, 218, 11); color: white; cursor: pointer; }
+
+.bg-conduccion { background: rgb(221, 104, 236); color: white; }
+.badge-conduccion { color: rgb(221, 104, 236); border-width: 2px; border-color: rgb(221, 104, 236); letter-spacing: 1px; }
+.badge-conduccion:hover { background: rgb(221, 104, 236); color: white; cursor: pointer; }
+
+.bg-intervencion { background: rgb(97, 4, 109); color: white; }
+.badge-intervencion { color: rgb(97, 4, 109); border-width: 2px; border-color: rgb(97, 4, 109); letter-spacing: 1px; }
+.badge-intervencion:hover { background: rgb(97, 4, 109); color: white; cursor: pointer; }
+
+.bg-comercial { background: rgb(189, 24, 211); color: white; }
+.badge-comercial { color: rgb(189, 24, 211); border-width: 2px; border-color: rgb(189, 24, 211); letter-spacing: 1px; }
+.badge-comercial:hover { background: rgb(189, 24, 211); color: white; cursor: pointer; }
 
 /* Fin 4.- Colores */
 

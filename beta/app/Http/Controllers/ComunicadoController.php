@@ -46,19 +46,20 @@ class ComunicadoController extends Controller
         $yearFilter = $request->input('year_filter', 'todos');
 
         // Si el filtro es 'todos', obtener todos los comunicados y aplicar paginación manualmente
-        if ($yearFilter === 'todos') {
-            $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
-            $paginator = new LengthAwarePaginator($comunicados, $comunicados->count(), $comunicados->count(), 1, [
-                'path' => Paginator::resolveCurrentPath(),
-            ]);
-            return view('biblioteca.comunicados', [
-                'comunicados' => $paginator,
-                'years' => [], // No necesitas años si se muestran todos los comunicados
-                'empresas' => Empresa::whereHas('comunicados')->get(),
-                'categorias' => Categoria::whereHas('comunicados')->get(),
-                'etiquetas' => Etiqueta::whereHas('comunicados')->get(),
-            ]);
-        }
+        // if ($yearFilter === 'todos') {
+        //     $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
+        //     $paginator = new LengthAwarePaginator($comunicados, $comunicados->count(), $comunicados->count(), 1, [
+        //         'path' => Paginator::resolveCurrentPath(),
+        //     ]);
+        //     dd($paginators);
+        //     return view('biblioteca.comunicados', [
+        //         'comunicados' => $paginator,
+        //         'years' => [], // No necesitas años si se muestran todos los comunicados
+        //         'empresas' => Empresa::whereHas('comunicados')->get(),
+        //         'categorias' => Categoria::whereHas('comunicados')->get(),
+        //         'etiquetas' => Etiqueta::whereHas('comunicados')->get(),
+        //     ]);
+        // }
         // Obtener todos los comunicados
         $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
 
@@ -104,6 +105,8 @@ class ComunicadoController extends Controller
         $empresas = Empresa::whereHas('comunicados')->get();
         $categorias = Categoria::whereHas('comunicados')->get();
         $etiquetas = Etiqueta::whereHas('comunicados')->get();
+
+        // dd($paginators);
 
         return view('biblioteca.comunicados', [
             'comunicadosAgrupados' => $comunicadosAgrupados,

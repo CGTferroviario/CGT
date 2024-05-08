@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEtiquetaRequest;
 use App\Http\Requests\UpdateEtiquetaRequest;
 use App\Models\Etiqueta;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class EtiquetaController extends Controller
@@ -33,13 +34,12 @@ class EtiquetaController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(StoreEtiquetaRequest $request)
-    {
-        $request->validate([
-            'nombre' => 'required',
-            'activa' => 'required',
-        ]);
- 
-        Etiqueta::create($request->all());
+    {  
+        // Guardamos el valor del slug, es decir, el nombre de etiqueta sin espacios
+        $slug = Str::slug($request->nombre);
+        
+        // Guardamos todos los datos en la tabla Empresa
+        Etiqueta::create(array_merge($request->all(), ['slug' => $slug]));
 
         return redirect(route('intranet.etiquetas.index'))->with('message', 'Etiqueta Creada Correctamente');
     }

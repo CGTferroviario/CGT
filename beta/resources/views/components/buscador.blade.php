@@ -1,32 +1,3 @@
-{{-- <div class="grid grid-cols-1 mx-auto p-8">
-    <div class="justify-self-end">
-        <form action="{{ route('biblioteca.comunicados.buscar') }}" method="GET">
-            <div class="grid grid-cols-4 gap-4">
-                <div class="col-span-3 mb-4">
-                    <label for="termino" class="block text-zinc-700 text-sm font-bold mb-2">Término de
-                        búsqueda:</label>
-                    <input type="text" name="termino" id="termino"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline">
-                </div>
-                <div class="mb-4 flex flex-col relative">
-                    <button type="submit"
-                        class="w-full absolute bottom-0 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                        <i class="lni lni-search text-lg"></i>Buscar
-                    </button>
-                </div>
-            </div>
-            <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
-                <x-forms.select-empresa :empresas=$empresas></x-forms.select-empresa>
-
-                <x-forms.select-categoria :categorias=$categorias></x-forms.select-categoria>
-
-                <x-forms.select-etiquetas :etiquetas=$etiquetas></x-forms.select-etiquetas>
-
-                <x-forms.input-fecha></x-forms.input-fecha>
-            </div>
-        </form>
-    </div>
-</div>    --}}
 <div class="p-8 w-full">
     <form class="mx-auto">
         <div class="flex w-full">
