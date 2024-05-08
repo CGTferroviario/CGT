@@ -1,0 +1,30 @@
+"id";"nombre";"slug";"activa";"created_at";"updated_at"
+"1";"AFILIACIÓN";"afiliacion";"1";NULL;NULL
+"2";"AYUDAS Y BENEFICIOS SOCIALES";"ayudas-y-beneficios-sociales";"1";NULL;NULL
+"3";"IGUALDAD";"igualdad";"1";NULL;NULL
+"4";"LEGISLACIÓN · NORMATIVA LABORAL";"legislacion-normativa-laboral";"1";NULL;NULL
+"5";"LICENCIAS";"licencias";"1";NULL;NULL
+"6";"MAPA ESTACIONES";"mapa-estaciones";"1";NULL;NULL
+"7";"MEDIDAS DE CONCILIACIÓN";"medidas-de-conciliacion";"1";NULL;NULL
+"8";"MODELOS DE SOLICITUD DE EMPRESA";"modelos-de-solicitud-de-empresa";"1";NULL;NULL
+"9";"PROTOCOLOS FRENTE A LOS ACOSOS";"protocolos-frente-a-los-acosos";"1";NULL;NULL
+"10";"SALUD LABORAL";"salud-laboral";"1";NULL;NULL
+"11";"TELETRABAJO";"teletrabajo";"1";NULL;NULL
+"12";"TABLAS SALARIALES";"tablas-salariales";"1";NULL;NULL
+"13";"CONVENIOS COLECTIVOS";"convenios-colectivos";"1";NULL;NULL
+"14";"LEGISLACIÓN LABORAL";"legislacion-laboral";"1";NULL;NULL
+"15";"LEGISLACIÓN FERROVIARIA";"legislacion-ferroviaria";"1";NULL;NULL
+"16";"FORMULARIOS // MODELOS";"formularios-modelos";"1";NULL;NULL
+"17";"LOGROS JURÍDICOS CGT";"logros-juridicos-cgt";"1";NULL;NULL
+"18";"SEGURIDAD EN LA CIRCULACIÓN";"seguridad-en-la-circulacion";"1";NULL;NULL
+"19";"ARCHIVO HISTÓRICO";"archivo-historico";"1";NULL;NULL
+"20";"DEFENSA DEL FERROCARRIL";"defensa-del-ferrocarril";"1";NULL;NULL
+"21";"COLEGIO DE HUÉRFANOS";"colegio-de-huerfanos";"1";NULL;NULL
+"22";"VIA LIBERTARIA";"via-libertaria";"1";NULL;NULL
+"23";"VIDEOS";"videos";"1";NULL;NULL
+"24";"AUDIOS";"audios";"1";NULL;NULL
+"25";"CARTELES";"carteles";"1";NULL;NULL
+"26";"FOTOGRAFIAS";"fotografias";"1";NULL;NULL
+"27";"LOGOTIPOS";"logotipos";"1";NULL;NULL
+"28";"SENTENCIAS";"sentencias";"0";"2024-05-08 17:20:27";"2024-05-08 17:20:27"
+"29";"CALENDARIO LABORAL";"calendario-laboral";"0";"2024-05-08 17:29:03";"2024-05-08 17:29:03"
