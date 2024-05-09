@@ -161,10 +161,11 @@ aside .lni{
 .bg-adif { background: rgb(0, 99, 56); color: white; }
 .badge-adif { color: rgb(0, 99, 56); border-width: 2px; border-color: rgb(0, 99, 56); letter-spacing: 1px; }
 .badge-adif:hover { background: rgb(0, 99, 56); color: white; cursor: pointer; }
-.bg-adif-renfe { color: rgb(0, 99, 56); border-width: 2px; border-color: rgb(0, 99, 56); letter-spacing: 1px; }
-.bg-adif-renfe:hover { background:  rgb(0, 99, 56);
+.badge-adif-renfe { color: rgb(0, 99, 56); border-width: 2px; border-color: rgb(0, 99, 56); letter-spacing: 1px; }
+.badge-adif-renfe:hover { background:  rgb(0, 99, 56);
       background: linear-gradient(90deg, rgba(0, 99, 56,1) 0%, rgba(135, 0, 100,1) 100%); border: none;
       color: white; cursor: pointer; }
+
 .bg-cgt, .bg-conjunto, .bg-sector, .bg-generales { background: rgb(255, 0, 56); border-color: black; color: black; }
 .badge-cgt, .badge-conjunto, .badge-sector, .badge-generales { color: white; background-color: black; border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
 .badge-cgt:hover, .badge-conjunto:hover, .badge-sector:hover, .badge-generales:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
@@ -172,9 +173,11 @@ aside .lni{
 .badge-servicios-externos:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
 .badge-saux-atcli { color: rgb(255, 0, 56); border-width: 2px; border-color: rgb(255, 0, 56); letter-spacing: 1px; }
 .badge-saux-atcli:hover { background: rgb(255, 0, 56); border-color: black; color: black; cursor: pointer; }
+
 .bg-serveo { background: rgb(255, 78, 0); color: white; }
 .badge-serveo { color: rgb(255, 78, 0); border-width: 2px; border-color: rgb(255, 78, 0); letter-spacing: 1px; }
 .badge-serveo:hover { background: rgb(255, 78, 0); color: white; cursor: pointer; }
+
 .bg-logirail { background: rgb(126, 1, 126); color: white; }
 .badge-logirail { color: rgb(126, 1, 126); border-width: 2px; border-color: rgb(126, 1, 126); letter-spacing: 1px; }
 .badge-logirail:hover { background: rgb(126, 1, 126); color: white; cursor: pointer; }

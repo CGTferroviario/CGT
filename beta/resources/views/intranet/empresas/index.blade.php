@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-span-1 lg:col-span-3 gap-x-3 md:flex">
                     <div class="mb-3 grow text-center">
-                        <span class="px-2 py-2 text-sm border border-black font-semibold text-black bg-red-500 rounded-full">{{ $empresas->count() }}</span>
+                        <span class="px-3 py-2 border-2 border-black font-semibold text-black bg-red-500 rounded-full">{{ $empresas->count() }}</span>
                         <span class="text-base font-medium text-zinc-800">Empresas Ferroviarias registradas</span>
                     </div>
                     <div class="mb-3 shrink text-center">
@@ -27,14 +27,14 @@
                     <div class="mb-3 text-center">
                         <button class="w-full px-2 py-2 text-sm text-zinc-900 transition-colors duration-200 bg-red-500 bordeNegro rounded-lg gap-x-2 hover:bg-zinc-900 hover:text-red-500" title="Añadir una nueva empresa">
                             <i class="lni lni-add-files"></i>
-                            <a href="{{ route('intranet.empresas.create') }}" class="">Añadir comunicado</a>
+                            <a href="{{ route('intranet.empresas.create') }}" class="">Añadir Empresa</a>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="grid grid-flow-col auto-cols-max">
                 <div class="sm:flex-row sm:items-center sm:justify-between">
-                    <table id="comunicadosAdmin" class="display nowrap text-sm pt-5 font-normal" style="width:auto">
+                    <table id="empresas" class="display nowrap text-sm pt-5 font-normal" style="width:auto">
                         <thead class="bg-oscuro text-white">
                             <tr class="">
                                 <th class="rounded-tl-lg">ID</th>
@@ -69,8 +69,13 @@
                                     </div>
                                 </td>
                                 <td><img src="{{ asset('storage/' . $empresa->logo) }}" alt="Logo"></td>
-                                <td><span class="px-3 py-1 font-extrabold rounded-full bg-{{ $empresa->slug }}" title="{{ $empresa->nombre }}">{{ $empresa->nombre }}</span></td>
-                                <td>{{ $empresa->descripcion }}</td>
+                                <td>
+                                    <div class="py-0.5 px-2 inline rounded-full font-semibold badge-{{ $empresa->slug }}">
+                                        <a href="{{ route('empresas.show', ['slug' => $empresa->slug]) }}">{{ $empresa->nombre }}</a>
+                                    </div>
+                                    {{-- <span class="px-3 py-1 font-extrabold rounded-full badge-{{ $empresa->slug }}" title="{{ $empresa->nombre }}">{{ $empresa->nombre }}</span> --}}
+                                </td>
+                                <td>{!! $empresa->descripcion !!}</td>
                                 
                                 <td class="text-center">
                                     <label class="relative inline-flex items-center mt-2 cursor-pointer">
