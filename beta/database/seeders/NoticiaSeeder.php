@@ -20,8 +20,7 @@ class NoticiaSeeder extends Seeder
     {
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-
-        Noticia::truncate();
+        Noticia::truncate(); //limpiamos la tabla para prevenir entradas duplicadas
 
         $csvFile = fopen(base_path("database/data/noticias.csv"), "r");
 
@@ -40,7 +39,7 @@ class NoticiaSeeder extends Seeder
                 // Revisamos todos los campos y rellenamos en caso de vacío
                 for ($i = 0; $i < count($data); $i++) {
                     if (empty($data[$i])) {
-                        $data[$i] = 0;
+                        $data[$i] = NULL;
                     }
                 }
 
@@ -53,21 +52,21 @@ class NoticiaSeeder extends Seeder
                     "user_id" => $data['3'],
                     "empresa_id" => $data['4'],
                     "categoria_id" => $data['5'],
-                    "fecha" => $fecha,
+                    // "fecha" => $fecha,
                     "titulo" => $data['7'],
                     "slug" => substr(\Illuminate\Support\Str::slug($data['7']), 0, 30),
                     "subtitulo" => $data['9'],
                     "cuerpo" => $cuerpo,
-                    // "adjunto" => $data['11'],
-                    // "imagen" => $data['12'],
+                    "adjunto" => $data['11'],
+                    "imagen" => $data['12'],
+                    // "created_at" => $data['13'],
+                    // "updated_at" => $data['14'],
                 ]);
             }
             $firstline = false;
         }
 
         fclose($csvFile);
-
-
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
     }
