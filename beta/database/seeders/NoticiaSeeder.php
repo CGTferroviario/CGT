@@ -29,7 +29,7 @@ class NoticiaSeeder extends Seeder
             if (!$firstline) {
 
                 // Convertimos la fecha del formato español al formato americano que es lo que acepta la BBDD
-                $fecha = DateTime::createFromFormat('d/m/Y', $data['6']);
+                $fecha = DateTime::createFromFormat('d-m-Y', $data['6']);
                 if ($fecha !== false) {
                     $row['6'] = $fecha->format('Y-m-d');
                 } else {
@@ -52,15 +52,15 @@ class NoticiaSeeder extends Seeder
                     "user_id" => $data['3'],
                     "empresa_id" => $data['4'],
                     "categoria_id" => $data['5'],
-                    // "fecha" => $fecha,
+                    "fecha" => $fecha,
                     "titulo" => $data['7'],
                     "slug" => substr(\Illuminate\Support\Str::slug($data['7']), 0, 30),
                     "subtitulo" => $data['9'],
                     "cuerpo" => $cuerpo,
                     "adjunto" => $data['11'],
                     "imagen" => $data['12'],
-                    // "created_at" => $data['13'],
-                    // "updated_at" => $data['14'],
+                    "created_at" => $data['13'],
+                    "updated_at" => $data['14'],
                 ]);
             }
             $firstline = false;
