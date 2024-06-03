@@ -41,7 +41,7 @@
 
             @push('scripts')
                 {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
-            @endpush-
+            @endpush
 
             {{-- <table id="tablaComunicados" class="text-sm pt-5 font-normal rounded-t-lg table table-striped nowrap" style="width:100%">
                 <thead class="rounded-t-lg bg-black text-white">

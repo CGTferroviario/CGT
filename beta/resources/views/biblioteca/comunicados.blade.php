@@ -59,8 +59,6 @@
                     </div>
                 @endforeach
             </div>
-
-
         </div>
         <script>
             window.onload = function() {

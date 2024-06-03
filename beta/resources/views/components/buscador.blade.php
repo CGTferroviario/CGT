@@ -49,7 +49,6 @@
     </form>
 </div>
 
-
 <script>
     // Select etiquetas multiples formulario
     var expanded = false;

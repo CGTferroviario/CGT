@@ -20,23 +20,7 @@ use Illuminate\Support\Str;
 
 class ComunicadoController extends Controller
 {
-
-    public function index(ComunicadosDataTable $dataTable)
-    {
-        // Cogemos todos los comunicados ordenados por fecha de manera descendente
-        $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
-
-        // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
-        $comunicados->map(function ($comunicado) {
-            // Aseguramos que el atributo fecha se trata como una instancia de Carbon
-            $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
-            return $comunicado;
-        });
-
-        // Pasamos el comunicado formateado a la vista
-        return $dataTable->render('intranet.comunicados.index', compact('comunicados'));
-    }
-
+    // Este es el apartado de Comunicados dentro de la Biblioteca, página pública
     public function bibliotecaComunicados(Request $request)
     {
         // Inicializar $paginators como una colección vacía al principio
@@ -79,21 +63,21 @@ class ComunicadoController extends Controller
             return \Carbon\Carbon::createFromFormat('d/m/Y', $comunicado->fecha)->year;
         });
 
-        // Define how many items we want to be visible in each page
+        //Definir cuantos items queremos que se vean en cada página
         $perPage = 12;
 
-        // Create a collection to hold the paginators
+        // Crear una colección para almacenar los paginadores
         $paginators = collect();
 
-        // Apply pagination to each group of communications
+        // Aplicar la paginación a cada grupo de comunicados
         foreach ($comunicadosAgrupados as $year => $comunicadosPorAno) {
-            // Get current page form url e.x. &page=1
+            // Resolver la página actual desde la URL ej. $pag=1
             $page = Paginator::resolveCurrentPage();
 
-            // Slice the collection to get the items to display in current page
+            // Dividir la colección para obtener los items que queremos mostrar en la página actual
             $currentPageItems = $comunicadosPorAno->slice(($page - 1) * $perPage, $perPage)->all();
 
-            // Create our paginator and add it to the collection
+            // Creamos nuestro paginador y lo añadimos a la colección
             $paginator = new LengthAwarePaginator($currentPageItems, count($comunicadosPorAno), $perPage, $page, [
                 'path' => Paginator::resolveCurrentPath(),
             ]);
@@ -106,8 +90,6 @@ class ComunicadoController extends Controller
         $categorias = Categoria::whereHas('comunicados')->get();
         $etiquetas = Etiqueta::whereHas('comunicados')->get();
 
-        // dd($paginators);
-
         return view('biblioteca.comunicados', [
             'comunicadosAgrupados' => $comunicadosAgrupados,
             'paginators' => $paginators,
@@ -118,7 +100,23 @@ class ComunicadoController extends Controller
         ]);
     }
 
+    // Este es el índice de comunicados, el lugar donde vemos todos los comunicados en formato tabla para poder administrarlos
+    public function index(ComunicadosDataTable $dataTable)
+    {
+        // Cogemos todos los comunicados ordenados por fecha de manera descendente
+        $comunicados = Comunicado::orderBy('fecha', 'desc')->get();
 
+        // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
+        $comunicados->map(function ($comunicado) {
+            // Aseguramos que el atributo fecha se trata como una instancia de Carbon
+            $comunicado->fecha = Carbon::parse($comunicado->fecha)->format('d/m/Y');
+            return $comunicado;
+        });
+        // Pasamos el comunicado formateado a la vista
+        return $dataTable->render('intranet.comunicados.index', compact('comunicados'));
+    }
+
+    // Este es el método que muestra la vista para crear un comunicado, posiblemente debería mostrarse en un model o ventana emergente
     public function create()
     {
         return view('intranet.comunicados.create', [
@@ -126,14 +124,18 @@ class ComunicadoController extends Controller
             'empresas' => Empresa::where('comunicados', '=', 1)->orderBy('id', 'asc')->get(),
             'categorias' => Categoria::orderBy('id', 'asc')->get(),
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get(),
-
         ]);
     }
+
+    // Este es el método para almacenar los comunicados
     public function store(StoreComunicadoRequest $request)
     {
+        // Cogemos el usuario autentificado para establecerlo como autor del comunicado
         $usuario = Auth::user()->id;
+        // Extraemos el año, lo llamamos year para prevenir problemas con la ñ
         $year = Carbon::now()->format('y');
         $anyo = Carbon::now()->format('Y');
+        // Modificamos el número para reflejar además el año, de esta manera es único
         $numero = $request->numero . '.' . $year;
 
         $rutaPdf = null;
@@ -194,11 +196,13 @@ class ComunicadoController extends Controller
         }
         return redirect(route('intranet.comunicados.index'))->with('message', 'Comunicado Creado Correctamente');
     }
+    // Este es el método para mostrar un Comunicado específico
     public function show(Comunicado $comunicado, $id)
     {
         $comunicado = Comunicado::findOrFail($id);
         return view('comunicados.show', ['comunicado' => $comunicado]);
     }
+    // Este es el método para editar un Comunicado específico
     public function edit(Comunicado $comunicado)
     {
         return view('intranet.comunicados.edit', [
@@ -209,9 +213,9 @@ class ComunicadoController extends Controller
         ], compact('comunicado'));
     }
 
+    // Este es el método para actualizar en la BBDD un comunicado que estamos editando
     public function update(UpdateComunicadoRequest $request, Comunicado $comunicado)
     {
-
         // Actualizar el comunicado
         $comunicado->update($request->validated());
 
@@ -226,17 +230,20 @@ class ComunicadoController extends Controller
         // Actualiza las etiquetas relacionadas
         $comunicado->etiquetas()->sync($request->etiquetas);
 
+        // Guardamos el comunicado y mostramos un mensaje de éxito
         $comunicado->save();
-
         return to_route('intranet.comunicados.index')->with('message', 'Comunicado Actualizado Correctamente');
     }
 
+    // Este es el método que utilizamos para eliminar un comunicado
     public function destroy(Comunicado $comunicado)
     {
         $comunicado->delete();
 
         return to_route('intranet.comunicados.index')->with('message', 'Comunicado Eliminado.');
     }
+
+    // Este es el método que utilizamos para la búsqueda de los comunicados en la página de la biblioteca
     public function buscar(Request $request)
     {
         $comunicados = Comunicado::orderBy('updated_at', 'desc')->paginate(12);

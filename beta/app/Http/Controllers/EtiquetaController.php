@@ -44,9 +44,7 @@ class EtiquetaController extends Controller
         return redirect(route('intranet.etiquetas.index'))->with('message', 'Etiqueta Creada Correctamente');
     }
 
-    /**
-     * Display the specified resource.
-     */
+    // Display the specified resource.
     public function show(Etiqueta $etiqueta, $slug)
     {
         // Mostramos la página de categoría
