@@ -25,6 +25,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome'); 
 });
+// Para evitar el problema de CORS
+Route::get('/datatables/es-es.json', 'App\Http\Controllers\DataTablesProxyController@getEsEsJson');
 Route::get('/intranet', function () {
     $sliders = Slider::all();
     return view('intranet', compact('sliders'));

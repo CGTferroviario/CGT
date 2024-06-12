@@ -4,7 +4,7 @@ new DataTable('#comunicadosAdmin', {
     responsive: true,
     order: [[1, 'desc']],
     language: {
-        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
+        url: '/datatables/es-es.json',
     },
 });
 
@@ -12,7 +12,7 @@ new DataTable('#equipoSP', {
     responsive: true,
     rowReorder: true,
     language: {
-        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
+        url: '/datatables/es-es.json',
     },
 });
 
@@ -20,7 +20,7 @@ new DataTable('#empresas', {
     responsive: true,
     order: [[1, 'desc']],
     language: {
-        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
+        url: '/datatables/es-es.json',
     },
 });
 
