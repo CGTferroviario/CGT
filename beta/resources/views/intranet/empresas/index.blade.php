@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid-flow-col auto-cols-max">
+            <div class="grid grid-cols-1">
                 <div class="sm:flex-row sm:items-center sm:justify-between">
                     <table id="empresas" class="display nowrap text-sm pt-5 font-normal" style="width:auto">
                         <thead class="bg-oscuro text-white">
@@ -75,7 +75,7 @@
                                     </div>
                                     {{-- <span class="px-3 py-1 font-extrabold rounded-full badge-{{ $empresa->slug }}" title="{{ $empresa->nombre }}">{{ $empresa->nombre }}</span> --}}
                                 </td>
-                                <td>{!! $empresa->descripcion !!}</td>
+                                <td class="!w-32">{!! $empresa->descripcion !!}</td>
                                 
                                 <td class="text-center">
                                     <label class="relative inline-flex items-center mt-2 cursor-pointer">

@@ -19,6 +19,7 @@ new DataTable('#equipoSP', {
 new DataTable('#empresas', {
     responsive: true,
     order: [[1, 'desc']],
+    pageLength: 50,
     language: {
         url: '/datatables/es-es.json',
     },
