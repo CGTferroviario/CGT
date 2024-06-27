@@ -1,12 +1,12 @@
 <form>
     <div class="flex p-6">
         <label for="search-dropdown" class="mb-2 text-sm font-medium text-zinc-900 sr-only dark:text-white">Your Email</label>
-        <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-zinc-900 bg-zinc-100 border border-zinc-300 rounded-s-lg hover:bg-zinc-200 focus:ring-4 focus:outline-none focus:ring-zinc-100 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:focus:ring-zinc-700 dark:text-white dark:border-zinc-600" type="button">All categories 
+        <button id="dropdown-button" data-dropdown-toggle="dropdownBuscador" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-zinc-900 bg-zinc-100 border border-zinc-300 rounded-s-lg hover:bg-zinc-200 focus:ring-4 focus:outline-none focus:ring-zinc-100 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:focus:ring-zinc-700 dark:text-white dark:border-zinc-600" type="button">All categories 
             <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
             </svg>
         </button>
-        <div id="dropdown" class="z-10 hidden bg-white divide-y divide-zinc-100 rounded-lg shadow w-44 dark:bg-zinc-700">
+        <div id="dropdownBuscador" class="z-10 hidden bg-white divide-y divide-zinc-100 rounded-lg shadow w-44 dark:bg-zinc-700">
             <ul class="py-2 text-sm text-zinc-700 dark:text-zinc-200" aria-labelledby="dropdown-button">
                 <li>
                     <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-600 dark:hover:text-white">Mockups</button>

@@ -3,6 +3,7 @@
         <h1 class="m-0 py-3 text-center bg-red-500 font-bold leading-tight titular">COMUNICADOS</h1>
         <div class="fondo comunicados">
             <div class="sm:w-full md:w-11/12 lg:w-10/12 mx-auto">
+                {{-- :tipo=$comunicado --}}
                 <x-buscador :empresas=$empresas :categorias=$categorias :etiquetas=$etiquetas></x-buscador>
             </div>
             {{-- <div class="p-4 m-6 bg-blanco-transp bordeRojo rounded-lg">

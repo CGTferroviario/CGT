@@ -1,12 +1,13 @@
 <x-publico-layout>
-    <x-slot name="header">
+    {{-- <x-slot name="header">
         <div class="mx-auto py-3 px-2 sm:px-3 lg:px-4 text-center bg-adif">
             <h2 class="font-semibold text-xl text-white leading-tight titular">
                 {{ __('Documentación General ADIF') }}
             </h2>
         </div>
-    </x-slot>
+    </x-slot> --}}
     @section('contenido')
+    <h1 class="m-0 py-3 text-center bg-adif font-bold leading-tight titular">Documentación General ADIF</h1>
     <div class="fondo documentacion adif">
         <div class="pt-20 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 space-x-2">
             <div class="">
