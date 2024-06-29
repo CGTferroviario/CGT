@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\MunicipioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProvinciaController;
+use App\Http\Controllers\SectorController;
 use App\Models\Ccaa;
 use App\Models\Municipio;
 use App\Models\Provincia;
@@ -19,6 +21,9 @@ Route::get('/dashboard', function () {
         'ccaas' => Ccaa::orderBy('id', 'asc')->get()
     ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::resource('sectores', SectorController::class);
+Route::resource('empresas', EmpresaController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -51,13 +51,13 @@
                                 @endif
                                 <div class="grid gap-4 sm:grid-cols-4 sm:gap-6">
                                     
-                                    <x-forms.select-empresa :empresas=$empresas></x-select-empresa>
+                                    <x-forms.select-empresa :empresas=$empresas></x-forms.select-empresa>
 
-                                    <x-forms.select-categoria :categorias=$categorias :tipo=$documentos></x-select-categoria>
+                                    <x-forms.select-categoria :categorias=$categorias :tipo=$documentos></x-forms.select-categoria>
                                     
-                                    <x-forms.select-etiquetas :etiquetas=$etiquetas></x-select-etiquetas>
+                                    <x-forms.select-etiquetas :etiquetas=$etiquetas></x-forms.select-etiquetas>
 
-                                    <x-input-fecha></x-input-fecha>
+                                    <x-forms.input-fecha></x-forms.input-fecha>
 
                                 </div>
                                 <div class="grid gap-4 sm:grid-cols-12 sm:gap-6 mt-3">

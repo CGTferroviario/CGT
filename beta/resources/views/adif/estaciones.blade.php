@@ -3,7 +3,7 @@
 @section('contenido')
     <h1 class="m-0 py-3 text-center bg-adif font-bold leading-tight titular">ESTACIONES DE VIAJEROS</h1>
     <div class="fondo estaciones">
-        <x-busqueda></x-busqueda>
+        <x-buscador :empresas=$empresas :categorias=$categorias :etiquetas=$etiquetas></x-buscador>
         <div class="p-6 grid grid-cols-2 gap-4">
             <div class="intro bg-oscuro-7 bordeRojo rounded-lg p-4 text-white">
                 <p class="text-center">Bienvenid@ a la sección de Estaciones de Viajeros.</p>

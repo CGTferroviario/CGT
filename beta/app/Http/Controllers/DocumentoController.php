@@ -39,17 +39,17 @@ class DocumentoController extends Controller
         // Sacamos la empresa a una variable
         $empresaId = $request->empresa;
         $empresa = Empresa::find($empresaId);
-        $nombre_empresa = $empresa?->nombre;
+        $nombre_empresa = $empresa?->slug;
 
         // Sacamos la categoría a una variable
         $categoriaId = $request->categoria;
         $categoria = Categoria::find($categoriaId);
-        $nombre_categoria = $categoria?->nombre;
+        $nombre_categoria = $categoria?->slug;
 
         // Sacamos la primera etiqueta a una variable
         $etiquetaId = $request->etiquetas[0];
         $etiqueta = Etiqueta::find($etiquetaId);
-        $nombre_etiqueta = $etiqueta?->nombre;
+        $nombre_etiqueta = $etiqueta?->slug;
 
         // Array_filter elimina los segmentos de ruta vacíos (nulos o cadenas vacías) implode combina los segmentos restantes con '/' para formar la ruta
         $segmentos = ['documentos', $nombre_empresa, $nombre_categoria, $nombre_etiqueta];
@@ -64,8 +64,9 @@ class DocumentoController extends Controller
             if (!File::isDirectory($pdfDirectory)) {
                 File::makeDirectory($pdfDirectory, 0755, true);
             }
-            $rutaDocumento = 'storage/' . $pdf->storeAs($ruta, $pdfNombre, 'public');
+            $rutaDocumento = '/storage/' . $pdf->storeAs($ruta, $pdfNombre, 'public');
         }
+        // dd($rutaDocumento);
 
         $documento = Documento::create([
             'pdf' => $rutaDocumento,

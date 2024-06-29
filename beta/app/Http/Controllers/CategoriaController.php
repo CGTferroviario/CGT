@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCategoriaRequest;
 use App\Http\Requests\UpdateCategoriaRequest;
 use App\Models\Categoria;
+use App\Models\Comunicado;
+use App\Models\Documento;
+use App\Models\Noticia;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class CategoriaController extends Controller
@@ -51,10 +54,15 @@ class CategoriaController extends Controller
      */
     public function show(Categoria $categoria, $slug)
     {
-        // Mostramos la página de categoría
+        // Mostramos la página de categoría, donde se verán los comunicados, noticias y documentos relativos a esa categoría
         try {
             $categoria = Categoria::where('slug', $slug)->firstOrFail();
-            return view('categorias.show', ['categoria' => $categoria]);
+            $comunicadosTotales = Comunicado::where('categoria_id', $categoria->id)->get();
+            $comunicados = Comunicado::where('categoria_id', $categoria->id)->orderBy('fecha', 'desc')->paginate(8);
+            $noticias = Noticia::where('categoria_id', $categoria->id)->paginate(8);
+            $documentos = Documento::where('categoria_id', $categoria->id)->paginate(8);
+
+            return view('categorias.show', compact('categoria', 'comunicadosTotales', 'comunicados', 'noticias', 'documentos'));
         } catch (ModelNotFoundException $e) {
             abort(404, 'Categoria no encontrada');
         }

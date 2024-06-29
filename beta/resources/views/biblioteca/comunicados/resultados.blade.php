@@ -7,7 +7,7 @@
             <x-buscador :empresas=$empresas :categorias=$categorias :etiquetas=$etiquetas></x-buscador>
             
             <div class="p-2 pl-8">
-                <h2 class="text-xl font-bold">Resultados de la búsqueda</h2>
+                <h2 class="text-xl font-bold leading-tight titular">Resultados de la búsqueda</h2>
             </div>
             <div class="w-full paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
 

@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEtiquetaRequest;
 use App\Http\Requests\UpdateEtiquetaRequest;
+use App\Models\Comunicado;
+use App\Models\Documento;
 use App\Models\Etiqueta;
+use App\Models\Noticia;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
@@ -50,10 +53,15 @@ class EtiquetaController extends Controller
         // Mostramos la página de categoría
         try {
             $etiqueta = Etiqueta::where('slug', $slug)->firstOrFail();
-            return view('etiquetas.show', ['etiqueta' => $etiqueta]);
+            $comunicados = $etiqueta->comunicados->paginate(8);
+            $comunicadosTotales = $etiqueta->comunicados->count();
+            $noticias = $etiqueta->noticias->paginate(8);
+            $documentos = $etiqueta->documentos->paginate(8);
+            return view('etiquetas.show', compact('etiqueta', 'comunicadosTotales', 'comunicados', 'noticias', 'documentos'));
         } catch (ModelNotFoundException $e) {
             abort(404, 'Etiqueta no encontrada');
         }
+        
     }
 
     /**

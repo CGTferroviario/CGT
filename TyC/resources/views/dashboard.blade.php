@@ -19,8 +19,8 @@
             </div>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <button class="p-4 rounded-md text-md bold bg-red-500 hover:bg-zinc-900 text-zinc-900 hover:text-red-500">Empresas</button>
-                    <button class="p-4 ml-4 rounded-md text-md bold bg-red-500 hover:bg-zinc-900 text-zinc-900 hover:text-red-500">Sectores</button>
+                    <a href="{{ route('empresas.index') }}" class="p-4 rounded-md text-md bold bg-red-500 hover:bg-zinc-900 text-zinc-900 hover:text-red-500">Empresas</a>
+                    <a href="{{ route('sectores.index') }}" class="p-4 ml-4 rounded-md text-md bold bg-red-500 hover:bg-zinc-900 text-zinc-900 hover:text-red-500">Sectores</a>
                 </div>
             </div>
         </div>

@@ -116,7 +116,7 @@ aside .lni{
 
 /* Fondos Jurídica */
 .convenios { background-image: url('/img/fondos/juridica/convenios.png'); }
-.laboral { background-image: url('/img/fondos/juridica/laboral.png'); }
+.laboral, .juridica { background-image: url('/img/fondos/juridica/laboral.png'); }
 .ferroviaria { background-image: url('/img/fondos/juridica/ferroviaria.png'); }
 .modelos { background-image: url('/img/fondos/juridica/modelos.png'); }
 .logros { background-image: url('/img/fondos/juridica/logros.png'); }
@@ -151,7 +151,7 @@ aside .lni{
 .bg-grisClaro { background: rgb(214, 214, 214); }
 .bg-morado { background: rgb(130, 52, 245); }
 .bg-oscuro { background: rgb(47, 47, 47); }
-.bg-oscuro-7 { background: rgba(47, 47, 47, .7); }
+.bg-oscuro-transp { background: rgba(47, 47, 47, .7); }
 .bg-blanco-transp { background: rgba(255, 255, 255, .7); }
 
 /* Colores Empresas */

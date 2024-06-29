@@ -70,7 +70,7 @@ class EmpresaController extends Controller
         // Mostramos la página de empresa, donde se verán los comunicados, noticias y documentos relativos a esa empresa
         try {
             $empresa = Empresa::where('slug', $slug)->firstOrFail();
-            $comunicados = Comunicado::where('empresa_id', $empresa->id)->paginate(8);
+            $comunicados = Comunicado::where('empresa_id', $empresa->id)->orderBy('fecha', 'desc')->paginate(8);
             $noticias = Noticia::where('empresa_id', $empresa->id)->paginate(8);
             $documentos = Documento::where('empresa_id', $empresa->id)->paginate(8);
             return view('empresas.show', compact('empresa', 'comunicados', 'noticias', 'documentos'));

@@ -23,8 +23,8 @@ class DocumentoFactory extends Factory
     
         return [
             'user_id' => $this->faker->numberBetween(1,4),
-            'empresa_id' => $this->faker->numberBetween(1,5),
-            'categoria_id' => $this->faker->numberBetween(1,10),
+            'empresa_id' => $this->faker->numberBetween(1,33),
+            'categoria_id' => $this->faker->numberBetween(1,11),
             'fecha' => $this->faker->date(),
             'titulo' => $this->faker->sentence(8),
             'descripcion' => $this->faker->paragraph,
