@@ -29,7 +29,7 @@ class NoticiaSeeder extends Seeder
             if (!$firstline) {
 
                 // Convertimos la fecha del formato español al formato americano que es lo que acepta la BBDD
-                $fecha = DateTime::createFromFormat('d-m-Y', $data['6']);
+                $fecha = DateTime::createFromFormat('Y-m-d', $data['6']);
                 if ($fecha !== false) {
                     $row['6'] = $fecha->format('Y-m-d');
                 } else {
@@ -42,6 +42,13 @@ class NoticiaSeeder extends Seeder
                         $data[$i] = NULL;
                     }
                 }
+
+                $createdAtString = $data[13]; // Asumiendo que esta es la posición correcta
+                $updatedAtString = $data[14]; // Asumiendo que esta es la posición correcta
+                $createdAt = DateTime::createFromFormat('d/m/Y H:i:s', $createdAtString);
+                $updatedAt = DateTime::createFromFormat('d/m/Y H:i:s', $updatedAtString);
+
+                
 
                 $cuerpo = \Illuminate\Support\Str::of($data['10'])->replace("\n", "<br>");
 
@@ -59,8 +66,8 @@ class NoticiaSeeder extends Seeder
                     "cuerpo" => $cuerpo,
                     "adjunto" => $data['11'],
                     "imagen" => $data['12'],
-                    "created_at" => $data['13'],
-                    "updated_at" => $data['14'],
+                    "created_at" => $createdAt,
+                    "updated_at" => $updatedAt,
                 ]);
             }
             $firstline = false;
