@@ -28,26 +28,30 @@ class NoticiaSeeder extends Seeder
         while (($data = fgetcsv($csvFile, 555, ";")) !== false) {
             if (!$firstline) {
 
+
+
                 // Convertimos la fecha del formato español al formato americano que es lo que acepta la BBDD
                 $fecha = DateTime::createFromFormat('Y-m-d', $data['6']);
                 if ($fecha !== false) {
-                    $row['6'] = $fecha->format('Y-m-d');
+                    $data['6'] = $fecha->format('Y-m-d');
                 } else {
                     // Handle error
                 }
 
                 // Revisamos todos los campos y rellenamos en caso de vacío
                 for ($i = 0; $i < count($data); $i++) {
-                    if (empty($data[$i])) {
+                    if (isset($data[$i]) && empty($data[$i])) { // Verificamos si el índice existe antes de verificar si está vacío
                         $data[$i] = NULL;
                     }
                 }
 
                 $createdAtString = $data[13]; // Asumiendo que esta es la posición correcta
+                
                 $updatedAtString = $data[14]; // Asumiendo que esta es la posición correcta
-                $createdAt = DateTime::createFromFormat('d/m/Y H:i:s', $createdAtString);
-                $updatedAt = DateTime::createFromFormat('d/m/Y H:i:s', $updatedAtString);
-
+                
+                $createdAt = DateTime::createFromFormat('d/m/Y H:i', $createdAtString);
+                $updatedAt = DateTime::createFromFormat('d/m/Y H:i', $updatedAtString);
+                
                 
 
                 $cuerpo = \Illuminate\Support\Str::of($data['10'])->replace("\n", "<br>");

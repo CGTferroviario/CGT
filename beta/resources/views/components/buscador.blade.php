@@ -1,5 +1,6 @@
 <div class="p-8 w-full">
-    <form class="mx-auto">
+    <form class="mx-auto" action="{{ route('biblioteca.comunicados.buscar') }}">
+        @csrf
         <div class="flex w-full">
             <div class="z-10 divide-y divide-zinc-100 rounded-l-lg shadow w-36 bg-zinc-700">
                 <select id="dropdownSelectBuscarEmpresa" class="bg-zinc-700 w-36 border border-zinc-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5 placeholder-zinc-400" name="empresa" required="">
