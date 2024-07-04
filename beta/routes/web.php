@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AfiliadoController;
+use App\Http\Controllers\BuscadorController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ComunicadoController;
@@ -110,7 +111,7 @@ Route::get('/biblioteca', function () {
 });
 Route::prefix('biblioteca')->group(function () {
     Route::get('/comunicados', [ComunicadoController::class, 'bibliotecaComunicados'])->name('biblioteca.comunicados');
-    Route::get('/comunicados/buscar', [ComunicadoController::class, 'buscar'])->name('biblioteca.comunicados.buscar');
+    Route::get('/comunicados/buscar', [BuscadorController::class, 'buscar'])->name('biblioteca.comunicados.buscar');
     Route::get('/noticias', [NoticiaController::class, 'bibliotecaNoticias'])->name('biblioteca.noticias');
 
     Route::controller(PaginaController::class)->name('biblioteca.')->group(function () {

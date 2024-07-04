@@ -18,7 +18,7 @@
                     <p>No se encontraron resultados.</p>
                 @endforelse
             </div> 
-            <div class="col-span-4 paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
+            <div class="w-full paginacion">{{ $comunicados->links('vendor.pagination.tailwind') }}</div>
 
         </div>
     @endsection

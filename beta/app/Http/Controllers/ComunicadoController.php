@@ -90,8 +90,11 @@ class ComunicadoController extends Controller
         $categorias = Categoria::whereHas('comunicados')->get();
         $etiquetas = Etiqueta::whereHas('comunicados')->get();
 
+        // dd($comunicados);
+
         return view('biblioteca.comunicados', [
             'comunicadosAgrupados' => $comunicadosAgrupados,
+            // 'comunicados' => $comunicados,
             'paginators' => $paginators,
             'years' => $years,
             'empresas' => $empresas,
@@ -243,40 +246,4 @@ class ComunicadoController extends Controller
         return to_route('intranet.comunicados.index')->with('message', 'Comunicado Eliminado.');
     }
 
-    // Este es el método que utilizamos para la búsqueda de los comunicados en la página de la biblioteca
-    public function buscar(Request $request)
-    {
-        $comunicados = Comunicado::orderBy('updated_at', 'desc')->paginate(12);
-        $empresas = Empresa::orderBy('id', 'asc')->get();
-        $categorias = Categoria::orderBy('id', 'asc')->get();
-        $etiquetas = Etiqueta::orderBy('id', 'asc')->get();
-        $termino = $request->input('termino');
-        $fecha = $request->input('fecha');
-        $categoria = $request->input('categorias');
-        $empresa = $request->input('empresas');
-        $etiquetasInput = $request->input('etiquetasInput');
-
-        $comunicados = Comunicado::where(function ($query) use ($termino) {
-            $query->where('titulo', 'like', "%$termino%")
-                ->orWhere('subtitulo', 'like', "%$termino%")
-                ->orWhere('cuerpo', 'like', "%$termino%");
-        })
-            ->when($fecha, function ($query) use ($fecha) {
-                $query->whereDate('fecha', $fecha);
-            })
-            ->when($categoria, function ($query) use ($categoria) {
-                $query->where('categoria', $categoria);
-            })
-            ->when($empresa, function ($query) use ($empresa) {
-                $query->where('empresa', $empresa);
-            })
-            // ->when($etiquetas, function ($query) use ($etiquetasInput) {
-            //     $query->whereHas('etiquetas', function ($subquery) use ($etiquetasInput) {
-            //         $subquery->whereIn('nombre', $etiquetasInput);
-            //     });
-            // })
-            ->paginate(12);
-        // dd($comunicados);
-        return view('biblioteca.comunicados.resultados', compact('comunicados', 'empresas', 'categorias', 'etiquetas'));
-    }
 }

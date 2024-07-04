@@ -1,4 +1,4 @@
-<div class="p-8 w-full">
+{{-- <div class="p-8 w-full">
     <form class="mx-auto" action="{{ route('biblioteca.comunicados.buscar') }}">
         @csrf
         <div class="flex w-full">
@@ -37,7 +37,7 @@
             </div>
             
             <div class="relative w-full">
-                <input type="search" id="search-dropdown"
+                <input type="buscar" id="search-dropdown" name="query"
                     class="block p-2.5 w-full z-20 text-sm rounded-e-lg border-s-2 border bg-zinc-700 border-s-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:border-red-500"
                     placeholder="Busca comunicados..." required />
                 <button type="submit"
@@ -48,9 +48,10 @@
             </div>
         </div>
     </form>
-</div>
+    
+</div> --}}
 
-<script>
+{{-- <script>
     // Select etiquetas multiples formulario
     var expanded = false;
 
@@ -69,4 +70,62 @@
         }
     });
     // Final etiquetas
+</script> --}}
+
+<input type="text" id="search-input" placeholder="Buscar...">
+<div id="resultados"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    let searchTimer;
+    
+    $('#search-input').on('input', function() {
+        clearTimeout(searchTimer);
+        let query = $(this).val();
+        
+        if (query.length < 3) {
+            $('#resultados').empty();
+            return;
+        }
+        
+        searchTimer = setTimeout(function() {
+            $.ajax({
+                url: "{{ route('search') }}",
+                method: 'GET',
+                data: { query: query },
+                success: function(data) {
+                    let html = '<div>';
+                    
+                    if (data.comunicados.length > 0) {
+                        html += '<h3>Comunicados</h3><ul>';
+                        data.comunicados.forEach(function(item) {
+                            html += '<li>' + item.titulo + '</li>';
+                        });
+                        html += '</ul>';
+                    }
+                    
+                    if (data.noticias.length > 0) {
+                        html += '<h3>Noticias</h3><ul>';
+                        data.noticias.forEach(function(item) {
+                            html += '<li>' + item.titulo + '</li>';
+                        });
+                        html += '</ul>';
+                    }
+                    
+                    if (data.documentos.length > 0) {
+                        html += '<h3>Documentos</h3><ul>';
+                        data.documentos.forEach(function(item) {
+                            html += '<li>' + item.titulo + '</li>';
+                        });
+                        html += '</ul>';
+                    }
+                    
+                    html += '</div>';
+                    $('#resultados').html(html);
+                }
+            });
+        }, 300);
+    });
+});
 </script>
