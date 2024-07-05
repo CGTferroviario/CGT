@@ -71,31 +71,88 @@
     });
     // Final etiquetas
 </script> --}}
+<style>
 
-<input type="text" id="search-input" placeholder="Buscar...">
-<div id="resultados"></div>
+.resultados {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #da0d0d;
+    border-top: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.resultados h3 {
+    font-weight: bold;
+    margin: 10px 0 5px;
+    padding: 0 10px;
+    font-size: 16px;
+    color: #af0e0e;
+}
+
+.resultados ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resultados li {
+    padding: 5px 10px;
+    border-bottom: 1px solid #ce1313;
+    color: white;
+}
+
+.resultados li:last-child {
+    border-bottom: none;
+}
+
+</style>
+
+<div class="relative pt-4 w-full">
+    <div class="relative">
+        <input type="text" id="buscador-input" name="query"
+            class="block p-2.5 w-full z-20 text-sm rounded-e-lg border-s-2 border bg-zinc-700 border-s-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:border-red-500"
+            placeholder="Buscar..." required />
+        <button type="submit"
+            class="absolute top-0 end-0 p-2 text-sm font-medium h-full text-zinc-800 hover:text-red-500 bg-red-500 hover:bg-zinc-800 rounded-e-lg border border-zinc-800 hover:border-red-500 focus:ring-4 focus:outline-none focus:ring-red-800">
+            <i class="lni lni-keyword-research text-xl mb-2"></i>
+            <span class="sr-only">Buscar</span>
+        </button>
+    </div>
+    <div id="resultados" class="resultados bg-oscuro-transp"></div>
+</div>
+
+{{-- <input type="text" id="buscador-input" placeholder="Buscar..."> --}}
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function() {
     let searchTimer;
-    
-    $('#search-input').on('input', function() {
+    const $buscadorInput = $('#buscador-input');
+    const $resultados = $('#resultados');
+
+    $buscadorInput.on('input', function() {
         clearTimeout(searchTimer);
         let query = $(this).val();
         
         if (query.length < 3) {
-            $('#resultados').empty();
+            $resultados.hide().empty();
             return;
         }
         
         searchTimer = setTimeout(function() {
             $.ajax({
-                url: "{{ route('search') }}",
+                url: "{{ route('biblioteca.comunicados.buscar') }}",
                 method: 'GET',
                 data: { query: query },
                 success: function(data) {
-                    let html = '<div>';
+                    let html = '';
                     
                     if (data.comunicados.length > 0) {
                         html += '<h3>Comunicados</h3><ul>';
@@ -121,11 +178,21 @@ $(document).ready(function() {
                         html += '</ul>';
                     }
                     
-                    html += '</div>';
-                    $('#resultados').html(html);
+                    if (html) {
+                        $resultados.html(html).show();
+                    } else {
+                        $resultados.hide().empty();
+                    }
                 }
             });
         }, 300);
+    });
+
+    // Cerrar resultados al hacer clic fuera del área de búsqueda
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.search-container').length) {
+            $resultados.hide();
+        }
     });
 });
 </script>

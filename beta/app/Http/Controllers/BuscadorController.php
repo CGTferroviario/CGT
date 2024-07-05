@@ -26,7 +26,7 @@ class BuscadorController extends Controller
             ->get();
 
         $documentos = Documento::where('titulo', 'like', "%{$query}%")
-            ->orWhere('cuerpo', 'like', "%{$query}%")
+            ->orWhere('descripcion', 'like', "%{$query}%")
             ->get();
 
         return response()->json([
