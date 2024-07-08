@@ -136,16 +136,6 @@
                 });
             }, 300);
         });
-    
-        // Manejar clic en un resultado
-        // $searchResults.on('click', '[data-id]', function() {
-        //     const id = $(this).data('id');
-        //     const type = $(this).data('type');
-        //     // Aquí puedes implementar la lógica para mostrar el detalle del elemento
-        //     console.log(`Mostrar ${type} con ID: ${id}`);
-        //     // Por ejemplo, podrías redirigir a una página de detalle:
-        //     window.location.href = `/${type}/${slug}`;
-        // });
 
         // Manejar clic en un resultado
         $searchResults.on('click', '[data-slug]', function() {
@@ -156,6 +146,17 @@
                 window.location.href = `/comunicados/${slug}`;
             } else {
                 // Manejar otros tipos (noticias, documentos) si es necesario
+            }
+        });
+
+        // Manejar la tecla Enter
+        $searchInput.on('keypress', function(e) {
+            if (e.which === 13) { // 13 es el código de la tecla Enter
+                e.preventDefault();
+                const query = $(this).val();
+                if (query.length >= 3) {
+                    window.location.href = `/busqueda?q=${encodeURIComponent(query)}`;
+                }
             }
         });
     
