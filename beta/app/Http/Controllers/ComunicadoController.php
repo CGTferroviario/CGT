@@ -200,10 +200,12 @@ class ComunicadoController extends Controller
         return redirect(route('intranet.comunicados.index'))->with('message', 'Comunicado Creado Correctamente');
     }
     // Este es el método para mostrar un Comunicado específico
-    public function show(Comunicado $comunicado, $id)
+    public function show(Comunicado $comunicado, $slug)
     {
-        $comunicado = Comunicado::findOrFail($id);
-        return view('comunicados.show', ['comunicado' => $comunicado]);
+        $comunicado = Comunicado::where('slug', $slug)->firstOrFail();
+        return view('comunicados.show', compact('comunicado'));
+        // $comunicado = Comunicado::findOrFail($id);
+        // return view('comunicados.show', ['comunicado' => $comunicado]);
     }
     // Este es el método para editar un Comunicado específico
     public function edit(Comunicado $comunicado)

@@ -71,47 +71,6 @@
     });
     // Final etiquetas
 </script> --}}
-<style>
-
-.resultados {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    max-height: 300px;
-    overflow-y: auto;
-    border: 1px solid #da0d0d;
-    border-top: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1000;
-}
-
-.resultados h3 {
-    font-weight: bold;
-    margin: 10px 0 5px;
-    padding: 0 10px;
-    font-size: 16px;
-    color: #af0e0e;
-}
-
-.resultados ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.resultados li {
-    padding: 5px 10px;
-    border-bottom: 1px solid #ce1313;
-    color: white;
-}
-
-.resultados li:last-child {
-    border-bottom: none;
-}
-
-</style>
 
 <div class="relative pt-4 w-full">
     <div class="relative">
@@ -124,14 +83,91 @@
             <span class="sr-only">Buscar</span>
         </button>
     </div>
-    <div id="resultados" class="resultados bg-oscuro-transp"></div>
+    <div id="resultados" class="z-10 absolute w-full p-2 max-h-80 bg-oscuro-transp rounded-lg shadow-lg overflow-hidden overflow-y-auto hidden"></div>
 </div>
-
-{{-- <input type="text" id="buscador-input" placeholder="Buscar..."> --}}
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    $(document).ready(function() {
+        let searchTimer;
+        const $searchInput = $('#buscador-input');
+        const $searchResults = $('#resultados');
+    
+        $searchInput.on('input', function() {
+            clearTimeout(searchTimer);
+            let query = $(this).val();
+            
+            if (query.length < 3) {
+                $searchResults.hide().empty();
+                return;
+            }
+            
+            searchTimer = setTimeout(function() {
+                $.ajax({
+                    url: "{{ route('biblioteca.comunicados.buscar') }}",
+                    method: 'GET',
+                    data: { query: query },
+                    success: function(data) {
+                        let html = '';
+                        
+                        ['comunicados', 'noticias', 'documentos'].forEach(function(category) {
+                            if (data[category].length > 0) {
+                                html += `<h3 class="px-4 py-2 text-lg font-semibold text-red-500 bg-oscuro-transp">${category.charAt(0).toUpperCase() + category.slice(1)}</h3>`;
+                                html += '<div class="grid grid-cols-1 gap-2 p-2">';
+                                data[category].forEach(function(item) {
+                                    html += `
+                                        <div class="p-3 bg-zinc-200/75 rounded-lg shadow cursor-pointer hover:bg-zinc-900/75" data-slug="${item.slug}" data-type="${category}">
+                                            <h4 class="font-medium text-red-500">${item.numero}.-${item.titulo}</h4>
+                                            <p class="text-sm text-zinc-600">${item.cuerpo.substring(0, 100)}...</p>
+                                        </div>
+                                    `;
+                                });
+                                html += '</div>';
+                            }
+                        });
+                        
+                        if (html) {
+                            $searchResults.html(html).show();
+                        } else {
+                            $searchResults.hide().empty();
+                        }
+                    }
+                });
+            }, 300);
+        });
+    
+        // Manejar clic en un resultado
+        // $searchResults.on('click', '[data-id]', function() {
+        //     const id = $(this).data('id');
+        //     const type = $(this).data('type');
+        //     // Aquí puedes implementar la lógica para mostrar el detalle del elemento
+        //     console.log(`Mostrar ${type} con ID: ${id}`);
+        //     // Por ejemplo, podrías redirigir a una página de detalle:
+        //     window.location.href = `/${type}/${slug}`;
+        // });
+
+        // Manejar clic en un resultado
+        $searchResults.on('click', '[data-slug]', function() {
+            const slug = $(this).data('slug');
+            const type = $(this).data('type');
+            if (type === 'comunicados') {
+                console.log(`Mostrar ${type} con ID: ${slug}`);
+                window.location.href = `/comunicados/${slug}`;
+            } else {
+                // Manejar otros tipos (noticias, documentos) si es necesario
+            }
+        });
+    
+        // Cerrar resultados al hacer clic fuera del área de búsqueda
+        $(document).on('click', function(event) {
+            if (!$(event.target).closest('.relative').length) {
+                $searchResults.hide();
+            }
+        });
+    });
+</script>
+{{-- <script>
 $(document).ready(function() {
     let searchTimer;
     const $buscadorInput = $('#buscador-input');
@@ -195,4 +231,4 @@ $(document).ready(function() {
         }
     });
 });
-</script>
+</script> --}}
