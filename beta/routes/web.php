@@ -20,6 +20,8 @@ use App\Http\Controllers\SeccionController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
 use App\Models\Slider;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 
 
@@ -36,6 +38,14 @@ Route::get('/intranet', function () {
 
 Route::get('/intranet/provincias/{ccaa}', [ProvinciaController::class, 'index']);
 Route::get('/intranet/municipios/{provincia}', [MunicipioController::class, 'index']);
+Route::get('/buscador', [BuscadorController::class, 'index'])->name('buscador.index');
+Route::post('/render-component', function (Request $request) {
+    $component = $request->input('component');
+    $props = json_decode($request->input('props'), true);
+    
+    return Blade::render("<x-{$component} :comunicado='".json_encode($props)."' />");
+});
+
 
 
 

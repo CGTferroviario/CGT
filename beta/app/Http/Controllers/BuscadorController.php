@@ -9,6 +9,29 @@ use App\Models\Noticia;
 
 class BuscadorController extends Controller
 {
+    public function index(Request $request)
+    {
+        $query = $request->get('q');
+
+        if (strlen($query) < 3) {
+            return redirect()->back()->with('error', 'La búsqueda debe tener al menos 3 caracteres.');
+        }
+
+        $comunicados = Comunicado::where('titulo', 'like', "%{$query}%")
+            ->orWhere('cuerpo', 'like', "%{$query}%")
+            ->orderBy('fecha', 'desc')
+            ->paginate(12);
+
+        $noticias = Noticia::where('titulo', 'like', "%{$query}%")
+            ->orWhere('cuerpo', 'like', "%{$query}%")
+            ->get();
+
+        $documentos = Documento::where('titulo', 'like', "%{$query}%")
+            ->orWhere('descripcion', 'like', "%{$query}%")
+            ->get();
+
+        return view('buscador.index', compact('comunicados', 'noticias', 'documentos', 'query'));
+    }
     public function buscar(Request $request)
     {
         $query = $request->get('query');

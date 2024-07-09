@@ -56,7 +56,9 @@
                             @endforeach
                         </div>
                         <!-- Muestra los enlaces de paginación para el grupo actual -->
-                        {{ $paginator->links() }}
+                        <div class="w-full p-2">
+                            {{ $paginator->links() }}
+                        </div>
                     </div>
                 @endforeach
             </div>

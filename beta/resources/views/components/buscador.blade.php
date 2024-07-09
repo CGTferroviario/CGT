@@ -72,10 +72,10 @@
     // Final etiquetas
 </script> --}}
 
-<div class="relative pt-4 w-full">
+<div class="relative pt-8 p-8 w-full">
     <div class="relative">
         <input type="text" id="buscador-input" name="query"
-            class="block p-2.5 w-full z-20 text-sm rounded-e-lg border-s-2 border bg-zinc-700 border-s-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:border-red-500"
+            class="block p-2.5 w-full z-20 text-sm rounded-e-lg border-s-2 border bg-zinc-700 border-s-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:border-red-500 focus:ring-red-800"
             placeholder="Buscar..." required />
         <button type="submit"
             class="absolute top-0 end-0 p-2 text-sm font-medium h-full text-zinc-800 hover:text-red-500 bg-red-500 hover:bg-zinc-800 rounded-e-lg border border-zinc-800 hover:border-red-500 focus:ring-4 focus:outline-none focus:ring-red-800">
@@ -144,6 +144,7 @@
             if (type === 'comunicados') {
                 console.log(`Mostrar ${type} con ID: ${slug}`);
                 window.location.href = `/comunicados/${slug}`;
+                
             } else {
                 // Manejar otros tipos (noticias, documentos) si es necesario
             }
@@ -155,7 +156,7 @@
                 e.preventDefault();
                 const query = $(this).val();
                 if (query.length >= 3) {
-                    window.location.href = `/busqueda?q=${encodeURIComponent(query)}`;
+                    window.location.href = `/buscador?q=${encodeURIComponent(query)}`;
                 }
             }
         });
