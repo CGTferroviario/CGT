@@ -25,9 +25,16 @@ class NoticiaController extends Controller
     }
     public function bibliotecaNoticias()
     {
+        // Obtener todas las noticias
+        $noticias = Noticia::orderBy('fecha', 'desc')->get();
+        // Formatear todas las fechas en la colección a 'dd/mm/yyyy'
+        $noticias = $noticias->map(function ($noticia) {
+            $noticia->fecha = \Carbon\Carbon::parse($noticia->fecha)->format('d/m/Y');
+            return $noticia;
+        });
         return view('biblioteca.noticias', [
             
-            'noticias' => Noticia::orderBy('updated_at', 'desc')->paginate(12),
+            'noticias' => $noticias->paginate(12),
             'empresas' => Empresa::orderBy('id', 'asc')->get(),
             'categorias' => Categoria::orderBy('id', 'asc')->get(),
             'etiquetas' => Etiqueta::orderBy('id', 'asc')->get()

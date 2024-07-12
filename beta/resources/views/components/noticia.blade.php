@@ -38,10 +38,13 @@
     <!-- Encabezado -->
     <div class="h-20 flex items-center p-2 border-b border-zinc-900 rounded-t-lg bg-red-500"
         title="{{ $noticia->titulo }}">
-        <h2 class="font-bold text-lg line-clamp-2">{{ $noticia->numero }} // {{ $noticia->titulo }}</h2>
+        <h2 class="font-bold text-lg line-clamp-2"> // {{ $noticia->titulo }}</h2>
     </div>
     <!-- Cuerpo -->
     <div class="flex-grow p-2 bg-white">
+        <div>
+            <img src="{{ $noticia->imagen }}" alt="">
+        </div>
         <div class="grid grid-cols-2">
             <div class="p-2 justify-self-start">
                 <div class="py-0.5 px-2 inline rounded-full font-semibold badge-{{ $noticia->empresa?->slug }}">
@@ -81,7 +84,7 @@
     </div>
     <!-- Footer -->
     <div class="p-0.5 border-t border-zinc-900 rounded-b-lg mt-auto inline-flex bg-red-500">
-        <div class="w-1/2 rounded-bl-lg hover:text-red-500 hover:bg-black text-center cursor-pointer" data-modal-target="noticia{{ $noticia->numero }}" data-modal-toggle="noticia{{ $noticia->numero }}">
+        <div class="w-1/2 rounded-bl-lg hover:text-red-500 hover:bg-black text-center cursor-pointer" data-modal-target="noticia{{ $noticia->id }}" data-modal-toggle="noticia{{ $noticia->id }}">
             <span>
                 <i class="lni lni-popup text-2xl mr-2 mb-1 align-middle"></i>Leer más...
             </span>
@@ -94,26 +97,29 @@
     </div>
 </div>
 <!-- Modal toggle -->
-<div id="noticia{{ $noticia->numero }}" tabindex="-1" aria-hidden="true"
+<div id="noticia{{ $noticia->id }}" tabindex="-1" aria-hidden="true"
     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 left-0  z-50 w-full h-full outline-none  "
-    aria-labelledby="noticia{{ $noticia->numero }}">
+    aria-labelledby="noticia{{ $noticia->id }}">
     <div class="sm:h-[calc(100%-3rem)] max-w-2xl my-6 mx-auto relative w-auto pointer-events-none">
         <div
             class="max-h-full overflow-hidden border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-clip-padding rounded-md outline-none text-current">
             <!-- Modal header -->
             <div
                 class="relative flex flex-shrink-0 items-center bg-red-500 justify-between p-4 pr-12 border-b border-zinc-900 rounded-t-xl">
-                <h5 class="text-xl font-semibold leading-normal text-zinc-800" id="noticia{{ $noticia->numero }}Titulo">
-                    COM.{{ $noticia->numero }} // {{ $noticia->titulo }}
+                <h5 class="text-xl font-semibold leading-normal text-zinc-800" id="noticia{{ $noticia->id }}Titulo">
+                     // {{ $noticia->titulo }}
                 </h5>
                 <button type="button" title="Cerrar"
-                    class="absolute top-4 right-4 text-zinc-900 border-2 border-zinc-900 bg-transparent hover:bg-zinc-900 hover:text-white rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="noticia{{ $noticia->numero }}">
+                    class="absolute top-4 right-4 text-zinc-900 border-2 border-zinc-900 bg-transparent hover:bg-zinc-900 hover:text-white rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="noticia{{ $noticia->id }}">
                     <i class="lni lni-close font-bold"></i>
                     <span class="sr-only">Cerrar</span>
                 </button>
             </div>
             <!-- Modal body -->
             <div class="flex-auto overflow-y-auto relative p-4 bg-white">
+                <div>
+                    <img src="{{ $noticia->imagen }}" alt="">
+                </div>
                 <div class="grid grid-cols-2">
                     <div class="p-2 justify-self-start">
                         <div class="py-0.5 px-2 inline rounded-full font-semibold badge-{{ $noticia->empresa?->slug }}">
@@ -147,7 +153,7 @@
                 @endforelse
             </div>
             <div class="flex items-center p-0.5 bg-red-500 border border-zinc-900 rounded-b-xl">
-                <div class="w-1/3 rounded-bl-lg hover:text-red-500 hover:bg-black text-center cursor-pointer" data-modal-target="noticia{{ $noticia->numero }}" data-modal-toggle="noticia{{ $noticia->numero }}">
+                <div class="w-1/3 rounded-bl-lg hover:text-red-500 hover:bg-black text-center cursor-pointer" data-modal-target="noticia{{ $noticia->id }}" data-modal-toggle="noticia{{ $noticia->id }}">
                     <a href="{{ $noticia->pdf }}" class="" target="_blank" download="CGT_{{ $noticia->titulo }}">
                         <i class="lni lni-popup text-2xl mr-2 mb-1 align-middle"></i>PDF
                     </a>
