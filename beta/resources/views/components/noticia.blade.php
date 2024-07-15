@@ -42,7 +42,7 @@
     </div>
     <!-- Cuerpo -->
     <div class="flex-grow p-2 bg-white">
-        <div>
+        <div class="mb-2 border border-red-500 h-48 rounded-lg">
             <img src="{{ $noticia->imagen }}" alt="">
         </div>
         <div class="grid grid-cols-2">
