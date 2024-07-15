@@ -24,14 +24,14 @@ class NoticiaSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Noticia::truncate(); //limpiamos la tabla para prevenir entradas duplicadas
 
-        $csvFile = fopen(base_path("database/data/noticias.csv"), "r");
+        $csvFile = fopen(base_path("database/data/noticias_full.csv"), "r");
 
         $firstline = true;
         while (($data = fgetcsv($csvFile, 555, ";")) !== false) {
             if (!$firstline) {
 
                 // Asegúrate de que haya suficientes elementos en el array
-                $data = array_pad($data, 13, null);
+                $data = array_pad($data, 15, null);
 
                 // Convertimos la fecha del formato español al formato americano que es lo que acepta la BBDD
                 $fecha = null;
@@ -60,6 +60,8 @@ class NoticiaSeeder extends Seeder
                         "cuerpo" => $cuerpo,
                         "adjunto" => $data[11],
                         "imagen" => $data[12],
+                        "created_at" => $data[13],
+                        "updated_at" => $data[14],
                     ]);
                     Log::info("Noticia creada con ID: " . $Noticia->id);
                 } catch (\Exception $e) {
