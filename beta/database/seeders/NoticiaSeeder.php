@@ -24,7 +24,7 @@ class NoticiaSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Noticia::truncate(); //limpiamos la tabla para prevenir entradas duplicadas
 
-        $csvFile = fopen(base_path("database/data/noticias_full.csv"), "r");
+        $csvFile = fopen(base_path("database/data/noticias.csv"), "r");
 
         $firstline = true;
         while (($data = fgetcsv($csvFile, 555, ";")) !== false) {
