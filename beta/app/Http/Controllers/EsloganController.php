@@ -13,54 +13,58 @@ class EsloganController extends Controller
      */
     public function index()
     {
-        //
+        $eslogans = Eslogan::all();
+        return view('intranet.eslogans.index', compact('eslogans'));
     }
-
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('intranet.eslogans.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreEsloganRequest $request)
     {
-        //
+        $request->validate([
+            'frase' => 'required|max:255',
+        ]);
+        // dd($request);
+        Eslogan::create($request->all());
+        return redirect()->route('intranet.eslogans.index')->with('success', 'Eslogan creado correctamente.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Eslogan $eslogan)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Eslogan $eslogan)
     {
-        //
+        return view('intranet.eslogans.edit', compact('eslogan'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateEsloganRequest $request, Eslogan $eslogan)
     {
-        //
+        
+        dd($eslogan);
+
+        // $eslogan = Eslogan::findOrFail($id);
+        // $activo = $request->input('activo');
+
+        // if ($activo) {
+        //     // Desactivar todos los otros eslogans
+        //     Eslogan::where('id', '!=', $id)->update(['activo' => false]);
+        // }
+
+        // $eslogan->activo = $activo;
+        // $eslogan->save();
+
+
+        $eslogan->update($request->all());
+        return redirect()->route('intranet.eslogans.index')->with('success', 'Eslogan actualizado correctamente.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Eslogan $eslogan)
     {
-        //
+        $eslogan->delete();
+        return redirect()->route('intranet.eslogans.index')->with('success', 'Eslogan eliminado correctamente.');
     }
+
+    
 }

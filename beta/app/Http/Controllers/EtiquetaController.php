@@ -41,7 +41,7 @@ class EtiquetaController extends Controller
         // Guardamos el valor del slug, es decir, el nombre de etiqueta sin espacios
         $slug = Str::slug($request->nombre);
         
-        // Guardamos todos los datos en la tabla Empresa
+        // Guardamos todos los datos en la tabla Etiqueta
         Etiqueta::create(array_merge($request->all(), ['slug' => $slug]));
 
         return redirect(route('intranet.etiquetas.index'))->with('message', 'Etiqueta Creada Correctamente');

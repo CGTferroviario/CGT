@@ -17,15 +17,9 @@ class EquipoController extends Controller
      */
     public function sp()
     {
-        $tipos = Equipo::select('tipo')->distinct()->pluck('tipo');
-
-        $equipoSecretariadoPermanente = Equipo::where('tipo' , 'Secretariado Permanente')->get();
-        $equipoCoordinaciónTerritorial = Equipo::where('tipo' , 'Coordinación Territorial')->get();
-        $equipoResponsablesEmpresas = Equipo::where('tipo' , 'Responsables Empresas')->get();
-        $equipoCoordinaciónADIF = Equipo::where('tipo' , 'Coordinación ADIF')->get();
-        $equipoCoordinaciónRENFE = Equipo::where('tipo' , 'Coordinación RENFE')->get();
-
-        return view('equipo.sp', compact('tipos', 'equipoSecretariadoPermanente', 'equipoCoordinaciónTerritorial', 'equipoResponsablesEmpresas', 'equipoCoordinaciónADIF', 'equipoCoordinaciónRENFE'));
+        $equiposPorTipo = Equipo::all()->groupBy('tipo');
+    
+        return view('equipo.sp', compact('equiposPorTipo'));
 
     }
 
@@ -48,15 +42,22 @@ class EquipoController extends Controller
     
     public function index()
     {
-        $equipoSPs = Equipo::where('tipo' , 'Secretariado Permanente')->get();
-        $equipoct = Equipo::where('tipo' , 'Coordinación Territorial')->get();
-        $equipore = Equipo::where('tipo' , 'Responsables Empresas')->get();
-        $equipoadif = Equipo::where('tipo' , 'Coordinación ADIF')->get();
-        $equiporenfe = Equipo::where('tipo' , 'Coordinación RENFE')->get();
+        // $equipoSPs = Equipo::where('tipo' , 'Secretariado Permanente')->get();
+        // $equipoct = Equipo::where('tipo' , 'Coordinación Territorial')->get();
+        // $equipore = Equipo::where('tipo' , 'Responsables Empresas')->get();
+        // $equipoadif = Equipo::where('tipo' , 'Coordinación ADIF')->get();
+        // $equiporenfe = Equipo::where('tipo' , 'Coordinación RENFE')->get();
 
-        // dd($equipoSP);
+        // // dd($equipoSP);
 
-        return view('intranet.equipos.index', compact('equipoSPs', 'equipoct', 'equipore', 'equipoadif', 'equiporenfe'));
+        // return view('intranet.equipos.index', compact('equipoSPs', 'equipoct', 'equipore', 'equipoadif', 'equiporenfe'));
+    
+
+        $tipos = Equipo::select('tipo')->distinct()->pluck('tipo');
+        $equipos = Equipo::all();
+
+        return view('intranet.equipos.index', compact('tipos', 'equipos'));
+
     }
 
     /**

@@ -5,7 +5,7 @@
     <div class="fondo estaciones">
         <x-buscador :empresas=$empresas :categorias=$categorias :etiquetas=$etiquetas></x-buscador>
         <div class="p-6 grid grid-cols-2 gap-4">
-            <div class="intro bg-oscuro-7 bordeRojo rounded-lg p-4 text-white">
+            <div class="intro bg-zinc-800/70 bordeRojo rounded-lg p-4 text-white">
                 <p class="text-center">Bienvenid@ a la sección de Estaciones de Viajeros.</p>
                 <p class="text-justify">Si desempeñas tu labor en alguna estación de Adif, aquí encontrarás información útil para tu trabajo.<br>
                     También podrás conocer el trabajo que hacemos en CGT para mejorar las condiciones laborales de l@s compañer@s que trabajan en las estaciones de viajeros.

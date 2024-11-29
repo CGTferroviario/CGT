@@ -35,7 +35,7 @@
             </div>
             <div class="grid grid-cols-3 gap-4">
                 <div class="col-span-2">
-                    <section class="bg-oscuro-7 rounded-lg">
+                    <section class="bg-zinc-800/70 rounded-lg">
                         <div class="py-8 px-4 mx-auto">
                             <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Documento</h2>
                             <form action="{{ route('intranet.documentos.store') }}" method="POST" enctype="multipart/form-data">

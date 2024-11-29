@@ -10,6 +10,8 @@ use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\EquipoController;
+use App\Http\Controllers\EsloganController;
+use App\Http\Controllers\EstadisticasController;
 use App\Http\Controllers\EtiquetaController;
 use App\Http\Controllers\MunicipioController;
 use App\Http\Controllers\NoticiaController;
@@ -30,12 +32,12 @@ Route::get('/', function () {
 });
 // Para evitar el problema de CORS
 Route::get('/datatables/es-es.json', 'App\Http\Controllers\DataTablesProxyController@getEsEsJson');
-Route::get('/intranet', function () {
-    $sliders = Slider::all();
-    return view('intranet', compact('sliders'));
-    // Route::get('/', [PaginaController::class, 'intranet'])->name('intranet');
-});
-
+// Route::get('/intranet', function () {
+//     // $sliders = Slider::all();
+//     // return view('intranet', compact('sliders'))->name('intranet');
+//     Route::get('/', [PaginaController::class, 'intranet'])->name('intranet');
+// });
+Route::get('intranet', [PaginaController::class, 'intranet'])->name('intranet');
 Route::get('/intranet/provincias/{ccaa}', [ProvinciaController::class, 'index']);
 Route::get('/intranet/municipios/{provincia}', [MunicipioController::class, 'index']);
 Route::get('/buscador', [BuscadorController::class, 'index'])->name('buscador.index');
@@ -180,6 +182,8 @@ Route::middleware('auth')->name('intranet.')->prefix('intranet')->group(function
     Route::resource('/sliders', SliderController::class);
     Route::resource('/seccions', SeccionController::class);
     Route::resource('/afiliados', AfiliadoController::class);
+    Route::get('/estadisticas', [EstadisticasController::class, 'index'])->name('estadisticas.index');
+    Route::resource('/eslogans', EsloganController::class);
 });
 
 Route::get('/comunicados/{slug}', [ComunicadoController::class, 'show'])->name('comunicados.show');

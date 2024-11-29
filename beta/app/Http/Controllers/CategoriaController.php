@@ -8,6 +8,7 @@ use App\Models\Categoria;
 use App\Models\Comunicado;
 use App\Models\Documento;
 use App\Models\Noticia;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class CategoriaController extends Controller
@@ -39,12 +40,11 @@ class CategoriaController extends Controller
      */
     public function store(StoreCategoriaRequest $request)
     {
-        $request->validate([
-            'nombre' => 'required',
-            'activa' => 'required',
-        ]);
- 
-        Categoria::create($request->all());
+        // Guardamos el valor del slug, es decir, el nombre de la categoría sin espacios
+        $slug = Str::slug($request->nombre);
+
+        // Guardamos todos los datos en la tabla Categoría
+        Categoria::create(array_merge($request->all(), ['slug' => $slug]));
 
         return redirect(route('intranet.categorias.index'))->with('message', 'Categoría Creada Correctamente');
     }

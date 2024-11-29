@@ -11,7 +11,7 @@ class UpdateEsloganRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,8 @@ class UpdateEsloganRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'frase' => 'required|max:255',
+            'activo' => 'required',
         ];
     }
 }

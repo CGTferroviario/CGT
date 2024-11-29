@@ -6,6 +6,7 @@ use App\Models\Categoria;
 use Illuminate\Database\Eloquent\Builder;
 use App\Models\Documento;
 use App\Models\Empresa;
+use App\Models\Eslogan;
 use App\Models\Etiqueta;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -14,7 +15,8 @@ class PaginaController extends Controller
 {
     function intranet() {
         $sliders = Slider::all();
-        return view('intranet', compact('sliders'));
+        $eslogan = Eslogan::where('activo', true)->latest()->first();
+        return view('intranet', compact('sliders' ,'eslogan'));
     }
     public function docADIF() 
     {

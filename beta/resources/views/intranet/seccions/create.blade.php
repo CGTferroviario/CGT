@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="grid grid-cols-4 gap-4">
-                <div class="col-span-3 bg-oscuro-7 rounded-lg">
+                <div class="col-span-3 bg-zinc-800/70 rounded-lg">
                     <div class="py-8 px-4 mx-auto">
                         <h2 class="mb-4 text-xl font-bold text-white text-center">Añadir Seccion</h2>
                         <form action="{{ route('intranet.seccions.store') }}" method="POST" enctype="multipart/form-data">
@@ -80,7 +80,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="bg-oscuro-7 rounded-lg p-4">
+                <div class="bg-zinc-800/70 rounded-lg p-4">
                     <h1 class="rojoBrillante text-lg text-center">Secciones Ferroviarias</h1>
                     @foreach ($seccions as $seccion)
                         <p class="text-white">

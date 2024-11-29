@@ -1,5 +1,5 @@
 @if (Session::has('message'))  
-    <div id="alert-1" class="mensaje bordeRojo flex p-4 mb-4 text-red-500 rounded-lg bg-oscuro-7" role="alert">
+    <div id="alert-1" class="mensaje bordeRojo flex p-4 mb-4 text-red-500 rounded-lg bg-zinc-800/70" role="alert">
         <i class="lni lni-direction"></i>
         <span class="sr-only">Info</span>
         <div class="ml-3 text-sm font-medium">{{ Session::get('message') }}</div>

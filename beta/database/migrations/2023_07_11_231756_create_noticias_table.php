@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('noticias', function (Blueprint $table) {
             $table->id();
-            $table->unsignedMediumInteger('visualizaciones')->nullable();
+            $table->unsignedMediumInteger('visualizaciones')->default(0);
+            $table->unsignedMediumInteger('descargas')->default(0);
             $table->boolean('publicado')->default(true);
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('empresa_id')->nullable();

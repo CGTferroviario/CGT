@@ -10,6 +10,11 @@ class Slider extends Model
     use HasFactory;
 
     protected $fillable = [
-        'imagen', 'descripcion',
+        'imagen', 'descripcion', 'fecha', 'enlace'
+    ];
+
+    protected $casts = [
+        'activo' => 'boolean',
+        'fecha' => 'date',
     ];
 }

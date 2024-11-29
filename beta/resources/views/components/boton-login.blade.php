@@ -1,6 +1,7 @@
 <button id="dropdownLogin" data-dropdown-toggle="dropdown"
     class="font-medium px-4 py-2.5 text-center bg-oscuro text-red-500 border border-red-500 hover:bg-red-500 hover:text-black p-2 rounded-lg text-sm focus:ring-2 focus:outline-none focus:ring-red-500"
-    type="button">ÁREA Afiliad@s <i class="lni lni-chevron-down ml-1 mt-1 text-white"></i></button>
+    type="button">ÁREA Afiliad@s <i class="lni lni-chevron-down ml-1 mt-1 text-white"></i>
+</button>
 <!-- Dropdown menu -->
 <div id="dropdown" class="z-50 hidden divide-y rounded-lg shadow w-96 bg-oscuro">
     @guest

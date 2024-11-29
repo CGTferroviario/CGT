@@ -32,108 +32,9 @@
                             <h2 class="text-lg font-bold text-zinc-800">Equipo Estatal</h2>
                         </div>
                     </div>
-                    <div class="sm:flex sm:items-center sm:justify-end">
-
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="relative overflow-x-auto">
-                        <table class="w-full text-sm text-left rtl:text-right text-zinc-500 dark:text-zinc-400">
-                            <thead class="text-xs text-zinc-700 uppercase bg-zinc-50 dark:bg-zinc-700 dark:text-zinc-400">
-                                <tr>
-                                    <th scope="col" class="px-6 py-3">
-                                        Product name
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Color
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Category
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Price
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="bg-white border-b dark:bg-zinc-800 dark:border-zinc-700">
-                                    <th scope="row" class="px-6 py-4 font-medium text-zinc-900 whitespace-nowrap dark:text-white">
-                                        Apple MacBook Pro 17"
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        Silver
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Laptop
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        $2999
-                                    </td>
-                                </tr>
-                                <tr class="bg-white border-b dark:bg-zinc-800 dark:border-zinc-700">
-                                    <th scope="row" class="px-6 py-4 font-medium text-zinc-900 whitespace-nowrap dark:text-white">
-                                        Microsoft Surface Pro
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        White
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Laptop PC
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        $1999
-                                    </td>
-                                </tr>
-                                <tr class="bg-white dark:bg-zinc-800">
-                                    <th scope="row" class="px-6 py-4 font-medium text-zinc-900 whitespace-nowrap dark:text-white">
-                                        Magic Mouse 2
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        Black
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Accessories
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        $99
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
 
-                {{-- <div class="sort">
-                    <div class="bg-black p-2 text-white bordeRojo rounded-t-lg">
-                        <h1 class="text-center font-semibold">SECRETARIADO PERMANENTE (S.P.)</h1>
-                    </div>
-                    <table class="w-full text-sm text-left rtl:text-right text-zinc-500 dark:text-zinc-400">
-                        <thead class="text-xs text-zinc-700 uppercase bg-zinc-50 dark:bg-zinc-700 dark:text-zinc-400">
-                            <tr>
-                                <th scope="col" class="px-6 py-3">Acciones</th>
-                                <th scope="col" class="px-6 py-3">Cargo</th>
-                                <th scope="col" class="px-6 py-3">Usuario</th>
-                                <th scope="col" class="px-6 py-3">Email</th>
-                                <th scope="col" class="px-6 py-3">Orden</th>
-                            </tr>
-                        </thead>
-                    </table>
-                    @foreach ($equipoSPs as $equipoSP)
-                        <x-laravel-blade-sortable::sortable>
-                            <x-laravel-blade-sortable::sortable-item sort-key='order'>
-                                <div class="p-2 cursor-pointer text-sm border bordeRojo hover:border-black bg-oscuro hover:bg-red-500 text-white hover:text-black">
-                                    {{ $equipoSP->cargo }}
-                                </div>
-                            </x-laravel-blade-sortable::sortable-item>
-                        </x-laravel-blade-sortable::sortable>
-                    @endforeach
-
-                </div> --}}
-
-
-
-
-                <table id="equiposp" class="display nowrap text-sm pt-5 font-normal rounded-t-lg"
+                {{-- <table id="equiposp" class="display nowrap text-sm pt-5 font-normal rounded-t-lg"
                     style="width:100%">
                     <thead class="rounded-t-lg bg-black text-white">
                         <tr>
@@ -176,8 +77,78 @@
                             </tr>
                         @endforeach
                     </tbody>
+                </table> --}}
+                <select id="tipo-selector" class="mb-4 bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block p-2.5">
+                    <option value="">Equipo Completo</option>
+                    @foreach ($tipos as $tipo)
+                        <option value="{{ $tipo }}">{{ $tipo }}</option>
+                    @endforeach
+                </select>
+                
+                <table id="equiposp" class="display nowrap text-sm pt-5 font-normal rounded-t-lg" style="width:100%">
+                    <thead class="rounded-t-lg bg-black text-white">
+                        <tr>
+                            <th class="rounded-tl-lg">Acciones</th>
+                            <th>Tipo</th>
+                            <th title="">Cargo</th>
+                            <th title="Autor">Usuario</th>
+                            <th class="">Email</th>
+                            <th class="rounded-tr-lg">Orden</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($equipos as $equipo)
+                            <tr data-tipo="{{ $equipo->tipo }}">
+                                <td>
+                                    <div class="flex justify-start gap-1 text-xl mt-2">
+                                        <a x-data="{ tooltip: 'Editar' }" href="{{ route('intranet.equipos.edit', $equipo->id) }}"
+                                            class="text-green-500 hover:bg-green-500 hover:text-white p-1 rounded-lg h-8"
+                                            title="Editar Equipo">
+                                            <i class="lni lni-pencil"></i>
+                                        </a>
+                                        <form method="POST" action="{{ route('intranet.equipos.destroy', $equipo->id) }}"
+                                            onsubmit="return confirm('¿Deseas eliminar este equipo?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class=" p-1 rounded-md">
+                                                <a x-data="{ tooltip: 'Delete' }" href="#" title="Eliminar Equipo"
+                                                    class="text-red-500 hover:bg-red-500 hover:text-white p-1 rounded-lg h-8">
+                                                    <i class="lni lni-trash-can"></i>
+                                                </a>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                                <td>{{ $equipo->tipo }}</td>
+                                <td>{{ $equipo->cargo }}</td>
+                                <td>{{ $equipo->usuario }}</td>
+                                <td>{{ $equipo->email }}</td>
+                                <td>{{ $equipo->orden }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>
     @endsection
 </x-privado-layout>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tipoSelector = document.getElementById('tipo-selector');
+        const tabla = document.getElementById('equiposp');
+        const filas = tabla.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+    
+        tipoSelector.addEventListener('change', function() {
+            const tipoSeleccionado = this.value;
+    
+            for (let fila of filas) {
+                const tipoFila = fila.getAttribute('data-tipo');
+                if (tipoSeleccionado === '' || tipoFila === tipoSeleccionado) {
+                    fila.style.display = '';
+                } else {
+                    fila.style.display = 'none';
+                }
+            }
+        });
+    });
+</script>

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Eslogan extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['frase', 'activo', 'fecha'];
+
+    protected $casts = [
+        'fecha' => 'date',
+    ];
 }
