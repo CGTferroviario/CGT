@@ -68,7 +68,7 @@ class Afiliado extends Model
         return $this->belongsTo(TipoCotizacion::class);
     }
 
-    public function documentos(): HasMany
+public function documentos(): HasMany
     {
         return $this->hasMany(Documento::class);
     }

@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('codigo_postals', function (Blueprint $table) {
+        Schema::create('tipos_cotizaciones', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->text('descripcion')->nullable();
+            $table->decimal('monto', 8, 2);
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('codigo_postals');
+        Schema::dropIfExists('tipo_cotizacions');
     }
 };

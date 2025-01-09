@@ -39,7 +39,7 @@ return new class extends Migration
             $table->enum('status', ['alta', 'baja'])->default('alta');
             $table->foreignId('sector_id')->nullable()->constrained('sectores');
             $table->foreignId('empresa_id')->nullable()->constrained('empresas');
-            $table->foreignId('tipo_cotizacion_id')->nullable()->constrained('tipos_cotizacion');
+            $table->foreignId('tipos_cotizaciones_id')->nullable()->constrained('tipos_cotizaciones');
             $table->timestamps();
         });
     }
