@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Permissions;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,4 +15,10 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/permisos', function () {
+        return view('permisos');
+    })->name('permisos');
 });
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/permissions', Permissions::class)->name('permissions');

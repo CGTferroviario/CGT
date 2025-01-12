@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25c09c365c39967535e7fd0d2ff29be4",
+    "content-hash": "dddaa7ed0af2fddb0107db7ec987bc2f",
     "packages": [
         {
             "name": "amendozaaguiar/laravel-lat-es",
-            "version": "2.4.0",
+            "version": "11.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amendozaaguiar/laravel-lat-es.git",
-                "reference": "760184805992a43b70d3c53bdfbe4dc987a74a43"
+                "reference": "5fd358acb8825bf9c81d5bbf32bc8eb5ee610889"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amendozaaguiar/laravel-lat-es/zipball/760184805992a43b70d3c53bdfbe4dc987a74a43",
-                "reference": "760184805992a43b70d3c53bdfbe4dc987a74a43",
+                "url": "https://api.github.com/repos/amendozaaguiar/laravel-lat-es/zipball/5fd358acb8825bf9c81d5bbf32bc8eb5ee610889",
+                "reference": "5fd358acb8825bf9c81d5bbf32bc8eb5ee610889",
                 "shasum": ""
             },
             "require": {
@@ -29,13 +29,13 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Amendozaaguiar\\Laravellates\\LaravelLatEsServiceProvider"
+                        "Amendozaaguiar\\LaravelLatEs\\LaravelLatEsServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Amendozaaguiar\\Laravellates\\": "src/"
+                    "Amendozaaguiar\\LaravelLatEs\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -45,94 +45,30 @@
             "authors": [
                 {
                     "name": "Anderson Mendoza",
-                    "homepage": "https://amendozaaguiar.dev",
                     "role": "Developer"
                 }
             ],
-            "description": "Paquete de traducciones en español para Laravel 9, 10. Este paquete te agrega a tu proyecto los ficheros de traducciones en español que Laravel 9, 10 trae por defecto.",
+            "description": "El paquete 'laravel-lat-es' ofrece traducciones en español para Laravel, garantizando que tus proyectos en Laravel tengan archivos de traducción en español por defecto. Con esta integración automática, podrás disfrutar de una experiencia de usuario más fluida y personalizada en tus aplicaciones de Laravel. Al utilizar las traducciones por defecto de Laravel, garantizas la coherencia y consistencia del idioma en toda tu aplicación, lo que mejora la usabilidad y la accesibilidad para tus usuarios hispanohablantes.",
             "homepage": "https://github.com/amendozaaguiar/laravel-lat-es",
             "keywords": [
+                "Automatico",
                 "Espanol",
+                "Integración",
+                "coherencia",
+                "desarrollo web",
+                "experiencia de usuario",
+                "idioma",
                 "laravel",
-                "spanish",
+                "localización",
+                "paquete",
                 "traduccion",
-                "translation"
+                "usabilidad"
             ],
             "support": {
                 "issues": "https://github.com/amendozaaguiar/laravel-lat-es/issues",
-                "source": "https://github.com/amendozaaguiar/laravel-lat-es/tree/2.4.0"
+                "source": "https://github.com/amendozaaguiar/laravel-lat-es/tree/11.0.0"
             },
-            "time": "2023-02-11T15:07:44+00:00"
-        },
-        {
-            "name": "amendozaaguiar/laraveles-spanish-for-jetstream",
-            "version": "1.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/amendozaaguiar/laraveles-spanish-for-jetstream.git",
-                "reference": "89be6c9c32919e53b26903090f27277b01f58f29"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/amendozaaguiar/laraveles-spanish-for-jetstream/zipball/89be6c9c32919e53b26903090f27277b01f58f29",
-                "reference": "89be6c9c32919e53b26903090f27277b01f58f29",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/console": ">=5.4.0",
-                "illuminate/support": ">=5.4.0",
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^3.4|^4.0",
-                "phpunit/phpunit": "^5.6|^6.3|^7.0|^8.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Laraveles\\Spanish\\SpanishServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laraveles\\Spanish\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anderson Mendoza"
-                },
-                {
-                    "name": "Israel Ortuño",
-                    "email": "ai.ortuno@gmail.com"
-                },
-                {
-                    "name": "Cesar Garcia",
-                    "email": "cesargb@gmail.com",
-                    "homepage": "https://github.com/cesargb",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Conjunto de traducciones en español para Laravel con Jetstream",
-            "homepage": "https://github.com/amendozaaguiar/laraveles-spanish-for-jetstream",
-            "keywords": [
-                "jetstream",
-                "laravel",
-                "laraveles",
-                "spanish",
-                "traduccion"
-            ],
-            "support": {
-                "source": "https://github.com/amendozaaguiar/laraveles-spanish-for-jetstream/tree/1.7.0"
-            },
-            "abandoned": "https://github.com/amendozaaguiar/laravel-lat-es",
-            "time": "2022-09-13T03:11:12+00:00"
+            "time": "2024-03-22T01:16:58+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -4034,6 +3970,89 @@
                 }
             ],
             "time": "2024-04-27T21:32:50+00:00"
+        },
+        {
+            "name": "spatie/laravel-permission",
+            "version": "6.10.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "8bb69d6d67387f7a00d93a2f5fab98860f06e704"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/8bb69d6d67387f7a00d93a2f5fab98860f06e704",
+                "reference": "8bb69d6d67387f7a00d93a2f5fab98860f06e704",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^8.12|^9.0|^10.0|^11.0",
+                "illuminate/container": "^8.12|^9.0|^10.0|^11.0",
+                "illuminate/contracts": "^8.12|^9.0|^10.0|^11.0",
+                "illuminate/database": "^8.12|^9.0|^10.0|^11.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^1.0|^2.0",
+                "laravel/passport": "^11.0|^12.0",
+                "orchestra/testbench": "^6.23|^7.0|^8.0|^9.0",
+                "phpunit/phpunit": "^9.4|^10.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Permission\\PermissionServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-main": "6.x-dev",
+                    "dev-master": "6.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 8.0 and up",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "permissions",
+                "rbac",
+                "roles",
+                "security",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-permission/issues",
+                "source": "https://github.com/spatie/laravel-permission/tree/6.10.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-11-08T18:45:41+00:00"
         },
         {
             "name": "symfony/clock",
@@ -9058,5 +9077,5 @@
         "php": "^8.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
